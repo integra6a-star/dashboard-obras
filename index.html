@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – Acompanhamento de Obra</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body{font-family:Arial;margin:14px;background:#f4f6f8}
+    .container{max-width:1400px;margin:0 auto}
+    .top-filters{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+    .filter label{display:block;font-size:13px;color:#444;margin:0 0 6px}
+    select{width:100%;padding:12px;border-radius:12px;border:1px solid #e3e7ee;background:#fff}
+
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .card .t{font-size:13px;color:#555;margin-bottom:8px}
+    .card .v{font-size:30px;font-weight:800;color:#0b57d0;line-height:1}
+    .card .s{font-size:12px;color:#777;margin-top:8px}
+    /* card de meta (avanço) */
+    .card.av-meta .v{color:#0b57d0}
+    .card.av-meta.good{outline:2px solid rgba(16,185,129,.35)}
+    .card.av-meta.good .v{color:#059669}
+    .card.av-meta.warn{outline:2px solid rgba(245,158,11,.35)}
+    .card.av-meta.warn .v{color:#d97706}
+    .card.av-meta.bad{outline:2px solid rgba(239,68,68,.35)}
+    .card.av-meta.bad .v{color:#dc2626}
+
+    .grid2{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
+    .grid2b{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .panel{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .panel h3{margin:0 0 6px;font-size:16px}
+    .panel small{color:#6b7280}
+
+    .meta{color:#666;font-size:12px;margin:10px 0 0;text-align:right}
+
+    /* tabela */
+    .table-wrap{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);overflow:hidden}
+    .table-head{display:flex;justify-content:space-between;align-items:center;padding:14px}
+    .table-head h3{margin:0;font-size:16px}
+    .table-head small{color:#6b7280}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{
+      background:#1f5fe0;color:#fff;padding:12px 10px;text-align:left;
+      cursor:pointer;user-select:none;white-space:nowrap;
+    }
+    thead th .arrow{opacity:.85;margin-left:6px;font-size:12px}
+    tbody td{padding:10px;border-bottom:1px solid #eee}
+    tbody tr:nth-child(even){background:#f7fbff}
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+    @media(max-width:1100px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .grid2{grid-template-columns:1fr}
+      .grid2b{grid-template-columns:1fr}
+    }
+    @media(max-width:700px){
+      .top-filters{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="top-filters">
+    <div class="filter">
+      <label>Obra</label>
+      <select id="fObra"></select>
+    </div>
+    <div class="filter">
+      <label>Bloco</label>
+      <select id="fBloco"></select>
+    </div>
+    <div class="filter">
+      <label>Tipo de extensão</label>
+      <select id="fTipo"></select>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="t">Extensão Planejada (m)</div>
+      <div class="v" id="kPlan">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Extensão Executada (m)</div>
+      <div class="v" id="kExec">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Saldo a Executar (m)</div>
+      <div class="v" id="kSaldo">0</div>
+      <div class="s">Planejado − Executado</div>
+    </div>
+
+    <div class="card av-meta" id="cardAvanco">
+      <div class="t">Avanço (%)</div>
+      <div class="v" id="kAvanco">0%</div>
+      <div class="s">Executado / Planejado</div>
+    </div>
+
+    <div class="card">
+      <div class="t">PV (qtd)</div>
+      <div class="v" id="kPV">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Profundidade PV (m)</div>
+      <div class="v" id="kProf">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Economias previstas</div>
+      <div class="v" id="kEcoPrev">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Economias recebidas</div>
+      <div class="v" id="kEcoRec">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Planejado × Executado por Obra</h3>
+      <small>Colunas agrupadas (Planejado azul, Executado laranja)</small>
+      <div style="height:420px"><canvas id="chObra"></canvas></div>
+      <div class="meta" id="meta"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Distribuição por Tipo</h3>
+      <small>Participação do Planejado (m)</small>
+      <div style="height:420px"><canvas id="chTipo"></canvas></div>
+    </div>
+  </div>
+
+  <!-- (1) Avanço por Bloco + Top10 Executado -->
+  <div class="grid2b">
+    <div class="panel">
+      <h3>Avanço (%) por Bloco</h3>
+      <small>Executado / Planejado</small>
+      <div style="height:360px"><canvas id="chAvancoBloco"></canvas></div>
+    </div>
+
+    <div class="panel">
+      <h3>Ranking – Top 10 Executado (m)</h3>
+      <small>Blocos com maior produção</small>
+      <div style="height:360px"><canvas id="chTop10"></canvas></div>
+    </div>
+  </div>
+
+  <!-- (2) Tabela detalhada -->
+  <div class="table-wrap">
+    <div class="table-head">
+      <div>
+        <h3>Tabela detalhada</h3>
+        <small>Ordene clicando no cabeçalho</small>
+      </div>
+      <small id="linhasInfo">Linhas: 0</small>
+    </div>
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="Obra">Obra <span class="arrow" id="aObra"></span></th>
+            <th data-col="Bloco">Bloco <span class="arrow" id="aBloco"></span></th>
+            <th data-col="Tipo">Tipo <span class="arrow" id="aTipo"></span></th>
+            <th data-col="Planejado_m" class="num">Planejado (m) <span class="arrow" id="aPlan"></span></th>
+            <th data-col="Executado_m" class="num">Executado (m) <span class="arrow" id="aExec"></span></th>
+            <th data-col="Avanco" class="num">Avanço (%) <span class="arrow" id="aAv"></span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let RAW = [];
+let chartObra, chartTipo, chartAvBloco, chartTop10;
+let sortState = { col: "Obra", dir: "asc" };
+
+function uniq(arr){ return [...new Set(arr)].filter(x=>x!==null && x!==undefined && x!==""); }
+function fillSelect(sel, items, labelAll){
+  sel.innerHTML = "";
+  sel.add(new Option(labelAll, ""));
+  items.forEach(v => sel.add(new Option(v, v)));
+}
+
+const fmtInt = (n)=> Number(n||0).toLocaleString("pt-BR",{maximumFractionDigits:0});
+const fmt1   = (n)=> Number(n||0).toLocaleString("pt-BR",{minimumFractionDigits:1, maximumFractionDigits:1});
+
+function filtered(){
+  const obra=fObra.value, bloco=fBloco.value, tipo=fTipo.value;
+  return RAW.filter(r => (!obra || r.Obra===obra) && (!bloco || r.Bloco===bloco) && (!tipo || r.Tipo===tipo));
+}
+
+function groupBy(rows, key){
+  const map = new Map();
+  rows.forEach(r=>{
+    const k = (r[key] ?? "—");
+    if(!map.has(k)) map.set(k,{k, P:0, E:0, PV:0, Prof:0, EP:0, ER:0});
+    const cur = map.get(k);
+    cur.P += Number(r.Planejado_m||0);
+    cur.E += Number(r.Executado_m||0);
+    cur.PV += Number(r.PV||0);
+    cur.Prof += Number(r.Profundidade_m||0);
+    cur.EP += Number(r.Economias_Previstas||0);
+    cur.ER += Number(r.Economias_Recebidas||0);
+  });
+  return [...map.values()];
+}
+
+function avancoPct(P,E){
+  if(!P || P<=0) return null;
+  return (E/P*100);
+}
+
+function setCardAvancoColor(pct){
+  cardAvanco.classList.remove("good","warn","bad");
+  if(pct >= 90) cardAvanco.classList.add("good");
+  else if(pct >= 70) cardAvanco.classList.add("warn");
+  else cardAvanco.classList.add("bad");
+}
+
+function update(){
+  const rows = filtered();
+
+  const plan = rows.reduce((s,r)=>s+Number(r.Planejado_m||0),0);
+  const exec = rows.reduce((s,r)=>s+Number(r.Executado_m||0),0);
+  const saldo = plan - exec;
+  const av = plan>0 ? exec/plan*100 : 0;
+
+  const pv = rows.reduce((s,r)=>s+Number(r.PV||0),0);
+  const prof = rows.reduce((s,r)=>s+Number(r.Profundidade_m||0),0);
+
+  const ecoPrev = rows.reduce((s,r)=>s+Number(r.Economias_Previstas||0),0);
+  const ecoRec  = rows.reduce((s,r)=>s+Number(r.Economias_Recebidas||0),0);
+
+  kPlan.textContent = fmtInt(plan);
+  kExec.textContent = fmtInt(exec);
+  kSaldo.textContent = fmtInt(saldo);
+  kAvanco.textContent = av.toFixed(0) + "%";
+  setCardAvancoColor(av);
+
+  kPV.textContent = fmtInt(pv);
+  kProf.textContent = fmtInt(prof);
+  kEcoPrev.textContent = fmtInt(ecoPrev);
+  kEcoRec.textContent = fmtInt(ecoRec);
+
+  // --- Gráfico por Obra (barras agrupadas)
+  const byObra = groupBy(rows,"Obra").sort((a,b)=>String(a.k).localeCompare(String(b.k)));
+  const labelsO = byObra.map(x=>x.k);
+  const dataP = byObra.map(x=>x.P);
+  const dataE = byObra.map(x=>x.E);
+
+  if(chartObra) chartObra.destroy();
+  chartObra = new Chart(chObra, {
+    type:"bar",
+    data:{ labels: labelsO, datasets:[
+      { label:"Planejado (m)", data:dataP },
+      { label:"Executado (m)", data:dataE }
+    ]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{ x:{ ticks:{ maxRotation:45, minRotation:45 } },
+               y:{ title:{ display:true, text:"Metros (m)" } } }
+    }
+  });
+
+  // --- Donut por Tipo (participação do planejado)
+  const byTipo = groupBy(rows,"Tipo").sort((a,b)=>b.P-a.P);
+  const labelsT = byTipo.map(x=>x.k);
+  const dataT = byTipo.map(x=>x.P);
+
+  if(chartTipo) chartTipo.destroy();
+  chartTipo = new Chart(chTipo, {
+    type:"doughnut",
+    data:{ labels: labelsT, datasets:[{ data:dataT }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{ position:"right" },
+        tooltip:{ callbacks:{
+          label:(ctx)=>{
+            const total = dataT.reduce((s,v)=>s+v,0) || 1;
+            const v = ctx.raw || 0;
+            const p = (v/total*100);
+            return ` ${ctx.label}: ${fmt1(v)} m (${p.toFixed(1)}%)`;
+          }
+        }}
+      },
+      cutout:"60%"
+    }
+  });
+
+  // --- (1) Avanço % por Bloco
+  const byBloco = groupBy(rows,"Bloco");
+  const byBlocoName = [...byBloco].sort((a,b)=>String(a.k).localeCompare(String(b.k)));
+  const labelsB = byBlocoName.map(x=>x.k);
+  const dataAvB = byBlocoName.map(x=>{
+    const pct = avancoPct(x.P,x.E);
+    return pct===null ? 0 : pct;
+  });
+
+  if(chartAvBloco) chartAvBloco.destroy();
+  chartAvBloco = new Chart(chAvancoBloco, {
+    type:"bar",
+    data:{ labels: labelsB, datasets:[{ label:"Avanço (%)", data:dataAvB }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ display:false } },
+      scales:{ y:{ min:0, max:100, ticks:{ callback:(v)=>v+"%" } } }
+    }
+  });
+
+  // --- (1) Top 10 Executado por Bloco
+  const top10 = [...byBloco].sort((a,b)=>b.E-a.E).slice(0,10);
+  const labelsTop = top10.map(x=>x.k);
+  const dataTop = top10.map(x=>x.E);
+
+  if(chartTop10) chartTop10.destroy();
+  chartTop10 = new Chart(chTop10, {
+    type:"bar",
+    data:{ labels: labelsTop, datasets:[{ label:"Executado (m)", data:dataTop }]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ display:false } }
+    }
+  });
+
+  // --- (2) Tabela detalhada (ordenável)
+  renderTable(rows);
+}
+
+function calcAvancoRow(r){
+  const p = Number(r.Planejado_m||0);
+  const e = Number(r.Executado_m||0);
+  return p>0 ? (e/p*100) : null;
+}
+
+function setArrows(){
+  const arrows = {Obra:"aObra",Bloco:"aBloco",Tipo:"aTipo",Planejado_m:"aPlan",Executado_m:"aExec",Avanco:"aAv"};
+  for(const k in arrows) document.getElementById(arrows[k]).textContent = "";
+  const id = arrows[sortState.col];
+  if(id) document.getElementById(id).textContent = sortState.dir==="asc" ? "▲" : "▼";
+}
+
+function sortRows(rows){
+  const col = sortState.col;
+  const dir = sortState.dir === "asc" ? 1 : -1;
+
+  return [...rows].sort((a,b)=>{
+    let va, vb;
+
+    if(col==="Avanco"){
+      va = calcAvancoRow(a); vb = calcAvancoRow(b);
+      if(va===null && vb===null) return 0;
+      if(va===null) return 1;
+      if(vb===null) return -1;
+      return (va-vb)*dir;
+    }
+
+    if(col==="Planejado_m" || col==="Executado_m"){
+      va = Number(a[col]||0); vb = Number(b[col]||0);
+      return (va-vb)*dir;
+    }
+
+    va = String(a[col]||""); vb = String(b[col]||"");
+    return va.localeCompare(vb)*dir;
+  });
+}
+
+function renderTable(rows){
+  const sorted = sortRows(rows);
+  linhasInfo.textContent = "Linhas: " + sorted.length;
+  setArrows();
+
+  tbody.innerHTML = "";
+  sorted.forEach(r=>{
+    const av = calcAvancoRow(r);
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${r.Obra||""}</td>
+      <td>${r.Bloco||""}</td>
+      <td>${r.Tipo||""}</td>
+      <td class="num">${fmt1(r.Planejado_m)}</td>
+      <td class="num">${fmt1(r.Executado_m)}</td>
+      <td class="num">${av===null ? "—" : av.toFixed(0)+"%"}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function bindTableSort(){
+  document.querySelectorAll("thead th").forEach(th=>{
+    th.addEventListener("click", ()=>{
+      const col = th.getAttribute("data-col");
+      if(sortState.col === col) sortState.dir = (sortState.dir==="asc"?"desc":"asc");
+      else { sortState.col = col; sortState.dir="asc"; }
+      update();
+    });
+  });
+}
+
+async function init(){
+  const res = await fetch("./dados.json?cb="+Date.now());
+  const json = await res.json();
+  RAW = json.registros || [];
+  meta.textContent = `Atualizado em: ${json.atualizado_em || "-"} | Linhas: ${RAW.length}`;
+
+  fillSelect(fObra, uniq(RAW.map(r=>r.Obra)).sort(), "(Todas)");
+  fillSelect(fBloco, uniq(RAW.map(r=>r.Bloco)).sort(), "(Todos)");
+  fillSelect(fTipo, uniq(RAW.map(r=>r.Tipo)).sort(), "(Todos)");
+
+  [fObra,fBloco,fTipo].forEach(el => el.addEventListener("change", update));
+  bindTableSort();
+  update();
+}
+init();
+</script>
+</body>
+</html>
