@@ -42,6 +42,7 @@
 
     .kpi-label{ font-size:.85rem; color: var(--muted); }
     .kpi-value{ font-size: 1.9rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
+
     .plot{ height: 360px; }
     .plot-sm{ height: 320px; }
 
@@ -140,7 +141,7 @@
   <div class="row g-3 mb-3">
     <div class="col-12 col-lg-8">
       <div class="card p-3 h-100">
-        <div class="fw-semibold">Planejado × Executado por Bloco</div>
+        <div class="fw-semibold">Planejado × Executado por Obra</div>
         <div class="muted small mb-2">Colunas agrupadas</div>
         <div id="chartPxE" class="plot"></div>
       </div>
@@ -187,9 +188,9 @@
           <tr>
             <th onclick="sortTable('Obra')" style="cursor:pointer">Obra</th>
             <th onclick="sortTable('Bloco')" style="cursor:pointer">Bloco</th>
-            <th onclick="sortTable('Tipo Extensao')" style="cursor:pointer">Tipo</th>
-            <th onclick="sortTable('Extensao Planejada')" style="cursor:pointer" class="text-end">Planejado (m)</th>
-            <th onclick="sortTable('Extensao Executada')" style="cursor:pointer" class="text-end">Executado (m)</th>
+            <th onclick="sortTable('Tipo_Extensao')" style="cursor:pointer">Tipo</th>
+            <th onclick="sortTable('Extensao_Planejada_m')" style="cursor:pointer" class="text-end">Planejado (m)</th>
+            <th onclick="sortTable('Extensao_Executada_m')" style="cursor:pointer" class="text-end">Executado (m)</th>
             <th onclick="sortTable('Avanco_pct')" style="cursor:pointer" class="text-end">Avanço (%)</th>
           </tr>
         </thead>
@@ -238,21 +239,14 @@ async function reloadData(){
     if(!resp.ok) throw new Error("HTTP " + resp.status);
     RAW = await resp.json();
 
-    // Mapeia / normaliza (compatível com seu gerador atual)
+    // Normaliza números + cria Avanco_pct
     RAW.forEach(r=>{
-      // Aceita tanto "Tipo Extensao" quanto "Tipo_Extensao"
-      if (r["Tipo Extensao"] === undefined && r["Tipo_Extensao"] !== undefined) r["Tipo Extensao"] = r["Tipo_Extensao"];
+      r["Extensao_Planejada_m"] = Number(String(r["Extensao_Planejada_m"] ?? "0").replace(",", ".")) || 0;
+      r["Extensao_Executada_m"] = Number(String(r["Extensao_Executada_m"] ?? "0").replace(",", ".")) || 0;
 
-      // Aceita tanto "Extensao Planejada" quanto "Extensao_Planejada_m"
-      if (r["Extensao Planejada"] === undefined && r["Extensao_Planejada_m"] !== undefined) r["Extensao Planejada"] = r["Extensao_Planejada_m"];
-
-      // Aceita tanto "Extensao Executada" quanto "Extensao_Executada_m"
-      if (r["Extensao Executada"] === undefined && r["Extensao_Executada_m"] !== undefined) r["Extensao Executada"] = r["Extensao_Executada_m"];
-
-      r["Extensao Planejada"] = Number(String(r["Extensao Planejada"] ?? "0").replace(",", ".")) || 0;
-      r["Extensao Executada"] = Number(String(r["Extensao Executada"] ?? "0").replace(",", ".")) || 0;
-
-      r["Avanco_pct"] = (r["Extensao Planejada"]>0) ? (r["Extensao Executada"]/r["Extensao Planejada"]) : null;
+      r["Avanco_pct"] = (r["Extensao_Planejada_m"]>0)
+        ? (r["Extensao_Executada_m"]/r["Extensao_Planejada_m"])
+        : null;
     });
 
     initFilters();
@@ -274,7 +268,7 @@ function initFilters(){
 
   const obras = ['(Todas)'].concat(uniq(RAW.map(r=>r["Obra"])));
   const blocos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Bloco"])));
-  const tipos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Tipo Extensao"])));
+  const tipos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Tipo_Extensao"])));
 
   obraSel.innerHTML = obras.map(o=>`<option value="${o}">${o}</option>`).join('');
   blocoSel.innerHTML = blocos.map(b=>`<option value="${b}">${b}</option>`).join('');
@@ -289,7 +283,7 @@ function getFiltered(){
   return RAW.filter(r=>{
     const okObra = (obra === '(Todas)') || (r["Obra"] === obra);
     const okBloco = (bloco === '(Todos)') || (String(r["Bloco"]) === String(bloco));
-    const okTipo = (tipo === '(Todos)') || (r["Tipo Extensao"] === tipo);
+    const okTipo = (tipo === '(Todos)') || (r["Tipo_Extensao"] === tipo);
     return okObra && okBloco && okTipo;
   });
 }
@@ -297,8 +291,8 @@ function getFiltered(){
 function sum(rows, key){ return rows.reduce((acc,r)=>acc + (Number(r[key])||0), 0); }
 
 function renderKPIs(rows){
-  const plan = sum(rows, "Extensao Planejada");
-  const exec = sum(rows, "Extensao Executada");
+  const plan = sum(rows, "Extensao_Planejada_m");
+  const exec = sum(rows, "Extensao_Executada_m");
   const saldo = plan - exec;
   const avanco = (plan>0) ? (exec/plan) : NaN;
 
@@ -330,28 +324,32 @@ function plotLayoutBase(){
   };
 }
 
+/* ✅ AQUI É O QUE VOCÊ PEDIU:
+   - eixo X = OBRA
+   - Planejado azul / Executado verde
+*/
 function renderPxE(rows){
-  const byBloco = groupBy(rows, "Bloco");
-  const blocos = Array.from(byBloco.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
+  const byObra = groupBy(rows, "Obra");
+  const obras = Array.from(byObra.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
 
-  const planned = blocos.map(b=> sum(byBloco.get(b), "Extensao Planejada"));
-  const executed = blocos.map(b=> sum(byBloco.get(b), "Extensao Executada"));
+  const planned = obras.map(o => sum(byObra.get(o), "Extensao_Planejada_m"));
+  const executed = obras.map(o => sum(byObra.get(o), "Extensao_Executada_m"));
 
-  const t1 = { x: blocos, y: planned, type:'bar', name:'Planejado (m)' };
-  const t2 = { x: blocos, y: executed, type:'bar', name:'Executado (m)' };
+  const t1 = { x: obras, y: planned, type:'bar', name:'Planejado (m)', marker:{color:'#2563eb'} }; // azul
+  const t2 = { x: obras, y: executed, type:'bar', name:'Executado (m)', marker:{color:'#16a34a'} }; // verde
 
   const layout = plotLayoutBase();
-  layout.barmode='group';
+  layout.barmode = 'group';
   layout.yaxis = {title:'Metros (m)', gridcolor:'rgba(15,23,42,.10)'};
-  layout.xaxis = {tickangle:-35, gridcolor:'rgba(15,23,42,.06)'};
+  layout.xaxis = {tickangle:-30, gridcolor:'rgba(15,23,42,.06)'};
 
   Plotly.newPlot('chartPxE',[t1,t2],layout,{displaylogo:false,responsive:true});
 }
 
 function renderTipos(rows){
-  const byTipo = groupBy(rows, "Tipo Extensao");
+  const byTipo = groupBy(rows, "Tipo_Extensao");
   const tipos = Array.from(byTipo.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
-  const planned = tipos.map(t=> sum(byTipo.get(t), "Extensao Planejada"));
+  const planned = tipos.map(t=> sum(byTipo.get(t), "Extensao_Planejada_m"));
 
   const trace = { labels: tipos, values: planned, type:'pie', textinfo:'label+percent', hole:0.55 };
   const layout = {
@@ -369,8 +367,8 @@ function renderAvanco(rows){
   const blocos = Array.from(byBloco.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
 
   const av = blocos.map(b=>{
-    const plan = sum(byBloco.get(b), "Extensao Planejada");
-    const exec = sum(byBloco.get(b), "Extensao Executada");
+    const plan = sum(byBloco.get(b), "Extensao_Planejada_m");
+    const exec = sum(byBloco.get(b), "Extensao_Executada_m");
     return (plan>0) ? (exec/plan) : null;
   });
 
@@ -386,7 +384,7 @@ function renderAvanco(rows){
 function renderTop10(rows){
   const byBloco = groupBy(rows, "Bloco");
   const items = Array.from(byBloco.entries()).map(([b, rs])=>{
-    return { bloco:b, exec: sum(rs,"Extensao Executada") };
+    return { bloco:b, exec: sum(rs,"Extensao_Executada_m") };
   }).sort((a,b)=>b.exec - a.exec).slice(0,10);
 
   const trace = { x: items.map(i=>i.bloco), y: items.map(i=>i.exec), type:'bar', name:'Executado (m)' };
@@ -404,8 +402,8 @@ function renderTable(rows){
 
   const sorted = [...rows].sort((a,b)=>{
     if (k === "Avanco_pct") {
-      const aa = (a["Extensao Planejada"]>0) ? a["Extensao Executada"]/a["Extensao Planejada"] : -1;
-      const bb = (b["Extensao Planejada"]>0) ? b["Extensao Executada"]/b["Extensao Planejada"] : -1;
+      const aa = (a["Extensao_Planejada_m"]>0) ? a["Extensao_Executada_m"]/a["Extensao_Planejada_m"] : -1;
+      const bb = (b["Extensao_Planejada_m"]>0) ? b["Extensao_Executada_m"]/b["Extensao_Planejada_m"] : -1;
       return dir*(aa-bb);
     }
 
@@ -422,9 +420,9 @@ function renderTable(rows){
     <tr>
       <td>${r["Obra"] ?? ""}</td>
       <td>${r["Bloco"] ?? ""}</td>
-      <td>${r["Tipo Extensao"] ?? ""}</td>
-      <td class="text-end">${fmtNumber(r["Extensao Planejada"])}</td>
-      <td class="text-end">${fmtNumber(r["Extensao Executada"])}</td>
+      <td>${r["Tipo_Extensao"] ?? ""}</td>
+      <td class="text-end">${fmtNumber(r["Extensao_Planejada_m"])}</td>
+      <td class="text-end">${fmtNumber(r["Extensao_Executada_m"])}</td>
       <td class="text-end">${fmtPct(r["Avanco_pct"])}</td>
     </tr>
   `).join('');
