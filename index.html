@@ -2,152 +2,126 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8">
   <title>Dashboard – Acompanhamento de Obras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
 
   <style>
-    body { background:#0b1220; color:#e7eaf0; }
-    .card { background:#101a33; border:1px solid rgba(255,255,255,.08); }
-    .muted { color:rgba(231,234,240,.75); }
-    .badge-soft { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.10); }
-    .kpi-value { font-size:1.55rem; font-weight:700; letter-spacing:.2px; }
-    .kpi-label { font-size:.85rem; color:rgba(231,234,240,.75); }
-    .plot { height: 420px; }
-    .plot-sm { height: 360px; }
-    .table-dark-custom { --bs-table-bg:#0f1730; --bs-table-striped-bg: rgba(255,255,255,.03); }
-    .form-select, .form-control {
-      background:#0f1730; color:#e7eaf0; border:1px solid rgba(255,255,255,.15);
+    body {
+      background-color: #f4f6f8;
+      color: #212529;
+      font-family: Arial, Helvetica, sans-serif;
     }
-    .form-select:focus, .form-control:focus {
-      border-color: rgba(255,255,255,.35); box-shadow:none;
+
+    h3 {
+      font-weight: 700;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+    }
+
+    .kpi-label {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    .kpi-value {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    /* ===== TABELA ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      background-color: #0d6efd;
+      color: #ffffff;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+      border-bottom: 2px solid #0b5ed7;
+    }
+
+    tbody td {
+      padding: 10px;
+      border-bottom: 1px solid #dee2e6;
+      color: #212529;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    tbody tr:hover {
+      background-color: #e9ecef;
+    }
+
+    .text-end {
+      text-align: right;
     }
   </style>
 </head>
 
 <body>
-<div class="container-fluid p-3 p-md-4">
-  <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-3">
-    <div>
-      <h3 class="mb-1">Dashboard – Acompanhamento de Obras</h3>
-      <div id="subtitle" class="muted">Carregando dados…</div>
-    </div>
-    <div class="d-flex gap-2 flex-wrap">
-      <span class="badge badge-soft rounded-pill p-2">Filtros: Obra / Bloco / Tipo</span>
-      <button class="btn btn-sm btn-outline-light" onclick="resetFilters()">Limpar filtros</button>
-      <button class="btn btn-sm btn-outline-light" onclick="reloadData()">Recarregar dados</button>
-    </div>
-  </div>
+<div class="container-fluid p-4">
 
-  <div id="status" class="muted small mb-3">Carregando dados…</div>
-
-  <!-- Filtros -->
-  <div class="card p-3 mb-3">
-    <div class="row g-3">
-      <div class="col-12 col-md-4">
-        <label class="kpi-label mb-1">Obra</label>
-        <select id="obraSelect" class="form-select" onchange="renderAll()" disabled></select>
-      </div>
-      <div class="col-12 col-md-4">
-        <label class="kpi-label mb-1">Bloco</label>
-        <select id="blocoSelect" class="form-select" onchange="renderAll()" disabled></select>
-      </div>
-      <div class="col-12 col-md-4">
-        <label class="kpi-label mb-1">Tipo de extensão</label>
-        <select id="tipoSelect" class="form-select" onchange="renderAll()" disabled></select>
-      </div>
-    </div>
-  </div>
+  <h3 class="mb-4">Dashboard – Acompanhamento de Obras</h3>
 
   <!-- KPIs -->
-  <div class="row g-3 mb-3">
-    <div class="col-12 col-md-3">
-      <div class="card p-3 h-100">
-        <div class="kpi-label">Extensão planejada (m)</div>
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label">Extensão Planejada (m)</div>
         <div id="kpiPlan" class="kpi-value">–</div>
-        <div class="muted small">Somatório do filtro</div>
       </div>
     </div>
-    <div class="col-12 col-md-3">
-      <div class="card p-3 h-100">
-        <div class="kpi-label">Extensão executada (m)</div>
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label">Extensão Executada (m)</div>
         <div id="kpiExec" class="kpi-value">–</div>
-        <div class="muted small">Somatório do filtro</div>
       </div>
     </div>
-    <div class="col-12 col-md-3">
-      <div class="card p-3 h-100">
-        <div class="kpi-label">Saldo a executar (m)</div>
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label">Saldo a Executar (m)</div>
         <div id="kpiSaldo" class="kpi-value">–</div>
-        <div class="muted small">Planejado – Executado</div>
       </div>
     </div>
-    <div class="col-12 col-md-3">
-      <div class="card p-3 h-100">
-        <div class="kpi-label">Avanço físico (%)</div>
+    <div class="col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label">Avanço (%)</div>
         <div id="kpiAvanco" class="kpi-value">–</div>
-        <div class="muted small">Executado / Planejado</div>
       </div>
     </div>
   </div>
 
-  <!-- Gráficos -->
-  <div class="row g-3 mb-3">
-    <div class="col-12 col-lg-8">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold">Planejado × Executado por Bloco</div>
-        <div class="muted small mb-2">Colunas agrupadas</div>
-        <div id="chartPxE" class="plot"></div>
-      </div>
-    </div>
-    <div class="col-12 col-lg-4">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold">Distribuição por Tipo</div>
-        <div class="muted small mb-2">Participação do Planejado (m)</div>
-        <div id="chartTipos" class="plot"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row g-3 mb-3">
-    <div class="col-12 col-lg-6">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold">Avanço (%) por Bloco</div>
-        <div class="muted small mb-2">Executado / Planejado</div>
-        <div id="chartAvanco" class="plot-sm"></div>
-      </div>
-    </div>
-    <div class="col-12 col-lg-6">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold">Ranking – Top 10 Executado (m)</div>
-        <div class="muted small mb-2">Blocos com maior produção</div>
-        <div id="chartTop10" class="plot-sm"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tabela -->
+  <!-- TABELA -->
   <div class="card p-3">
-    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-      <div>
-        <div class="fw-semibold">Tabela detalhada</div>
-        <div class="muted small">Ordene clicando no cabeçalho</div>
-      </div>
-      <div class="muted small">Linhas: <span id="rowCount">–</span></div>
-    </div>
+    <h5 class="mb-3">Tabela Detalhada</h5>
+
     <div class="table-responsive">
-      <table class="table table-striped table-dark-custom align-middle mb-0">
+      <table>
         <thead>
           <tr>
-            <th onclick="sortTable('Obra')" style="cursor:pointer">Obra</th>
-            <th onclick="sortTable('Bloco')" style="cursor:pointer">Bloco</th>
-            <th onclick="sortTable('Tipo Extensao')" style="cursor:pointer">Tipo</th>
-            <th onclick="sortTable('Extensao Planejada')" style="cursor:pointer" class="text-end">Planejado (m)</th>
-            <th onclick="sortTable('Extensao Executada')" style="cursor:pointer" class="text-end">Executado (m)</th>
-            <th onclick="sortTable('Avanco_pct')" style="cursor:pointer" class="text-end">Avanço (%)</th>
+            <th>Obra</th>
+            <th>Bloco</th>
+            <th>Tipo</th>
+            <th class="text-end">Planejado (m)</th>
+            <th class="text-end">Executado (m)</th>
+            <th class="text-end">Avanço (%)</th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
@@ -155,265 +129,56 @@
     </div>
   </div>
 
-  <div class="muted small mt-3">
-    Dica: se estiver vendo dados antigos, clique em <b>Recarregar dados</b>.
-  </div>
 </div>
 
 <script>
-let RAW = [];
-let currentSort = { key: 'Obra', dir: 1 };
+let DATA = [];
 
-function setStatus(msg){ document.getElementById('status').innerText = msg; }
-function setSubtitle(msg){ document.getElementById('subtitle').innerText = msg; }
-
-function enableControls(enabled){
-  document.getElementById('obraSelect').disabled = !enabled;
-  document.getElementById('blocoSelect').disabled = !enabled;
-  document.getElementById('tipoSelect').disabled = !enabled;
+function fmt(n) {
+  return Number(n).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
 }
 
-function fmtNumber(x){
-  if (x === null || x === undefined || isNaN(x)) return "–";
-  return Number(x).toLocaleString('pt-BR', {maximumFractionDigits: 1});
-}
-function fmtPct(x){
-  if (x === null || x === undefined || isNaN(x)) return "–";
-  return (100*Number(x)).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + "%";
-}
-function uniq(arr){
-  return Array.from(new Set(arr.filter(v=>v!==null && v!==undefined)))
-    .sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
+function pct(v) {
+  return (v * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%';
 }
 
-async function reloadData(){
-  try{
-    enableControls(false);
-    setStatus("Carregando dados…");
-    const resp = await fetch("dados.json?cache=" + Date.now());
-    if(!resp.ok) throw new Error("HTTP " + resp.status);
-    RAW = await resp.json();
+fetch('dados.json?cache=' + Date.now())
+  .then(r => r.json())
+  .then(dados => {
+    DATA = dados;
 
-    // Normaliza tipos numéricos (caso venha como texto)
-    RAW.forEach(r=>{
-      r["Extensao Planejada"] = Number(String(r["Extensao Planejada"] ?? "0").replace(",", ".")) || 0;
-      r["Extensao Executada"] = Number(String(r["Extensao Executada"] ?? "0").replace(",", ".")) || 0;
-      // se o python já trouxe Avanco_pct ok, mantém
-      if (r["Avanco_pct"] === undefined || r["Avanco_pct"] === null){
-        r["Avanco_pct"] = (r["Extensao Planejada"]>0) ? (r["Extensao Executada"]/r["Extensao Planejada"]) : null;
-      }
+    let plan = 0;
+    let exec = 0;
+
+    const body = document.getElementById('tableBody');
+    body.innerHTML = '';
+
+    DATA.forEach(r => {
+      const p = Number(r["Extensao Planejada"] || 0);
+      const e = Number(r["Extensao Executada"] || 0);
+      const a = p > 0 ? e / p : 0;
+
+      plan += p;
+      exec += e;
+
+      body.innerHTML += `
+        <tr>
+          <td>${r["Obra"]}</td>
+          <td>${r["Bloco"]}</td>
+          <td>${r["Tipo Extensao"]}</td>
+          <td class="text-end">${fmt(p)}</td>
+          <td class="text-end">${fmt(e)}</td>
+          <td class="text-end">${pct(a)}</td>
+        </tr>
+      `;
     });
 
-    initFilters();
-    resetFilters();
-    setStatus("Dados carregados: " + RAW.length.toLocaleString('pt-BR') + " linhas.");
-    setSubtitle("Fonte: dados.json (gerado do Excel) • Atualize o Excel e rode o script diário.");
-    enableControls(true);
-  }catch(e){
-    console.error(e);
-    setStatus("Erro ao carregar dados.json. Verifique se o arquivo existe na mesma pasta do index.html.");
-  }
-}
-
-function initFilters(){
-  const obraSel = document.getElementById('obraSelect');
-  const blocoSel = document.getElementById('blocoSelect');
-  const tipoSel = document.getElementById('tipoSelect');
-
-  const obras = ['(Todas)'].concat(uniq(RAW.map(r=>r["Obra"])));
-  const blocos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Bloco"])));
-  const tipos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Tipo Extensao"])));
-
-  obraSel.innerHTML = obras.map(o=>`<option value="${o}">${o}</option>`).join('');
-  blocoSel.innerHTML = blocos.map(b=>`<option value="${b}">${b}</option>`).join('');
-  tipoSel.innerHTML = tipos.map(t=>`<option value="${t}">${t}</option>`).join('');
-}
-
-function getFiltered(){
-  const obra = document.getElementById('obraSelect').value;
-  const bloco = document.getElementById('blocoSelect').value;
-  const tipo = document.getElementById('tipoSelect').value;
-
-  return RAW.filter(r=>{
-    const okObra = (obra === '(Todas)') || (r["Obra"] === obra);
-    const okBloco = (bloco === '(Todos)') || (String(r["Bloco"]) === String(bloco));
-    const okTipo = (tipo === '(Todos)') || (r["Tipo Extensao"] === tipo);
-    return okObra && okBloco && okTipo;
+    document.getElementById('kpiPlan').innerText = fmt(plan);
+    document.getElementById('kpiExec').innerText = fmt(exec);
+    document.getElementById('kpiSaldo').innerText = fmt(plan - exec);
+    document.getElementById('kpiAvanco').innerText = pct(exec / plan);
   });
-}
-
-function sum(rows, key){ return rows.reduce((acc,r)=>acc + (Number(r[key])||0), 0); }
-
-function renderKPIs(rows){
-  const plan = sum(rows, "Extensao Planejada");
-  const exec = sum(rows, "Extensao Executada");
-  const saldo = plan - exec;
-  const avanco = (plan>0) ? (exec/plan) : NaN;
-
-  document.getElementById('kpiPlan').innerText = fmtNumber(plan);
-  document.getElementById('kpiExec').innerText = fmtNumber(exec);
-  document.getElementById('kpiSaldo').innerText = fmtNumber(saldo);
-  document.getElementById('kpiAvanco').innerText = fmtPct(avanco);
-}
-
-function groupBy(rows, key){
-  const m = new Map();
-  rows.forEach(r=>{
-    const k = r[key];
-    if(!m.has(k)) m.set(k, []);
-    m.get(k).push(r);
-  });
-  return m;
-}
-
-function renderPxE(rows){
-  const byBloco = groupBy(rows, "Bloco");
-  const blocos = Array.from(byBloco.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
-
-  const planned = blocos.map(b=> sum(byBloco.get(b), "Extensao Planejada"));
-  const executed = blocos.map(b=> sum(byBloco.get(b), "Extensao Executada"));
-
-  const t1 = { x: blocos, y: planned, type:'bar', name:'Planejado (m)' };
-  const t2 = { x: blocos, y: executed, type:'bar', name:'Executado (m)' };
-
-  const layout = {
-    barmode:'group',
-    paper_bgcolor:'rgba(0,0,0,0)',
-    plot_bgcolor:'rgba(0,0,0,0)',
-    font:{color:'#e7eaf0'},
-    margin:{l:60,r:20,t:10,b:90},
-    yaxis:{title:'Metros (m)', gridcolor:'rgba(255,255,255,.08)'},
-    xaxis:{tickangle:-35, gridcolor:'rgba(255,255,255,.04)'},
-    legend:{orientation:'h', y:1.12}
-  };
-  Plotly.newPlot('chartPxE',[t1,t2],layout,{displaylogo:false,responsive:true});
-}
-
-function renderTipos(rows){
-  const byTipo = groupBy(rows, "Tipo Extensao");
-  const tipos = Array.from(byTipo.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
-  const planned = tipos.map(t=> sum(byTipo.get(t), "Extensao Planejada"));
-
-  const trace = { labels: tipos, values: planned, type:'pie', textinfo:'label+percent', hole:0.55 };
-  const layout = {
-    paper_bgcolor:'rgba(0,0,0,0)',
-    plot_bgcolor:'rgba(0,0,0,0)',
-    font:{color:'#e7eaf0'},
-    margin:{l:10,r:10,t:10,b:10},
-    showlegend:false
-  };
-  Plotly.newPlot('chartTipos',[trace],layout,{displaylogo:false,responsive:true});
-}
-
-function renderAvanco(rows){
-  const byBloco = groupBy(rows, "Bloco");
-  const blocos = Array.from(byBloco.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
-
-  const av = blocos.map(b=>{
-    const plan = sum(byBloco.get(b), "Extensao Planejada");
-    const exec = sum(byBloco.get(b), "Extensao Executada");
-    return (plan>0) ? (exec/plan) : null;
-  });
-
-  const trace = {
-    x: blocos,
-    y: av.map(v=>v===null?null:100*v),
-    type:'bar',
-    name:'Avanço (%)'
-  };
-  const layout = {
-    paper_bgcolor:'rgba(0,0,0,0)',
-    plot_bgcolor:'rgba(0,0,0,0)',
-    font:{color:'#e7eaf0'},
-    margin:{l:60,r:20,t:10,b:90},
-    yaxis:{title:'%', gridcolor:'rgba(255,255,255,.08)'},
-    xaxis:{tickangle:-35, gridcolor:'rgba(255,255,255,.04)'}
-  };
-  Plotly.newPlot('chartAvanco',[trace],layout,{displaylogo:false,responsive:true});
-}
-
-function renderTop10(rows){
-  const byBloco = groupBy(rows, "Bloco");
-  const items = Array.from(byBloco.entries()).map(([b, rs])=>{
-    return { bloco:b, exec: sum(rs,"Extensao Executada") };
-  }).sort((a,b)=>b.exec - a.exec).slice(0,10);
-
-  const trace = {
-    x: items.map(i=>i.bloco),
-    y: items.map(i=>i.exec),
-    type:'bar',
-    name:'Executado (m)'
-  };
-  const layout = {
-    paper_bgcolor:'rgba(0,0,0,0)',
-    plot_bgcolor:'rgba(0,0,0,0)',
-    font:{color:'#e7eaf0'},
-    margin:{l:60,r:20,t:10,b:90},
-    yaxis:{title:'Metros (m)', gridcolor:'rgba(255,255,255,.08)'},
-    xaxis:{tickangle:-35, gridcolor:'rgba(255,255,255,.04)'}
-  };
-  Plotly.newPlot('chartTop10',[trace],layout,{displaylogo:false,responsive:true});
-}
-
-function renderTable(rows){
-  const k = currentSort.key;
-  const dir = currentSort.dir;
-
-  const sorted = [...rows].sort((a,b)=>{
-    const va=a[k], vb=b[k];
-    const na=Number(va), nb=Number(vb);
-    const bothNum = !isNaN(na) && !isNaN(nb) && va!==null && vb!==null;
-
-    if (k === "Avanco_pct") {
-      const aa = (a["Extensao Planejada"]>0) ? a["Extensao Executada"]/a["Extensao Planejada"] : -1;
-      const bb = (b["Extensao Planejada"]>0) ? b["Extensao Executada"]/b["Extensao Planejada"] : -1;
-      return dir*(aa-bb);
-    }
-
-    if (bothNum) return dir*(na-nb);
-    return dir*String(va).localeCompare(String(vb),'pt-BR');
-  });
-
-  const body = document.getElementById('tableBody');
-  body.innerHTML = sorted.map(r=>`
-    <tr>
-      <td>${r["Obra"] ?? ""}</td>
-      <td>${r["Bloco"] ?? ""}</td>
-      <td>${r["Tipo Extensao"] ?? ""}</td>
-      <td class="text-end">${fmtNumber(r["Extensao Planejada"])}</td>
-      <td class="text-end">${fmtNumber(r["Extensao Executada"])}</td>
-      <td class="text-end">${fmtPct(r["Avanco_pct"])}</td>
-    </tr>
-  `).join('');
-
-  document.getElementById('rowCount').innerText = sorted.length.toLocaleString('pt-BR');
-}
-
-function sortTable(key){
-  if(currentSort.key===key) currentSort.dir=-currentSort.dir;
-  else { currentSort.key=key; currentSort.dir=1; }
-  renderAll();
-}
-
-function resetFilters(){
-  document.getElementById('obraSelect').value='(Todas)';
-  document.getElementById('blocoSelect').value='(Todos)';
-  document.getElementById('tipoSelect').value='(Todos)';
-  currentSort = { key:'Obra', dir:1 };
-  renderAll();
-}
-
-function renderAll(){
-  const rows = getFiltered();
-  renderKPIs(rows);
-  renderPxE(rows);
-  renderTipos(rows);
-  renderAvanco(rows);
-  renderTop10(rows);
-  renderTable(rows);
-}
-
-reloadData();
 </script>
+
 </body>
 </html>
