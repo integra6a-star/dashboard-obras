@@ -17,15 +17,14 @@
       --border:#e5e7eb;
       --primary:#2563eb;
       --primary-soft:#e8efff;
-      --ok:#16a34a;
-      --warn:#f59e0b;
-      --bad:#dc2626;
     }
+
     body{
       background: var(--bg);
       color: var(--text);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
+
     .muted{ color: var(--muted); }
     .card{
       background: var(--card);
@@ -33,14 +32,17 @@
       box-shadow: 0 2px 10px rgba(15,23,42,.06);
       border-radius: 14px;
     }
+
     .badge-soft{
       background: var(--primary-soft);
       color: var(--primary);
       border: 1px solid rgba(37,99,235,.15);
       font-weight: 600;
     }
+
     .kpi-label{ font-size:.85rem; color: var(--muted); }
     .kpi-value{ font-size: 1.9rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
+
     .plot{ height: 360px; }
     .plot-sm{ height: 320px; }
 
@@ -52,7 +54,6 @@
       font-weight: 700;
       border-bottom: 2px solid rgba(255,255,255,.2);
       white-space: nowrap;
-      cursor:pointer;
     }
     tbody td{
       padding: 10px;
@@ -66,16 +67,6 @@
     .form-select{
       border-radius: 10px;
       border-color: var(--border);
-    }
-
-    .alert-debug{
-      border-radius: 14px;
-      border: 1px solid rgba(220,38,38,.25);
-      background: rgba(220,38,38,.08);
-      color: #7f1d1d;
-      padding: 12px 14px;
-      display:none;
-      white-space: pre-wrap;
     }
   </style>
 </head>
@@ -94,7 +85,6 @@
     </div>
   </div>
 
-  <div id="debugBox" class="alert-debug mb-3"></div>
   <div id="status" class="muted small mb-3">Carregando dados…</div>
 
   <!-- Filtros -->
@@ -152,7 +142,7 @@
     <div class="col-12 col-lg-8">
       <div class="card p-3 h-100">
         <div class="fw-semibold">Planejado × Executado por Obra</div>
-        <div class="muted small mb-2">Planejado = azul • Executado = verde</div>
+        <div class="muted small mb-2">Colunas agrupadas</div>
         <div id="chartPxE" class="plot"></div>
       </div>
     </div>
@@ -196,12 +186,12 @@
       <table class="align-middle mb-0">
         <thead>
           <tr>
-            <th onclick="sortTable('Obra')">Obra</th>
-            <th onclick="sortTable('Bloco')">Bloco</th>
-            <th onclick="sortTable('Tipo')">Tipo</th>
-            <th onclick="sortTable('Planejado')" class="text-end">Planejado (m)</th>
-            <th onclick="sortTable('Executado')" class="text-end">Executado (m)</th>
-            <th onclick="sortTable('Avanco_pct')" class="text-end">Avanço (%)</th>
+            <th onclick="sortTable('Obra')" style="cursor:pointer">Obra</th>
+            <th onclick="sortTable('Bloco')" style="cursor:pointer">Bloco</th>
+            <th onclick="sortTable('Tipo_Extensao')" style="cursor:pointer">Tipo</th>
+            <th onclick="sortTable('Extensao_Planejada_m')" style="cursor:pointer" class="text-end">Planejado (m)</th>
+            <th onclick="sortTable('Extensao_Executada_m')" style="cursor:pointer" class="text-end">Executado (m)</th>
+            <th onclick="sortTable('Avanco_pct')" style="cursor:pointer" class="text-end">Avanço (%)</th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
@@ -217,17 +207,6 @@
 <script>
 let RAW = [];
 let currentSort = { key: 'Obra', dir: 1 };
-
-function showDebug(msg){
-  const el = document.getElementById('debugBox');
-  el.style.display = 'block';
-  el.textContent = msg;
-}
-function hideDebug(){
-  const el = document.getElementById('debugBox');
-  el.style.display = 'none';
-  el.textContent = '';
-}
 
 function setStatus(msg){ document.getElementById('status').innerText = msg; }
 function setSubtitle(msg){ document.getElementById('subtitle').innerText = msg; }
@@ -251,91 +230,34 @@ function uniq(arr){
     .sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
 }
 
-function normalizeRow(r){
-  // aceita variações, mas PRIORIDADE é o seu padrão com underline
-  const obra  = r["Obra"];
-  const bloco = r["Bloco"];
-
-  const tipo = (r["Tipo_Extensao"] ?? r["Tipo Extensao"] ?? r["Tipo"]) ?? "";
-  const plan = (r["Extensao_Planejada_m"] ?? r["Extensao Planejada"] ?? r["Planejado"] ?? 0);
-  const exec = (r["Extensao_Executada_m"] ?? r["Extensao Executada"] ?? r["Executado"] ?? 0);
-
-  const planN = Number(String(plan).replace(",", ".")) || 0;
-  const execN = Number(String(exec).replace(",", ".")) || 0;
-
-  return {
-    Obra: obra,
-    Bloco: bloco,
-    Tipo: tipo,
-    Planejado: planN,
-    Executado: execN,
-    Avanco_pct: planN > 0 ? (execN / planN) : null
-  };
-}
-
 async function reloadData(){
   try{
-    hideDebug();
     enableControls(false);
     setStatus("Carregando dados…");
 
-    if (!window.Plotly){
-      showDebug("ERRO: Plotly não carregou.\n• Verifique internet/rede.\n• Tente atualizar (Ctrl+F5).");
-      setStatus("Falha: Plotly não carregou.");
-      return;
-    }
+    const resp = await fetch("dados.json?cache=" + Date.now());
+    if(!resp.ok) throw new Error("HTTP " + resp.status);
+    RAW = await resp.json();
 
-    const url = "dados.json?cache=" + Date.now();
-    const resp = await fetch(url);
+    // Normaliza números + cria Avanco_pct
+    RAW.forEach(r=>{
+      r["Extensao_Planejada_m"] = Number(String(r["Extensao_Planejada_m"] ?? "0").replace(",", ".")) || 0;
+      r["Extensao_Executada_m"] = Number(String(r["Extensao_Executada_m"] ?? "0").replace(",", ".")) || 0;
 
-    if(!resp.ok){
-      showDebug("ERRO ao buscar dados.json\nHTTP " + resp.status + " (" + resp.statusText + ")\n\nConfirme se existe o arquivo 'dados.json' no mesmo nível do index.html.");
-      setStatus("Falha: dados.json não encontrado.");
-      return;
-    }
-
-    // lê como texto para remover BOM se existir
-    let txt = await resp.text();
-    txt = txt.replace(/^\uFEFF/, ""); // remove BOM
-    let parsed;
-    try{
-      parsed = JSON.parse(txt);
-    }catch(e){
-      showDebug("ERRO: dados.json não é um JSON válido.\n\nDetalhe: " + e.message);
-      setStatus("Falha: JSON inválido.");
-      return;
-    }
-
-    if(!Array.isArray(parsed)){
-      showDebug("ERRO: dados.json deveria ser uma lista (array) de linhas.\nRecebi: " + (typeof parsed));
-      setStatus("Falha: formato errado.");
-      return;
-    }
-
-    RAW = parsed.map(normalizeRow);
-
-    // valida colunas mínimas
-    const sample = RAW[0] || {};
-    if (sample.Obra === undefined || sample.Planejado === undefined || sample.Executado === undefined){
-      showDebug(
-        "ERRO: Não encontrei as colunas esperadas.\n" +
-        "Esperado (seu padrão): Obra, Bloco, Tipo_Extensao, Extensao_Planejada_m, Extensao_Executada_m\n\n" +
-        "Exemplo da 1ª linha recebida:\n" + JSON.stringify(parsed[0], null, 2)
-      );
-      setStatus("Falha: colunas não reconhecidas.");
-      return;
-    }
+      r["Avanco_pct"] = (r["Extensao_Planejada_m"]>0)
+        ? (r["Extensao_Executada_m"]/r["Extensao_Planejada_m"])
+        : null;
+    });
 
     initFilters();
     resetFilters();
 
     setStatus("Dados carregados: " + RAW.length.toLocaleString('pt-BR') + " linhas.");
-    setSubtitle("Fonte: dados.json • Atualize o Excel e gere o dados.json novamente quando precisar.");
+    setSubtitle("Fonte: dados.json (gerado do Excel) • Atualize o Excel e rode o script.");
     enableControls(true);
-
   }catch(e){
-    showDebug("ERRO inesperado:\n" + (e && e.message ? e.message : String(e)));
-    setStatus("Falha inesperada.");
+    console.error(e);
+    setStatus("Erro ao carregar dados.json. Confira se está no mesmo local do index.html.");
   }
 }
 
@@ -344,9 +266,9 @@ function initFilters(){
   const blocoSel = document.getElementById('blocoSelect');
   const tipoSel = document.getElementById('tipoSelect');
 
-  const obras = ['(Todas)'].concat(uniq(RAW.map(r=>r.Obra)));
-  const blocos = ['(Todos)'].concat(uniq(RAW.map(r=>r.Bloco)));
-  const tipos = ['(Todos)'].concat(uniq(RAW.map(r=>r.Tipo)));
+  const obras = ['(Todas)'].concat(uniq(RAW.map(r=>r["Obra"])));
+  const blocos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Bloco"])));
+  const tipos = ['(Todos)'].concat(uniq(RAW.map(r=>r["Tipo_Extensao"])));
 
   obraSel.innerHTML = obras.map(o=>`<option value="${o}">${o}</option>`).join('');
   blocoSel.innerHTML = blocos.map(b=>`<option value="${b}">${b}</option>`).join('');
@@ -359,9 +281,9 @@ function getFiltered(){
   const tipo = document.getElementById('tipoSelect').value;
 
   return RAW.filter(r=>{
-    const okObra = (obra === '(Todas)') || (r.Obra === obra);
-    const okBloco = (bloco === '(Todos)') || (String(r.Bloco) === String(bloco));
-    const okTipo = (tipo === '(Todos)') || (r.Tipo === tipo);
+    const okObra = (obra === '(Todas)') || (r["Obra"] === obra);
+    const okBloco = (bloco === '(Todos)') || (String(r["Bloco"]) === String(bloco));
+    const okTipo = (tipo === '(Todos)') || (r["Tipo_Extensao"] === tipo);
     return okObra && okBloco && okTipo;
   });
 }
@@ -369,8 +291,8 @@ function getFiltered(){
 function sum(rows, key){ return rows.reduce((acc,r)=>acc + (Number(r[key])||0), 0); }
 
 function renderKPIs(rows){
-  const plan = sum(rows, "Planejado");
-  const exec = sum(rows, "Executado");
+  const plan = sum(rows, "Extensao_Planejada_m");
+  const exec = sum(rows, "Extensao_Executada_m");
   const saldo = plan - exec;
   const avanco = (plan>0) ? (exec/plan) : NaN;
 
@@ -402,19 +324,22 @@ function plotLayoutBase(){
   };
 }
 
-/* ✅ Pedido: por OBRA + cores azul/verde */
+/* ✅ AQUI É O QUE VOCÊ PEDIU:
+   - eixo X = OBRA
+   - Planejado azul / Executado verde
+*/
 function renderPxE(rows){
   const byObra = groupBy(rows, "Obra");
   const obras = Array.from(byObra.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
 
-  const planned = obras.map(o => sum(byObra.get(o), "Planejado"));
-  const executed = obras.map(o => sum(byObra.get(o), "Executado"));
+  const planned = obras.map(o => sum(byObra.get(o), "Extensao_Planejada_m"));
+  const executed = obras.map(o => sum(byObra.get(o), "Extensao_Executada_m"));
 
-  const t1 = { x: obras, y: planned, type:'bar', name:'Planejado (m)', marker:{color:'#2563eb'} };
-  const t2 = { x: obras, y: executed, type:'bar', name:'Executado (m)', marker:{color:'#16a34a'} };
+  const t1 = { x: obras, y: planned, type:'bar', name:'Planejado (m)', marker:{color:'#2563eb'} }; // azul
+  const t2 = { x: obras, y: executed, type:'bar', name:'Executado (m)', marker:{color:'#16a34a'} }; // verde
 
   const layout = plotLayoutBase();
-  layout.barmode='group';
+  layout.barmode = 'group';
   layout.yaxis = {title:'Metros (m)', gridcolor:'rgba(15,23,42,.10)'};
   layout.xaxis = {tickangle:-30, gridcolor:'rgba(15,23,42,.06)'};
 
@@ -422,9 +347,9 @@ function renderPxE(rows){
 }
 
 function renderTipos(rows){
-  const byTipo = groupBy(rows, "Tipo");
+  const byTipo = groupBy(rows, "Tipo_Extensao");
   const tipos = Array.from(byTipo.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
-  const planned = tipos.map(t=> sum(byTipo.get(t), "Planejado"));
+  const planned = tipos.map(t=> sum(byTipo.get(t), "Extensao_Planejada_m"));
 
   const trace = { labels: tipos, values: planned, type:'pie', textinfo:'label+percent', hole:0.55 };
   const layout = {
@@ -442,8 +367,8 @@ function renderAvanco(rows){
   const blocos = Array.from(byBloco.keys()).sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
 
   const av = blocos.map(b=>{
-    const plan = sum(byBloco.get(b), "Planejado");
-    const exec = sum(byBloco.get(b), "Executado");
+    const plan = sum(byBloco.get(b), "Extensao_Planejada_m");
+    const exec = sum(byBloco.get(b), "Extensao_Executada_m");
     return (plan>0) ? (exec/plan) : null;
   });
 
@@ -459,7 +384,7 @@ function renderAvanco(rows){
 function renderTop10(rows){
   const byBloco = groupBy(rows, "Bloco");
   const items = Array.from(byBloco.entries()).map(([b, rs])=>{
-    return { bloco:b, exec: sum(rs,"Executado") };
+    return { bloco:b, exec: sum(rs,"Extensao_Executada_m") };
   }).sort((a,b)=>b.exec - a.exec).slice(0,10);
 
   const trace = { x: items.map(i=>i.bloco), y: items.map(i=>i.exec), type:'bar', name:'Executado (m)' };
@@ -477,8 +402,8 @@ function renderTable(rows){
 
   const sorted = [...rows].sort((a,b)=>{
     if (k === "Avanco_pct") {
-      const aa = (a.Planejado>0) ? a.Executado/a.Planejado : -1;
-      const bb = (b.Planejado>0) ? b.Executado/b.Planejado : -1;
+      const aa = (a["Extensao_Planejada_m"]>0) ? a["Extensao_Executada_m"]/a["Extensao_Planejada_m"] : -1;
+      const bb = (b["Extensao_Planejada_m"]>0) ? b["Extensao_Executada_m"]/b["Extensao_Planejada_m"] : -1;
       return dir*(aa-bb);
     }
 
@@ -493,12 +418,12 @@ function renderTable(rows){
   const body = document.getElementById('tableBody');
   body.innerHTML = sorted.map(r=>`
     <tr>
-      <td>${r.Obra ?? ""}</td>
-      <td>${r.Bloco ?? ""}</td>
-      <td>${r.Tipo ?? ""}</td>
-      <td class="text-end">${fmtNumber(r.Planejado)}</td>
-      <td class="text-end">${fmtNumber(r.Executado)}</td>
-      <td class="text-end">${fmtPct(r.Avanco_pct)}</td>
+      <td>${r["Obra"] ?? ""}</td>
+      <td>${r["Bloco"] ?? ""}</td>
+      <td>${r["Tipo_Extensao"] ?? ""}</td>
+      <td class="text-end">${fmtNumber(r["Extensao_Planejada_m"])}</td>
+      <td class="text-end">${fmtNumber(r["Extensao_Executada_m"])}</td>
+      <td class="text-end">${fmtPct(r["Avanco_pct"])}</td>
     </tr>
   `).join('');
 
