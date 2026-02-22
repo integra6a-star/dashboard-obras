@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financeiro – Funcionários</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body{font-family:Arial;margin:14px;background:#f4f6f8}
+    .container{max-width:1400px;margin:0 auto}
+
+    .header{
+      background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);
+      padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:14px;
+      justify-content:space-between;flex-wrap:wrap;
+    }
+    .h-left{display:flex;flex-direction:column;gap:2px}
+    .t1{font-size:18px;font-weight:800;margin:0}
+    .t2{font-size:12px;color:#6b7280;margin:0}
+
+    .h-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .badge{
+      font-size:12px;color:#0b57d0;background:#e8f0ff;border:1px solid #cfe0ff;
+      padding:6px 10px;border-radius:999px;white-space:nowrap;
+    }
+    .btn{
+      border:1px solid #d8dde6;background:#fff;border-radius:10px;
+      padding:8px 12px;cursor:pointer;font-weight:700;
+    }
+
+    .filters{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap:14px;margin-bottom:14px
+    }
+    .filters2{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 2fr;
+      gap:14px;margin-bottom:6px
+    }
+    select,input{width:100%;padding:12px;border-radius:12px;border:1px solid #e3e7ee;background:#fff}
+
+    .note{
+      margin: 8px 0 14px 0;
+      font-size:12px;
+      color:#6b7280;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;margin-bottom:14px
+    }
+    @media (max-width: 1100px){ .cards{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 650px){
+      .cards{grid-template-columns:1fr}
+      .filters, .filters2{grid-template-columns:1fr}
+    }
+
+    .card{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .card .t{font-size:13px;color:#555}
+    .card .v{font-size:26px;font-weight:800;color:#0b57d0}
+    .card .s{font-size:12px;color:#6b7280;margin-top:6px}
+
+    .card.big .v{font-size:32px}
+    .card.big{border:1px solid #cfe0ff}
+
+    .charts{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .chart-card{
+      background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);
+      padding:14px;
+    }
+    .chart-card.span2{grid-column:1 / -1;}
+    .chart-title{font-weight:800;margin:0 0 10px 0;color:#111827;font-size:14px}
+    .chart-wrap{height:280px}
+    .chart-wrap.tall{height:300px}
+    .muted{color:#6b7280;font-size:12px}
+
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{background:#1f5fe0;color:#fff;padding:10px;position:sticky;top:0}
+    tbody td{padding:10px;border-bottom:1px solid #eee}
+    tbody tr:nth-child(even){background:#f7fbff}
+    td.num{text-align:right}
+
+    .warn{
+      margin-bottom:14px;padding:12px;border-radius:12px;
+      background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;display:none;
+    }
+    .info{
+      margin-bottom:14px;padding:12px;border-radius:12px;
+      background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;display:none;
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="h-left">
+    <p class="t1">Financeiro – Funcionários</p>
+    <p class="t2">Visão consolidada • Acesso protegido</p>
+  </div>
+  <div class="h-actions">
+    <span class="badge" id="badgeAtualizado">Atualizado: -</span>
+    <button class="btn" onclick="clearFilters()">Limpar filtros</button>
+    <button class="btn" onclick="loadFuncionarios()">Recarregar</button>
+    <button class="btn" onclick="window.close()">Fechar</button>
+  </div>
+</div>
+
+<div class="warn" id="warnBox"></div>
+<div class="info" id="infoBox"></div>
+
+<div class="filters">
+  <select id="fResponsavel"><option value="">Responsável (Todos)</option></select>
+  <select id="fEquipe"><option value="">Equipe (Todas)</option></select>
+  <select id="fSetor"><option value="">Setor (Todos)</option></select>
+  <select id="fStatus"><option value="">Status (Todos)</option></select>
+</div>
+
+<div class="filters2">
+  <select id="fRegime"><option value="">Regime (Todos)</option></select>
+  <select id="fCusto"><option value="">Custo (Todos)</option></select>
+  <select id="fFuncao"><option value="">Função (Todas)</option></select>
+  <input id="fBusca" placeholder="Buscar por nome, matrícula, placa..."/>
+</div>
+
+<p class="note">
+  Indicadores e gráficos consideram apenas <b>Ativos</b> e <b>Afastados</b> (Inativos não entram no financeiro).
+</p>
+
+<div class="cards">
+  <div class="card"><div class="t">Pessoas (no filtro)</div><div class="v" id="kQtd">0</div><div class="s" id="kSubQtd">—</div></div>
+  <div class="card"><div class="t">Ativos</div><div class="v" id="kAtivos">0</div><div class="s">Dentro do filtro atual</div></div>
+  <div class="card"><div class="t">Afastados</div><div class="v" id="kAfastados">0</div><div class="s">Dentro do filtro atual</div></div>
+
+  <div class="card"><div class="t">Total Salários (R$)</div><div class="v" id="kSal">0</div><div class="s">Somente Ativos + Afastados</div></div>
+  <div class="card"><div class="t">Total VR (R$)</div><div class="v" id="kVR">0</div><div class="s">Somente Ativos + Afastados</div></div>
+  <div class="card"><div class="t">Combustível (R$)</div><div class="v" id="kComb">0</div><div class="s">Somente Ativos + Afastados</div></div>
+
+  <div class="card big">
+    <div class="t">Custo Mensal Total (R$)</div>
+    <div class="v" id="kCustoTotal">0</div>
+    <div class="s" id="kCustoMedio">—</div>
+  </div>
+
+  <div class="card">
+    <div class="t">Custo Frota (R$)</div>
+    <div class="v" id="kFrota">0</div>
+    <div class="s">Somente Ativos + Afastados</div>
+  </div>
+
+  <div class="card">
+    <div class="t">Salário CLT (R$)</div>
+    <div class="v" id="kSalCLT">0</div>
+    <div class="s">Somente Ativos/Afastados • CLT</div>
+  </div>
+
+  <div class="card">
+    <div class="t">Salário PJ (R$)</div>
+    <div class="v" id="kSalPJ">0</div>
+    <div class="s">Somente Ativos/Afastados • PJ</div>
+  </div>
+</div>
+
+<div class="charts">
+  <div class="chart-card">
+    <p class="chart-title">Pessoas por Responsável</p>
+    <div class="chart-wrap"><canvas id="chartResp"></canvas></div>
+    <p class="muted">Somente Ativos + Afastados. Sem “(vazio)”.</p>
+  </div>
+
+  <div class="chart-card">
+    <p class="chart-title">Pessoas por Equipe</p>
+    <div class="chart-wrap"><canvas id="chartEquipe"></canvas></div>
+    <p class="muted">Somente Ativos + Afastados. Sem “(vazio)”.</p>
+  </div>
+
+  <div class="chart-card">
+    <p class="chart-title">Custo por Equipe (R$)</p>
+    <div class="chart-wrap"><canvas id="chartCustoResp"></canvas></div>
+    
+  </div>
+
+  <div class="chart-card">
+    <p class="chart-title">Composição do Custo Mensal (Donut)</p>
+    <div class="chart-wrap"><canvas id="chartDonut"></canvas></div>
+    
+  </div>
+
+  <div class="chart-card span2">
+    <p class="chart-title">Evolução Mensal – Custo Total (Histórico)</p>
+    <div class="chart-wrap tall"><canvas id="chartHistorico"></canvas></div>
+    
+  </div>
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>Setor</th><th>Equipe</th><th>Responsável</th><th>Matrícula</th>
+  <th>Nome</th><th>Função</th><th>Status</th><th>Regime</th><th>Custo</th>
+  <th class="num">Salário</th><th class="num">VR</th><th class="num">Comb.</th>
+  <th class="num">Frota</th>
+  <th class="num">Custo Total</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+
+</div>
+
+<script>
+(function(){
+  const _s = (prompt("Senha:") || "").trim();
+  if(_s!=="2010"){ alert("Senha incorreta e Palmeiras não tem mundial"); document.body.innerHTML=""; throw 0; }
+})();
+
+let RAWF = [];
+let VIEW = [];
+let CHARTS = {};
+
+// Histórico mensal (agregados) – arquivo gerado pelo atualizar.bat
+let HIST = null;
+
+const fmt = n => Number(n||0).toLocaleString("pt-BR",{minimumFractionDigits:2});
+const money = n => Number(n||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const norm = s => String(s||"").trim();
+
+function toNum(v){
+  if(v==null) return 0;
+  if(typeof v==="number") return v;
+  let s=String(v).replace(/\s|R\$/gi,"").replace(/[^\d.,-]/g,"");
+  if(s.includes(",")&&s.includes(".")) s=s.replace(/\./g,"").replace(",",".");
+  else if(s.includes(",")) s=s.replace(",",".");
+  const n=Number(s);
+  return isNaN(n)?0:n;
+}
+function isBlankVal(v){
+  return norm(v)==="" || norm(v).toLowerCase()==="(vazio)";
+}
+
+/* Normalizações */
+function normRegime(r){
+  const s = norm(r).toLowerCase();
+  if(!s) return "";
+  if(s.includes("clt")) return "CLT";
+  if(s.includes("pj") || s.includes("jurid") || s.includes("pessoa") || s.includes("prest") || s.includes("terceir") || s.includes("autonom")) return "PJ";
+  return s.toUpperCase();
+}
+function normStatus(st){
+  const s = norm(st).toLowerCase();
+  if(!s) return "";
+  if(s.includes("afast")) return "Afastado";
+  if(s === "ativo") return "Ativo";
+  if(s.includes("inativ") || s.includes("deslig") || s.includes("demit")) return "Inativo";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+function isStatusFinanceiro(stNorm){
+  return stNorm === "Ativo" || stNorm === "Afastado";
+}
+
+function mapRow(r){
+  const Setor = norm(r.setor);
+  const Equipe = norm(r.equipe);
+  const Responsavel = norm(r.responsavel);
+  const Matricula = norm(r.matricula);
+  const Nome = norm(r.nome);
+  const Funcao = norm(r.funcao);
+
+  const StatusN = normStatus(r.status);
+  const RegimeN = normRegime(r.regime);
+
+  const Salario = toNum(r.salario);
+  const VR = toNum(r.vale_refeicao);
+  const Comb = toNum(r.combustivel);
+  const Frota = toNum(r.frota);
+
+  const CustoTotal = (r.custo_total!=null) ? toNum(r.custo_total) : (Salario + VR + Comb + Frota);
+
+  return {
+    Setor, Equipe, Responsavel, Matricula, Nome, Funcao,
+    Status: norm(r.status),
+    Regime: norm(r.regime),
+    StatusN, RegimeN,
+    Custo: norm(r.custo),
+    Salario, VR, Comb, Frota,
+    CustoTotal,
+    __isPJ: RegimeN==="PJ",
+    __isCLT: RegimeN==="CLT"
+  };
+}
+
+/* utilidades de filtros */
+function uniqueSorted(arr){
+  return [...new Set(arr.filter(v=>!isBlankVal(v)).map(v=>norm(v)))]
+    .sort((a,b)=>a.localeCompare(b,"pt-BR"));
+}
+function setOptions(selectEl, values, labelTodos){
+  const current = selectEl.value;
+  selectEl.innerHTML = `<option value="">${labelTodos}</option>`;
+  values.forEach(v=>{
+    const opt=document.createElement("option");
+    opt.value=v; opt.textContent=v;
+    selectEl.appendChild(opt);
+  });
+  // tenta manter o valor anterior se ainda existir
+  if(values.includes(current)) selectEl.value = current;
+}
+
+function showWarn(msg){
+  const box = document.getElementById("warnBox");
+  box.style.display = "block";
+  box.textContent = msg;
+}
+function hideWarn(){
+  const box = document.getElementById("warnBox");
+  box.style.display = "none";
+  box.textContent = "";
+}
+function showInfo(msg){
+  const box = document.getElementById("infoBox");
+  box.style.display = "block";
+  box.textContent = msg;
+}
+function hideInfo(){
+  const box = document.getElementById("infoBox");
+  box.style.display = "none";
+  box.textContent = "";
+}
+
+/* 🔗 LINKAR Responsável ↔ Equipe ↔ Setor */
+function updateDependentFilters(){
+  const R = norm(fResponsavel.value);
+  const E = norm(fEquipe.value);
+  const S = norm(fSetor.value);
+
+  let base = RAWF.slice();
+  if(R) base = base.filter(x => x.Responsavel === R);
+  if(E) base = base.filter(x => x.Equipe === E);
+  if(S) base = base.filter(x => x.Setor === S);
+
+  setOptions(fResponsavel, uniqueSorted(base.map(x=>x.Responsavel)), "Responsável (Todos)");
+  setOptions(fEquipe, uniqueSorted(base.map(x=>x.Equipe)), "Equipe (Todas)");
+  setOptions(fSetor, uniqueSorted(base.map(x=>x.Setor)), "Setor (Todos)");
+}
+
+/* 📌 CUSTO POR EQUIPE incluindo responsável (sem mexer no KPI total) */
+function teamToResponsavelMap(arr){
+  // pega o responsável mais frequente dentro de cada equipe
+  const map = {};
+  arr.forEach(x=>{
+    const eq = norm(x.Equipe);
+    const rp = norm(x.Responsavel);
+    if(isBlankVal(eq) || isBlankVal(rp)) return;
+    map[eq] = map[eq] || {};
+    map[eq][rp] = (map[eq][rp]||0) + 1;
+  });
+
+  const out = {};
+  Object.keys(map).forEach(eq=>{
+    const best = Object.entries(map[eq]).sort((a,b)=>b[1]-a[1])[0];
+    if(best) out[eq] = best[0];
+  });
+  return out;
+}
+
+function findPessoaByNome(arr, nome){
+  const n = norm(nome).toLowerCase();
+  if(!n) return null;
+  return arr.find(x => norm(x.Nome).toLowerCase() === n) || null;
+}
+
+function costByEquipeIncludingResponsavel(arr){
+  // arr deve ser BASE FINANCEIRA (Ativo+Afastado) e já filtrada pelos combos
+  const t2r = teamToResponsavelMap(arr);
+
+  const costEquipe = {};
+  const members = {};
+
+  // soma custo normal dos membros por equipe
+  arr.forEach(x=>{
+    const eq = norm(x.Equipe);
+    if(isBlankVal(eq)) return;
+
+    costEquipe[eq] = (costEquipe[eq]||0) + (x.CustoTotal||0);
+
+    const id = norm(x.Matricula) || ("NOME:"+norm(x.Nome).toLowerCase());
+    members[eq] = members[eq] || new Set();
+    members[eq].add(id);
+  });
+
+  // adiciona custo do responsável uma única vez (se ele não estiver como membro daquela equipe)
+  Object.keys(t2r).forEach(eq=>{
+    const respNome = t2r[eq];
+    const respRow = findPessoaByNome(arr, respNome);
+    if(!respRow) return;
+
+    const id = norm(respRow.Matricula) || ("NOME:"+norm(respRow.Nome).toLowerCase());
+    const alreadyMember = members[eq]?.has(id);
+
+    if(!alreadyMember){
+      costEquipe[eq] = (costEquipe[eq]||0) + (respRow.CustoTotal||0);
+    }
+  });
+
+  return costEquipe;
+}
+
+/* carregar */
+async function loadFuncionarios(){
+  try{
+    hideWarn(); hideInfo();
+    const res=await fetch("./funcionarios.json?cb="+Date.now());
+    const json=await res.json();
+
+    const atualizado = json.atualizado_em || json.gerado_em || json.geradoEm || "-";
+    badgeAtualizado.textContent="Atualizado: "+atualizado;
+
+    const registros = (json.funcionarios || json.registros || []);
+    RAWF = registros.map(mapRow).filter(r=> (r.Nome || r.Matricula));
+
+    initFilters();
+    applyFilters();
+
+    // histórico mensal (para gráfico de evolução)
+    loadHistorico();
+  }catch(e){
+    console.error(e);
+    showWarn("Não consegui carregar o funcionarios.json. Verifique se o arquivo está na mesma pasta do HTML.");
+  }
+}
+
+/* histórico mensal (agregados) */
+async function loadHistorico(){
+  try{
+    const res = await fetch("./funcionarios_historico.json?cb=" + Date.now());
+    const json = await res.json();
+    HIST = json;
+    const series = (json.series || []).slice();
+
+    if(!series.length){
+      // info removido (visual executivo)
+      renderHistorico([]);
+      return;
+    }
+
+    // mantém apenas os últimos 12 meses por padrão
+    const last12 = series.sort((a,b)=> String(a.mes).localeCompare(String(b.mes))).slice(-12);
+    renderHistorico(last12);
+  }catch(e){
+    // se não existir arquivo, não quebra o dashboard
+    console.warn("Sem histórico (funcionarios_historico.json)", e);
+    renderHistorico([]);
+  }
+}
+
+function renderHistorico(series){
+  // destrói se já existir
+  destroyChart("hist");
+
+  const canvas = document.getElementById("chartHistorico");
+  if(!canvas) return;
+
+  if(!series || !series.length){
+    // desenha um gráfico vazio para não ficar quebrado
+    CHARTS.hist = new Chart(canvas,{
+      type:"line",
+      data:{ labels:[], datasets:[{ label:"Custo Total", data:[] }] },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{position:"bottom"} } }
+    });
+    return;
+  }
+
+  const labels = series.map(x=>x.mes);
+  const total = series.map(x=> Number(x.custo_mensal_total || 0));
+  const pj = series.map(x=> Number(x.salario_pj || 0));
+
+  CHARTS.hist = new Chart(canvas,{
+    type:"line",
+    data:{
+      labels,
+      datasets:[
+        { label:"Custo Total", data: total, tension:0.25 },
+        { label:"Salário PJ", data: pj, tension:0.25 }
+      ]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{
+        legend:{ position:"bottom" },
+        tooltip:{ callbacks:{ label:(ctx)=> `${ctx.dataset.label}: ${money(ctx.parsed.y)}` } }
+      },
+      scales:{ y:{ ticks:{ callback:(v)=> money(v) } } }
+    }
+  });
+}
+
+/* filtros */
+function initFilters(){
+  setOptions(fResponsavel, uniqueSorted(RAWF.map(r=>r.Responsavel)), "Responsável (Todos)");
+  setOptions(fEquipe, uniqueSorted(RAWF.map(r=>r.Equipe)), "Equipe (Todas)");
+  setOptions(fSetor, uniqueSorted(RAWF.map(r=>r.Setor)), "Setor (Todos)");
+
+  setOptions(fCusto, uniqueSorted(RAWF.map(r=>r.Custo)), "Custo (Todos)");
+  setOptions(fFuncao, uniqueSorted(RAWF.map(r=>r.Funcao)), "Função (Todas)");
+
+  // financeiro
+  setOptions(fStatus, ["Ativo","Afastado"], "Status (Todos)");
+  setOptions(fRegime, ["CLT","PJ"], "Regime (Todos)");
+
+  // não iniciar travado
+  fStatus.value = "";
+  fRegime.value = "";
+
+  // linkar os 3 filtros
+  fResponsavel.onchange = () => { updateDependentFilters(); applyFilters(); };
+  fEquipe.onchange      = () => { updateDependentFilters(); applyFilters(); };
+  fSetor.onchange       = () => { updateDependentFilters(); applyFilters(); };
+
+  // outros
+  ;[fStatus,fRegime,fCusto,fFuncao].forEach(el=> el.onchange = applyFilters);
+  fBusca.oninput = () => { clearTimeout(window.__tBusca); window.__tBusca=setTimeout(applyFilters,120); };
+}
+
+function clearFilters(){
+  fResponsavel.value="";
+  fEquipe.value="";
+  fSetor.value="";
+  fStatus.value="";
+  fRegime.value="";
+  fCusto.value="";
+  fFuncao.value="";
+  fBusca.value="";
+  initFilters();
+  applyFilters();
+}
+
+function applyFilters(){
+  hideInfo();
+
+  const R = norm(fResponsavel.value);
+  const E = norm(fEquipe.value);
+  const S = norm(fSetor.value);
+  const ST = norm(fStatus.value);
+  const RG = norm(fRegime.value);
+  const C = norm(fCusto.value);
+  const F = norm(fFuncao.value);
+  const Q = norm(fBusca.value).toLowerCase();
+
+  VIEW = RAWF.filter(r=>{
+    if(R && r.Responsavel!==R) return false;
+    if(E && r.Equipe!==E) return false;
+    if(S && r.Setor!==S) return false;
+
+    if(ST && r.StatusN!==ST) return false;
+    if(RG && r.RegimeN!==RG) return false;
+
+    if(C && r.Custo!==C) return false;
+    if(F && r.Funcao!==F) return false;
+
+    if(Q){
+      const hay = `${r.Setor} ${r.Equipe} ${r.Responsavel} ${r.Matricula} ${r.Nome} ${r.Funcao} ${r.StatusN} ${r.RegimeN} ${r.Custo}`.toLowerCase();
+      if(!hay.includes(Q)) return false;
+    }
+    return true;
+  });
+
+  // Aviso amigável: PJ selecionado mas não tem PJ
+  const tf = VIEW.filter(x => isStatusFinanceiro(x.StatusN));
+  const pjCount = tf.filter(x => x.RegimeN === "PJ").length;
+  if(RG === "PJ" && pjCount === 0){
+    showInfo("Sem registros PJ (Pessoa Jurídica) no arquivo/período atual. Se você estiver vendo 0, é porque não há PJ no JSON.");
+  }
+
+  renderKPIs();
+  renderTable();
+  renderCharts();
+}
+
+/* KPIs */
+function renderKPIs(){
+  const tf = VIEW.filter(x => isStatusFinanceiro(x.StatusN));
+
+  const ativos = tf.filter(x=> x.StatusN==="Ativo").length;
+  const afastados = tf.filter(x=> x.StatusN==="Afastado").length;
+
+  const sal = tf.reduce((s,r)=>s + (r.Salario||0), 0);
+  const vr = tf.reduce((s,r)=>s + (r.VR||0), 0);
+  const comb = tf.reduce((s,r)=>s + (r.Comb||0), 0);
+  const frota = tf.reduce((s,r)=>s + (r.Frota||0), 0);
+
+  const custoTotal = sal + vr + comb + frota;
+
+  const salCLT = tf.filter(x=>x.RegimeN==="CLT").reduce((s,r)=>s + (r.Salario||0), 0);
+  const salPJ  = tf.filter(x=>x.RegimeN==="PJ").reduce((s,r)=>s + (r.Salario||0), 0);
+
+  kQtd.textContent = tf.length;
+  kAtivos.textContent = ativos;
+  kAfastados.textContent = afastados;
+
+  kSal.textContent = fmt(sal);
+  kVR.textContent = fmt(vr);
+  kComb.textContent = fmt(comb);
+  kFrota.textContent = fmt(frota);
+
+  kCustoTotal.textContent = fmt(custoTotal);
+
+  const baseMedia = (ativos + afastados) > 0 ? (ativos + afastados) : (tf.length>0 ? tf.length : 0);
+  const medio = baseMedia>0 ? (custoTotal/baseMedia) : 0;
+  kCustoMedio.textContent = `Custo médio (base): ${money(medio)}`;
+
+  kSalCLT.textContent = fmt(salCLT);
+  kSalPJ.textContent = fmt(salPJ);
+
+  kSubQtd.textContent =
+    `Equipes: ${new Set(tf.map(x=>x.Equipe).filter(v=>!isBlankVal(v))).size} • Resp.: ${new Set(tf.map(x=>x.Responsavel).filter(v=>!isBlankVal(v))).size}`;
+}
+
+/* tabela */
+function renderTable(){
+  const t = VIEW;
+  tbody.innerHTML="";
+  t.forEach(r=>{
+    tbody.innerHTML+=`
+    <tr>
+      <td>${r.Setor}</td>
+      <td>${r.Equipe}</td>
+      <td>${r.Responsavel}</td>
+      <td>${r.Matricula}</td>
+      <td>${r.Nome}</td>
+      <td>${r.Funcao}</td>
+      <td>${r.StatusN}</td>
+      <td>${r.RegimeN}</td>
+      <td>${r.Custo}</td>
+      <td class="num">${fmt(r.Salario)}</td>
+      <td class="num">${fmt(r.VR)}</td>
+      <td class="num">${fmt(r.Comb)}</td>
+      <td class="num">${fmt(r.Frota)}</td>
+      <td class="num">${fmt(r.CustoTotal)}</td>
+    </tr>`;
+  });
+}
+
+/* charts */
+function destroyChart(key){
+  if(CHARTS[key]){
+    CHARTS[key].destroy();
+    CHARTS[key]=null;
+  }
+}
+function groupCount(arr, key){
+  return arr.reduce((acc,x)=>{
+    const k = norm(x[key]);
+    if(isBlankVal(k)) return acc;
+    acc[k] = (acc[k]||0) + 1;
+    return acc;
+  },{});
+}
+function topN(mapObj, n=14){
+  const entries = Object.entries(mapObj).sort((a,b)=>b[1]-a[1]).slice(0,n);
+  return { labels: entries.map(e=>e[0]), values: entries.map(e=>e[1]) };
+}
+
+function renderCharts(){
+  const t = VIEW.filter(x => isStatusFinanceiro(x.StatusN));
+
+  // Pessoas por Responsável
+  const mResp = groupCount(t,"Responsavel");
+  const respTop = topN(mResp, 14);
+  destroyChart("resp");
+  CHARTS.resp = new Chart(document.getElementById("chartResp"),{
+    type:"bar",
+    data:{ labels: respTop.labels, datasets:[{ label:"Pessoas", data: respTop.values }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}}, scales:{ x:{ ticks:{ autoSkip:false } } } }
+  });
+
+  // Pessoas por Equipe
+  const mEq = groupCount(t,"Equipe");
+  const eqTop = topN(mEq, 14);
+  destroyChart("equipe");
+  CHARTS.equipe = new Chart(document.getElementById("chartEquipe"),{
+    type:"bar",
+    data:{ labels:eqTop.labels, datasets:[{ label:"Pessoas", data:eqTop.values }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}}, scales:{ x:{ ticks:{ autoSkip:false } } } }
+  });
+
+  // ✅ Custo por Equipe (inclui custo do Responsável da equipe, se ele não estiver cadastrado como membro)
+  const custoEquipe = costByEquipeIncludingResponsavel(t);
+  const custoTop = topN(custoEquipe, 14);
+
+  destroyChart("custoresp");
+  CHARTS.custoresp = new Chart(document.getElementById("chartCustoResp"),{
+    type:"bar",
+    data:{ labels:custoTop.labels, datasets:[{ label:"Custo (R$)", data:custoTop.values }] },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}},
+      scales:{ y:{ ticks:{ callback:(v)=> money(v) } }, x:{ ticks:{ autoSkip:false } } }
+    }
+  });
+
+  // Donut: CLT + PJ + VR + Comb + Frota
+  const salCLT = t.filter(x=>x.RegimeN==="CLT").reduce((s,r)=>s + (r.Salario||0), 0);
+  const salPJ  = t.filter(x=>x.RegimeN==="PJ").reduce((s,r)=>s + (r.Salario||0), 0);
+  const vr     = t.reduce((s,r)=>s + (r.VR||0), 0);
+  const comb   = t.reduce((s,r)=>s + (r.Comb||0), 0);
+  const frota  = t.reduce((s,r)=>s + (r.Frota||0), 0);
+
+  destroyChart("donut");
+  CHARTS.donut = new Chart(document.getElementById("chartDonut"),{
+    type:"doughnut",
+    data:{
+      labels:["Salário CLT","Salário PJ","VR","Combustível","Frota"],
+      datasets:[{ data:[salCLT, salPJ, vr, comb, frota] }]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{
+        tooltip:{ callbacks:{ label:(ctx)=> `${ctx.label}: ${money(ctx.parsed)}` } }
+      }
+    }
+  });
+}
+
+loadFuncionarios();
+</script>
+
+</body>
+</html>

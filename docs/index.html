@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – Acompanhamento de Obra</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body{font-family:Arial;margin:14px;background:#f4f6f8}
+    .container{max-width:1400px;margin:0 auto}
+
+    /* HEADER */
+    .header{
+      background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);
+      padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:14px;
+      justify-content:space-between;
+    }
+    .h-left{display:flex;align-items:center;gap:16px}
+
+    /* ✅ LOGO MAIOR */
+    .logo{
+      width:220px; height:auto; display:block;
+      margin-left:4px;
+    }
+
+    .h-title{display:flex;flex-direction:column;gap:2px}
+    .h-title .t1{font-size:18px;font-weight:800;margin:0}
+    .h-title .t2{font-size:12px;color:#6b7280;margin:0}
+
+    .h-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .badge{
+      font-size:12px;color:#0b57d0;background:#e8f0ff;border:1px solid #cfe0ff;
+      padding:6px 10px;border-radius:999px;white-space:nowrap;
+    }
+    .btn{
+      border:1px solid #d8dde6;background:#fff;border-radius:10px;
+      padding:8px 12px;cursor:pointer;font-weight:700;
+    }
+    .btn.primary{background:#0b57d0;color:#fff;border-color:#0b57d0}
+    .btn:hover{filter:brightness(.98)}
+    .btn.small{padding:6px 10px;font-size:12px;border-radius:10px}
+
+    .top-filters{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+    .filter label{display:block;font-size:13px;color:#444;margin:0 0 6px}
+    select{width:100%;padding:12px;border-radius:12px;border:1px solid #e3e7ee;background:#fff}
+
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .card .t{font-size:13px;color:#555;margin-bottom:8px}
+    .card .v{font-size:30px;font-weight:800;color:#0b57d0;line-height:1}
+    .card .s{font-size:12px;color:#777;margin-top:8px}
+
+    /* card de meta (avanço) */
+    .card.av-meta .v{color:#0b57d0}
+    .card.av-meta.good{outline:2px solid rgba(16,185,129,.35)}
+    .card.av-meta.good .v{color:#059669}
+    .card.av-meta.warn{outline:2px solid rgba(245,158,11,.35)}
+    .card.av-meta.warn .v{color:#d97706}
+    .card.av-meta.bad{outline:2px solid rgba(239,68,68,.35)}
+    .card.av-meta.bad .v{color:#dc2626}
+
+    .grid2{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
+    .grid2b{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+
+    .panel{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .panel h3{margin:0 0 6px;font-size:16px}
+    .panel small{color:#6b7280}
+
+    .meta{color:#666;font-size:12px;margin:10px 0 0;text-align:right}
+
+    /* alertas */
+    .alerts{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+    .alert{
+      border:1px solid #e5e7eb;border-radius:12px;padding:10px 12px;
+      display:flex;align-items:flex-start;gap:10px;background:#fff;
+      font-size:13px;color:#111827;
+    }
+    .pill{
+      font-weight:800;font-size:11px;border-radius:999px;padding:4px 8px;line-height:1;
+      border:1px solid transparent;white-space:nowrap;
+    }
+    .pill.ok{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+    .pill.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}
+    .pill.bad{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+    .alert .txt{flex:1}
+    .alert .sub{color:#6b7280;font-size:12px;margin-top:2px}
+
+    /* tabela */
+    .table-wrap{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);overflow:hidden}
+    .table-head{display:flex;justify-content:space-between;align-items:center;padding:14px;gap:10px;flex-wrap:wrap}
+    .table-head h3{margin:0;font-size:16px}
+    .table-head small{color:#6b7280}
+    .table-head .right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{
+      background:#1f5fe0;color:#fff;padding:12px 10px;text-align:left;
+      cursor:pointer;user-select:none;white-space:nowrap;
+    }
+    thead th .arrow{opacity:.85;margin-left:6px;font-size:12px}
+    tbody td{padding:10px;border-bottom:1px solid #eee}
+    tbody tr:nth-child(even){background:#f7fbff}
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+    /* grupo retrátil */
+    tr.group-row td{
+      background:#e8f0ff !important;
+      border-bottom:1px solid #dbeafe;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .caret{display:inline-block;width:16px;text-align:center;margin-right:6px}
+    .muted{color:#6b7280;font-weight:600;font-size:12px}
+
+    .warn-box{
+      margin-top:10px;padding:10px 12px;border-radius:12px;
+      background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:13px;
+      display:none;
+    }
+
+    @media(max-width:1100px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .grid2{grid-template-columns:1fr}
+      .grid2b{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .header{flex-direction:column;align-items:flex-start}
+      .h-actions{justify-content:flex-start}
+    }
+    @media(max-width:700px){
+      .top-filters{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .logo{width:200px}
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="h-left">
+      <img class="logo" src="./logo.png" alt="Logo">
+      <div class="h-title">
+        <p class="t1">Dashboard – Acompanhamento de Obra</p>
+        <p class="t2">Consórcio Desenvolvimento Sustentável INTEGRA</p>
+      </div>
+    </div>
+    <div class="h-actions">
+      <span class="badge" id="badgeAtualizado">Atualizado (Obras): -</span>
+      <span class="badge" id="badgeFunc">Atualizado (Func.): -</span>
+
+      <button class="btn" id="btnFuncionarios">Funcionários</button>
+      <button class="btn" id="btnReload">Recarregar dados</button>
+      <button class="btn primary" id="btnPdf">Exportar PDF</button>
+    </div>
+  </div>
+
+  <div class="top-filters">
+    <div class="filter">
+      <label>Obra</label>
+      <select id="fObra"></select>
+    </div>
+    <div class="filter">
+      <label>Bloco</label>
+      <select id="fBloco"></select>
+    </div>
+    <div class="filter">
+      <label>Tipo de extensão</label>
+      <select id="fTipo"></select>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="t">Extensão Planejada (m)</div>
+      <div class="v" id="kPlan">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Extensão Executada (m)</div>
+      <div class="v" id="kExec">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Saldo a Executar (m)</div>
+      <div class="v" id="kSaldo">0</div>
+      <div class="s">Planejado − Executado</div>
+    </div>
+
+    <div class="card av-meta" id="cardAvanco">
+      <div class="t">Avanço (%)</div>
+      <div class="v" id="kAvanco">0%</div>
+      <div class="s">Meta: <b>70%</b> • Executado / Planejado</div>
+    </div>
+
+    <div class="card">
+      <div class="t">PV (qtd)</div>
+      <div class="v" id="kPV">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Profundidade PV (m)</div>
+      <div class="v" id="kProf">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Economias previstas</div>
+      <div class="v" id="kEcoPrev">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Economias recebidas</div>
+      <div class="v" id="kEcoRec">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Planejado × Executado por Obra</h3>
+      <small>Colunas agrupadas</small>
+      <div style="height:420px"><canvas id="chObra"></canvas></div>
+      <div class="meta" id="meta"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Distribuição por Tipo</h3>
+      <small>Participação do Planejado (m)</small>
+      <div style="height:420px"><canvas id="chTipo"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid2b">
+    <div class="panel">
+      <h3>Avanço (%) por Bloco</h3>
+      <small>Executado / Planejado</small>
+      <div style="height:360px"><canvas id="chAvancoBloco"></canvas></div>
+    </div>
+
+    <div class="panel">
+      <h3>Ranking – Top 10 Executado (m)</h3>
+      <small>Blocos com maior produção</small>
+      <div style="height:360px"><canvas id="chTop10"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid2b">
+    <div class="panel">
+      <h3>Curva S – Forecast</h3>
+      <small>Acumulado por data (Planejado x Executado)</small>
+      <div style="height:360px"><canvas id="chCurvaS"></canvas></div>
+      <div class="warn-box" id="warnCurvaS"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Alertas</h3>
+      <small>Baseado no filtro atual • Meta: 70%</small>
+      <div class="alerts" id="alertsBox"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-head">
+      <div>
+        <h3>Tabela detalhada (Retrátil por Obra)</h3>
+        <small>Clique na linha azul da obra para recolher/expandir</small>
+      </div>
+      <div class="right">
+        <button class="btn small" id="btnToggleAll">Recolher tudo</button>
+        <small id="linhasInfo">Linhas: 0</small>
+      </div>
+    </div>
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="Data">Data <span class="arrow" id="aData"></span></th>
+            <th data-col="Obra">Obra <span class="arrow" id="aObra"></span></th>
+            <th data-col="Bloco">Bloco <span class="arrow" id="aBloco"></span></th>
+            <th data-col="Tipo">Tipo <span class="arrow" id="aTipo"></span></th>
+            <th data-col="Planejado_m" class="num">Planejado (m) <span class="arrow" id="aPlan"></span></th>
+            <th data-col="Executado_m" class="num">Executado (m) <span class="arrow" id="aExec"></span></th>
+            <th data-col="Avanco" class="num">Avanço (%) <span class="arrow" id="aAv"></span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let RAW = [];
+let chartObra, chartTipo, chartAvBloco, chartTop10, chartCurvaS;
+let sortState = { col: "Data", dir: "asc" };
+const META_AVANCO = 70;
+let groupOpen = new Map();
+let allCollapsed = false;
+
+function uniq(arr){ return [...new Set(arr)].filter(x=>x!==null && x!==undefined && x!==""); }
+function fillSelect(sel, items, labelAll){
+  sel.innerHTML = "";
+  sel.add(new Option(labelAll, ""));
+  items.forEach(v => sel.add(new Option(v, v)));
+}
+const fmtInt = (n)=> Number(n||0).toLocaleString("pt-BR",{maximumFractionDigits:0});
+const fmt1   = (n)=> Number(n||0).toLocaleString("pt-BR",{minimumFractionDigits:1, maximumFractionDigits:1});
+
+/* ✅ trava percentuais em 0–100 */
+function clampPct(p){
+  if(p===null || p===undefined || Number.isNaN(p)) return null;
+  return Math.max(0, Math.min(100, p));
+}
+
+function filtered(){
+  const obra=fObra.value, bloco=fBloco.value, tipo=fTipo.value;
+  return RAW.filter(r => (!obra || r.Obra===obra) && (!bloco || r.Bloco===bloco) && (!tipo || r.Tipo===tipo));
+}
+
+/* =========================================================
+   ✅ OBRAS + BLOCOS LINKADOS (CASCATA) - MODO B
+   - Geral (Obra="") mantém o dashboard como está
+   - Se Obra="": Bloco fica habilitado, porém só "(Todos)"
+   - Se Obra selecionada: Bloco lista somente blocos daquela obra
+   ========================================================= */
+function rebuildBlocoOptions(){
+  const obra = fObra.value;
+  const prev = fBloco.value;
+
+  if(!obra){
+    // MODO B: habilitado, mas sem opções além de "(Todos)"
+    fillSelect(fBloco, [], "(Todos)");
+    fBloco.value = "";
+    return;
+  }
+
+  const blocos = uniq(RAW.filter(r => r.Obra === obra).map(r => r.Bloco))
+    .sort((a,b)=>String(a).localeCompare(String(b)));
+
+  fillSelect(fBloco, blocos, "(Todos)");
+
+  // tenta manter a seleção anterior, se ainda existir nessa obra
+  const stillValid = blocos.includes(prev);
+  fBloco.value = stillValid ? prev : "";
+}
+
+function onObraChange(){
+  rebuildBlocoOptions();
+  update();
+}
+/* ========================================================= */
+
+function groupBy(rows, key){
+  const map = new Map();
+  rows.forEach(r=>{
+    const k = (r[key] ?? "—");
+    if(!map.has(k)) map.set(k,{k, P:0, E:0, PV:0, Prof:0, EP:0, ER:0});
+    const cur = map.get(k);
+    cur.P += Number(r.Planejado_m||0);
+    cur.E += Number(r.Executado_m||0);
+    cur.PV += Number(r.PV||0);
+    cur.Prof += Number(r.Profundidade_m||0);
+    cur.EP += Number(r.Economias_Previstas||0);
+    cur.ER += Number(r.Economias_Recebidas||0);
+  });
+  return [...map.values()];
+}
+
+/* ✅ avanço travado em 100% */
+function avancoPct(P,E){
+  if(!P || P<=0) return null;
+  return clampPct((E/P*100));
+}
+
+function setCardAvancoColor(pct){
+  cardAvanco.classList.remove("good","warn","bad");
+  if(pct >= META_AVANCO) cardAvanco.classList.add("good");
+  else if(pct >= META_AVANCO-10) cardAvanco.classList.add("warn");
+  else cardAvanco.classList.add("bad");
+}
+
+function buildCurvaS(rows){
+  const warn = document.getElementById("warnCurvaS");
+  warn.style.display = "none";
+  warn.textContent = "";
+
+  const valid = rows
+    .filter(r => r.Data && typeof r.Data === "string" && /^\d{4}-\d{2}-\d{2}$/.test(r.Data))
+    .map(r => ({ d: r.Data, P: Number(r.Planejado_m||0), E: Number(r.Executado_m||0) }));
+
+  if(valid.length === 0){
+    warn.style.display = "block";
+    warn.textContent =
+      "Curva S sem dados: verifique se a coluna 'Data' está preenchida no Excel e se o JSON está gerando 'YYYY-MM-DD'.";
+    return {labels:[], P:[], E:[], hasData:false};
+  }
+
+  const map = new Map();
+  valid.forEach(x=>{
+    if(!map.has(x.d)) map.set(x.d,{P:0,E:0});
+    const cur = map.get(x.d);
+    cur.P += x.P;
+    cur.E += x.E;
+  });
+
+  const days = [...map.keys()].sort((a,b)=> a.localeCompare(b));
+  const planDay = days.map(d => map.get(d).P);
+  const execDay = days.map(d => map.get(d).E);
+
+  const planCum = [];
+  const execCum = [];
+  let p=0,e=0;
+  for(let i=0;i<days.length;i++){
+    p += planDay[i];
+    e += execDay[i];
+    planCum.push(p);
+    execCum.push(e);
+  }
+
+  const labels = days.map(s=>{
+    const [Y,M,D] = s.split("-");
+    return `${D}/${M}/${Y}`;
+  });
+
+  return { labels, P: planCum, E: execCum, hasData:true };
+}
+
+/* ✅ avanço por linha travado em 100% */
+function calcAvancoRow(r){
+  const p = Number(r.Planejado_m||0);
+  const e = Number(r.Executado_m||0);
+  return p>0 ? clampPct((e/p*100)) : null;
+}
+
+function setArrows(){
+  const arrows = { Data:"aData",Obra:"aObra",Bloco:"aBloco",Tipo:"aTipo",Planejado_m:"aPlan",Executado_m:"aExec",Avanco:"aAv" };
+  for(const k in arrows) document.getElementById(arrows[k]).textContent = "";
+  const id = arrows[sortState.col];
+  if(id) document.getElementById(id).textContent = sortState.dir==="asc" ? "▲" : "▼";
+}
+
+function sortRows(rows){
+  const col = sortState.col;
+  const dir = sortState.dir === "asc" ? 1 : -1;
+
+  return [...rows].sort((a,b)=>{
+    let va, vb;
+    if(col==="Avanco"){
+      va = calcAvancoRow(a); vb = calcAvancoRow(b);
+      if(va===null && vb===null) return 0;
+      if(va===null) return 1;
+      if(vb===null) return -1;
+      return (va-vb)*dir;
+    }
+    if(col==="Planejado_m" || col==="Executado_m"){
+      va = Number(a[col]||0); vb = Number(b[col]||0);
+      return (va-vb)*dir;
+    }
+    if(col==="Data"){
+      va = String(a.Data||""); vb = String(b.Data||"");
+      return va.localeCompare(vb)*dir;
+    }
+    va = String(a[col]||""); vb = String(b[col]||"");
+    return va.localeCompare(vb)*dir;
+  });
+}
+
+function renderAlerts(rows, curvaSInfo){
+  const box = document.getElementById("alertsBox");
+  box.innerHTML = "";
+
+  const plan = rows.reduce((s,r)=>s+Number(r.Planejado_m||0),0);
+  const exec = rows.reduce((s,r)=>s+Number(r.Executado_m||0),0);
+
+  /* ✅ avanço geral travado em 100% */
+  const av = plan>0 ? clampPct(exec/plan*100) : 0;
+
+  const byObra = groupBy(rows,"Obra").map(x=>{
+    const pct = avancoPct(x.P,x.E);
+    return { obra:x.k, pct, P:x.P, E:x.E };
+  });
+
+  const obrasAbaixo = byObra
+    .filter(x=>x.pct!==null && x.pct < META_AVANCO)
+    .sort((a,b)=>a.pct-b.pct)
+    .slice(0,5);
+
+  const blocosZero = rows
+    .filter(r => Number(r.Planejado_m||0) > 0 && Number(r.Executado_m||0) <= 0)
+    .slice(0,5);
+
+  if(!curvaSInfo.hasData){
+    addAlert("bad","Curva S sem dados","Preencha a coluna Data no Excel (dd/mm/aaaa) e gere o dados.json novamente.");
+  }else addAlert("ok","Curva S OK","Dados por data carregados.");
+
+  if(plan<=0) addAlert("warn","Sem Planejado no filtro","O Planejado está 0 neste filtro (não dá pra calcular avanço).");
+  else if(av < META_AVANCO) addAlert("bad",`Avanço geral abaixo da meta (${av.toFixed(0)}%)`,`Meta ${META_AVANCO}% • Falta executar: ${fmtInt(plan-exec)} m.`);
+  else addAlert("ok",`Avanço geral OK (${av.toFixed(0)}%)`,`Meta ${META_AVANCO}% atingida.`);
+
+  if(obrasAbaixo.length){
+    addAlert("warn","Obras abaixo da meta", obrasAbaixo.map(o=>`${o.obra} (${o.pct.toFixed(0)}%)`).join(" • "));
+  }else addAlert("ok","Obras na meta","Nenhuma obra abaixo de 70% no filtro atual.");
+
+  if(blocosZero.length){
+    addAlert("warn","Blocos com executado = 0", blocosZero.map(r=>`${r.Obra} – ${r.Bloco} (${r.Tipo})`).join(" • "));
+  }else addAlert("ok","Produção por bloco","Nenhum bloco com executado = 0 e planejado > 0 no filtro.");
+
+  function addAlert(level, title, subtitle){
+    const el = document.createElement("div");
+    el.className = "alert";
+    const pillClass = level==="bad" ? "bad" : (level==="warn" ? "warn" : "ok");
+    el.innerHTML = `
+      <span class="pill ${pillClass}">${level==="bad"?"CRÍTICO":(level==="warn"?"ATENÇÃO":"OK")}</span>
+      <div class="txt">
+        <div><b>${title}</b></div>
+        <div class="sub">${subtitle}</div>
+      </div>
+    `;
+    box.appendChild(el);
+  }
+}
+
+function renderTableRetratil(rows){
+  const sorted = sortRows(rows);
+  linhasInfo.textContent = "Linhas: " + sorted.length;
+  setArrows();
+
+  const obras = uniq(sorted.map(r=>r.Obra)).sort((a,b)=>String(a).localeCompare(String(b)));
+  const rowsByObra = new Map();
+  obras.forEach(o=>rowsByObra.set(o, []));
+  sorted.forEach(r=>{
+    const o = r.Obra || "—";
+    if(!rowsByObra.has(o)) rowsByObra.set(o, []);
+    rowsByObra.get(o).push(r);
+  });
+
+  obras.forEach(o=>{ if(!groupOpen.has(o)) groupOpen.set(o, true); });
+  if(allCollapsed){ obras.forEach(o=>groupOpen.set(o,false)); }
+
+  tbody.innerHTML = "";
+
+  obras.forEach(obra=>{
+    const list = rowsByObra.get(obra) || [];
+    const sumP = list.reduce((s,r)=>s+Number(r.Planejado_m||0),0);
+    const sumE = list.reduce((s,r)=>s+Number(r.Executado_m||0),0);
+    const pct = avancoPct(sumP,sumE);
+    const opened = !!groupOpen.get(obra);
+
+    const trG = document.createElement("tr");
+    trG.className = "group-row";
+    trG.innerHTML = `
+      <td colspan="7">
+        <span class="caret">${opened ? "▾" : "▸"}</span>
+        ${obra}
+        <span class="muted"> • Planejado: ${fmt1(sumP)} m • Executado: ${fmt1(sumE)} m • Avanço: ${pct===null?"—":pct.toFixed(0)+"%"}</span>
+      </td>
+    `;
+    trG.addEventListener("click", ()=>{
+      groupOpen.set(obra, !groupOpen.get(obra));
+      allCollapsed = false;
+      btnToggleAll.textContent = isAllCollapsed() ? "Expandir tudo" : "Recolher tudo";
+      renderTableRetratil(filtered());
+    });
+    tbody.appendChild(trG);
+
+    list.forEach(r=>{
+      const av = calcAvancoRow(r);
+      const tr = document.createElement("tr");
+      tr.style.display = opened ? "" : "none";
+      const d = r.Data ? (()=>{ const [Y,M,D]=String(r.Data).split("-"); return (Y&&M&&D)?`${D}/${M}/${Y}`:""; })() : "";
+      tr.innerHTML = `
+        <td>${d}</td>
+        <td>${r.Obra||""}</td>
+        <td>${r.Bloco||""}</td>
+        <td>${r.Tipo||""}</td>
+        <td class="num">${fmt1(r.Planejado_m)}</td>
+        <td class="num">${fmt1(r.Executado_m)}</td>
+        <td class="num">${av===null ? "—" : av.toFixed(0)+"%"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  });
+
+  btnToggleAll.textContent = isAllCollapsed() ? "Expandir tudo" : "Recolher tudo";
+
+  function isAllCollapsed(){
+    for(const open of groupOpen.values()){ if(open) return false; }
+    return true;
+  }
+}
+
+function update(){
+  const rows = filtered();
+
+  const plan = rows.reduce((s,r)=>s+Number(r.Planejado_m||0),0);
+  const exec = rows.reduce((s,r)=>s+Number(r.Executado_m||0),0);
+  const saldo = plan - exec;
+
+  /* ✅ avanço do card travado em 100% */
+  const av = plan>0 ? (clampPct(exec/plan*100) ?? 0) : 0;
+
+  const pv = rows.reduce((s,r)=>s+Number(r.PV||0),0);
+  const prof = rows.reduce((s,r)=>s+Number(r.Profundidade_m||0),0);
+
+  const ecoPrev = rows.reduce((s,r)=>s+Number(r.Economias_Previstas||0),0);
+  const ecoRec  = rows.reduce((s,r)=>s+Number(r.Economias_Recebidas||0),0);
+
+  kPlan.textContent = fmtInt(plan);
+  kExec.textContent = fmtInt(exec);
+  kSaldo.textContent = fmtInt(saldo);
+  kAvanco.textContent = av.toFixed(0) + "%";
+  setCardAvancoColor(av);
+
+  kPV.textContent = fmtInt(pv);
+  kProf.textContent = fmtInt(prof);
+  kEcoPrev.textContent = fmtInt(ecoPrev);
+  kEcoRec.textContent = fmtInt(ecoRec);
+
+  const byObra = groupBy(rows,"Obra").sort((a,b)=>String(a.k).localeCompare(String(b.k)));
+  const labelsO = byObra.map(x=>x.k);
+  const dataP = byObra.map(x=>x.P);
+  const dataE = byObra.map(x=>x.E);
+
+  if(chartObra) chartObra.destroy();
+  chartObra = new Chart(chObra, {
+    type:"bar",
+    data:{ labels: labelsO, datasets:[
+      { label:"Planejado (m)", data:dataP },
+      { label:"Executado (m)", data:dataE }
+    ]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{ x:{ ticks:{ maxRotation:45, minRotation:45 } },
+               y:{ title:{ display:true, text:"Metros (m)" } } }
+    }
+  });
+
+  const byTipo = groupBy(rows,"Tipo").sort((a,b)=>b.P-a.P);
+  const labelsT = byTipo.map(x=>x.k);
+  const dataT = byTipo.map(x=>x.P);
+
+  if(chartTipo) chartTipo.destroy();
+  chartTipo = new Chart(chTipo, {
+    type:"doughnut",
+    data:{ labels: labelsT, datasets:[{ data:dataT }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{ position:"right" },
+        tooltip:{ callbacks:{
+          label:(ctx)=>{
+            const total = dataT.reduce((s,v)=>s+v,0) || 1;
+            const v = ctx.raw || 0;
+            const p = (v/total*100);
+            return ` ${ctx.label}: ${fmt1(v)} m (${p.toFixed(1)}%)`;
+          }
+        }}
+      },
+      cutout:"60%"
+    }
+  });
+
+  const byBloco = groupBy(rows,"Bloco");
+  const byBlocoName = [...byBloco].sort((a,b)=>String(a.k).localeCompare(String(b.k)));
+  const labelsB = byBlocoName.map(x=>x.k);
+  const dataAvB = byBlocoName.map(x=>{
+    const pct = avancoPct(x.P,x.E);
+    return pct===null ? 0 : pct;
+  });
+
+  if(chartAvBloco) chartAvBloco.destroy();
+  chartAvBloco = new Chart(chAvancoBloco, {
+    type:"bar",
+    data:{ labels: labelsB, datasets:[{ label:"Avanço (%)", data:dataAvB }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ display:false } },
+      scales:{ y:{ min:0, max:100, ticks:{ callback:(v)=>v+"%" } } }
+    }
+  });
+
+  const top10 = [...byBloco].sort((a,b)=>b.E-a.E).slice(0,10);
+  const labelsTop = top10.map(x=>x.k);
+  const dataTop = top10.map(x=>x.E);
+
+  if(chartTop10) chartTop10.destroy();
+  chartTop10 = new Chart(chTop10, {
+    type:"bar",
+    data:{ labels: labelsTop, datasets:[{ label:"Executado (m)", data:dataTop }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } } }
+  });
+
+  const cs = buildCurvaS(rows);
+  if(chartCurvaS) chartCurvaS.destroy();
+  chartCurvaS = new Chart(chCurvaS, {
+    type:"line",
+    data:{ labels: cs.labels, datasets:[
+      { label:"Planejado (Acumulado)", data: cs.P, tension:0.25 },
+      { label:"Executado (Acumulado)", data: cs.E, tension:0.25 }
+    ]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ position:"top" } },
+      scales:{ y:{ title:{ display:true, text:"Metros (m)" } } }
+    }
+  });
+
+  renderAlerts(rows, cs);
+  renderTableRetratil(rows);
+}
+
+function bindTableSort(){
+  document.querySelectorAll("thead th").forEach(th=>{
+    th.addEventListener("click", ()=>{
+      const col = th.getAttribute("data-col");
+      if(sortState.col === col) sortState.dir = (sortState.dir==="asc"?"desc":"asc");
+      else { sortState.col = col; sortState.dir="asc"; }
+      update();
+    });
+  });
+}
+
+/* ✅ Atualiza/valida o JSON de funcionários quando você recarrega */
+async function loadFuncionariosMeta(){
+  try{
+    const res = await fetch("./funcionarios.json?cb="+Date.now());
+    if(!res.ok) throw new Error("Não consegui carregar ./funcionarios.json");
+    const json = await res.json();
+    const updated = json.atualizado_em || json.atualizado || json.updated || "-";
+    badgeFunc.textContent = "Atualizado (Func.): " + updated;
+  }catch(e){
+    badgeFunc.textContent = "Atualizado (Func.): ERRO";
+  }
+}
+
+async function loadData(){
+  const res = await fetch("./dados.json?cb="+Date.now());
+  if(!res.ok) throw new Error("Não consegui carregar ./dados.json");
+  const json = await res.json();
+
+  RAW = json.registros || [];
+  const updated = json.atualizado_em || "-";
+  badgeAtualizado.textContent = "Atualizado (Obras): " + updated;
+
+  meta.textContent = `Atualizado em: ${updated} | Linhas: ${RAW.length}`;
+
+  fillSelect(fObra, uniq(RAW.map(r=>r.Obra)).sort(), "(Todas)");
+  fillSelect(fTipo, uniq(RAW.map(r=>r.Tipo)).sort(), "(Todos)");
+
+  // ✅ Cascata: no "Geral", Bloco fica habilitado mas só "(Todos)"
+  fObra.value = "";
+  rebuildBlocoOptions();
+
+  groupOpen.clear();
+  uniq(RAW.map(r=>r.Obra)).forEach(o=>groupOpen.set(o,true));
+  allCollapsed = false;
+  btnToggleAll.textContent = "Recolher tudo";
+
+  // ✅ também atualiza badge do financeiro
+  await loadFuncionariosMeta();
+
+  update();
+}
+
+function abrirFuncionarios(){
+  window.open("./funcionarios.html?cb="+Date.now(), "_blank");
+}
+
+function init(){
+  bindTableSort();
+
+  // ✅ Obra muda -> rebuild blocos -> update
+  fObra.addEventListener("change", onObraChange);
+
+  // Bloco e Tipo atualizam normalmente
+  [fBloco,fTipo].forEach(el => el.addEventListener("change", update));
+
+  btnFuncionarios.addEventListener("click", abrirFuncionarios);
+
+  btnReload.addEventListener("click", async ()=>{
+    try{ await loadData(); }
+    catch(e){ alert("Erro ao recarregar dados: " + e.message); }
+  });
+
+  btnPdf.addEventListener("click", ()=> window.print());
+
+  btnToggleAll.addEventListener("click", ()=>{
+    const anyOpen = [...groupOpen.values()].some(v=>v===true);
+    if(anyOpen){
+      allCollapsed = true;
+      for(const k of groupOpen.keys()) groupOpen.set(k,false);
+      btnToggleAll.textContent = "Expandir tudo";
+    }else{
+      allCollapsed = false;
+      for(const k of groupOpen.keys()) groupOpen.set(k,true);
+      btnToggleAll.textContent = "Recolher tudo";
+    }
+    renderTableRetratil(filtered());
+  });
+
+  loadData().catch(e=>{
+    alert("NÃO consegui carregar o dados.json. Abra o Console (F12) pra ver o erro.\n\n" + e.message);
+  });
+}
+init();
+</script>
+
+</body>
+</html>
