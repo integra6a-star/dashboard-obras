@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – Acompanhamento de Obra</title>
+
+  <link rel="icon" type="image/png" sizes="1024x1024" href="./icon.png">
+  <link rel="shortcut icon" href="./icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Dashboard">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#0b57d0">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="https://unpkg.com/leaflet-omnivore/leaflet-omnivore.min.js"></script>
+
+  <style>
+    body{font-family:Arial;margin:14px;background:#f4f6f8}
+    .container{max-width:1400px;margin:0 auto}
+
+    .header{
+      background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);
+      padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:14px;
+      justify-content:space-between;
+    }
+    .h-left{display:flex;align-items:center;gap:16px}
+    .logo{width:220px;height:auto;display:block;margin-left:4px}
+    .h-title{display:none}
+
+    .h-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .badge{
+      font-size:12px;color:#0b57d0;background:#e8f0ff;border:1px solid #cfe0ff;
+      padding:6px 10px;border-radius:999px;white-space:nowrap;
+    }
+    .btn{
+      border:1px solid #d8dde6;background:#fff;border-radius:10px;
+      padding:8px 12px;cursor:pointer;font-weight:700;
+    }
+    .btn.primary{background:#0b57d0;color:#fff;border-color:#0b57d0}
+    .btn:hover{filter:brightness(.98)}
+    .btn.small{padding:6px 10px;font-size:12px;border-radius:10px}
+
+    .top-filters{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+    .filter label{display:block;font-size:13px;color:#444;margin:0 0 6px}
+    select{width:100%;padding:12px;border-radius:12px;border:1px solid #e3e7ee;background:#fff}
+
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .card .t{font-size:13px;color:#555;margin-bottom:8px}
+    .card .v{font-size:30px;font-weight:800;color:#0b57d0;line-height:1}
+    .card .s{font-size:12px;color:#777;margin-top:8px}
+
+    .card.av-meta .v{color:#0b57d0}
+    .card.av-meta.good{outline:2px solid rgba(16,185,129,.35)}
+    .card.av-meta.good .v{color:#059669}
+    .card.av-meta.warn{outline:2px solid rgba(245,158,11,.35)}
+    .card.av-meta.warn .v{color:#d97706}
+    .card.av-meta.bad{outline:2px solid rgba(239,68,68,.35)}
+    .card.av-meta.bad .v{color:#dc2626}
+
+    .grid2{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
+    .grid2b{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .grid1{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
+
+    .panel{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .panel h3{margin:0 0 6px;font-size:16px}
+    .panel small{color:#6b7280}
+    .meta{color:#666;font-size:12px;margin:10px 0 0;text-align:right}
+
+    .table-wrap{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);overflow:hidden}
+    .table-head{display:flex;justify-content:space-between;align-items:center;padding:14px;gap:10px;flex-wrap:wrap}
+    .table-head h3{margin:0;font-size:16px}
+    .table-head small{color:#6b7280}
+    .table-head .right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{
+      background:#1f5fe0;color:#fff;padding:12px 10px;text-align:left;
+      cursor:pointer;user-select:none;white-space:nowrap;
+    }
+    thead th .arrow{opacity:.85;margin-left:6px;font-size:12px}
+    tbody td{padding:10px;border-bottom:1px solid #eee}
+    tbody tr:nth-child(even){background:#f7fbff}
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+    tr.group-row td{
+      background:#e8f0ff !important;
+      border-bottom:1px solid #dbeafe;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .caret{display:inline-block;width:16px;text-align:center;margin-right:6px}
+    .muted{color:#6b7280;font-weight:600;font-size:12px}
+
+    .weather-card{
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 0 10px rgba(0,0,0,.06);
+      padding:10px 12px;
+      margin-bottom:14px;
+    }
+
+    .weather-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+
+    .weather-head h3{
+      margin:0 0 2px;
+      font-size:15px;
+    }
+
+    .weather-head p{
+      margin:0;
+      color:#6b7280;
+      font-size:11px;
+    }
+
+    .weather-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .weather-btn{
+      border:1px solid #d8dde6;
+      background:#fff;
+      border-radius:10px;
+      padding:7px 10px;
+      cursor:pointer;
+      font-weight:700;
+      font-size:12px;
+    }
+
+    .weather-btn.primary{
+      background:#0b57d0;
+      color:#fff;
+      border-color:#0b57d0;
+    }
+
+    .weather-btn:hover{filter:brightness(.98)}
+
+    .weather-status{
+      background:#f3f4f6;
+      color:#374151;
+      border-radius:10px;
+      padding:8px 10px;
+      font-size:12px;
+      margin-bottom:8px;
+    }
+
+    .weather-content{
+      margin-top:4px;
+    }
+
+    .weather-compact-grid{
+      display:grid;
+      grid-template-columns:1.05fr 1.35fr 1.5fr;
+      gap:10px;
+      align-items:stretch;
+    }
+
+    .weather-summary,
+    .weather-inline-info,
+    .weather-forecast{
+      background:#f8fafc;
+      border-radius:12px;
+    }
+
+    .weather-summary{
+      position:relative;
+      min-height:160px;
+      overflow:hidden;
+      padding:0;
+      border:1px solid #e5e7eb;
+      background:#eef2f7;
+    }
+
+    #weatherMap{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      z-index:1;
+    }
+
+    .weather-map-overlay{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.82) 42%, rgba(255,255,255,.55) 100%);
+      pointer-events:none;
+    }
+
+    .weather-summary-content{
+      position:relative;
+      z-index:3;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height:160px;
+      padding:12px;
+    }
+
+    .weather-summary-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height:100%;
+      width:100%;
+    }
+
+    .weather-icon{
+      font-size:30px;
+      width:48px;
+      height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.92);
+      border-radius:12px;
+      box-shadow:0 0 8px rgba(0,0,0,.08);
+      flex:0 0 48px;
+      backdrop-filter:blur(4px);
+    }
+
+    .weather-temp{
+      font-size:24px;
+      font-weight:900;
+      color:#111827;
+      line-height:1;
+      text-shadow:0 1px 0 rgba(255,255,255,.45);
+    }
+
+    .weather-desc{
+      margin-top:4px;
+      color:#374151;
+      font-size:13px;
+      font-weight:700;
+      text-shadow:0 1px 0 rgba(255,255,255,.45);
+    }
+
+    .weather-risk{
+      margin-top:6px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 8px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+      background:rgba(232,240,255,.92);
+      color:#0b57d0;
+      backdrop-filter:blur(4px);
+      box-shadow:0 0 8px rgba(0,0,0,.04);
+    }
+
+    .weather-map-badge{
+      position:absolute;
+      right:10px;
+      bottom:10px;
+      z-index:4;
+      background:rgba(11,87,208,.88);
+      color:#fff;
+      font-size:10px;
+      font-weight:800;
+      padding:5px 8px;
+      border-radius:999px;
+      box-shadow:0 0 8px rgba(0,0,0,.12);
+      backdrop-filter:blur(4px);
+      pointer-events:none;
+    }
+
+    .weather-inline-info{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:8px;
+      padding:10px;
+    }
+
+    .weather-mini{
+      background:#fff;
+      border-radius:10px;
+      padding:8px 10px;
+      box-shadow:0 0 6px rgba(0,0,0,.04);
+    }
+
+    .weather-mini span{
+      display:block;
+      font-size:11px;
+      color:#6b7280;
+      margin-bottom:3px;
+    }
+
+    .weather-mini strong{
+      font-size:16px;
+      color:#111827;
+    }
+
+    .weather-forecast{
+      padding:10px;
+    }
+
+    .weather-forecast h4{
+      margin:0 0 8px;
+      font-size:14px;
+      color:#111827;
+    }
+
+    .weather-forecast-list{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .weather-day{
+      display:grid;
+      grid-template-columns:46px 24px 1fr auto;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border-radius:10px;
+      padding:7px 9px;
+      box-shadow:0 0 6px rgba(0,0,0,.04);
+    }
+
+    .weather-day-name{
+      font-size:12px;
+      font-weight:700;
+      color:#111827;
+      text-transform:capitalize;
+    }
+
+    .weather-day-icon{
+      font-size:18px;
+      text-align:center;
+    }
+
+    .weather-day-desc{
+      font-size:12px;
+      color:#6b7280;
+    }
+
+    .weather-day-temp{
+      font-size:12px;
+      font-weight:800;
+      color:#111827;
+      white-space:nowrap;
+    }
+
+    .weather-footer{
+      margin-top:8px;
+      font-size:11px;
+      color:#6b7280;
+      text-align:right;
+    }
+
+    .leaflet-control-container .leaflet-control-attribution{
+      font-size:9px;
+    }
+
+    @media(max-width:1100px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .grid2{grid-template-columns:1fr}
+      .grid2b{grid-template-columns:1fr}
+      .header{flex-direction:column;align-items:flex-start}
+      .h-actions{justify-content:flex-start}
+      .weather-compact-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:700px){
+      .top-filters{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .logo{width:200px}
+      .weather-day{
+        grid-template-columns:46px 24px 1fr;
+      }
+      .weather-day-temp{
+        grid-column:1 / -1;
+      }
+      .weather-temp{
+        font-size:22px;
+      }
+      .weather-summary,
+      .weather-summary-content{
+        min-height:150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="h-left">
+      <img class="logo" src="./logo.png" alt="Logo">
+      <div class="h-title">
+        <p style="margin:0;font-weight:800">Dashboard – Acompanhamento de Obra</p>
+        <p style="margin:0;color:#6b7280;font-size:12px">Consórcio Desenvolvimento Sustentável INTEGRA</p>
+      </div>
+    </div>
+
+    <div class="h-actions">
+      <span class="badge" id="badgeAtualizado">Atualizado (Obras): -</span>
+      <span class="badge" id="badgeFunc">Atualizado (Func.): -</span>
+
+      <button class="btn" id="btnFuncionarios">Funcionários</button>
+      <button class="btn" id="btnMedicoes">Medição</button>
+      <button class="btn" id="btnEapProd">EAP x Produzido</button>
+      <button class="btn" id="btnReload">Recarregar dados</button>
+      <button class="btn primary" id="btnPdf">Exportar PDF</button>
+    </div>
+  </div>
+
+  <div class="top-filters">
+    <div class="filter">
+      <label>Obra</label>
+      <select id="fObra"></select>
+    </div>
+    <div class="filter">
+      <label>Bloco</label>
+      <select id="fBloco"></select>
+    </div>
+    <div class="filter">
+      <label>Tipo de extensão</label>
+      <select id="fTipo"></select>
+    </div>
+  </div>
+
+  <div class="weather-card" id="weatherCard">
+    <div class="weather-head">
+      <div>
+        <h3>Clima no Local da Obra</h3>
+        <p id="weatherLocationText">Use a localização do celular para consultar o tempo real do local.</p>
+      </div>
+
+      <div class="weather-actions">
+        <button id="btnGetWeather" class="weather-btn primary">📍 Usar minha localização</button>
+        <button id="btnRefreshWeather" class="weather-btn">🔄 Atualizar clima</button>
+      </div>
+    </div>
+
+    <div id="weatherStatus" class="weather-status">
+      Toque em “Usar minha localização” para carregar o clima do local.
+    </div>
+
+    <div id="weatherContent" class="weather-content" style="display:none;">
+      <div class="weather-compact-grid">
+        <div class="weather-summary">
+          <div id="weatherMap"></div>
+          <div class="weather-map-overlay"></div>
+          <div class="weather-summary-content">
+            <div class="weather-summary-left">
+              <div class="weather-icon" id="weatherEmoji">⛅</div>
+              <div>
+                <div class="weather-temp" id="weatherTemp">--°C</div>
+                <div class="weather-desc" id="weatherDesc">---</div>
+                <div class="weather-risk" id="weatherRisk">Aguardando consulta</div>
+              </div>
+            </div>
+          </div>
+          <div class="weather-map-badge">MAPA DO LOCAL</div>
+        </div>
+
+        <div class="weather-inline-info">
+          <div class="weather-mini">
+            <span>Sensação</span>
+            <strong id="weatherFeelsLike">--°C</strong>
+          </div>
+          <div class="weather-mini">
+            <span>Umidade</span>
+            <strong id="weatherHumidity">--%</strong>
+          </div>
+          <div class="weather-mini">
+            <span>Vento</span>
+            <strong id="weatherWind">-- km/h</strong>
+          </div>
+          <div class="weather-mini">
+            <span>Chuva</span>
+            <strong id="weatherRain">-- mm</strong>
+          </div>
+        </div>
+
+        <div class="weather-forecast">
+          <h4>Próximos dias</h4>
+          <div id="weatherForecastList" class="weather-forecast-list"></div>
+        </div>
+      </div>
+
+      <div class="weather-footer" id="weatherUpdatedAt">Última atualização: -</div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="t">Extensão Planejada (m)</div>
+      <div class="v" id="kPlan">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Extensão Executada (m)</div>
+      <div class="v" id="kExec">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Saldo a Executar (m)</div>
+      <div class="v" id="kSaldo">0</div>
+      <div class="s">Planejado − Executado</div>
+    </div>
+
+    <div class="card av-meta" id="cardAvanco">
+      <div class="t">Avanço (%)</div>
+      <div class="v" id="kAvanco">0%</div>
+      <div class="s">Meta: <b>70%</b> • Executado / Planejado</div>
+    </div>
+
+    <div class="card">
+      <div class="t">PV (qtd)</div>
+      <div class="v" id="kPV">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Profundidade PV (m)</div>
+      <div class="v" id="kProf">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Economias previstas</div>
+      <div class="v" id="kEcoPrev">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+
+    <div class="card">
+      <div class="t">Economias recebidas</div>
+      <div class="v" id="kEcoRec">0</div>
+      <div class="s">Somatório do filtro</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Planejado × Executado por Obra</h3>
+      <small>Colunas agrupadas</small>
+      <div style="height:420px"><canvas id="chObra"></canvas></div>
+      <div class="meta" id="meta"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Distribuição por Tipo</h3>
+      <small>Participação do Planejado (m)</small>
+      <div style="height:420px"><canvas id="chTipo"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid2b">
+    <div class="panel">
+      <h3>Avanço (%) por Bloco</h3>
+      <small>Executado / Planejado</small>
+      <div style="height:360px"><canvas id="chAvancoBloco"></canvas></div>
+    </div>
+
+    <div class="panel">
+      <h3>Ranking – Top 10 Executado (m)</h3>
+      <small>Blocos com maior produção</small>
+      <div style="height:360px"><canvas id="chTop10"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid1">
+    <div class="panel">
+      <h3>Indicadores de Produção por Mês</h3>
+      <small>Soma do Executado (m) por mês • respeita os filtros</small>
+      <div style="height:360px"><canvas id="chMensal"></canvas></div>
+      <div class="meta" id="metaMensal"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-head">
+      <div>
+        <h3>Tabela detalhada (Retrátil por Obra)</h3>
+        <small>Clique na linha azul da obra para recolher/expandir</small>
+      </div>
+      <div class="right">
+        <button class="btn small" id="btnToggleAll">Recolher tudo</button>
+        <small id="linhasInfo">Linhas: 0</small>
+      </div>
+    </div>
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="Data">Data <span class="arrow" id="aData"></span></th>
+            <th data-col="Obra">Obra <span class="arrow" id="aObra"></span></th>
+            <th data-col="Bloco">Bloco <span class="arrow" id="aBloco"></span></th>
+            <th data-col="Tipo">Tipo <span class="arrow" id="aTipo"></span></th>
+            <th data-col="Planejado_m" class="num">Planejado (m) <span class="arrow" id="aPlan"></span></th>
+            <th data-col="Executado_m" class="num">Executado (m) <span class="arrow" id="aExec"></span></th>
+            <th data-col="Avanco" class="num">Avanço (%) <span class="arrow" id="aAv"></span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let RAW = [];
+let MESES = [];
+let chartObra, chartTipo, chartAvBloco, chartTop10, chartMensal;
+
+let sortState = { col: "Data", dir: "asc" };
+const META_AVANCO = 70;
+let groupOpen = new Map();
+let allCollapsed = false;
+let WEATHER_LAST = null;
+let weatherMap = null;
+let weatherMarker = null;
+let obraKmlLayer = null;
+let kmlFeatureLayers = [];
+let kmlReady = false;
+let kmlInitialBoundsFitted = false;
+
+function uniq(arr){ return [...new Set(arr)].filter(x=>x!==null && x!==undefined && x!==""); }
+function fillSelect(sel, items, labelAll){
+  sel.innerHTML = "";
+  sel.add(new Option(labelAll, ""));
+  items.forEach(v => sel.add(new Option(v, v)));
+}
+const fmtInt = (n)=> Number(n||0).toLocaleString("pt-BR",{maximumFractionDigits:0});
+const fmt1   = (n)=> Number(n||0).toLocaleString("pt-BR",{minimumFractionDigits:1, maximumFractionDigits:1});
+
+function clampPct(p){
+  if(p===null || p===undefined || Number.isNaN(p)) return null;
+  return Math.max(0, Math.min(100, p));
+}
+function avancoPct(P,E){
+  if(!P || P<=0) return null;
+  return clampPct((E/P*100));
+}
+function calcAvancoRow(r){
+  const p = Number(r.Planejado_m||0);
+  const e = Number(r.Executado_m||0);
+  return p>0 ? clampPct((e/p*100)) : null;
+}
+
+function formatarDataHora(value){
+  if(!value || value === "-") return "-";
+  const s = String(value).trim();
+  const d = new Date(s);
+  if(!isNaN(d.getTime())){
+    const data = d.toLocaleDateString("pt-BR");
+    const hora = d.toLocaleTimeString("pt-BR", { hour:"2-digit", minute:"2-digit" });
+    return `${data} ${hora}`;
+  }
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})/);
+  if(m){
+    const [_,Y,M,D,hh,mm] = m;
+    return `${D}/${M}/${Y} ${hh}:${mm}`;
+  }
+  return s;
+}
+
+function labelMes(ym){
+  if(!ym) return "";
+  const [y,m] = String(ym).split("-");
+  const meses = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+  const mi = Number(m||0)-1;
+  const mm = (mi>=0 && mi<12) ? meses[mi] : m;
+  return `${mm}/${String(y||"").slice(2)}`;
+}
+
+function filtered(){
+  const obra=fObra.value, bloco=fBloco.value, tipo=fTipo.value;
+  return RAW.filter(r => (!obra || r.Obra===obra) && (!bloco || r.Bloco===bloco) && (!tipo || r.Tipo===tipo));
+}
+
+function rebuildBlocoOptions(){
+  const obra = fObra.value;
+  const prev = fBloco.value;
+  if(!obra){
+    fillSelect(fBloco, [], "(Todos)");
+    fBloco.value = "";
+    return;
+  }
+  const blocos = uniq(RAW.filter(r => r.Obra === obra).map(r => r.Bloco))
+    .sort((a,b)=>String(a).localeCompare(String(b)));
+  fillSelect(fBloco, blocos, "(Todos)");
+  const stillValid = blocos.includes(prev);
+  fBloco.value = stillValid ? prev : "";
+}
+
+function onObraChange(){
+  rebuildBlocoOptions();
+  update();
+  syncMapaComBlocoSelecionado();
+}
+
+function onBlocoChange(){
+  update();
+  syncMapaComBlocoSelecionado();
+}
+
+function groupBy(rows, key){
+  const map = new Map();
+  rows.forEach(r=>{
+    const k = (r[key] ?? "—");
+    if(!map.has(k)) map.set(k,{k, P:0, E:0, PV:0, Prof:0, EP:0, ER:0});
+    const cur = map.get(k);
+    cur.P += Number(r.Planejado_m||0);
+    cur.E += Number(r.Executado_m||0);
+    cur.PV += Number(r.PV||0);
+    cur.Prof += Number(r.Profundidade_m||0);
+    cur.EP += Number(r.Economias_Previstas||0);
+    cur.ER += Number(r.Economias_Recebidas||0);
+  });
+  return [...map.values()];
+}
+
+function setCardAvancoColor(pct){
+  cardAvanco.classList.remove("good","warn","bad");
+  if(pct >= META_AVANCO) cardAvanco.classList.add("good");
+  else if(pct >= META_AVANCO-10) cardAvanco.classList.add("warn");
+  else cardAvanco.classList.add("bad");
+}
+
+function setArrows(){
+  const arrows = { Data:"aData",Obra:"aObra",Bloco:"aBloco",Tipo:"aTipo",Planejado_m:"aPlan",Executado_m:"aExec",Avanco:"aAv" };
+  for(const k in arrows) document.getElementById(arrows[k]).textContent = "";
+  const id = arrows[sortState.col];
+  if(id) document.getElementById(id).textContent = sortState.dir==="asc" ? "▲" : "▼";
+}
+
+function sortRows(rows){
+  const col = sortState.col;
+  const dir = sortState.dir === "asc" ? 1 : -1;
+
+  return [...rows].sort((a,b)=>{
+    let va, vb;
+    if(col==="Avanco"){
+      va = calcAvancoRow(a); vb = calcAvancoRow(b);
+      if(va===null && vb===null) return 0;
+      if(va===null) return 1;
+      if(vb===null) return -1;
+      return (va-vb)*dir;
+    }
+    if(col==="Planejado_m" || col==="Executado_m"){
+      va = Number(a[col]||0); vb = Number(b[col]||0);
+      return (va-vb)*dir;
+    }
+    if(col==="Data"){
+      va = String(a.Data||""); vb = String(b.Data||"");
+      return va.localeCompare(vb)*dir;
+    }
+    va = String(a[col]||""); vb = String(b[col]||"");
+    return va.localeCompare(vb)*dir;
+  });
+}
+
+function renderTableRetratil(rows){
+  const sorted = sortRows(rows);
+  linhasInfo.textContent = "Linhas: " + sorted.length;
+  setArrows();
+
+  const obras = uniq(sorted.map(r=>r.Obra)).sort((a,b)=>String(a).localeCompare(String(b)));
+  const rowsByObra = new Map();
+  obras.forEach(o=>rowsByObra.set(o, []));
+  sorted.forEach(r=>{
+    const o = r.Obra || "—";
+    if(!rowsByObra.has(o)) rowsByObra.set(o, []);
+    rowsByObra.get(o).push(r);
+  });
+
+  obras.forEach(o=>{ if(!groupOpen.has(o)) groupOpen.set(o, true); });
+  if(allCollapsed){ obras.forEach(o=>groupOpen.set(o,false)); }
+
+  tbody.innerHTML = "";
+
+  obras.forEach(obra=>{
+    const list = rowsByObra.get(obra) || [];
+    const sumP = list.reduce((s,r)=>s+Number(r.Planejado_m||0),0);
+    const sumE = list.reduce((s,r)=>s+Number(r.Executado_m||0),0);
+    const pct = avancoPct(sumP,sumE);
+    const opened = !!groupOpen.get(obra);
+
+    const trG = document.createElement("tr");
+    trG.className = "group-row";
+    trG.innerHTML = `
+      <td colspan="7">
+        <span class="caret">${opened ? "▾" : "▸"}</span>
+        ${obra}
+        <span class="muted"> • Planejado: ${fmt1(sumP)} m • Executado: ${fmt1(sumE)} m • Avanço: ${pct===null?"—":pct.toFixed(0)+"%"}</span>
+      </td>
+    `;
+    trG.addEventListener("click", ()=>{
+      groupOpen.set(obra, !groupOpen.get(obra));
+      allCollapsed = false;
+      btnToggleAll.textContent = isAllCollapsed() ? "Expandir tudo" : "Recolher tudo";
+      renderTableRetratil(filtered());
+    });
+    tbody.appendChild(trG);
+
+    list.forEach(r=>{
+      const av = calcAvancoRow(r);
+      const tr = document.createElement("tr");
+      tr.style.display = opened ? "" : "none";
+      const d = r.Data ? (()=>{ const [Y,M,D]=String(r.Data).split("-"); return (Y&&M&&D)?`${D}/${M}/${Y}`:""; })() : "";
+      tr.innerHTML = `
+        <td>${d}</td>
+        <td>${r.Obra||""}</td>
+        <td>${r.Bloco||""}</td>
+        <td>${r.Tipo||""}</td>
+        <td class="num">${fmt1(r.Planejado_m)}</td>
+        <td class="num">${fmt1(r.Executado_m)}</td>
+        <td class="num">${av===null ? "—" : av.toFixed(0)+"%"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  });
+
+  btnToggleAll.textContent = isAllCollapsed() ? "Expandir tudo" : "Recolher tudo";
+
+  function isAllCollapsed(){
+    for(const open of groupOpen.values()){ if(open) return false; }
+    return true;
+  }
+}
+
+function calcSeriesMensal(rows){
+  const meses = (MESES && MESES.length) ? MESES : (()=> {
+    const keys = new Set();
+    rows.forEach(r=>{
+      const pm = r.ProducaoMensal || {};
+      Object.keys(pm).forEach(k=>keys.add(k));
+    });
+    return [...keys].sort();
+  })();
+
+  const map = new Map();
+  meses.forEach(m=>map.set(m, 0));
+
+  rows.forEach(r=>{
+    const pm = r.ProducaoMensal || {};
+    for(const mes in pm){
+      const v = Number(pm[mes]||0);
+      map.set(mes, (map.get(mes)||0) + v);
+    }
+  });
+
+  const labels = meses.map(labelMes);
+  const data = meses.map(m => map.get(m) || 0);
+
+  return { meses, labels, data };
+}
+
+function update(){
+  const rows = filtered();
+
+  const plan = rows.reduce((s,r)=>s+Number(r.Planejado_m||0),0);
+  const exec = rows.reduce((s,r)=>s+Number(r.Executado_m||0),0);
+  const saldo = plan - exec;
+  const av = plan>0 ? (clampPct(exec/plan*100) ?? 0) : 0;
+
+  const pv = rows.reduce((s,r)=>s+Number(r.PV||0),0);
+  const prof = rows.reduce((s,r)=>s+Number(r.Profundidade_m||0),0);
+
+  const ecoPrev = rows.reduce((s,r)=>s+Number(r.Economias_Previstas||0),0);
+  const ecoRec  = rows.reduce((s,r)=>s+Number(r.Economias_Recebidas||0),0);
+
+  kPlan.textContent = fmtInt(plan);
+  kExec.textContent = fmtInt(exec);
+  kSaldo.textContent = fmtInt(saldo);
+  kAvanco.textContent = av.toFixed(0) + "%";
+  setCardAvancoColor(av);
+
+  kPV.textContent = fmtInt(pv);
+  kProf.textContent = fmtInt(prof);
+  kEcoPrev.textContent = fmtInt(ecoPrev);
+  kEcoRec.textContent = fmtInt(ecoRec);
+
+  const byObra = groupBy(rows,"Obra").sort((a,b)=>String(a.k).localeCompare(String(b.k)));
+  const labelsO = byObra.map(x=>x.k);
+  const dataP = byObra.map(x=>x.P);
+  const dataE = byObra.map(x=>x.E);
+
+  if(chartObra) chartObra.destroy();
+  chartObra = new Chart(chObra, {
+    type:"bar",
+    data:{ labels: labelsO, datasets:[
+      { label:"Planejado (m)", data:dataP },
+      { label:"Executado (m)", data:dataE }
+    ]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{ x:{ ticks:{ maxRotation:45, minRotation:45 } },
+               y:{ title:{ display:true, text:"Metros (m)" } } }
+    }
+  });
+
+  const byTipo = groupBy(rows,"Tipo").sort((a,b)=>b.P-a.P);
+  const labelsT = byTipo.map(x=>x.k);
+  const dataT = byTipo.map(x=>x.P);
+
+  if(chartTipo) chartTipo.destroy();
+  chartTipo = new Chart(chTipo, {
+    type:"doughnut",
+    data:{ labels: labelsT, datasets:[{ data:dataT }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{ position:"right" },
+        tooltip:{ callbacks:{
+          label:(ctx)=>{
+            const total = dataT.reduce((s,v)=>s+v,0) || 1;
+            const v = ctx.raw || 0;
+            const p = (v/total*100);
+            return ` ${ctx.label}: ${fmt1(v)} m (${p.toFixed(1)}%)`;
+          }
+        }}
+      },
+      cutout:"60%"
+    }
+  });
+
+  const byBloco = groupBy(rows,"Bloco");
+  const byBlocoName = [...byBloco].sort((a,b)=>String(a.k).localeCompare(String(b.k)));
+  const labelsB = byBlocoName.map(x=>x.k);
+  const dataAvB = byBlocoName.map(x=>{
+    const pct = avancoPct(x.P,x.E);
+    return pct===null ? 0 : pct;
+  });
+
+  if(chartAvBloco) chartAvBloco.destroy();
+  chartAvBloco = new Chart(chAvancoBloco, {
+    type:"bar",
+    data:{ labels: labelsB, datasets:[{ label:"Avanço (%)", data:dataAvB }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ display:false } },
+      scales:{ y:{ min:0, max:100, ticks:{ callback:(v)=>v+"%" } } }
+    }
+  });
+
+  const top10 = [...byBloco].sort((a,b)=>b.E-a.E).slice(0,10);
+  const labelsTop = top10.map(x=>x.k);
+  const dataTop = top10.map(x=>x.E);
+
+  if(chartTop10) chartTop10.destroy();
+  chartTop10 = new Chart(chTop10, {
+    type:"bar",
+    data:{ labels: labelsTop, datasets:[{ label:"Executado (m)", data:dataTop }]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } } }
+  });
+
+  const mensal = calcSeriesMensal(rows);
+  if(chartMensal) chartMensal.destroy();
+  chartMensal = new Chart(chMensal, {
+    type:"bar",
+    data:{ labels: mensal.labels, datasets:[{ label:"Executado (m) no mês", data: mensal.data }] },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{ display:false },
+        tooltip:{ callbacks:{
+          label:(ctx)=> ` ${fmt1(ctx.raw)} m`
+        }}
+      },
+      scales:{
+        y:{ title:{ display:true, text:"Metros (m)" } }
+      }
+    }
+  });
+
+  const totalMensal = mensal.data.reduce((s,v)=>s+(Number(v)||0),0);
+  metaMensal.textContent = `Meses: ${mensal.meses.length} | Soma (Executado mensal): ${fmt1(totalMensal)} m`;
+
+  renderTableRetratil(rows);
+}
+
+function bindTableSort(){
+  document.querySelectorAll("thead th").forEach(th=>{
+    th.addEventListener("click", ()=>{
+      const col = th.getAttribute("data-col");
+      if(sortState.col === col) sortState.dir = (sortState.dir==="asc"?"desc":"asc");
+      else { sortState.col = col; sortState.dir="asc"; }
+      update();
+    });
+  });
+}
+
+async function loadFuncionariosMeta(){
+  try{
+    const res = await fetch("./funcionarios.json?cb="+Date.now());
+    if(!res.ok) throw new Error("Não consegui carregar ./funcionarios.json");
+    const json = await res.json();
+    const updatedRaw = json.atualizado_em || json.atualizado || json.updated || "-";
+    const updated = formatarDataHora(updatedRaw);
+    badgeFunc.textContent = "Atualizado (Func.): " + updated;
+  }catch(e){
+    badgeFunc.textContent = "Atualizado (Func.): ERRO";
+  }
+}
+
+async function loadData(){
+  const res = await fetch("./dados.json?cb="+Date.now());
+  if(!res.ok) throw new Error("Não consegui carregar ./dados.json");
+  const json = await res.json();
+
+  RAW = json.registros || [];
+  MESES = json.meses_producao || [];
+  const updatedRaw = json.atualizado_em || "-";
+  const updated = formatarDataHora(updatedRaw);
+
+  badgeAtualizado.textContent = "Atualizado (Obras): " + updated;
+  meta.textContent = `Atualizado em: ${updated} | Linhas: ${RAW.length}`;
+
+  fillSelect(fObra, uniq(RAW.map(r=>r.Obra)).sort(), "(Todas)");
+  fillSelect(fTipo, uniq(RAW.map(r=>r.Tipo)).sort(), "(Todos)");
+
+  fObra.value = "";
+  rebuildBlocoOptions();
+
+  groupOpen.clear();
+  uniq(RAW.map(r=>r.Obra)).forEach(o=>groupOpen.set(o,true));
+  allCollapsed = false;
+  btnToggleAll.textContent = "Recolher tudo";
+
+  await loadFuncionariosMeta();
+  update();
+  syncMapaComBlocoSelecionado();
+}
+
+function abrirFuncionarios(){
+  window.open("./funcionarios.html?cb="+Date.now(), "_blank");
+}
+
+function abrirMedicoes(){
+  const ok = sessionStorage.getItem("auth_medicao") === "1";
+  if(!ok){
+    const senha = prompt("Senha de acesso (Medição):");
+    if(senha !== "2020"){
+      alert("Senha incorreta.");
+      return;
+    }
+    sessionStorage.setItem("auth_medicao","1");
+  }
+  window.open("./medicao.html?cb="+Date.now(), "_blank");
+}
+
+function setWeatherStatus(msg, isError = false){
+  weatherStatus.style.display = "block";
+  weatherStatus.textContent = msg;
+  weatherStatus.style.background = isError ? "#fef2f2" : "#f3f4f6";
+  weatherStatus.style.color = isError ? "#991b1b" : "#374151";
+}
+
+function showWeatherContent(show = true){
+  weatherContent.style.display = show ? "block" : "none";
+  if(show && weatherMap){
+    setTimeout(() => weatherMap.invalidateSize(), 100);
+  }
+}
+
+function getWeatherInfo(code, isDay = 1){
+  const map = {
+    0:  { desc: "Céu limpo", emoji: isDay ? "☀️" : "🌙" },
+    1:  { desc: "Predominantemente limpo", emoji: isDay ? "🌤️" : "🌙" },
+    2:  { desc: "Parcialmente nublado", emoji: "⛅" },
+    3:  { desc: "Nublado", emoji: "☁️" },
+    45: { desc: "Neblina", emoji: "🌫️" },
+    48: { desc: "Nevoeiro com geada", emoji: "🌫️" },
+    51: { desc: "Garoa fraca", emoji: "🌦️" },
+    53: { desc: "Garoa moderada", emoji: "🌦️" },
+    55: { desc: "Garoa intensa", emoji: "🌧️" },
+    56: { desc: "Garoa congelante fraca", emoji: "🌨️" },
+    57: { desc: "Garoa congelante intensa", emoji: "🌨️" },
+    61: { desc: "Chuva fraca", emoji: "🌦️" },
+    63: { desc: "Chuva moderada", emoji: "🌧️" },
+    65: { desc: "Chuva forte", emoji: "🌧️" },
+    66: { desc: "Chuva congelante fraca", emoji: "🌨️" },
+    67: { desc: "Chuva congelante forte", emoji: "🌨️" },
+    71: { desc: "Neve fraca", emoji: "❄️" },
+    73: { desc: "Neve moderada", emoji: "❄️" },
+    75: { desc: "Neve forte", emoji: "❄️" },
+    77: { desc: "Grãos de neve", emoji: "❄️" },
+    80: { desc: "Pancadas fracas", emoji: "🌦️" },
+    81: { desc: "Pancadas moderadas", emoji: "🌧️" },
+    82: { desc: "Pancadas fortes", emoji: "⛈️" },
+    85: { desc: "Pancadas de neve fracas", emoji: "🌨️" },
+    86: { desc: "Pancadas de neve fortes", emoji: "🌨️" },
+    95: { desc: "Trovoadas", emoji: "⛈️" },
+    96: { desc: "Trovoadas com granizo fraco", emoji: "⛈️" },
+    99: { desc: "Trovoadas com granizo forte", emoji: "⛈️" }
+  };
+  return map[code] || { desc: "Condição não identificada", emoji: "🌍" };
+}
+
+function getWeatherRiskText(current, daily){
+  const chuva = Number(current?.rain ?? current?.precipitation ?? 0);
+  const vento = Number(current?.wind_speed_10m ?? 0);
+  const chuvaProbHoje = Number(daily?.precipitation_probability_max?.[0] ?? 0);
+
+  if(chuva >= 2 || chuvaProbHoje >= 80 || vento >= 45) return "🔴 Atenção operacional";
+  if(chuva > 0 || chuvaProbHoje >= 50 || vento >= 30) return "🟡 Monitorar clima";
+  return "🟢 Condição favorável";
+}
+
+function formatDay(dateStr){
+  const date = new Date(dateStr + "T12:00:00");
+  return date.toLocaleDateString("pt-BR", { weekday: "short" });
+}
+
+function formatCoords(lat, lon){
+  return `Lat ${Number(lat).toFixed(5)} | Lon ${Number(lon).toFixed(5)}`;
+}
+
+function normalizarTexto(s){
+  return String(s || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toUpperCase();
+}
+
+function normalizarObra(s){
+  return normalizarTexto(s)
+    .replace(/^CT\s+/, "CTS ")
+    .replace(/^CTS\s+/, "CTS ")
+    .replace(/^CTE\s+/, "CTS ");
+}
+
+function normalizarBloco(s){
+  const t = normalizarTexto(s);
+  if(!t) return "";
+
+  const m1 = t.match(/BLOCO\s*0*(\d+)/);
+  if(m1) return `BLOCO ${Number(m1[1])}`;
+
+  const m2 = t.match(/^0*(\d+)$/);
+  if(m2) return `BLOCO ${Number(m2[1])}`;
+
+  return t;
+}
+
+function obterTextoDaFeicao(layer){
+  const props = layer?.feature?.properties || {};
+  const partes = [
+    props.name,
+    props.title,
+    props.description,
+    props.desc,
+    props.Nome,
+    props.NOME,
+    props.Name
+  ].filter(Boolean);
+
+  let txt = partes.join(" | ");
+
+  if(layer.getPopup && layer.getPopup()){
+    try{
+      txt += " | " + layer.getPopup().getContent();
+    }catch(e){}
+  }
+
+  return normalizarTexto(txt);
+}
+
+function obterEstruturaDaFeicao(layer){
+  const texto = obterTextoDaFeicao(layer);
+
+  const mBloco = texto.match(/BLOCO\s*0*(\d+)/);
+  const bloco = mBloco ? `BLOCO ${Number(mBloco[1])}` : "";
+
+  let obra = "";
+  const linhas = texto
+    .split("|")
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  for(const linha of linhas){
+    if(
+      linha &&
+      !/^BLOCO\s*\d+/.test(linha) &&
+      !/^SP[-\sA-Z0-9]/.test(linha) &&
+      !/^PONTOS? DE/.test(linha) &&
+      !/^ECONOMIAS?/.test(linha) &&
+      !/^S?P[-\sTL]/.test(linha)
+    ){
+      if(
+        linha.includes("CTS ") ||
+        linha.includes("CT ") ||
+        linha.includes("JD ") ||
+        linha.includes("JOAO") ||
+        linha.includes("DOMINGOS") ||
+        linha.includes("MIRIAM") ||
+        linha.includes("CANZI")
+      ){
+        obra = linha;
+        break;
+      }
+    }
+  }
+
+  return {
+    texto,
+    bloco: normalizarBloco(bloco),
+    obra: normalizarObra(obra)
+  };
+}
+
+function extrairLatLng(layer){
+  if(layer.getLatLng){
+    try{
+      return layer.getLatLng();
+    }catch(e){}
+  }
+
+  if(layer.getBounds){
+    try{
+      const b = layer.getBounds();
+      if(b && b.isValid && b.isValid()) return b.getCenter();
+    }catch(e){}
+  }
+
+  if(layer.feature && layer.feature.geometry){
+    try{
+      const g = layer.feature.geometry;
+
+      if(g.type === "Point" && Array.isArray(g.coordinates)){
+        return L.latLng(g.coordinates[1], g.coordinates[0]);
+      }
+
+      if(g.type === "Polygon" && Array.isArray(g.coordinates?.[0]) && g.coordinates[0].length){
+        const coords = g.coordinates[0];
+        let sumLat = 0, sumLng = 0, count = 0;
+
+        coords.forEach(c=>{
+          if(Array.isArray(c) && c.length >= 2){
+            sumLng += Number(c[0]);
+            sumLat += Number(c[1]);
+            count++;
+          }
+        });
+
+        if(count > 0){
+          return L.latLng(sumLat / count, sumLng / count);
+        }
+      }
+    }catch(e){}
+  }
+
+  return null;
+}
+
+function escolherMelhorFeicao(matches){
+  if(!matches || !matches.length) return null;
+
+  const pontuais = matches.filter(m => {
+    try{
+      return !!m.layer.getLatLng;
+    }catch(e){
+      return false;
+    }
+  });
+
+  if(pontuais.length) return pontuais[0];
+
+  const comBounds = matches
+    .map(m => {
+      try{
+        const b = m.layer.getBounds ? m.layer.getBounds() : null;
+        const area = b && b.isValid && b.isValid()
+          ? Math.abs((b.getNorth() - b.getSouth()) * (b.getEast() - b.getWest()))
+          : Number.MAX_SAFE_INTEGER;
+        return { ...m, _area: area };
+      }catch(e){
+        return { ...m, _area: Number.MAX_SAFE_INTEGER };
+      }
+    })
+    .sort((a,b) => a._area - b._area);
+
+  return comBounds[0];
+}
+
+function resetarDestaqueKml(){
+  kmlFeatureLayers.forEach(item=>{
+    const layer = item.layer;
+
+    if(layer.setStyle){
+      layer.setStyle({
+        color: item.baseStyle.color || "#3388ff",
+        weight: item.baseStyle.weight ?? 2,
+        opacity: item.baseStyle.opacity ?? 1,
+        fillColor: item.baseStyle.fillColor || item.baseStyle.color || "#3388ff",
+        fillOpacity: item.baseStyle.fillOpacity ?? 0.2
+      });
+    }
+
+    if(layer.setOpacity){
+      layer.setOpacity(1);
+    }
+
+    if(layer.setRadius && item.baseRadius){
+      layer.setRadius(item.baseRadius);
+    }
+  });
+}
+
+function destacarLayersSelecionados(matches){
+  const selected = new Set(matches.map(m => m.layer));
+
+  kmlFeatureLayers.forEach(item=>{
+    const layer = item.layer;
+    const isSelected = selected.has(layer);
+
+    if(layer.setStyle){
+      if(isSelected){
+        layer.setStyle({
+          color: "#ffcc00",
+          weight: 5,
+          opacity: 1,
+          fillColor: "#ffeb3b",
+          fillOpacity: 0.65
+        });
+      }else{
+        layer.setStyle({
+          color: item.baseStyle.color || "#3388ff",
+          weight: Math.max(1, (item.baseStyle.weight ?? 2) - 1),
+          opacity: 0.18,
+          fillColor: item.baseStyle.fillColor || item.baseStyle.color || "#3388ff",
+          fillOpacity: 0.08
+        });
+      }
+    }
+
+    if(layer.setOpacity){
+      layer.setOpacity(isSelected ? 1 : 0.2);
+    }
+
+    if(layer.setRadius && item.baseRadius){
+      layer.setRadius(isSelected ? Math.max(item.baseRadius, item.baseRadius + 2) : Math.max(3, item.baseRadius - 1));
+    }
+  });
+}
+
+function localizarBlocosNoKml(obraValor, blocoValor){
+  const obraAlvo = normalizarObra(obraValor);
+  const blocoAlvo = normalizarBloco(blocoValor);
+
+  if(!blocoAlvo) return [];
+
+  return kmlFeatureLayers.filter(item=>{
+    const blocoOk = item.info.bloco === blocoAlvo;
+    const obraOk = !obraAlvo || item.info.obra === obraAlvo || item.info.texto.includes(obraAlvo);
+    return blocoOk && obraOk;
+  });
+}
+
+function syncMapaComBlocoSelecionado(){
+  if(!weatherMap || !kmlReady) return;
+
+  const obraSelecionada = fObra.value;
+  const blocoSelecionado = fBloco.value;
+
+  if(!blocoSelecionado){
+    resetarDestaqueKml();
+    return;
+  }
+
+  const matches = localizarBlocosNoKml(obraSelecionada, blocoSelecionado);
+
+  console.log("Obra filtro:", obraSelecionada);
+  console.log("Bloco filtro:", blocoSelecionado);
+  console.log("Matches encontrados:", matches.length);
+
+  if(!matches.length){
+    resetarDestaqueKml();
+    return;
+  }
+
+  destacarLayersSelecionados(matches);
+
+  const melhor = escolherMelhorFeicao(matches);
+  if(!melhor) return;
+
+  try{
+    const ll = extrairLatLng(melhor.layer);
+
+    if(ll){
+      weatherMap.setView(ll, 18, { animate: true });
+    }else if(melhor.layer.getBounds){
+      const bounds = melhor.layer.getBounds();
+      if(bounds && bounds.isValid()){
+        weatherMap.fitBounds(bounds, { padding:[20,20], maxZoom:18 });
+      }
+    }
+  }catch(e){
+    console.error("Erro ao focar bloco no mapa:", e);
+  }
+
+  if(melhor.layer.openPopup){
+    try{ melhor.layer.openPopup(); }catch(e){}
+  }
+
+  setTimeout(() => weatherMap.invalidateSize(), 100);
+}
+
+function carregarKmlDaObra(){
+  if(!weatherMap || obraKmlLayer) return;
+
+  try{
+    obraKmlLayer = omnivore.kml("./obra_completa.kml")
+      .on("ready", function(){
+        try{
+          kmlFeatureLayers = [];
+
+          this.eachLayer(layer=>{
+            const options = layer.options || {};
+            const info = obterEstruturaDaFeicao(layer);
+
+            kmlFeatureLayers.push({
+              layer,
+              info,
+              baseStyle: {
+                color: options.color,
+                weight: options.weight,
+                opacity: options.opacity,
+                fillColor: options.fillColor,
+                fillOpacity: options.fillOpacity
+              },
+              baseRadius: typeof layer.getRadius === "function" ? layer.getRadius() : null
+            });
+
+            console.log("KML FEIÇÃO:", info);
+          });
+
+          kmlReady = true;
+
+          const bounds = this.getBounds();
+          if(bounds && bounds.isValid() && !kmlInitialBoundsFitted){
+            weatherMap.fitBounds(bounds, { padding:[10,10] });
+            kmlInitialBoundsFitted = true;
+          }
+
+          syncMapaComBlocoSelecionado();
+        }catch(e){
+          console.error("Erro ao processar KML:", e);
+        }
+      })
+      .on("error", function(e){
+        console.error("Erro ao carregar KML da obra:", e);
+      })
+      .addTo(weatherMap);
+  }catch(e){
+    console.error("Falha ao iniciar camada KML:", e);
+  }
+}
+
+function ensureWeatherMap(lat = -23.5505, lon = -46.6333){
+  if(weatherMap) return;
+
+  weatherMap = L.map("weatherMap", {
+    zoomControl: false,
+    attributionControl: true,
+    dragging: true,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    keyboard: false,
+    tap: false
+  }).setView([lat, lon], 14);
+
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 19,
+    attribution: "&copy; Esri Satellite"
+  }).addTo(weatherMap);
+
+  weatherMarker = L.marker([lat, lon]).addTo(weatherMap);
+  carregarKmlDaObra();
+
+  setTimeout(() => weatherMap.invalidateSize(), 150);
+}
+
+function updateWeatherMap(lat, lon, popupText = "Local da obra"){
+  ensureWeatherMap(lat, lon);
+
+  if(fBloco.value && fObra.value){
+    syncMapaComBlocoSelecionado();
+  }else{
+    weatherMap.setView([lat, lon], 15, { animate: true });
+  }
+
+  if(weatherMarker){
+    weatherMarker.setLatLng([lat, lon]).bindPopup(popupText);
+  }else{
+    weatherMarker = L.marker([lat, lon]).addTo(weatherMap).bindPopup(popupText);
+  }
+
+  setTimeout(() => weatherMap.invalidateSize(), 150);
+}
+
+async function loadWeatherByCoords(lat, lon, source = "GPS"){
+  try{
+    setWeatherStatus("Consultando clima do local...");
+    showWeatherContent(false);
+
+    const url =
+      `https://api.open-meteo.com/v1/forecast` +
+      `?latitude=${encodeURIComponent(lat)}` +
+      `&longitude=${encodeURIComponent(lon)}` +
+      `&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,weather_code,wind_speed_10m,is_day` +
+      `&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max` +
+      `&timezone=auto` +
+      `&forecast_days=4`;
+
+    const response = await fetch(url);
+    if(!response.ok) throw new Error("Erro ao consultar API de clima.");
+
+    const data = await response.json();
+    if(!data.current || !data.daily){
+      throw new Error("Resposta da API incompleta.");
+    }
+
+    const info = getWeatherInfo(data.current.weather_code, data.current.is_day);
+    const riskText = getWeatherRiskText(data.current, data.daily);
+    const nowIso = new Date().toISOString();
+
+    weatherEmoji.textContent = info.emoji;
+    weatherTemp.textContent = `${Math.round(data.current.temperature_2m)}°C`;
+    weatherDesc.textContent = info.desc;
+    weatherRisk.textContent = riskText;
+    weatherFeelsLike.textContent = `${Math.round(data.current.apparent_temperature)}°C`;
+    weatherHumidity.textContent = `${Math.round(data.current.relative_humidity_2m)}%`;
+    weatherWind.textContent = `${Math.round(data.current.wind_speed_10m)} km/h`;
+    weatherRain.textContent = `${Number(data.current.rain ?? data.current.precipitation ?? 0).toFixed(1)} mm`;
+
+    weatherLocationText.textContent = `Local atual via ${source} • ${formatCoords(lat, lon)}`;
+    weatherUpdatedAt.textContent = `Última atualização: ${formatarDataHora(nowIso)}`;
+
+    weatherForecastList.innerHTML = "";
+    data.daily.time.forEach((day, i) => {
+      const dayInfo = getWeatherInfo(data.daily.weather_code[i], 1);
+
+      const item = document.createElement("div");
+      item.className = "weather-day";
+      item.innerHTML = `
+        <div class="weather-day-name">${formatDay(day)}</div>
+        <div class="weather-day-icon">${dayInfo.emoji}</div>
+        <div class="weather-day-desc">${dayInfo.desc}</div>
+        <div class="weather-day-temp">
+          ${Math.round(data.daily.temperature_2m_max[i])}° / ${Math.round(data.daily.temperature_2m_min[i])}°
+          • ${Math.round(data.daily.precipitation_probability_max[i] ?? 0)}%
+        </div>
+      `;
+      weatherForecastList.appendChild(item);
+    });
+
+    updateWeatherMap(lat, lon, `Clima atual • ${Math.round(data.current.temperature_2m)}°C`);
+
+    WEATHER_LAST = { lat:Number(lat), lon:Number(lon), updated_at:nowIso };
+    localStorage.setItem("weather_last_lat", String(lat));
+    localStorage.setItem("weather_last_lon", String(lon));
+    localStorage.setItem("weather_last_update", nowIso);
+
+    setWeatherStatus("Clima atualizado com sucesso.");
+    showWeatherContent(true);
+
+  }catch(err){
+    console.error(err);
+    setWeatherStatus("Não foi possível carregar o clima agora.", true);
+    showWeatherContent(false);
+  }
+}
+
+function requestUserLocation(){
+  if(!window.isSecureContext && location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
+    setWeatherStatus("A geolocalização exige HTTPS ou ambiente local seguro.", true);
+    return;
+  }
+
+  if(!("geolocation" in navigator)){
+    setWeatherStatus("Este dispositivo/navegador não suporta geolocalização.", true);
+    return;
+  }
+
+  setWeatherStatus("Solicitando acesso à localização...");
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      loadWeatherByCoords(lat, lon, "GPS");
+    },
+    (error) => {
+      let msg = "Não foi possível obter sua localização.";
+      switch(error.code){
+        case error.PERMISSION_DENIED:
+          msg = "Permissão de localização negada pelo usuário.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          msg = "Localização indisponível no momento.";
+          break;
+        case error.TIMEOUT:
+          msg = "Tempo esgotado ao tentar capturar o GPS.";
+          break;
+      }
+      setWeatherStatus(msg, true);
+      showWeatherContent(false);
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 15000,
+      maximumAge: 300000
+    }
+  );
+}
+
+function bindWeather(){
+  btnGetWeather?.addEventListener("click", requestUserLocation);
+
+  btnRefreshWeather?.addEventListener("click", () => {
+    const lat = localStorage.getItem("weather_last_lat");
+    const lon = localStorage.getItem("weather_last_lon");
+
+    if(lat && lon){
+      loadWeatherByCoords(Number(lat), Number(lon), "GPS salvo");
+    }else{
+      requestUserLocation();
+    }
+  });
+}
+
+function tryAutoLoadWeather(){
+  const lat = localStorage.getItem("weather_last_lat");
+  const lon = localStorage.getItem("weather_last_lon");
+  if(lat && lon){
+    loadWeatherByCoords(Number(lat), Number(lon), "GPS salvo");
+  }else{
+    ensureWeatherMap(-23.5505, -46.6333);
+  }
+}
+
+function init(){
+  bindTableSort();
+  bindWeather();
+
+  fObra.addEventListener("change", onObraChange);
+  fBloco.addEventListener("change", onBlocoChange);
+  fTipo.addEventListener("change", update);
+
+  btnFuncionarios.addEventListener("click", abrirFuncionarios);
+  btnMedicoes.addEventListener("click", abrirMedicoes);
+  btnEapProd.addEventListener("click", ()=> window.open("./EAPxProduzido.html?cb="+Date.now(), "_blank"));
+
+  btnReload.addEventListener("click", async ()=>{
+    try{ await loadData(); }
+    catch(e){ alert("Erro ao recarregar dados: " + e.message); }
+  });
+
+  btnPdf.addEventListener("click", ()=> window.print());
+
+  btnToggleAll.addEventListener("click", ()=>{
+    const anyOpen = [...groupOpen.values()].some(v=>v===true);
+    if(anyOpen){
+      allCollapsed = true;
+      for(const k of groupOpen.keys()) groupOpen.set(k,false);
+      btnToggleAll.textContent = "Expandir tudo";
+    }else{
+      allCollapsed = false;
+      for(const k of groupOpen.keys()) groupOpen.set(k,true);
+      btnToggleAll.textContent = "Recolher tudo";
+    }
+    renderTableRetratil(filtered());
+  });
+
+  loadData().catch(e=>{
+    alert("NÃO consegui carregar o dados.json. Abra o Console (F12) pra ver o erro.\n\n" + e.message);
+  });
+
+  tryAutoLoadWeather();
+}
+init();
+</script>
+
+</body>
+</html>
