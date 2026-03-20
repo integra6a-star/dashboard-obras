@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EAP x Produzido</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <style>
+    body{font-family:Arial;margin:14px;background:#f4f6f8}
+    .container{max-width:1400px;margin:0 auto}
+
+    .header{
+      background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);
+      padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:14px;
+      justify-content:space-between;flex-wrap:wrap;
+    }
+    .h-left{display:flex;align-items:center;gap:14px}
+    .logo{width:220px;height:auto;display:block;margin-left:4px}
+    .h-title{display:flex;flex-direction:column;gap:2px}
+    .t1{font-size:18px;font-weight:900;margin:0;color:#111827}
+    .t2{font-size:12px;color:#6b7280;margin:0}
+
+    .h-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .badge{
+      font-size:12px;color:#0b57d0;background:#e8f0ff;border:1px solid #cfe0ff;
+      padding:6px 10px;border-radius:999px;white-space:nowrap;
+    }
+    .btn{
+      border:1px solid #d8dde6;background:#fff;border-radius:10px;
+      padding:8px 12px;cursor:pointer;font-weight:700;
+    }
+    .btn.primary{background:#0b57d0;color:#fff;border-color:#0b57d0}
+    .btn:hover{filter:brightness(.98)}
+    .btn.small{padding:6px 10px;font-size:12px;border-radius:10px}
+
+    .top-filters{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .filter label{display:block;font-size:13px;color:#444;margin:0 0 6px}
+    select{width:100%;padding:12px;border-radius:12px;border:1px solid #e3e7ee;background:#fff}
+
+    .section-title{
+      margin:18px 0 10px;
+      font-size:18px;
+      font-weight:900;
+      color:#111827;
+    }
+
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .card .t{font-size:13px;color:#555;margin-bottom:8px}
+    .card .v{font-size:30px;font-weight:900;color:#0b57d0;line-height:1}
+    .card .s{display:none}
+    .card.good{outline:2px solid rgba(16,185,129,.35)}
+    .card.good .v{color:#059669}
+    .card.warn{outline:2px solid rgba(245,158,11,.35)}
+    .card.warn .v{color:#d97706}
+    .card.bad{outline:2px solid rgba(239,68,68,.35)}
+    .card.bad .v{color:#dc2626}
+
+    .panel{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);padding:14px}
+    .panel h3{margin:0 0 6px;font-size:16px}
+    .panel small{color:#6b7280}
+    .meta{color:#666;font-size:12px;margin:10px 0 0;text-align:right}
+
+    .grid1{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
+
+    .table-wrap{background:#fff;border-radius:14px;box-shadow:0 0 10px rgba(0,0,0,.06);overflow:hidden;margin-bottom:14px}
+    .table-head{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px;gap:10px;flex-wrap:wrap
+    }
+    .table-head h3{margin:0;font-size:16px}
+    .table-head small{color:#6b7280}
+    .table-actions{display:flex;align-items:center;gap:8px}
+    .table-content{
+      overflow:hidden;
+      max-height:2000px;
+      transition:max-height .28s ease, opacity .2s ease;
+      opacity:1;
+    }
+    .table-content.collapsed{
+      max-height:0;
+      opacity:0;
+    }
+
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{background:#1f5fe0;color:#fff;padding:12px 10px;text-align:left;white-space:nowrap}
+    tbody td{padding:10px;border-bottom:1px solid #eee}
+    tbody tr:nth-child(even){background:#f7fbff}
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+    @media(max-width:1100px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .top-filters{grid-template-columns:1fr}
+      .logo{width:200px}
+    }
+    @media(max-width:700px){
+      .cards{grid-template-columns:1fr}
+      .table-head{align-items:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="h-left">
+      <img class="logo" src="./logo.png" alt="Logo">
+      <div class="h-title">
+        <p class="t1">EAP x Produzido</p>
+      </div>
+    </div>
+
+    <div class="h-actions">
+      <span class="badge" id="badgeFonte">Fonte: -</span>
+      <button class="btn" id="btnVoltar">Voltar</button>
+      <button class="btn" id="btnRecarregar">Recarregar</button>
+      <button class="btn primary" id="btnPdf">Exportar PDF</button>
+    </div>
+  </div>
+
+  <div class="top-filters">
+    <div class="filter">
+      <label>Ano</label>
+      <select id="fAno"></select>
+    </div>
+    <div class="filter">
+      <label>Visão</label>
+      <select id="fVisao">
+        <option value="somatorio">Somatório (no período filtrado)</option>
+        <option value="somente_com_producao">Somente meses com Produzido</option>
+        <option value="somente_com_recebidas">Somente meses com Economias Recebidas</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section-title">Produção</div>
+
+  <div class="cards">
+    <div class="card" id="cProd">
+      <div class="t">Produzido (m)</div>
+      <div class="v" id="kProd">0</div>
+      <div class="s"></div>
+    </div>
+
+    <div class="card" id="cEap">
+      <div class="t">EAP (m)</div>
+      <div class="v" id="kEap">0</div>
+      <div class="s"></div>
+    </div>
+
+    <div class="card" id="cSaldo">
+      <div class="t">Saldo (Produzido − EAP)</div>
+      <div class="v" id="kSaldo">0</div>
+      <div class="s"></div>
+    </div>
+
+    <div class="card" id="cPct">
+      <div class="t">Atingimento (%)</div>
+      <div class="v" id="kPct">0%</div>
+      <div class="s"></div>
+    </div>
+  </div>
+
+  <div class="grid1">
+    <div class="panel">
+      <h3>Produzido (🔵) × EAP (🔴) por mês</h3>
+      <small>Com linha de saldo (Produzido − EAP)</small>
+      <div style="height:420px"><canvas id="chMensal"></canvas></div>
+      <div class="meta" id="metaMensal"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-head">
+      <div>
+        <h3>Tabela mensal — Produção</h3>
+        <small>Valores em metros (m)</small>
+      </div>
+      <div class="table-actions">
+        <button class="btn small" id="btnToggleTabelaProducao">Ocultar tabela</button>
+      </div>
+    </div>
+    <div class="table-content" id="contentTabelaProducao">
+      <div style="overflow:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Mês</th>
+              <th class="num">EAP</th>
+              <th class="num">Produzido</th>
+              <th class="num">Saldo</th>
+              <th class="num">Atingimento</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Economias / Medição</div>
+
+  <div class="cards">
+    <div class="card" id="cRec">
+      <div class="t">Economias Recebidas</div>
+      <div class="v" id="kRec">0</div>
+      <div class="s"></div>
+    </div>
+
+    <div class="card" id="cEcoEap">
+      <div class="t">Economias EAP</div>
+      <div class="v" id="kEcoEap">0</div>
+      <div class="s"></div>
+    </div>
+
+    <div class="card" id="cEcoSaldo">
+      <div class="t">Saldo (Recebidas − EAP)</div>
+      <div class="v" id="kEcoSaldo">0</div>
+      <div class="s"></div>
+    </div>
+
+    <div class="card" id="cEcoPct">
+      <div class="t">Atingimento (%)</div>
+      <div class="v" id="kEcoPct">0%</div>
+      <div class="s"></div>
+    </div>
+  </div>
+
+  <div class="grid1">
+    <div class="panel">
+      <h3>Economias Recebidas (🔵) × Economias EAP (🔴) por mês</h3>
+      <small>Com linha de saldo (Recebidas − Economias EAP)</small>
+      <div style="height:420px"><canvas id="chEconomias"></canvas></div>
+      <div class="meta" id="metaEconomias"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-head">
+      <div>
+        <h3>Tabela mensal — Economias / Medição</h3>
+        <small>Valores por mês</small>
+      </div>
+      <div class="table-actions">
+        <button class="btn small" id="btnToggleTabelaEconomias">Ocultar tabela</button>
+      </div>
+    </div>
+    <div class="table-content" id="contentTabelaEconomias">
+      <div style="overflow:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Mês</th>
+              <th class="num">Economias EAP</th>
+              <th class="num">Economias Recebidas</th>
+              <th class="num">Saldo</th>
+              <th class="num">Atingimento</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyEconomias"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const ARQ_XLSX = "./EAP_PRODUCAO.xlsx";
+
+let DADOS = [];
+let chartMensal = null;
+let chartEconomias = null;
+
+const fmt0 = (n)=> Number(n || 0).toLocaleString("pt-BR", {
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0
+});
+
+const mesesOrdem = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+
+function idxMesNome(m){
+  const i = mesesOrdem.indexOf(String(m || "").trim());
+  return i < 0 ? 99 : i;
+}
+
+function labelMes(ano, mes){
+  const yy = String(ano || "").slice(2);
+  return `${mes}/${yy}`;
+}
+
+function fillSelectAno(){
+  const anos = [...new Set(DADOS.map(x => x.ano))].filter(Boolean).sort((a,b) => a - b);
+  fAno.innerHTML = "";
+  fAno.add(new Option("(Todos)", ""));
+  anos.forEach(a => fAno.add(new Option(String(a), String(a))));
+}
+
+function filtrar(){
+  const ano = fAno.value ? Number(fAno.value) : null;
+  const visao = fVisao.value;
+
+  let rows = DADOS.slice();
+
+  if(ano) rows = rows.filter(r => r.ano === ano);
+
+  rows.sort((a,b)=>{
+    if(a.ano !== b.ano) return a.ano - b.ano;
+    return idxMesNome(a.mes) - idxMesNome(b.mes);
+  });
+
+  if(visao === "somente_com_producao"){
+    rows = rows.filter(r =>
+      r.produzido !== null &&
+      r.produzido !== undefined &&
+      !Number.isNaN(r.produzido)
+    );
+  }
+
+  if(visao === "somente_com_recebidas"){
+    rows = rows.filter(r =>
+      r.economiasRecebidas !== null &&
+      r.economiasRecebidas !== undefined &&
+      !Number.isNaN(r.economiasRecebidas) &&
+      Number(r.economiasRecebidas || 0) !== 0
+    );
+  }
+
+  return rows;
+}
+
+function setCardStatus(el, kind){
+  el.classList.remove("good","warn","bad");
+  if(kind) el.classList.add(kind);
+}
+
+function renderTabelaProducao(rows){
+  tbody.innerHTML = "";
+  rows.forEach(r => {
+    const eap = Number(r.eap || 0);
+    const prod = (r.produzido === null || r.produzido === undefined || Number.isNaN(r.produzido))
+      ? 0
+      : Number(r.produzido || 0);
+    const saldo = prod - eap;
+    const pct = eap > 0 ? (prod / eap * 100) : null;
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${r.ano ?? ""}</td>
+      <td>${r.mes ?? ""}</td>
+      <td class="num">${fmt0(Math.round(eap))}</td>
+      <td class="num">${fmt0(Math.round(prod))}</td>
+      <td class="num">${fmt0(Math.round(saldo))}</td>
+      <td class="num">${pct === null ? "—" : Math.round(pct) + "%"}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderTabelaEconomias(rows){
+  tbodyEconomias.innerHTML = "";
+  rows.forEach(r => {
+    const eap = Number(r.economiasEap || 0);
+    const rec = (r.economiasRecebidas === null || r.economiasRecebidas === undefined || Number.isNaN(r.economiasRecebidas))
+      ? 0
+      : Number(r.economiasRecebidas || 0);
+    const saldo = rec - eap;
+    const pct = eap > 0 ? (rec / eap * 100) : null;
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${r.ano ?? ""}</td>
+      <td>${r.mes ?? ""}</td>
+      <td class="num">${fmt0(Math.round(eap))}</td>
+      <td class="num">${fmt0(Math.round(rec))}</td>
+      <td class="num">${fmt0(Math.round(saldo))}</td>
+      <td class="num">${pct === null ? "—" : Math.round(pct) + "%"}</td>
+    `;
+    tbodyEconomias.appendChild(tr);
+  });
+}
+
+function renderGraficoProducao(rows){
+  const labels = rows.map(r => labelMes(r.ano, r.mes));
+  const eap = rows.map(r => Number(r.eap || 0));
+  const prod = rows.map(r => {
+    const v = r.produzido;
+    return (v === null || v === undefined || Number.isNaN(v)) ? 0 : Number(v || 0);
+  });
+  const saldo = rows.map((_, i) => (prod[i] - eap[i]));
+
+  if(chartMensal) chartMensal.destroy();
+
+  chartMensal = new Chart(chMensal, {
+    data:{
+      labels,
+      datasets:[
+        { type:"bar", label:"Produzido (m)", data: prod, backgroundColor:"#0b57d0" },
+        { type:"bar", label:"EAP (m)", data: eap, backgroundColor:"#dc2626" },
+        { type:"line", label:"Saldo (Produzido − EAP)", data: saldo, borderColor:"#111827", tension:0.25, yAxisID:"y" }
+      ]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      scales:{
+        y:{ title:{ display:true, text:"Metros (m)" } }
+      },
+      plugins:{
+        tooltip:{
+          callbacks:{
+            label:(ctx)=>` ${ctx.dataset.label}: ${fmt0(Math.round(ctx.raw || 0))} m`
+          }
+        }
+      }
+    }
+  });
+
+  const somaEap = eap.reduce((s,v)=>s+v,0);
+  const somaProd = prod.reduce((s,v)=>s+v,0);
+  const somaSaldo = somaProd - somaEap;
+  metaMensal.textContent = `Meses: ${rows.length} | Produzido: ${fmt0(Math.round(somaProd))} m | EAP: ${fmt0(Math.round(somaEap))} m | Saldo: ${fmt0(Math.round(somaSaldo))} m`;
+}
+
+function renderGraficoEconomias(rows){
+  const labels = rows.map(r => labelMes(r.ano, r.mes));
+  const eap = rows.map(r => Number(r.economiasEap || 0));
+  const rec = rows.map(r => {
+    const v = r.economiasRecebidas;
+    return (v === null || v === undefined || Number.isNaN(v)) ? 0 : Number(v || 0);
+  });
+  const saldo = rows.map((_, i) => (rec[i] - eap[i]));
+
+  if(chartEconomias) chartEconomias.destroy();
+
+  chartEconomias = new Chart(chEconomias, {
+    data:{
+      labels,
+      datasets:[
+        { type:"bar", label:"Economias Recebidas", data: rec, backgroundColor:"#0b57d0" },
+        { type:"bar", label:"Economias EAP", data: eap, backgroundColor:"#dc2626" },
+        { type:"line", label:"Saldo (Recebidas − EAP)", data: saldo, borderColor:"#111827", tension:0.25, yAxisID:"y" }
+      ]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      scales:{
+        y:{ title:{ display:true, text:"Valores" } }
+      },
+      plugins:{
+        tooltip:{
+          callbacks:{
+            label:(ctx)=>` ${ctx.dataset.label}: ${fmt0(Math.round(ctx.raw || 0))}`
+          }
+        }
+      }
+    }
+  });
+
+  const somaEap = eap.reduce((s,v)=>s+v,0);
+  const somaRec = rec.reduce((s,v)=>s+v,0);
+  const somaSaldo = somaRec - somaEap;
+  metaEconomias.textContent = `Meses: ${rows.length} | Recebidas: ${fmt0(Math.round(somaRec))} | Economias EAP: ${fmt0(Math.round(somaEap))} | Saldo: ${fmt0(Math.round(somaSaldo))}`;
+}
+
+function update(){
+  const rows = filtrar();
+
+  const somaEap = rows.reduce((s,r)=>s+Number(r.eap||0),0);
+  const somaProd = rows.reduce((s,r)=>{
+    const v = r.produzido;
+    return s + ((v===null || v===undefined || Number.isNaN(v)) ? 0 : Number(v||0));
+  },0);
+  const saldo = somaProd - somaEap;
+  const pct = somaEap > 0 ? (somaProd / somaEap * 100) : null;
+
+  kProd.textContent = fmt0(Math.round(somaProd));
+  kEap.textContent = fmt0(Math.round(somaEap));
+  kSaldo.textContent = fmt0(Math.round(saldo));
+  kPct.textContent = (pct === null ? "—" : Math.round(pct) + "%");
+
+  setCardStatus(cSaldo, saldo >= 0 ? "good" : "bad");
+  if(pct === null) setCardStatus(cPct, null);
+  else if(pct >= 100) setCardStatus(cPct, "good");
+  else if(pct >= 90) setCardStatus(cPct, "warn");
+  else setCardStatus(cPct, "bad");
+
+  const somaEcoEap = rows.reduce((s,r)=>s+Number(r.economiasEap||0),0);
+  const somaRec = rows.reduce((s,r)=>{
+    const v = r.economiasRecebidas;
+    return s + ((v===null || v===undefined || Number.isNaN(v)) ? 0 : Number(v||0));
+  },0);
+  const ecoSaldo = somaRec - somaEcoEap;
+  const ecoPct = somaEcoEap > 0 ? (somaRec / somaEcoEap * 100) : null;
+
+  kRec.textContent = fmt0(Math.round(somaRec));
+  kEcoEap.textContent = fmt0(Math.round(somaEcoEap));
+  kEcoSaldo.textContent = fmt0(Math.round(ecoSaldo));
+  kEcoPct.textContent = (ecoPct === null ? "—" : Math.round(ecoPct) + "%");
+
+  setCardStatus(cEcoSaldo, ecoSaldo >= 0 ? "good" : "bad");
+  if(ecoPct === null) setCardStatus(cEcoPct, null);
+  else if(ecoPct >= 100) setCardStatus(cEcoPct, "good");
+  else if(ecoPct >= 90) setCardStatus(cEcoPct, "warn");
+  else setCardStatus(cEcoPct, "bad");
+
+  renderGraficoProducao(rows);
+  renderTabelaProducao(rows);
+
+  renderGraficoEconomias(rows);
+  renderTabelaEconomias(rows);
+}
+
+function normalizarLinhas(sheet){
+  const aoa = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: null });
+
+  let headerRow = -1;
+  for(let i=0;i<aoa.length;i++){
+    const row = aoa[i].map(x => String(x||"").trim().toLowerCase());
+    if(row.includes("ano") && row.includes("mes")){
+      headerRow = i;
+      break;
+    }
+  }
+
+  if(headerRow < 0) throw new Error("Não encontrei cabeçalho com 'Ano' e 'Mes'.");
+
+  const headers = aoa[headerRow].map(x => String(x||"").trim());
+  const idxAno = headers.findIndex(h => String(h).toLowerCase() === "ano");
+  const idxMes = headers.findIndex(h => String(h).toLowerCase() === "mes");
+  const idxEap = headers.findIndex(h => String(h).toLowerCase() === "eap");
+  const idxProd = headers.findIndex(h => String(h).toLowerCase().includes("produz"));
+  const idxEcoEap = headers.findIndex(h => String(h).toLowerCase() === "economias eap");
+  const idxEcoRec = headers.findIndex(h => String(h).toLowerCase() === "economias recebidas");
+
+  if(idxAno < 0 || idxMes < 0 || idxEap < 0 || idxProd < 0){
+    throw new Error("Colunas obrigatórias não encontradas (Ano, Mes, EAP, Produzido).");
+  }
+
+  const out = [];
+  for(let i=headerRow+1;i<aoa.length;i++){
+    const r = aoa[i];
+    const ano = Number(r[idxAno]);
+    const mes = (r[idxMes] === null ? "" : String(r[idxMes]).trim());
+    const eap = (r[idxEap] === null || r[idxEap] === undefined) ? 0 : Number(r[idxEap]);
+    const produzidoRaw = r[idxProd];
+    const produzido = (produzidoRaw === null || produzidoRaw === undefined || produzidoRaw === "") ? null : Number(produzidoRaw);
+
+    const ecoEapRaw = idxEcoEap >= 0 ? r[idxEcoEap] : 0;
+    const ecoRecRaw = idxEcoRec >= 0 ? r[idxEcoRec] : 0;
+
+    const economiasEap = (ecoEapRaw === null || ecoEapRaw === undefined || ecoEapRaw === "") ? 0 : Number(ecoEapRaw);
+    const economiasRecebidas = (ecoRecRaw === null || ecoRecRaw === undefined || ecoRecRaw === "") ? 0 : Number(ecoRecRaw);
+
+    if(!ano || !mes) continue;
+
+    out.push({
+      ano,
+      mes,
+      eap: Number.isNaN(eap) ? 0 : eap,
+      produzido: (produzido !== null && Number.isNaN(produzido)) ? null : produzido,
+      economiasEap: Number.isNaN(economiasEap) ? 0 : economiasEap,
+      economiasRecebidas: Number.isNaN(economiasRecebidas) ? 0 : economiasRecebidas
+    });
+  }
+
+  return out;
+}
+
+async function carregarXlsx(){
+  badgeFonte.textContent = "Fonte: carregando...";
+  const res = await fetch(ARQ_XLSX + "?cb=" + Date.now());
+  if(!res.ok) throw new Error("Não consegui carregar " + ARQ_XLSX);
+  const buf = await res.arrayBuffer();
+
+  const wb = XLSX.read(buf, { type:"array" });
+  const sheetName = wb.SheetNames[0];
+  const sheet = wb.Sheets[sheetName];
+
+  DADOS = normalizarLinhas(sheet);
+  fillSelectAno();
+
+  badgeFonte.textContent = `Fonte: ${ARQ_XLSX.split("/").pop()} • Linhas: ${DADOS.length}`;
+  update();
+}
+
+function toggleRetratil(buttonEl, contentEl){
+  const isCollapsed = contentEl.classList.toggle("collapsed");
+  buttonEl.textContent = isCollapsed ? "Mostrar tabela" : "Ocultar tabela";
+}
+
+function init(){
+  btnVoltar.addEventListener("click", ()=> window.location.href = "./index.html");
+  btnRecarregar.addEventListener("click", ()=> carregarXlsx().catch(e=>alert("Erro: " + e.message)));
+  btnPdf.addEventListener("click", ()=> window.print());
+
+  fAno.addEventListener("change", update);
+  fVisao.addEventListener("change", update);
+
+  btnToggleTabelaProducao.addEventListener("click", ()=>{
+    toggleRetratil(btnToggleTabelaProducao, contentTabelaProducao);
+  });
+
+  btnToggleTabelaEconomias.addEventListener("click", ()=>{
+    toggleRetratil(btnToggleTabelaEconomias, contentTabelaEconomias);
+  });
+
+  carregarXlsx().catch(e=>{
+    alert("Erro ao abrir a planilha. Verifique se o arquivo está na mesma pasta do EAP.html.\n\n" + e.message);
+    badgeFonte.textContent = "Fonte: ERRO";
+  });
+}
+
+init();
+</script>
+
+</body>
+</html>
