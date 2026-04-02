@@ -361,8 +361,7 @@
       <button class="btn" id="btnFuncionarios">Funcionários</button>
       <button class="btn" id="btnMedicoes">Medição</button>
       <button class="btn" id="btnEapProd">EAP x Produzido</button>
-      <button class="btn" id="btnMapaEvolucao">Mapa Evolução</button>
-      <button class="btn" id="btnReload">Recarregar dados</button>
+<button class="btn" id="btnReload">Recarregar dados</button>
       <button class="btn primary" id="btnPdf">Exportar PDF</button>
     </div>
   </div>
@@ -642,7 +641,6 @@ const badgeFunc = document.getElementById("badgeFunc");
 const btnFuncionarios = document.getElementById("btnFuncionarios");
 const btnMedicoes = document.getElementById("btnMedicoes");
 const btnEapProd = document.getElementById("btnEapProd");
-const btnMapaEvolucao = document.getElementById("btnMapaEvolucao");
 const btnReload = document.getElementById("btnReload");
 const btnPdf = document.getElementById("btnPdf");
 const btnToggleAll = document.getElementById("btnToggleAll");
@@ -1866,7 +1864,6 @@ function init(){
   btnFuncionarios.addEventListener("click", abrirFuncionarios);
   btnMedicoes.addEventListener("click", abrirMedicoes);
   btnEapProd.addEventListener("click", ()=> window.open("./EAPxProduzido.html?cb=" + Date.now(), "_blank"));
-  btnMapaEvolucao.addEventListener("click", ()=> window.open("./mapa-evolucao-por-bloco.html?cb=" + Date.now(), "_blank"));
 
   btnReload.addEventListener("click", async ()=>{
     try{
