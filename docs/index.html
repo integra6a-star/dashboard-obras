@@ -193,7 +193,42 @@
       .maintenance-sub{font-size:14px}
     }
 
-  </style>
+  
+/* ===== CORREÇÃO MOBILE TABELA ===== */
+.table-scroll{
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.table-scroll::after{
+  content:'';
+  position:absolute;
+  right:0;
+  top:0;
+  width:20px;
+  height:100%;
+  background:linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+  pointer-events:none;
+}
+
+@media(max-width:760px){
+  .table-scroll table{
+    min-width: 900px;
+  }
+  thead th, tbody td{
+    font-size: 11px;
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+  .detail-btn{
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+</style>
 </head>
 <body>
 
