@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-04-15T07:12:07.675189-03:00",
+  "atualizado_em": "2026-04-15T12:02:16.212948-03:00",
   "meses_producao": [
     "2025-03",
     "2025-04",
@@ -1212,13 +1212,14 @@
       "Bloco": "28",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 210.02,
+      "Executado_m": 246.02,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-02": 210.02
+        "2026-02": 210.02,
+        "2026-03": 36.0
       }
     },
     {
@@ -3249,7 +3250,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-04-15T07:12:07.649674-03:00",
+    "atualizado_em": "2026-04-15T12:02:16.196043-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
@@ -3343,7 +3344,7 @@
         "ano": 2026,
         "mes": "Mar",
         "eap": 2128.08,
-        "produzido": 1511.27
+        "produzido": 1547.27
       },
       {
         "ano": 2026,
