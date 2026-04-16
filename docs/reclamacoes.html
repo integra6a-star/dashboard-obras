@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reclamações</title>
+  <link rel="icon" href="./icon.png">
+  <link rel="apple-touch-icon" href="./icon-180.png">
+  <meta name="theme-color" content="#2f6fe4">
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --line:#e7edf5;
+      --text:#273142;
+      --muted:#7a8699;
+      --blue:#2f6fe4;
+      --green:#47b97c;
+      --yellow:#e9c147;
+      --red:#dc4b4b;
+      --shadow:0 6px 20px rgba(35,57,95,.08);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1500px;margin:0 auto;padding:18px}
+    .topbar{
+      background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid var(--line);
+      box-shadow:var(--shadow);border-radius:24px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px;
+    }
+    .brand{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .brand img{width:195px;max-width:40vw;height:auto}
+    .brand h1{margin:0;font-size:28px;line-height:1.05}
+    .brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap}
+    .nav a{color:#334155;text-decoration:none;padding:14px 16px;border-radius:14px;font-weight:700;position:relative}
+    .nav a.active{color:var(--blue);background:#eff5ff}
+    .nav a.active::after{content:"";position:absolute;left:16px;right:16px;bottom:6px;height:3px;border-radius:999px;background:var(--blue)}
+    .top-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .soft-btn,.primary-btn{
+      border:none;border-radius:16px;height:48px;padding:0 18px;font-weight:800;cursor:pointer
+    }
+    .primary-btn{background:var(--blue);color:#fff;box-shadow:0 10px 20px rgba(47,111,228,.22)}
+    .soft-btn{background:#fff;border:1px solid var(--line);color:#334155}
+    .filters{
+      display:grid;grid-template-columns:1fr 170px 170px 180px auto;gap:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:24px;padding:14px 16px;margin-bottom:16px;align-items:center;
+    }
+    .search input, select{
+      width:100%;height:46px;border:1px solid var(--line);border-radius:14px;padding:0 14px;background:#fff;font-size:14px
+    }
+    .cards{
+      display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:16px;
+    }
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px
+    }
+    .kpi-label{font-size:14px;font-weight:800;color:#5b6778;margin-bottom:10px}
+    .kpi-value{font-size:30px;font-weight:900;line-height:1}
+    .kpi-foot{font-size:12px;color:var(--muted);margin-top:8px}
+    .status-badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:800}
+    .status-pago{background:#e8f8ef;color:#1f8b52}
+    .status-apagar{background:#fff6df;color:#b58100}
+    .status-pendente{background:#fdecec;color:#c23535}
+    .grid{
+      display:grid;grid-template-columns:1fr;gap:16px;
+    }
+    .panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+    .title{font-size:22px;font-weight:900;margin:0}
+    .subtle{color:var(--muted);font-size:13px}
+    .table-wrap{overflow:auto;max-height:620px}
+    table{width:100%;border-collapse:collapse}
+    thead th{background:#2f6fe4;color:#fff;padding:10px 8px;font-size:12px;text-align:left;white-space:nowrap;position:sticky;top:0}
+    tbody td{padding:10px 8px;border-bottom:1px solid #edf2f7;font-size:13px;vertical-align:middle}
+    tbody tr:hover{background:#f8fbff}
+    .empty{padding:24px;text-align:center;color:var(--muted)}
+    @media(max-width:1200px){
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .filters{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:760px){
+      .wrap{padding:10px}
+      .topbar,.filters,.card{border-radius:18px}
+      .cards{grid-template-columns:1fr 1fr}
+      .filters{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">
+      <img src="./logo.png" alt="Logo">
+      <div>
+        <h1>Reclamações</h1>
+        <p>Controle de danos causados pela obra</p>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">Obras</a>
+        <a href="./reclamacoes.html" class="active">Reclamações</a>
+      </nav>
+    </div>
+    <div class="top-actions">
+      <button class="soft-btn" id="btnExportar">Exportar CSV</button>
+      <button class="primary-btn" id="btnVoltar">Voltar ao dashboard</button>
+    </div>
+  </div>
+
+  <div class="filters">
+    <div class="search"><input id="fBusca" placeholder="Buscar por morador, endereço, dano ou observação"></div>
+    <div><select id="fStatus"><option value="">Todos os status</option><option>Pago</option><option>Á pagar</option><option>Pendente de aprovação</option></select></div>
+    <div><select id="fObra"><option value="">Todas as obras</option></select></div>
+    <div><select id="fResponsavel"><option value="">Todos os responsáveis</option></select></div>
+    <div><button class="soft-btn" id="btnLimpar" style="width:100%;">Limpar filtros</button></div>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="kpi-label">Total de reclamações</div><div class="kpi-value" id="kTotal">0</div><div class="kpi-foot">Quantidade filtrada</div></div>
+    <div class="card"><div class="kpi-label">Pagas</div><div class="kpi-value" id="kPago">0</div><div class="kpi-foot">Status pago</div></div>
+    <div class="card"><div class="kpi-label">Á pagar</div><div class="kpi-value" id="kAPagar">0</div><div class="kpi-foot">Aguardando pagamento</div></div>
+    <div class="card"><div class="kpi-label">Pendentes</div><div class="kpi-value" id="kPendente">0</div><div class="kpi-foot">Aguardando aprovação</div></div>
+    <div class="card"><div class="kpi-label">Valor estimado</div><div class="kpi-value" id="kEstimado">R$ 0</div><div class="kpi-foot">Soma do filtro</div></div>
+    <div class="card"><div class="kpi-label">Valor pago</div><div class="kpi-value" id="kValorPago">R$ 0</div><div class="kpi-foot">Soma do filtro</div></div>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <div class="panel-head">
+        <div>
+          <h2 class="title">Tabela de reclamações</h2>
+          <div class="subtle" id="tableInfo">Linhas: 0</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Data</th>
+              <th>Obra</th>
+              <th>Morador</th>
+              <th>Endereço</th>
+              <th>Tipo de dano</th>
+              <th>Valor estimado</th>
+              <th>Valor pago</th>
+              <th>Status</th>
+              <th>Responsável</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyReclamacoes"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+let base = [];
+let filtrado = [];
+const JSON_PATH = './reclamacoes.json?v=' + Date.now();
+
+const fmtMoney = v => Number(v || 0).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+const byTextAsc = (a,b) => String(a || '').localeCompare(String(b || ''), 'pt-BR', {numeric:true, sensitivity:'base'});
+
+function normalizeHeader(text){
+  return String(text || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().trim();
+}
+
+function pick(obj, keys){
+  const normalized = {};
+  Object.keys(obj || {}).forEach(k => normalized[normalizeHeader(k)] = obj[k]);
+  for(const key of keys){
+    const value = normalized[normalizeHeader(key)];
+    if(value !== undefined && value !== null) return value;
+  }
+  return '';
+}
+
+function parseDate(value){
+  if(value == null || value === '') return '';
+  const txt = String(value).trim();
+  if(/^\d{4}-\d{2}-\d{2}$/.test(txt)) return txt;
+  const br = txt.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if(br) return `${br[3]}-${String(br[2]).padStart(2,'0')}-${String(br[1]).padStart(2,'0')}`;
+  return txt;
+}
+
+function toNumber(value){
+  if(value == null || value === '') return 0;
+  if(typeof value === 'number') return value;
+  const txt = String(value).trim()
+    .replace(/\s/g, '')
+    .replace(/\./g, '')
+    .replace(',', '.')
+    .replace(/[^\d.-]/g, '');
+  const num = Number(txt);
+  return Number.isFinite(num) ? num : 0;
+}
+
+function normalizeStatus(value){
+  const txt = normalizeHeader(value);
+  if(txt === 'pago') return 'Pago';
+  if(txt === 'a pagar' || txt === 'á pagar' || txt === 'apagar') return 'Á pagar';
+  return 'Pendente de aprovação';
+}
+
+function normalizeRow(r){
+  return {
+    id: pick(r, ['ID','Id','id']),
+    data: parseDate(pick(r, ['Data','data'])),
+    obra: pick(r, ['Obra','obra']),
+    morador: pick(r, ['Morador','morador']),
+    endereco: pick(r, ['Endereço','Endereco','endereco']),
+    tipo_dano: pick(r, ['Tipo de dano','Tipo dano','tipo_dano']),
+    descricao: pick(r, ['Descrição','Descricao','descricao']),
+    valor_estimado: toNumber(pick(r, ['Valor estimado (R$)','Valor estimado','valor_estimado'])),
+    valor_pago: toNumber(pick(r, ['Valor pago (R$)','Valor pago','valor_pago'])),
+    status: normalizeStatus(pick(r, ['Status','status'])),
+    responsavel: pick(r, ['Responsável','Responsavel','responsavel']),
+    observacao: pick(r, ['Observação','Observacao','observacao'])
+  };
+}
+
+async function loadBase(){
+  try{
+    const res = await fetch(JSON_PATH);
+    if(!res.ok) throw new Error('Não foi possível carregar reclamacoes.json');
+    const rows = await res.json();
+    base = rows.map(normalizeRow).filter(r =>
+      Object.values(r).some(v => String(v ?? '').trim() !== '')
+    );
+  }catch(err){
+    console.error(err);
+    document.getElementById('tbodyReclamacoes').innerHTML =
+      '<tr><td colspan="10" class="empty">Não foi possível carregar o arquivo reclamacoes.json.</td></tr>';
+    document.getElementById('tableInfo').textContent = 'Linhas: 0';
+    return false;
+  }
+  return true;
+}
+
+function fillSelects(){
+  const obras = [...new Set(base.map(x => x.obra).filter(Boolean))].sort(byTextAsc);
+  const responsaveis = [...new Set(base.map(x => x.responsavel).filter(Boolean))].sort(byTextAsc);
+
+  const fObra = document.getElementById('fObra');
+  const fResp = document.getElementById('fResponsavel');
+  const valObra = fObra.value;
+  const valResp = fResp.value;
+
+  fObra.innerHTML = '<option value="">Todas as obras</option>' + obras.map(v => `<option>${v}</option>`).join('');
+  fResp.innerHTML = '<option value="">Todos os responsáveis</option>' + responsaveis.map(v => `<option>${v}</option>`).join('');
+
+  if(obras.includes(valObra)) fObra.value = valObra;
+  if(responsaveis.includes(valResp)) fResp.value = valResp;
+}
+
+function applyFilters(){
+  const busca = (document.getElementById('fBusca').value || '').toLowerCase().trim();
+  const status = document.getElementById('fStatus').value;
+  const obra = document.getElementById('fObra').value;
+  const responsavel = document.getElementById('fResponsavel').value;
+
+  filtrado = base.filter(item => {
+    const okBusca = !busca || `${item.id} ${item.morador} ${item.endereco} ${item.tipo_dano} ${item.observacao} ${item.descricao}`.toLowerCase().includes(busca);
+    const okStatus = !status || item.status === status;
+    const okObra = !obra || item.obra === obra;
+    const okResp = !responsavel || item.responsavel === responsavel;
+    return okBusca && okStatus && okObra && okResp;
+  });
+
+  renderKPIs();
+  renderTable();
+}
+
+function statusClass(status){
+  if(status === 'Pago') return 'status-pago';
+  if(status === 'Á pagar') return 'status-apagar';
+  return 'status-pendente';
+}
+
+function formatDateDisplay(value){
+  if(!value) return '-';
+  if(/^\d{4}-\d{2}-\d{2}$/.test(value)){
+    const [y,m,d] = value.split('-');
+    return `${d}/${m}/${y}`;
+  }
+  return value;
+}
+
+function renderKPIs(){
+  document.getElementById('kTotal').textContent = filtrado.length;
+  document.getElementById('kPago').textContent = filtrado.filter(x => x.status === 'Pago').length;
+  document.getElementById('kAPagar').textContent = filtrado.filter(x => x.status === 'Á pagar').length;
+  document.getElementById('kPendente').textContent = filtrado.filter(x => x.status === 'Pendente de aprovação').length;
+  document.getElementById('kEstimado').textContent = fmtMoney(filtrado.reduce((a,b)=>a + Number(b.valor_estimado || 0), 0));
+  document.getElementById('kValorPago').textContent = fmtMoney(filtrado.reduce((a,b)=>a + Number(b.valor_pago || 0), 0));
+}
+
+function renderTable(){
+  const tbody = document.getElementById('tbodyReclamacoes');
+  const rows = [...filtrado].sort((a,b) => String(b.data).localeCompare(String(a.data)));
+  document.getElementById('tableInfo').textContent = `Linhas: ${rows.length}`;
+
+  if(!rows.length){
+    tbody.innerHTML = '<tr><td colspan="10" class="empty">Nenhuma reclamação encontrada.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.id || '-'}</td>
+      <td>${formatDateDisplay(r.data)}</td>
+      <td>${r.obra || '-'}</td>
+      <td>${r.morador || '-'}</td>
+      <td>${r.endereco || '-'}</td>
+      <td>${r.tipo_dano || '-'}</td>
+      <td>${fmtMoney(r.valor_estimado)}</td>
+      <td>${fmtMoney(r.valor_pago)}</td>
+      <td><span class="status-badge ${statusClass(r.status)}">${r.status}</span></td>
+      <td>${r.responsavel || '-'}</td>
+    </tr>
+  `).join('');
+}
+
+function exportCsv(){
+  const headers = ['ID','Data','Obra','Morador','Endereço','Tipo de dano','Descrição','Valor estimado (R$)','Valor pago (R$)','Status','Responsável','Observação'];
+  const lines = [headers.join(';')];
+  for(const r of filtrado){
+    lines.push([
+      r.id, formatDateDisplay(r.data), r.obra, r.morador, r.endereco, r.tipo_dano, r.descricao,
+      String(r.valor_estimado).replace('.',','), String(r.valor_pago).replace('.',','),
+      r.status, r.responsavel, r.observacao
+    ].map(v => `"${String(v ?? '').replace(/"/g,'""')}"`).join(';'));
+  }
+  const blob = new Blob(["\ufeff" + lines.join('\n')], {type:'text/csv;charset=utf-8;'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'reclamacoes_filtradas.csv';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+document.getElementById('btnExportar').addEventListener('click', exportCsv);
+document.getElementById('btnVoltar').addEventListener('click', () => window.location.href = './index.html');
+document.getElementById('fBusca').addEventListener('input', applyFilters);
+document.getElementById('fStatus').addEventListener('change', applyFilters);
+document.getElementById('fObra').addEventListener('change', applyFilters);
+document.getElementById('fResponsavel').addEventListener('change', applyFilters);
+document.getElementById('btnLimpar').addEventListener('click', () => {
+  document.getElementById('fBusca').value = '';
+  document.getElementById('fStatus').value = '';
+  document.getElementById('fObra').value = '';
+  document.getElementById('fResponsavel').value = '';
+  applyFilters();
+});
+
+(async function init(){
+  const ok = await loadBase();
+  if(!ok) return;
+  fillSelects();
+  applyFilters();
+})();
+</script>
+</body>
+</html>
