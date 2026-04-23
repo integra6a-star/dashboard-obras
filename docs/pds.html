@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDS</title>
+  <link rel="icon" type="image/png" href="./icon.png">
+  <link rel="apple-touch-icon" href="./icon-180.png">
+  <meta name="theme-color" content="#2f6fe4">
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <style>
+    :root{
+      --bg:#f4f7fb; --card:#ffffff; --line:#e7edf5; --text:#273142; --muted:#7a8699;
+      --blue:#2f6fe4; --blue-soft:#eef5ff; --shadow:0 8px 24px rgba(35,57,95,.08); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+                .brand img{max-width:170px;width:100%;height:auto}
+            .nav a.active{background:var(--blue-soft);color:var(--blue)}
+    .nav a:hover{background:#f7faff}
+    .nav .ico{width:22px;text-align:center;font-size:18px}
+        .main{padding:22px}
+    .topbar,.filters,.card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:24px}
+    .topbar{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+    .title-wrap{display:flex;align-items:center;gap:12px}
+    .title-icon{
+      width:54px;height:54px;border-radius:18px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;
+      color:var(--blue);font-size:28px;font-weight:900
+    }
+    .title h1{margin:0;font-size:30px}
+    .sub{margin-top:6px;color:var(--muted);font-size:14px}
+    .top-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-weight:800;font-size:12px}
+    .btn-top{
+      height:42px;border:none;border-radius:999px;padding:0 16px;background:#fff;color:var(--blue);
+      font-weight:800;cursor:pointer;border:1px solid var(--line)
+    }
+    .filters{padding:14px 16px;display:grid;grid-template-columns:1.1fr 1.1fr 1fr 1fr auto;gap:12px;align-items:end;margin-bottom:16px}
+    .field label{display:block;font-size:12px;font-weight:800;color:#556274;margin-bottom:8px}
+    .field input,.field select{width:100%;height:46px;border:1px solid var(--line);border-radius:14px;padding:0 14px;background:#fff;font-size:14px}
+    .btn{height:46px;border:none;border-radius:14px;padding:0 16px;font-weight:800;cursor:pointer}
+    .btn-soft{background:#fff;border:1px solid var(--line);color:#334155}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+    .card{padding:18px}
+    .k-label{font-size:14px;font-weight:800;color:#5b6778;margin-bottom:10px}
+    .k-row{display:flex;align-items:center;gap:14px}
+    .k-ico{
+      width:56px;height:56px;border-radius:18px;background:#f7faff;display:flex;align-items:center;justify-content:center;
+      color:var(--blue);font-size:26px
+    }
+    .k-value{font-size:34px;font-weight:900;line-height:1}
+    .k-foot{font-size:12px;color:var(--muted);margin-top:8px}
+    .layout{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    .panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+    .panel-head h2{margin:0;font-size:24px}
+    .small{font-size:12px;color:var(--muted)}
+    .obra-list{display:grid;gap:14px}
+    .obra-card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfdff}
+    .obra-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
+    .obra-name{font-size:18px;font-weight:900;display:flex;align-items:center;gap:10px}
+    .obra-bullet{
+      width:32px;height:32px;border-radius:999px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue)
+    }
+    .obra-count{font-size:12px;font-weight:800;color:#64748b;background:#eef5ff;padding:6px 10px;border-radius:999px}
+    .team-block{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+    .team-title{font-size:14px;font-weight:900;margin-bottom:8px}
+    .activity-list{display:grid;gap:8px}
+    .activity-item{display:flex;justify-content:space-between;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+    .activity-main{min-width:0;display:flex;gap:10px}
+    .activity-ico{
+      width:32px;height:32px;border-radius:999px;background:#f7faff;display:flex;align-items:center;justify-content:center;color:var(--blue);flex:0 0 auto
+    }
+    .activity-text{font-size:13px;font-weight:700;line-height:1.35}
+    .meta{margin-top:5px;font-size:11px;color:var(--muted)}
+    .pv-badge{white-space:nowrap;align-self:flex-start;padding:6px 9px;border-radius:999px;background:#f7faff;border:1px solid var(--line);font-size:11px;font-weight:800;color:#334155}
+    .side-stack{display:grid;gap:16px}
+    .summary-list{display:grid;gap:10px}
+    .summary-row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+    .summary-row:last-child{border-bottom:none}
+    .table-wrap{overflow:auto;max-height:740px}
+    table{width:100%;border-collapse:collapse}
+    thead th{position:sticky;top:0;background:#2f6fe4;color:#fff;padding:10px 8px;font-size:12px;text-align:left}
+    tbody td{padding:10px 8px;border-bottom:1px solid #edf2f7;font-size:13px;vertical-align:top}
+    tbody tr:hover{background:#f8fbff}
+    .warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:12px 14px;border-radius:14px;margin-bottom:14px;font-size:13px;font-weight:700}
+    @media(max-width:1180px){
+                  .layout{grid-template-columns:1fr}
+      .filters{grid-template-columns:1fr 1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:760px){
+      .main{padding:10px}
+      .filters,.kpis{grid-template-columns:1fr}
+      .title h1{font-size:24px}
+      .activity-item,.k-row{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <body>
+
+<div class="main">
+  <div style="margin-bottom:15px;">
+    <a href="./index.html" style="
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#eef5ff;
+      color:#2f6fe4;
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    ">
+      ⬅ Voltar ao Dashboard
+    </a>
+  </div>
+
+      <section class="topbar">
+        <div class="title-wrap">
+          <div class="title-icon">🗓️</div>
+          <div class="title">
+            <h1>PDS</h1>
+            <div class="sub">Painel operacional puxando direto da planilha Excel</div>
+          </div>
+        </div>
+        <div class="top-actions">
+          <div class="badge" id="badgeData">Carregando planilha...</div>
+          <button class="btn-top" onclick="location.reload()">🔄 Atualizar</button>
+        </div>
+      </section>
+
+      <div id="warnBox" class="warn" style="display:none;"></div>
+
+      <section class="filters">
+        <div class="field">
+          <label>DATA</label>
+          <select id="fData"></select>
+        </div>
+        <div class="field">
+          <label>OBRA</label>
+          <select id="fObra"></select>
+        </div>
+        <div class="field">
+          <label>EQUIPE</label>
+          <select id="fEquipe"></select>
+        </div>
+        <div class="field">
+          <label>BUSCA</label>
+          <input id="fBusca" placeholder="Buscar atividade, PV ou trecho">
+        </div>
+        <button class="btn btn-soft" id="btnLimpar">🧹 Limpar</button>
+      </section>
+
+      <section class="kpis">
+        <div class="card"><div class="k-label">Obras no dia</div><div class="k-row"><div class="k-ico">🏢</div><div><div class="k-value" id="kObras">0</div><div class="k-foot">Obras com programação</div></div></div></div>
+        <div class="card"><div class="k-label">Equipes ativas</div><div class="k-row"><div class="k-ico">👥</div><div><div class="k-value" id="kEquipes">0</div><div class="k-foot">Equipes distintas no filtro</div></div></div></div>
+        <div class="card"><div class="k-label">Atividades</div><div class="k-row"><div class="k-ico">🔧</div><div><div class="k-value" id="kAtividades">0</div><div class="k-foot">Lançamentos do PDS</div></div></div></div>
+        <div class="card"><div class="k-label">PVs/Trechos com referência</div><div class="k-row"><div class="k-ico">📍</div><div><div class="k-value" id="kRefs">0</div><div class="k-foot">Linhas com PV ou trecho preenchido</div></div></div></div>
+      </section>
+
+      <section class="layout">
+        <div class="card">
+          <div class="panel-head"><div><h2>PDS do dia</h2><div class="small">Visual em cards por obra e equipe</div></div></div>
+          <div class="obra-list" id="obraList"></div>
+        </div>
+        <div class="side-stack">
+          <div class="card">
+            <div class="panel-head"><div><h2>Resumo</h2><div class="small">Visão rápida do filtro atual</div></div></div>
+            <div class="summary-list" id="summaryList"></div>
+          </div>
+          <div class="card">
+            <div class="panel-head"><div><h2>Lançamentos</h2><div class="small">Tabela completa do filtro atual</div></div></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Data</th><th>Obra</th><th>Equipe</th><th>Atividade</th><th>PV</th><th>Trecho</th></tr></thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+let DATA = [];
+function uniq(arr){ return [...new Set(arr.filter(Boolean))]; }
+function byLocale(a,b){ return String(a||'').localeCompare(String(b||''), 'pt-BR'); }
+function escapeHtml(v){
+  return String(v || '')
+    .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+    .replaceAll('"','&quot;').replaceAll("'","&#39;");
+}
+function formatDateBR(iso){
+  if(!iso) return '-';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(String(iso))){
+    const [y,m,d] = String(iso).split('-'); return `${d}/${m}/${y}`;
+  }
+  return String(iso);
+}
+function defaultDate(datas){
+  const sorted = [...datas].sort();
+  if(!sorted.length) return '';
+  const now = new Date(); now.setDate(now.getDate() - 1);
+  const prev = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  return sorted.includes(prev) ? prev : sorted[sorted.length - 1];
+}
+function normalizarDataExcel(v){
+  if(v == null || v === '') return '';
+  if(typeof v === 'number'){
+    const d = XLSX.SSF.parse_date_code(v);
+    if(d && d.y) return `${d.y}-${String(d.m).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`;
+  }
+  const s = String(v).trim();
+  const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
+  if(m){
+    const y = m[3].length === 2 ? `20${m[3]}` : m[3];
+    return `${y}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
+  }
+  if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  return s;
+}
+function acharLinhaCabecalho(rows){
+  for(let i=0;i<Math.min(rows.length,12);i++){
+    const row = (rows[i] || []).map(v => String(v || '').trim().toLowerCase());
+    if(row.includes('data') && row.includes('obra') && row.includes('equipe') && row.includes('atividade')) return i;
+  }
+  return -1;
+}
+function getValue(obj, names){
+  for(const n of names){
+    if(Object.prototype.hasOwnProperty.call(obj,n)) return obj[n];
+  }
+  return '';
+}
+async function tryFetchArrayBuffer(paths){
+  for(const path of paths){
+    try{
+      const res = await fetch(path + '?v=' + Date.now());
+      if(!res.ok) continue;
+      return await res.arrayBuffer();
+    }catch(e){}
+  }
+  return null;
+}
+async function carregarDaPlanilha(){
+  const warn = document.getElementById('warnBox');
+  warn.style.display = 'none';
+  const buffer = await tryFetchArrayBuffer([
+    './pds_word_completo_preenchido(2).xlsx',
+    './docs/pds_word_completo_preenchido(2).xlsx'
+  ]);
+  if(!buffer){
+    warn.style.display = '';
+    warn.textContent = 'Não encontrei a planilha pds_word_completo_preenchido(2).xlsx na pasta docs.';
+    DATA = [];
+    return;
+  }
+  const wb = XLSX.read(buffer, {type:'array'});
+  const ws = wb.Sheets['PDS_Lancamentos'] || wb.Sheets[wb.SheetNames[0]];
+  const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:''});
+  const headerRowIdx = acharLinhaCabecalho(rows);
+  if(headerRowIdx === -1){
+    warn.style.display = '';
+    warn.textContent = 'Não encontrei o cabeçalho da planilha. Verifique a aba PDS_Lancamentos.';
+    DATA = [];
+    return;
+  }
+  const header = rows[headerRowIdx].map(v => String(v || '').trim());
+  const dataRows = rows.slice(headerRowIdx + 1);
+  const parsed = [];
+  dataRows.forEach(r => {
+    const obj = {};
+    header.forEach((h, i) => obj[h] = r[i]);
+    const data = normalizarDataExcel(getValue(obj, ['Data']));
+    const obra = String(getValue(obj, ['Obra'])).trim();
+    const equipe = String(getValue(obj, ['Equipe'])).trim();
+    const atividade = String(getValue(obj, ['Atividade'])).trim();
+    const pvTexto = String(getValue(obj, ['PV_Texto', 'PV'])).trim();
+    const pvInicio = String(getValue(obj, ['PV_Inicio'])).trim();
+    const pvFim = String(getValue(obj, ['PV_Fim'])).trim();
+    const trechoCol = String(getValue(obj, ['Trecho'])).trim();
+    let trecho = trechoCol;
+    if(!trecho && pvInicio && pvFim) trecho = `${pvInicio}-${pvFim}`;
+    let pv = pvTexto;
+    if(!pv && pvInicio && !pvFim) pv = pvInicio;
+    if(!data || !obra || !equipe || !atividade) return;
+    parsed.push({ data, obra, equipe, atividade, pv, trecho });
+  });
+  DATA = parsed;
+}
+function fillFilters(){
+  const datas = uniq(DATA.map(x=>x.data)).sort();
+  const fData = document.getElementById('fData');
+  const fObra = document.getElementById('fObra');
+  const fEquipe = document.getElementById('fEquipe');
+  fData.innerHTML = datas.map(d => `<option value="${d}">${formatDateBR(d)}</option>`).join('');
+  const padrao = defaultDate(datas);
+  if(padrao) fData.value = padrao;
+  const base = DATA.filter(x => !padrao || x.data === padrao);
+  const obras = uniq(base.map(x=>x.obra)).sort(byLocale);
+  const equipes = uniq(base.map(x=>x.equipe)).sort(byLocale);
+  fObra.innerHTML = '<option value="">Todas</option>' + obras.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
+  fEquipe.innerHTML = '<option value="">Todas</option>' + equipes.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
+}
+function refillSecondary(){
+  const data = document.getElementById('fData').value;
+  const base = DATA.filter(x => !data || x.data === data);
+  const obras = uniq(base.map(x=>x.obra)).sort(byLocale);
+  const equipes = uniq(base.map(x=>x.equipe)).sort(byLocale);
+  document.getElementById('fObra').innerHTML = '<option value="">Todas</option>' + obras.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
+  document.getElementById('fEquipe').innerHTML = '<option value="">Todas</option>' + equipes.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
+}
+function getFiltered(){
+  const data = document.getElementById('fData').value;
+  const obra = document.getElementById('fObra').value;
+  const equipe = document.getElementById('fEquipe').value;
+  const busca = (document.getElementById('fBusca').value || '').toLowerCase().trim();
+  return DATA.filter(x=>{
+    if(data && x.data !== data) return false;
+    if(obra && x.obra !== obra) return false;
+    if(equipe && x.equipe !== equipe) return false;
+    if(busca){
+      const hay = [x.obra, x.equipe, x.atividade, x.pv, x.trecho].join(' ').toLowerCase();
+      if(!hay.includes(busca)) return false;
+    }
+    return true;
+  });
+}
+function render(){
+  const rows = getFiltered();
+  const obras = uniq(rows.map(x=>x.obra));
+  const equipes = uniq(rows.map(x=>x.equipe));
+  const refs = rows.filter(x => String(x.pv||'').trim() || String(x.trecho||'').trim()).length;
+  const dataAtual = document.getElementById('fData').value;
+
+  document.getElementById('kObras').textContent = obras.length;
+  document.getElementById('kEquipes').textContent = equipes.length;
+  document.getElementById('kAtividades').textContent = rows.length;
+  document.getElementById('kRefs').textContent = refs;
+  document.getElementById('badgeData').textContent = dataAtual ? `PDS carregado: ${formatDateBR(dataAtual)}` : 'Sem data';
+
+  const obraMap = new Map();
+  rows.forEach(r=>{
+    if(!obraMap.has(r.obra)) obraMap.set(r.obra, new Map());
+    const tm = obraMap.get(r.obra);
+    if(!tm.has(r.equipe)) tm.set(r.equipe, []);
+    tm.get(r.equipe).push(r);
+  });
+
+  const obraList = document.getElementById('obraList');
+  obraList.innerHTML = '';
+  [...obraMap.entries()].sort((a,b)=>byLocale(a[0],b[0])).forEach(([obra, teamMap])=>{
+    const total = [...teamMap.values()].reduce((acc, arr)=>acc + arr.length, 0);
+    const div = document.createElement('div');
+    div.className = 'obra-card';
+    let inner = `<div class="obra-top"><div class="obra-name"><span class="obra-bullet">👥</span>${escapeHtml(obra)}</div><div class="obra-count">${total} atividade(s)</div></div>`;
+    [...teamMap.entries()].sort((a,b)=>byLocale(a[0],b[0])).forEach(([equipe, items])=>{
+      inner += `<div class="team-block"><div class="team-title">${escapeHtml(equipe)}</div><div class="activity-list">`;
+      items.forEach(item=>{
+        const ref = item.pv ? `PV ${item.pv}` : (item.trecho ? `Trecho ${item.trecho}` : 'Sem referência');
+        inner += `<div class="activity-item">
+          <div class="activity-main">
+            <div class="activity-ico">📄</div>
+            <div>
+              <div class="activity-text">${escapeHtml(item.atividade)}</div>
+              <div class="meta">${escapeHtml(formatDateBR(item.data))} • ${escapeHtml(item.obra)}</div>
+            </div>
+          </div>
+          <div class="pv-badge">${escapeHtml(ref)}</div>
+        </div>`;
+      });
+      inner += `</div></div>`;
+    });
+    div.innerHTML = inner;
+    obraList.appendChild(div);
+  });
+  if(!obraList.innerHTML) obraList.innerHTML = '<div class="small">Nenhum lançamento encontrado.</div>';
+
+  const contObra = [...obras].sort(byLocale).slice(0,6).map(o=>{
+    const n = rows.filter(x=>x.obra===o).length;
+    return `<div class="summary-row"><span>${escapeHtml(o)}</span><strong>${n}</strong></div>`;
+  }).join('');
+  document.getElementById('summaryList').innerHTML =
+    `<div class="summary-row"><span>Data</span><strong>${formatDateBR(dataAtual)}</strong></div>
+     <div class="summary-row"><span>Obras</span><strong>${obras.length}</strong></div>
+     <div class="summary-row"><span>Equipes</span><strong>${equipes.length}</strong></div>
+     <div class="summary-row"><span>Atividades</span><strong>${rows.length}</strong></div>
+     <div class="summary-row"><span>Com PV/Trecho</span><strong>${refs}</strong></div>${contObra}`;
+
+  document.getElementById('tbody').innerHTML = rows.map(r => `<tr>
+    <td>${formatDateBR(r.data)}</td>
+    <td>${escapeHtml(r.obra)}</td>
+    <td>${escapeHtml(r.equipe)}</td>
+    <td>${escapeHtml(r.atividade)}</td>
+    <td>${escapeHtml(r.pv)}</td>
+    <td>${escapeHtml(r.trecho)}</td>
+  </tr>`).join('') || '<tr><td colspan="6">Nenhum registro encontrado.</td></tr>';
+}
+async function init(){
+  await carregarDaPlanilha();
+  fillFilters();
+  render();
+  document.getElementById('fData').addEventListener('change', () => { refillSecondary(); render(); });
+  document.getElementById('fObra').addEventListener('change', render);
+  document.getElementById('fEquipe').addEventListener('change', render);
+  document.getElementById('fBusca').addEventListener('input', render);
+  document.getElementById('btnLimpar').addEventListener('click', () => {
+    document.getElementById('fObra').value = '';
+    document.getElementById('fEquipe').value = '';
+    document.getElementById('fBusca').value = '';
+    render();
+  });
+}
+init();
+</script>
+</body>
+</html>
