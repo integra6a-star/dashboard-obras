@@ -1,0 +1,56 @@
+{
+  "atualizado_em": "2026-04-27T13:12:23.656152+00:00",
+  "series": [
+    {
+      "mes": "2026-02",
+      "atualizado_em": "2026-02-27T15:03:39.461456-03:00",
+      "ativos": 216,
+      "afastados": 3,
+      "total_salarios": 856166.47,
+      "total_vr": 158840.0,
+      "total_combustivel": 25500.0,
+      "total_frota": 322726.32,
+      "total_frota_leve": 0.0,
+      "total_caminhoes": 0.0,
+      "total_maquinas": 0.0,
+      "total_outros_ativos": 0.0,
+      "custo_mensal_total": 1337732.79,
+      "salario_clt": 620566.47,
+      "salario_pj": 235600.0
+    },
+    {
+      "mes": "2026-03",
+      "atualizado_em": "2026-03-31T12:58:05.741896-03:00",
+      "ativos": 242,
+      "afastados": 4,
+      "total_salarios": 899628.42,
+      "total_vr": 183084.0,
+      "total_combustivel": 34000.0,
+      "total_frota": 608000.0,
+      "total_frota_leve": 0.0,
+      "total_caminhoes": 0.0,
+      "total_maquinas": 0.0,
+      "total_outros_ativos": 0.0,
+      "custo_mensal_total": 1690712.42,
+      "salario_clt": 706028.42,
+      "salario_pj": 193600.0
+    },
+    {
+      "mes": "2026-04",
+      "atualizado_em": "2026-04-27T10:12:23.641956-03:00",
+      "ativos": 303,
+      "afastados": 4,
+      "total_salarios": 1071190.24,
+      "total_vr": 234080.0,
+      "total_combustivel": 34000.0,
+      "total_frota": 608000.0,
+      "total_frota_leve": 0.0,
+      "total_caminhoes": 0.0,
+      "total_maquinas": 0.0,
+      "total_outros_ativos": 0.0,
+      "custo_mensal_total": 1913270.24,
+      "salario_clt": 877590.24,
+      "salario_pj": 193600.0
+    }
+  ]
+}
