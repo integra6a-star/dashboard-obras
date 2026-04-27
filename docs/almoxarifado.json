@@ -1,0 +1,170 @@
+[
+  {
+    "codigo": "P001",
+    "descricao": "ADOELA DE 1000",
+    "estoque_minimo": 50,
+    "quantidade": 4
+  },
+  {
+    "codigo": "P002",
+    "descricao": "ADOELA DE 600",
+    "estoque_minimo": 80,
+    "quantidade": 95
+  },
+  {
+    "codigo": "P003",
+    "descricao": "LAJE INFERIOR DE 1000",
+    "estoque_minimo": 10,
+    "quantidade": 26
+  },
+  {
+    "codigo": "P004",
+    "descricao": "LAJE INFERIOR DE 600",
+    "estoque_minimo": 50,
+    "quantidade": 166
+  },
+  {
+    "codigo": "P005",
+    "descricao": "LAJE SURPERIOR DE 1000",
+    "estoque_minimo": 10,
+    "quantidade": 39
+  },
+  {
+    "codigo": "P006",
+    "descricao": "TUBO PEAD ESGOTO D 355",
+    "estoque_minimo": 200,
+    "quantidade": 417
+  },
+  {
+    "codigo": "P007",
+    "descricao": "TUBO PEAD ESGOTO D 315",
+    "estoque_minimo": 10,
+    "quantidade": 2
+  },
+  {
+    "codigo": "P008",
+    "descricao": "TUBO PEAD ESGOTO D 225",
+    "estoque_minimo": 10,
+    "quantidade": 239
+  },
+  {
+    "codigo": "P009",
+    "descricao": "TUBO PEAD ESGOTO D 450",
+    "estoque_minimo": 30,
+    "quantidade": 111
+  },
+  {
+    "codigo": "P010",
+    "descricao": "TUBO CURRUGADO ESGOTO DN 300",
+    "estoque_minimo": 10,
+    "quantidade": 193
+  },
+  {
+    "codigo": "P011",
+    "descricao": "TUBO ESGOTO PVC DN 300",
+    "estoque_minimo": 10,
+    "quantidade": 285
+  },
+  {
+    "codigo": "P012",
+    "descricao": "TUBO ESGOTO PVC DN 200",
+    "estoque_minimo": 10,
+    "quantidade": 89
+  },
+  {
+    "codigo": "P013",
+    "descricao": "TUBO ESGOTO PVC DN 150",
+    "estoque_minimo": 10,
+    "quantidade": 16
+  },
+  {
+    "codigo": "P014",
+    "descricao": "TUBO ESGOTO PVC DN 100",
+    "estoque_minimo": 10,
+    "quantidade": 583
+  },
+  {
+    "codigo": "P015",
+    "descricao": "CHAPA ARMICO",
+    "estoque_minimo": 10,
+    "quantidade": 766
+  },
+  {
+    "codigo": "P016",
+    "descricao": "BLOCO DE PV",
+    "estoque_minimo": 10,
+    "quantidade": 41
+  },
+  {
+    "codigo": "P017",
+    "descricao": "BLOCO VEDAÇÃO 14 x 39",
+    "estoque_minimo": 300,
+    "quantidade": 972
+  },
+  {
+    "codigo": "P018",
+    "descricao": "GUIA",
+    "estoque_minimo": 10,
+    "quantidade": 107
+  },
+  {
+    "codigo": "P019",
+    "descricao": "TUBO ESGOTO PVC DN 400",
+    "estoque_minimo": 10,
+    "quantidade": 2
+  },
+  {
+    "codigo": "P020",
+    "descricao": "LAJE PRE MONTADA / TAMPÃO DN 600",
+    "estoque_minimo": 10,
+    "quantidade": 4
+  },
+  {
+    "codigo": "P021",
+    "descricao": "MADEIRITE",
+    "estoque_minimo": 10,
+    "quantidade": 4
+  },
+  {
+    "codigo": "P022",
+    "descricao": "PARAFUSO SEXTAVADA 5/8",
+    "estoque_minimo": 10,
+    "quantidade": 3300
+  },
+  {
+    "codigo": "P023",
+    "descricao": "PARAFUSO QUADRADO 5/8",
+    "estoque_minimo": 10,
+    "quantidade": 71700
+  },
+  {
+    "codigo": "P024",
+    "descricao": "PORCA SEXTAVADA 5/8",
+    "estoque_minimo": 10,
+    "quantidade": 9000
+  },
+  {
+    "codigo": "P025",
+    "descricao": "GUIA CHAPÉU",
+    "estoque_minimo": 10,
+    "quantidade": 27
+  },
+  {
+    "codigo": "P026",
+    "descricao": "ADUELA  DE 1500",
+    "estoque_minimo": 5,
+    "quantidade": 3
+  },
+  {
+    "codigo": "P027",
+    "descricao": "ADUELA  DE 2,00 x 2,00",
+    "estoque_minimo": 5,
+    "quantidade": 2
+  },
+  {
+    "codigo": "P028",
+    "descricao": "ANEIS DE BORRACHA PARA PV 1000x1000",
+    "estoque_minimo": 10,
+    "quantidade": 68
+  }
+]
