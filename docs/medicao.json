@@ -1,0 +1,162 @@
+{
+  "atualizado_em": "2026-04-29T14:54:39.485956-03:00",
+  "fonte_excel": "medicao.xlsx",
+  "contrato_total": 263030690.0,
+  "adiantamento_total": 52606138.0,
+  "medicoes": {
+    "total_contrato": 263030690.0,
+    "total_medido": 140117984.95,
+    "saldo_contratual": 122912705.05000001,
+    "pct_faturado": 53.270584109405625,
+    "serie": [
+      {
+        "ym": "2025-06",
+        "data": "junho de 2025",
+        "valor": 16044872.07,
+        "acumulado": 16044872.07,
+        "saldo": 246985817.93
+      },
+      {
+        "ym": "2025-07",
+        "data": "julho de 2025",
+        "valor": 3682429.66,
+        "acumulado": 19727301.73,
+        "saldo": 243303388.27
+      },
+      {
+        "ym": "2025-08",
+        "data": "agosto de 2025",
+        "valor": 21831574.24,
+        "acumulado": 41558875.97,
+        "saldo": 221471814.03
+      },
+      {
+        "ym": "2025-09",
+        "data": "setembro de 2025",
+        "valor": 19727301.73,
+        "acumulado": 61286177.7,
+        "saldo": 201744512.3
+      },
+      {
+        "ym": "2025-10",
+        "data": "outubro de 2025",
+        "valor": 8680012.76,
+        "acumulado": 69966190.46000001,
+        "saldo": 193064499.54
+      },
+      {
+        "ym": "2025-11",
+        "data": "novembro de 2025",
+        "valor": 14203657.24,
+        "acumulado": 84169847.7,
+        "saldo": 178860842.3
+      },
+      {
+        "ym": "2025-12",
+        "data": "dezembro de 2025",
+        "valor": 25777007.6,
+        "acumulado": 109946855.30000001,
+        "saldo": 153083834.7
+      },
+      {
+        "ym": "2026-01",
+        "data": "janeiro de 2026",
+        "valor": 9469104.83,
+        "acumulado": 119415960.13000001,
+        "saldo": 143614729.87
+      },
+      {
+        "ym": "2026-02",
+        "data": "fevereiro de 2026",
+        "valor": 13600196.2,
+        "acumulado": 133016156.33000001,
+        "saldo": 130014533.66999999
+      },
+      {
+        "ym": "2026-03",
+        "data": "março de 2026",
+        "valor": 7101828.62,
+        "acumulado": 140117984.95000002,
+        "saldo": 122912705.04999998
+      }
+    ]
+  },
+  "amortizacao": {
+    "adiantamento": 52606138.0,
+    "total_amortizado": 20779424.5068,
+    "saldo_amortizacao": 31826713.4932,
+    "pct_amortizado": 39.49999999391706,
+    "serie": [
+      {
+        "ym": "2025-06",
+        "data": "junho de 2025",
+        "valor": 2893337.59,
+        "acumulado": 2893337.59,
+        "saldo": 49712800.41
+      },
+      {
+        "ym": "2025-07",
+        "data": "julho de 2025",
+        "valor": 526061.38,
+        "acumulado": 3419398.9699999997,
+        "saldo": 49186739.03
+      },
+      {
+        "ym": "2025-08",
+        "data": "agosto de 2025",
+        "valor": 3682429.66,
+        "acumulado": 7101828.63,
+        "saldo": 45504309.37
+      },
+      {
+        "ym": "2025-09",
+        "data": "setembro de 2025",
+        "valor": 3156368.2768,
+        "acumulado": 10258196.9068,
+        "saldo": 42347941.0932
+      },
+      {
+        "ym": "2025-10",
+        "data": "outubro de 2025",
+        "valor": 1315153.45,
+        "acumulado": 11573350.3568,
+        "saldo": 41032787.6432
+      },
+      {
+        "ym": "2025-11",
+        "data": "novembro de 2025",
+        "valor": 2104245.52,
+        "acumulado": 13677595.876799999,
+        "saldo": 38928542.1232
+      },
+      {
+        "ym": "2025-12",
+        "data": "dezembro de 2025",
+        "valor": 2630306.9,
+        "acumulado": 16307902.7768,
+        "saldo": 36298235.2232
+      },
+      {
+        "ym": "2026-01",
+        "data": "janeiro de 2026",
+        "valor": 1052122.76,
+        "acumulado": 17360025.5368,
+        "saldo": 35246112.4632
+      },
+      {
+        "ym": "2026-02",
+        "data": "fevereiro de 2026",
+        "valor": 2630306.9,
+        "acumulado": 19990332.4368,
+        "saldo": 32615805.5632
+      },
+      {
+        "ym": "2026-03",
+        "data": "março de 2026",
+        "valor": 789092.07,
+        "acumulado": 20779424.5068,
+        "saldo": 31826713.4932
+      }
+    ]
+  }
+}
