@@ -1,8 +1,0 @@
-{
-  "corrigido_em": "2026-04-29T12:28:44",
-  "arquivo_base": "planilha_base_mapa.xlsx",
-  "registros_trechos": 374,
-  "registros_pontos": 357,
-  "profundidades_acima_15m_apos_correcao": 0,
-  "ajuste_aplicado": "valores de profundidade acima de 50 foram divididos por 100; valores ainda acima de 15 são tratados como 0 no HTML/JSON"
-}
