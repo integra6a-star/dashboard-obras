@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-06T14:41:53.003374-03:00",
+  "atualizado_em": "2026-05-06T15:23:29.805221-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -3279,7 +3279,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-05-06T14:41:53.002906-03:00",
+    "atualizado_em": "2026-05-06T15:23:29.804916-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [

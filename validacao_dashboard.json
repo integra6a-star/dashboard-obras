@@ -1,0 +1,699 @@
+{
+  "atualizado_em": "2026-05-06 15:27:41",
+  "totais": {
+    "base_planejado": 40615.99,
+    "base_executado": 15075.82,
+    "mapa_executado": 15144.35,
+    "diferenca_base_mapa": -68.53,
+    "saldo_total": 25540.17
+  },
+  "pds": {
+    "total": 2171,
+    "ultima_data": "2026-05-06",
+    "hoje": 22,
+    "por_obra_ultima_data": [
+      {
+        "obra": "CT João Canzi",
+        "atividades": 5
+      },
+      {
+        "obra": "RCE São Lucas",
+        "atividades": 5
+      },
+      {
+        "obra": "Botelho Mourão",
+        "atividades": 3
+      },
+      {
+        "obra": "CTS Luis Botelho Mourão",
+        "atividades": 3
+      },
+      {
+        "obra": "CTS Conceicão",
+        "atividades": 2
+      },
+      {
+        "obra": "CTS Mar De Coral",
+        "atividades": 2
+      },
+      {
+        "obra": "Guindauto",
+        "atividades": 2
+      }
+    ]
+  },
+  "alertas": [
+    "Diferença total entre Base Dash e mapa: -68.53 m",
+    "3 obra(s) com divergência entre executado da Base Dash e mapa."
+  ],
+  "divergencias": [
+    {
+      "obra": "RCE Barão Luis de Arariba",
+      "planejado": 649.0,
+      "executado_base": 548.9,
+      "executado_mapa": 617.76,
+      "diferenca_base_mapa": -68.86,
+      "saldo": 100.1,
+      "linhas_base": 4,
+      "linhas_mapa": 15
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 9.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 9.0,
+      "saldo": 1790.2,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Domingos João de Carvalho",
+      "planejado": 544.0,
+      "executado_base": 515.25,
+      "executado_mapa": 523.92,
+      "diferenca_base_mapa": -8.67,
+      "saldo": 28.75,
+      "linhas_base": 8,
+      "linhas_mapa": 24
+    }
+  ],
+  "saldo_por_obra": [
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 9.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 9.0,
+      "saldo": 1790.2,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "LINHA DE RECALQUE TRÊS MENINAS",
+      "planejado": 1787.9,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1787.9,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "REC JD. SÃO MARTINHO",
+      "planejado": 1667.04,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1667.04,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS TRÊS MENINAS",
+      "planejado": 1583.28,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1583.28,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMUNIDADE RAUZITO",
+      "planejado": 1566.27,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1566.27,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE  JD.HELOISA",
+      "planejado": 1021.03,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1021.03,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS JD. HELENA",
+      "planejado": 1011.6,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1011.6,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Dorotéia",
+      "planejado": 1521.1,
+      "executado_base": 511.0,
+      "executado_mapa": 511.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 1010.1,
+      "linhas_base": 4,
+      "linhas_mapa": 14
+    },
+    {
+      "obra": "INTERL. TRÊS MENINAS",
+      "planejado": 865.43,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 865.43,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Mar de Coral",
+      "planejado": 2185.54,
+      "executado_base": 1323.64,
+      "executado_mapa": 1323.64,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 861.9,
+      "linhas_base": 6,
+      "linhas_mapa": 46
+    },
+    {
+      "obra": "REC/ INTERL. AV. RIO MIRAÍ",
+      "planejado": 860.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 860.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 858.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE RUA PREFEITO TAKUNE KOIKE",
+      "planejado": 773.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 773.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE Souto Maior",
+      "planejado": 1398.6,
+      "executado_base": 638.14,
+      "executado_mapa": 638.14,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 760.46,
+      "linhas_base": 8,
+      "linhas_mapa": 17
+    },
+    {
+      "obra": "RCE BORBOLETA AMARELA",
+      "planejado": 747.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 747.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE TRAV. DOS JESUITAS",
+      "planejado": 619.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 619.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE AV. MARECHAL TITO",
+      "planejado": 589.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 589.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Água Vermelha - MD",
+      "planejado": 1700.5,
+      "executado_base": 1184.68,
+      "executado_mapa": 1184.68,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 515.82,
+      "linhas_base": 18,
+      "linhas_mapa": 26
+    },
+    {
+      "obra": "CTS Água Vermelha - ME",
+      "planejado": 1769.02,
+      "executado_base": 1305.04,
+      "executado_mapa": 1305.04,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 463.98,
+      "linhas_base": 34,
+      "linhas_mapa": 31
+    },
+    {
+      "obra": "REMANEJAMENTO ITI 15",
+      "planejado": 457.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 457.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE TERRA PROMETIDA",
+      "planejado": 382.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 382.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 338.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CT Lageado Montante",
+      "planejado": 1614.0,
+      "executado_base": 1297.69,
+      "executado_mapa": 1297.69,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 316.31,
+      "linhas_base": 6,
+      "linhas_mapa": 30
+    },
+    {
+      "obra": "RCE RUA ALTO JURUÁ",
+      "planejado": 245.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 245.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Benfica",
+      "planejado": 1006.1,
+      "executado_base": 762.09,
+      "executado_mapa": 762.09,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 244.01,
+      "linhas_base": 6,
+      "linhas_mapa": 22
+    },
+    {
+      "obra": "RCE RUA JOSÉ MILITÃO",
+      "planejado": 238.52,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 238.52,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES",
+      "planejado": 238.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 238.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE VIELA DA RUA INÊS SABINO",
+      "planejado": 229.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 229.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 226.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Jaraguá",
+      "planejado": 632.63,
+      "executado_base": 408.17,
+      "executado_mapa": 408.17,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 224.46,
+      "linhas_base": 2,
+      "linhas_mapa": 12
+    },
+    {
+      "obra": "Interligação Água Boa",
+      "planejado": 425.0,
+      "executado_base": 201.71,
+      "executado_mapa": 201.71,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 223.29,
+      "linhas_base": 2,
+      "linhas_mapa": 7
+    },
+    {
+      "obra": "RCE RUA TERRA SEM MALES",
+      "planejado": 220.48,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 220.48,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS TRÊS MENINAS AUX.",
+      "planejado": 208.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 208.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
+      "planejado": 205.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 205.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE RUA DOS GIRASSÓIS",
+      "planejado": 201.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 201.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE ELVIRA DE ARAUJO",
+      "planejado": 180.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 180.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE JOÃO CANZI",
+      "planejado": 168.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 168.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE EUCLIDES DA FONSECA",
+      "planejado": 167.09,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 167.09,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Bandeirantes",
+      "planejado": 2129.7,
+      "executado_base": 1963.69,
+      "executado_mapa": 1963.69,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 166.01,
+      "linhas_base": 6,
+      "linhas_mapa": 35
+    },
+    {
+      "obra": "INTERL. RUA JOÃO LIMA DA SILVA",
+      "planejado": 146.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 146.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Jardim Miriam",
+      "planejado": 2092.7,
+      "executado_base": 1952.26,
+      "executado_mapa": 1952.26,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 140.44,
+      "linhas_base": 10,
+      "linhas_mapa": 56
+    },
+    {
+      "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 2",
+      "planejado": 140.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 140.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE AV. DOM JOÃO NERY",
+      "planejado": 125.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 125.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE RUA IGARAÇU",
+      "planejado": 110.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 110.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "INTERL. CÓRREGO LEGEADO",
+      "planejado": 109.8,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 109.8,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE Barão Luis de Arariba",
+      "planejado": 649.0,
+      "executado_base": 548.9,
+      "executado_mapa": 617.76,
+      "diferenca_base_mapa": -68.86,
+      "saldo": 100.1,
+      "linhas_base": 4,
+      "linhas_mapa": 15
+    },
+    {
+      "obra": "CTS Jardim Lourdes",
+      "planejado": 1103.2,
+      "executado_base": 1006.65,
+      "executado_mapa": 1006.65,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 96.55,
+      "linhas_base": 8,
+      "linhas_mapa": 21
+    },
+    {
+      "obra": "RCE Pacheco Jordão",
+      "planejado": 95.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 95.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 1",
+      "planejado": 69.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 69.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "INTERL. RUA AYRTON SENNA",
+      "planejado": 59.5,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 59.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
+      "planejado": 55.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 55.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Conceição",
+      "planejado": 812.5,
+      "executado_base": 765.89,
+      "executado_mapa": 765.89,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 46.61,
+      "linhas_base": 4,
+      "linhas_mapa": 15
+    },
+    {
+      "obra": "RCE RUA CARMEM COSTA",
+      "planejado": 34.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 34.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Domingos João de Carvalho",
+      "planejado": 544.0,
+      "executado_base": 515.25,
+      "executado_mapa": 523.92,
+      "diferenca_base_mapa": -8.67,
+      "saldo": 28.75,
+      "linhas_base": 8,
+      "linhas_mapa": 24
+    },
+    {
+      "obra": "RCE ESTRADA DOS BANDEIRANTES",
+      "planejado": 20.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 20.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE RUA MARIA DAS GRAÇAS SILVA",
+      "planejado": 17.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 17.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "EEE TRÊS MENINAS",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 0.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE AV. Fernando Pacheco Jordão",
+      "planejado": 205.5,
+      "executado_base": 220.59,
+      "executado_mapa": 220.59,
+      "diferenca_base_mapa": -0.0,
+      "saldo": -15.09,
+      "linhas_base": 2,
+      "linhas_mapa": 5
+    },
+    {
+      "obra": "CTS Luis Botelho Mourão",
+      "planejado": 390.75,
+      "executado_base": 461.43,
+      "executado_mapa": 461.43,
+      "diferenca_base_mapa": -0.0,
+      "saldo": -70.68,
+      "linhas_base": 4,
+      "linhas_mapa": 11
+    }
+  ],
+  "arquivos": [
+    {
+      "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
+      "existe": true,
+      "tamanho_kb": 35.2,
+      "modificado": "2026-05-06 12:50:37"
+    },
+    {
+      "arquivo": "planilha_base_mapa.xlsx",
+      "existe": true,
+      "tamanho_kb": 98.0,
+      "modificado": "2026-05-05 16:16:03"
+    },
+    {
+      "arquivo": "pds_word_completo_preenchido(2).xlsx",
+      "existe": true,
+      "tamanho_kb": 327.8,
+      "modificado": "2026-05-06 15:23:33"
+    },
+    {
+      "arquivo": "pds_data.json",
+      "existe": true,
+      "tamanho_kb": 375.3,
+      "modificado": "2026-05-06 15:23:35"
+    }
+  ]
+}

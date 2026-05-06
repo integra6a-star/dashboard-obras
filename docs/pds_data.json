@@ -17000,16 +17000,208 @@
     "pv": ""
   },
   {
-    "data": "2026-05-06",
-    "obra": "CT JOÃO CANZI",
-    "equipe": "Goiânia Drill",
-    "atividade": "Furo piloto e puxe do PVE-17 ao PV-06",
-    "trecho": "PVE-17-06",
-    "pv": "PVE-17,06"
+    "data": "2026-04-01",
+    "obra": "CT Conceição",
+    "equipe": "Gr Drill",
+    "atividade": "Piloto e puxe entre PV 09 ao 10.1",
+    "trecho": "09-10.1",
+    "pv": "09 ao 10.1"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Conceição",
+    "equipe": "Medeiros",
+    "atividade": "Apoio HDD entre PV 09 ao 10.1",
+    "trecho": "09-10.1",
+    "pv": "09 ao 10.1"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Conceição",
+    "equipe": "Cesar",
+    "atividade": "Transformação PV 08",
+    "trecho": "",
+    "pv": "08"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Johnatan",
+    "atividade": "Transformação PVD 07",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Claudinei",
+    "atividade": "Apoio casa (PVD 7)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Marcelo",
+    "atividade": "Transformação PVE 16",
+    "trecho": "",
+    "pv": "16"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Edivando",
+    "atividade": "Transformação PV.10.1",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Edivando",
+    "atividade": "Int. ÁGUA BOA – VALMIR",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Wj 02",
+    "atividade": "Furo piloto e puxe PV 04 ao PV 03",
+    "trecho": "04-03",
+    "pv": "04 ao 03"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CT Água Vermelha M.d. E M.e",
+    "equipe": "Antônio",
+    "atividade": "Apoio HDD PV 04 ao PV 03",
+    "trecho": "04-03",
+    "pv": "04 ao 03"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "RCE Fco. Souto Maior",
+    "equipe": "Valter",
+    "atividade": "VCA e Ligações – Rua Canto da Serra",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "RCE Fco. Souto Maior",
+    "equipe": "Ricardo",
+    "atividade": "VCA e Ligações – Rua Canto da Serra",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CTS Luis Botelho Mourão",
+    "equipe": "Goiania Drill",
+    "atividade": "Piloto e puxe PV 04 ao PV 05",
+    "trecho": "04-05",
+    "pv": "04 ao 05"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CTS Luis Botelho Mourão",
+    "equipe": "Bruno",
+    "atividade": "Apoio HDD PV 04 ao PV 05",
+    "trecho": "04-05",
+    "pv": "04 ao 05"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CTS Luis Botelho Mourão",
+    "equipe": "Marcio",
+    "atividade": "Shaft PV 07",
+    "trecho": "",
+    "pv": "07"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CTS Luis Botelho Mourão",
+    "equipe": "Cidão",
+    "atividade": "Shaft PV 08",
+    "trecho": "",
+    "pv": "08"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "CTS Luis Botelho Mourão",
+    "equipe": "Higor",
+    "atividade": "Shaft PV 03",
+    "trecho": "",
+    "pv": "03"
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Conceição",
+    "equipe": "Vacal",
+    "atividade": "Conceição – Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Água Vermelha",
+    "equipe": "Vacal",
+    "atividade": "Água Vermelha - Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Botelho Mourão",
+    "equipe": "Vacal",
+    "atividade": "Botelho Mourão - Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Água Boa",
+    "equipe": "Vacal",
+    "atividade": "Água Boa - BRD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Iti 15",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 – Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Rodrigo - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-04-01",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Marcio - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
   },
   {
     "data": "2026-05-06",
-    "obra": "CT JOÃO CANZI",
+    "obra": "CT João Canzi",
+    "equipe": "Goiânia Drill",
+    "atividade": "Furo piloto e puxe do PVE-17 ao PV-06",
+    "trecho": "17-06",
+    "pv": "17 ao 06"
+  },
+  {
+    "data": "2026-05-06",
+    "obra": "CT João Canzi",
     "equipe": "Bruno",
     "atividade": "Apoio ao HDD",
     "trecho": "",
@@ -17017,15 +17209,15 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "CT JOÃO CANZI",
-    "equipe": "Miro GO-02",
+    "obra": "CT João Canzi",
+    "equipe": "Miro Go-02",
     "atividade": "Shaft PV 11",
     "trecho": "",
     "pv": "11"
   },
   {
     "data": "2026-05-06",
-    "obra": "CT JOÃO CANZI",
+    "obra": "CT João Canzi",
     "equipe": "Valter",
     "atividade": "Shaft PV 15",
     "trecho": "",
@@ -17033,7 +17225,7 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "CT JOÃO CANZI",
+    "obra": "CT João Canzi",
     "equipe": "Carlos",
     "atividade": "Shaft PV 09",
     "trecho": "",
@@ -17041,15 +17233,15 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS MAR DE CORAL",
+    "obra": "CTS Mar De Coral",
     "equipe": "Edvando",
     "atividade": "VCA e transformações de PVs entre PV 22.2 ao 22.4",
     "trecho": "22.2-22.4",
-    "pv": "22.2,22.4"
+    "pv": "22.2 ao 22.4"
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS MAR DE CORAL",
+    "obra": "CTS Mar De Coral",
     "equipe": "Cidão",
     "atividade": "Acabamento PV 5.10",
     "trecho": "",
@@ -17057,7 +17249,7 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS LUIS BOTELHO MOURÃO",
+    "obra": "CTS Luis Botelho Mourão",
     "equipe": "Marcio",
     "atividade": "Lavagem da rede",
     "trecho": "",
@@ -17065,23 +17257,23 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS LUIS BOTELHO MOURÃO",
+    "obra": "CTS Luis Botelho Mourão",
     "equipe": "Higor",
     "atividade": "Acabamento PV 08 ao PV 09",
     "trecho": "08-09",
-    "pv": "08,09"
+    "pv": "08 ao 09"
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS LUIS BOTELHO MOURÃO",
+    "obra": "CTS Luis Botelho Mourão",
     "equipe": "Jhonatan",
     "atividade": "Substituição Rede PV 05 ao PVE",
-    "trecho": "05-PVE",
-    "pv": "05,PVE"
+    "trecho": "",
+    "pv": "05"
   },
   {
     "data": "2026-05-06",
-    "obra": "RCE SÃO LUCAS",
+    "obra": "RCE São Lucas",
     "equipe": "Antonio",
     "atividade": "VCA, PVs e Ligações",
     "trecho": "",
@@ -17089,7 +17281,7 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "RCE SÃO LUCAS",
+    "obra": "RCE São Lucas",
     "equipe": "Medeiros",
     "atividade": "VCA, PVs e Ligações",
     "trecho": "",
@@ -17097,7 +17289,7 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "RCE SÃO LUCAS",
+    "obra": "RCE São Lucas",
     "equipe": "Ricardo",
     "atividade": "VCA, PVs e Ligações",
     "trecho": "",
@@ -17105,7 +17297,7 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "RCE SÃO LUCAS",
+    "obra": "RCE São Lucas",
     "equipe": "Claudinei",
     "atividade": "VCA, PVs e Ligações",
     "trecho": "",
@@ -17113,7 +17305,7 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "RCE SÃO LUCAS",
+    "obra": "RCE São Lucas",
     "equipe": "Marcelo",
     "atividade": "VCA, PVs e Ligações",
     "trecho": "",
@@ -17121,65 +17313,57 @@
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS CONCEIÇÃO",
+    "obra": "CTS Conceicão",
     "equipe": "Cesar",
     "atividade": "Tubo de queda PVE",
     "trecho": "",
-    "pv": "PVE"
+    "pv": ""
   },
   {
     "data": "2026-05-06",
-    "obra": "CTS CONCEIÇÃO",
-    "equipe": "Emanuel GO-01",
+    "obra": "CTS Conceicão",
+    "equipe": "Emanuel Go-01",
     "atividade": "Shaft PV 10.2.1",
     "trecho": "",
-    "pv": "10.2"
+    "pv": "10.2.1"
   },
   {
     "data": "2026-05-06",
-    "obra": "Vacal",
-    "equipe": "Botelho Mourão – Henko",
-    "atividade": "Apoio Vacal",
+    "obra": "Botelho Mourão",
+    "equipe": "Vacal",
+    "atividade": "Botelho Mourão – Henko",
     "trecho": "",
     "pv": ""
   },
   {
     "data": "2026-05-06",
-    "obra": "Vacal",
-    "equipe": "Botelho Mourão – Henko",
-    "atividade": "Apoio Vacal",
+    "obra": "Botelho Mourão",
+    "equipe": "Vacal",
+    "atividade": "Botelho Mourão – Renasce",
     "trecho": "",
     "pv": ""
   },
   {
     "data": "2026-05-06",
-    "obra": "Vacal",
-    "equipe": "Botelho Mourão – Renasce",
-    "atividade": "Apoio Vacal",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-06",
-    "obra": "Vacal",
-    "equipe": "Botelho Mourão – Hidrosol",
-    "atividade": "Apoio Vacal",
+    "obra": "Botelho Mourão",
+    "equipe": "Vacal",
+    "atividade": "Botelho Mourão – Hidrosol",
     "trecho": "",
     "pv": ""
   },
   {
     "data": "2026-05-06",
     "obra": "Guindauto",
-    "equipe": "Marcio",
-    "atividade": "Apoio as equipes",
+    "equipe": "Guindauto",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
   {
     "data": "2026-05-06",
     "obra": "Guindauto",
-    "equipe": "Luiz Carlos",
-    "atividade": "Apoio as equipes",
+    "equipe": "Guindauto",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   }

@@ -25,47 +25,62 @@ echo Python: %PY%
 echo ==========================================
 echo.
 
-echo [1/8] Gerando dados.json + eap_producao.json...
+echo [1/11] Gerando dados.json + eap_producao.json...
 %PY% scripts\gerar_dados_json.py
 if errorlevel 1 goto erro
 
 echo.
-echo [2/8] Gerando dados_mapa.json da planilha_base_mapa.xlsx...
+echo [2/11] Gerando dados_mapa.json da planilha_base_mapa.xlsx...
 %PY% scripts\atualizar_mapa_json.py
 if errorlevel 1 goto erro
 
 echo.
-echo [3/8] Gerando pds_data.json...
+echo [3/11] Importando PDS Word mais recente...
+%PY% scripts\importar_pds_word.py
+if errorlevel 1 echo AVISO: PDS Word nao foi importado automaticamente.
+
+echo.
+echo [4/11] Gerando pds_data.json...
 %PY% scripts\converter_pds.py
 if errorlevel 1 echo AVISO: pds_data.json nao foi atualizado.
 
 echo.
-echo [4/8] Gerando JSONs do almoxarifado...
+echo [5/11] Gerando JSONs do almoxarifado...
 %PY% scripts\almoxarifado_json.py
 if errorlevel 1 goto erro
 
 echo.
-echo [5/8] Gerando funcionarios.json...
+echo [6/11] Gerando funcionarios.json...
 %PY% scripts\gerar_funcionarios_json.py
 if errorlevel 1 echo AVISO: funcionarios.json nao foi atualizado.
 
 echo.
-echo [6/8] Atualizando historico de funcionarios...
+echo [7/11] Atualizando historico de funcionarios...
 %PY% scripts\atualizar_historico_funcionarios.py
 if errorlevel 1 echo AVISO: funcionarios_historico.json nao foi atualizado.
 
 echo.
-echo [7/8] Gerando medicao.json...
+echo [8/11] Gerando medicao.json...
 %PY% scripts\medicao_json.py
 if errorlevel 1 echo AVISO: medicao.json nao foi atualizado.
 
 echo.
-echo [8/8] Conferencia rapida da planilha de mapa...
+echo [9/11] Conferencia rapida da planilha de mapa...
 %PY% -c "import json, pathlib; p=pathlib.Path('docs/dados_mapa.json'); j=json.loads(p.read_text(encoding='utf-8')); print('dados_mapa:', len(j.get('obras',[])), 'obras,', len(j.get('pontos',[])), 'pontos,', len(j.get('trechos',[])), 'trechos')"
 if errorlevel 1 echo AVISO: nao consegui conferir dados_mapa.json.
 
 echo.
-echo Espelhando JSONs da pasta docs para a raiz...
+echo [10/11] Espelhando JSONs da pasta docs para a raiz...
+%PY% -c "from pathlib import Path; import shutil; root=Path('.'); docs=root/'docs'; [shutil.copy2(p, root/p.name) for p in docs.glob('*.json')]; print('JSONs espelhados:', len(list(docs.glob('*.json'))))"
+if errorlevel 1 goto erro
+
+echo.
+echo [11/11] Gerando validacao_dashboard.json e relatorio_atualizacao.txt...
+%PY% scripts\validar_dashboard.py
+if errorlevel 1 echo AVISO: validacao_dashboard.json nao foi atualizado.
+
+echo.
+echo Espelhando JSONs finais da pasta docs para a raiz...
 %PY% -c "from pathlib import Path; import shutil; root=Path('.'); docs=root/'docs'; [shutil.copy2(p, root/p.name) for p in docs.glob('*.json')]; print('JSONs espelhados:', len(list(docs.glob('*.json'))))"
 if errorlevel 1 goto erro
 
@@ -73,6 +88,7 @@ echo.
 echo ==========================================
 echo OK! JSONs atualizados.
 echo Todas as planilhas foram convertidas para JSON e espelhadas para o link.
+echo Relatorio da atualizacao: %cd%\relatorio_atualizacao.txt
 echo ==========================================
 if /i "%~1"=="nopause" exit /b 0
 pause
