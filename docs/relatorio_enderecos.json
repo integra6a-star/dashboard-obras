@@ -1,0 +1,418 @@
+{
+  "-23.523314,-46.391620": {
+    "road": "Rua do Galpão",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua do Galpão, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08141-001, Brasil"
+  },
+  "-23.524395,-46.395672": {
+    "road": "Travessa Flores Tropicais",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Travessa Flores Tropicais, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.524162,-46.395125": {
+    "road": "Rua Raios de Júpiter",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Raios de Júpiter, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08143-360, Brasil"
+  },
+  "-23.524432,-46.394918": {
+    "road": "Rua Taquari",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Taquari, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.524352,-46.396283": {
+    "road": "Rua Manuel Álvares Pimentel",
+    "number": "s/n",
+    "suburb": "Itaim Paulista",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Manuel Álvares Pimentel, Jardim São Paulo, Itaim Paulista, Lajeado, São Paulo, Região Sudeste, 08141-001, Brasil"
+  },
+  "-23.523841,-46.392942": {
+    "road": "Travessa Alberto Martins Torres",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Travessa Alberto Martins Torres, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08141-001, Brasil"
+  },
+  "-23.526863,-46.388433": {
+    "road": "Vila Adão Manuel da Silva",
+    "number": "s/n",
+    "suburb": "bairro n?o localizado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Vila Adão Manuel da Silva, Lajeado, São Paulo, Região Sudeste, 08538-300, Brasil"
+  },
+  "-23.526482,-46.387937": {
+    "road": "Vila Adão Manuel da Silva",
+    "number": "s/n",
+    "suburb": "bairro n?o localizado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Vila Adão Manuel da Silva, Lajeado, São Paulo, Região Sudeste, 08538-300, Brasil"
+  },
+  "-23.521457,-46.398627": {
+    "road": "Avenida Barão Luís de Arariba",
+    "number": "s/n",
+    "suburb": "Santa Margarida Paulista",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Barão Luís de Arariba, Santa Margarida Paulista, Itaim Paulista, São Paulo, Região Sudeste, 08143-360, Brasil"
+  },
+  "-23.523140,-46.390674": {
+    "road": "Rua Felipe Benício Paes Landim",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Felipe Benício Paes Landim, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08141-001, Brasil"
+  },
+  "-23.523608,-46.392191": {
+    "road": "logradouro n?o localizado",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-430, Brasil"
+  },
+  "-23.514314,-46.417651": {
+    "road": "Rua José Augusto Lobo",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua José Augusto Lobo, Parque Santa Rita, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-060, Brasil"
+  },
+  "-23.514763,-46.417446": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.521852,-46.398396": {
+    "road": "Avenida Barão Luís de Arariba",
+    "number": "s/n",
+    "suburb": "Santa Margarida Paulista",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Barão Luís de Arariba, Santa Margarida Paulista, Itaim Paulista, São Paulo, Região Sudeste, 08143-360, Brasil"
+  },
+  "-23.523233,-46.391150": {
+    "road": "Rua Mar de Coral",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Mar de Coral, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08141-001, Brasil"
+  },
+  "-23.526278,-46.395951": {
+    "road": "Rua Jerônimo Pedroso Barros",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Jerônimo Pedroso Barros, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.523715,-46.392462": {
+    "road": "Travessa Cláudio Sanchez Albornoz",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Travessa Cláudio Sanchez Albornoz, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08141-001, Brasil"
+  },
+  "-23.515288,-46.417287": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.515758,-46.417091": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.516195,-46.416911": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.514676,-46.418436": {
+    "road": "Avenida Água Vermelha",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Água Vermelha, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08031-150, Brasil"
+  },
+  "-23.514194,-46.418407": {
+    "road": "Viela 23",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Viela 23, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-060, Brasil"
+  },
+  "-23.524435,-46.394634": {
+    "road": "Rua Taquari",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Taquari, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.515523,-46.418264": {
+    "road": "Avenida Água Vermelha",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Água Vermelha, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08031-150, Brasil"
+  },
+  "-23.517245,-46.417502": {
+    "road": "Avenida Água Vermelha",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Água Vermelha, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08031-150, Brasil"
+  },
+  "-23.520195,-46.416159": {
+    "road": "Rua Benedito Raposo",
+    "number": "s/n",
+    "suburb": "Jardim Robru",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Benedito Raposo, Vila Córrego da Água Vermelha, Jardim Robru, Vila Curuçá, São Paulo, Região Sudeste, 08150-350, Brasil"
+  },
+  "-23.518932,-46.416704": {
+    "road": "Avenida Água Vermelha",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Água Vermelha, Parque Santa Rita, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08431-410, Brasil"
+  },
+  "-23.526315,-46.396033": {
+    "road": "Rua Jerônimo Pedroso Barros",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Jerônimo Pedroso Barros, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.524385,-46.394411": {
+    "road": "Rua Taquari",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Taquari, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.516371,-46.417981": {
+    "road": "Avenida Água Vermelha",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Água Vermelha, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08031-150, Brasil"
+  },
+  "-23.517557,-46.416166": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.516762,-46.416679": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.519236,-46.416511": {
+    "road": "Viela Três",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Viela Três, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08031-150, Brasil"
+  },
+  "-23.522053,-46.397749": {
+    "road": "logradouro n?o localizado",
+    "number": "s/n",
+    "suburb": "Santa Margarida Paulista",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Santa Margarida Paulista, Itaim Paulista, São Paulo, Região Sudeste, 08143-360, Brasil"
+  },
+  "-23.523361,-46.390126": {
+    "road": "Rua Candido Pereira de Castro",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Candido Pereira de Castro, Lajeado, São Paulo, Região Sudeste, 08140-000, Brasil"
+  },
+  "-23.524494,-46.396907": {
+    "road": "Rua Engenheiro Bardot",
+    "number": "s/n",
+    "suburb": "Itaim Paulista",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Engenheiro Bardot, Itaim Paulista, Vila Curuçá, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.523201,-46.388991": {
+    "road": "Rua Santa Luzia da Boa Visão",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Santa Luzia da Boa Visão, Lajeado, São Paulo, Região Sudeste, 08140-000, Brasil"
+  },
+  "-23.524540,-46.396235": {
+    "road": "Rua Engenheiro Bardot",
+    "number": "s/n",
+    "suburb": "Itaim Paulista",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Engenheiro Bardot, Itaim Paulista, Vila Curuçá, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.522987,-46.388869": {
+    "road": "Rua Conjunto da Paz",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Conjunto da Paz, Lajeado, São Paulo, Região Sudeste, 08140-000, Brasil"
+  },
+  "-23.518364,-46.415639": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  },
+  "-23.522886,-46.388850": {
+    "road": "Rua Conjunto da Paz",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Conjunto da Paz, Lajeado, São Paulo, Região Sudeste, 08140-000, Brasil"
+  },
+  "-23.523420,-46.389775": {
+    "road": "logradouro n?o localizado",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Lajeado, São Paulo, Região Sudeste, 08140-000, Brasil"
+  },
+  "-23.519111,-46.414649": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Jardim Robru",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Parque Santa Rita, Jardim Robru, Vila Curuçá, São Paulo, Região Sudeste, 08150-350, Brasil"
+  },
+  "-23.518354,-46.416914": {
+    "road": "Sem Denominação",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Sem Denominação, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08031-150, Brasil"
+  },
+  "-23.524133,-46.393641": {
+    "road": "Rua Taquari",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Taquari, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-430, Brasil"
+  },
+  "-23.523362,-46.389475": {
+    "road": "Rua Santa Luzia da Boa Visão",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Santa Luzia da Boa Visão, Lajeado, São Paulo, Região Sudeste, 08140-000, Brasil"
+  },
+  "-23.520048,-46.415392": {
+    "road": "Rua Benedito Raposo",
+    "number": "s/n",
+    "suburb": "Jardim Robru",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Benedito Raposo, Vila Parque Guaianases, Jardim Robru, Vila Curuçá, São Paulo, Região Sudeste, 08150-350, Brasil"
+  },
+  "-23.521410,-46.416178": {
+    "road": "Avenida Água Vermelha",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Água Vermelha, Parque Santa Rita, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08431-410, Brasil"
+  },
+  "-23.526066,-46.397265": {
+    "road": "Rua Engenheiro Bardot",
+    "number": "s/n",
+    "suburb": "Jardim Robru",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Engenheiro Bardot, Jardim Robru, Vila Curuçá, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.526755,-46.397378": {
+    "road": "Estrada Dom João Nery",
+    "number": "s/n",
+    "suburb": "Lajeado",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Estrada Dom João Nery, Jardim São Paulo, Lajeado, São Paulo, Região Sudeste, 08452-340, Brasil"
+  },
+  "-23.519707,-46.415173": {
+    "road": "Rua Raimundo de Paulo Freitas",
+    "number": "s/n",
+    "suburb": "Jardim Robru",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Rua Raimundo de Paulo Freitas, Vila Parque Guaianases, Jardim Robru, Vila Curuçá, São Paulo, Região Sudeste, 08150-350, Brasil"
+  },
+  "-23.517822,-46.415995": {
+    "road": "Avenida Fernando Figueiredo Lins",
+    "number": "s/n",
+    "suburb": "Vila Nova Curuça",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "display": "Avenida Fernando Figueiredo Lins, Vila Córrego da Água Vermelha, Vila Nova Curuça, Vila Curuçá, São Paulo, Região Sudeste, 08150-070, Brasil"
+  }
+}
