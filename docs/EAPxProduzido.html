@@ -277,6 +277,7 @@
 </div>
 
 <script>
+const ARQ_JSON = "./eap_producao.json";
 const ARQ_XLSX = "./EAP_PRODUCAO.xlsx";
 
 let DADOS = [];
@@ -357,8 +358,8 @@ function renderTabelaProducao(rows){
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.ano ?? ""}</td>
-      <td>${r.mes ?? ""}</td>
+      <td>${r.ano ? ""}</td>
+      <td>${r.mes ? ""}</td>
       <td class="num">${fmt0(Math.round(eap))}</td>
       <td class="num">${fmt0(Math.round(prod))}</td>
       <td class="num">${fmt0(Math.round(saldo))}</td>
@@ -380,8 +381,8 @@ function renderTabelaEconomias(rows){
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.ano ?? ""}</td>
-      <td>${r.mes ?? ""}</td>
+      <td>${r.ano ? ""}</td>
+      <td>${r.mes ? ""}</td>
       <td class="num">${fmt0(Math.round(eap))}</td>
       <td class="num">${fmt0(Math.round(rec))}</td>
       <td class="num">${fmt0(Math.round(saldo))}</td>
@@ -581,6 +582,29 @@ function normalizarLinhas(sheet){
 
 async function carregarXlsx(){
   badgeFonte.textContent = "Fonte: carregando...";
+  try{
+    const jsonRes = await fetch(ARQ_JSON + "?cb=" + Date.now());
+    if(jsonRes.ok){
+      const payload = await jsonRes.json();
+      if(Array.isArray(payload.mensal) && payload.mensal.length){
+        DADOS = payload.mensal.map(r => ({
+          ano: Number(r.ano),
+          mes: String(r.mes || ""),
+          eap: Number(r.eap || 0),
+          produzido: (r.produzido === null || r.produzido === undefined || r.produzido === "") ? null : Number(r.produzido || 0),
+          economiasEap: Number(r.economias_eap || 0),
+          economiasRecebidas: Number(r.economias_recebidas || 0)
+        }));
+        fillSelectAno();
+        badgeFonte.textContent = `Fonte: ${ARQ_JSON.split("/").pop()} • Linhas: ${DADOS.length}`;
+        update();
+        return;
+      }
+    }
+  }catch(err){
+    console.warn("Falha ao carregar eap_producao.json, tentando XLSX", err);
+  }
+
   const res = await fetch(ARQ_XLSX + "?cb=" + Date.now());
   if(!res.ok) throw new Error("Não consegui carregar " + ARQ_XLSX);
   const buf = await res.arrayBuffer();

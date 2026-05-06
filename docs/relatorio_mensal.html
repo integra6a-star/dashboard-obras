@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <link rel="icon" href="icon.png">
@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#2563eb">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RelatÃ³rio Mensal da Qualidade</title>
+<title>Relatório Mensal da Qualidade</title>
 <style>
 :root{
   --azul:#1f5b9d;
@@ -199,14 +199,14 @@ th{font-weight:700;text-align:left}
 <body>
 
 <div class="toolbar">
-  <a class="btn-soft" href="./index.html">â† Voltar</a>
-  <label>MÃªs:</label>
+  <a class="btn-soft" href="./index.html">← Voltar</a>
+  <label>Mês:</label>
   <select id="mes"></select>
   <label>Contrato:</label>
   <input id="contrato" value="">
   <label>Contratada:</label>
-  <input id="contratada" value="ConsÃ³rcio XXXXX Pacote XX">
-  <button class="btn-blue" onclick="gerarRelatorio()">Gerar relatÃ³rio</button>
+  <input id="contratada" value="Consórcio XXXXX Pacote XX">
+  <button class="btn-blue" onclick="gerarRelatorio()">Gerar relatório</button>
   <button class="btn-green" onclick="baixarWord()">â¬‡ Baixar Word</button>
   <button class="btn-gray" onclick="window.print()">ðŸ“‘ Gerar PDF</button>
 </div>
@@ -215,211 +215,211 @@ th{font-weight:700;text-align:left}
 
 <section class="page" id="capa">
   <div class="header">
-    <div>LOGOMARCA CONSÃ“RCIO</div>
-    <div class="center">CONSÃ“RCIO XXXXXXXX</div>
-    <div class="right">nÂº 001-26</div>
+    <div>LOGOMARCA CONSÓRCIO</div>
+    <div class="center">CONSÓRCIO XXXXXXXX</div>
+    <div class="right">nº 001-26</div>
   </div>
 
-  <h1>RELATÃ“RIO MENSAL DA QUALIDADE</h1>
+  <h1>RELATÓRIO MENSAL DA QUALIDADE</h1>
 
   <p><b>Contrato:</b> <span id="cContrato"></span></p>
-  <p><b>Contratada:</b> <span id="cContratada">ConsÃ³rcio XXXXX Pacote XX</span></p>
-  <p><b>Objeto:</b> CONTRATAÃ‡ÃƒO PARA ELABORAÃ‡ÃƒO DO PROJETO EXECUTIVO E EXECUÃ‡ÃƒO DAS OBRAS XXXXXXXXXXXXXXXXXXXXXXXXXXX â€“ INTEGRA TIETÃŠ</p>
+  <p><b>Contratada:</b> <span id="cContratada">Consórcio XXXXX Pacote XX</span></p>
+  <p><b>Objeto:</b> CONTRATAÇÃO PARA ELABORAÇÃO DO PROJETO EXECUTIVO E EXECUÇÃO DAS OBRAS XXXXXXXXXXXXXXXXXXXXXXXXXXX â€“ INTEGRA TIETÊ</p>
   <br>
-  <p><b>ReferÃªncia:</b> <span id="cReferencia">Abril /2026</span></p>
+  <p><b>Referência:</b> <span id="cReferencia">Abril /2026</span></p>
 
   <div class="assinaturas">
-    <div><div class="linha">ElaboraÃ§Ã£o</div></div>
-    <div><div class="linha">AprovaÃ§Ã£o</div></div>
+    <div><div class="linha">Elaboração</div></div>
+    <div><div class="linha">Aprovação</div></div>
   </div>
 
   <table style="margin-top:44px">
-    <tr><th>RevisÃ£o</th><th>Data</th><th>Elaborado por</th><th>ComentÃ¡rios</th></tr>
-    <tr><td>00</td><td>20-02-2026</td><td>Jaqueline de Farias</td><td>RevisÃ£o inicial</td></tr>
-    <tr><td>01</td><td>05-03-2026</td><td>Jaqueline de Farias</td><td>AtualizaÃ§Ã£o item 3.1</td></tr>
+    <tr><th>Revisão</th><th>Data</th><th>Elaborado por</th><th>Comentários</th></tr>
+    <tr><td>00</td><td>20-02-2026</td><td>Jaqueline de Farias</td><td>Revisão inicial</td></tr>
+    <tr><td>01</td><td>05-03-2026</td><td>Jaqueline de Farias</td><td>Atualização item 3.1</td></tr>
     <tr><td>&nbsp;</td><td></td><td></td><td></td></tr>
   </table>
 
   <div style="margin-top:36px">
     <p><b>a) Objetivo do Plano</b></p>
-    <p>Uma declaraÃ§Ã£o simples do propÃ³sito ou resultado esperado para o empreendimento especÃ­fico.</p>
+    <p>Uma declaração simples do propósito ou resultado esperado para o empreendimento específico.</p>
     <p><b>b) Escopo</b></p>
     <p>Objeto do contrato e prazo.</p>
-    <p><b>c) ReferÃªncia Normativa</b></p>
-    <p>RelaÃ§Ã£o das normas e especificaÃ§Ãµes adotadas para elaboraÃ§Ã£o do plano e para execuÃ§Ã£o dos serviÃ§os.</p>
-    <p><b>d) Contexto da organizaÃ§Ã£o</b></p>
-    <p>Referenciar as partes interessadas que sofrem influÃªncia ou podem influenciar o andamento das atividades, identificando as necessidades e expectativas.</p>
+    <p><b>c) Referência Normativa</b></p>
+    <p>Relação das normas e especificações adotadas para elaboração do plano e para execução dos serviços.</p>
+    <p><b>d) Contexto da organização</b></p>
+    <p>Referenciar as partes interessadas que sofrem influência ou podem influenciar o andamento das atividades, identificando as necessidades e expectativas.</p>
   </div>
   <div class="page-num">1</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
-  <h2>SumÃ¡rio</h2>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
+  <h2>Sumário</h2>
   <table class="sumario">
-    <tr><td>1- Matriz de comunicaÃ§Ã£o</td><td>7</td></tr>
-    <tr><td>2- Acompanhamento da obra â€“ atividades realizadas no perÃ­odo</td><td>7</td></tr>
-    <tr><td>2.1 Atividades desenvolvidas no perÃ­odo</td><td>8</td></tr>
-    <tr><td>2.2 RelatÃ³rio fotogrÃ¡fico</td><td>10</td></tr>
-    <tr><td>3 ImplantaÃ§Ã£o do plano de gestÃ£o da qualidade</td><td>10</td></tr>
-    <tr><td>3.1 PolÃ­tica da Qualidade</td><td>11</td></tr>
+    <tr><td>1- Matriz de comunicação</td><td>7</td></tr>
+    <tr><td>2- Acompanhamento da obra â€“ atividades realizadas no período</td><td>7</td></tr>
+    <tr><td>2.1 Atividades desenvolvidas no período</td><td>8</td></tr>
+    <tr><td>2.2 Relatório fotográfico</td><td>10</td></tr>
+    <tr><td>3 Implantação do plano de gestão da qualidade</td><td>10</td></tr>
+    <tr><td>3.1 Política da Qualidade</td><td>11</td></tr>
     <tr><td>3.2 Organograma</td><td>11</td></tr>
     <tr><td>4 Treinamentos</td><td>11</td></tr>
-    <tr><td>5 Controle TecnolÃ³gico</td><td>12</td></tr>
-    <tr><td>6 RelatÃ³rio de InspeÃ§Ã£o (RI)</td><td>16</td></tr>
-    <tr><td>7 Controle de materiais crÃ­ticos aplicados</td><td>16</td></tr>
-    <tr><td>8 Controle de dispositivos de mediÃ§Ã£o e monitoramento</td><td>17</td></tr>
+    <tr><td>5 Controle Tecnológico</td><td>12</td></tr>
+    <tr><td>6 Relatório de Inspeção (RI)</td><td>16</td></tr>
+    <tr><td>7 Controle de materiais críticos aplicados</td><td>16</td></tr>
+    <tr><td>8 Controle de dispositivos de medição e monitoramento</td><td>17</td></tr>
     <tr><td>9 Indicadores e monitoramento da qualidade</td><td>17</td></tr>
     <tr><td>10 Auditoria interna</td><td>17</td></tr>
-    <tr><td>11 SoluÃ§Ã£o de nÃ£o conformidades</td><td>17</td></tr>
-    <tr><td>12 RelatÃ³rio fotogrÃ¡fico do perÃ­odo</td><td>17</td></tr>
-    <tr><td>13 ConclusÃ£o</td><td>17</td></tr>
+    <tr><td>11 Solução de não conformidades</td><td>17</td></tr>
+    <tr><td>12 Relatório fotográfico do período</td><td>17</td></tr>
+    <tr><td>13 Conclusão</td><td>17</td></tr>
     <tr><td>14 Anexo</td><td>18</td></tr>
   </table>
   <div class="page-num">6</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <h3>1- Matriz de comunicaÃ§Ã£o</h3>
+  <h3>1- Matriz de comunicação</h3>
   <table>
-    <tr><th>Nome</th><th>FunÃ§Ã£o/Cargo</th><th>E-mail</th><th>Telefone</th><th>Setor responsÃ¡vel</th></tr>
+    <tr><th>Nome</th><th>Função/Cargo</th><th>E-mail</th><th>Telefone</th><th>Setor responsável</th></tr>
     <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
   </table>
 
-  <h2>2- Acompanhamento da obra â€“ atividades realizadas no perÃ­odo</h2>
+  <h2>2- Acompanhamento da obra â€“ atividades realizadas no período</h2>
   <div id="textoAcompanhamento" contenteditable="true" class="editavel"></div>
 
   <div class="page-num">7</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <h2>2.1 Atividades desenvolvidas no perÃ­odo</h2>
+  <h2>2.1 Atividades desenvolvidas no período</h2>
   <div id="textoAtividades" contenteditable="true" class="editavel"></div>
 
   <div class="page-num">8</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <h2>2.2 RelatÃ³rio fotogrÃ¡fico</h2>
+  <h2>2.2 Relatório fotográfico</h2>
   <div class="croqui">
-    <div class="foto-placeholder">CROQUI / MAPA DA INTERVENÃ‡ÃƒO<br><span class="small-note">Campo reservado para imagem</span></div>
-    <div class="foto-legenda">CROQUI - LocalizaÃ§Ã£o da OcorrÃªncia</div>
+    <div class="foto-placeholder">CROQUI / MAPA DA INTERVENÇÃO<br><span class="small-note">Campo reservado para imagem</span></div>
+    <div class="foto-legenda">CROQUI - Localização da Ocorrência</div>
   </div>
 
   <div class="foto-grid">
     <div class="foto-box">
-      <div class="foto-placeholder">FOTO 1<br>Ãrea de intervenÃ§Ã£o</div>
-      <div class="foto-legenda" contenteditable="true">1- Fotos do local de intervenÃ§Ã£o durante as obras: barreiras rÃ­gidas e painÃ©is Sabesp isolando o perÃ­metro da obra, garantindo seguranÃ§a aos transeuntes e a correta demarcaÃ§Ã£o do espaÃ§o operacional, em conformidade com os Projetos de SinalizaÃ§Ã£o â€“ PSO. Ãrea de intervenÃ§Ã£o do <span class="hl">PV 10.</span></div>
+      <div class="foto-placeholder">FOTO 1<br>Área de intervenção</div>
+      <div class="foto-legenda" contenteditable="true">1- Fotos do local de intervenção durante as obras: barreiras rígidas e painéis Sabesp isolando o perímetro da obra, garantindo segurança aos transeuntes e a correta demarcação do espaço operacional, em conformidade com os Projetos de Sinalização â€“ PSO. Área de intervenção do <span class="hl">PV 10.</span></div>
     </div>
     <div class="foto-box">
-      <div class="foto-placeholder">FOTO 2<br>Ãrea de intervenÃ§Ã£o</div>
-      <div class="foto-legenda" contenteditable="true">2- Fotos do local de intervenÃ§Ã£o durante as obras: barreiras rÃ­gidas e painÃ©is Sabesp isolando o perÃ­metro da obra, garantindo seguranÃ§a aos transeuntes e a correta demarcaÃ§Ã£o do espaÃ§o operacional, em conformidade com os Projetos de SinalizaÃ§Ã£o â€“ PSO. Ãrea de intervenÃ§Ã£o do <span class="hl">PV 15.</span></div>
+      <div class="foto-placeholder">FOTO 2<br>Área de intervenção</div>
+      <div class="foto-legenda" contenteditable="true">2- Fotos do local de intervenção durante as obras: barreiras rígidas e painéis Sabesp isolando o perímetro da obra, garantindo segurança aos transeuntes e a correta demarcação do espaço operacional, em conformidade com os Projetos de Sinalização â€“ PSO. Área de intervenção do <span class="hl">PV 15.</span></div>
     </div>
   </div>
 
-  <h3>3 ImplantaÃ§Ã£o do plano de gestÃ£o da qualidade:</h3>
-  <p>A implantaÃ§Ã£o do Plano de GestÃ£o da Qualidade (PGQ) da obra segue em conformidade com o cronograma e com as diretrizes estabelecidas no contrato, tendo suas fases iniciais concluÃ­das de maneira satisfatÃ³ria.</p>
+  <h3>3 Implantação do plano de gestão da qualidade:</h3>
+  <p>A implantação do Plano de Gestão da Qualidade (PGQ) da obra segue em conformidade com o cronograma e com as diretrizes estabelecidas no contrato, tendo suas fases iniciais concluídas de maneira satisfatória.</p>
   <div class="page-num">10</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <p>No momento, o avanÃ§o das etapas subsequentes estÃ¡ sendo conduzido com base em um Plano de AÃ§Ã£o detalhado, jÃ¡ em execuÃ§Ã£o, que estabelece responsabilidades, prazos, critÃ©rios operacionais e os recursos necessÃ¡rios para garantir a plena aderÃªncia aos requisitos do projeto.</p>
-  <p>As rotinas de controle â€” compreendendo registros de FVS, FVM, ensaios tecnolÃ³gicos e inspeÃ§Ãµes de campo â€” foram estruturadas, implementadas e mantidas, assegurando a rastreabilidade documental, a conformidade tÃ©cnica e a padronizaÃ§Ã£o dos processos executivos.</p>
-  <p contenteditable="true" class="editavel">Durante o perÃ­odo avaliado, nÃ£o foram identificadas nÃ£o conformidades com impacto na eficÃ¡cia do PGQ ou que demandassem aÃ§Ãµes corretivas de maior complexidade.</p>
+  <p>No momento, o avanço das etapas subsequentes está sendo conduzido com base em um Plano de Ação detalhado, já em execução, que estabelece responsabilidades, prazos, critérios operacionais e os recursos necessários para garantir a plena aderência aos requisitos do projeto.</p>
+  <p>As rotinas de controle â€” compreendendo registros de FVS, FVM, ensaios tecnológicos e inspeções de campo â€” foram estruturadas, implementadas e mantidas, assegurando a rastreabilidade documental, a conformidade técnica e a padronização dos processos executivos.</p>
+  <p contenteditable="true" class="editavel">Durante o período avaliado, não foram identificadas não conformidades com impacto na eficácia do PGQ ou que demandassem ações corretivas de maior complexidade.</p>
 
-  <h3>3.1 PolÃ­tica da Qualidade</h3>
-  <p contenteditable="true" class="editavel">Campo para inserir a polÃ­tica da qualidade.</p>
+  <h3>3.1 Política da Qualidade</h3>
+  <p contenteditable="true" class="editavel">Campo para inserir a política da qualidade.</p>
 
   <h3>3.2 Organograma</h3>
-  <p contenteditable="true" class="editavel">Campo para inserir organograma ou referÃªncia ao anexo.</p>
+  <p contenteditable="true" class="editavel">Campo para inserir organograma ou referência ao anexo.</p>
 
   <h3>4 Treinamentos</h3>
-  <h3>4.1 Treinamentos de integraÃ§Ã£o</h3>
-  <p>As listas de treinamentos realizados no perÃ­odo, contendo participantes, conteÃºdos ministrados e cargas horÃ¡rias correspondentes, encontram-se devidamente compiladas e apresentadas em anexo ao final deste Plano, para fins de rastreabilidade e comprovaÃ§Ã£o das competÃªncias operacionais estabelecidas.</p>
+  <h3>4.1 Treinamentos de integração</h3>
+  <p>As listas de treinamentos realizados no período, contendo participantes, conteúdos ministrados e cargas horárias correspondentes, encontram-se devidamente compiladas e apresentadas em anexo ao final deste Plano, para fins de rastreabilidade e comprovação das competências operacionais estabelecidas.</p>
 
   <h3>4.2 Treinamentos em procedimentos e operacionais</h3>
-  <p>As listas de treinamentos realizados no perÃ­odo, contendo participantes, conteÃºdos ministrados e cargas horÃ¡rias correspondentes, encontram-se devidamente compiladas e apresentadas em anexo ao final deste Plano, para fins de rastreabilidade e comprovaÃ§Ã£o das competÃªncias operacionais estabelecidas.</p>
+  <p>As listas de treinamentos realizados no período, contendo participantes, conteúdos ministrados e cargas horárias correspondentes, encontram-se devidamente compiladas e apresentadas em anexo ao final deste Plano, para fins de rastreabilidade e comprovação das competências operacionais estabelecidas.</p>
   <div class="page-num">11</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <h3>5 Controle TecnolÃ³gico</h3>
-  <h3>5.1 AnÃ¡lise dos ensaios do Controle TecnolÃ³gico</h3>
-  <p contenteditable="true" class="editavel">Os resultados obtidos indicam que os parÃ¢metros analisados â€” incluindo resistÃªncia mecÃ¢nica, propriedades fÃ­sicas, Ã­ndices de compactaÃ§Ã£o, granulometria e demais indicadores tÃ©cnicos â€” mantiveram-se dentro dos limites estabelecidos nas normas vigentes e nas diretrizes do projeto executivo.</p>
-  <p contenteditable="true" class="editavel">Os ensaios XXX e XXXX apresentaram resultados abaixo das resistÃªncias especificadas em projeto. Como aÃ§Ã£o corretiva, foram adotadas as seguintes medidas: [descrever aÃ§Ãµes].</p>
+  <h3>5 Controle Tecnológico</h3>
+  <h3>5.1 Análise dos ensaios do Controle Tecnológico</h3>
+  <p contenteditable="true" class="editavel">Os resultados obtidos indicam que os parâmetros analisados â€” incluindo resistência mecânica, propriedades físicas, índices de compactação, granulometria e demais indicadores técnicos â€” mantiveram-se dentro dos limites estabelecidos nas normas vigentes e nas diretrizes do projeto executivo.</p>
+  <p contenteditable="true" class="editavel">Os ensaios XXX e XXXX apresentaram resultados abaixo das resistências especificadas em projeto. Como ação corretiva, foram adotadas as seguintes medidas: [descrever ações].</p>
 
-  <h3>5.2 Controle de CravaÃ§Ã£o de Tubo</h3>
-  <p><b>ObrigatÃ³rias do Controle de CravaÃ§Ã£o</b></p>
-  <p>O controle de cravaÃ§Ã£o deverÃ¡ conter, no mÃ­nimo, os seguintes parÃ¢metros e informaÃ§Ãµes:</p>
+  <h3>5.2 Controle de Cravação de Tubo</h3>
+  <p><b>Obrigatórias do Controle de Cravação</b></p>
+  <p>O controle de cravação deverá conter, no mínimo, os seguintes parâmetros e informações:</p>
   <ul>
-    <li>PressÃ£o de cravaÃ§Ã£o; forÃ§a total de empuxo; avanÃ§o por ciclo;</li>
-    <li>Alinhamento e desvios topogrÃ¡ficos; inclinaÃ§Ã£o; extensÃ£o face a face;</li>
-    <li>CondiÃ§Ã£o do solo encontrado; ocorrÃªncias, interferÃªncias e paradas;</li>
-    <li>NÃºmero do tubo, fornecedor, lote, material e diÃ¢metro;</li>
-    <li>Data e hora de inÃ­cio e tÃ©rmino da cravaÃ§Ã£o; local da cravaÃ§Ã£o.</li>
+    <li>Pressão de cravação; força total de empuxo; avanço por ciclo;</li>
+    <li>Alinhamento e desvios topográficos; inclinação; extensão face a face;</li>
+    <li>Condição do solo encontrado; ocorrências, interferências e paradas;</li>
+    <li>Número do tubo, fornecedor, lote, material e diâmetro;</li>
+    <li>Data e hora de início e término da cravação; local da cravação.</li>
   </ul>
   <div class="page-num">12</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <h3>5.3 Massa asfÃ¡ltica</h3>
+  <h3>5.3 Massa asfáltica</h3>
   <ul>
     <li>Anexar o Projeto Marshall do pavimento definitivo, certificado de qualidade do CAP;</li>
     <li>Enviar o laudo do ensaio assinado, com o selo do INMETRO, informar o local do ensaio, fornecedor, nota fiscal, rastreabilidade e resultado;</li>
-    <li>No registro fotogrÃ¡fico evidenciar com fotos do pavimento provisÃ³rio mostrando o carimbo Sabesp de â€œPavimento ProvisÃ³rioâ€.</li>
+    <li>No registro fotográfico evidenciar com fotos do pavimento provisório mostrando o carimbo Sabesp de “Pavimento Provisório”.</li>
   </ul>
-  <table><tr><th>CT</th><th>EndereÃ§o</th><th>PV</th><th>Data</th><th>Fornecedor</th><th>Carimbo provisÃ³rio</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+  <table><tr><th>CT</th><th>Endereço</th><th>PV</th><th>Data</th><th>Fornecedor</th><th>Carimbo provisório</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr></table>
 
   <h3>5.4 Agregados</h3>
   <ul>
     <li>No laudo informar o CT, a rua e a soleira;</li>
     <li>Deve estar com a rastreabilidade dos equipamentos utilizados;</li>
-    <li>Os ensaios de compactaÃ§Ã£o devem ser por camada.</li>
+    <li>Os ensaios de compactação devem ser por camada.</li>
   </ul>
-  <table><tr><th>CT</th><th>EndereÃ§o</th><th>PV</th><th>Fornecedor/Jazida</th><th>Material</th><th>Ensaio</th><th>Resultado</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+  <table><tr><th>CT</th><th>Endereço</th><th>PV</th><th>Fornecedor/Jazida</th><th>Material</th><th>Ensaio</th><th>Resultado</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
   <div class="page-num">14</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
   <h3>5.5 Concreto / argamassa</h3>
-  <p>O laudo do ensaio deve ter o selo do INMETRO. No laudo informar o local do ensaio (CT, Rua, soleira e PeÃ§a).</p>
-  <table><tr><th>CT</th><th>EndereÃ§o</th><th>PeÃ§a concretada</th><th>Data</th><th>Carta traÃ§o</th><th>Usina</th><th>NF</th><th>7 dias</th><th>28 dias</th><th>Fck</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+  <p>O laudo do ensaio deve ter o selo do INMETRO. No laudo informar o local do ensaio (CT, Rua, soleira e Peça).</p>
+  <table><tr><th>CT</th><th>Endereço</th><th>Peça concretada</th><th>Data</th><th>Carta traço</th><th>Usina</th><th>NF</th><th>7 dias</th><th>28 dias</th><th>Fck</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
 
-  <h3>5.6 Carta traÃ§o</h3>
-  <p>Anexar a Carta traÃ§o assinada; os ensaios de caracterizaÃ§Ã£o e RAA; os resultados dos rompimentos de pelo menos 7 dias e 28 dias.</p>
+  <h3>5.6 Carta traço</h3>
+  <p>Anexar a Carta traço assinada; os ensaios de caracterização e RAA; os resultados dos rompimentos de pelo menos 7 dias e 28 dias.</p>
 
   <h3>5.7 Controle de Mangoteiros</h3>
   <table><tr><th>Nome</th><th>CBO</th><th>Treinamento na NBR 13597</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
 
   <h3>5.8 Controle de Soldagem</h3>
-  <table><tr><th>Nome</th><th>FunÃ§Ã£o</th><th>Sinete Sabesp</th><th>Certificado</th><th>DiÃ¢metro</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr></table>
+  <table><tr><th>Nome</th><th>Função</th><th>Sinete Sabesp</th><th>Certificado</th><th>Diâmetro</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr></table>
   <div class="page-num">15</div>
 </section>
 
 <section class="page">
-  <div class="header"><div>Logomarca ConsÃ³rcio</div><div class="center">CONSÃ“RCIO XXXXXXXX</div><div class="right">nÂº 001-26</div></div>
+  <div class="header"><div>Logomarca Consórcio</div><div class="center">CONSÓRCIO XXXXXXXX</div><div class="right">nº 001-26</div></div>
 
-  <h3>6 RelatÃ³rio de InspeÃ§Ã£o (RI)</h3>
-  <p contenteditable="true" class="editavel">No perÃ­odo tivemos X relatÃ³rios recebidos no mÃªs, os relatÃ³rios estÃ£o em anexo no final deste relatÃ³rio.</p>
+  <h3>6 Relatório de Inspeção (RI)</h3>
+  <p contenteditable="true" class="editavel">No período tivemos X relatórios recebidos no mês, os relatórios estão em anexo no final deste relatório.</p>
 
-  <h3>7 Controle de materiais crÃ­ticos aplicados</h3>
-  <p contenteditable="true" class="editavel">No perÃ­odo tivemos os materiais abaixo relacionados e evidenciados no mÃªs.</p>
+  <h3>7 Controle de materiais críticos aplicados</h3>
+  <p contenteditable="true" class="editavel">No período tivemos os materiais abaixo relacionados e evidenciados no mês.</p>
 
-  <h3>8 Controle de dispositivos de mediÃ§Ã£o e monitoramento (prÃ³prios e terceiros)</h3>
+  <h3>8 Controle de dispositivos de medição e monitoramento (próprios e terceiros)</h3>
   <p contenteditable="true" class="editavel">Campo para preenchimento manual.</p>
 
   <h3>9 Indicadores e monitoramento da qualidade</h3>
@@ -428,21 +428,21 @@ th{font-weight:700;text-align:left}
   <h3>10 Auditoria interna</h3>
   <p contenteditable="true" class="editavel">Campo para preenchimento manual.</p>
 
-  <h3>11 SoluÃ§Ã£o de nÃ£o conformidades</h3>
+  <h3>11 Solução de não conformidades</h3>
   <table>
-    <tr><th>NÂ° da NC</th><th>Setor</th><th>DescriÃ§Ã£o</th><th>SoluÃ§Ã£o</th><th>SituaÃ§Ã£o</th></tr>
+    <tr><th>N° da NC</th><th>Setor</th><th>Descrição</th><th>Solução</th><th>Situação</th></tr>
     <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
     <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
   </table>
 
-  <h3>12 RelatÃ³rio fotogrÃ¡fico do perÃ­odo</h3>
-  <p contenteditable="true" class="editavel">Inserir registros fotogrÃ¡ficos do perÃ­odo.</p>
+  <h3>12 Relatório fotográfico do período</h3>
+  <p contenteditable="true" class="editavel">Inserir registros fotográficos do período.</p>
 
-  <h3>13 ConclusÃ£o</h3>
+  <h3>13 Conclusão</h3>
   <div id="conclusao" contenteditable="true" class="editavel"></div>
 
   <h3>14 Anexo</h3>
-  <p contenteditable="true" class="editavel">Inserir anexos aplicÃ¡veis.</p>
+  <p contenteditable="true" class="editavel">Inserir anexos aplicáveis.</p>
   <div class="page-num">17</div>
 </section>
 
@@ -451,7 +451,7 @@ th{font-weight:700;text-align:left}
 <script>
 let DB = null;
 let REGISTROS = [];
-const mesesNome = {"01":"Janeiro","02":"Fevereiro","03":"MarÃ§o","04":"Abril","05":"Maio","06":"Junho","07":"Julho","08":"Agosto","09":"Setembro","10":"Outubro","11":"Novembro","12":"Dezembro"};
+const mesesNome = {"01":"Janeiro","02":"Fevereiro","03":"Março","04":"Abril","05":"Maio","06":"Junho","07":"Julho","08":"Agosto","09":"Setembro","10":"Outubro","11":"Novembro","12":"Dezembro"};
 
 function tituloMes(ym){
   const [a,m]=String(ym).split("-");
@@ -462,10 +462,10 @@ function num(v, casas=2){
 }
 function metodo(tipo){
   const t=String(tipo||"").toUpperCase();
-  if(t.includes("HDD")||t.includes("MND")||t.includes("PEAD")) return "NÃ£o Destrutiva (MND)";
-  if(t.includes("VCA")||t.includes("PVC")) return "Vala a CÃ©u Aberto (VCA)";
+  if(t.includes("HDD")||t.includes("MND")||t.includes("PEAD")) return "Não Destrutiva (MND)";
+  if(t.includes("VCA")||t.includes("PVC")) return "Vala a Céu Aberto (VCA)";
   if(t.includes("CRAV")||t.includes("CONCRETO")||t.includes("TUBO")) return "Tubo Cravado";
-  return tipo || "NÃ£o informado";
+  return tipo || "Não informado";
 }
 async function carregar(){
   try{
@@ -496,7 +496,7 @@ function gerarRelatorio(){
   const ref=tituloMes(ym);
   document.getElementById("cReferencia").textContent=ref.replace(" de "," /");
   document.getElementById("cContrato").textContent=document.getElementById("contrato").value || "";
-  document.getElementById("cContratada").textContent=document.getElementById("contratada").value || "ConsÃ³rcio XXXXX Pacote XX";
+  document.getElementById("cContratada").textContent=document.getElementById("contratada").value || "Consórcio XXXXX Pacote XX";
 
   const rows=linhasMes(ym);
   const obras=[...new Set(rows.map(r=>r.Obra).filter(Boolean))].sort();
@@ -504,17 +504,17 @@ function gerarRelatorio(){
   const total=rows.reduce((a,r)=>a+Number((r.ProducaoMensal||{})[ym]||0),0);
   const pvs=rows.reduce((a,r)=>a+Number(r.PV||0),0);
   const obrasTxt=obras.length?obras.join(", "):"Coletores Tronco A e B";
-  const metTxt=metodos.length?metodos.join(" e "):"NÃ£o Destrutiva (MND)";
+  const metTxt=metodos.length?metodos.join(" e "):"Não Destrutiva (MND)";
 
   document.getElementById("textoAcompanhamento").innerHTML=`
-    <p>No mÃªs de <span class="hl">${ref}</span>, as atividades executadas concentraram-se nas frentes dos <span class="hl">${obrasTxt}</span>, localizados nos bairros A e B, nas cidades X e Y, municÃ­pio de J, sob a jurisdiÃ§Ã£o da Subprefeitura X, no Estado de SÃ£o Paulo.</p>
-    <p>O planejamento mensal foi elaborado com base nos cronogramas especÃ­ficos de cada coletor.</p>
-    <p>Os serviÃ§os executados compreenderam a mobilizaÃ§Ã£o de equipes, a implantaÃ§Ã£o de sinalizaÃ§Ã£o temporÃ¡ria, a execuÃ§Ã£o de PoÃ§os de Visita (PVs), o assentamento de tubulaÃ§Ãµes, bem como a recomposiÃ§Ã£o provisÃ³ria e definitiva das vias pÃºblicas.</p>
-    <p>No perÃ­odo, as frentes de trabalho concentraram-se nas obras <span class="hl">${obrasTxt}</span>, com intervenÃ§Ãµes realizadas conforme registros do PDS e do dashboard.</p>
-    <p>A metodologia construtiva adotada foi <span class="hl">${metTxt}</span>, possibilitando a implantaÃ§Ã£o das tubulaÃ§Ãµes conforme as caracterÃ­sticas de cada trecho e contribuindo para a reduÃ§Ã£o dos impactos sobre a superfÃ­cie viÃ¡ria e o trÃ¡fego local.</p>
-    <p>Para o mÃªs subsequente, <span class="hl">estÃ¡ prevista a continuidade dos trechos em execuÃ§Ã£o</span>, com avanÃ§o das redes coletoras, das interligaÃ§Ãµes e a conclusÃ£o das etapas jÃ¡ iniciadas.</p>
-    <p>Adicionalmente, estÃ¡ programada a abertura de novos segmentos, condicionada Ã  liberaÃ§Ã£o das Ã¡reas e Ã  evoluÃ§Ã£o fÃ­sica dos serviÃ§os.</p>
-    <p>Todas as atividades serÃ£o acompanhadas por monitoramento tÃ©cnico contÃ­nuo, com a adoÃ§Ã£o de ajustes viÃ¡rios pontuais sempre que necessÃ¡rio, de forma a garantir a seguranÃ§a dos usuÃ¡rios das vias e o cumprimento do cronograma estabelecido.</p>
+    <p>No mês de <span class="hl">${ref}</span>, as atividades executadas concentraram-se nas frentes dos <span class="hl">${obrasTxt}</span>, localizados nos bairros A e B, nas cidades X e Y, município de J, sob a jurisdição da Subprefeitura X, no Estado de São Paulo.</p>
+    <p>O planejamento mensal foi elaborado com base nos cronogramas específicos de cada coletor.</p>
+    <p>Os serviços executados compreenderam a mobilização de equipes, a implantação de sinalização temporária, a execução de Poços de Visita (PVs), o assentamento de tubulações, bem como a recomposição provisória e definitiva das vias públicas.</p>
+    <p>No período, as frentes de trabalho concentraram-se nas obras <span class="hl">${obrasTxt}</span>, com intervenções realizadas conforme registros do PDS e do dashboard.</p>
+    <p>A metodologia construtiva adotada foi <span class="hl">${metTxt}</span>, possibilitando a implantação das tubulações conforme as características de cada trecho e contribuindo para a redução dos impactos sobre a superfície viária e o tráfego local.</p>
+    <p>Para o mês subsequente, <span class="hl">está prevista a continuidade dos trechos em execução</span>, com avanço das redes coletoras, das interligações e a conclusão das etapas já iniciadas.</p>
+    <p>Adicionalmente, está programada a abertura de novos segmentos, condicionada à liberação das áreas e à evolução física dos serviços.</p>
+    <p>Todas as atividades serão acompanhadas por monitoramento técnico contínuo, com a adoção de ajustes viários pontuais sempre que necessário, de forma a garantir a segurança dos usuários das vias e o cumprimento do cronograma estabelecido.</p>
   `;
 
   const agrupados = new Map();
@@ -529,25 +529,25 @@ function gerarRelatorio(){
   const blocos=grupos.map(g=>g.bloco?`PV/Bloco ${g.bloco}`:"PV A").join(", ");
 
   document.getElementById("textoAtividades").innerHTML=`
-    <p>Durante o mÃªs de <span class="hl">${ref}</span>, as aÃ§Ãµes operacionais concentraram-se na execuÃ§Ã£o das redes coletoras e das interligaÃ§Ãµes dos <span class="hl">${obrasTxt}</span>.</p>
-    <p><b>Frentes / Coletores do perÃ­odo</b></p>
-    ${grupos.map((g,i)=>`<p><b>${g.obra}</b><br>PV ${i+1}: Rua FFFFFF, nÂº X, bairro D, cidade nÂº, Estado H â€” extensÃ£o executada no mÃªs: <span class="hl">${num(g.exec)} m</span>.</p>`).join("")}
-    <p>As frentes de trabalho desenvolveram-se no trecho compreendido entre os <span class="hl">${blocos || "PVs A, B e C"}</span>, abrangendo intervenÃ§Ãµes nas ruas A, B e C.</p>
-    <p>As atividades executadas adotaram a Metodologia ${metTxt}, o que possibilitou a significativa reduÃ§Ã£o da necessidade de escavaÃ§Ãµes extensas e, consequentemente, dos impactos sobre a superfÃ­cie viÃ¡ria. Dentre os serviÃ§os realizados, destacam-se:</p>
+    <p>Durante o mês de <span class="hl">${ref}</span>, as ações operacionais concentraram-se na execução das redes coletoras e das interligações dos <span class="hl">${obrasTxt}</span>.</p>
+    <p><b>Frentes / Coletores do período</b></p>
+    ${grupos.map((g,i)=>`<p><b>${g.obra}</b><br>PV ${i+1}: Rua FFFFFF, nº X, bairro D, cidade nº, Estado H â€” extensão executada no mês: <span class="hl">${num(g.exec)} m</span>.</p>`).join("")}
+    <p>As frentes de trabalho desenvolveram-se no trecho compreendido entre os <span class="hl">${blocos || "PVs A, B e C"}</span>, abrangendo intervenções nas ruas A, B e C.</p>
+    <p>As atividades executadas adotaram a Metodologia ${metTxt}, o que possibilitou a significativa redução da necessidade de escavações extensas e, consequentemente, dos impactos sobre a superfície viária. Dentre os serviços realizados, destacam-se:</p>
     <ul>
-      <li>PerfuraÃ§Ã£o dos pontos de entrada e saÃ­da para lanÃ§amento das tubulaÃ§Ãµes por MND;</li>
-      <li>Assentamento de tubulaÃ§Ãµes em PVC e PEAD, em conformidade com as especificaÃ§Ãµes de projeto;</li>
-      <li>ExecuÃ§Ã£o de PoÃ§os de Visita (PVs) nos pontos de acesso e conexÃ£o;</li>
-      <li><span class="hl">RecomposiÃ§Ã£o provisÃ³ria</span> localizada do pavimento nas Ã¡reas diretamente afetadas pelas intervenÃ§Ãµes;</li>
-      <li>ImplantaÃ§Ã£o de sinalizaÃ§Ã£o provisÃ³ria e dispositivos de seguranÃ§a viÃ¡ria, em atendimento aos Projetos de SinalizaÃ§Ã£o ViÃ¡ria e Ã s diretrizes do PGSV.</li>
+      <li>Perfuração dos pontos de entrada e saída para lançamento das tubulações por MND;</li>
+      <li>Assentamento de tubulações em PVC e PEAD, em conformidade com as especificações de projeto;</li>
+      <li>Execução de Poços de Visita (PVs) nos pontos de acesso e conexão;</li>
+      <li><span class="hl">Recomposição provisória</span> localizada do pavimento nas áreas diretamente afetadas pelas intervenções;</li>
+      <li>Implantação de sinalização provisória e dispositivos de segurança viária, em atendimento aos Projetos de Sinalização Viária e às diretrizes do PGSV.</li>
     </ul>
   `;
 
-  document.getElementById("indicadores").innerHTML=`No perÃ­odo, foram registrados aproximadamente <b>${num(total)} m</b> de extensÃ£o executada e <b>${num(pvs,0)}</b> PVs associados aos registros consolidados no dashboard.`;
+  document.getElementById("indicadores").innerHTML=`No período, foram registrados aproximadamente <b>${num(total)} m</b> de extensão executada e <b>${num(pvs,0)}</b> PVs associados aos registros consolidados no dashboard.`;
   document.getElementById("conclusao").innerHTML=`
-    <p>Durante o mÃªs de <span class="hl">${ref}</span>, as frentes de trabalho vinculadas ao Contrato nÂº 00.000/00 â€“ Pacote 00 foram executadas em conformidade com as diretrizes estabelecidas no Plano de GestÃ£o da Qualidade (PGQ).</p>
-    <p>Todas as atividades inspecionÃ¡veis foram devidamente monitoradas e registradas, e os ensaios de controle tecnolÃ³gico realizados deverÃ£o ser complementados conforme documentaÃ§Ã£o aplicÃ¡vel ao perÃ­odo.</p>
-    <p>NÃ£o foram identificadas nÃ£o conformidades que impactassem a qualidade ou a continuidade dos serviÃ§os.</p>
+    <p>Durante o mês de <span class="hl">${ref}</span>, as frentes de trabalho vinculadas ao Contrato nº 00.000/00 â€“ Pacote 00 foram executadas em conformidade com as diretrizes estabelecidas no Plano de Gestão da Qualidade (PGQ).</p>
+    <p>Todas as atividades inspecionáveis foram devidamente monitoradas e registradas, e os ensaios de controle tecnológico realizados deverão ser complementados conforme documentação aplicável ao período.</p>
+    <p>Não foram identificadas não conformidades que impactassem a qualidade ou a continuidade dos serviços.</p>
   `;
 }
 function baixarWord(){
@@ -567,10 +567,10 @@ function baixarWord(){
   a.download="Relatorio_Mensal_da_Qualidade.doc";
   a.click();
 }
-carregar();
+// A geração antiga ficava presa ao dados.json e criava texto genérico.
+// O relatório mensal agora é alimentado somente por relatorio_mensal_pds.js.
 </script>
 <script src="./relatorio_mensal_pds.js"></script>
 </body>
 </html>
-
 

@@ -8,6 +8,7 @@
   let PDS = [];
   let MAPA = { trechos: [] };
   let ENDERECOS = {};
+  const HOJE = new Date();
 
   const obraMap = [
     [/MAR DE CORAL/i, "Coletor Tronco Secundário Mar de Coral", ["cts_mar_de_coral"]],
@@ -54,6 +55,27 @@
     return m ? `${m[1]}-${m[2]}` : "";
   }
 
+  function parseDateLocal(value) {
+    const text = String(value || "").trim();
+    const m = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return null;
+    return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  }
+
+  function ymHoje() {
+    const y = HOJE.getFullYear();
+    const m = String(HOJE.getMonth() + 1).padStart(2, "0");
+    return `${y}-${m}`;
+  }
+
+  function dentroDoPeriodo(row, ym) {
+    if (ymFromDate(row.data) !== ym) return false;
+    if (ym !== ymHoje()) return true;
+    const data = parseDateLocal(row.data);
+    if (!data) return false;
+    return data <= new Date(HOJE.getFullYear(), HOJE.getMonth(), HOJE.getDate(), 23, 59, 59);
+  }
+
   function normalizeText(value) {
     return String(value || "")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -64,6 +86,12 @@
     const text = String(value || "").replace(",", ".").toUpperCase();
     const match = text.match(/\d+(?:\.\d+)?/);
     return match ? match[0].replace(/^0+(?=\d)/, "") : "";
+  }
+
+  function pvList(value) {
+    const text = String(value || "").replace(/,/g, ".").toUpperCase();
+    const matches = text.match(/\d+(?:\.\d+)?/g) || [];
+    return [...new Set(matches.map(v => v.replace(/^0+(?=\d)/, "")).filter(Boolean))];
   }
 
   function canonicalObra(raw) {
@@ -180,16 +208,22 @@
   }
 
   function linhasMes(ym) {
-    return PDS.map(r => ({
-      data: r.data,
-      ym: ymFromDate(r.data),
-      obraRaw: r.obra || "",
-      obra: canonicalObra(r.obra || ""),
-      equipe: r.equipe || "",
-      atividade: r.atividade || "",
-      pv: pvNorm(r.pv || r.PV_Inicio || r.atividade),
-      tipo: r.tipo || r.Tipo_Atividade || inferTipo(r.atividade)
-    })).filter(r => r.ym === ym && r.obra && r.pv);
+    return PDS.flatMap(r => {
+      if (!dentroDoPeriodo(r, ym)) return [];
+      const obra = canonicalObra(r.obra || "");
+      if (!obra) return [];
+      const pvs = pvList(r.pv || r.PV_Inicio || r.atividade);
+      return pvs.map(pv => ({
+        data: r.data,
+        ym: ymFromDate(r.data),
+        obraRaw: r.obra || "",
+        obra,
+        equipe: r.equipe || "",
+        atividade: r.atividade || "",
+        pv,
+        tipo: r.tipo || r.Tipo_Atividade || inferTipo(r.atividade)
+      }));
+    }).filter(r => r.obra && r.pv);
   }
 
   function agruparMes(ym) {
@@ -315,23 +349,28 @@
       ENDERECOS = {};
     }
 
-    const meses = [...new Set(PDS.map(r => ymFromDate(r.data)).filter(Boolean))].sort();
+    const mesesSet = new Set(PDS.map(r => ymFromDate(r.data)).filter(Boolean));
+    mesesSet.add(ymHoje());
+    const meses = [...mesesSet].sort();
     const sel = document.getElementById("mes");
     if (sel) {
+      const anterior = sel.value;
       sel.innerHTML = "";
+      const preferido = meses.includes(anterior) ? anterior : (meses.includes(ymHoje()) ? ymHoje() : meses[meses.length - 1]);
       meses.forEach(m => {
         const option = document.createElement("option");
         option.value = m;
-        option.textContent = tituloMes(m);
-        if (m === "2026-04") option.selected = true;
+        option.textContent = m === ymHoje() ? `${tituloMes(m)} (até hoje)` : tituloMes(m);
+        if (m === preferido) option.selected = true;
         sel.appendChild(option);
       });
+      sel.onchange = gerarRelatorioPds;
     }
     gerarRelatorioPds();
   }
 
   function gerarRelatorioPds() {
-    const ym = document.getElementById("mes")?.value || "2026-04";
+    const ym = document.getElementById("mes")?.value || ymHoje();
     const ref = tituloMes(ym);
     const porObra = agruparMes(ym);
 
@@ -339,8 +378,13 @@
     document.getElementById("cContrato").textContent = document.getElementById("contrato").value || "";
     document.getElementById("cContratada").textContent = document.getElementById("contratada").value || "Consórcio XXXXX Pacote XX";
 
-    document.getElementById("textoAcompanhamento").innerHTML = gerarAcompanhamento(ref, porObra);
-    document.getElementById("textoAtividades").innerHTML = gerarAtividades(ref, porObra);
+    if (!porObra.size) {
+      document.getElementById("textoAcompanhamento").innerHTML = `<p>No mês de <span class="hl">${esc(ref)}</span>, não foram localizados registros de PDS com PV informado para gerar o acompanhamento no padrão combinado.</p>`;
+      document.getElementById("textoAtividades").innerHTML = `<p>Não há atividades com PV registrado para o período selecionado.</p>`;
+    } else {
+      document.getElementById("textoAcompanhamento").innerHTML = gerarAcompanhamento(ref, porObra);
+      document.getElementById("textoAtividades").innerHTML = gerarAtividades(ref, porObra);
+    }
 
     const totalPvs = [...porObra.values()].reduce((acc, rows) => acc + rows.length, 0);
     document.getElementById("indicadores").innerHTML = `No período, foram consolidados <b>${totalPvs}</b> PVs/frentes com registros na PDS, distribuídos em <b>${porObra.size}</b> obras ou coletores.`;

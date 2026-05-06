@@ -65,9 +65,14 @@ echo [8/8] Conferencia rapida da planilha de mapa...
 if errorlevel 1 echo AVISO: nao consegui conferir dados_mapa.json.
 
 echo.
+echo Espelhando JSONs da pasta docs para a raiz...
+%PY% -c "from pathlib import Path; import shutil; root=Path('.'); docs=root/'docs'; [shutil.copy2(p, root/p.name) for p in docs.glob('*.json')]; print('JSONs espelhados:', len(list(docs.glob('*.json'))))"
+if errorlevel 1 goto erro
+
+echo.
 echo ==========================================
 echo OK! JSONs atualizados.
-echo Confira e depois suba/substitua a pasta docs no GitHub.
+echo Todas as planilhas foram convertidas para JSON e espelhadas para o link.
 echo ==========================================
 if /i "%~1"=="nopause" exit /b 0
 pause
