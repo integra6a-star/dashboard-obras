@@ -13,6 +13,7 @@ Saídas:
 """
 import json
 import re
+import shutil
 import unicodedata
 from datetime import datetime, date
 from pathlib import Path
@@ -24,12 +25,29 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
 DOCS_DIR = ROOT_DIR / "docs"
 
-ARQ_BASE = DOCS_DIR / "BASE_DASH_EXTENSAO_POWERBI.xlsx"
-ARQ_EAP = DOCS_DIR / "EAP_PRODUCAO.xlsx"
+def escolher_planilha(nome):
+    candidatos = [ROOT_DIR / nome, DOCS_DIR / nome]
+    existentes = [p for p in candidatos if p.exists()]
+    if not existentes:
+        raise FileNotFoundError(f"Planilha nao encontrada na raiz nem em docs: {nome}")
+    origem = max(existentes, key=lambda p: p.stat().st_mtime)
+    for destino in candidatos:
+        if destino == origem:
+            continue
+        if not destino.exists() or origem.stat().st_mtime > destino.stat().st_mtime + 1:
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(origem, destino)
+            print(f"Sincronizado {origem.name}: {origem.parent.name} -> {destino.parent.name}")
+    return origem
+
+
+ARQ_BASE = escolher_planilha("BASE_DASH_EXTENSAO_POWERBI.xlsx")
+ARQ_EAP = escolher_planilha("EAP_PRODUCAO.xlsx")
 
 SAIDA_DADOS_DOCS = DOCS_DIR / "dados.json"
 SAIDA_DADOS_ROOT = ROOT_DIR / "dados.json"
 SAIDA_EAP_DOCS = DOCS_DIR / "eap_producao.json"
+SAIDA_EAP_ROOT = ROOT_DIR / "eap_producao.json"
 
 MESES_PT = {
     "janeiro": 1, "jan": 1,
@@ -321,6 +339,7 @@ def main():
     salvar_json(SAIDA_DADOS_DOCS, payload)
     salvar_json(SAIDA_DADOS_ROOT, payload)
     salvar_json(SAIDA_EAP_DOCS, eap)
+    salvar_json(SAIDA_EAP_ROOT, eap)
 
     total = eap["eap_economias"]["total"]
     print("OK: dados.json e eap_producao.json atualizados.")

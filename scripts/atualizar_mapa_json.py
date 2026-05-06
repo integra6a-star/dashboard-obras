@@ -1,4 +1,5 @@
 import json
+import shutil
 from pathlib import Path
 from openpyxl import load_workbook
 
@@ -26,8 +27,24 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
 DOCS_DIR = ROOT_DIR / "docs"
 
-base = DOCS_DIR if (DOCS_DIR / ARQUIVO_EXCEL).exists() else ROOT_DIR
-wb = load_workbook(base / ARQUIVO_EXCEL, data_only=True)
+def escolher_planilha(nome):
+    candidatos = [ROOT_DIR / nome, DOCS_DIR / nome]
+    existentes = [p for p in candidatos if p.exists()]
+    if not existentes:
+        raise FileNotFoundError(f"Planilha nao encontrada na raiz nem em docs: {nome}")
+    origem = max(existentes, key=lambda p: p.stat().st_mtime)
+    for destino in candidatos:
+        if destino == origem:
+            continue
+        if not destino.exists() or origem.stat().st_mtime > destino.stat().st_mtime + 1:
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(origem, destino)
+            print(f"Sincronizado {origem.name}: {origem.parent.name} -> {destino.parent.name}")
+    return origem
+
+
+excel = escolher_planilha(ARQUIVO_EXCEL)
+wb = load_workbook(excel, data_only=True)
 
 dados = {
     "obras": ler_aba(wb["OBRAS"]),
@@ -35,7 +52,9 @@ dados = {
     "trechos": ler_aba(wb["TRECHOS"]),
 }
 
-with open(base / ARQUIVO_JSON, "w", encoding="utf-8") as f:
-    json.dump(dados, f, ensure_ascii=False, indent=2)
+for base in (ROOT_DIR, DOCS_DIR):
+    base.mkdir(parents=True, exist_ok=True)
+    with open(base / ARQUIVO_JSON, "w", encoding="utf-8") as f:
+        json.dump(dados, f, ensure_ascii=False, indent=2)
 
 print(f"JSON atualizado com sucesso: {ARQUIVO_JSON}")
