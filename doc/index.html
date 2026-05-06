@@ -126,6 +126,13 @@
     .rank-bar{height:12px;border-radius:999px;background:#e2e8f0;overflow:hidden}
     .rank-fill{height:100%;border-radius:999px}
     .rank-right{font-size:18px;font-weight:900;color:#334155;min-width:70px;text-align:right}
+    .saldo-list{display:grid;gap:10px;max-height:420px;overflow:auto;padding-right:4px}
+    .saldo-item{display:grid;grid-template-columns:1.35fr repeat(3,.55fr);gap:10px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:14px;padding:12px}
+    .saldo-name{font-weight:900;color:#1f2a44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .saldo-metric{font-size:12px;color:#667085;text-align:right}
+    .saldo-metric b{display:block;font-size:16px;color:#1f2a44;margin-bottom:2px}
+    .saldo-metric.neg b{color:#16a34a}
+    .saldo-metric.alert b{color:#dc2626}
     .kpi-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
     .soft-kpi{background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:18px}
     .soft-kpi.green{background:#f2faf3}
@@ -643,6 +650,16 @@
 <div class="chart-wrap"><canvas id="chTipo"></canvas></div>
 </div>
 </section>
+<section class="card">
+<div class="panel-head">
+<div>
+<h2 class="title" style="margin:0">Saldo por Obra</h2>
+<div class="subtle">Planejado, executado e saldo restante por obra</div>
+</div>
+<div class="subtle" id="saldoObrasInfo"></div>
+</div>
+<div class="saldo-list" id="saldoObras"></div>
+</section>
 <section class="analytics-grid-mid">
 <div class="card">
 <div class="panel-head">
@@ -1111,6 +1128,31 @@ function groupByTipo(rows){
   });
   return [...m.values()];
 }
+function renderSaldoPorObra(obras){
+  const el = document.getElementById('saldoObras');
+  const info = document.getElementById('saldoObrasInfo');
+  if(!el) return;
+  const lista = [...obras]
+    .map(o => ({...o, saldo: Number(o.plan || 0) - Number(o.exec || 0)}))
+    .sort((a,b)=>b.saldo-a.saldo);
+  el.innerHTML = '';
+  lista.forEach(o=>{
+    const item = document.createElement('div');
+    const saldoClass = o.saldo < 0 ? 'neg' : (o.saldo > 0 ? 'alert' : '');
+    item.className = 'saldo-item';
+    item.innerHTML = `
+      <div class="saldo-name" title="${o.obra}">${o.obra}</div>
+      <div class="saldo-metric"><b>${fmt1(o.plan)}</b>Planejado</div>
+      <div class="saldo-metric"><b>${fmt1(o.exec)}</b>Executado</div>
+      <div class="saldo-metric ${saldoClass}"><b>${fmt1(o.saldo)}</b>Saldo</div>
+    `;
+    el.appendChild(item);
+  });
+  if(info){
+    const totalSaldo = lista.reduce((s,o)=>s+o.saldo,0);
+    info.textContent = `${lista.length} obras • saldo ${fmt1(totalSaldo)} m`;
+  }
+}
 function renderAnalytics(rows){
   const obras = groupByObra(rows).sort((a,b)=>b.plan-a.plan);
   const tipos = groupByTipo(rows);
@@ -1167,6 +1209,7 @@ function renderAnalytics(rows){
   });
 
   document.getElementById('footChartObra').textContent = `Atualizado em: ${formatarDataHora(new Date())} | Linhas: ${rows.length}`;
+  renderSaldoPorObra(obras);
   renderTable(rows, obras);
 }
 function renderTable(rows, obrasAgg){
