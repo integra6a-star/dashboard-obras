@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-06 15:27:41",
+  "atualizado_em": "2026-05-07 07:41:22",
   "totais": {
     "base_planejado": 40615.99,
     "base_executado": 15075.82,
@@ -8,8 +8,8 @@
     "saldo_total": 25540.17
   },
   "pds": {
-    "total": 2171,
-    "ultima_data": "2026-05-06",
+    "total": 2193,
+    "ultima_data": "2026-05-07",
     "hoje": 22,
     "por_obra_ultima_data": [
       {
@@ -22,14 +22,14 @@
       },
       {
         "obra": "Botelho Mourão",
-        "atividades": 3
-      },
-      {
-        "obra": "CTS Luis Botelho Mourão",
-        "atividades": 3
+        "atividades": 2
       },
       {
         "obra": "CTS Conceicão",
+        "atividades": 2
+      },
+      {
+        "obra": "CTS Luis Botelho Mourão",
         "atividades": 2
       },
       {
@@ -39,6 +39,14 @@
       {
         "obra": "Guindauto",
         "atividades": 2
+      },
+      {
+        "obra": "João Canzi",
+        "atividades": 1
+      },
+      {
+        "obra": "Água Vermelha",
+        "atividades": 1
       }
     ]
   },
@@ -686,14 +694,14 @@
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 327.8,
-      "modificado": "2026-05-06 15:23:33"
+      "tamanho_kb": 329.8,
+      "modificado": "2026-05-07 07:40:02"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 375.3,
-      "modificado": "2026-05-06 15:23:35"
+      "tamanho_kb": 379.1,
+      "modificado": "2026-05-07 07:40:07"
     }
   ]
 }
