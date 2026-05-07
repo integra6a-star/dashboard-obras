@@ -69,6 +69,10 @@ def read_base(aliases: dict[str, str]) -> dict:
     col_obra = headers.get("Obra", 1)
     col_plan = headers.get("Extensao_Planej", 5)
     col_exec = headers.get("Extensao_Execut", 6)
+    prod_cols = [
+        c for name, c in headers.items()
+        if norm(name).startswith("PRODUCAO")
+    ]
 
     by_obra = defaultdict(lambda: {"planejado": 0.0, "executado": 0.0, "linhas": 0, "origens": set()})
     for r in range(2, ws.max_row + 1):
@@ -77,7 +81,12 @@ def read_base(aliases: dict[str, str]) -> dict:
             continue
         obra = canonical(str(obra_raw), aliases)
         planejado = num(ws.cell(r, col_plan).value)
-        executado = num(ws.cell(r, col_exec).value)
+        executado_coluna = num(ws.cell(r, col_exec).value)
+        executado_mensal = sum(num(ws.cell(r, c).value) for c in prod_cols)
+        # A produção mensal é o histórico acumulado lançado na Base Dash.
+        # Quando ela supera a coluna de executado, a validação deve considerar
+        # o acumulado mensal para não esconder avanço lançado por mês.
+        executado = max(executado_coluna, executado_mensal)
         by_obra[obra]["planejado"] += planejado
         by_obra[obra]["executado"] += executado
         by_obra[obra]["linhas"] += 1

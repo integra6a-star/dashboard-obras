@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-05-07 09:25:34",
+  "atualizado_em": "2026-05-07 09:58:27",
   "totais": {
     "base_planejado": 40615.99,
-    "base_executado": 15154.01,
+    "base_executado": 15196.01,
     "mapa_executado": 15222.54,
-    "diferenca_base_mapa": -68.53,
-    "saldo_total": 25461.98
+    "diferenca_base_mapa": -26.53,
+    "saldo_total": 25419.98
   },
   "pds": {
     "total": 2193,
@@ -51,7 +51,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: -68.53 m",
+    "Diferença total entre Base Dash e mapa: -26.53 m",
     "3 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -68,10 +68,10 @@
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 9.0,
+      "executado_base": 51.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 9.0,
-      "saldo": 1790.2,
+      "diferenca_base_mapa": 51.0,
+      "saldo": 1748.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -88,22 +88,22 @@
   ],
   "saldo_por_obra": [
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 9.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 9.0,
-      "saldo": 1790.2,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "LINHA DE RECALQUE TRÊS MENINAS",
       "planejado": 1787.9,
       "executado_base": 0.0,
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 0.0,
       "saldo": 1787.9,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 51.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 51.0,
+      "saldo": 1748.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -222,7 +222,7 @@
       "planejado": 1398.6,
       "executado_base": 638.14,
       "executado_mapa": 638.14,
-      "diferenca_base_mapa": -0.0,
+      "diferenca_base_mapa": 0.0,
       "saldo": 760.46,
       "linhas_base": 8,
       "linhas_mapa": 17
@@ -552,7 +552,7 @@
       "planejado": 1103.2,
       "executado_base": 1006.65,
       "executado_mapa": 1006.65,
-      "diferenca_base_mapa": -0.0,
+      "diferenca_base_mapa": 0.0,
       "saldo": 96.55,
       "linhas_base": 8,
       "linhas_mapa": 21

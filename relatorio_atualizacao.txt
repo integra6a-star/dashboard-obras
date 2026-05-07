@@ -1,21 +1,21 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-05-07 09:25:34
+Atualizado em: 2026-05-07 09:58:27
 
 Planejado Base Dash: 40,615.99 m
-Executado Base Dash: 15,154.01 m
+Executado Base Dash: 15,196.01 m
 Executado Mapa: 15,222.54 m
-Diferença Base - Mapa: -68.53 m
-Saldo total: 25,461.98 m
+Diferença Base - Mapa: -26.53 m
+Saldo total: 25,419.98 m
 
 PDS total: 2193 registros
 PDS hoje: 22 registros
 Última data PDS: 2026-05-07
 
 Alertas:
-- Diferença total entre Base Dash e mapa: -68.53 m
+- Diferença total entre Base Dash e mapa: -26.53 m
 - 3 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
-- RCE São Lucas: Base 9.00 m | Mapa 0.00 m | Dif. 9.00 m
+- RCE São Lucas: Base 51.00 m | Mapa 0.00 m | Dif. 51.00 m
 - CTS Domingos João de Carvalho: Base 515.25 m | Mapa 523.92 m | Dif. -8.67 m
