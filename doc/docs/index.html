@@ -133,6 +133,13 @@
     .saldo-metric b{display:block;font-size:16px;color:#1f2a44;margin-bottom:2px}
     .saldo-metric.neg b{color:#16a34a}
     .saldo-metric.alert b{color:#dc2626}
+    .validacao-list{display:grid;gap:10px;margin-top:12px}
+    .validacao-item{display:grid;grid-template-columns:1.4fr repeat(3,.7fr);gap:10px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:14px;padding:12px}
+    .validacao-name{font-weight:900;color:#1f2a44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .validacao-metric{font-size:12px;color:#667085;text-align:right}
+    .validacao-metric b{display:block;font-size:15px;color:#1f2a44;margin-bottom:2px}
+    .validacao-metric.warn b{color:#dc2626}
+    .validacao-alert{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:999px;padding:8px 12px;font-weight:800}
     .kpi-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
     .soft-kpi{background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:18px}
     .soft-kpi.green{background:#f2faf3}
@@ -660,6 +667,17 @@
 </div>
 <div class="saldo-list" id="saldoObras"></div>
 </section>
+<section class="card">
+<div class="panel-head">
+<div>
+<h2 class="title" style="margin:0">Validação automática</h2>
+<div class="subtle">Conferência entre Base Dash, mapa e PDS</div>
+</div>
+<div class="subtle" id="validacaoAtualizado">Aguardando atualização</div>
+</div>
+<div class="mini-cards-grid" id="validacaoCards"></div>
+<div class="validacao-list" id="validacaoLista"></div>
+</section>
 <section class="analytics-grid-mid">
 <div class="card">
 <div class="panel-head">
@@ -1153,6 +1171,75 @@ function renderSaldoPorObra(obras){
     info.textContent = `${lista.length} obras • saldo ${fmt1(totalSaldo)} m`;
   }
 }
+function fmt2m(n){
+  return Number(n||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function renderValidacaoDashboard(data){
+  const cards = document.getElementById('validacaoCards');
+  const list = document.getElementById('validacaoLista');
+  const updated = document.getElementById('validacaoAtualizado');
+  if(!cards || !list) return;
+  const totais = data?.totais || {};
+  const pds = data?.pds || {};
+  const alertas = Array.isArray(data?.alertas) ? data.alertas : [];
+  if(updated) updated.textContent = data?.atualizado_em ? `Atualizado: ${formatarDataHora(data.atualizado_em)}` : 'Sem conferência';
+  cards.innerHTML = `
+    <div class="mini-kpi ${Math.abs(Number(totais.diferenca_base_mapa||0)) > 0.05 ? 'alert' : ''}">
+      <div class="mini-label">Diferença Base x Mapa</div>
+      <div class="mini-value">${fmt2m(totais.diferenca_base_mapa)} m</div>
+      <div class="mini-foot">Executado da Base menos trechos do mapa</div>
+    </div>
+    <div class="mini-kpi">
+      <div class="mini-label">Saldo total</div>
+      <div class="mini-value">${fmt2m(totais.saldo_total)} m</div>
+      <div class="mini-foot">Planejado menos executado da Base</div>
+    </div>
+    <div class="mini-kpi">
+      <div class="mini-label">PDS hoje</div>
+      <div class="mini-value">${fmtInt(pds.hoje)}</div>
+      <div class="mini-foot">Última data: ${pds.ultima_data || '-'}</div>
+    </div>
+    <div class="mini-kpi ${alertas.length ? 'alert' : ''}">
+      <div class="mini-label">Alertas</div>
+      <div class="mini-value">${fmtInt(alertas.length)}</div>
+      <div class="mini-foot">Conferência automática</div>
+    </div>
+  `;
+  const divergencias = Array.isArray(data?.divergencias) ? data.divergencias.slice(0,8) : [];
+  list.innerHTML = '';
+  if(alertas.length){
+    const alert = document.createElement('div');
+    alert.className = 'validacao-alert';
+    alert.textContent = alertas[0];
+    list.appendChild(alert);
+  }
+  divergencias.forEach(item=>{
+    const row = document.createElement('div');
+    row.className = 'validacao-item';
+    row.innerHTML = `
+      <div class="validacao-name" title="${item.obra}">${item.obra}</div>
+      <div class="validacao-metric"><b>${fmt2m(item.executado_base)}</b>Base Dash</div>
+      <div class="validacao-metric"><b>${fmt2m(item.executado_mapa)}</b>Mapa</div>
+      <div class="validacao-metric warn"><b>${fmt2m(item.diferenca_base_mapa)}</b>Diferença</div>
+    `;
+    list.appendChild(row);
+  });
+  if(!alertas.length && !divergencias.length){
+    list.innerHTML = '<div class="subtle">Sem divergências críticas na última conferência.</div>';
+  }
+}
+async function loadValidacaoDashboard(){
+  const cards = document.getElementById('validacaoCards');
+  const list = document.getElementById('validacaoLista');
+  try{
+    const res = await fetch('./validacao_dashboard.json?cb=' + Date.now());
+    if(!res.ok) throw new Error('validacao_dashboard.json indisponível');
+    renderValidacaoDashboard(await res.json());
+  }catch(e){
+    if(cards) cards.innerHTML = '';
+    if(list) list.innerHTML = '<div class="subtle">Validação automática ainda não gerada. Rode atualizar.bat para criar a conferência.</div>';
+  }
+}
 function renderAnalytics(rows){
   const obras = groupByObra(rows).sort((a,b)=>b.plan-a.plan);
   const tipos = groupByTipo(rows);
@@ -1492,6 +1579,7 @@ async function loadData(){
   pillAtualizado.textContent = 'Atualizado: ' + formatarDataHora(json.atualizado_em || '-');
   fillSelect();
   updateUI();
+  loadValidacaoDashboard();
 }
 
 document.getElementById('btnReload').addEventListener('click',()=>loadData().catch(e=>alert('Erro ao recarregar: '+e.message)));

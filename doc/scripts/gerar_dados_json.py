@@ -13,6 +13,7 @@ Saídas:
 """
 import json
 import re
+import shutil
 import unicodedata
 from datetime import datetime, date
 from pathlib import Path
@@ -24,12 +25,29 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
 DOCS_DIR = ROOT_DIR / "docs"
 
-ARQ_BASE = DOCS_DIR / "BASE_DASH_EXTENSAO_POWERBI.xlsx"
-ARQ_EAP = DOCS_DIR / "EAP_PRODUCAO.xlsx"
+def escolher_planilha(nome):
+    candidatos = [ROOT_DIR / nome, DOCS_DIR / nome]
+    existentes = [p for p in candidatos if p.exists()]
+    if not existentes:
+        raise FileNotFoundError(f"Planilha nao encontrada na raiz nem em docs: {nome}")
+    origem = max(existentes, key=lambda p: p.stat().st_mtime)
+    for destino in candidatos:
+        if destino == origem:
+            continue
+        if not destino.exists() or origem.stat().st_mtime > destino.stat().st_mtime + 1:
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(origem, destino)
+            print(f"Sincronizado {origem.name}: {origem.parent.name} -> {destino.parent.name}")
+    return origem
+
+
+ARQ_BASE = escolher_planilha("BASE_DASH_EXTENSAO_POWERBI.xlsx")
+ARQ_EAP = escolher_planilha("EAP_PRODUCAO.xlsx")
 
 SAIDA_DADOS_DOCS = DOCS_DIR / "dados.json"
 SAIDA_DADOS_ROOT = ROOT_DIR / "dados.json"
 SAIDA_EAP_DOCS = DOCS_DIR / "eap_producao.json"
+SAIDA_EAP_ROOT = ROOT_DIR / "eap_producao.json"
 
 MESES_PT = {
     "janeiro": 1, "jan": 1,
@@ -301,6 +319,42 @@ def ler_eap_producao():
     }
 
 
+def aplicar_producao_base_na_eap(eap, registros):
+    """Mantem o planejado da EAP, mas usa a producao mensal da base oficial."""
+    produzido_por_mes = {}
+    for registro in registros:
+        for ym, valor in (registro.get("ProducaoMensal") or {}).items():
+            produzido_por_mes[ym] = produzido_por_mes.get(ym, 0.0) + to_float(valor)
+
+    mes_num_por_abrev = {v: k for k, v in MESES_ABREV.items()}
+    cards = {}
+    saldo_acum_por_ano = {}
+
+    for item in eap.get("mensal", []):
+        mes_num = mes_num_por_abrev.get(item.get("mes"))
+        ym = f"{int(item['ano']):04d}-{mes_num:02d}" if mes_num else ""
+        item["produzido"] = round(produzido_por_mes.get(ym, 0.0), 6)
+        item["saldo_mes"] = round(item["produzido"] - item["eap"], 6)
+
+        ano = str(item["ano"])
+        saldo_acum_por_ano[ano] = saldo_acum_por_ano.get(ano, 0.0) + item["saldo_mes"]
+        item["saldo_acum"] = round(saldo_acum_por_ano[ano], 6)
+
+        cards.setdefault(ano, {"eap": 0.0, "produzido": 0.0, "saldo": 0.0})
+        cards[ano]["eap"] += item["eap"]
+        cards[ano]["produzido"] += item["produzido"]
+
+    for card in cards.values():
+        card["eap"] = round(card["eap"], 6)
+        card["produzido"] = round(card["produzido"], 6)
+        card["saldo"] = round(card["produzido"] - card["eap"], 6)
+
+    eap["cards"] = cards
+    eap["fonte_produzido"] = ARQ_BASE.name
+    eap["regra_produzido"] = "Colunas ProducaoMensal da BASE_DASH_EXTENSAO_POWERBI.xlsx"
+    return eap
+
+
 def salvar_json(caminho, conteudo):
     caminho.parent.mkdir(parents=True, exist_ok=True)
     with caminho.open("w", encoding="utf-8") as f:
@@ -310,6 +364,7 @@ def salvar_json(caminho, conteudo):
 def main():
     registros, meses_producao = ler_registros_base()
     eap = ler_eap_producao()
+    eap = aplicar_producao_base_na_eap(eap, registros)
     payload = {
         "atualizado_em": datetime.now(ZoneInfo("America/Sao_Paulo")).isoformat(),
         "fonte_registros": ARQ_BASE.name,
@@ -321,6 +376,7 @@ def main():
     salvar_json(SAIDA_DADOS_DOCS, payload)
     salvar_json(SAIDA_DADOS_ROOT, payload)
     salvar_json(SAIDA_EAP_DOCS, eap)
+    salvar_json(SAIDA_EAP_ROOT, eap)
 
     total = eap["eap_economias"]["total"]
     print("OK: dados.json e eap_producao.json atualizados.")
