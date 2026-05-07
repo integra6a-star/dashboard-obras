@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-05-07 07:41:22",
+  "atualizado_em": "2026-05-07 09:13:22",
   "totais": {
     "base_planejado": 40615.99,
-    "base_executado": 15075.82,
-    "mapa_executado": 15144.35,
+    "base_executado": 15154.01,
+    "mapa_executado": 15222.54,
     "diferenca_base_mapa": -68.53,
-    "saldo_total": 25540.17
+    "saldo_total": 25461.98
   },
   "pds": {
     "total": 2193,
@@ -52,9 +52,29 @@
   },
   "alertas": [
     "Diferença total entre Base Dash e mapa: -68.53 m",
-    "3 obra(s) com divergência entre executado da Base Dash e mapa."
+    "5 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 78.19,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 78.19,
+      "saldo": 780.31,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "joao_canzi",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 78.19,
+      "diferenca_base_mapa": -78.19,
+      "saldo": 0.0,
+      "linhas_base": 0,
+      "linhas_mapa": 1
+    },
     {
       "obra": "RCE Barão Luis de Arariba",
       "planejado": 649.0,
@@ -200,10 +220,10 @@
     {
       "obra": "CTS João Canzi",
       "planejado": 858.5,
-      "executado_base": 0.0,
+      "executado_base": 78.19,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 858.5,
+      "diferenca_base_mapa": 78.19,
+      "saldo": 780.31,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -658,6 +678,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "joao_canzi",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 78.19,
+      "diferenca_base_mapa": -78.19,
+      "saldo": 0.0,
+      "linhas_base": 0,
+      "linhas_mapa": 1
+    },
+    {
       "obra": "RCE AV. Fernando Pacheco Jordão",
       "planejado": 205.5,
       "executado_base": 220.59,
@@ -683,25 +713,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.2,
-      "modificado": "2026-05-06 12:50:37"
+      "modificado": "2026-05-07 09:09:20"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 98.0,
-      "modificado": "2026-05-05 16:16:03"
+      "tamanho_kb": 81.6,
+      "modificado": "2026-05-07 07:52:01"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 329.8,
-      "modificado": "2026-05-07 07:40:02"
+      "modificado": "2026-05-07 09:11:38"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 379.1,
-      "modificado": "2026-05-07 07:40:07"
+      "modificado": "2026-05-07 09:11:41"
     }
   ]
 }
