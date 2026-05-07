@@ -139,6 +139,13 @@
       "tipo": "CTS",
       "subtitulo": "Base real adicionada a partir dos shapefiles enviados em SHAPES.zip.",
       "ativa": "SIM"
+    },
+    {
+      "obra_id": "joao_canzi",
+      "nome_obra": "CTS João Canzi",
+      "tipo": "CTS",
+      "subtitulo": "Base criada a partir do PDF CTS JOÃO CANZI - FL.01.PLANO DE FURO_PV-17 AO PV-06: coordenadas SIRGAS 2000 / UTM zona 23S convertidas para latitude/longitude.",
+      "ativa": "SIM"
     }
   ],
   "pontos": [
@@ -5377,6 +5384,34 @@
       "cota_fundo": null,
       "profundidade_m": null,
       "observacao": "Ponto tecnico gerado a partir de extremidade de trecho do shape atualizado em 05/05/2026."
+    },
+    {
+      "obra_id": "joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-17",
+      "nome_ponto": "PV-17",
+      "coord_n": 7396842.023,
+      "coord_e": 358185.051,
+      "latitude": -23.5325188,
+      "longitude": -46.3892262,
+      "cota_tampa": 763.82,
+      "cota_fundo": 760.67,
+      "profundidade_m": 3.15,
+      "observacao": "Plano de furo FL-01 versão 01, 05.MAI.2026"
+    },
+    {
+      "obra_id": "joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-06",
+      "nome_ponto": "PV-06",
+      "coord_n": 7396873.974,
+      "coord_e": 358256.424,
+      "latitude": -23.5322365,
+      "longitude": -46.3885242,
+      "cota_tampa": 765.41,
+      "cota_fundo": 762.16,
+      "profundidade_m": 3.25,
+      "observacao": "Plano de furo FL-01 versão 01, 05.MAI.2026"
     }
   ],
   "trechos": [
@@ -13119,6 +13154,26 @@
       "lon_inicio": -46.4161522,
       "lat_fim": -23.5257703,
       "lon_fim": -46.4163279
+    },
+    {
+      "obra_id": "joao_canzi",
+      "trecho_id": "JC-001",
+      "trecho_nome": "PV-17 - PV-06",
+      "pv_inicio": "PV-17",
+      "pv_fim": "PV-06",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Método Não Destrutivo - MND",
+      "extensao_m": 78.19,
+      "prof_inicial_m": 3.15,
+      "prof_final_m": 3.25,
+      "prof_max_m": 3.25,
+      "status": "concluída",
+      "observacao": "Plano de furo PV-17 ao PV-06 executado na PDS de 2026-05-06.",
+      "lat_inicio": -23.5325188,
+      "lon_inicio": -46.3892262,
+      "lat_fim": -23.5322365,
+      "lon_fim": -46.3885242
     }
   ]
 }
