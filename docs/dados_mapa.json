@@ -5408,10 +5408,24 @@
       "coord_e": 358256.424,
       "latitude": -23.5322365,
       "longitude": -46.3885242,
-      "cota_tampa": 765.41,
-      "cota_fundo": 762.16,
-      "profundidade_m": 3.25,
-      "observacao": "Plano de furo FL-01 versão 01, 05.MAI.2026"
+      "cota_tampa": 765.442,
+      "cota_fundo": 762.072,
+      "profundidade_m": 3.37,
+      "observacao": "Plano de furo FL-02 versao 01, 07.MAI.2026; trecho PV-06 ao PV-08"
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-08",
+      "nome_ponto": "PV-08",
+      "coord_n": 7396899.021,
+      "coord_e": 358332.965,
+      "latitude": -23.532017,
+      "longitude": -46.3877722,
+      "cota_tampa": 767.145,
+      "cota_fundo": 762.845,
+      "profundidade_m": 4.3,
+      "observacao": "Plano de furo FL-02 versao 01, 07.MAI.2026; trecho PV-06 ao PV-08"
     }
   ],
   "trechos": [
@@ -13174,6 +13188,26 @@
       "lon_inicio": -46.3892262,
       "lat_fim": -23.5322365,
       "lon_fim": -46.3885242
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-002",
+      "trecho_nome": "PV-06 - PV-08",
+      "pv_inicio": "PV-06",
+      "pv_fim": "PV-08",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 80.53,
+      "prof_inicial_m": 3.37,
+      "prof_final_m": 4.3,
+      "prof_max_m": 4.3,
+      "status": "em planejamento",
+      "observacao": "Plano de furo FL-02 versao 01, 07.MAI.2026; GALPAO INTERNO RUA GENI GOMES; taxa 0,0096.",
+      "lat_inicio": -23.5322365,
+      "lon_inicio": -46.3885242,
+      "lat_fim": -23.532017,
+      "lon_fim": -46.3877722
     }
   ]
 }
