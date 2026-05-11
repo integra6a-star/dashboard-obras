@@ -1,19 +1,15 @@
 {
-  "atualizado_em": "2026-05-11T10:17:03.469061+00:00",
+  "atualizado_em": "2026-05-11T11:23:20.070939+00:00",
   "series": [
     {
       "mes": "2026-05",
-      "atualizado_em": "2026-05-11T07:17:03.453643-03:00",
+      "atualizado_em": "2026-05-11T08:23:20.070939-03:00",
       "ativos": 324,
       "afastados": 4,
       "total_salarios": 1199375.7,
       "total_vr": 246810.0,
       "total_combustivel": 34600.0,
       "total_frota": 608000.0,
-      "total_frota_leve": 0.0,
-      "total_caminhoes": 0.0,
-      "total_maquinas": 0.0,
-      "total_outros_ativos": 0.0,
       "custo_mensal_total": 2054185.7,
       "salario_clt": 947475.7,
       "salario_pj": 251900.0
