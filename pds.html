@@ -203,9 +203,7 @@ function formatDateBR(iso){
 function defaultDate(datas){
   const sorted = [...datas].sort();
   if(!sorted.length) return '';
-  const now = new Date(); now.setDate(now.getDate() - 1);
-  const prev = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
-  return sorted.includes(prev) ? prev : sorted[sorted.length - 1];
+  return sorted[sorted.length - 1];
 }
 function normalizarDataExcel(v){
   if(v == null || v === '') return '';
