@@ -104,11 +104,19 @@
     "alertas": 2
   },
   {
-    "atualizado_em": "2026-05-07 10:06:12",
-    "base_executado": 15196.01,
-    "mapa_executado": 15222.54,
+    "atualizado_em": "2026-05-11 10:09:15",
+    "base_executado": 15276.54,
+    "mapa_executado": 15303.07,
     "diferenca": -26.53,
-    "pds_hoje": 22,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-13 10:35:30",
+    "base_executado": 15276.54,
+    "mapa_executado": 15303.07,
+    "diferenca": -26.53,
+    "pds_hoje": 42,
     "alertas": 2
   }
 ]
