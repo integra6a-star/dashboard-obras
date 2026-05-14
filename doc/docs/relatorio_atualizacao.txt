@@ -1,21 +1,25 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-05-07 10:06:12
+Atualizado em: 2026-05-14 08:11:21
 
 Planejado Base Dash: 40,615.99 m
-Executado Base Dash: 15,196.01 m
-Executado Mapa: 15,222.54 m
-Diferença Base - Mapa: -26.53 m
-Saldo total: 25,419.98 m
+Executado Base Dash: 15,276.54 m
+Executado Mapa: 15,358.56 m
+Diferença Base - Mapa: -82.02 m
+Saldo total: 25,339.45 m
 
-PDS total: 2193 registros
-PDS hoje: 22 registros
-Última data PDS: 2026-05-07
+PDS total: 2377 registros
+PDS hoje: 23 registros
+Última data PDS: 2026-05-14
 
 Alertas:
-- Diferença total entre Base Dash e mapa: -26.53 m
-- 3 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença total entre Base Dash e mapa: -82.02 m
+- 7 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
+- CTS Mar de Coral: Base 1,323.64 m | Mapa 1,746.61 m | Dif. -422.97 m
+- CTS Água Vermelha - MD: Base 1,184.68 m | Mapa 902.75 m | Dif. 281.93 m
+- Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - RCE São Lucas: Base 51.00 m | Mapa 0.00 m | Dif. 51.00 m
 - CTS Domingos João de Carvalho: Base 515.25 m | Mapa 523.92 m | Dif. -8.67 m
+- CTS Conceição: Base 765.89 m | Mapa 767.01 m | Dif. -1.12 m
