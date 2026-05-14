@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -19,7 +19,7 @@
     .linha{display:flex;gap:7px;margin-bottom:8px}.linha>*{flex:1}.linha button{flex:.9}
     h2{font-size:12px;color:#17498c;margin:10px 0 7px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{border:1px solid var(--borda);border-radius:10px;background:linear-gradient(180deg,#f8fbff,#fff);padding:10px;min-height:66px}.card .t{font-size:9px;text-transform:uppercase;color:#6d7f99;font-weight:800}.card .v{font-size:21px;font-weight:900;color:#071d3a;margin-top:5px}.card .u{font-size:11px;font-weight:800}
     .legenda{font-size:11px;margin:8px 0}.leg{display:flex;align-items:center;gap:6px;margin:4px 0}.linha-leg{width:22px;height:3px;border-radius:2px}.ponto{width:9px;height:9px;border-radius:50%;display:inline-block}
-    .lista{display:flex;flex-direction:column;gap:7px;margin-top:7px}.trecho{border:1px solid #dce7f6;border-radius:9px;background:#f8fbff;padding:8px;font-size:11px}.trecho b{color:#123a7a}.muted{color:#62748d}.ok{font-size:11px;margin:4px 0 8px;color:#60738e}
+    .lista{display:flex;flex-direction:column;gap:7px;margin-top:7px}.trecho{border:1px solid #dce7f6;border-radius:9px;background:#f8fbff;padding:8px;font-size:11px}.trecho b{color:#123a7a}.metodo-detalhe{display:inline-block;margin-top:4px;border-radius:8px;padding:3px 7px;font-weight:900;background:#edf5ff;color:#0b4da2}.metodo-detalhe.vca{background:#fff3e6;color:#9a4c00}.metodo-detalhe.mnd{background:#edf5ff;color:#0b4da2}.muted{color:#62748d}.ok{font-size:11px;margin:4px 0 8px;color:#60738e}
     @media(max-width:900px){.layout{grid-template-columns:1fr;height:auto}.topo{height:auto;align-items:flex-start;flex-direction:column}.layout aside{height:auto}#map{height:65vh;min-height:420px}.cards{grid-template-columns:1fr 1fr}.btn-voltar{width:100%;justify-content:center}}
   
 /* ===== VERSÃO PREMIUM - MAPA REAL ===== */
@@ -203,20 +203,53 @@ h3{
 .insight.risco{border-color:#f5c2c7;background:#fff5f5;color:#842029}
 .card .u{font-size:12px !important;color:#60738e;margin-top:4px}
 
+/* ===== PAINEL PROFISSIONAL DE PV ===== */
+.layout{grid-template-columns:minmax(0,1fr) 430px !important;padding:0 !important}
+#map{min-height:calc(100vh - 72px) !important;border:none !important;border-radius:0 !important}
+aside{border-radius:0 !important}
+.panel-title{margin:2px 0 12px}
+.panel-title h2{margin:0 !important;font-size:20px !important;color:#113f87 !important;letter-spacing:0 !important}
+.panel-title p{margin:4px 0 0;font-size:12px;color:#647795;font-weight:700}
+.pv-panel{border:1px solid #cfe0f5;border-radius:8px;background:#fff;padding:12px;margin:0 0 14px;box-shadow:0 12px 28px rgba(13,45,98,.12)}
+.pv-empty{border:1px dashed #bfd1ec;border-radius:8px;background:#f7fbff;padding:14px;margin-bottom:14px;color:#506987;font-size:13px;font-weight:700}
+.pv-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.pv-head h3{margin:0 !important;font-size:22px !important;color:#113f87 !important}
+.pv-head p{margin:4px 0 0;font-size:12px;color:#60738e;font-weight:800}
+.pv-badge{border-radius:999px;background:#103f86;color:#fff;padding:7px 10px;font-size:11px;font-weight:900;white-space:nowrap}
+.pv-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px;background:#e7edf5;border:1px solid #d5e2f4;display:block}
+.pv-no-photo{width:100%;aspect-ratio:16/10;border-radius:8px;background:linear-gradient(135deg,#f4f8ff,#e6eef9);border:1px dashed #b9ccea;display:flex;align-items:center;justify-content:center;text-align:center;color:#506987;font-size:13px;font-weight:900;padding:18px}
+.pv-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.pv-tab{height:34px !important;border-radius:8px !important;background:#f4f8ff !important;border:1px solid #cfe0f5 !important;color:#173b72 !important;padding:0 6px !important;font-size:11px !important}
+.pv-tab.active{background:#123f86 !important;color:#fff !important;border-color:#123f86 !important}
+.pv-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pv-info{border:1px solid #dce8f7;border-radius:8px;background:#f8fbff;padding:9px;min-height:58px}
+.pv-info .label{font-size:10px;text-transform:uppercase;color:#607795;font-weight:900;margin-bottom:5px}
+.pv-info .value{font-size:13px;line-height:1.25;color:#061b38;font-weight:900;overflow-wrap:anywhere}
+.pv-list{display:grid;gap:7px}
+.pv-list-item{border:1px solid #dce8f7;border-radius:8px;background:#f8fbff;padding:10px;font-size:12px;color:#183b66;font-weight:800}
+.pv-list-item b{color:#113f87}
+.pv-note{font-size:12px;color:#60738e;font-weight:700;line-height:1.45;margin:8px 0 0}
+.dashboard-block{display:block}
+@media(max-width:900px){.layout{grid-template-columns:1fr !important}#map{height:58vh !important;min-height:420px !important}aside{border-left:none !important;border-top:1px solid var(--borda) !important}}
+@media(max-width:560px){.pv-tabs{grid-template-columns:1fr 1fr}.pv-grid{grid-template-columns:1fr}}
+
 </style>
 <link rel="icon" href="./icon.png" type="image/png">
 <link rel="shortcut icon" href="./icon.png">
 <link rel="apple-touch-icon" href="./icon-180.png">
 </head>
 <body>
-  <div class="topo"><div class="topo-title"><h1>Mapa Real Georreferenciado - Todas as Obras</h1><p>Visualização consolidada das redes carregadas pela planilha.</p></div><a class="btn-voltar" href="./index.html">🏠 Voltar ao dashboard</a></div>
+  <div class="topo"><div class="topo-title"><h1>Mapa Real Georreferenciado - Todas as Obras</h1><p>Visualização consolidada das redes carregadas pela planilha.</p></div><a class="btn-voltar" href="/">🏠 Voltar ao dashboard</a></div>
   <main class="layout">
     <section id="map"></section>
     <aside>
+      <div class="panel-title"><h2>Painel da obra</h2><p>Selecione um PV para abrir foto, trecho ligado e dados tecnicos.</p></div>
       <div class="linha"><select id="obraSel"></select></div>
       <div class="linha"><button id="btnCenter">Centralizar obra</button><select id="metodoSel"><option value="">Todos os métodos</option></select></div>
       <div class="linha"><select id="materialSel"><option value="">Todos os materiais</option></select></div>
       <div class="ok" id="fonte">Carregando planilha...</div>
+      <div id="pvPanel" class="pv-empty">Clique em um PV no mapa para visualizar a foto da obra e os dados tecnicos completos.</div>
+      <div class="dashboard-block">
       <h2>Insights técnicos</h2><div class="insights" id="insightsEngenharia"></div>
       <h2>Resumo da obra selecionada</h2><div class="cards" id="cardsObra"></div>
       <h2>Resumo geral - todas as obras</h2><div class="cards" id="cardsGeral"></div>
@@ -229,13 +262,15 @@ h3{
         <div class="leg"><span class="ponto" style="background:#8948ff"></span>PI</div>
       </div>
       <h2>Trechos da rede</h2><div class="lista" id="listaTrechos"></div>
+      </div>
     </aside>
   </main>
 <script>
 const EXCEL="planilha_base_mapa.xlsx", JSON_FALLBACK="dados_mapa.json";
+const FOTO_PADRAO="";
 const map=L.map('map',{zoomControl:true}).setView([-23.56,-46.50],13);
 const baseMapa=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,attribution:'© OpenStreetMap © CARTO'}).addTo(map);
-let D={obras:[],pontos:[],trechos:[]}, layers=L.layerGroup().addTo(map), boundsAll=null;
+let D={obras:[],pontos:[],trechos:[]}, campoTrechos=[], layers=L.layerGroup().addTo(map), selectionLayer=L.layerGroup().addTo(map), boundsAll=null;
 const fmt=n=>(Number(n||0)).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
 function norm(s){return String(s||'').trim()}
 function num(v){if(v===null||v===undefined||v==='')return 0; if(typeof v==='number')return v; return Number(String(v).replace('.','').replace(',','.'))||0}
@@ -264,6 +299,14 @@ async function carregar(){
   }catch(e){
     const r=await fetch(JSON_FALLBACK,{cache:'no-store'}); D=await r.json();
     fonte.textContent='Fonte: dados_mapa.json';
+  }
+  try{
+    const token=localStorage.getItem('integra_token') || '';
+    const headers=token ? {Authorization:`Bearer ${token}`} : {};
+    const r=await fetch('/api/campo-trechos',{cache:'no-store',headers});
+    campoTrechos=r.ok ? await r.json() : [];
+  }catch(e){
+    campoTrechos=[];
   }
   iniciar();
 }
@@ -412,12 +455,142 @@ function resumo(trechos, pontos){
   let ext=trechos.reduce((s,t)=>s+num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m'])),0),
       mnd=trechos.filter(t=>cor(t)=='#1764d8').reduce((s,t)=>s+num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m'])),0),
       vca=trechos.filter(t=>cor(t)=='#ff7a00').reduce((s,t)=>s+num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m'])),0);
+  let trechosMnd=trechos.filter(t=>cor(t)=='#1764d8').length,
+      trechosVca=trechos.filter(t=>cor(t)=='#ff7a00').length,
+      outros=ext-mnd-vca,
+      trechosOutros=trechos.length-trechosMnd-trechosVca;
   let profs=[...trechos.flatMap(t=>[tratarProfundidade(getv(t, ['prof_inicial_m','profundidade_inicial_m','prof_inicio_m'])),tratarProfundidade(getv(t, ['prof_final_m','profundidade_final_m','prof_fim_m'])),tratarProfundidade(getv(t, ['prof_max_m','profundidade_max_m','profundidade_m']))]),...pontos.map(p=>tratarProfundidade(getv(p, ['profundidade_m','profundidade','prof'])))].filter(x=>x>0);
   let criticos=profs.filter(x=>x>=6).length;
   let media=profs.length?profs.reduce((a,b)=>a+b,0)/profs.length:0;
   let percMnd=ext?mnd/ext*100:0;
+  let percVca=ext?vca/ext*100:0;
   let risco=(media>=5 || percMnd>=80 || criticos>=10) ? 'Alto' : (media>=3 || percMnd>=50 || criticos>=3) ? 'Médio' : 'Baixo';
-  return {trechos:trechos.length, ext, mnd, vca, maior:profs.length?Math.max(...profs):0, pv:pontos.filter(p=>norm(getv(p, ['tipo_ponto','tipo','classificacao','classificação'])).toUpperCase()=='PV').length, pi:pontos.filter(p=>norm(getv(p, ['tipo_ponto','tipo','classificacao','classificação'])).toUpperCase()=='PI').length, soma:profs.reduce((a,b)=>a+b,0), media, criticos, percMnd, risco}
+  return {trechos:trechos.length, ext, mnd, vca, outros, trechosMnd, trechosVca, trechosOutros, maior:profs.length?Math.max(...profs):0, pv:pontos.filter(p=>norm(getv(p, ['tipo_ponto','tipo','classificacao','classificação'])).toUpperCase()=='PV').length, pi:pontos.filter(p=>norm(getv(p, ['tipo_ponto','tipo','classificacao','classificação'])).toUpperCase()=='PI').length, soma:profs.reduce((a,b)=>a+b,0), media, criticos, percMnd, percVca, risco}
+}
+function esc(v){
+  return String(v??'').replace(/[&<>"']/g, ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function codigoPonto(p){
+  return norm(getv(p, ['nome_ponto','ponto','ponto_id','id_ponto','nome'])) || 'PV';
+}
+function tipoPonto(p){
+  return norm(getv(p, ['tipo_ponto','tipo','classificacao','classificaÃ§Ã£o'])) || 'PV';
+}
+function obraIdItem(item){
+  return norm(getv(item, ['obra_id','id_obra','codigo_obra','cÃ³digo_obra']));
+}
+function nomeObraItem(item){
+  const id=obraIdItem(item);
+  return obraNomePorId(id) || norm(getv(item, ['nome_obra','obra','obra_nome','frente','nome'])) || id || obraSelecionadaNome() || 'Obra';
+}
+function codigoTrecho(t){
+  return norm(getv(t, ['trecho_id','id_trecho','codigo_trecho','cÃ³digo_trecho'])) || norm(getv(t, ['trecho_nome','nome_trecho','trecho'])) || 'Trecho';
+}
+function normalizarCodigo(v){
+  return slug(v).replace(/[^a-z0-9]+/g,'');
+}
+function trechoLigaPonto(t, p){
+  const cp=normalizarCodigo(codigoPonto(p));
+  if(!cp) return false;
+  const inicio=normalizarCodigo(getv(t, ['pv_inicio','ponto_inicio','inicio','pv_inicial']));
+  const fim=normalizarCodigo(getv(t, ['pv_fim','ponto_fim','fim','pv_final']));
+  const nome=normalizarCodigo(getv(t, ['trecho_nome','nome_trecho','trecho']));
+  return inicio===cp || fim===cp || (!!nome && nome.includes(cp));
+}
+function trechosDoPonto(p){
+  const oid=obraIdItem(p);
+  return (D.trechos||[]).filter(t=>itemPertenceObra(t, oid || obraSel.value) && trechoLigaPonto(t,p));
+}
+function coordTrecho(t){
+  const a=[valCoord(t, ['lat_inicio','latitude_inicio','lat_ini']),valCoord(t, ['lon_inicio','lng_inicio','longitude_inicio','lon_ini'])];
+  const b=[valCoord(t, ['lat_fim','latitude_fim','lat_final']),valCoord(t, ['lon_fim','lng_fim','longitude_fim','lon_final'])];
+  return (a[0]&&a[1]&&b[0]&&b[1])?[a,b]:null;
+}
+function campo(t, nomes, padrao='-'){
+  const v=norm(getv(t, nomes));
+  return v || padrao;
+}
+function infoCard(label, value){
+  return `<div class="pv-info"><div class="label">${esc(label)}</div><div class="value">${esc(value || '-')}</div></div>`;
+}
+function renderAbaPv(aba, p, ligados){
+  const trecho=ligados[0] || {};
+  const lat=valCoord(p, ['latitude','lat']);
+  const lon=valCoord(p, ['longitude','lon','lng']);
+  if(aba==='foto'){
+    return `<div class="pv-no-photo">Buscando fotos vinculadas...</div>`;
+  }
+  if(aba==='docs'){
+    return `<div class="pv-list"><div class="pv-list-item"><b>Plano de furo</b><br>${esc(codigoTrecho(trecho))}</div><div class="pv-list-item"><b>Base cartografica</b><br>planilha_base_mapa.xlsx</div><div class="pv-list-item"><b>Status documental</b><br>Aguardando anexos especificos do PV.</div></div>`;
+  }
+  if(aba==='hist'){
+    return `<div class="pv-list"><div class="pv-list-item"><b>Selecionado no mapa</b><br>${new Date().toLocaleString('pt-BR')}</div><div class="pv-list-item"><b>Situacao atual</b><br>${esc(campo(trecho, ['status'],'Em acompanhamento'))}</div><div class="pv-list-item"><b>Registro</b><br>Dados carregados da planilha e mantidos compativeis com GitHub Pages.</div></div>`;
+  }
+  return `<div class="pv-grid">${
+    infoCard('Codigo do PV', codigoPonto(p))+
+    infoCard('Obra', nomeObraItem(p))+
+    infoCard('Profundidade', `${fmt(tratarProfundidade(getv(p, ['profundidade_m','profundidade','prof'])))} m`)+
+    infoCard('Metodo construtivo', campo(trecho, ['metodo','mÃ©todo']))+
+    infoCard('Material', campo(trecho, ['material']))+
+    infoCard('Diametro', campo(trecho, ['dn','diametro','diÃ¢metro']))+
+    infoCard('Status', campo(trecho, ['status']))+
+    infoCard('Data', campo(trecho, ['data','data_execucao','data_execuÃ§Ã£o','dt_execucao']))+
+    infoCard('Coordenadas', `${fmt(lat)}, ${fmt(lon)}`)+
+    infoCard('Trecho ligado', ligados.map(codigoTrecho).join(' | ') || '-')
+  }</div>`;
+}
+function selecionarAbaPv(aba, p, ligados){
+  document.querySelectorAll('[data-pv-tab]').forEach(btn=>btn.classList.toggle('active', btn.dataset.pvTab===aba));
+  const corpo=document.getElementById('pvTabBody');
+  if(corpo) corpo.innerHTML=renderAbaPv(aba,p,ligados);
+  if(aba==='foto' && corpo){
+    const url=`/api/fotos?obra=${encodeURIComponent(nomeObraItem(p))}&pv=${encodeURIComponent(codigoPonto(p))}`;
+    const renderFotos = (fotos, fallback=false) => {
+      if(!Array.isArray(fotos) || !fotos.length){
+        corpo.innerHTML=`<div class="pv-no-photo">Sem foto vinculada por enquanto</div><p class="pv-note">Use a tela de Produção para anexar foto ao PV/PI inicial, final ou a um PV/PI ja executado.</p>`;
+        return;
+      }
+      const aviso = fallback ? `<p class="pv-note">Foto encontrada na obra, mas sem correspondencia exata com o codigo ${esc(codigoPonto(p))}.</p>` : '';
+      corpo.innerHTML=`${aviso}<div class="pv-list">${fotos.map(f=>`<div class="pv-list-item"><img src="${esc(f.public_url)}" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Foto ${esc(f.pv_codigo||'PV')}"><b>${esc(f.pv_codigo||codigoPonto(p))}</b><br>${esc(f.legenda||'Foto da obra')}<br><span class="muted">${esc(String(f.tirada_em||f.created_at||'').slice(0,19).replace('T',' '))}</span></div>`).join('')}</div>`;
+    };
+    fetch(url,{cache:'no-store'}).then(r=>r.json()).then(fotos=>{
+      if(Array.isArray(fotos) && fotos.length){
+        renderFotos(fotos);
+        return;
+      }
+      return fetch(`/api/fotos?obra=${encodeURIComponent(nomeObraItem(p))}`,{cache:'no-store'})
+        .then(r=>r.json())
+        .then(fotosObra=>renderFotos(fotosObra, true));
+    }).catch(()=>{
+      corpo.innerHTML=`<div class="pv-no-photo">Não foi possível carregar as fotos agora.</div>`;
+    });
+  }
+}
+function destacarPv(p, ligados){
+  selectionLayer.clearLayers();
+}
+function abrirPainelPv(p){
+  const ligados=trechosDoPonto(p);
+  destacarPv(p, ligados);
+  const status=campo(ligados[0]||{}, ['status'], tipoPonto(p));
+  pvPanel.className='pv-panel';
+  pvPanel.innerHTML=`<div class="pv-head"><div><h3>${esc(codigoPonto(p))}</h3><p>${esc(nomeObraItem(p))}</p></div><span class="pv-badge">${esc(status)}</span></div><div class="pv-tabs"><button class="pv-tab" data-pv-tab="info">Informacoes</button><button class="pv-tab active" data-pv-tab="foto">Foto da obra</button><button class="pv-tab" data-pv-tab="docs">Documentos</button><button class="pv-tab" data-pv-tab="hist">Historico</button></div><div id="pvTabBody">${renderAbaPv('foto',p,ligados)}</div>`;
+  document.querySelectorAll('[data-pv-tab]').forEach(btn=>btn.onclick=()=>selecionarAbaPv(btn.dataset.pvTab,p,ligados));
+  selecionarAbaPv('foto', p, ligados);
+}
+function renderCampoTrechos(obra, group){
+  (campoTrechos||[]).filter(t=>itemPertenceObra(t, obra)).forEach(t=>{
+    const a=[num(t.lat_inicio),num(t.lon_inicio)];
+    const b=[num(t.lat_fim),num(t.lon_fim)];
+    if(!a[0]||!a[1]||!b[0]||!b[1]) return;
+    const labelInicio=t.pv_inicio || 'Inicio';
+    const labelFim=t.pv_fim || 'Fim';
+    const popup=`<b>${esc(t.obra || 'Producao de campo')}</b><br>${esc(labelInicio)} ao ${esc(labelFim)}<br>${fmt(num(t.extensao_m))} m<br>${esc(t.metodo_construtivo || '')} - ${esc(t.status || '')}`;
+    L.polyline([a,b],{color:'#1764d8',weight:7,opacity:.95,dashArray:'10 6'}).bindPopup(popup).addTo(layers);
+    L.circleMarker(a,{radius:6,color:'#fff',weight:2,fillColor:'#061326',fillOpacity:1}).bindPopup(`${esc(labelInicio)}<br>${fmt(a[0])}, ${fmt(a[1])}`).addTo(layers);
+    L.circleMarker(b,{radius:6,color:'#fff',weight:2,fillColor:'#061326',fillOpacity:1}).bindPopup(`${esc(labelFim)}<br>${fmt(b[0])}, ${fmt(b[1])}`).addTo(layers);
+    group.push(a,b);
+  });
 }
 function render(){
   layers.clearLayers(); let trechos=filtrarTrechos(); let obra=obraSel.value; let pontos=(D.pontos||[]).filter(p=>itemPertenceObra(p, obra)); let group=[];
@@ -425,22 +598,33 @@ function render(){
     let a=[valCoord(t, ['lat_inicio','latitude_inicio','lat_ini']),valCoord(t, ['lon_inicio','lng_inicio','longitude_inicio','lon_ini'])], b=[valCoord(t, ['lat_fim','latitude_fim','lat_final']),valCoord(t, ['lon_fim','lng_fim','longitude_fim','lon_final'])];
     if(a[0]&&a[1]&&b[0]&&b[1]){let l=L.polyline([a,b],{color:cor(t),weight:4,opacity:.92}).bindPopup(`<b>${getv(t, ['trecho_id','id_trecho','codigo_trecho','código_trecho'])}</b><br>${getv(t, ['trecho_nome','nome_trecho','trecho'])||''}<br>${fmt(num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m'])))} m`); l.addTo(layers); group.push(a,b)}
   });
-  pontos.forEach(p=>{let la=valCoord(p, ['latitude','lat']),lo=valCoord(p, ['longitude','lon','lng']); if(!la||!lo)return; let isPI=norm(getv(p, ['tipo_ponto','tipo','classificacao','classificação'])).toUpperCase()=='PI'; L.circleMarker([la,lo],{radius:5,color:'#fff',weight:1,fillColor:isPI?'#8948ff':'#061326',fillOpacity:1}).bindPopup(`<b>${getv(p, ['nome_ponto','ponto','ponto_id','nome'])||getv(p, ['ponto_id','id_ponto'])}</b><br>${getv(p, ['tipo_ponto','tipo','classificacao','classificação'])||''}<br>Prof.: ${fmt(tratarProfundidade(getv(p, ['profundidade_m','profundidade','prof'])))} m`).addTo(layers); group.push([la,lo])});
+  pontos.forEach(p=>{let la=valCoord(p, ['latitude','lat']),lo=valCoord(p, ['longitude','lon','lng']); if(!la||!lo)return; let isPI=norm(getv(p, ['tipo_ponto','tipo','classificacao','classificação'])).toUpperCase()=='PI'; const marker=L.circleMarker([la,lo],{radius:5,color:'#fff',weight:1,fillColor:isPI?'#8948ff':'#061326',fillOpacity:1}).bindPopup(`<b>${getv(p, ['nome_ponto','ponto','ponto_id','nome'])||getv(p, ['ponto_id','id_ponto'])}</b><br>${getv(p, ['tipo_ponto','tipo','classificacao','classificação'])||''}<br>Prof.: ${fmt(tratarProfundidade(getv(p, ['profundidade_m','profundidade','prof'])))} m`); marker.on('click',()=>abrirPainelPv(p)); marker.addTo(layers); group.push([la,lo])});
+  renderCampoTrechos(obra, group);
   if(group.length){boundsAll=L.latLngBounds(group); map.fitBounds(boundsAll,{padding:[20,20]})} else {boundsAll=null;}
   let robra=resumo(trechos,pontos), geral=resumo(D.trechos,D.pontos);
-  cardsObra.innerHTML=card('Trechos',robra.trechos)+card('Extensão total',fmt(robra.ext),'m')+card('Extensão MND',fmt(robra.mnd),'m')+card('% MND',fmt(robra.percMnd),'%')+card('Maior profundidade',fmt(robra.maior),'m')+card('Prof. média',fmt(robra.media),'m')+card('Pontos críticos',robra.criticos,'prof. ≥ 6 m')+card('Risco técnico',robra.risco);
-  cardsGeral.innerHTML=card('Total de obras',D.obras.length)+card('Total de trechos',geral.trechos)+card('Extensão geral',fmt(geral.ext),'m')+card('Maior prof. geral',fmt(geral.maior),'m')+card('Prof. média geral',fmt(geral.media),'m')+card('Pontos críticos',geral.criticos,'prof. ≥ 6 m')+card('Total PV',geral.pv)+card('Total PI',geral.pi)+card('Soma profundidades',fmt(geral.soma),'m')+card('Total MND',fmt(geral.mnd),'m')+card('Total VCA',fmt(geral.vca),'m')+card('Risco geral',geral.risco);
+  cardsObra.innerHTML=card('Trechos',robra.trechos)+card('Extensão total',fmt(robra.ext),'m')+card('Extensão VCA',fmt(robra.vca),'m')+card('% VCA',fmt(robra.percVca),'%')+card('Trechos VCA',robra.trechosVca)+card('Extensão MND',fmt(robra.mnd),'m')+card('% MND',fmt(robra.percMnd),'%')+card('Trechos MND',robra.trechosMnd)+card('Trechos outros',robra.trechosOutros)+card('Extensão outros',fmt(robra.outros),'m')+card('Maior profundidade',fmt(robra.maior),'m')+card('Prof. média',fmt(robra.media),'m')+card('Pontos críticos',robra.criticos,'prof. ≥ 6 m')+card('Risco técnico',robra.risco);
+  cardsGeral.innerHTML=card('Total de obras',D.obras.length)+card('Total de trechos',geral.trechos)+card('Extensão geral',fmt(geral.ext),'m')+card('Total VCA',fmt(geral.vca),'m')+card('% VCA geral',fmt(geral.percVca),'%')+card('Trechos VCA',geral.trechosVca)+card('Total MND',fmt(geral.mnd),'m')+card('% MND geral',fmt(geral.percMnd),'%')+card('Trechos MND',geral.trechosMnd)+card('Trechos outros',geral.trechosOutros)+card('Extensão outros',fmt(geral.outros),'m')+card('Maior prof. geral',fmt(geral.maior),'m')+card('Prof. média geral',fmt(geral.media),'m')+card('Pontos críticos',geral.criticos,'prof. ≥ 6 m')+card('Total PV',geral.pv)+card('Total PI',geral.pi)+card('Soma profundidades',fmt(geral.soma),'m')+card('Risco geral',geral.risco);
   if(document.getElementById('insightsEngenharia')){
     let foco = obraSel.value ? robra : geral;
     let msg1 = foco.risco==='Alto' ? 'risco' : (foco.risco==='Médio' ? 'alerta' : '');
     insightsEngenharia.innerHTML =
       `<div class="insight ${msg1}">🧠 <b>Risco técnico:</b> ${foco.risco} | Profundidade média ${fmt(foco.media)} m | Maior profundidade ${fmt(foco.maior)} m</div>`+
-      `<div class="insight">🛠️ <b>Método:</b> MND representa ${fmt(foco.percMnd)}% da extensão filtrada.</div>`+
+      `<div class="insight">🛠️ <b>Método:</b> MND ${fmt(foco.mnd)} m (${fmt(foco.percMnd)}%) | VCA ${fmt(foco.vca)} m (${fmt(foco.percVca)}%) | Outros ${fmt(foco.outros)} m.</div>`+
       `<div class="insight ${foco.criticos>0?'alerta':''}">⚠️ <b>Pontos críticos:</b> ${foco.criticos} registros com profundidade igual ou acima de 6 m.</div>`;
   }
-  listaTrechos.innerHTML=trechos.slice(0,80).map(t=>`<div class="trecho"><b>${getv(t, ['trecho_id','id_trecho','codigo_trecho','código_trecho'])||''}</b><br><span class="muted">${getv(t, ['trecho_nome','nome_trecho','trecho'])||''}</span><br>${getv(t, ['material'])||''} · DN ${getv(t, ['dn','diametro','diâmetro'])||''}<br>Extensão: ${fmt(num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m'])))} m | Prof.: ${fmt(tratarProfundidade(getv(t, ['prof_inicial_m','profundidade_inicial_m','prof_inicio_m'])))} / ${fmt(tratarProfundidade(getv(t, ['prof_final_m','profundidade_final_m','prof_fim_m'])))} m</div>`).join('') || '<div class="muted">Nenhum trecho encontrado.</div>';
+  listaTrechos.innerHTML=trechos.map(t=>{
+    const metodo=norm(getv(t, ['metodo','método'])) || 'Não informado';
+    const ext=num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m']));
+    const isVca=cor(t)=='#ff7a00';
+    const isMnd=cor(t)=='#1764d8';
+    const classe=isVca?'vca':(isMnd?'mnd':'');
+    const detalhe=isVca?`VCA no trecho: ${fmt(ext)} m`:(isMnd?`MND no trecho: ${fmt(ext)} m`:`Outro método no trecho: ${fmt(ext)} m`);
+    return `<div class="trecho"><b>${getv(t, ['trecho_id','id_trecho','codigo_trecho','código_trecho'])||''}</b><br><span class="muted">${getv(t, ['trecho_nome','nome_trecho','trecho'])||''}</span><br>Método: <b>${metodo}</b> | ${getv(t, ['material'])||''} · DN ${getv(t, ['dn','diametro','diâmetro'])||''}<br><span class="metodo-detalhe ${classe}">${detalhe}</span><br>Extensão total: ${fmt(ext)} m | Prof.: ${fmt(tratarProfundidade(getv(t, ['prof_inicial_m','profundidade_inicial_m','prof_inicio_m'])))} / ${fmt(tratarProfundidade(getv(t, ['prof_final_m','profundidade_final_m','prof_fim_m'])))} m</div>`;
+  }).join('') || '<div class="muted">Nenhum trecho encontrado.</div>';
 }
 carregar();
 </script>
+<script src="/assistente-campo.js?v=2"></script>
 </body>
 </html>
+

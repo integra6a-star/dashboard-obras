@@ -19,7 +19,7 @@
     .linha{display:flex;gap:7px;margin-bottom:8px}.linha>*{flex:1}.linha button{flex:.9}
     h2{font-size:12px;color:#17498c;margin:10px 0 7px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{border:1px solid var(--borda);border-radius:10px;background:linear-gradient(180deg,#f8fbff,#fff);padding:10px;min-height:66px}.card .t{font-size:9px;text-transform:uppercase;color:#6d7f99;font-weight:800}.card .v{font-size:21px;font-weight:900;color:#071d3a;margin-top:5px}.card .u{font-size:11px;font-weight:800}
     .legenda{font-size:11px;margin:8px 0}.leg{display:flex;align-items:center;gap:6px;margin:4px 0}.linha-leg{width:22px;height:3px;border-radius:2px}.ponto{width:9px;height:9px;border-radius:50%;display:inline-block}
-    .lista{display:flex;flex-direction:column;gap:7px;margin-top:7px}.trecho{border:1px solid #dce7f6;border-radius:9px;background:#f8fbff;padding:8px;font-size:11px}.trecho b{color:#123a7a}.muted{color:#62748d}.ok{font-size:11px;margin:4px 0 8px;color:#60738e}
+    .lista{display:flex;flex-direction:column;gap:7px;margin-top:7px}.trecho{border:1px solid #dce7f6;border-radius:9px;background:#f8fbff;padding:8px;font-size:11px}.trecho b{color:#123a7a}.metodo-detalhe{display:inline-block;margin-top:4px;border-radius:8px;padding:3px 7px;font-weight:900;background:#edf5ff;color:#0b4da2}.metodo-detalhe.vca{background:#fff3e6;color:#9a4c00}.metodo-detalhe.mnd{background:#edf5ff;color:#0b4da2}.muted{color:#62748d}.ok{font-size:11px;margin:4px 0 8px;color:#60738e}
     @media(max-width:900px){.layout{grid-template-columns:1fr;height:auto}.topo{height:auto;align-items:flex-start;flex-direction:column}.layout aside{height:auto}#map{height:65vh;min-height:420px}.cards{grid-template-columns:1fr 1fr}.btn-voltar{width:100%;justify-content:center}}
   
 /* ===== VERSÃO PREMIUM - MAPA REAL ===== */
@@ -612,7 +612,15 @@ function render(){
       `<div class="insight">🛠️ <b>Método:</b> MND ${fmt(foco.mnd)} m (${fmt(foco.percMnd)}%) | VCA ${fmt(foco.vca)} m (${fmt(foco.percVca)}%) | Outros ${fmt(foco.outros)} m.</div>`+
       `<div class="insight ${foco.criticos>0?'alerta':''}">⚠️ <b>Pontos críticos:</b> ${foco.criticos} registros com profundidade igual ou acima de 6 m.</div>`;
   }
-  listaTrechos.innerHTML=trechos.map(t=>`<div class="trecho"><b>${getv(t, ['trecho_id','id_trecho','codigo_trecho','código_trecho'])||''}</b><br><span class="muted">${getv(t, ['trecho_nome','nome_trecho','trecho'])||''}</span><br>Método: <b>${getv(t, ['metodo','método'])||'Não informado'}</b> | ${getv(t, ['material'])||''} · DN ${getv(t, ['dn','diametro','diâmetro'])||''}<br>Extensão: ${fmt(num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m'])))} m | Prof.: ${fmt(tratarProfundidade(getv(t, ['prof_inicial_m','profundidade_inicial_m','prof_inicio_m'])))} / ${fmt(tratarProfundidade(getv(t, ['prof_final_m','profundidade_final_m','prof_fim_m'])))} m</div>`).join('') || '<div class="muted">Nenhum trecho encontrado.</div>';
+  listaTrechos.innerHTML=trechos.map(t=>{
+    const metodo=norm(getv(t, ['metodo','método'])) || 'Não informado';
+    const ext=num(getv(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m']));
+    const isVca=cor(t)=='#ff7a00';
+    const isMnd=cor(t)=='#1764d8';
+    const classe=isVca?'vca':(isMnd?'mnd':'');
+    const detalhe=isVca?`VCA no trecho: ${fmt(ext)} m`:(isMnd?`MND no trecho: ${fmt(ext)} m`:`Outro método no trecho: ${fmt(ext)} m`);
+    return `<div class="trecho"><b>${getv(t, ['trecho_id','id_trecho','codigo_trecho','código_trecho'])||''}</b><br><span class="muted">${getv(t, ['trecho_nome','nome_trecho','trecho'])||''}</span><br>Método: <b>${metodo}</b> | ${getv(t, ['material'])||''} · DN ${getv(t, ['dn','diametro','diâmetro'])||''}<br><span class="metodo-detalhe ${classe}">${detalhe}</span><br>Extensão total: ${fmt(ext)} m | Prof.: ${fmt(tratarProfundidade(getv(t, ['prof_inicial_m','profundidade_inicial_m','prof_inicio_m'])))} / ${fmt(tratarProfundidade(getv(t, ['prof_final_m','profundidade_final_m','prof_fim_m'])))} m</div>`;
+  }).join('') || '<div class="muted">Nenhum trecho encontrado.</div>';
 }
 carregar();
 </script>
