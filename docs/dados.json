@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-13T10:30:45.461552-03:00",
+  "atualizado_em": "2026-05-14T14:42:42.977137-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -2223,14 +2223,14 @@
       "Bloco": "61",
       "Tipo": "VCA",
       "Planejado_m": 1799.2,
-      "Executado_m": 9.0,
+      "Executado_m": 81.0,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
         "2026-01": 9.0,
-        "2026-05": 42.0
+        "2026-05": 72.0
       }
     },
     {
@@ -2393,7 +2393,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concuido",
       "Obra": "CTS MAR DE CORAL",
       "Bloco": "64",
       "Tipo": "VCA",
@@ -2406,12 +2406,13 @@
       "ProducaoMensal": {
         "2026-01": 42.7,
         "2026-03": 39.8,
-        "2026-04": 8.81
+        "2026-04": 8.81,
+        "2026-05": 70.84
       }
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concuido",
       "Obra": "CTS MAR DE CORAL",
       "Bloco": "65",
       "Tipo": "HDD",
@@ -2428,7 +2429,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concuido",
       "Obra": "CTS MAR DE CORAL",
       "Bloco": "65",
       "Tipo": "VCA",
@@ -2439,12 +2440,13 @@
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-03": 65.6
+        "2026-03": 65.6,
+        "2026-05": 77.00999999999999
       }
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concuido",
       "Obra": "CTS MAR DE CORAL",
       "Bloco": "66",
       "Tipo": "HDD",
@@ -2460,7 +2462,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concuido",
       "Obra": "CTS MAR DE CORAL",
       "Bloco": "66",
       "Tipo": "VCA",
@@ -2532,7 +2534,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concluido",
       "Obra": "CTS LUIZ BOTELHO MOURÃO",
       "Bloco": "69",
       "Tipo": "HDD",
@@ -2548,7 +2550,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concluido",
       "Obra": "CTS LUIZ BOTELHO MOURÃO",
       "Bloco": "69",
       "Tipo": "VCA",
@@ -2562,7 +2564,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concluido",
       "Obra": "CTS LUIZ BOTELHO MOURÃO",
       "Bloco": "70",
       "Tipo": "HDD",
@@ -2579,7 +2581,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concluido",
       "Obra": "CTS LUIZ BOTELHO MOURÃO",
       "Bloco": "70",
       "Tipo": "VCA",
@@ -2590,7 +2592,7 @@
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-04": 40.9
+        "2026-04": 47.56
       }
     },
     {
@@ -3282,7 +3284,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-05-13T10:30:45.461552-03:00",
+    "atualizado_em": "2026-05-14T14:42:42.976445-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
@@ -3307,8 +3309,8 @@
       },
       "2026": {
         "eap": 28768.36,
-        "produzido": 6547.14,
-        "saldo": -22221.22
+        "produzido": 6731.65,
+        "saldo": -22036.71
       }
     },
     "mensal": [
@@ -3459,23 +3461,23 @@
         "ano": 2026,
         "mes": "Abr",
         "eap": 2426.84,
-        "produzido": 1460.01,
+        "produzido": 1466.67,
         "economias_eap": 2735.0,
-        "economias_recebidas": 5747.0,
-        "saldo_mes": -966.83,
-        "saldo_economias": 3012.0,
-        "saldo_acum": -2734.24
+        "economias_recebidas": 5246.0,
+        "saldo_mes": -960.17,
+        "saldo_economias": 2511.0,
+        "saldo_acum": -2727.58
       },
       {
         "ano": 2026,
         "mes": "Mai",
         "eap": 2545.85,
-        "produzido": 200.72,
+        "produzido": 378.57,
         "economias_eap": 2361.0,
         "economias_recebidas": 0.0,
-        "saldo_mes": -2345.13,
+        "saldo_mes": -2167.28,
         "saldo_economias": -2361.0,
-        "saldo_acum": -5079.37
+        "saldo_acum": -4894.86
       },
       {
         "ano": 2026,
@@ -3486,7 +3488,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3108.25,
         "saldo_economias": -2874.0,
-        "saldo_acum": -8187.62
+        "saldo_acum": -8003.11
       },
       {
         "ano": 2026,
@@ -3497,7 +3499,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3269.49,
         "saldo_economias": -4487.0,
-        "saldo_acum": -11457.11
+        "saldo_acum": -11272.6
       },
       {
         "ano": 2026,
@@ -3508,7 +3510,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3305.21,
         "saldo_economias": -4543.0,
-        "saldo_acum": -14762.32
+        "saldo_acum": -14577.81
       },
       {
         "ano": 2026,
@@ -3519,7 +3521,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3138.09,
         "saldo_economias": -3432.0,
-        "saldo_acum": -17900.41
+        "saldo_acum": -17715.9
       },
       {
         "ano": 2026,
@@ -3530,7 +3532,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -2251.28,
         "saldo_economias": -1923.0,
-        "saldo_acum": -20151.69
+        "saldo_acum": -19967.18
       },
       {
         "ano": 2026,
@@ -3541,7 +3543,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -1527.07,
         "saldo_economias": -713.0,
-        "saldo_acum": -21678.76
+        "saldo_acum": -21494.25
       },
       {
         "ano": 2026,
@@ -3552,7 +3554,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -542.46,
         "saldo_economias": -39.0,
-        "saldo_acum": -22221.22
+        "saldo_acum": -22036.71
       }
     ],
     "eap_economias": {
@@ -3564,14 +3566,14 @@
         },
         "2026": {
           "economias_eap": 30190.0,
-          "economias_recebidas": 9986.0,
-          "saldo": -20204.0
+          "economias_recebidas": 9485.0,
+          "saldo": -20705.0
         }
       },
       "total": {
         "economias_eap": 43123.0,
-        "economias_recebidas": 27156.0,
-        "saldo": -15967.0
+        "economias_recebidas": 26655.0,
+        "saldo": -16468.0
       },
       "mensal": [
         {
@@ -3669,8 +3671,8 @@
           "ano": 2026,
           "mes": "Abr",
           "economias_eap": 2735.0,
-          "economias_recebidas": 5747.0,
-          "saldo": 3012.0
+          "economias_recebidas": 5246.0,
+          "saldo": 2511.0
         },
         {
           "ano": 2026,

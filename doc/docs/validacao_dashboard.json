@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-05-14 08:11:21",
+  "atualizado_em": "2026-05-14 14:52:08",
   "totais": {
     "base_planejado": 40615.99,
-    "base_executado": 15276.54,
-    "mapa_executado": 15358.56,
-    "diferenca_base_mapa": -82.02,
-    "saldo_total": 25339.45
+    "base_executado": 15461.05,
+    "mapa_executado": 15640.49,
+    "diferenca_base_mapa": -179.44,
+    "saldo_total": 25154.94
   },
   "pds": {
     "total": 2377,
@@ -55,29 +55,19 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: -82.02 m",
+    "Diferença total entre Base Dash e mapa: -179.44 m",
     "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "CTS Mar de Coral",
       "planejado": 2185.54,
-      "executado_base": 1323.64,
+      "executado_base": 1471.49,
       "executado_mapa": 1746.61,
-      "diferenca_base_mapa": -422.97,
-      "saldo": 861.9,
+      "diferenca_base_mapa": -275.12,
+      "saldo": 714.05,
       "linhas_base": 6,
       "linhas_mapa": 61
-    },
-    {
-      "obra": "CTS Água Vermelha - MD",
-      "planejado": 1700.5,
-      "executado_base": 1184.68,
-      "executado_mapa": 902.75,
-      "diferenca_base_mapa": 281.93,
-      "saldo": 515.82,
-      "linhas_base": 18,
-      "linhas_mapa": 18
     },
     {
       "obra": "Interligação Água Boa",
@@ -90,6 +80,16 @@
       "linhas_mapa": 4
     },
     {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 81.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 81.0,
+      "saldo": 1718.2,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "RCE Barão Luis de Arariba",
       "planejado": 649.0,
       "executado_base": 548.9,
@@ -100,16 +100,6 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 51.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 51.0,
-      "saldo": 1748.2,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "CTS Domingos João de Carvalho",
       "planejado": 544.0,
       "executado_base": 515.25,
@@ -118,6 +108,16 @@
       "saldo": 28.75,
       "linhas_base": 8,
       "linhas_mapa": 24
+    },
+    {
+      "obra": "CTS Luis Botelho Mourão",
+      "planejado": 390.75,
+      "executado_base": 468.09,
+      "executado_mapa": 461.43,
+      "diferenca_base_mapa": 6.66,
+      "saldo": -77.34,
+      "linhas_base": 4,
+      "linhas_mapa": 11
     },
     {
       "obra": "CTS Conceição",
@@ -144,10 +144,10 @@
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 51.0,
+      "executado_base": 81.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 51.0,
-      "saldo": 1748.2,
+      "diferenca_base_mapa": 81.0,
+      "saldo": 1718.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -222,16 +222,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "CTS Mar de Coral",
-      "planejado": 2185.54,
-      "executado_base": 1323.64,
-      "executado_mapa": 1746.61,
-      "diferenca_base_mapa": -422.97,
-      "saldo": 861.9,
-      "linhas_base": 6,
-      "linhas_mapa": 61
-    },
-    {
       "obra": "REC/ INTERL. AV. RIO MIRAÍ",
       "planejado": 860.0,
       "executado_base": 0.0,
@@ -272,6 +262,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "CTS Mar de Coral",
+      "planejado": 2185.54,
+      "executado_base": 1471.49,
+      "executado_mapa": 1746.61,
+      "diferenca_base_mapa": -275.12,
+      "saldo": 714.05,
+      "linhas_base": 6,
+      "linhas_mapa": 61
+    },
+    {
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 158.72,
@@ -305,11 +305,11 @@
       "obra": "CTS Água Vermelha - MD",
       "planejado": 1700.5,
       "executado_base": 1184.68,
-      "executado_mapa": 902.75,
-      "diferenca_base_mapa": 281.93,
+      "executado_mapa": 1184.68,
+      "diferenca_base_mapa": -0.0,
       "saldo": 515.82,
       "linhas_base": 18,
-      "linhas_mapa": 18
+      "linhas_mapa": 26
     },
     {
       "obra": "CTS Água Vermelha - ME",
@@ -714,10 +714,10 @@
     {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
-      "executado_base": 461.43,
+      "executado_base": 468.09,
       "executado_mapa": 461.43,
-      "diferenca_base_mapa": -0.0,
-      "saldo": -70.68,
+      "diferenca_base_mapa": 6.66,
+      "saldo": -77.34,
       "linhas_base": 4,
       "linhas_mapa": 11
     }
@@ -727,25 +727,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.2,
-      "modificado": "2026-05-11 08:17:47"
+      "modificado": "2026-05-14 14:38:47"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 81.8,
-      "modificado": "2026-05-14 06:54:29"
+      "tamanho_kb": 82.9,
+      "modificado": "2026-05-14 14:45:57"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 346.8,
-      "modificado": "2026-05-14 08:04:37"
+      "modificado": "2026-05-14 14:49:59"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 411.2,
-      "modificado": "2026-05-14 08:10:41"
+      "modificado": "2026-05-14 14:50:01"
     }
   ]
 }
