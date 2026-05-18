@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-14 14:52:08",
+  "atualizado_em": "2026-05-18 13:22:50",
   "totais": {
     "base_planejado": 40615.99,
     "base_executado": 15461.05,
@@ -8,12 +8,12 @@
     "saldo_total": 25154.94
   },
   "pds": {
-    "total": 2377,
-    "ultima_data": "2026-05-14",
+    "total": 2423,
+    "ultima_data": "2026-05-18",
     "hoje": 23,
     "por_obra_ultima_data": [
       {
-        "obra": "CT João Canzi",
+        "obra": "CTS Lourdes Complementar",
         "atividades": 5
       },
       {
@@ -21,7 +21,7 @@
         "atividades": 5
       },
       {
-        "obra": "CTS Lourdes Complementar",
+        "obra": "CT João Canzi",
         "atividades": 4
       },
       {
@@ -33,23 +33,19 @@
         "atividades": 2
       },
       {
-        "obra": "Barão De Arariba",
-        "atividades": 1
+        "obra": "Lourdes",
+        "atividades": 2
       },
       {
         "obra": "CTS Barão Luiz De Arariba",
         "atividades": 1
       },
       {
-        "obra": "CTS Jaragua",
+        "obra": "CTS Mar De Coral",
         "atividades": 1
       },
       {
-        "obra": "CTS Luis Botelho Mourão",
-        "atividades": 1
-      },
-      {
-        "obra": "Lourdes",
+        "obra": "CTS Água Vermelha",
         "atividades": 1
       }
     ]
