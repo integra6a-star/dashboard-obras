@@ -10,7 +10,7 @@ import unicodedata
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT = SCRIPT_DIR.parent if SCRIPT_DIR.name.lower() in ("scripts", "pintura") else SCRIPT_DIR
-SEARCH_DIRS = [ROOT, ROOT / "docs", SCRIPT_DIR]
+SEARCH_DIRS = [ROOT, ROOT / "docs", SCRIPT_DIR, Path.home() / "Downloads"]
 OUT_DIR = ROOT / "docs" if (ROOT / "docs").exists() else ROOT
 
 PLANILHAS = {
@@ -19,12 +19,31 @@ PLANILHAS = {
     "iti15": {"patterns": ["INTEGRA CANTEIRO ITI-15*.xlsx", "INTEGRA CANTEIRO ITI15*.xlsx", "CANTEIRO ITI-15*.xlsx", "CANTEIRO ITI15*.xlsx", "*ITI-15*.xlsx", "*ITI15*.xlsx"], "saida": "almoxarifado_iti15.json"},
 }
 
+PLANILHAS_CONSOLIDADAS = {
+    "canteiro1": {"abas": ["Tancredo"], "titulo": "Tancredo (Canteiro 1)", "saida": "almoxarifado_canteiro1.json"},
+    "canteiro2": {"abas": ["Bandeirantes", "Bandeirangtes"], "titulo": "Bandeirantes (Canteiro 2)", "saida": "almoxarifado_canteiro2.json"},
+    "iti15": {"abas": ["D'av\u00f3", "Davo", "D avo", "ITI-15", "ITI15"], "titulo": "D'av\u00f3 (ITI-15)", "saida": "almoxarifado_iti15.json"},
+}
+
+PLANILHA_CONSOLIDADA_PATTERNS = ["PLANILHA_ALMOXARIFADO*.xlsx", "*ALMOXARIFADO*.xlsx"]
+
 NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
 NS_REL = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
 
 
 def sem_acento(txt):
     return "".join(c for c in unicodedata.normalize("NFD", str(txt or "")) if unicodedata.category(c) != "Mn")
+
+
+def chave(txt):
+    return re.sub(r"[^a-z0-9]+", "", sem_acento(txt).lower())
+
+
+def texto_planilha(valor):
+    txt = re.sub(r"\s+", " ", str(valor or "").strip())
+    if re.fullmatch(r"-?\d+\.0", txt):
+        txt = txt[:-2]
+    return txt
 
 
 def limpar_descricao(txt):
@@ -46,6 +65,20 @@ def numero(valor):
         txt = txt.replace(".", "").replace(",", ".")
     try:
         n = float(txt)
+        return int(n) if n.is_integer() else n
+    except Exception:
+        return 0
+
+
+def numero_estoque(valor):
+    txt = texto_planilha(valor)
+    if not txt:
+        return 0
+    m = re.match(r"^\s*(-?\d+(?:[.,]\d+)?)", txt)
+    if not m:
+        return 0
+    try:
+        n = float(m.group(1).replace(".", "").replace(",", "."))
         return int(n) if n.is_integer() else n
     except Exception:
         return 0
@@ -80,6 +113,20 @@ def encontrar_planilha(info):
                 candidatos.extend(pasta.glob(pattern))
     candidatos = [p for p in candidatos if p.is_file() and p.suffix.lower() == ".xlsx" and not p.name.startswith("~$")]
     return max(candidatos, key=lambda p: p.stat().st_mtime) if candidatos else None
+
+
+def encontrar_planilha_consolidada():
+    grupos = ([ROOT, ROOT / "docs", SCRIPT_DIR], [Path.home() / "Downloads"])
+    for pastas in grupos:
+        candidatos = []
+        for pasta in pastas:
+            if pasta.exists():
+                for pattern in PLANILHA_CONSOLIDADA_PATTERNS:
+                    candidatos.extend(pasta.glob(pattern))
+        candidatos = [p for p in candidatos if p.is_file() and p.suffix.lower() == ".xlsx" and not p.name.startswith("~$")]
+        if candidatos:
+            return max(candidatos, key=lambda p: p.stat().st_mtime)
+    return None
 
 
 def shared_strings(z):
@@ -157,6 +204,83 @@ def ler_aba(caminho, nome_aba):
         return linhas
 
 
+def ler_aba_por_alias(caminho, aliases):
+    aliases_norm = {chave(a) for a in aliases}
+    with ZipFile(caminho) as z:
+        abas = mapa_abas(z)
+        alvo = None
+        nome_real = ""
+        for nome, path in abas.items():
+            if chave(nome) in aliases_norm:
+                alvo = path
+                nome_real = nome
+                break
+        if not alvo:
+            return "", []
+        ss = shared_strings(z)
+        linhas = []
+        for _, row in ET.iterparse(z.open(alvo), events=("end",)):
+            if row.tag != NS + "row":
+                continue
+            vals = {}
+            max_col = -1
+            for c in row.findall(NS + "c"):
+                idx = col_idx(c.attrib.get("r", ""))
+                if idx is None:
+                    continue
+                vals[idx] = cell_value(c, ss)
+                max_col = max(max_col, idx)
+            linhas.append([vals.get(i, "") for i in range(max_col + 1)])
+            row.clear()
+        return nome_real, linhas
+
+
+def processar_planilha_consolidada(caminho, info):
+    nome_aba, linhas = ler_aba_por_alias(caminho, info["abas"])
+    produtos = []
+    agora = datetime.now().strftime("%d/%m/%Y %H:%M")
+    if not linhas:
+        return {"atualizado_em": agora, "origem": f"{caminho.name} / aba nao encontrada", "titulo": info["titulo"], "produtos": [], "movimentos": []}
+
+    header_idx = None
+    col_desc = None
+    col_estoque = None
+    for i, row in enumerate(linhas):
+        normalizadas = [chave(c) for c in row]
+        if "descricao" in normalizadas and "estoqueatual" in normalizadas:
+            header_idx = i
+            col_desc = normalizadas.index("descricao")
+            col_estoque = normalizadas.index("estoqueatual")
+            break
+
+    if header_idx is None:
+        return {"atualizado_em": agora, "origem": f"{caminho.name} / {nome_aba}", "titulo": info["titulo"], "produtos": [], "movimentos": []}
+
+    for idx, row in enumerate(linhas[header_idx + 1 :], start=1):
+        descricao = texto_planilha(row[col_desc] if len(row) > col_desc else "")
+        if not descricao:
+            continue
+        estoque_txt = texto_planilha(row[col_estoque] if len(row) > col_estoque else "")
+        produtos.append({
+            "codigo": f"P{idx:03d}",
+            "descricao": descricao,
+            "estoque_atual": estoque_txt,
+            "estoque_minimo": 0,
+            "entradas": 0,
+            "saidas": 0,
+            "quantidade": numero_estoque(estoque_txt),
+            "situacao_planilha": "",
+        })
+
+    return {
+        "atualizado_em": agora,
+        "origem": f"{caminho.name} / {nome_aba}",
+        "titulo": info["titulo"],
+        "produtos": produtos,
+        "movimentos": [],
+    }
+
+
 def processar_planilha(caminho):
     produtos = {}
     for row in ler_aba(caminho, "Produtos")[3:]:
@@ -224,6 +348,33 @@ def main():
         saidas[chave] = dados
     salvar_json("almoxarifado.json", saidas.get("canteiro1", {"produtos": [], "movimentos": []}))
     print("Concluído.")
+
+def main():
+    print("Gerando JSONs do Almoxarifado...")
+    saidas = {}
+    planilha_consolidada = encontrar_planilha_consolidada()
+    if planilha_consolidada:
+        print(f"Usando planilha consolidada: {planilha_consolidada.name}")
+        for chave, info in PLANILHAS_CONSOLIDADAS.items():
+            dados = processar_planilha_consolidada(planilha_consolidada, info)
+            destino = salvar_json(info["saida"], dados)
+            print(f"OK: {chave}: {dados.get('origem', planilha_consolidada.name)} -> {destino.name} | produtos: {len(dados['produtos'])}")
+            saidas[chave] = dados
+    else:
+        for chave, info in PLANILHAS.items():
+            planilha = encontrar_planilha(info)
+            if not planilha:
+                dados = {"atualizado_em": datetime.now().strftime("%d/%m/%Y %H:%M"), "origem": "", "produtos": [], "movimentos": []}
+                destino = salvar_json(info["saida"], dados)
+                print(f"AVISO: {chave}: planilha nÃ£o encontrada -> {destino.name}")
+            else:
+                dados = processar_planilha(planilha)
+                destino = salvar_json(info["saida"], dados)
+                print(f"OK: {chave}: {planilha.name} -> {destino.name} | produtos: {len(dados['produtos'])} | movimentos: {len(dados['movimentos'])}")
+            saidas[chave] = dados
+    salvar_json("almoxarifado.json", saidas.get("canteiro1", {"produtos": [], "movimentos": []}))
+    print("Concluido.")
+
 
 if __name__ == "__main__":
     main()
