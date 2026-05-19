@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-19 10:06:49",
+  "atualizado_em": "2026-05-19 10:51:03",
   "totais": {
     "base_planejado": 40615.99,
     "base_executado": 15570.35,
@@ -8,41 +8,41 @@
     "saldo_total": 25045.64
   },
   "pds": {
-    "total": 2469,
+    "total": 2446,
     "ultima_data": "2026-05-19",
-    "hoje": 46,
+    "hoje": 23,
     "por_obra_ultima_data": [
       {
         "obra": "CT João Canzi",
-        "atividades": 10
+        "atividades": 5
       },
       {
         "obra": "RCE São Lucas",
-        "atividades": 10
+        "atividades": 5
       },
       {
         "obra": "CTS Lourdes Complementar",
-        "atividades": 6
+        "atividades": 3
       },
       {
         "obra": "CTS Mar De Coral",
-        "atividades": 6
+        "atividades": 3
       },
       {
         "obra": "Guindauto",
-        "atividades": 4
+        "atividades": 2
       },
       {
         "obra": "João Canzi",
-        "atividades": 4
+        "atividades": 2
       },
       {
         "obra": "Lourdes",
-        "atividades": 4
+        "atividades": 2
       },
       {
         "obra": "CTS Barão Luiz De Arariba",
-        "atividades": 2
+        "atividades": 1
       }
     ]
   },
@@ -725,19 +725,19 @@
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 83.4,
-      "modificado": "2026-05-19 07:45:58"
+      "modificado": "2026-05-19 10:38:09"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 355.1,
-      "modificado": "2026-05-19 10:01:43"
+      "tamanho_kb": 353.1,
+      "modificado": "2026-05-19 10:38:09"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 427.4,
-      "modificado": "2026-05-19 10:01:49"
+      "tamanho_kb": 423.4,
+      "modificado": "2026-05-19 10:45:13"
     }
   ]
 }

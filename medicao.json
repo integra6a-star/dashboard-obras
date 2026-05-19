@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-05-19T10:01:51.440760-03:00",
+  "atualizado_em": "2026-05-19T10:49:00.608683-03:00",
   "fonte_excel": "medicao.xlsx",
   "contrato_total": 263030690.0,
   "adiantamento_total": 52606138.0,
   "medicoes": {
     "total_contrato": 263030690.0,
-    "total_medido": 140117984.95,
-    "saldo_contratual": 122912705.05000001,
-    "pct_faturado": 53.270584109405625,
+    "total_medido": 172207729.09,
+    "saldo_contratual": 90822960.91,
+    "pct_faturado": 65.47058409419829,
     "serie": [
       {
         "ym": "2025-06",
@@ -78,14 +78,21 @@
         "valor": 7101828.62,
         "acumulado": 140117984.95000002,
         "saldo": 122912705.04999998
+      },
+      {
+        "ym": "2026-04",
+        "data": "abril de 2026",
+        "valor": 32089744.14,
+        "acumulado": 172207729.09000003,
+        "saldo": 90822960.90999997
       }
     ]
   },
   "amortizacao": {
     "adiantamento": 52606138.0,
-    "total_amortizado": 20779424.5068,
-    "saldo_amortizacao": 31826713.4932,
-    "pct_amortizado": 39.49999999391706,
+    "total_amortizado": 24724884.8568,
+    "saldo_amortizacao": 27881253.1432,
+    "pct_amortizado": 46.999999993917065,
     "serie": [
       {
         "ym": "2025-06",
@@ -156,6 +163,13 @@
         "valor": 789092.07,
         "acumulado": 20779424.5068,
         "saldo": 31826713.4932
+      },
+      {
+        "ym": "2026-04",
+        "data": "abril de 2026",
+        "valor": 3945460.35,
+        "acumulado": 24724884.8568,
+        "saldo": 27881253.1432
       }
     ]
   }
