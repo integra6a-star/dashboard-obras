@@ -5468,6 +5468,34 @@
       "cota_fundo": 758.736,
       "profundidade_m": 2.01,
       "observacao": "Atualizado via shape em 04/05/2026; CADASTRO PV - CT ÁGUA VERMELHA - MD"
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-09",
+      "nome_ponto": "PV-09",
+      "coord_n": 7396914.814,
+      "coord_e": 358382.74,
+      "latitude": -23.5318788,
+      "longitude": -46.3872832,
+      "cota_tampa": 768.775,
+      "cota_fundo": 766.275,
+      "profundidade_m": 2.5,
+      "observacao": "Plano de furo FL-03/FL-04 versao 01, 11.MAI.2026"
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-10",
+      "nome_ponto": "PV-10",
+      "coord_n": 7396932.164,
+      "coord_e": 358437.094,
+      "latitude": -23.5317269,
+      "longitude": -46.3867492,
+      "cota_tampa": 770.008,
+      "cota_fundo": 767.008,
+      "profundidade_m": 3,
+      "observacao": "Plano de furo FL-04 versao 01, 11.MAI.2026"
     }
   ],
   "trechos": [
@@ -13470,6 +13498,46 @@
       "lon_inicio": -46.4163427,
       "lat_fim": -23.5167619,
       "lon_fim": -46.416679
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-003",
+      "trecho_nome": "PV-08 - PV-09",
+      "pv_inicio": "PV-08",
+      "pv_fim": "PV-09",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 52.4,
+      "prof_inicial_m": 2.5,
+      "prof_final_m": 2.5,
+      "prof_max_m": 2.81,
+      "status": "em planejamento",
+      "observacao": "Plano de furo FL-03 versao 01, 11.MAI.2026; GALPAO INTERNO RUA GENI GOMES; taxa 0,0311.",
+      "lat_inicio": -23.5320183,
+      "lon_inicio": -46.3877736,
+      "lat_fim": -23.5318788,
+      "lon_fim": -46.3872832
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-004",
+      "trecho_nome": "PV-09 - PV-10",
+      "pv_inicio": "PV-09",
+      "pv_fim": "PV-10",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 56.92,
+      "prof_inicial_m": 2.5,
+      "prof_final_m": 3,
+      "prof_max_m": 3,
+      "status": "em planejamento",
+      "observacao": "Plano de furo FL-04 versao 01, 11.MAI.2026; GALPAO INTERNO RUA GENI GOMES; taxa 0,0129.",
+      "lat_inicio": -23.5318788,
+      "lon_inicio": -46.3872832,
+      "lat_fim": -23.5317269,
+      "lon_fim": -46.3867492
     }
   ]
 }

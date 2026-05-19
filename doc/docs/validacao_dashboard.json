@@ -1,61 +1,53 @@
 {
-  "atualizado_em": "2026-05-14 14:52:08",
+  "atualizado_em": "2026-05-19 10:06:49",
   "totais": {
     "base_planejado": 40615.99,
-    "base_executado": 15461.05,
-    "mapa_executado": 15640.49,
-    "diferenca_base_mapa": -179.44,
-    "saldo_total": 25154.94
+    "base_executado": 15570.35,
+    "mapa_executado": 15749.81,
+    "diferenca_base_mapa": -179.46,
+    "saldo_total": 25045.64
   },
   "pds": {
-    "total": 2377,
-    "ultima_data": "2026-05-14",
-    "hoje": 23,
+    "total": 2469,
+    "ultima_data": "2026-05-19",
+    "hoje": 46,
     "por_obra_ultima_data": [
       {
         "obra": "CT João Canzi",
-        "atividades": 5
+        "atividades": 10
       },
       {
         "obra": "RCE São Lucas",
-        "atividades": 5
+        "atividades": 10
       },
       {
         "obra": "CTS Lourdes Complementar",
-        "atividades": 4
+        "atividades": 6
+      },
+      {
+        "obra": "CTS Mar De Coral",
+        "atividades": 6
       },
       {
         "obra": "Guindauto",
-        "atividades": 2
+        "atividades": 4
       },
       {
         "obra": "João Canzi",
-        "atividades": 2
-      },
-      {
-        "obra": "Barão De Arariba",
-        "atividades": 1
-      },
-      {
-        "obra": "CTS Barão Luiz De Arariba",
-        "atividades": 1
-      },
-      {
-        "obra": "CTS Jaragua",
-        "atividades": 1
-      },
-      {
-        "obra": "CTS Luis Botelho Mourão",
-        "atividades": 1
+        "atividades": 4
       },
       {
         "obra": "Lourdes",
-        "atividades": 1
+        "atividades": 4
+      },
+      {
+        "obra": "CTS Barão Luiz De Arariba",
+        "atividades": 2
       }
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: -179.44 m",
+    "Diferença total entre Base Dash e mapa: -179.46 m",
     "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -272,16 +264,6 @@
       "linhas_mapa": 61
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 158.72,
-      "executado_mapa": 158.72,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 699.78,
-      "linhas_base": 2,
-      "linhas_mapa": 2
-    },
-    {
       "obra": "RCE TRAV. DOS JESUITAS",
       "planejado": 619.5,
       "executado_base": 0.0,
@@ -290,6 +272,16 @@
       "saldo": 619.5,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 268.02,
+      "executado_mapa": 268.04,
+      "diferenca_base_mapa": -0.02,
+      "saldo": 590.48,
+      "linhas_base": 2,
+      "linhas_mapa": 4
     },
     {
       "obra": "RCE AV. MARECHAL TITO",
@@ -727,25 +719,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.2,
-      "modificado": "2026-05-14 14:38:47"
+      "modificado": "2026-05-18 13:38:27"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 82.9,
-      "modificado": "2026-05-14 14:45:57"
+      "tamanho_kb": 83.4,
+      "modificado": "2026-05-19 07:45:58"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 346.8,
-      "modificado": "2026-05-14 14:49:59"
+      "tamanho_kb": 355.1,
+      "modificado": "2026-05-19 10:01:43"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 411.2,
-      "modificado": "2026-05-14 14:50:01"
+      "tamanho_kb": 427.4,
+      "modificado": "2026-05-19 10:01:49"
     }
   ]
 }
