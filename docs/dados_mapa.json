@@ -146,6 +146,13 @@
       "tipo": "CTS",
       "subtitulo": "Base criada a partir dos PDFs: linhas retas entre PVs/PIs com coordenadas UTM convertidas para latitude/longitude.",
       "ativa": "SIM"
+    },
+    {
+      "obra_id": "cts_lourdes_complementar",
+      "nome_obra": "CTS Lourdes Complementar",
+      "tipo": "CTS",
+      "subtitulo": "Base criada a partir do plano de furo CT LOURDES FL-01 PV-01 ao PV-02, 14.MAI.2026.",
+      "ativa": "SIM"
     }
   ],
   "pontos": [
@@ -5496,6 +5503,48 @@
       "cota_fundo": 767.008,
       "profundidade_m": 3,
       "observacao": "Plano de furo FL-04 versao 01, 11.MAI.2026"
+    },
+    {
+      "obra_id": "cts_lourdes_complementar",
+      "tipo_ponto": "PV",
+      "ponto_id": "LOUR-PV-01",
+      "nome_ponto": "PV-01",
+      "coord_n": 7397151.558,
+      "coord_e": 357586.89,
+      "latitude": -23.5296713,
+      "longitude": -46.395055,
+      "cota_tampa": 754.719,
+      "cota_fundo": 751.219,
+      "profundidade_m": 3.5,
+      "observacao": "Plano de furo FL-01 versao 01, 14.MAI.2026; ALARGADOR 700mm."
+    },
+    {
+      "obra_id": "cts_lourdes_complementar",
+      "tipo_ponto": "PV",
+      "ponto_id": "LOUR-PV-02",
+      "nome_ponto": "PV-02",
+      "coord_n": 7397168.003,
+      "coord_e": 357669.586,
+      "latitude": -23.52953,
+      "longitude": -46.3942436,
+      "cota_tampa": 756.086,
+      "cota_fundo": 752.086,
+      "profundidade_m": 4,
+      "observacao": "Plano de furo FL-01 versao 01, 14.MAI.2026; ALARGADOR 700mm."
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-02",
+      "nome_ponto": "PV-02",
+      "coord_n": 7396941.756,
+      "coord_e": 358324.032,
+      "latitude": -23.5316304,
+      "longitude": -46.3878556,
+      "cota_tampa": 767.318,
+      "cota_fundo": 763.468,
+      "profundidade_m": 3.85,
+      "observacao": "Plano de furo FL-06 versao 01, 15.MAI.2026; RUA ELVIRA DE ARAUJO."
     }
   ],
   "trechos": [
@@ -13538,6 +13587,46 @@
       "lon_inicio": -46.3872832,
       "lat_fim": -23.5317269,
       "lon_fim": -46.3867492
+    },
+    {
+      "obra_id": "cts_lourdes_complementar",
+      "trecho_id": "LOUR-001",
+      "trecho_nome": "PV-01 - PV-02",
+      "pv_inicio": "PV-01",
+      "pv_fim": "PV-02",
+      "material": "PEAD LISO",
+      "dn": 450,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 84.32,
+      "prof_inicial_m": 3.5,
+      "prof_final_m": 4,
+      "prof_max_m": 4,
+      "status": "em planejamento",
+      "observacao": "Plano de furo FL-01 versao 01, 14.MAI.2026; RUA GONCALVES CASTELAO; ALARGADOR 700mm; taxa 0,0103.",
+      "lat_inicio": -23.5296713,
+      "lon_inicio": -46.395055,
+      "lat_fim": -23.52953,
+      "lon_fim": -46.3942436
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-005",
+      "trecho_nome": "PV-08 - PV-02",
+      "pv_inicio": "PV-08",
+      "pv_fim": "PV-02",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 43.66,
+      "prof_inicial_m": 4.15,
+      "prof_final_m": 3.85,
+      "prof_max_m": 4.15,
+      "status": "em planejamento",
+      "observacao": "Plano de furo FL-06 versao 01, 15.MAI.2026; RUA ELVIRA DE ARAUJO; taxa 0,0108.",
+      "lat_inicio": -23.5320183,
+      "lon_inicio": -46.3877736,
+      "lat_fim": -23.5316304,
+      "lon_fim": -46.3878556
     }
   ]
 }
