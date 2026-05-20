@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-05-20 07:31:49",
+  "atualizado_em": "2026-05-20 07:38:39",
   "totais": {
     "base_planejado": 40615.99,
-    "base_executado": 15570.35,
+    "base_executado": 15698.33,
     "mapa_executado": 15877.79,
-    "diferenca_base_mapa": -307.44,
-    "saldo_total": 25045.64
+    "diferenca_base_mapa": -179.46,
+    "saldo_total": 24917.66
   },
   "pds": {
     "total": 2469,
@@ -47,7 +47,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: -307.44 m",
+    "Diferença total entre Base Dash e mapa: -179.46 m",
     "9 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -70,6 +70,16 @@
       "saldo": 223.29,
       "linhas_base": 2,
       "linhas_mapa": 4
+    },
+    {
+      "obra": "CTS Jardim Lourdes",
+      "planejado": 1103.2,
+      "executado_base": 1090.97,
+      "executado_mapa": 1006.65,
+      "diferenca_base_mapa": 84.32,
+      "saldo": 12.23,
+      "linhas_base": 8,
+      "linhas_mapa": 21
     },
     {
       "obra": "CTS Lourdes Complementar",
@@ -100,16 +110,6 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 268.02,
-      "executado_mapa": 311.7,
-      "diferenca_base_mapa": -43.68,
-      "saldo": 590.48,
-      "linhas_base": 2,
-      "linhas_mapa": 5
     },
     {
       "obra": "CTS Domingos João de Carvalho",
@@ -294,16 +294,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 268.02,
-      "executado_mapa": 311.7,
-      "diferenca_base_mapa": -43.68,
-      "saldo": 590.48,
-      "linhas_base": 2,
-      "linhas_mapa": 5
-    },
-    {
       "obra": "RCE AV. MARECHAL TITO",
       "planejado": 589.5,
       "executado_base": 0.0,
@@ -312,6 +302,16 @@
       "saldo": 589.5,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 311.68,
+      "executado_mapa": 311.7,
+      "diferenca_base_mapa": -0.02,
+      "saldo": 546.82,
+      "linhas_base": 2,
+      "linhas_mapa": 5
     },
     {
       "obra": "CTS Água Vermelha - MD",
@@ -604,16 +604,6 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "CTS Jardim Lourdes",
-      "planejado": 1103.2,
-      "executado_base": 1006.65,
-      "executado_mapa": 1006.65,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 96.55,
-      "linhas_base": 8,
-      "linhas_mapa": 21
-    },
-    {
       "obra": "RCE Pacheco Jordão",
       "planejado": 95.0,
       "executado_base": 0.0,
@@ -704,6 +694,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "CTS Jardim Lourdes",
+      "planejado": 1103.2,
+      "executado_base": 1090.97,
+      "executado_mapa": 1006.65,
+      "diferenca_base_mapa": 84.32,
+      "saldo": 12.23,
+      "linhas_base": 8,
+      "linhas_mapa": 21
+    },
+    {
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
       "executado_base": 0.0,
@@ -749,7 +749,7 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.2,
-      "modificado": "2026-05-18 13:38:27"
+      "modificado": "2026-05-20 07:35:00"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -767,7 +767,7 @@
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 427.3,
-      "modificado": "2026-05-20 07:21:34"
+      "modificado": "2026-05-20 07:36:16"
     }
   ]
 }
