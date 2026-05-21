@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ITI-15 - Teste PVs</title>
+    <link rel="stylesheet" href="iti15.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacao">
+        <div class="brand">
+          <span class="brand-mark">IT</span>
+          <div>
+            <strong>Obras</strong>
+            <small>Acompanhamento</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#">Dashboard</a>
+          <a href="#">Mapa geral</a>
+          <a class="active" href="#">ITI-15</a>
+          <a href="#">Relatorios</a>
+        </nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Versao de teste</p>
+            <h1>ITI-15 - Perfil de PVs</h1>
+          </div>
+          <div class="summary">
+            <div>
+              <span id="donePvs">0</span>
+              <small>PVs concluidos</small>
+            </div>
+            <div>
+              <span id="totalDepth">0 m</span>
+              <small>Profundidade total</small>
+            </div>
+            <div>
+              <span id="overallProgress">0%</span>
+              <small>Avanco geral</small>
+            </div>
+          </div>
+        </header>
+
+        <section class="control-band" aria-label="Controles de teste">
+          <div>
+            <h2>Simulador de escavacao</h2>
+            <p>Altere os metros escavados para ver cada PV carregando conforme a profundidade executada.</p>
+          </div>
+          <button id="advanceDay" type="button">Somar producao do dia</button>
+        </section>
+
+        <section class="profile-stage" aria-label="Perfil longitudinal dos PVs">
+          <div class="ruler" aria-hidden="true">
+            <span>0 m</span>
+            <span>1 m</span>
+            <span>2 m</span>
+            <span>3 m</span>
+            <span>4 m</span>
+            <span>5 m</span>
+            <span>6 m</span>
+          </div>
+          <div id="pvProfile" class="pv-profile"></div>
+        </section>
+
+        <section class="details-grid">
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>PV selecionado</h2>
+              <span id="selectedStatus" class="status">Em andamento</span>
+            </div>
+            <div id="selectedDetails" class="selected-details"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>Extensao entre PVs</h2>
+              <span id="networkPercent" class="status green">0%</span>
+            </div>
+            <div id="networkBars" class="network-bars"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="iti15.js"></script>
+  </body>
+</html>
