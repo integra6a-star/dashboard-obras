@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-20T07:36:11.158210-03:00",
+  "atualizado_em": "2026-05-21T07:16:28.433086-03:00",
   "fonte": "EAP_PRODUCAO.xlsx",
   "aba": "EAP_PRODUCAO",
   "meses": [
@@ -19,8 +19,8 @@
   "cards": {
     "2025": {
       "eap": 11889.13,
-      "produzido": 8729.4,
-      "saldo": -3159.73
+      "produzido": 8738.07,
+      "saldo": -3151.06
     },
     "2026": {
       "eap": 28768.36,
@@ -55,12 +55,12 @@
       "ano": 2025,
       "mes": "Mai",
       "eap": 905.99,
-      "produzido": 389.15,
+      "produzido": 397.82,
       "economias_eap": 0.0,
       "economias_recebidas": 0.0,
-      "saldo_mes": -516.84,
+      "saldo_mes": -508.17,
       "saldo_economias": 0.0,
-      "saldo_acum": -1352.19
+      "saldo_acum": -1343.52
     },
     {
       "ano": 2025,
@@ -71,7 +71,7 @@
       "economias_recebidas": 2611.0,
       "saldo_mes": -724.61,
       "saldo_economias": 2420.0,
-      "saldo_acum": -2076.8
+      "saldo_acum": -2068.13
     },
     {
       "ano": 2025,
@@ -82,7 +82,7 @@
       "economias_recebidas": 584.0,
       "saldo_mes": 473.395,
       "saldo_economias": 95.0,
-      "saldo_acum": -1603.405
+      "saldo_acum": -1594.735
     },
     {
       "ano": 2025,
@@ -93,7 +93,7 @@
       "economias_recebidas": 3598.0,
       "saldo_mes": 306.595,
       "saldo_economias": 1963.0,
-      "saldo_acum": -1296.81
+      "saldo_acum": -1288.14
     },
     {
       "ano": 2025,
@@ -104,7 +104,7 @@
       "economias_recebidas": 3229.0,
       "saldo_mes": -544.96,
       "saldo_economias": 2119.0,
-      "saldo_acum": -1841.77
+      "saldo_acum": -1833.1
     },
     {
       "ano": 2025,
@@ -115,7 +115,7 @@
       "economias_recebidas": 1433.0,
       "saldo_mes": -407.4,
       "saldo_economias": 670.0,
-      "saldo_acum": -2249.17
+      "saldo_acum": -2240.5
     },
     {
       "ano": 2025,
@@ -126,7 +126,7 @@
       "economias_recebidas": 2359.0,
       "saldo_mes": -824.275,
       "saldo_economias": -2134.0,
-      "saldo_acum": -3073.445
+      "saldo_acum": -3064.775
     },
     {
       "ano": 2025,
@@ -137,7 +137,7 @@
       "economias_recebidas": 3356.0,
       "saldo_mes": -86.285,
       "saldo_economias": -896.0,
-      "saldo_acum": -3159.73
+      "saldo_acum": -3151.06
     },
     {
       "ano": 2026,

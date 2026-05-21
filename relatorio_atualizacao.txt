@@ -1,27 +1,26 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-05-20 07:38:39
+Atualizado em: 2026-05-21 07:29:38
 
-Planejado Base Dash: 40,615.99 m
-Executado Base Dash: 15,698.33 m
+Planejado Base Dash: 39,688.39 m
+Executado Base Dash: 15,707.01 m
 Executado Mapa: 15,877.79 m
-Diferença Base - Mapa: -179.46 m
-Saldo total: 24,917.66 m
+Diferença Base - Mapa: -170.79 m
+Saldo total: 23,981.38 m
 
-PDS total: 2469 registros
+PDS total: 2492 registros
 PDS hoje: 23 registros
-Última data PDS: 2026-05-20
+Última data PDS: 2026-05-21
 
 Alertas:
-- Diferença total entre Base Dash e mapa: -179.46 m
-- 9 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença total entre Base Dash e mapa: -170.79 m
+- 8 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
 - CTS Mar de Coral: Base 1,471.49 m | Mapa 1,746.61 m | Dif. -275.12 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
-- CTS Jardim Lourdes: Base 1,090.97 m | Mapa 1,006.65 m | Dif. 84.32 m
+- CTS JD. LOURDES COMPLEMENTAR: Base 84.32 m | Mapa 0.00 m | Dif. 84.32 m
 - CTS Lourdes Complementar: Base 0.00 m | Mapa 84.32 m | Dif. -84.32 m
 - RCE São Lucas: Base 81.00 m | Mapa 0.00 m | Dif. 81.00 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
-- CTS Domingos João de Carvalho: Base 515.25 m | Mapa 523.92 m | Dif. -8.67 m
 - CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
 - CTS Conceição: Base 765.89 m | Mapa 767.01 m | Dif. -1.12 m
