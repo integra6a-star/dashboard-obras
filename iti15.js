@@ -1,29 +1,26 @@
 const pvs = [
-  { id: "PV-01", total: 3.2, excavated: 3.2, team: "Equipe A", start: "13/05/2026" },
-  { id: "PV-02", total: 3.8, excavated: 2.7, team: "Equipe A", start: "14/05/2026" },
-  { id: "PV-03", total: 4.6, excavated: 1.6, team: "Equipe B", start: "15/05/2026" },
-  { id: "PV-04", total: 2.9, excavated: 2.9, team: "Equipe B", start: "15/05/2026" },
-  { id: "PV-05", total: 5.4, excavated: 2.1, team: "Equipe C", start: "16/05/2026" },
-  { id: "PV-06", total: 4.2, excavated: 0.8, team: "Equipe C", start: "18/05/2026" },
-  { id: "PV-07", total: 3.6, excavated: 0, team: "Aguardando", start: "-" },
-  { id: "PV-08", total: 4.9, excavated: 1.3, team: "Equipe D", start: "19/05/2026" },
-  { id: "PV-09", total: 3.4, excavated: 0, team: "Aguardando", start: "-" },
-  { id: "PV-10", total: 5.8, excavated: 3.4, team: "Equipe D", start: "17/05/2026" },
-  { id: "PV-11", total: 2.7, excavated: 0, team: "Aguardando", start: "-" },
-  { id: "PV-12", total: 4.1, excavated: 0.6, team: "Equipe E", start: "20/05/2026" },
+  { id: "PV-1", total: 5.68, excavated: 0, team: "A definir", start: "-", station: "0+0,00" },
+  { id: "PV-2", total: 5.6, excavated: 0, team: "A definir", start: "-", station: "0+4,00" },
+  { id: "PV-3", total: 5.64, excavated: 0, team: "A definir", start: "-", station: "5+9,50" },
+  { id: "PV-4", total: 5.78, excavated: 0, team: "A definir", start: "-", station: "6+2,50" },
+  { id: "PV-5", total: 8.4, excavated: 0, team: "A definir", start: "-", station: "13+2,50" },
+  { id: "PV-6", total: 6.87, excavated: 0, team: "A definir", start: "-", station: "17+19,00" },
+  { id: "PV-7", total: 4.87, excavated: 0, team: "A definir", start: "-", station: "22+15,50" },
+  { id: "PV-8", total: 4.65, excavated: 0, team: "A definir", start: "-", station: "23+4,50" },
 ];
 
 const networks = [
-  { from: "PV-01", to: "PV-02", total: 38, done: 38 },
-  { from: "PV-02", to: "PV-03", total: 44, done: 29 },
-  { from: "PV-03", to: "PV-04", total: 27, done: 12 },
-  { from: "PV-04", to: "PV-05", total: 52, done: 21 },
-  { from: "PV-05", to: "PV-06", total: 35, done: 8 },
-  { from: "PV-06", to: "PV-07", total: 41, done: 0 },
+  { from: "PV-1", to: "PV-2", total: 4, done: 0 },
+  { from: "PV-2", to: "PV-3", total: 105.5, done: 0 },
+  { from: "PV-3", to: "PV-4", total: 13, done: 0 },
+  { from: "PV-4", to: "PV-5", total: 140, done: 0 },
+  { from: "PV-5", to: "PV-6", total: 96.5, done: 0 },
+  { from: "PV-6", to: "PV-7", total: 96.5, done: 0 },
+  { from: "PV-7", to: "PV-8", total: 9, done: 0 },
 ];
 
-const maxDepth = 6;
-let selectedPvId = "PV-05";
+const maxDepth = 9;
+let selectedPvId = "PV-5";
 
 const pvProfile = document.querySelector("#pvProfile");
 const selectedDetails = document.querySelector("#selectedDetails");
@@ -123,6 +120,7 @@ function renderSelected() {
     <div class="metric"><span>Escavado</span><strong>${pv.excavated.toFixed(2)} m</strong></div>
     <div class="metric"><span>Falta escavar</span><strong>${remaining.toFixed(2)} m</strong></div>
     <div class="metric"><span>Avanco</span><strong>${progress}%</strong></div>
+    <div class="metric"><span>Estaca</span><strong>${pv.station}</strong></div>
     <div class="metric"><span>Equipe</span><strong>${pv.team}</strong></div>
     <div class="metric"><span>Inicio</span><strong>${pv.start}</strong></div>
   `;
