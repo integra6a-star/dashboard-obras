@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist Ambiental</title>
+  <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./icon.png" sizes="1024x1024" type="image/png">
+  <link rel="shortcut icon" href="./icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+<style>
+    .formulario{
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      max-width:950px;
+      margin:auto;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .grupo{
+      margin-bottom:28px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:10px;
+      font-weight:bold;
+      color:#1e293b;
+    }
+
+    input, select{
+      width:100%;
+      padding:14px;
+      border:1px solid #cbd5e1;
+      border-radius:10px;
+      font-size:15px;
+    }
+
+    .linha{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .botao{
+      background:#2563eb;
+      color:white;
+      border:none;
+      padding:15px 30px;
+      border-radius:10px;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    @media(max-width:760px){
+      .formulario{
+        padding:18px;
+        border-radius:14px;
+      }
+
+      .linha{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      input, select{
+        min-height:46px;
+        font-size:16px;
+      }
+
+      .botao{
+        width:100%;
+        min-height:48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page-brand">
+  <a href="./index.html" aria-label="Voltar ao app">
+    <img src="./icon-180.png" alt="Integra">
+  </a>
+</div>
+<div class="formulario">
+
+    <a href="meioambiente.html">← Voltar</a>
+
+    <h1 class="titulo">Checklist Ambiental</h1>
+    <p class="subtitulo">CHECK LIST - Frente de Serviço</p>
+
+    <div class="linha">
+      <div class="grupo">
+        <label>1. Data *</label>
+        <input type="date" id="data">
+      </div>
+
+      <div class="grupo">
+        <label>Líder *</label>
+        <input type="text" id="lider">
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="grupo">
+        <label>2. Equipe *</label>
+        <input type="text" id="equipe">
+      </div>
+
+      <div class="grupo">
+        <label>3. Trecho *</label>
+        <input type="text" id="trecho">
+      </div>
+    </div>
+
+    <div id="perguntas"></div>
+
+    <button class="botao" onclick="salvarChecklist()">Salvar Checklist</button>
+
+  </div>
+
+  <script>
+    const perguntas = [
+      ["banheiro", "4. Banheiro", ["SIM", "NÃO", "Outra"]],
+      ["numero_banheiro", "5. Número do Banheiro", "texto"],
+      ["assinatura_banheiro", "6. Assinatura do líder na ficha do banheiro", ["SIM", "NÃO", "Outra"]],
+      ["coleta_seletiva", "7. Coleta Seletiva", ["SIM", "NÃO", "Outra"]],
+      ["separacao_residuos", "8. Separação adequada dos resíduos", ["SIM", "NÃO", "Outra"]],
+      ["tambor_contaminados", "9. Tambor de contaminados", ["SIM", "NÃO", "Outra"]],
+      ["galao_agua_residual", "10. Galão de água residual", ["SIM", "NÃO", "Outra"]],
+      ["galao_lavar_mao", "11. Galão de água para lavar a mão", ["SIM", "NÃO", "Outra"]],
+      ["identificacao_galoes", "12. Falta de identificação nos galões", ["ÁGUA POTÁVEL", "ÁGUA NÃO POTÁVEL", "ÁGUA RESIDUAL", "TODAS ESTÃO IDENTIFICADAS", "Outra"]],
+      ["lavatorio", "13. Lavatório", ["BOM", "PRECISANDO DE MANUTENÇÃO", "RUIM", "NÃO TEM", "Outra"]],
+      ["masseira", "14. Masseira", ["SIM", "NÃO", "Outra"]],
+      ["galao_combustivel", "15. Galão de combustível", ["SIM", "NÃO", "Outra"]],
+      ["bandeja_combustivel", "16. Bandeja de contenção - galão de combustível", ["BOM", "QUEBRADA", "NÃO TEM", "Outra"]],
+      ["bandeja_gerador", "17. Bandeja de contenção para gerador", ["BOM", "NÃO TEM", "QUEBRADA", "Outra"]],
+      ["bandeja_bomba", "18. Bandeja de contenção - bomba", ["BOM", "NÃO TEM", "QUEBRADA", "Outra"]],
+      ["kit_mitigacao", "19. Kit Mitigação", ["BOM", "NÃO TEM", "FALTANDO ITENS", "Outra"]],
+      ["itens_kit", "20. Itens Kit Mitigação", ["LUVA", "ÓCULOS", "MÁSCARA", "CORDÃO ABSORVENTE", "MANTA ABSORVENTE", "TRAVESSEIRO ABSORVENTE", "PÁ PLÁSTICA", "SACO PARA RESÍDUOS CONTAMINADOS", "TURFA", "Outra"]],
+      ["caminhao_lona", "21. Caminhão com lona", ["SIM", "NÃO", "Outra"]],
+      ["documentos_fds", "22. Documentos Ambientais - FDS", ["FDS GASOLINA", "FDS CIMENTO", "FDS SABÃO", "FDS PRODUTO HDD - MKGELAL 4500", "FDS PRODUTO HDD - MK GOMA MG 25", "FDS PRODUTO HDD - MK DL 20", "Outra"]],
+      ["documentos_planos", "23. Documentos Ambientais - Planos", ["CARÔMETRO ATUALIZADO", "PLANO DE ABASTECIMENTO DE VEÍCULOS", "PGRS", "PGR", "PAE", "MANUAL KIT MITIGAÇÃO", "Outra"]],
+      ["documentos_licencas", "24. Documentos Ambientais - Licenças (falta alguma?)", ["DISPENSA DE LICENÇA - CETESB", "LICENÇA ITI15", "LICENÇA GERAL", "TEM TODAS", "Outra"]],
+      ["vegetacao", "25. Vegetação - Precisa de isolamento?", ["SIM", "NÃO", "JÁ ESTÁ ISOLADA", "Outra"]],
+      ["bl_tela", "26. BL - Tem alguma BL que precisa de tela?", ["SIM", "NÃO", "Outra"]]
+    ];
+
+    const area = document.getElementById("perguntas");
+
+    perguntas.forEach((p) => {
+      const id = p[0];
+      const titulo = p[1];
+      const opcoes = p[2];
+
+      let html = `<div class="grupo"><label>${titulo}</label>`;
+
+      if (opcoes === "texto") {
+        html += `<input type="text" id="${id}" placeholder="Insira sua resposta">`;
+      } else {
+        html += `<select id="${id}">`;
+        opcoes.forEach(opcao => {
+          html += `<option value="${opcao}">${opcao}</option>`;
+        });
+        html += `</select>`;
+      }
+
+      html += `</div>`;
+      area.innerHTML += html;
+    });
+
+    function resultado(valor){
+      const naoConforme = [
+        "NÃO",
+        "RUIM",
+        "QUEBRADA",
+        "NÃO TEM",
+        "FALTANDO ITENS",
+        "PRECISANDO DE MANUTENÇÃO"
+      ];
+
+      return naoConforme.includes(valor) ? "Não Conforme" : "Conforme";
+    }
+
+    function salvarChecklist(){
+      const registros = JSON.parse(localStorage.getItem("registrosAmbientais")) || [];
+
+      perguntas.forEach((p) => {
+        const id = p[0];
+        const titulo = p[1].replace(/^[0-9]+\. /, "").toUpperCase();
+        const valor = document.getElementById(id).value;
+
+        registros.push({
+          data: document.getElementById("data").value,
+          lider: document.getElementById("lider").value,
+          equipe: document.getElementById("equipe").value,
+          trecho: document.getElementById("trecho").value,
+          item: titulo,
+          resultado: resultado(valor),
+          observacao: valor
+        });
+      });
+
+      localStorage.setItem("registrosAmbientais", JSON.stringify(registros));
+
+      alert("Checklist salvo com sucesso!");
+      window.location.href = "meioambiente.html";
+    }
+  </script>
+
+</body>
+</html>

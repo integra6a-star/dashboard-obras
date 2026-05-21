@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Segurança - QSMS</title>
+
+  <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./icon.png" sizes="1024x1024" type="image/png">
+  <link rel="shortcut icon" href="./icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+<style>
+
+    .topo{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:30px;
+    }
+
+    .voltar{
+      text-decoration:none;
+      color:#2563eb;
+      font-weight:bold;
+    }
+
+    .status{
+      background:#dcfce7;
+      color:#166534;
+      padding:10px 20px;
+      border-radius:10px;
+      font-weight:bold;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .indicador{
+      background:white;
+      border-radius:15px;
+      padding:25px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .indicador h3{
+      color:#64748b;
+      margin-bottom:15px;
+    }
+
+    .numero{
+      font-size:42px;
+      font-weight:bold;
+      color:#0f172a;
+    }
+
+    .positivo{
+      color:#16a34a;
+      margin-top:10px;
+    }
+
+    .alerta{
+      color:#dc2626;
+      margin-top:10px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+<div class="page-brand">
+  <a href="./index.html" aria-label="Voltar ao app">
+    <img src="./icon-180.png" alt="Integra">
+  </a>
+</div>
+<div class="topo">
+
+    <div>
+
+      <a href="qsms.html" class="voltar">
+        ← Voltar
+      </a>
+
+      <h1 class="titulo">Segurança</h1>
+
+      <p class="subtitulo">
+        Indicadores de segurança da obra
+      </p>
+
+    </div>
+
+    <div class="status">
+      98% Seguro
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="indicador">
+
+      <h3>DDS Realizados</h3>
+
+      <div class="numero">12</div>
+
+      <div class="positivo">
+        ▲ +15% este mês
+      </div>
+
+    </div>
+
+    <div class="indicador">
+
+      <h3>Incidentes</h3>
+
+      <div class="numero">3</div>
+
+      <div class="alerta">
+        ▼ Atenção necessária
+      </div>
+
+    </div>
+
+    <div class="indicador">
+
+      <h3>APR Emitidas</h3>
+
+      <div class="numero">8</div>
+
+      <div class="positivo">
+        ▲ Processos atualizados
+      </div>
+
+    </div>
+
+    <div class="indicador">
+
+      <h3>Inspeções</h3>
+
+      <div class="numero">24</div>
+
+      <div class="positivo">
+        ▲ Conformes
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

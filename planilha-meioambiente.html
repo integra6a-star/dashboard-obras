@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planilha Meio Ambiente</title>
+  <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./icon.png" sizes="1024x1024" type="image/png">
+  <link rel="shortcut icon" href="./icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+<style>
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+      margin-top:25px;
+    }
+
+    th{
+      background:#1f4e79;
+      color:white;
+      padding:10px;
+      border:1px solid #ccc;
+      text-align:left;
+    }
+
+    td{
+      padding:8px;
+      border:1px solid #ccc;
+    }
+
+    tr:nth-child(even){
+      background:#d9eaf7;
+    }
+
+    .conforme{
+      background:#c6efce;
+      color:#006100;
+      font-weight:bold;
+    }
+
+    .nao-conforme{
+      background:#ffc7ce;
+      color:#9c0006;
+      font-weight:bold;
+    }
+
+    .botoes{
+      margin-top:20px;
+      display:flex;
+      gap:15px;
+    }
+
+    button{
+      padding:12px 20px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .azul{
+      background:#2563eb;
+      color:white;
+    }
+
+    .vermelho{
+      background:#dc2626;
+      color:white;
+    }
+
+    @media(max-width:760px){
+      .botoes{
+        flex-direction:column;
+      }
+
+      button{
+        width:100%;
+        min-height:48px;
+      }
+
+      table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+      }
+
+      th, td{
+        font-size:12px;
+        padding:9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page-brand">
+  <a href="./index.html" aria-label="Voltar ao app">
+    <img src="./icon-180.png" alt="Integra">
+  </a>
+</div>
+<a href="meioambiente.html">← Voltar</a>
+
+  <h1 class="titulo">Planilha Meio Ambiente</h1>
+
+  <p class="subtitulo">
+    Registros gerados pelo checklist ambiental
+  </p>
+
+  <div class="botoes">
+    <button class="azul" onclick="exportarExcel()">Exportar Excel</button>
+    <button class="vermelho" onclick="limparDados()">Limpar Dados</button>
+  </div>
+
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Líder</th>
+        <th>Trecho</th>
+        <th>Item Avaliado</th>
+        <th>Resultado</th>
+        <th>Observação</th>
+      </tr>
+    </thead>
+
+    <tbody id="corpoTabela"></tbody>
+  </table>
+
+  <script>
+    const registros = JSON.parse(localStorage.getItem("registrosAmbientais")) || [];
+    const corpo = document.getElementById("corpoTabela");
+
+    registros.forEach(registro => {
+      const linha = document.createElement("tr");
+
+      linha.innerHTML = `
+        <td>${registro.data}</td>
+        <td>${registro.lider}</td>
+        <td>${registro.trecho}</td>
+        <td>${registro.item}</td>
+        <td class="${registro.resultado === 'Não Conforme' ? 'nao-conforme' : 'conforme'}">
+          ${registro.resultado}
+        </td>
+        <td>${registro.observacao}</td>
+      `;
+
+      corpo.appendChild(linha);
+    });
+
+    function exportarExcel(){
+      let tabela = document.getElementById("tabela").outerHTML;
+      let arquivo = new Blob([tabela], { type: "application/vnd.ms-excel" });
+      let link = document.createElement("a");
+
+      link.href = URL.createObjectURL(arquivo);
+      link.download = "planilha_meio_ambiente.xls";
+      link.click();
+    }
+
+    function limparDados(){
+      if(confirm("Deseja apagar todos os registros?")){
+        localStorage.removeItem("registrosAmbientais");
+        location.reload();
+      }
+    }
+  </script>
+
+</body>
+</html>

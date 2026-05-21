@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meio Ambiente - QSMS</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./icon.png" sizes="1024x1024" type="image/png">
+  <link rel="shortcut icon" href="./icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .filtros{
+      background:white;
+      padding:20px;
+      border-radius:18px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      margin:25px 0;
+      display:flex;
+      gap:15px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .filtros select{
+      padding:12px;
+      border-radius:10px;
+      border:1px solid #cbd5e1;
+      font-size:15px;
+    }
+
+    .dashboard-graficos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+      gap:25px;
+      margin-top:30px;
+      margin-bottom:35px;
+    }
+
+    .grafico-card{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      min-height:420px;
+    }
+
+    .grafico-card h2{
+      margin-bottom:15px;
+      color:#0f172a;
+      font-size:24px;
+    }
+
+    .grafico-card canvas{
+      width:100% !important;
+      max-height:330px;
+    }
+
+    .grafico-grande{
+      grid-column:span 2;
+    }
+
+    .tabela-ranking{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      margin-top:20px;
+    }
+
+    .tabela-ranking th,
+    .tabela-ranking td{
+      padding:14px;
+      text-align:center;
+      border-bottom:1px solid #e2e8f0;
+    }
+
+    .tabela-ranking th{
+      background:#0f172a;
+      color:white;
+    }
+
+    .tabela-ranking tr:hover{
+      background:#f8fafc;
+    }
+
+    @media(max-width:900px){
+      .dashboard-graficos{
+        grid-template-columns:1fr;
+      }
+
+      .grafico-grande{
+        grid-column:span 1;
+      }
+    }
+
+    @media(max-width:760px){
+      .filtros{
+        align-items:stretch;
+        border-radius:14px;
+        flex-direction:column;
+        padding:16px;
+      }
+
+      .filtros select{
+        width:100%;
+      }
+
+      .dashboard-graficos{
+        gap:16px;
+        margin-top:20px;
+      }
+
+      .grafico-card{
+        min-height:320px;
+        padding:16px;
+      }
+
+      .grafico-card h2{
+        font-size:18px;
+        line-height:1.25;
+      }
+
+      .grafico-card canvas{
+        max-height:260px;
+      }
+
+      .tabela-ranking{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+      }
+
+      .tabela-ranking th,
+      .tabela-ranking td{
+        padding:10px;
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page-brand">
+  <a href="./index.html" aria-label="Voltar ao app">
+    <img src="./icon-180.png" alt="Integra">
+  </a>
+</div>
+<a href="qsms.html">← Voltar</a>
+
+  <h1 class="titulo">Meio Ambiente</h1>
+
+  <p class="subtitulo">
+    Avaliação mensal gerada pela base real da planilha + novos checklists ambientais.
+  </p>
+
+  <div class="filtros">
+    <label><strong>Mês de avaliação:</strong></label>
+    <select id="filtroMes" onchange="atualizarDashboard()"></select>
+  </div>
+
+  <div class="container">
+
+    <a href="form-meioambiente.html" class="card">
+      <div class="icone">&#127937;</div>
+      <h2>Novo Checklist</h2>
+      <p>Preencher checklist ambiental.</p>
+    </a>
+
+    <a href="planilha-meioambiente.html" class="card">
+      <div class="icone">&#127937;</div>
+      <h2>Planilha</h2>
+      <p>Visualizar registros ambientais.</p>
+    </a>
+
+    <div class="card">
+      <div class="icone">&#127937;</div>
+      <h2>Itens Avaliados</h2>
+      <p>Total de itens registrados no mês.</p>
+      <h1 id="totalItens">0</h1>
+    </div>
+
+    <div class="card">
+      <div class="icone">&#127937;</div>
+      <h2>Conformidade Inicial</h2>
+      <p>Percentual de itens conformes.</p>
+      <h1 id="conformidadeInicial">0%</h1>
+    </div>
+
+    <div class="card">
+      <div class="icone">&#127937;</div>
+      <h2>Não Conformidades</h2>
+      <p>Total de desvios encontrados.</p>
+      <h1 id="naoConformes">0</h1>
+    </div>
+
+    <div class="card">
+      <div class="icone">&#127937;</div>
+      <h2>Conformidade Final</h2>
+      <p>Após adequações.</p>
+      <h1 id="conformidadeFinal">0%</h1>
+    </div>
+
+  </div>
+
+  <div class="dashboard-graficos">
+
+    <div class="grafico-card grafico-grande">
+      <h2>&#128202; Atividades com Mais Nao Conformidades</h2>
+      <canvas id="graficoNC"></canvas>
+    </div>
+
+    <div class="grafico-card">
+      <h2>&#129383; Principais Problemas</h2>
+      <canvas id="graficoCausas"></canvas>
+    </div>
+
+    <div class="grafico-card">
+      <h2>&#128201; Resultado Geral</h2>
+      <canvas id="graficoResultado"></canvas>
+    </div>
+
+    <div class="grafico-card grafico-grande">
+      <h2>&#128200; Conformidade e Nao Conformidade por Lider</h2>
+      <canvas id="graficoLideres"></canvas>
+    </div>
+
+  </div>
+
+  <h2 class="titulo">&#127942; Ranking Mensal por Lider</h2>
+
+  <p class="subtitulo">
+    Ranking proporcional, somando base da planilha e checklists lançados.
+  </p>
+
+  <table class="tabela-ranking">
+    <thead>
+      <tr>
+        <th>Posição</th>
+        <th>Líder</th>
+        <th>Itens Avaliados</th>
+        <th>Conformes</th>
+        <th>Não Conformes</th>
+        <th>Conformidade</th>
+      </tr>
+    </thead>
+    <tbody id="rankingBody"></tbody>
+  </table>
+
+  <script>
+    const registrosChecklist = JSON.parse(localStorage.getItem("registrosAmbientais")) || [];
+
+    const basePlanilha = [
+      { data:"2026-05-01", lider:"Antonio", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:96 },
+      { data:"2026-05-01", lider:"Antonio", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:18 },
+
+      { data:"2026-05-01", lider:"Aparecido (Cidão)", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:63 },
+      { data:"2026-05-01", lider:"Aparecido (Cidão)", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:13 },
+
+      { data:"2026-05-01", lider:"Claudinei", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:83 },
+      { data:"2026-05-01", lider:"Claudinei", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:12 },
+
+      { data:"2026-05-01", lider:"Carlos", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:66 },
+      { data:"2026-05-01", lider:"Carlos", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:10 },
+
+      { data:"2026-05-01", lider:"Edvando", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:67 },
+      { data:"2026-05-01", lider:"Edvando", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:9 },
+
+      { data:"2026-05-01", lider:"Jonathan", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:67 },
+      { data:"2026-05-01", lider:"Jonathan", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:9 },
+
+      { data:"2026-05-01", lider:"Ricardo", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:31 },
+      { data:"2026-05-01", lider:"Ricardo", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:7 },
+
+      { data:"2026-05-01", lider:"Medeiros", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:51 },
+      { data:"2026-05-01", lider:"Medeiros", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:6 },
+
+      { data:"2026-05-01", lider:"Marcelo", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:71 },
+      { data:"2026-05-01", lider:"Marcelo", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:5 },
+
+      { data:"2026-05-01", lider:"Cesar", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:52 },
+      { data:"2026-05-01", lider:"Cesar", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:5 },
+
+      { data:"2026-05-01", lider:"Almiro (Goiânia Mauá)", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:34 },
+      { data:"2026-05-01", lider:"Almiro (Goiânia Mauá)", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:4 },
+
+      { data:"2026-05-01", lider:"Higor", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:34 },
+      { data:"2026-05-01", lider:"Higor", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:4 },
+
+      { data:"2026-05-01", lider:"Emanuel", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:16 },
+      { data:"2026-05-01", lider:"Emanuel", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:3 },
+
+      { data:"2026-05-01", lider:"Marcio", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:36 },
+      { data:"2026-05-01", lider:"Marcio", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:2 },
+
+      { data:"2026-05-01", lider:"Valter", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:36 },
+      { data:"2026-05-01", lider:"Valter", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:2 },
+
+      { data:"2026-05-01", lider:"Bruno", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:17 },
+      { data:"2026-05-01", lider:"Bruno", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:2 },
+
+      { data:"2026-05-01", lider:"Sérgio", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:18 },
+      { data:"2026-05-01", lider:"Sérgio", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:1 },
+
+      { data:"2026-05-01", lider:"Base Geral", item:"Bandeja de contenção - bomba", resultado:"Não Conforme", observacao:"Não", quantidade:34 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Separação adequada dos resíduos", resultado:"Não Conforme", observacao:"Não", quantidade:16 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Kit mitigação", resultado:"Não Conforme", observacao:"Faltando itens", quantidade:14 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Bandeja de contenção - galão de combustível", resultado:"Não Conforme", observacao:"Não tem", quantidade:11 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Galão de água para lavar a mão", resultado:"Não Conforme", observacao:"Não", quantidade:8 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Itens do kit mitigação", resultado:"Não Conforme", observacao:"Manta absorvente", quantidade:7 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Documentos ambientais - FDS", resultado:"Não Conforme", observacao:"FDS cimento", quantidade:6 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Documentos ambientais - licenças", resultado:"Não Conforme", observacao:"Não tem", quantidade:5 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Caminhão com lona", resultado:"Não Conforme", observacao:"Não", quantidade:4 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Lavatório", resultado:"Não Conforme", observacao:"Precisando de manutenção", quantidade:3 }
+    ];
+
+    const registros = [...basePlanilha, ...registrosChecklist];
+
+    let graficoNC;
+    let graficoCausas;
+    let graficoLideres;
+    let graficoResultado;
+
+    function peso(r){
+      return Number(r.quantidade || 1);
+    }
+
+    function nomeMes(dataISO){
+      const data = new Date(dataISO + "T00:00:00");
+      const meses = [
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+      ];
+      return meses[data.getMonth()] + "/" + data.getFullYear();
+    }
+
+    function chaveMes(dataISO){
+      if (!dataISO) return "sem-data";
+      return dataISO.substring(0, 7);
+    }
+
+    function montarFiltroMes(){
+      const select = document.getElementById("filtroMes");
+      select.innerHTML = "";
+
+      const meses = [...new Set(
+        registros
+          .filter(r => r.data)
+          .map(r => chaveMes(r.data))
+      )].sort();
+
+      if (meses.length === 0) {
+        select.innerHTML = `<option value="sem-dados">Sem dados</option>`;
+        return;
+      }
+
+      meses.forEach(mes => {
+        const exemplo = registros.find(r => chaveMes(r.data) === mes);
+        select.innerHTML += `
+          <option value="${mes}">
+            ${nomeMes(exemplo.data)}
+          </option>
+        `;
+      });
+
+      select.value = meses[meses.length - 1];
+    }
+
+    function percentual(valor, total){
+      return total > 0 ? (valor / total) * 100 : 0;
+    }
+
+    function contarPorCampo(lista, campo){
+      const resultado = {};
+
+      lista.forEach(item => {
+        const valor = item[campo] && item[campo].trim() !== ""
+          ? item[campo].trim()
+          : "Não informado";
+
+        resultado[valor] = (resultado[valor] || 0) + peso(item);
+      });
+
+      return Object.entries(resultado)
+        .map(([nome, quantidade]) => ({ nome, quantidade }))
+        .sort((a,b) => b.quantidade - a.quantidade);
+    }
+
+    function contarProblemasComDescricao(lista){
+      const resultado = {};
+
+      lista.forEach(r => {
+        const item = r.item && r.item.trim() !== ""
+          ? r.item.trim()
+          : "Item não informado";
+
+        const observacao = r.observacao && r.observacao.trim() !== ""
+          ? r.observacao.trim()
+          : "Sem observação";
+
+        const chave = `${item} - ${observacao}`;
+
+        resultado[chave] = (resultado[chave] || 0) + peso(r);
+      });
+
+      return Object.entries(resultado)
+        .map(([nome, quantidade]) => ({ nome, quantidade }))
+        .sort((a,b) => b.quantidade - a.quantidade);
+    }
+
+    function somaPorResultado(lista, resultado){
+      return lista
+        .filter(r => r.resultado === resultado)
+        .reduce((soma, r) => soma + peso(r), 0);
+    }
+
+    function destruirGraficos(){
+      if (graficoNC) graficoNC.destroy();
+      if (graficoCausas) graficoCausas.destroy();
+      if (graficoLideres) graficoLideres.destroy();
+      if (graficoResultado) graficoResultado.destroy();
+    }
+
+    function atualizarDashboard(){
+      const mesSelecionado = document.getElementById("filtroMes").value;
+
+      const dadosMes = registros.filter(r =>
+        r.data && chaveMes(r.data) === mesSelecionado
+      );
+
+      const dadosIndicadores = dadosMes.filter(r => r.lider !== "Base Geral");
+
+      const total = dadosIndicadores.reduce((soma, r) => soma + peso(r), 0);
+      const conformes = somaPorResultado(dadosIndicadores, "Conforme");
+      const naoConformes = somaPorResultado(dadosIndicadores, "Não Conforme");
+
+      const conformidadeInicial = percentual(conformes, total);
+      const conformidadeFinal = total > 0 ? 100 : 0;
+
+      document.getElementById("totalItens").innerText = total;
+      document.getElementById("conformidadeInicial").innerText = conformidadeInicial.toFixed(1) + "%";
+      document.getElementById("naoConformes").innerText = naoConformes;
+      document.getElementById("conformidadeFinal").innerText = conformidadeFinal.toFixed(1) + "%";
+
+      const lideres = {};
+
+      dadosIndicadores.forEach(r => {
+        const lider = r.lider && r.lider.trim() !== ""
+          ? r.lider.trim()
+          : "Sem líder";
+
+        if (!lideres[lider]) {
+          lideres[lider] = {
+            lider,
+            total: 0,
+            conformes: 0,
+            naoConformes: 0
+          };
+        }
+
+        lideres[lider].total += peso(r);
+
+        if (r.resultado === "Conforme") lideres[lider].conformes += peso(r);
+        if (r.resultado === "Não Conforme") lideres[lider].naoConformes += peso(r);
+      });
+
+      const ranking = Object.values(lideres).map(l => {
+        return {
+          ...l,
+          conformidade: percentual(l.conformes, l.total),
+          naoConformidade: percentual(l.naoConformes, l.total)
+        };
+      });
+
+      ranking.sort((a,b) => {
+        if (b.conformidade !== a.conformidade) {
+          return b.conformidade - a.conformidade;
+        }
+
+        if (a.naoConformes !== b.naoConformes) {
+          return a.naoConformes - b.naoConformes;
+        }
+
+        return b.total - a.total;
+      });
+
+      const rankingBody = document.getElementById("rankingBody");
+      rankingBody.innerHTML = "";
+
+      if (ranking.length === 0) {
+        rankingBody.innerHTML = `
+          <tr>
+            <td colspan="6">Nenhum checklist registrado para este mês.</td>
+          </tr>
+        `;
+      } else {
+        ranking.forEach((item, index) => {
+          let posicao = index + 1;
+
+          if (index === 0) posicao = "🥇";
+          if (index === 1) posicao = "🥈";
+          if (index === 2) posicao = "🥉";
+
+          rankingBody.innerHTML += `
+            <tr>
+              <td>${posicao}</td>
+              <td>${item.lider}</td>
+              <td>${item.total}</td>
+              <td>${item.conformes}</td>
+              <td>${item.naoConformes}</td>
+              <td><strong>${item.conformidade.toFixed(1)}%</strong></td>
+            </tr>
+          `;
+        });
+      }
+
+      montarGraficos(dadosMes, ranking, conformes, naoConformes);
+    }
+
+    function montarGraficos(dadosMes, ranking, conformes, naoConformes){
+      destruirGraficos();
+
+      const registrosNC = dadosMes.filter(r =>
+        r.resultado === "Não Conforme" &&
+        r.item !== "Base da planilha"
+      );
+
+      const ncPorItem = contarPorCampo(registrosNC, "item").slice(0, 10);
+      const ncPorCausa = contarProblemasComDescricao(registrosNC).slice(0, 10);
+
+      graficoNC = new Chart(document.getElementById("graficoNC"), {
+        type: "bar",
+        data: {
+          labels: ncPorItem.map(n => n.nome),
+          datasets: [{
+            label: "Quantidade de não conformidades",
+            data: ncPorItem.map(n => n.quantidade),
+            backgroundColor: "#ef4444",
+            borderRadius: 8
+          }]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio:false,
+          plugins: {
+            legend: { display:false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `Não conformidades: ${context.raw}`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero:true,
+              ticks:{ precision:0 }
+            },
+            y: {
+              ticks: {
+                font: { size: 12 }
+              }
+            }
+          }
+        }
+      });
+
+      graficoCausas = new Chart(document.getElementById("graficoCausas"), {
+        type: "doughnut",
+        data: {
+          labels: ncPorCausa.map(c => c.nome),
+          datasets: [{
+            data: ncPorCausa.map(c => c.quantidade),
+            backgroundColor: [
+              "#ef4444", "#f97316", "#f59e0b", "#84cc16", "#22c55e",
+              "#06b6d4", "#3b82f6", "#8b5cf6", "#ec4899", "#64748b"
+            ]
+          }]
+        },
+        options: {
+          responsive:true,
+          plugins:{
+            legend:{
+              position:"bottom",
+              labels:{
+                boxWidth:14,
+                font:{ size:11 }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                title: function(context) {
+                  return "Não conformidade";
+                },
+                label: function(context) {
+                  const nome = context.label || "";
+                  const quantidade = context.raw || 0;
+                  return `${nome}: ${quantidade}`;
+                }
+              }
+            }
+          }
+        }
+      });
+
+      graficoResultado = new Chart(document.getElementById("graficoResultado"), {
+        type: "doughnut",
+        data: {
+          labels: ["Conformes", "Não conformes"],
+          datasets: [{
+            data: [conformes, naoConformes],
+            backgroundColor: ["#22c55e", "#ef4444"]
+          }]
+        },
+        options: {
+          responsive:true,
+          plugins:{
+            legend:{
+              position:"bottom"
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `${context.label}: ${context.raw}`;
+                }
+              }
+            }
+          }
+        }
+      });
+
+      graficoLideres = new Chart(document.getElementById("graficoLideres"), {
+        type: "bar",
+        data: {
+          labels: ranking.map(r => r.lider),
+          datasets: [
+            {
+              label: "Conformidade (%)",
+              data: ranking.map(r => Number(r.conformidade.toFixed(1))),
+              backgroundColor: "#2563eb",
+              borderRadius: 8
+            },
+            {
+              label: "Não Conformidade (%)",
+              data: ranking.map(r => Number(r.naoConformidade.toFixed(1))),
+              backgroundColor: "#ef4444",
+              borderRadius: 8
+            }
+          ]
+        },
+        options: {
+          responsive:true,
+          maintainAspectRatio:false,
+          plugins:{
+            legend:{
+              position:"bottom"
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `${context.dataset.label}: ${context.raw}%`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero:true,
+              max:100
+            }
+          }
+        }
+      });
+    }
+
+    montarFiltroMes();
+    atualizarDashboard();
+  </script>
+
+</body>
+</html>
