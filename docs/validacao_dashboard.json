@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-05-22 07:47:38",
+  "atualizado_em": "2026-05-22 08:09:45",
   "totais": {
     "base_planejado": 38438.39,
     "base_executado": 15379.76,
-    "mapa_executado": 15877.79,
-    "diferenca_base_mapa": -498.03,
+    "mapa_executado": 15940.49,
+    "diferenca_base_mapa": -560.73,
     "saldo_total": 23058.63
   },
   "pds": {
@@ -47,8 +47,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: -498.03 m",
-    "10 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: -560.73 m",
+    "9 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -120,16 +120,6 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 374.4,
-      "executado_mapa": 311.7,
-      "diferenca_base_mapa": 62.7,
-      "saldo": 484.1,
-      "linhas_base": 2,
-      "linhas_mapa": 5
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -327,11 +317,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 374.4,
-      "executado_mapa": 311.7,
-      "diferenca_base_mapa": 62.7,
+      "executado_mapa": 374.4,
+      "diferenca_base_mapa": -0.0,
       "saldo": 484.1,
       "linhas_base": 2,
-      "linhas_mapa": 5
+      "linhas_mapa": 6
     },
     {
       "obra": "CTS Água Vermelha - ME",
@@ -774,8 +764,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 84.1,
-      "modificado": "2026-05-20 07:21:16"
+      "tamanho_kb": 84.4,
+      "modificado": "2026-05-22 08:07:03"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",

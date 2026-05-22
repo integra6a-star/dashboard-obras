@@ -513,6 +513,11 @@ function campo(t, nomes, padrao='-'){
 function infoCard(label, value){
   return `<div class="pv-info"><div class="label">${esc(label)}</div><div class="value">${esc(value || '-')}</div></div>`;
 }
+function planoFuroUrl(t){
+  const obs=norm(getv(t, ['observacao','observação','obs']));
+  const m=obs.match(/(?:arquivo|pdf):\s*([^;]+\.pdf)/i);
+  return m ? m[1].trim() : '';
+}
 function renderAbaPv(aba, p, ligados){
   const trecho=ligados[0] || {};
   const lat=valCoord(p, ['latitude','lat']);
@@ -521,7 +526,8 @@ function renderAbaPv(aba, p, ligados){
     return `<div class="pv-no-photo">Buscando fotos vinculadas...</div>`;
   }
   if(aba==='docs'){
-    return `<div class="pv-list"><div class="pv-list-item"><b>Plano de furo</b><br>${esc(codigoTrecho(trecho))}</div><div class="pv-list-item"><b>Base cartografica</b><br>planilha_base_mapa.xlsx</div><div class="pv-list-item"><b>Status documental</b><br>Aguardando anexos especificos do PV.</div></div>`;
+    const plano=planoFuroUrl(trecho);
+    return `<div class="pv-list"><div class="pv-list-item"><b>Plano de furo</b><br>${esc(codigoTrecho(trecho))}${plano ? `<br><a href="${esc(plano)}" target="_blank" rel="noopener">Abrir PDF</a>` : ''}</div><div class="pv-list-item"><b>Base cartografica</b><br>planilha_base_mapa.xlsx</div><div class="pv-list-item"><b>Status documental</b><br>${plano ? 'Plano vinculado ao trecho.' : 'Aguardando anexos especificos do PV.'}</div></div>`;
   }
   if(aba==='hist'){
     return `<div class="pv-list"><div class="pv-list-item"><b>Selecionado no mapa</b><br>${new Date().toLocaleString('pt-BR')}</div><div class="pv-list-item"><b>Situacao atual</b><br>${esc(campo(trecho, ['status'],'Em acompanhamento'))}</div><div class="pv-list-item"><b>Registro</b><br>Dados carregados da planilha e mantidos compativeis com GitHub Pages.</div></div>`;

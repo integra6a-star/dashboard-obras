@@ -5545,6 +5545,34 @@
       "cota_fundo": 763.468,
       "profundidade_m": 3.85,
       "observacao": "Plano de furo FL-06 versao 01, 15.MAI.2026; RUA ELVIRA DE ARAUJO."
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-11",
+      "nome_ponto": "PV-11",
+      "coord_n": 7396951.048,
+      "coord_e": 358496.854,
+      "latitude": -23.5315615,
+      "longitude": -46.3861622,
+      "cota_tampa": 774.981,
+      "cota_fundo": 768.881,
+      "profundidade_m": 6.1,
+      "observacao": "Plano de furo FL-07 versao 01, 20.MAI.2026; trecho PV-11 ao PV-13."
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-13",
+      "nome_ponto": "PV-13",
+      "coord_n": 7397011.057,
+      "coord_e": 358478.68,
+      "latitude": -23.5310181,
+      "longitude": -46.3863345,
+      "cota_tampa": 771.863,
+      "cota_fundo": 769.863,
+      "profundidade_m": 2,
+      "observacao": "Plano de furo FL-07 versao 01, 20.MAI.2026; trecho PV-11 ao PV-13."
     }
   ],
   "trechos": [
@@ -13627,6 +13655,26 @@
       "lon_inicio": -46.3877736,
       "lat_fim": -23.5316304,
       "lon_fim": -46.3878556
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-006",
+      "trecho_nome": "PV-11 - PV-13",
+      "pv_inicio": "PV-11",
+      "pv_fim": "PV-13",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 62.701,
+      "prof_inicial_m": 6.1,
+      "prof_final_m": 2,
+      "prof_max_m": 6.1,
+      "status": "concluída",
+      "observacao": "Plano de furo FL-07 versao 01, 20.MAI.2026; PV-11 ao PV-13; arquivo: planos_furo/cts_joao_canzi_fl07_pv11_pv13.pdf.",
+      "lat_inicio": -23.5315615,
+      "lon_inicio": -46.3861622,
+      "lat_fim": -23.5310181,
+      "lon_fim": -46.3863345
     }
   ]
 }
