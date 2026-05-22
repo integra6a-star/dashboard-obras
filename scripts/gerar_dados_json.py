@@ -364,7 +364,6 @@ def salvar_json(caminho, conteudo):
 def main():
     registros, meses_producao = ler_registros_base()
     eap = ler_eap_producao()
-    eap = aplicar_producao_base_na_eap(eap, registros)
     payload = {
         "atualizado_em": datetime.now(ZoneInfo("America/Sao_Paulo")).isoformat(),
         "fonte_registros": ARQ_BASE.name,

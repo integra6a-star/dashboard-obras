@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-21T07:16:28.433086-03:00",
+  "atualizado_em": "2026-05-22T07:44:15.234333-03:00",
   "fonte": "EAP_PRODUCAO.xlsx",
   "aba": "EAP_PRODUCAO",
   "meses": [
@@ -19,13 +19,13 @@
   "cards": {
     "2025": {
       "eap": 11889.13,
-      "produzido": 8738.07,
-      "saldo": -3151.06
+      "produzido": 8985.495,
+      "saldo": -2903.635
     },
     "2026": {
       "eap": 28768.36,
-      "produzido": 6968.93,
-      "saldo": -21799.43
+      "produzido": 7025.061,
+      "saldo": -21743.299
     }
   },
   "mensal": [
@@ -55,23 +55,23 @@
       "ano": 2025,
       "mes": "Mai",
       "eap": 905.99,
-      "produzido": 397.82,
+      "produzido": 364.53,
       "economias_eap": 0.0,
       "economias_recebidas": 0.0,
-      "saldo_mes": -508.17,
+      "saldo_mes": -541.46,
       "saldo_economias": 0.0,
-      "saldo_acum": -1343.52
+      "saldo_acum": -1376.81
     },
     {
       "ano": 2025,
       "mes": "Jun",
       "eap": 1089.14,
-      "produzido": 364.53,
+      "produzido": 340.32,
       "economias_eap": 191.0,
       "economias_recebidas": 2611.0,
-      "saldo_mes": -724.61,
+      "saldo_mes": -748.82,
       "saldo_economias": 2420.0,
-      "saldo_acum": -2068.13
+      "saldo_acum": -2125.63
     },
     {
       "ano": 2025,
@@ -82,29 +82,29 @@
       "economias_recebidas": 584.0,
       "saldo_mes": 473.395,
       "saldo_economias": 95.0,
-      "saldo_acum": -1594.735
+      "saldo_acum": -1652.235
     },
     {
       "ano": 2025,
       "mes": "Ago",
       "eap": 1227.24,
-      "produzido": 1533.835,
+      "produzido": 1750.96,
       "economias_eap": 1635.0,
       "economias_recebidas": 3598.0,
-      "saldo_mes": 306.595,
+      "saldo_mes": 523.72,
       "saldo_economias": 1963.0,
-      "saldo_acum": -1288.14
+      "saldo_acum": -1128.515
     },
     {
       "ano": 2025,
       "mes": "Set",
       "eap": 1914.65,
-      "produzido": 1369.69,
+      "produzido": 1517.22,
       "economias_eap": 1110.0,
       "economias_recebidas": 3229.0,
-      "saldo_mes": -544.96,
+      "saldo_mes": -397.43,
       "saldo_economias": 2119.0,
-      "saldo_acum": -1833.1
+      "saldo_acum": -1525.945
     },
     {
       "ano": 2025,
@@ -115,18 +115,18 @@
       "economias_recebidas": 1433.0,
       "saldo_mes": -407.4,
       "saldo_economias": 670.0,
-      "saldo_acum": -2240.5
+      "saldo_acum": -1933.345
     },
     {
       "ano": 2025,
       "mes": "Nov",
       "eap": 1942.9,
-      "produzido": 1118.625,
+      "produzido": 1058.895,
       "economias_eap": 4493.0,
       "economias_recebidas": 2359.0,
-      "saldo_mes": -824.275,
+      "saldo_mes": -884.005,
       "saldo_economias": -2134.0,
-      "saldo_acum": -3064.775
+      "saldo_acum": -2817.35
     },
     {
       "ano": 2025,
@@ -137,7 +137,7 @@
       "economias_recebidas": 3356.0,
       "saldo_mes": -86.285,
       "saldo_economias": -896.0,
-      "saldo_acum": -3151.06
+      "saldo_acum": -2903.635
     },
     {
       "ano": 2026,
@@ -176,23 +176,23 @@
       "ano": 2026,
       "mes": "Abr",
       "eap": 2426.84,
-      "produzido": 1466.67,
+      "produzido": 1460.1,
       "economias_eap": 2735.0,
       "economias_recebidas": 5246.0,
-      "saldo_mes": -960.17,
+      "saldo_mes": -966.74,
       "saldo_economias": 2511.0,
-      "saldo_acum": -2727.58
+      "saldo_acum": -2734.15
     },
     {
       "ano": 2026,
       "mes": "Mai",
       "eap": 2545.85,
-      "produzido": 615.85,
+      "produzido": 678.551,
       "economias_eap": 2361.0,
       "economias_recebidas": 0.0,
-      "saldo_mes": -1930.0,
+      "saldo_mes": -1867.299,
       "saldo_economias": -2361.0,
-      "saldo_acum": -4657.58
+      "saldo_acum": -4601.449
     },
     {
       "ano": 2026,
@@ -203,7 +203,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3108.25,
       "saldo_economias": -2874.0,
-      "saldo_acum": -7765.83
+      "saldo_acum": -7709.699
     },
     {
       "ano": 2026,
@@ -214,7 +214,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3269.49,
       "saldo_economias": -4487.0,
-      "saldo_acum": -11035.32
+      "saldo_acum": -10979.189
     },
     {
       "ano": 2026,
@@ -225,7 +225,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3305.21,
       "saldo_economias": -4543.0,
-      "saldo_acum": -14340.53
+      "saldo_acum": -14284.399
     },
     {
       "ano": 2026,
@@ -236,7 +236,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3138.09,
       "saldo_economias": -3432.0,
-      "saldo_acum": -17478.62
+      "saldo_acum": -17422.489
     },
     {
       "ano": 2026,
@@ -247,7 +247,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -2251.28,
       "saldo_economias": -1923.0,
-      "saldo_acum": -19729.9
+      "saldo_acum": -19673.769
     },
     {
       "ano": 2026,
@@ -258,7 +258,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -1527.07,
       "saldo_economias": -713.0,
-      "saldo_acum": -21256.97
+      "saldo_acum": -21200.839
     },
     {
       "ano": 2026,
@@ -269,7 +269,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -542.46,
       "saldo_economias": -39.0,
-      "saldo_acum": -21799.43
+      "saldo_acum": -21743.299
     }
   ],
   "eap_economias": {
@@ -446,7 +446,5 @@
         "saldo": -39.0
       }
     ]
-  },
-  "fonte_produzido": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
-  "regra_produzido": "Colunas ProducaoMensal da BASE_DASH_EXTENSAO_POWERBI.xlsx"
+  }
 }

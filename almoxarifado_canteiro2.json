@@ -1,70 +1,80 @@
 {
-  "atualizado_em": "21/05/2026 07:17",
+  "atualizado_em": "22/05/2026 07:33",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Bandeirantes",
   "titulo": "Bandeirantes (Canteiro 2)",
   "produtos": [
     {
       "codigo": "P001",
-      "descricao": "ADUELA DE 1000",
-      "estoque_atual": "147",
+      "descricao": "ADUELA DE 1000 x 1000",
+      "estoque_atual": "137",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 147,
+      "quantidade": 137,
       "situacao_planilha": ""
     },
     {
       "codigo": "P002",
-      "descricao": "ADUELA DE 600",
-      "estoque_atual": "73",
+      "descricao": "ADUELA DE 1000 x 500",
+      "estoque_atual": "35",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 73,
+      "quantidade": 35,
       "situacao_planilha": ""
     },
     {
       "codigo": "P003",
-      "descricao": "LAJE INFERIOR DE 1000",
-      "estoque_atual": "38",
+      "descricao": "ADUELA DE 600",
+      "estoque_atual": "61",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 38,
+      "quantidade": 61,
       "situacao_planilha": ""
     },
     {
       "codigo": "P004",
-      "descricao": "LAJE INFERIOR DE 600",
-      "estoque_atual": "159",
+      "descricao": "LAJE INFERIOR DE 1000",
+      "estoque_atual": "31",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 159,
+      "quantidade": 31,
       "situacao_planilha": ""
     },
     {
       "codigo": "P005",
-      "descricao": "LAJE SURPERIOR DE 1000",
-      "estoque_atual": "43",
+      "descricao": "LAJE INFERIOR DE 600",
+      "estoque_atual": "154",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 43,
+      "quantidade": 154,
       "situacao_planilha": ""
     },
     {
       "codigo": "P006",
-      "descricao": "TUBO PEAD ESGOTO D 355",
-      "estoque_atual": "317 barras",
+      "descricao": "LAJE SURPERIOR DE 1000",
+      "estoque_atual": "40",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 317,
+      "quantidade": 40,
       "situacao_planilha": ""
     },
     {
       "codigo": "P007",
+      "descricao": "TUBO PEAD ESGOTO D 355",
+      "estoque_atual": "277 barras",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 277,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P008",
       "descricao": "TUBO PEAD ESGOTO D 315",
       "estoque_atual": "2 barras",
       "estoque_minimo": 0,
@@ -74,7 +84,7 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P008",
+      "codigo": "P009",
       "descricao": "TUBO PEAD ESGOTO D 225",
       "estoque_atual": "234 barras",
       "estoque_minimo": 0,
@@ -84,67 +94,37 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P009",
-      "descricao": "TUBO PEAD ESGOTO D 450",
-      "estoque_atual": "98 barras",
-      "estoque_minimo": 0,
-      "entradas": 0,
-      "saidas": 0,
-      "quantidade": 98,
-      "situacao_planilha": ""
-    },
-    {
       "codigo": "P010",
-      "descricao": "TUBO CORRUGADO ESGOTO DN 300",
-      "estoque_atual": "440",
+      "descricao": "TUBO PEAD ESGOTO D 450",
+      "estoque_atual": "67 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 440,
+      "quantidade": 67,
       "situacao_planilha": ""
     },
     {
       "codigo": "P011",
-      "descricao": "CHAPA ARMICO",
-      "estoque_atual": "canteiro 001",
+      "descricao": "TUBO CORRUGADO ESGOTO DN 300",
+      "estoque_atual": "193 Barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 0,
+      "quantidade": 193,
       "situacao_planilha": ""
     },
     {
       "codigo": "P012",
-      "descricao": "TAMPÃO DN 600",
-      "estoque_atual": "",
+      "descricao": "CHAPA ARMICO",
+      "estoque_atual": "300",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 0,
+      "quantidade": 300,
       "situacao_planilha": ""
     },
     {
       "codigo": "P013",
-      "descricao": "ADUELA DE 2000",
-      "estoque_atual": "",
-      "estoque_minimo": 0,
-      "entradas": 0,
-      "saidas": 0,
-      "quantidade": 0,
-      "situacao_planilha": ""
-    },
-    {
-      "codigo": "P014",
-      "descricao": "ADUELA DE 1500",
-      "estoque_atual": "",
-      "estoque_minimo": 0,
-      "entradas": 0,
-      "saidas": 0,
-      "quantidade": 0,
-      "situacao_planilha": ""
-    },
-    {
-      "codigo": "P015",
       "descricao": "ADUELA DE 2,00 x 2,00",
       "estoque_atual": "2",
       "estoque_minimo": 0,
@@ -154,53 +134,53 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P016",
+      "codigo": "P014",
       "descricao": "BLOCO PV",
-      "estoque_atual": "950",
+      "estoque_atual": "915",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 950,
+      "quantidade": 915,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P015",
+      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 100 CM 6M",
+      "estoque_atual": "544 barras",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 544,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P016",
+      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 150 CM 6M",
+      "estoque_atual": "8 barras",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 8,
       "situacao_planilha": ""
     },
     {
       "codigo": "P017",
-      "descricao": "TUBO CRAVADO 1500 mm",
-      "estoque_atual": "",
+      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 200 CM 6M",
+      "estoque_atual": "664 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 0,
+      "quantidade": 664,
       "situacao_planilha": ""
     },
     {
       "codigo": "P018",
-      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 100 CM 6M",
-      "estoque_atual": "550 barras",
-      "estoque_minimo": 0,
-      "entradas": 0,
-      "saidas": 0,
-      "quantidade": 550,
-      "situacao_planilha": ""
-    },
-    {
-      "codigo": "P019",
-      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 200 CM 6M",
-      "estoque_atual": "",
-      "estoque_minimo": 0,
-      "entradas": 0,
-      "saidas": 0,
-      "quantidade": 0,
-      "situacao_planilha": ""
-    },
-    {
-      "codigo": "P020",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 300 CM 6M",
-      "estoque_atual": "280 barras",
+      "estoque_atual": "277 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 280,
+      "quantidade": 277,
       "situacao_planilha": ""
     }
   ],
