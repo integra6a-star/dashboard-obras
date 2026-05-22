@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-22 08:09:45",
+  "atualizado_em": "2026-05-22 14:37:45",
   "totais": {
     "base_planejado": 38438.39,
     "base_executado": 15379.76,
@@ -48,7 +48,7 @@
   },
   "alertas": [
     "Diferença total entre Base Dash e mapa: -560.73 m",
-    "9 obra(s) com divergência entre executado da Base Dash e mapa."
+    "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -80,26 +80,6 @@
       "saldo": 223.29,
       "linhas_base": 2,
       "linhas_mapa": 4
-    },
-    {
-      "obra": "CTS JD. LOURDES COMPLEMENTAR",
-      "planejado": 0.0,
-      "executado_base": 84.32,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 84.32,
-      "saldo": -84.32,
-      "linhas_base": 1,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "CTS Lourdes Complementar",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 84.32,
-      "diferenca_base_mapa": -84.32,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 1
     },
     {
       "obra": "RCE São Lucas",
@@ -694,16 +674,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "CTS Lourdes Complementar",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 84.32,
-      "diferenca_base_mapa": -84.32,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 1
-    },
-    {
       "obra": "EEE TRÊS MENINAS",
       "planejado": 0.0,
       "executado_base": 0.0,
@@ -734,14 +704,14 @@
       "linhas_mapa": 11
     },
     {
-      "obra": "CTS JD. LOURDES COMPLEMENTAR",
+      "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
       "executado_base": 84.32,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 84.32,
+      "executado_mapa": 84.32,
+      "diferenca_base_mapa": 0.0,
       "saldo": -84.32,
       "linhas_base": 1,
-      "linhas_mapa": 0
+      "linhas_mapa": 1
     },
     {
       "obra": "CTS Bandeirantes",
