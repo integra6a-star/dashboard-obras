@@ -841,6 +841,7 @@ function normalizeStatusLabel(v){
   return '';
 }
 function deriveStatusForRows(rows, av=0){
+  if(Math.round(Number(av) || 0) >= 100) return 'Concluída';
   if(hasStatusField(rows)){
     for(const r of rows){
       const label = normalizeStatusLabel(r.Status);
