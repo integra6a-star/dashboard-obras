@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-25T07:01:36.702712-03:00",
+  "atualizado_em": "2026-05-25T07:15:33.855508-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -2959,7 +2959,7 @@
       "Bloco": "75",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 374.4,
+      "Executado_m": 454.5,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
@@ -3300,7 +3300,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-05-25T07:01:36.702712-03:00",
+    "atualizado_em": "2026-05-25T07:15:33.855508-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
