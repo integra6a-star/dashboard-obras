@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-22T07:44:15.234333-03:00",
+  "atualizado_em": "2026-05-25T07:01:36.702712-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -224,12 +224,14 @@
       "Bloco": "7",
       "Tipo": "HDD",
       "Planejado_m": 240.7,
-      "Executado_m": 0.0,
+      "Executado_m": 159.475,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 589.0,
       "Economias_Recebidas": 109.0,
-      "ProducaoMensal": {}
+      "ProducaoMensal": {
+        "2025-08": 159.475
+      }
     },
     {
       "Data": "",
@@ -254,12 +256,13 @@
       "Bloco": "8",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 0.0,
+      "Executado_m": 295.33500000000004,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 614.0,
       "Economias_Recebidas": 3229.0,
       "ProducaoMensal": {
+        "2025-08": 59.89500000000001,
         "2025-09": 235.44
       }
     },
@@ -300,12 +303,13 @@
       "Bloco": "9",
       "Tipo": "VCA",
       "Planejado_m": 754.0,
-      "Executado_m": 0.0,
+      "Executado_m": 373.08500000000004,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
+        "2025-08": 170.595,
         "2025-09": 148.49,
         "2025-12": 54.0
       }
@@ -1040,7 +1044,7 @@
       "Obra": "CTS BANDEIRANTES",
       "Bloco": "21",
       "Tipo": "HDD",
-      "Planejado_m": 0.0,
+      "Planejado_m": 466.59999999999997,
       "Executado_m": 1229.95,
       "PV": 19.0,
       "Profundidade_m": 92.92,
@@ -1060,7 +1064,7 @@
       "Obra": "CTS BANDEIRANTES",
       "Bloco": "21",
       "Tipo": "VCA",
-      "Planejado_m": 0.0,
+      "Planejado_m": 783.4,
       "Executado_m": 0.0,
       "PV": 0.0,
       "Profundidade_m": 0.0,
@@ -1159,7 +1163,9 @@
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
-      "ProducaoMensal": {}
+      "ProducaoMensal": {
+        "2026-04": 10.73
+      }
     },
     {
       "Data": "",
@@ -1300,6 +1306,7 @@
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
+        "2026-02": 174.46,
         "2026-03": 56.26
       }
     },
@@ -2086,7 +2093,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concluido",
       "Obra": "CT LAGEADO MONTANTE",
       "Bloco": "56",
       "Tipo": "HDD",
@@ -2102,7 +2109,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "concluido",
       "Obra": "CT LAGEADO MONTANTE",
       "Bloco": "56",
       "Tipo": "VCA",
@@ -2148,7 +2155,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "RCE AV. BARÃO L. ARARIBA",
       "Bloco": "58",
       "Tipo": "HDD",
@@ -2166,7 +2173,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "RCE AV. BARÃO L. ARARIBA",
       "Bloco": "58",
       "Tipo": "VCA",
@@ -2183,7 +2190,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "RCE AV. FERNANDO PACHECO JORDÃO",
       "Bloco": "59",
       "Tipo": "HDD",
@@ -2199,7 +2206,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "RCE AV. FERNANDO PACHECO JORDÃO",
       "Bloco": "59",
       "Tipo": "VCA",
@@ -2213,7 +2220,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "",
       "Obra": "RCE AV. MARECHAL TITO",
       "Bloco": "60",
       "Tipo": "HDD",
@@ -2227,7 +2234,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "",
       "Obra": "RCE AV. MARECHAL TITO",
       "Bloco": "60",
       "Tipo": "VCA",
@@ -2283,7 +2290,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE SÃO LUCAS",
       "Bloco": "61",
       "Tipo": "VCA",
@@ -2423,6 +2430,8 @@
       "Economias_Previstas": 1989.0,
       "Economias_Recebidas": 1901.0,
       "ProducaoMensal": {
+        "2026-01": 460.14,
+        "2026-02": 52.25,
         "2026-04": 70.24
       }
     },
@@ -2458,6 +2467,7 @@
       "Economias_Previstas": 574.0,
       "Economias_Recebidas": 822.0,
       "ProducaoMensal": {
+        "2026-01": 118.2,
         "2026-02": 256.5
       }
     },
@@ -2474,7 +2484,8 @@
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-03": 65.6
+        "2026-03": 65.6,
+        "2026-05": 77.00999999999999
       }
     },
     {
@@ -2539,7 +2550,7 @@
     },
     {
       "Data": "",
-      "Status": "concluido",
+      "Status": "",
       "Obra": "RCE BORBOLETA AMARELA",
       "Bloco": "68",
       "Tipo": "HDD",
@@ -2553,7 +2564,7 @@
     },
     {
       "Data": "",
-      "Status": "concluido",
+      "Status": "",
       "Obra": "RCE BORBOLETA AMARELA",
       "Bloco": "68",
       "Tipo": "VCA",
@@ -2597,7 +2608,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "CTS LUIZ BOTELHO MOURÃO",
       "Bloco": "70",
       "Tipo": "HDD",
@@ -2608,12 +2619,13 @@
       "Economias_Previstas": 415.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-03": 81.8
+        "2026-03": 81.8,
+        "2026-04": 262.33
       }
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "CTS LUIZ BOTELHO MOURÃO",
       "Bloco": "70",
       "Tipo": "VCA",
@@ -2713,7 +2725,7 @@
     },
     {
       "Data": "",
-      "Status": "concluido",
+      "Status": "",
       "Obra": "RCE  JD.HELOISA",
       "Bloco": "74",
       "Tipo": "HDD",
@@ -2741,7 +2753,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "concluido",
       "Obra": "INTERL. RUA ÁGUA BOA E JOSÉ ELIAS",
       "Bloco": "74",
       "Tipo": "HDD",
@@ -2752,7 +2764,8 @@
       "Economias_Previstas": 37.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-03": 78.18
+        "2026-03": 78.18,
+        "2026-04": 67.7
       }
     },
     {
@@ -2767,7 +2780,9 @@
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
-      "ProducaoMensal": {}
+      "ProducaoMensal": {
+        "2026-04": 55.83
+      }
     },
     {
       "Data": "",
@@ -2911,7 +2926,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "",
       "Obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 2",
       "Bloco": "75",
       "Tipo": "HDD",
@@ -2939,23 +2954,23 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "CTS JOÃO CANZI",
       "Bloco": "75",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 311.68,
+      "Executado_m": 374.4,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 311.68
+        "2026-05": 454.538
       }
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "CTS JOÃO CANZI",
       "Bloco": "75",
       "Tipo": "VCA",
@@ -2969,7 +2984,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE JOÃO CANZI",
       "Bloco": "75",
       "Tipo": "HDD",
@@ -2983,7 +2998,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE JOÃO CANZI",
       "Bloco": "75",
       "Tipo": "VCA",
@@ -3081,7 +3096,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "",
       "Obra": "RCE COMUNIDADE RAUZITO",
       "Bloco": "76",
       "Tipo": "HDD",
@@ -3095,7 +3110,7 @@
     },
     {
       "Data": "",
-      "Status": "em andamento",
+      "Status": "",
       "Obra": "RCE COMUNIDADE RAUZITO",
       "Bloco": "76",
       "Tipo": "VCA",
@@ -3109,7 +3124,7 @@
     },
     {
       "Data": "",
-      "Status": "concluido",
+      "Status": "em andamento",
       "Obra": "RCE SÃO JOÃO",
       "Bloco": "76",
       "Tipo": "HDD",
@@ -3123,7 +3138,7 @@
     },
     {
       "Data": "",
-      "Status": "concluido",
+      "Status": "em andamento",
       "Obra": "RCE SÃO JOÃO",
       "Bloco": "76",
       "Tipo": "VCA",
@@ -3285,7 +3300,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-05-22T07:44:15.234333-03:00",
+    "atualizado_em": "2026-05-25T07:01:36.702712-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
@@ -3310,8 +3325,8 @@
       },
       "2026": {
         "eap": 28768.36,
-        "produzido": 7025.061,
-        "saldo": -21743.299
+        "produzido": 7105.218,
+        "saldo": -21663.142
       }
     },
     "mensal": [
@@ -3473,12 +3488,12 @@
         "ano": 2026,
         "mes": "Mai",
         "eap": 2545.85,
-        "produzido": 678.551,
+        "produzido": 758.708,
         "economias_eap": 2361.0,
         "economias_recebidas": 0.0,
-        "saldo_mes": -1867.299,
+        "saldo_mes": -1787.142,
         "saldo_economias": -2361.0,
-        "saldo_acum": -4601.449
+        "saldo_acum": -4521.292
       },
       {
         "ano": 2026,
@@ -3489,7 +3504,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3108.25,
         "saldo_economias": -2874.0,
-        "saldo_acum": -7709.699
+        "saldo_acum": -7629.542
       },
       {
         "ano": 2026,
@@ -3500,7 +3515,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3269.49,
         "saldo_economias": -4487.0,
-        "saldo_acum": -10979.189
+        "saldo_acum": -10899.032
       },
       {
         "ano": 2026,
@@ -3511,7 +3526,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3305.21,
         "saldo_economias": -4543.0,
-        "saldo_acum": -14284.399
+        "saldo_acum": -14204.242
       },
       {
         "ano": 2026,
@@ -3522,7 +3537,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3138.09,
         "saldo_economias": -3432.0,
-        "saldo_acum": -17422.489
+        "saldo_acum": -17342.332
       },
       {
         "ano": 2026,
@@ -3533,7 +3548,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -2251.28,
         "saldo_economias": -1923.0,
-        "saldo_acum": -19673.769
+        "saldo_acum": -19593.612
       },
       {
         "ano": 2026,
@@ -3544,7 +3559,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -1527.07,
         "saldo_economias": -713.0,
-        "saldo_acum": -21200.839
+        "saldo_acum": -21120.682
       },
       {
         "ano": 2026,
@@ -3555,7 +3570,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -542.46,
         "saldo_economias": -39.0,
-        "saldo_acum": -21743.299
+        "saldo_acum": -21663.142
       }
     ],
     "eap_economias": {
