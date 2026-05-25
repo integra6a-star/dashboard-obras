@@ -835,7 +835,7 @@ function hasStatusField(rows){
 function normalizeStatusLabel(v){
   const s = String(v || '').trim().toLowerCase();
   if(!s) return '';
-  if(s.includes('conclu')) return 'Concluída';
+  if(s.includes('conclu') || s.includes('concu')) return 'Concluída';
   if(s.includes('andamento')) return 'Em andamento';
   if(s.includes('não') || s.includes('nao') || s.includes('inici')) return 'Não iniciada';
   return '';
@@ -847,7 +847,7 @@ function deriveStatusForRows(rows, av=0){
       const label = normalizeStatusLabel(r.Status);
       if(label) return label;
     }
-    return 'Não iniciada';
+    return statusLabelFallback(av);
   }
   return statusLabelFallback(av);
 }
