@@ -1,31 +1,31 @@
 {
-  "atualizado_em": "2026-05-22 14:37:45",
+  "atualizado_em": "2026-05-25 13:08:01",
   "totais": {
-    "base_planejado": 38438.39,
-    "base_executado": 15379.76,
-    "mapa_executado": 15940.49,
-    "diferenca_base_mapa": -560.73,
-    "saldo_total": 23058.63
+    "base_planejado": 39688.39,
+    "base_executado": 16124.98,
+    "mapa_executado": 16020.65,
+    "diferenca_base_mapa": 104.34,
+    "saldo_total": 23563.41
   },
   "pds": {
-    "total": 2515,
-    "ultima_data": "2026-05-22",
+    "total": 2538,
+    "ultima_data": "2026-05-25",
     "hoje": 23,
     "por_obra_ultima_data": [
+      {
+        "obra": "CT João Canzi",
+        "atividades": 5
+      },
       {
         "obra": "RCE São Lucas",
         "atividades": 5
       },
       {
-        "obra": "CT João Canzi",
-        "atividades": 4
+        "obra": "CTS Lourdes Complementar",
+        "atividades": 3
       },
       {
         "obra": "CTS Mar de Coral",
-        "atividades": 4
-      },
-      {
-        "obra": "CTS Lourdes Complementar",
         "atividades": 3
       },
       {
@@ -47,30 +47,10 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: -560.73 m",
-    "7 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 104.34 m",
+    "5 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
-    {
-      "obra": "CTS Jardim Miriam",
-      "planejado": 2092.7,
-      "executado_base": 1562.3,
-      "executado_mapa": 1952.26,
-      "diferenca_base_mapa": -389.96,
-      "saldo": 530.4,
-      "linhas_base": 10,
-      "linhas_mapa": 56
-    },
-    {
-      "obra": "CTS Mar de Coral",
-      "planejado": 2185.54,
-      "executado_base": 1471.49,
-      "executado_mapa": 1746.61,
-      "diferenca_base_mapa": -275.12,
-      "saldo": 714.05,
-      "linhas_base": 6,
-      "linhas_mapa": 61
-    },
     {
       "obra": "Interligação Água Boa",
       "planejado": 425.0,
@@ -244,16 +224,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "CTS Mar de Coral",
-      "planejado": 2185.54,
-      "executado_base": 1471.49,
-      "executado_mapa": 1746.61,
-      "diferenca_base_mapa": -275.12,
-      "saldo": 714.05,
-      "linhas_base": 6,
-      "linhas_mapa": 61
-    },
-    {
       "obra": "RCE TRAV. DOS JESUITAS",
       "planejado": 619.5,
       "executado_base": 0.0,
@@ -274,16 +244,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "CTS Jardim Miriam",
-      "planejado": 2092.7,
-      "executado_base": 1562.3,
-      "executado_mapa": 1952.26,
-      "diferenca_base_mapa": -389.96,
-      "saldo": 530.4,
-      "linhas_base": 10,
-      "linhas_mapa": 56
-    },
-    {
       "obra": "CTS Água Vermelha - MD",
       "planejado": 1700.5,
       "executado_base": 1184.68,
@@ -292,16 +252,6 @@
       "saldo": 515.82,
       "linhas_base": 18,
       "linhas_mapa": 26
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 374.4,
-      "executado_mapa": 374.4,
-      "diferenca_base_mapa": -0.0,
-      "saldo": 484.1,
-      "linhas_base": 2,
-      "linhas_mapa": 6
     },
     {
       "obra": "CTS Água Vermelha - ME",
@@ -324,6 +274,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "CTS Mar de Coral",
+      "planejado": 2185.54,
+      "executado_base": 1746.61,
+      "executado_mapa": 1746.61,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 438.93,
+      "linhas_base": 6,
+      "linhas_mapa": 61
+    },
+    {
       "obra": "CT Lageado Montante",
       "planejado": 1724.0,
       "executado_base": 1297.69,
@@ -332,6 +292,16 @@
       "saldo": 426.31,
       "linhas_base": 6,
       "linhas_mapa": 30
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 454.54,
+      "executado_mapa": 454.56,
+      "diferenca_base_mapa": -0.02,
+      "saldo": 403.96,
+      "linhas_base": 2,
+      "linhas_mapa": 7
     },
     {
       "obra": "RCE TERRA PROMETIDA",
@@ -484,6 +454,16 @@
       "linhas_mapa": 22
     },
     {
+      "obra": "CTS Bandeirantes",
+      "planejado": 2133.2,
+      "executado_base": 1963.69,
+      "executado_mapa": 1963.69,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 169.51,
+      "linhas_base": 6,
+      "linhas_mapa": 35
+    },
+    {
       "obra": "RCE JOÃO CANZI",
       "planejado": 168.0,
       "executado_base": 0.0,
@@ -512,6 +492,16 @@
       "saldo": 146.5,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Jardim Miriam",
+      "planejado": 2092.7,
+      "executado_base": 1952.26,
+      "executado_mapa": 1952.26,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 140.44,
+      "linhas_base": 10,
+      "linhas_mapa": 56
     },
     {
       "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 2",
@@ -712,42 +702,6 @@
       "saldo": -84.32,
       "linhas_base": 1,
       "linhas_mapa": 1
-    },
-    {
-      "obra": "CTS Bandeirantes",
-      "planejado": 883.2,
-      "executado_base": 1963.69,
-      "executado_mapa": 1963.69,
-      "diferenca_base_mapa": 0.0,
-      "saldo": -1080.49,
-      "linhas_base": 6,
-      "linhas_mapa": 35
-    }
-  ],
-  "arquivos": [
-    {
-      "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
-      "existe": true,
-      "tamanho_kb": 28.2,
-      "modificado": "2026-05-22 07:33:01"
-    },
-    {
-      "arquivo": "planilha_base_mapa.xlsx",
-      "existe": true,
-      "tamanho_kb": 84.4,
-      "modificado": "2026-05-22 08:07:03"
-    },
-    {
-      "arquivo": "pds_word_completo_preenchido(2).xlsx",
-      "existe": true,
-      "tamanho_kb": 359.1,
-      "modificado": "2026-05-22 07:38:02"
-    },
-    {
-      "arquivo": "pds_data.json",
-      "existe": true,
-      "tamanho_kb": 435.4,
-      "modificado": "2026-05-22 07:44:12"
     }
   ]
 }
