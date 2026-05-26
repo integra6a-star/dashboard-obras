@@ -1,44 +1,44 @@
 {
-  "atualizado_em": "2026-05-25 13:08:01",
+  "atualizado_em": "2026-05-26 08:50:15",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 16124.98,
-    "mapa_executado": 16020.65,
+    "base_executado": 16203.56,
+    "mapa_executado": 16099.23,
     "diferenca_base_mapa": 104.34,
-    "saldo_total": 23563.41
+    "saldo_total": 23484.83
   },
   "pds": {
-    "total": 2538,
-    "ultima_data": "2026-05-25",
-    "hoje": 23,
+    "total": 2586,
+    "ultima_data": "2026-05-26",
+    "hoje": 48,
     "por_obra_ultima_data": [
       {
         "obra": "CT João Canzi",
-        "atividades": 5
+        "atividades": 10
       },
       {
         "obra": "RCE São Lucas",
-        "atividades": 5
+        "atividades": 10
       },
       {
         "obra": "CTS Lourdes Complementar",
-        "atividades": 3
+        "atividades": 8
       },
       {
-        "obra": "CTS Mar de Coral",
-        "atividades": 3
-      },
-      {
-        "obra": "Guindauto",
-        "atividades": 2
-      },
-      {
-        "obra": "João Canzi",
-        "atividades": 2
+        "obra": "CTS Mar De Coral",
+        "atividades": 6
       },
       {
         "obra": "Lourdes",
-        "atividades": 2
+        "atividades": 5
+      },
+      {
+        "obra": "Guindauto",
+        "atividades": 4
+      },
+      {
+        "obra": "João Canzi",
+        "atividades": 4
       },
       {
         "obra": "Serviços Reposição",
@@ -696,12 +696,38 @@
     {
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
-      "executado_base": 84.32,
-      "executado_mapa": 84.32,
+      "executado_base": 162.9,
+      "executado_mapa": 162.9,
       "diferenca_base_mapa": 0.0,
-      "saldo": -84.32,
+      "saldo": -162.9,
       "linhas_base": 1,
-      "linhas_mapa": 1
+      "linhas_mapa": 2
+    }
+  ],
+  "arquivos": [
+    {
+      "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
+      "existe": true,
+      "tamanho_kb": 34.8,
+      "modificado": "2026-05-26 07:47:55"
+    },
+    {
+      "arquivo": "planilha_base_mapa.xlsx",
+      "existe": true,
+      "tamanho_kb": 84.9,
+      "modificado": "2026-05-26 08:00:51"
+    },
+    {
+      "arquivo": "pds_word_completo_preenchido(2).xlsx",
+      "existe": true,
+      "tamanho_kb": 362.5,
+      "modificado": "2026-05-26 08:50:06"
+    },
+    {
+      "arquivo": "pds_data.json",
+      "existe": true,
+      "tamanho_kb": 448.1,
+      "modificado": "2026-05-26 08:50:09"
     }
   ]
 }

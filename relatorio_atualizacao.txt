@@ -1,12 +1,21 @@
-RELATORIO DE ATUALIZACAO DO DASHBOARD
-Atualizado em: 2026-05-25 13:08:01
+RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
+Atualizado em: 2026-05-26 08:50:15
 
-Executado Base Dash: 16,124.98 m
-Executado Mapa: 16,020.65 m
-Diferenca Base - Mapa: 104.34 m
-PDS hoje: 23 registros
+Planejado Base Dash: 39,688.39 m
+Executado Base Dash: 16,203.56 m
+Executado Mapa: 16,099.23 m
+Diferença Base - Mapa: 104.34 m
+Saldo total: 23,484.83 m
 
-Maiores divergencias:
+PDS total: 2586 registros
+PDS hoje: 48 registros
+Última data PDS: 2026-05-26
+
+Alertas:
+- Diferença total entre Base Dash e mapa: 104.34 m
+- 5 obra(s) com divergência entre executado da Base Dash e mapa.
+
+Maiores divergências por obra:
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
 - RCE São Lucas: Base 81.00 m | Mapa 0.00 m | Dif. 81.00 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
