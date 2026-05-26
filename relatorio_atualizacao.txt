@@ -1,14 +1,4 @@
-RELATORIO DE ATUALIZACAO DO DASHBOARD
-Atualizado em: 2026-05-25 13:08:01
+﻿Atualizacao publicada em 2026-05-26 08:10:21
+PDS 2026-05-26: 24 atividades
+Mapa: LOUR-002 PV-02 ao PV-03 vinculado ao plano de furo.
 
-Executado Base Dash: 16,124.98 m
-Executado Mapa: 16,020.65 m
-Diferenca Base - Mapa: 104.34 m
-PDS hoje: 23 registros
-
-Maiores divergencias:
-- Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
-- RCE São Lucas: Base 81.00 m | Mapa 0.00 m | Dif. 81.00 m
-- RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
-- CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
-- CTS Conceição: Base 765.89 m | Mapa 767.01 m | Dif. -1.12 m
