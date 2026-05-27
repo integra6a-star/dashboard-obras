@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-27T07:58:27.114343-03:00",
+  "atualizado_em": "2026-05-27T08:14:41.722172-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -2295,14 +2295,14 @@
       "Bloco": "61",
       "Tipo": "VCA",
       "Planejado_m": 1799.2,
-      "Executado_m": 81.0,
+      "Executado_m": 282.0,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
         "2026-01": 9.0,
-        "2026-05": 72.0
+        "2026-05": 273.0
       }
     },
     {
@@ -3300,7 +3300,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-05-27T07:58:27.113748-03:00",
+    "atualizado_em": "2026-05-27T08:14:41.722172-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
@@ -3325,8 +3325,8 @@
       },
       "2026": {
         "eap": 28768.36,
-        "produzido": 7183.798,
-        "saldo": -21584.562
+        "produzido": 7384.798,
+        "saldo": -21383.562
       }
     },
     "mensal": [
@@ -3488,12 +3488,12 @@
         "ano": 2026,
         "mes": "Mai",
         "eap": 2545.85,
-        "produzido": 837.288,
+        "produzido": 1038.288,
         "economias_eap": 2361.0,
         "economias_recebidas": 0.0,
-        "saldo_mes": -1708.562,
+        "saldo_mes": -1507.562,
         "saldo_economias": -2361.0,
-        "saldo_acum": -4442.712
+        "saldo_acum": -4241.712
       },
       {
         "ano": 2026,
@@ -3504,7 +3504,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3108.25,
         "saldo_economias": -2874.0,
-        "saldo_acum": -7550.962
+        "saldo_acum": -7349.962
       },
       {
         "ano": 2026,
@@ -3515,7 +3515,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3269.49,
         "saldo_economias": -4487.0,
-        "saldo_acum": -10820.452
+        "saldo_acum": -10619.452
       },
       {
         "ano": 2026,
@@ -3526,7 +3526,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3305.21,
         "saldo_economias": -4543.0,
-        "saldo_acum": -14125.662
+        "saldo_acum": -13924.662
       },
       {
         "ano": 2026,
@@ -3537,7 +3537,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3138.09,
         "saldo_economias": -3432.0,
-        "saldo_acum": -17263.752
+        "saldo_acum": -17062.752
       },
       {
         "ano": 2026,
@@ -3548,7 +3548,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -2251.28,
         "saldo_economias": -1923.0,
-        "saldo_acum": -19515.032
+        "saldo_acum": -19314.032
       },
       {
         "ano": 2026,
@@ -3559,7 +3559,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -1527.07,
         "saldo_economias": -713.0,
-        "saldo_acum": -21042.102
+        "saldo_acum": -20841.102
       },
       {
         "ano": 2026,
@@ -3570,7 +3570,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -542.46,
         "saldo_economias": -39.0,
-        "saldo_acum": -21584.562
+        "saldo_acum": -21383.562
       }
     ],
     "eap_economias": {
