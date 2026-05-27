@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "26/05/2026 07:56",
+  "atualizado_em": "27/05/2026 07:58",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Tancredo",
   "titulo": "Tancredo (Canteiro 1)",
   "produtos": [
@@ -16,11 +16,11 @@
     {
       "codigo": "P002",
       "descricao": "CURVA 45 GR PVC PB JE ESG DN 200 - JEI LONGA",
-      "estoque_atual": "188",
+      "estoque_atual": "187",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 188,
+      "quantidade": 187,
       "situacao_planilha": ""
     },
     {
@@ -36,11 +36,11 @@
     {
       "codigo": "P004",
       "descricao": "CURVA 45GR PVC CTA PB ESG DN100 JEI/JERI",
-      "estoque_atual": "178",
+      "estoque_atual": "202",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 178,
+      "quantidade": 202,
       "situacao_planilha": ""
     },
     {
@@ -56,11 +56,11 @@
     {
       "codigo": "P006",
       "descricao": "CURVA 90 GR PVC PB JE ESG DN150 LONGA",
-      "estoque_atual": "22",
+      "estoque_atual": "23",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 22,
+      "quantidade": 23,
       "situacao_planilha": ""
     },
     {
@@ -76,11 +76,11 @@
     {
       "codigo": "P008",
       "descricao": "CURVA 90GR PVC CTA PB ESG DN100 JEI/JERI",
-      "estoque_atual": "65",
+      "estoque_atual": "93",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 65,
+      "quantidade": 93,
       "situacao_planilha": ""
     },
     {
@@ -106,11 +106,11 @@
     {
       "codigo": "P011",
       "descricao": "LUVA CORRER BB ESG DN 100 - JEI",
-      "estoque_atual": "494",
+      "estoque_atual": "527",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 494,
+      "quantidade": 527,
       "situacao_planilha": ""
     },
     {
@@ -126,11 +126,11 @@
     {
       "codigo": "P013",
       "descricao": "LUVA CORRER BB ESG DN 200 - JEI",
-      "estoque_atual": "33",
+      "estoque_atual": "34",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 33,
+      "quantidade": 34,
       "situacao_planilha": ""
     },
     {
@@ -146,11 +146,11 @@
     {
       "codigo": "P015",
       "descricao": "LUVA TERMOFUSÃO 315",
-      "estoque_atual": "2",
+      "estoque_atual": "1",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 2,
+      "quantidade": 1,
       "situacao_planilha": ""
     },
     {
@@ -176,11 +176,11 @@
     {
       "codigo": "P018",
       "descricao": "SELIM AJUST TUBO PVC E CER DN 200X100",
-      "estoque_atual": "1388",
+      "estoque_atual": "1407",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 1388,
+      "quantidade": 1407,
       "situacao_planilha": ""
     },
     {
@@ -196,21 +196,21 @@
     {
       "codigo": "P020",
       "descricao": "SELIM AJUST TUBO PVC E CER DN 300X100",
-      "estoque_atual": "262",
+      "estoque_atual": "267",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 262,
+      "quantidade": 267,
       "situacao_planilha": ""
     },
     {
       "codigo": "P021",
       "descricao": "TAMPÃO DE 600 ESG",
-      "estoque_atual": "101",
+      "estoque_atual": "104",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 101,
+      "quantidade": 104,
       "situacao_planilha": ""
     },
     {
@@ -226,31 +226,31 @@
     {
       "codigo": "P023",
       "descricao": "TE PVC COLETOR OCRE BBP JE DN 150 X 150",
-      "estoque_atual": "9",
+      "estoque_atual": "10",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 9,
+      "quantidade": 10,
       "situacao_planilha": ""
     },
     {
       "codigo": "P024",
       "descricao": "TE PVC COLETOR OCRE BBP JE DN 200 X 200",
-      "estoque_atual": "4",
+      "estoque_atual": "5",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 4,
+      "quantidade": 5,
       "situacao_planilha": ""
     },
     {
       "codigo": "P025",
       "descricao": "TE PVC COLETOR OCRE BBP JE DN 300 X 300",
-      "estoque_atual": "15",
+      "estoque_atual": "14",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 15,
+      "quantidade": 14,
       "situacao_planilha": ""
     },
     {
@@ -266,11 +266,11 @@
     {
       "codigo": "P027",
       "descricao": "TE TERMOFUSÃO 355 MM",
-      "estoque_atual": "3",
+      "estoque_atual": "4",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 3,
+      "quantidade": 4,
       "situacao_planilha": ""
     },
     {
@@ -296,11 +296,11 @@
     {
       "codigo": "P030",
       "descricao": "UNIÃO PARA PEAD 20 MM",
-      "estoque_atual": "142",
+      "estoque_atual": "199",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 142,
+      "quantidade": 199,
       "situacao_planilha": ""
     },
     {

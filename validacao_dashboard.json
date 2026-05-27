@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-26 08:50:15",
+  "atualizado_em": "2026-05-27 08:00:13",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 16203.56,
@@ -9,36 +9,40 @@
   },
   "pds": {
     "total": 2586,
-    "ultima_data": "2026-05-26",
-    "hoje": 48,
+    "ultima_data": "2026-05-27",
+    "hoje": 24,
     "por_obra_ultima_data": [
       {
         "obra": "CT João Canzi",
-        "atividades": 10
-      },
-      {
-        "obra": "RCE São Lucas",
-        "atividades": 10
-      },
-      {
-        "obra": "CTS Lourdes Complementar",
-        "atividades": 8
-      },
-      {
-        "obra": "CTS Mar De Coral",
-        "atividades": 6
-      },
-      {
-        "obra": "Lourdes",
         "atividades": 5
       },
       {
-        "obra": "Guindauto",
+        "obra": "RCE São Lucas",
+        "atividades": 5
+      },
+      {
+        "obra": "CTS Lourdes Complementar",
         "atividades": 4
       },
       {
+        "obra": "Lourdes",
+        "atividades": 3
+      },
+      {
+        "obra": "Guindauto",
+        "atividades": 2
+      },
+      {
         "obra": "João Canzi",
-        "atividades": 4
+        "atividades": 2
+      },
+      {
+        "obra": "CTS Mar de Coral",
+        "atividades": 1
+      },
+      {
+        "obra": "INT. Arariba",
+        "atividades": 1
       },
       {
         "obra": "Serviços Reposição",
@@ -709,25 +713,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 34.8,
-      "modificado": "2026-05-26 07:47:55"
+      "modificado": "2026-05-27 07:55:39"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 84.9,
-      "modificado": "2026-05-26 08:00:51"
+      "modificado": "2026-05-27 07:55:40"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 362.5,
-      "modificado": "2026-05-26 08:50:06"
+      "tamanho_kb": 364.7,
+      "modificado": "2026-05-27 07:59:23"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 448.1,
-      "modificado": "2026-05-26 08:50:09"
+      "modificado": "2026-05-27 07:59:44"
     }
   ]
 }

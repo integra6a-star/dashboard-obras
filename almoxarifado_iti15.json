@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "26/05/2026 08:50",
+  "atualizado_em": "27/05/2026 07:58",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -55,6 +55,36 @@
     },
     {
       "codigo": "P006",
+      "descricao": "TUBO PEAD ESGOTO D 355",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P007",
+      "descricao": "TUBO PEAD ESGOTO D 315",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P008",
+      "descricao": "TUBO PEAD ESGOTO D 225",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P009",
       "descricao": "TUBO PEAD ESGOTO D 450",
       "estoque_atual": "175 barras",
       "estoque_minimo": 0,
@@ -64,17 +94,27 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P007",
-      "descricao": "CHAPA ARMICO",
-      "estoque_atual": "556",
+      "codigo": "P010",
+      "descricao": "TUBO CORRUGADO ESGOTO DN 300",
+      "estoque_atual": "0",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 556,
+      "quantidade": 0,
       "situacao_planilha": ""
     },
     {
-      "codigo": "P008",
+      "codigo": "P011",
+      "descricao": "CHAPA ARMICO",
+      "estoque_atual": "524",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 524,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P012",
       "descricao": "TAMPÃO DN 600",
       "estoque_atual": "7",
       "estoque_minimo": 0,
@@ -84,7 +124,17 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P009",
+      "codigo": "P013",
+      "descricao": "ADUELA DE 2000",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P014",
       "descricao": "ADUELA DE 1500",
       "estoque_atual": "1",
       "estoque_minimo": 0,
@@ -94,23 +144,63 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P010",
-      "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "60",
+      "codigo": "P015",
+      "descricao": "ADUELA DE 2,00 x 2,00",
+      "estoque_atual": "0",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 60,
+      "quantidade": 0,
       "situacao_planilha": ""
     },
     {
-      "codigo": "P011",
-      "descricao": "TUBO CRAVADO 1500 mm",
-      "estoque_atual": "59",
+      "codigo": "P016",
+      "descricao": "TELA SOLDADA Q283",
+      "estoque_atual": "63",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 59,
+      "quantidade": 63,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P017",
+      "descricao": "TUBO CRAVADO 1500 mm",
+      "estoque_atual": "49",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 49,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P018",
+      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 100 CM 6M",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P019",
+      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 200 CM 6M",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P020",
+      "descricao": "TUBO PVC RIG JEI/JERI ESG DN 300 CM 6M",
+      "estoque_atual": "0",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 0,
       "situacao_planilha": ""
     }
   ],
