@@ -64,40 +64,52 @@ def canonical(name: str, aliases: dict[str, str]) -> str:
 
 def read_base(aliases: dict[str, str]) -> dict:
     wb = load_workbook(BASE_XLSX, read_only=True, data_only=True)
-    ws = wb.active
-    headers = {str(ws.cell(1, c).value).strip(): c for c in range(1, ws.max_column + 1) if ws.cell(1, c).value}
-    col_obra = headers.get("Obra", 1)
-    col_plan = headers.get("Extensao_Planej", 5)
-    col_exec = headers.get("Extensao_Execut", 6)
-    prod_cols = [
-        c for name, c in headers.items()
-        if norm(name).startswith("PRODUCAO")
-    ]
+    try:
+        ws = wb.active
+        header_row = next(ws.iter_rows(min_row=1, max_row=1, values_only=True))
+        headers = {
+            str(value).strip(): idx + 1
+            for idx, value in enumerate(header_row)
+            if value is not None and str(value).strip()
+        }
 
-    by_obra = defaultdict(lambda: {"planejado": 0.0, "executado": 0.0, "linhas": 0, "origens": set()})
-    for r in range(2, ws.max_row + 1):
-        obra_raw = ws.cell(r, col_obra).value
-        if not obra_raw:
-            continue
-        obra = canonical(str(obra_raw), aliases)
-        planejado = num(ws.cell(r, col_plan).value)
-        executado_coluna = num(ws.cell(r, col_exec).value)
-        executado_mensal = sum(num(ws.cell(r, c).value) for c in prod_cols)
-        # A produção mensal é o histórico acumulado lançado na Base Dash.
-        # Quando ela supera a coluna de executado, a validação deve considerar
-        # o acumulado mensal para não esconder avanço lançado por mês.
-        executado = max(executado_coluna, executado_mensal)
-        by_obra[obra]["planejado"] += planejado
-        by_obra[obra]["executado"] += executado
-        by_obra[obra]["linhas"] += 1
-        by_obra[obra]["origens"].add(str(obra_raw).strip())
+        col_obra = headers.get("Obra", 1)
+        col_plan = headers.get("Extensao_Planej", 5)
+        col_exec = headers.get("Extensao_Execut", 6)
+        prod_cols = [
+            c for name, c in headers.items()
+            if norm(name).startswith("PRODUCAO")
+        ]
 
-    return {
-        "planejado": sum(v["planejado"] for v in by_obra.values()),
-        "executado": sum(v["executado"] for v in by_obra.values()),
-        "obras": by_obra,
-    }
+        by_obra = defaultdict(lambda: {"planejado": 0.0, "executado": 0.0, "linhas": 0, "origens": set()})
 
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            obra_raw = row[col_obra - 1] if len(row) >= col_obra else None
+            if not obra_raw:
+                continue
+
+            obra = canonical(str(obra_raw), aliases)
+            planejado = num(row[col_plan - 1]) if len(row) >= col_plan else 0.0
+            executado_coluna = num(row[col_exec - 1]) if len(row) >= col_exec else 0.0
+            executado_mensal = sum(num(row[c - 1]) for c in prod_cols if len(row) >= c)
+
+            # A produção mensal é o histórico acumulado lançado na Base Dash.
+            # Quando ela supera a coluna de executado, a validação deve considerar
+            # o acumulado mensal para não esconder avanço lançado por mês.
+            executado = executado_coluna
+
+            by_obra[obra]["planejado"] += planejado
+            by_obra[obra]["executado"] += executado
+            by_obra[obra]["linhas"] += 1
+            by_obra[obra]["origens"].add(str(obra_raw).strip())
+
+        return {
+            "planejado": sum(v["planejado"] for v in by_obra.values()),
+            "executado": sum(v["executado"] for v in by_obra.values()),
+            "obras": by_obra,
+        }
+    finally:
+        wb.close()
 
 def find_header_row(ws, required: str) -> tuple[int, dict[str, int]]:
     for row in range(1, min(ws.max_row, 20) + 1):
@@ -109,33 +121,48 @@ def find_header_row(ws, required: str) -> tuple[int, dict[str, int]]:
 
 def read_mapa(aliases: dict[str, str]) -> dict:
     wb = load_workbook(MAPA_XLSX, read_only=True, data_only=True)
-    ws = wb["TRECHOS"] if "TRECHOS" in wb.sheetnames else wb.active
-    header_row, headers = find_header_row(ws, "obra_id")
-    col_obra = headers.get("obra_id", 1)
-    col_ext = headers.get("extensao_m", 9)
-    col_status = headers.get("status")
-    col_mat = headers.get("material")
-    col_dn = headers.get("dn")
+    try:
+        ws = wb["TRECHOS"] if "TRECHOS" in wb.sheetnames else wb.active
 
-    by_obra = defaultdict(lambda: {"executado_mapa": 0.0, "linhas": 0, "materiais": defaultdict(float), "origens": set()})
-    total = 0.0
-    for r in range(header_row + 1, ws.max_row + 1):
-        raw = ws.cell(r, col_obra).value
-        ext = num(ws.cell(r, col_ext).value)
-        if not raw and not ext:
-            continue
-        status = str(ws.cell(r, col_status).value or "").strip() if col_status else ""
-        obra = canonical(str(raw or "Sem obra"), aliases)
-        mat = str(ws.cell(r, col_mat).value or "Sem material").strip() if col_mat else "Sem material"
-        dn = str(ws.cell(r, col_dn).value or "Sem diâmetro").strip() if col_dn else "Sem diâmetro"
-        by_obra[obra]["executado_mapa"] += ext
-        by_obra[obra]["linhas"] += 1
-        by_obra[obra]["materiais"][f"{mat} | {dn}"] += ext
-        by_obra[obra]["origens"].add(str(raw or "").strip())
-        total += ext
+        header_row, headers = find_header_row(ws, "obra_id")
+        if not headers:
+            header_row = 1
+            first_row = next(ws.iter_rows(min_row=1, max_row=1, values_only=True), [])
+            headers = {
+                str(value).strip(): idx + 1
+                for idx, value in enumerate(first_row)
+                if value is not None and str(value).strip()
+            }
 
-    return {"executado_mapa": total, "obras": by_obra}
+        col_obra = headers.get("obra_id", 1)
+        col_ext = headers.get("extensao_m", 9)
+        col_status = headers.get("status")
+        col_mat = headers.get("material")
+        col_dn = headers.get("dn")
 
+        by_obra = defaultdict(lambda: {"executado_mapa": 0.0, "linhas": 0, "materiais": defaultdict(float), "origens": set()})
+        total = 0.0
+
+        for row in ws.iter_rows(min_row=header_row + 1, values_only=True):
+            raw = row[col_obra - 1] if len(row) >= col_obra else None
+            ext = num(row[col_ext - 1]) if len(row) >= col_ext else 0.0
+            if not raw and not ext:
+                continue
+
+            status = str(row[col_status - 1] or "").strip() if col_status and len(row) >= col_status else ""
+            obra = canonical(str(raw or "Sem obra"), aliases)
+            mat = str(row[col_mat - 1] or "Sem material").strip() if col_mat and len(row) >= col_mat else "Sem material"
+            dn = str(row[col_dn - 1] or "Sem diâmetro").strip() if col_dn and len(row) >= col_dn else "Sem diâmetro"
+
+            by_obra[obra]["executado_mapa"] += ext
+            by_obra[obra]["linhas"] += 1
+            by_obra[obra]["materiais"][f"{mat} | {dn}"] += ext
+            by_obra[obra]["origens"].add(str(raw or "").strip())
+            total += ext
+
+        return {"executado_mapa": total, "obras": by_obra}
+    finally:
+        wb.close()
 
 def read_pds() -> dict:
     if not PDS_JSON.exists():
@@ -281,19 +308,33 @@ def write_report(payload: dict) -> None:
 
 
 def main() -> None:
-    payload = build_validation()
-    history = update_history(payload)
-    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    OUT_HIST.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
-    write_report(payload)
+    try:
+        print("Gerando payload de validação...")
+        payload = build_validation()
 
-    DOCS.mkdir(exist_ok=True)
-    for path in (OUT_JSON, OUT_HIST, OUT_TXT):
-        shutil.copy2(path, DOCS / path.name)
+        print("Atualizando histórico...")
+        history = update_history(payload)
 
-    print("Validação automática gerada.")
-    print(f"Diferença Base - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
-    print(f"Alertas: {len(payload['alertas'])}")
+        print("Salvando validacao_dashboard.json...")
+        OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        print("Salvando historico_atualizacoes.json...")
+        OUT_HIST.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        print("Gerando relatorio_atualizacao.txt...")
+        write_report(payload)
+
+        print("Espelhando arquivos para a pasta docs...")
+        DOCS.mkdir(exist_ok=True)
+        for path in (OUT_JSON, OUT_HIST, OUT_TXT):
+            shutil.copy2(path, DOCS / path.name)
+
+        print("Validação automática gerada.")
+        print(f"Diferença Base - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
+        print(f"Alertas: {len(payload['alertas'])}")
+    except Exception as exc:
+        print(f"ERRO ao gerar validação do dashboard: {exc}")
+        raise
 
 
 if __name__ == "__main__":
