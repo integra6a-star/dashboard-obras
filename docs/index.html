@@ -1436,8 +1436,8 @@ function calcularIndicadoresPlanilha(nomeObraFiltro=''){
     });
   }
 
-  // A planilha_base_mapa.xlsx representa a extensão executada real do mapa.
-  // Por isso o executado do dashboard vem da soma da extensão dos trechos da planilha.
+  // A planilha_base_mapa.xlsx representa somente os trechos que já têm geometria/plano no mapa.
+  // O executado oficial do dashboard vem da Base Dash, porque há obras produzidas ainda sem plano de furo.
   const extensaoTotal = trechos.reduce((s,t) => s + numeroBase(pegarCampo(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m','planejado_m'])), 0);
 
   const executado = extensaoTotal;
@@ -1490,10 +1490,10 @@ function updateUI(){
   // Planejado/extensão total permanece do dashboard original.
   const plan = totals.plan;
 
-  // Executado vem da planilha_base_mapa.xlsx: soma da extensão dos trechos do mapa.
-  const exec = indPlanilha ? indPlanilha.exec : totals.exec;
+  // Executado oficial vem da Base Dash/dados.json.
+  const exec = totals.exec;
 
-  // Saldo = planejado original - executado vindo da planilha do mapa.
+  // Saldo = planejado original - executado oficial.
   const saldo = Math.max(0, plan - exec);
   const av = pct(plan,exec);
 
