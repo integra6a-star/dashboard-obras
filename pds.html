@@ -243,9 +243,34 @@ async function tryFetchArrayBuffer(paths){
   }
   return null;
 }
+async function tryFetchJson(paths){
+  for(const path of paths){
+    try{
+      const res = await fetch(path + '?v=' + Date.now(), {cache:'no-store'});
+      if(!res.ok) continue;
+      const rows = await res.json();
+      if(Array.isArray(rows)) return rows;
+    }catch(e){}
+  }
+  return null;
+}
 async function carregarDaPlanilha(){
   const warn = document.getElementById('warnBox');
   warn.style.display = 'none';
+  const jsonRows = await tryFetchJson(['./pds_data.json', './docs/pds_data.json']);
+  if(jsonRows){
+    DATA = jsonRows
+      .map(r => ({
+        data: normalizarDataExcel(r.data),
+        obra: String(r.obra || '').trim(),
+        equipe: String(r.equipe || '').trim(),
+        atividade: String(r.atividade || '').trim(),
+        pv: String(r.pv || '').trim(),
+        trecho: String(r.trecho || '').trim()
+      }))
+      .filter(r => r.data && r.obra && r.equipe && r.atividade);
+    return;
+  }
   const buffer = await tryFetchArrayBuffer([
     './pds_word_completo_preenchido(2).xlsx',
     './docs/pds_word_completo_preenchido(2).xlsx'
