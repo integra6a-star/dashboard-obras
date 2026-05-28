@@ -1538,8 +1538,7 @@ function updateUI(){
 }
 async function loadFuncionariosMeta(){
   try{
-    const res = await fetch('./funcionarios.json?cb=' + Date.now());
-    const json = await res.json();
+    const json = await loadDashboardJson('funcionarios.json');
     const updatedRaw = json.atualizado_em || json.atualizado || json.updated || '-';
     pillFunc.textContent = 'Atualizado Func.: ' + formatarDataHora(updatedRaw);
   }catch(e){ pillFunc.textContent = 'Atualizado Func.: -'; }
@@ -1572,8 +1571,7 @@ async function loadMaintenance(){
 
 async function loadData(){
   await loadPlanilhaBaseMapa();
-  const res = await fetch('./dados.json?cb=' + Date.now());
-  const json = await res.json();
+  const json = await loadDashboardJson('dados.json');
   RAW = json.registros || [];
   MESES = json.meses_producao || [];
   CURVA_MENSAL = json.eap_producao?.mensal || [];
@@ -1583,6 +1581,17 @@ async function loadData(){
   fillSelect();
   updateUI();
   loadValidacaoDashboard();
+}
+
+async function loadDashboardJson(source){
+  const apiUrl = './api/supabase-snapshot?source=' + encodeURIComponent(source) + '&cb=' + Date.now();
+  try{
+    const res = await fetch(apiUrl);
+    if(res.ok) return await res.json();
+  }catch(e){}
+  const fallback = await fetch('./' + source + '?cb=' + Date.now());
+  if(!fallback.ok) throw new Error('Nao foi possivel carregar ' + source);
+  return await fallback.json();
 }
 
 document.getElementById('btnReload').addEventListener('click',()=>loadData().catch(e=>alert('Erro ao recarregar: '+e.message)));
