@@ -1,67 +1,55 @@
 {
-  "atualizado_em": "2026-05-27 15:15:48",
+  "atualizado_em": "2026-05-29 07:27:07",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 16518.23,
+    "base_executado": 16605.23,
     "mapa_executado": 16236.88,
-    "diferenca_base_mapa": 281.35,
-    "saldo_total": 23170.16
+    "diferenca_base_mapa": 368.35,
+    "saldo_total": 23083.16
   },
   "pds": {
-    "total": 2586,
-    "ultima_data": "2026-05-27",
+    "total": 2611,
+    "ultima_data": "2026-05-29",
     "hoje": 24,
     "por_obra_ultima_data": [
       {
-        "obra": "CT João Canzi",
+        "obra": "Servi?os Reposi??o",
+        "atividades": 8
+      },
+      {
+        "obra": "CT Joo Canzi Valmir",
         "atividades": 5
       },
       {
-        "obra": "RCE São Lucas",
+        "obra": "CTS Lourdes Complementar Caroline E Silvestre",
         "atividades": 5
       },
       {
-        "obra": "CTS Lourdes Complementar",
+        "obra": "RCE So Lucas Fbio",
         "atividades": 4
       },
       {
-        "obra": "Lourdes",
-        "atividades": 3
-      },
-      {
-        "obra": "Guindauto",
-        "atividades": 2
-      },
-      {
-        "obra": "João Canzi",
-        "atividades": 2
-      },
-      {
-        "obra": "CTS Mar de Coral",
+        "obra": "RCE Conj. Unio Caroline E Silvestre",
         "atividades": 1
       },
       {
-        "obra": "INT. Arariba",
-        "atividades": 1
-      },
-      {
-        "obra": "Serviços Reposição",
+        "obra": "RCE Rua So Joo Fbio",
         "atividades": 1
       }
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 281.35 m",
+    "Diferença total entre Base Dash e mapa: 368.35 m",
     "5 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 258.0,
+      "executado_base": 345.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 258.0,
-      "saldo": 1541.2,
+      "diferenca_base_mapa": 345.0,
+      "saldo": 1454.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -150,10 +138,10 @@
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 258.0,
+      "executado_base": 345.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 258.0,
-      "saldo": 1541.2,
+      "diferenca_base_mapa": 345.0,
+      "saldo": 1454.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -713,25 +701,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 34.8,
-      "modificado": "2026-05-27 15:08:04"
+      "modificado": "2026-05-29 07:27:01"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 85.3,
-      "modificado": "2026-05-27 15:15:28"
+      "modificado": "2026-05-29 07:26:05"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 364.5,
-      "modificado": "2026-05-27 08:16:04"
+      "tamanho_kb": 366.6,
+      "modificado": "2026-05-29 07:25:23"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 448.1,
-      "modificado": "2026-05-27 08:16:13"
+      "tamanho_kb": 452.8,
+      "modificado": "2026-05-29 07:27:05"
     }
   ]
 }

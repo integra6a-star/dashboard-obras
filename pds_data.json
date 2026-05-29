@@ -20496,194 +20496,394 @@
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "CT João Canzi",
-    "equipe": "Goiânia Drill",
-    "atividade": "Furo piloto e puxe do PV-14 ao PV-15",
-    "trecho": "14-15",
-    "pv": "14 ao 15"
+    "data": "2026-05-28",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Goinia Drill",
+    "atividade": "Furo piloto e puxe do PV-15 ao PV-16",
+    "trecho": "15-16",
+    "pv": "15 ao 16"
   },
   {
-    "data": "2026-05-27",
-    "obra": "CT João Canzi",
+    "data": "2026-05-28",
+    "obra": "CT Joo Canzi Valmir",
     "equipe": "Bruno",
     "atividade": "Apoio ao HDD",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "CT João Canzi",
+    "data": "2026-05-28",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Mrcio",
+    "atividade": "Transformao PV 14",
+    "trecho": "",
+    "pv": "14"
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Marcelo",
+    "atividade": "Shaft PV 09",
+    "trecho": "",
+    "pv": "09"
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "RCE Elvira / CT Joo Canzi Valmir",
     "equipe": "Valter",
-    "atividade": "Rede secundária e ligações - PI 1.1 (Elvira)",
+    "atividade": "Rede secundria e ligaes PI 1.1",
     "trecho": "",
     "pv": "1.1"
   },
   {
-    "data": "2026-05-27",
-    "obra": "CT João Canzi",
-    "equipe": "Marcelo",
-    "atividade": "Transformação PV 08",
-    "trecho": "",
-    "pv": "08"
+    "data": "2026-05-28",
+    "obra": "RCE Elias Sleiman / CT Joo Canzi Silvestre",
+    "equipe": "Cesar",
+    "atividade": "VCA + interl PV 17 ao PV 22",
+    "trecho": "17-22",
+    "pv": "17 ao 22"
   },
   {
-    "data": "2026-05-27",
-    "obra": "CT João Canzi",
-    "equipe": "Cidão",
-    "atividade": "Transformação PV 13",
-    "trecho": "",
-    "pv": "13"
-  },
-  {
-    "data": "2026-05-27",
-    "obra": "CTS Mar de Coral",
-    "equipe": "Marcio",
-    "atividade": "Substituição rede - Cerâmica p/ PVC - PV 33",
-    "trecho": "",
-    "pv": "33"
-  },
-  {
-    "data": "2026-05-27",
-    "obra": "INT. Arariba",
+    "data": "2026-05-28",
+    "obra": "RCE Conj. Unio Silvestre",
     "equipe": "Jonathan",
-    "atividade": "Regularização PI 13",
+    "atividade": "Shaft PV 40.1",
     "trecho": "",
-    "pv": "13"
+    "pv": "40.1"
   },
   {
-    "data": "2026-05-27",
-    "obra": "RCE São Lucas",
-    "equipe": "Ricardo",
-    "atividade": "VCA, PVs e Ligações (PI 04 ao PI 05)",
-    "trecho": "04-05",
-    "pv": "04 ao 05"
+    "data": "2026-05-28",
+    "obra": "CTS Agua Boa Caroline",
+    "equipe": "Cido",
+    "atividade": "Implantao TLs Se Liga na Rede",
+    "trecho": "",
+    "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "RCE São Lucas",
-    "equipe": "Claudinei",
-    "atividade": "VCA, PVs e Ligações (PI 37 ao PI 38)",
+    "data": "2026-05-28",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Ricardo (PI 04 Ao PI 06)",
+    "atividade": "VCA, PVs e Ligaes",
+    "trecho": "04-06",
+    "pv": "04 ao 06"
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Claudinei (PI 37 Ao PI 38)",
+    "atividade": "VCA, PVs e Ligaes",
     "trecho": "37-38",
     "pv": "37 ao 38"
   },
   {
-    "data": "2026-05-27",
-    "obra": "RCE São Lucas",
-    "equipe": "Antonio",
-    "atividade": "VCA, PVs e Ligações (PI 01 ao PI 02)",
+    "data": "2026-05-28",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Emanuel GO-01",
+    "atividade": "VCA, PVs e Ligaes; (PI 33 ao PI 34)",
+    "trecho": "33-34",
+    "pv": "33 ao 34"
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Miro GO-02",
+    "atividade": "VCA, PVs e Ligaes; (PI 33 ao PI 34)",
+    "trecho": "33-34",
+    "pv": "33 ao 34"
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "RCE Rua So Joo Fbio",
+    "equipe": "Antonio (PI 01 Ao PI 02)*",
+    "atividade": "VCA, PVs e Ligaes",
     "trecho": "01-02",
     "pv": "01 ao 02"
   },
   {
-    "data": "2026-05-27",
-    "obra": "RCE São Lucas",
-    "equipe": "Emanuel GO-01",
-    "atividade": "VCA, PVs e Ligações (PI 33 ao PI 34)",
-    "trecho": "33-34",
-    "pv": "33 ao 34"
-  },
-  {
-    "data": "2026-05-27",
-    "obra": "RCE São Lucas",
-    "equipe": "Miro GO-02",
-    "atividade": "VCA, PVs e Ligações (PI 33 ao PI 34)",
-    "trecho": "33-34",
-    "pv": "33 ao 34"
-  },
-  {
-    "data": "2026-05-27",
-    "obra": "CTS Lourdes Complementar",
-    "equipe": "GR Drill",
+    "data": "2026-05-28",
+    "obra": "CTS Lourdes Complementar Robson",
+    "equipe": "Gr Drill",
     "atividade": "Furo Piloto e puxe PV 03 ao PV 05",
     "trecho": "03-05",
     "pv": "03 ao 05"
   },
   {
-    "data": "2026-05-27",
-    "obra": "CTS Lourdes Complementar",
+    "data": "2026-05-28",
+    "obra": "CTS Lourdes Complementar Robson",
     "equipe": "Medeiros",
     "atividade": "Apoio HDD",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "CTS Lourdes Complementar",
-    "equipe": "Cesar",
-    "atividade": "Transformação + interl PV 01",
-    "trecho": "",
-    "pv": "01"
-  },
-  {
-    "data": "2026-05-27",
-    "obra": "CTS Lourdes Complementar",
+    "data": "2026-05-28",
+    "obra": "CTS Lourdes Complementar Robson",
     "equipe": "Edvando",
-    "atividade": "Transformação PV 02",
+    "atividade": "Transformao PV 02",
     "trecho": "",
     "pv": "02"
   },
   {
-    "data": "2026-05-27",
-    "obra": "Serviços Reposição",
-    "equipe": "Reposição",
+    "data": "2026-05-28",
+    "obra": "CTS Lourdes Complementar Robson",
+    "equipe": "Edvando",
+    "atividade": "SERVIOS REPOSIO LEANDRO",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "CTS Lourdes Complementar Robson",
+    "equipe": "Edvando",
     "atividade": "Reparos Gerais",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "João Canzi",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Vacal João Canzi - Renasce",
+    "atividade": "Joo Canzi Renasce",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "João Canzi",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Vacal João Canzi - Henko",
+    "atividade": "Joo Canzi Henko",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "Lourdes",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Vacal Lourdes - Hidrosol",
+    "atividade": "Lourdes Hidrosol",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "Lourdes",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Vacal Lourdes - Henko",
+    "atividade": "Lourdes Henko",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "Lourdes",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Vacal Lourdes - Henko",
+    "atividade": "Lourdes Henko",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "Guindauto",
-    "equipe": "Marcio",
-    "atividade": "Apoio as equipes",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Guindauto: Marcio",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
   {
-    "data": "2026-05-27",
-    "obra": "Guindauto",
-    "equipe": "Luiz Carlos",
-    "atividade": "Apoio as equipes",
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Guindauto: Luiz Carlos",
+    "atividade": "Luiz Carlos - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Goinia Drill",
+    "atividade": "Furo piloto e puxe do PV-10 ao PV-11",
+    "trecho": "10-11",
+    "pv": "10 ao 11"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Bruno",
+    "atividade": "Apoio ao HDD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Mrcio",
+    "atividade": "Transformao PV 14",
+    "trecho": "",
+    "pv": "14"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Marcelo",
+    "atividade": "Shaft PV 09",
+    "trecho": "",
+    "pv": "09"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CT Joo Canzi Valmir",
+    "equipe": "Valter",
+    "atividade": "Shaft PV 11",
+    "trecho": "",
+    "pv": "11"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "RCE Conj. Unio Caroline E Silvestre",
+    "equipe": "Jonathan",
+    "atividade": "Shaft PV 40.1",
+    "trecho": "",
+    "pv": "40.1"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Ricardo (PI 04 Ao PI 06)",
+    "atividade": "VCA, PVs e Ligaes",
+    "trecho": "04-06",
+    "pv": "04 ao 06"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Claudinei (PI 37 Ao PI 38)",
+    "atividade": "VCA, PVs e Ligaes",
+    "trecho": "37-38",
+    "pv": "37 ao 38"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Emanuel GO-01",
+    "atividade": "VCA, PVs e Ligaes; (PI 33 ao PI 34)",
+    "trecho": "33-34",
+    "pv": "33 ao 34"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "RCE So Lucas Fbio",
+    "equipe": "Miro GO-02",
+    "atividade": "VCA, PVs e Ligaes; (PI 33 ao PI 34)",
+    "trecho": "33-34",
+    "pv": "33 ao 34"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "RCE Rua So Joo Fbio",
+    "equipe": "Antonio (PI 01 Ao PI 02)*",
+    "atividade": "VCA, PVs e Ligaes",
+    "trecho": "01-02",
+    "pv": "01 ao 02"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CTS Lourdes Complementar Caroline E Silvestre",
+    "equipe": "Cesar",
+    "atividade": "Corte cabea puxe PV 03",
+    "trecho": "",
+    "pv": "03"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CTS Lourdes Complementar Caroline E Silvestre",
+    "equipe": "Edvando",
+    "atividade": "Transformao PV 02",
+    "trecho": "",
+    "pv": "02"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CTS Lourdes Complementar Caroline E Silvestre",
+    "equipe": "Cido",
+    "atividade": "Transformao PV 04",
+    "trecho": "",
+    "pv": "04"
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CTS Lourdes Complementar Caroline E Silvestre",
+    "equipe": "Cido",
+    "atividade": "SERVIOS REPOSIO LEANDRO",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "CTS Lourdes Complementar Caroline E Silvestre",
+    "equipe": "Cido",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Joo Canzi Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Joo Canzi Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Joo Canzi Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Lourdes - Hidrosol",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Lourdes Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Guindauto: Marcio",
+    "atividade": "Marcio - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Guindauto: Luiz Carlos",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   }
