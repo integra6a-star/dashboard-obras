@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "27/05/2026 08:14",
+  "atualizado_em": "29/05/2026 07:29",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -96,21 +96,21 @@
     {
       "codigo": "P010",
       "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "60",
+      "estoque_atual": "327",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 60,
+      "quantidade": 327,
       "situacao_planilha": ""
     },
     {
       "codigo": "P011",
       "descricao": "TUBO CRAVADO 1500 mm",
-      "estoque_atual": "59",
+      "estoque_atual": "79",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 59,
+      "quantidade": 79,
       "situacao_planilha": ""
     }
   ],
