@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-01 18:19:49",
+  "atualizado_em": "2026-06-01 18:35:00",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17297.13,
@@ -90,7 +90,7 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "RCE Pacheco Jordão",
+      "obra": "RCE Rua São João",
       "planejado": 95.0,
       "executado_base": 56.1,
       "executado_mapa": 0.0,
@@ -622,7 +622,7 @@
       "linhas_mapa": 14
     },
     {
-      "obra": "RCE Pacheco Jordão",
+      "obra": "RCE Rua São João",
       "planejado": 95.0,
       "executado_base": 56.1,
       "executado_mapa": 0.0,
@@ -739,13 +739,13 @@
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 369.1,
-      "modificado": "2026-06-01 18:19:36"
+      "modificado": "2026-06-01 18:34:49"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 459.5,
-      "modificado": "2026-06-01 18:19:43"
+      "modificado": "2026-06-01 18:34:54"
     }
   ]
 }

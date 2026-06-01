@@ -46,8 +46,8 @@
   "RCE SOUTO MAIOR": "RCE Souto Maior",
   "RCE SAO LUCAS": "RCE São Lucas",
   "RCE SÃO LUCAS": "RCE São Lucas",
-  "RCE SAO JOAO": "RCE Pacheco Jordão",
-  "RCE SÃO JOÃO": "RCE Pacheco Jordão",
+  "RCE SAO JOAO": "RCE Rua São João",
+  "RCE SÃO JOÃO": "RCE Rua São João",
   "RCE PACHECO JORDAO": "RCE Pacheco Jordão",
   "RCE PACHECO JORDÃO": "RCE Pacheco Jordão",
   "AGUA": "CTS Água Vermelha - ME",
@@ -78,5 +78,7 @@
   "cts_lourdes_complementar": "CTS Lourdes Complementar",
   "CTS JD. LOURDES COMPLEMENTAR": "CTS Lourdes Complementar",
   "CTS LOURDES COMPLEMENTAR": "CTS Lourdes Complementar",
-  "CT LOURDES": "CTS Lourdes Complementar"
+  "CT LOURDES": "CTS Lourdes Complementar",
+  "RCE RUA SAO JOAO": "RCE Rua São João",
+  "RCE RUA SÃO JOÃO": "RCE Rua São João"
 }
