@@ -162,6 +162,56 @@
       background:#1e293b;
     }
 
+    .atalhos-seguranca {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:18px;
+      margin:24px 0;
+    }
+
+    .atalho-card {
+      background:white;
+      border:1px solid rgba(226,232,240,.85);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      text-align:left;
+      transition:.2s;
+      color:var(--text);
+      font:inherit;
+    }
+
+    .atalho-card:hover {
+      transform:translateY(-2px);
+      border-color:#bfdbfe;
+    }
+
+    .atalho-card .icone {
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#eff6ff;
+      color:#1d4ed8;
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    .atalho-card h2 {
+      margin:0 0 6px;
+      font-size:21px;
+      letter-spacing:-.02em;
+    }
+
+    .atalho-card p {
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.35;
+    }
+
     .kpi-grid {
       display:grid;
       grid-template-columns:repeat(4,minmax(200px,1fr));
@@ -366,6 +416,10 @@
       box-shadow:var(--shadow);
       padding:22px;
       margin:24px 0;
+    }
+
+    .inspecao-card.oculto {
+      display:none;
     }
 
     .inspecao-head {
@@ -599,10 +653,11 @@
     }
 
     @media print {
-      .hero,.filtros,.kpi-grid,.dashboard-graficos,.tabela-card,.chips { display:none !important; }
+      .hero,.filtros,.atalhos-seguranca,.kpi-grid,.dashboard-graficos,.tabela-card,.chips { display:none !important; }
       body { background:white; }
       .page { width:100%; margin:0; }
       .inspecao-card { box-shadow:none; border:0; margin:0; padding:0; }
+      .inspecao-card.oculto { display:block; }
       .inspecao-actions { display:none; }
     }
 
@@ -663,7 +718,21 @@
       <button class="btn-limpar" onclick="limparFiltros()">Limpar filtros</button>
     </section>
 
-    <section class="inspecao-card" id="formularioInspecao">
+    <section class="atalhos-seguranca" aria-label="Acoes de seguranca">
+      <button class="atalho-card" type="button" onclick="abrirFormularioInspecao()">
+        <div class="icone">📝</div>
+        <h2>Novo Checklist</h2>
+        <p>Preencher inspeção de segurança com checklist, tratativas e fotos.</p>
+      </button>
+
+      <button class="atalho-card" type="button" onclick="exportarInspecaoSegurancaExcel()">
+        <div class="icone">📊</div>
+        <h2>Exportar Excel</h2>
+        <p>Baixar a inspeção preenchida em planilha Excel.</p>
+      </button>
+    </section>
+
+    <section class="inspecao-card oculto" id="formularioInspecao">
       <div class="inspecao-head">
         <div>
           <h2>Formulário de Inspeção em Saúde e Segurança</h2>
@@ -671,6 +740,7 @@
         </div>
         <div class="inspecao-actions">
           <button class="btn-form" type="button" onclick="salvarInspecaoSeguranca()">Salvar rascunho</button>
+          <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaExcel()">Exportar Excel</button>
           <button class="btn-form primary" type="button" onclick="window.print()">Imprimir</button>
           <button class="btn-form danger" type="button" onclick="limparInspecaoSeguranca()">Limpar</button>
         </div>
@@ -1304,6 +1374,94 @@
       {titulo:"1.5 - Documentações diversas", itens:["APR - Análise Preliminar de Risco no veículo","DDS - Diálogo Diário de Segurança","PT de espaço confinado PV / shaft / valas","PT de trabalho em altura","PT de escavação de valas acima de 1,25 m","PAE - Plano Atendimento Emergencial","Documentos gerais (Plano de Escoramento, TPOV, PDDT, sinalização, etc.)"]},
       {titulo:"1.6 - Qualidade e organização de obra", itens:["Limpeza da obra","Banheiro químico higienizado","Área de vivência com mesas e cadeiras","Água potável disponível","Copo descartável disponível","Kit de higienização de mãos disponível","Lona plástica de separação de materiais","Distância da terra da borda de vala (30% em relação à profundidade)","Carimbo de provisório na vala"]}
     ];
+
+    function abrirFormularioInspecao(){
+      const card = document.getElementById("formularioInspecao");
+      if (!card) return;
+      card.classList.remove("oculto");
+      card.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    function textoExcel(valor){
+      return String(valor || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function checklistInspecaoLinhas(dados){
+      let idx = 0;
+      return CHECKLIST_INSPECAO_SEGURANCA.flatMap(grupo => grupo.itens.map(item => {
+        idx += 1;
+        return {grupo:grupo.titulo, item, resultado:dados.checks[`check_${idx}`] || ""};
+      }));
+    }
+
+    function baixarHtmlComoExcel(nomeArquivo, html){
+      const blob = new Blob(["\ufeff" + html], {type:"application/vnd.ms-excel;charset=utf-8"});
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = nomeArquivo;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(link.href), 500);
+    }
+
+    function exportarInspecaoSegurancaExcel(){
+      abrirFormularioInspecao();
+      const dados = coletarInspecaoSeguranca();
+      const campos = dados.campos || {};
+      const resumo = checklistInspecaoLinhas(dados).reduce((acc, linha) => {
+        if (linha.resultado) acc[linha.resultado] = (acc[linha.resultado] || 0) + 1;
+        return acc;
+      }, {C:0, NC:0, NA:0});
+      const linhasCampos = [
+        ["Endereco da obra", campos.endereco],
+        ["Relatorio n", campos.relatorio],
+        ["Data emissao", campos.dataEmissao],
+        ["Equipe", campos.equipe],
+        ["Horario", campos.horario],
+        ["N frota", campos.frota],
+        ["Tema DDS", campos.temaDDS],
+        ["Tecnico de seguranca", campos.tecnicoSeguranca],
+        ["Supervisor / encarregado", campos.supervisor],
+        ["Comportamentos inseguros", campos.comportamentosInseguros],
+        ["Nao conformidades", campos.naoConformidades],
+        ["Medidas corretivas", campos.medidasCorretivas],
+        ["Adequacoes posteriores", campos.adequacoesPosteriores],
+        ["Responsavel equipe", campos.assinaturaResponsavel],
+        ["Assinatura supervisor", campos.assinaturaSupervisor],
+        ["Assinatura TST", campos.assinaturaTST],
+        ["Assinatura eng seguranca", campos.assinaturaEng]
+      ].map(([campo, valor]) => `<tr><td>${textoExcel(campo)}</td><td>${textoExcel(valor)}</td></tr>`).join("");
+      const linhasChecklist = checklistInspecaoLinhas(dados)
+        .map(linha => `<tr><td>${textoExcel(linha.grupo)}</td><td>${textoExcel(linha.item)}</td><td>${textoExcel(linha.resultado)}</td></tr>`)
+        .join("");
+      const linhasFotos = [1,2,3,4].map(numero => {
+        const src = dados.fotos && dados.fotos[numero];
+        const foto = src ? `<img src="${src}" style="max-width:260px;max-height:180px;">` : "Sem foto";
+        return `<tr><td>Imagem ${String(numero).padStart(2,"0")}</td><td>${foto}</td></tr>`;
+      }).join("");
+      const html = `
+        <html>
+          <head><meta charset="UTF-8"></head>
+          <body>
+            <h1>Inspecao em Saude e Seguranca</h1>
+            <table border="1"><tr><th>Campo</th><th>Informacao</th></tr>${linhasCampos}</table>
+            <br>
+            <table border="1"><tr><th>Conformes</th><th>Nao conformes</th><th>Nao aplicavel</th></tr><tr><td>${resumo.C}</td><td>${resumo.NC}</td><td>${resumo.NA}</td></tr></table>
+            <br>
+            <table border="1"><tr><th>Grupo</th><th>Item</th><th>Resultado</th></tr>${linhasChecklist}</table>
+            <br>
+            <table border="1"><tr><th>Foto</th><th>Imagem</th></tr>${linhasFotos}</table>
+          </body>
+        </html>
+      `;
+      const data = campos.dataEmissao || new Date().toISOString().slice(0,10);
+      baixarHtmlComoExcel(`inspecao_seguranca_${data}.xls`, html);
+    }
 
     function montarChecklistInspecaoSeguranca(){
       const alvo = document.getElementById("checklistInspecaoSeguranca");
