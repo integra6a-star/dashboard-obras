@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-06-01 08:32:21",
+  "atualizado_em": "2026-06-01 18:19:49",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 16613.0,
-    "mapa_executado": 16244.64,
-    "diferenca_base_mapa": 368.36,
-    "saldo_total": 23075.39
+    "base_executado": 17297.13,
+    "mapa_executado": 16329.67,
+    "diferenca_base_mapa": 967.46,
+    "saldo_total": 22391.26
   },
   "pds": {
     "total": 2650,
@@ -55,17 +55,17 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 368.36 m",
-    "5 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 967.46 m",
+    "6 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 345.0,
+      "executado_base": 888.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 345.0,
-      "saldo": 1454.2,
+      "diferenca_base_mapa": 888.0,
+      "saldo": 911.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -88,6 +88,16 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
+    },
+    {
+      "obra": "RCE Pacheco Jordão",
+      "planejado": 95.0,
+      "executado_base": 56.1,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 56.1,
+      "saldo": 38.9,
+      "linhas_base": 2,
+      "linhas_mapa": 0
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -152,16 +162,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 345.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 345.0,
-      "saldo": 1454.2,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE  JD.HELOISA",
       "planejado": 1021.03,
       "executado_base": 0.0,
@@ -178,6 +178,16 @@
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 0.0,
       "saldo": 1011.6,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 888.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 888.0,
+      "saldo": 911.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -302,16 +312,6 @@
       "linhas_mapa": 30
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 454.56,
-      "executado_mapa": 454.56,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 403.94,
-      "linhas_base": 2,
-      "linhas_mapa": 7
-    },
-    {
       "obra": "RCE TERRA PROMETIDA",
       "planejado": 382.5,
       "executado_base": 0.0,
@@ -330,6 +330,16 @@
       "saldo": 338.5,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 539.59,
+      "executado_mapa": 539.59,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 318.91,
+      "linhas_base": 2,
+      "linhas_mapa": 8
     },
     {
       "obra": "RCE RUA ALTO JURUÁ",
@@ -572,16 +582,6 @@
       "linhas_mapa": 21
     },
     {
-      "obra": "RCE Pacheco Jordão",
-      "planejado": 95.0,
-      "executado_base": 0.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 95.0,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 1",
       "planejado": 69.0,
       "executado_base": 0.0,
@@ -620,6 +620,16 @@
       "saldo": 46.61,
       "linhas_base": 4,
       "linhas_mapa": 14
+    },
+    {
+      "obra": "RCE Pacheco Jordão",
+      "planejado": 95.0,
+      "executado_base": 56.1,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 56.1,
+      "saldo": 38.9,
+      "linhas_base": 2,
+      "linhas_mapa": 0
     },
     {
       "obra": "RCE RUA CARMEM COSTA",
@@ -716,26 +726,26 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 34.8,
-      "modificado": "2026-06-01 08:17:03"
+      "tamanho_kb": 35.4,
+      "modificado": "2026-06-01 16:48:41"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 85.3,
-      "modificado": "2026-06-01 08:03:42"
+      "tamanho_kb": 85.6,
+      "modificado": "2026-06-01 18:14:45"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 369.1,
-      "modificado": "2026-06-01 08:32:15"
+      "modificado": "2026-06-01 18:19:36"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 459.5,
-      "modificado": "2026-06-01 08:32:17"
+      "modificado": "2026-06-01 18:19:43"
     }
   ]
 }

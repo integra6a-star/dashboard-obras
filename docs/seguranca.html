@@ -180,6 +180,7 @@
       transition:.2s;
       color:var(--text);
       font:inherit;
+      text-decoration:none;
     }
 
     .atalho-card:hover {
@@ -719,17 +720,17 @@
     </section>
 
     <section class="atalhos-seguranca" aria-label="Acoes de seguranca">
-      <button class="atalho-card" type="button" onclick="abrirFormularioInspecao()">
+      <a class="atalho-card" href="form-seguranca.html">
         <div class="icone">📝</div>
         <h2>Novo Checklist</h2>
         <p>Preencher inspeção de segurança com checklist, tratativas e fotos.</p>
-      </button>
+      </a>
 
-      <button class="atalho-card" type="button" onclick="exportarInspecaoSegurancaExcel()">
+      <a class="atalho-card" href="form-seguranca.html#exportar">
         <div class="icone">📊</div>
         <h2>Exportar Excel</h2>
         <p>Baixar a inspeção preenchida em planilha Excel.</p>
-      </button>
+      </a>
     </section>
 
     <section class="inspecao-card oculto" id="formularioInspecao">

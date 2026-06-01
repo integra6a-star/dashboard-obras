@@ -180,7 +180,6 @@
       transition:.2s;
       color:var(--text);
       font:inherit;
-      text-decoration:none;
     }
 
     .atalho-card:hover {
@@ -211,6 +210,20 @@
       color:var(--muted);
       font-size:14px;
       line-height:1.35;
+    }
+
+    .form-page-only .filtros,
+    .form-page-only .atalhos-seguranca,
+    .form-page-only .kpi-grid,
+    .form-page-only .dashboard-graficos,
+    .form-page-only .tabela-card,
+    .form-page-only .chips,
+    .form-page-only .status-pill {
+      display:none !important;
+    }
+
+    .form-page-only .hero {
+      margin-bottom:24px;
     }
 
     .kpi-grid {
@@ -687,14 +700,14 @@
   </style>
 </head>
 
-<body>
+<body class="form-page-only">
   <main class="page">
     <section class="hero">
       <div class="top-row">
         <div>
-          <a href="qsms.html" class="voltar">← Voltar para QSMS</a>
-          <h1>Segurança do Trabalho</h1>
-          <p>Dashboard executivo baseado na planilha de controle de Segurança: inspeções de campo, desvios, DDS, líderes e técnicos responsáveis.</p>
+          <a href="seguranca.html" class="voltar">← Voltar para Segurança</a>
+          <h1>Checklist de Segurança</h1>
+          <p>Formulário de Inspeção em Saúde e Segurança com checklist C/NC/NA, tratativas, fotos, impressão e exportação em Excel.</p>
         </div>
         <div class="status-pill">
           <span>Indicador geral</span>
@@ -720,20 +733,20 @@
     </section>
 
     <section class="atalhos-seguranca" aria-label="Acoes de seguranca">
-      <a class="atalho-card" href="form-seguranca.html">
+      <button class="atalho-card" type="button" onclick="abrirFormularioInspecao()">
         <div class="icone">📝</div>
         <h2>Novo Checklist</h2>
         <p>Preencher inspeção de segurança com checklist, tratativas e fotos.</p>
-      </a>
+      </button>
 
-      <a class="atalho-card" href="form-seguranca.html#exportar">
+      <button class="atalho-card" type="button" onclick="exportarInspecaoSegurancaExcel()">
         <div class="icone">📊</div>
         <h2>Exportar Excel</h2>
         <p>Baixar a inspeção preenchida em planilha Excel.</p>
-      </a>
+      </button>
     </section>
 
-    <section class="inspecao-card oculto" id="formularioInspecao">
+    <section class="inspecao-card" id="formularioInspecao">
       <div class="inspecao-head">
         <div>
           <h2>Formulário de Inspeção em Saúde e Segurança</h2>
@@ -1587,6 +1600,9 @@
 
     montarChecklistInspecaoSeguranca();
     restaurarInspecaoSeguranca();
+    if (location.hash === "#exportar") {
+      setTimeout(exportarInspecaoSegurancaExcel, 300);
+    }
     montarFiltros();
     atualizarDashboard();
   </script>
