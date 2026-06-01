@@ -1,46 +1,62 @@
 {
-  "atualizado_em": "2026-05-29 07:27:07",
+  "atualizado_em": "2026-06-01 07:41:32",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 16605.23,
-    "mapa_executado": 16236.88,
-    "diferenca_base_mapa": 368.35,
-    "saldo_total": 23083.16
+    "base_executado": 16750.64,
+    "mapa_executado": 16099.23,
+    "diferenca_base_mapa": 651.41,
+    "saldo_total": 22937.75
   },
   "pds": {
-    "total": 2611,
-    "ultima_data": "2026-05-29",
-    "hoje": 24,
+    "total": 2650,
+    "ultima_data": "2026-06-01",
+    "hoje": 21,
     "por_obra_ultima_data": [
       {
-        "obra": "Servi?os Reposi??o",
-        "atividades": 8
-      },
-      {
-        "obra": "CT Joo Canzi Valmir",
+        "obra": "CT João Canzi",
         "atividades": 5
       },
       {
-        "obra": "CTS Lourdes Complementar Caroline E Silvestre",
-        "atividades": 5
-      },
-      {
-        "obra": "RCE So Lucas Fbio",
+        "obra": "RCE São Lucas",
         "atividades": 4
       },
       {
-        "obra": "RCE Conj. Unio Caroline E Silvestre",
+        "obra": "João Canzi",
+        "atividades": 3
+      },
+      {
+        "obra": "CTS Lourdes Complementar",
+        "atividades": 2
+      },
+      {
+        "obra": "Guindauto",
+        "atividades": 2
+      },
+      {
+        "obra": "Iti 15",
         "atividades": 1
       },
       {
-        "obra": "RCE Rua So Joo Fbio",
+        "obra": "Lourdes",
+        "atividades": 1
+      },
+      {
+        "obra": "RCE Conj. União",
+        "atividades": 1
+      },
+      {
+        "obra": "RCE Elvira",
+        "atividades": 1
+      },
+      {
+        "obra": "RCE Rua São João",
         "atividades": 1
       }
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 368.35 m",
-    "5 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 651.41 m",
+    "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -52,6 +68,26 @@
       "saldo": 1454.2,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS Lourdes Complementar",
+      "planejado": 0.0,
+      "executado_base": 308.31,
+      "executado_mapa": 162.9,
+      "diferenca_base_mapa": 145.41,
+      "saldo": -308.31,
+      "linhas_base": 1,
+      "linhas_mapa": 2
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 592.2,
+      "executado_mapa": 454.56,
+      "diferenca_base_mapa": 137.64,
+      "saldo": 266.3,
+      "linhas_base": 2,
+      "linhas_mapa": 7
     },
     {
       "obra": "Interligação Água Boa",
@@ -309,11 +345,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 592.2,
-      "executado_mapa": 592.21,
-      "diferenca_base_mapa": -0.01,
+      "executado_mapa": 454.56,
+      "diferenca_base_mapa": 137.64,
       "saldo": 266.3,
       "linhas_base": 2,
-      "linhas_mapa": 9
+      "linhas_mapa": 7
     },
     {
       "obra": "RCE RUA ALTO JURUÁ",
@@ -688,10 +724,10 @@
     {
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
-      "executado_base": 162.9,
+      "executado_base": 308.31,
       "executado_mapa": 162.9,
-      "diferenca_base_mapa": 0.0,
-      "saldo": -162.9,
+      "diferenca_base_mapa": 145.41,
+      "saldo": -308.31,
       "linhas_base": 1,
       "linhas_mapa": 2
     }
@@ -700,26 +736,26 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 34.8,
-      "modificado": "2026-05-29 07:27:01"
+      "tamanho_kb": 34.9,
+      "modificado": "2026-06-01 07:34:39"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 85.3,
-      "modificado": "2026-05-29 07:26:05"
+      "tamanho_kb": 84.9,
+      "modificado": "2026-05-26 13:00:10"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 366.6,
-      "modificado": "2026-05-29 07:25:23"
+      "tamanho_kb": 369.1,
+      "modificado": "2026-06-01 07:41:26"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 452.8,
-      "modificado": "2026-05-29 07:27:05"
+      "tamanho_kb": 459.5,
+      "modificado": "2026-06-01 07:41:28"
     }
   ]
 }
