@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-01 07:41:32",
+  "atualizado_em": "2026-06-01 08:04:01",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 16750.64,
-    "mapa_executado": 16099.23,
-    "diferenca_base_mapa": 651.41,
+    "mapa_executado": 16244.64,
+    "diferenca_base_mapa": 506.0,
     "saldo_total": 22937.75
   },
   "pds": {
@@ -55,8 +55,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 651.41 m",
-    "7 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 506.00 m",
+    "6 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -68,16 +68,6 @@
       "saldo": 1454.2,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "CTS Lourdes Complementar",
-      "planejado": 0.0,
-      "executado_base": 308.31,
-      "executado_mapa": 162.9,
-      "diferenca_base_mapa": 145.41,
-      "saldo": -308.31,
-      "linhas_base": 1,
-      "linhas_mapa": 2
     },
     {
       "obra": "CTS João Canzi",
@@ -725,11 +715,11 @@
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
       "executado_base": 308.31,
-      "executado_mapa": 162.9,
-      "diferenca_base_mapa": 145.41,
+      "executado_mapa": 308.31,
+      "diferenca_base_mapa": 0.0,
       "saldo": -308.31,
       "linhas_base": 1,
-      "linhas_mapa": 2
+      "linhas_mapa": 4
     }
   ],
   "arquivos": [
@@ -742,20 +732,20 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 84.9,
-      "modificado": "2026-05-26 13:00:10"
+      "tamanho_kb": 85.3,
+      "modificado": "2026-06-01 08:03:42"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 369.1,
-      "modificado": "2026-06-01 07:41:26"
+      "modificado": "2026-06-01 08:03:55"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 459.5,
-      "modificado": "2026-06-01 07:41:28"
+      "modificado": "2026-06-01 08:03:58"
     }
   ]
 }
