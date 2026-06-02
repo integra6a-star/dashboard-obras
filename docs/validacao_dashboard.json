@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-06-02 07:32:31",
+  "atualizado_em": "2026-06-02 07:42:29",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 17297.13,
+    "base_executado": 17349.75,
     "mapa_executado": 16382.29,
-    "diferenca_base_mapa": 914.84,
-    "saldo_total": 22391.26
+    "diferenca_base_mapa": 967.46,
+    "saldo_total": 22338.64
   },
   "pds": {
     "total": 2671,
@@ -59,8 +59,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 914.84 m",
-    "7 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 967.46 m",
+    "6 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -102,16 +102,6 @@
       "saldo": 38.9,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 539.59,
-      "executado_mapa": 592.21,
-      "diferenca_base_mapa": -52.62,
-      "saldo": 318.91,
-      "linhas_base": 2,
-      "linhas_mapa": 9
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -348,10 +338,10 @@
     {
       "obra": "CTS João Canzi",
       "planejado": 858.5,
-      "executado_base": 539.59,
+      "executado_base": 592.21,
       "executado_mapa": 592.21,
-      "diferenca_base_mapa": -52.62,
-      "saldo": 318.91,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 266.29,
       "linhas_base": 2,
       "linhas_mapa": 9
     },
@@ -741,7 +731,7 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.4,
-      "modificado": "2026-06-01 18:42:58"
+      "modificado": "2026-06-02 07:40:39"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -753,13 +743,13 @@
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 370.9,
-      "modificado": "2026-06-02 07:32:25"
+      "modificado": "2026-06-02 07:42:19"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 463.2,
-      "modificado": "2026-06-02 07:32:28"
+      "modificado": "2026-06-02 07:42:24"
     }
   ]
 }
