@@ -903,11 +903,11 @@
 
       <div class="kpi-card" style="--accent:#8b5cf6">
         <div class="kpi-head">
-          <div class="kpi-title">Principal categoria</div>
+          <div class="kpi-title">Principal apontamento</div>
           <div class="kpi-icon">📌</div>
         </div>
         <div class="kpi-number" id="kpiCategoria" style="font-size:25px; line-height:1.15;">-</div>
-        <div class="kpi-note" id="kpiCategoriaNota">Maior volume de desvios</div>
+        <div class="kpi-note" id="kpiCategoriaNota">Maior volume de códigos</div>
       </div>
     </section>
 
@@ -919,8 +919,8 @@
       </div>
 
       <div class="grafico-card">
-        <h2>🥧 Distribuição por categoria</h2>
-        <p class="desc">Classificação por grupo da tabela oficial de códigos.</p>
+        <h2>🥧 Distribuição por apontamento</h2>
+        <p class="desc">Códigos oficiais detalhados da coluna F.</p>
         <canvas id="graficoCategorias"></canvas>
       </div>
 
@@ -1124,7 +1124,7 @@
       document.getElementById("kpiDDS").innerText = dds.length;
       document.getElementById("kpiDDSNota").innerText = `${participantes} participantes registrados`;
       document.getElementById("kpiCategoria").innerText = principalCategoria ? principalCategoria.nome : "-";
-      document.getElementById("kpiCategoriaNota").innerText = principalCategoria ? `${principalCategoria.quantidade} desvios` : "Sem desvios no filtro";
+      document.getElementById("kpiCategoriaNota").innerText = principalCategoria ? `${principalCategoria.quantidade} ocorrências` : "Sem desvios no filtro";
       document.getElementById("statusGeral").innerText = desvios.length === 0 ? "Sem desvios no filtro" : `${desvios.length} desvios monitorados`;
       document.getElementById("badgePeriodo").innerText = nomeMes(mes);
 
@@ -1239,8 +1239,8 @@
             <td>${d.local}</td>
             <td>${d.lider}</td>
             <td>${d.tst}</td>
-            <td><strong>${d.categoria}</strong></td>
-            <td>${d.classificacao_descricao || d.categoria_detalhe || "-"}</td>
+            <td><strong>${d.classificacao_grupo || d.categoria_grupo || "-"}</strong></td>
+            <td>${d.categoria_detalhe || d.categoria || "-"}</td>
             <td>${d.desvio}</td>
           </tr>
         `;
