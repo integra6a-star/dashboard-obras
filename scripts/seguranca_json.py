@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 import zipfile
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -51,6 +52,21 @@ def workbook_sheets(zf: zipfile.ZipFile) -> dict[str, str]:
         if target:
             sheets[sheet.attrib["name"]] = "xl/" + target.lstrip("/")
     return sheets
+
+
+def normalize_key(value: str) -> str:
+    value = unicodedata.normalize("NFD", value or "")
+    value = "".join(char for char in value if unicodedata.category(char) != "Mn")
+    return re.sub(r"\s+", " ", value).strip().lower()
+
+
+def get_sheet_path(sheets: dict[str, str], *names: str) -> str | None:
+    normalized = {normalize_key(name): path for name, path in sheets.items()}
+    for name in names:
+        path = normalized.get(normalize_key(name))
+        if path:
+            return path
+    return None
 
 
 def column_index(cell_ref: str) -> int:
@@ -135,10 +151,79 @@ def is_header_or_empty(row: list[str]) -> bool:
     return not first or first in {"DATA", "NOME", "COLABORADOR", "TOTAL"}
 
 
+def build_classification_lookup(rows: list[list[str]]) -> dict[str, dict[str, str]]:
+    group_columns = [(9, 10), (12, 13), (15, 16), (18, 19), (21, 22)]
+    lookup: dict[str, dict[str, str]] = {}
+    for code_col, desc_col in group_columns:
+        group = ""
+        group_letter = ""
+        for row in rows:
+            code_cell = clean(row[code_col] if code_col < len(row) else "")
+            desc_cell = clean(row[desc_col] if desc_col < len(row) else "")
+            group_match = re.match(r"^([A-Z])\.\s+(.+)$", code_cell)
+            item_match = re.match(r"^([A-Z]\d+)\.?", code_cell)
+            if group_match and not item_match:
+                group_letter = group_match.group(1)
+                group = code_cell
+                continue
+            if item_match:
+                code = item_match.group(1).upper()
+                lookup[code] = {
+                    "codigo": code,
+                    "grupo_codigo": group_letter or code[0],
+                    "grupo": group or f"{code[0]}. Não classificado",
+                    "descricao": desc_cell,
+                    "texto": clean(f"{code}. {desc_cell}"),
+                }
+    return lookup
+
+
+def parse_classificacoes(value: str, lookup: dict[str, dict[str, str]]) -> list[dict[str, str]]:
+    classificacoes = []
+    for part in split_parts(value):
+        match = re.match(r"^([A-Z]\d+)\.?\s*(.*)$", part, flags=re.IGNORECASE)
+        if not match:
+            classificacoes.append(
+                {
+                    "codigo": "",
+                    "grupo_codigo": "",
+                    "grupo": "Não classificado",
+                    "descricao": part,
+                    "texto": part,
+                }
+            )
+            continue
+        code = match.group(1).upper()
+        descricao = clean(match.group(2))
+        base = lookup.get(code, {})
+        final_descricao = descricao or base.get("descricao", "")
+        classificacoes.append(
+            {
+                "codigo": code,
+                "grupo_codigo": base.get("grupo_codigo", code[0]),
+                "grupo": base.get("grupo", f"{code[0]}. Não classificado"),
+                "descricao": final_descricao,
+                "texto": clean(f"{code}. {final_descricao}"),
+            }
+        )
+    return classificacoes
+
+
+def join_unique(values: list[str], fallback: str) -> str:
+    unique = []
+    for value in values:
+        value = clean(value)
+        if value and value not in unique:
+            unique.append(value)
+    return "; ".join(unique) if unique else fallback
+
+
 def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
-    rows = iter_rows(zf, sheet_path, shared)
-    header = next(rows, [])
+    all_rows = list(iter_rows(zf, sheet_path, shared))
+    header = all_rows[0] if all_rows else []
+    rows = all_rows[1:]
     lookup = {clean(name).upper(): idx for idx, name in enumerate(header)}
+    classificacao_lookup = build_classification_lookup(rows)
 
     def get(row: list[str], name: str) -> str:
         idx = lookup.get(name)
@@ -153,7 +238,10 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
         local = clean(get(row, "LOCAL"), "Sem localização")
         lider = clean(get(row, "ENCARREGADO OU LIDER DE EQUIPE"), "Não informado")
         descricao = clean(get(row, "DESCRIÇÃO"))
-        categoria = clean(get(row, "CLASSIFICAÇÃO"), "Não classificado")
+        classificacao_original = clean(get(row, "CLASSIFICAÇÃO"), "Não classificado")
+        classificacoes = parse_classificacoes(classificacao_original, classificacao_lookup)
+        categoria = join_unique([item["grupo"] for item in classificacoes], "Não classificado")
+        categoria_detalhe = join_unique([item["texto"] for item in classificacoes], classificacao_original)
         qtd_desvios = integer(get(row, "QUANTIDADE DESVIOS"))
         qtd_inspecoes = integer(get(row, "QUANTIDADE INSPEÇÕES")) or 1
         tst = clean(get(row, "TÉCNICO DE SEGURANÇA  APLICADOR"), "Não informado")
@@ -168,6 +256,9 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
                 "lider": lider,
                 "descricao": descricao,
                 "categoria": categoria,
+                "categoria_detalhe": categoria_detalhe,
+                "classificacao_original": classificacao_original,
+                "classificacoes": classificacoes,
                 "tst": tst,
                 "quantidade_desvios": qtd_desvios,
                 "quantidade_inspecoes": qtd_inspecoes,
@@ -175,18 +266,31 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
         )
 
         descricao_parts = split_parts(descricao)
-        categoria_parts = split_parts(categoria)
         if descricao_parts or qtd_desvios > 0:
             if not descricao_parts:
                 descricao_parts = [descricao or "Desvio sem descrição"]
             for index, desvio in enumerate(descricao_parts, start=1):
+                classificacao = classificacoes[index - 1] if index - 1 < len(classificacoes) else (
+                    classificacoes[0] if classificacoes else {
+                        "codigo": "",
+                        "grupo_codigo": "",
+                        "grupo": "Não classificado",
+                        "descricao": "",
+                        "texto": "Não classificado",
+                    }
+                )
                 desvios.append(
                     {
                         "data": data,
                         "local": local,
                         "lider": lider,
                         "tst": tst,
-                        "categoria": categoria_parts[index - 1] if index - 1 < len(categoria_parts) else categoria,
+                        "categoria": classificacao["grupo"],
+                        "categoria_detalhe": classificacao["texto"],
+                        "classificacao_codigo": classificacao["codigo"],
+                        "classificacao_grupo": classificacao["grupo"],
+                        "classificacao_descricao": classificacao["descricao"],
+                        "classificacao_original": classificacao_original,
                         "desvio": desvio,
                         "descricao": desvio,
                         "quantidade_desvios": qtd_desvios,
@@ -255,10 +359,16 @@ def build_payload(source: Path):
     with zipfile.ZipFile(source) as zf:
         shared = load_shared_strings(zf)
         sheets = workbook_sheets(zf)
-        inspecoes, desvios = parse_inspecoes(zf, sheets["Inspeções"], shared)
-        dds = parse_dds(zf, sheets["DDS"], shared)
-        treinamentos = count_treinamentos(zf, sheets["Treinamentos admissionais"], shared)
-        listas = parse_listas(zf, sheets["Listas"], shared)
+        inspecoes_path = get_sheet_path(sheets, "Inspeções", "Inspecoes")
+        dds_path = get_sheet_path(sheets, "DDS")
+        treinamentos_path = get_sheet_path(sheets, "Treinamentos admissionais")
+        listas_path = get_sheet_path(sheets, "Listas")
+        if not inspecoes_path:
+            raise KeyError("Aba Inspeções não encontrada.")
+        inspecoes, desvios = parse_inspecoes(zf, inspecoes_path, shared)
+        dds = parse_dds(zf, dds_path, shared) if dds_path else []
+        treinamentos = count_treinamentos(zf, treinamentos_path, shared) if treinamentos_path else 0
+        listas = parse_listas(zf, listas_path, shared) if listas_path else {}
 
     return {
         "metadata": {

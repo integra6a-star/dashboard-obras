@@ -920,7 +920,7 @@
 
       <div class="grafico-card">
         <h2>🥧 Distribuição por categoria</h2>
-        <p class="desc">Classificação automática dos desvios descritos nas inspeções.</p>
+        <p class="desc">Classificação por grupo da tabela oficial de códigos.</p>
         <canvas id="graficoCategorias"></canvas>
       </div>
 
@@ -974,6 +974,7 @@
             <th>Líder</th>
             <th>TST</th>
             <th>Categoria</th>
+            <th>Apontamento</th>
             <th>Desvio</th>
           </tr>
         </thead>
@@ -1226,7 +1227,7 @@
       const ordenados = [...desvios].sort((a,b) => String(b.data).localeCompare(String(a.data))).slice(0, 12);
 
       if (!ordenados.length) {
-        tbody.innerHTML = `<tr><td colspan="6">Nenhum desvio encontrado para o filtro selecionado.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7">Nenhum desvio encontrado para o filtro selecionado.</td></tr>`;
         return;
       }
 
@@ -1239,6 +1240,7 @@
             <td>${d.lider}</td>
             <td>${d.tst}</td>
             <td><strong>${d.categoria}</strong></td>
+            <td>${d.classificacao_descricao || d.categoria_detalhe || "-"}</td>
             <td>${d.desvio}</td>
           </tr>
         `;
