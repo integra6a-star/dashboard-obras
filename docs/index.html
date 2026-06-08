@@ -444,17 +444,17 @@
 </div>
 <nav class="side-nav">
 <a class="active" href="#"><span class="side-ico">🏠</span>Início</a>
-<a href="./mapa_real.html" target="_blank" rel="noopener"><span class="side-ico">🗺️</span>Mapa</a>
-<a href="./iti15.html" target="_blank" rel="noopener"><span class="side-ico">📍</span>ITI-15</a>
+<a href="#" onclick="abrirComSenha('./mapa_real.html', 'Mapa', '886041'); return false;"><span class="side-ico">🗺️</span>Mapa</a>
+<a href="#" onclick="abrirComSenha('./iti15.html', 'ITI-15', '886041'); return false;"><span class="side-ico">📍</span>ITI-15</a>
 <a href="./tubos.html" target="_blank" rel="noopener"><span class="side-ico">🛢️</span>Tubos</a>
-<a href="almoxarifado.html"><span class="side-ico">📦</span>Almoxarifado</a>
-<a href="#" onclick="abrirComSenha('./medicao.html', 'Medição'); return false;"><span class="side-ico">📋</span>Medição</a>
+<a href="#" onclick="abrirComSenha('./almoxarifado.html', 'Almoxarifado', '886041'); return false;"><span class="side-ico">📦</span>Almoxarifado</a>
+<a href="#" onclick="abrirComSenha('./medicao.html', 'Medição', '886041'); return false;"><span class="side-ico">📋</span>Medição</a>
 <a href="./pds.html" target="_blank" rel="noopener"><span class="side-ico">🗓️</span>PDS</a>
-<a href="./funcionarios.html" target="_blank" rel="noopener"><span class="side-ico">👥</span>Funcionários</a>
+<a href="#" onclick="abrirComSenha('./funcionarios.html', 'Funcionários', '886041'); return false;"><span class="side-ico">👥</span>Funcionários</a>
 <a href="./EAPxProduzido.html" target="_blank" rel="noopener"><span class="side-ico">📈</span>EAP / Curva</a>
-<a href="./qsms.html" target="_blank" rel="noopener"><span class="side-ico">🛡️</span>QSMS</a>
-<a href="#" onclick="abrirComSenha('./relatorio_mensal.html', 'Relatório Mensal'); return false;"><span class="side-ico">📄</span>Relatório Mensal</a>
-<a href="#" onclick="abrirReclamacoes()"><span class="side-ico">⚠️</span>Reclamações</a>
+<a href="#" onclick="abrirComSenha('./qsms.html', 'QSMS', '2010'); return false;"><span class="side-ico">🛡️</span>QSMS</a>
+<a href="./relatorio_mensal.html" target="_blank" rel="noopener"><span class="side-ico">📄</span>Relatório Mensal</a>
+<a href="#" onclick="abrirComSenha('./reclamacoes.html', 'Reclamações', '886041'); return false;"><span class="side-ico">⚠️</span>Reclamações</a>
 </nav>
 </aside>
 <main class="main-shell">
@@ -1629,30 +1629,16 @@ loadMaintenance();
 loadData().catch(e=>alert('Erro ao carregar dados.json: '+e.message));
 </script>
 <script>
-const SENHA_RECLAMACOES = "2010";
-function abrirReclamacoes(){
-  const s = prompt("Digite a senha para acessar Reclamações:");
-  if(s === SENHA_RECLAMACOES){
-    window.open("./reclamacoes.html","_blank");
-  }else if(s !== null){
-    alert("Senha incorreta!");
-  }
-}
-</script>
-</main></div>
-
-
-
-<script>
-function abrirComSenha(pagina, nome){
+function abrirComSenha(pagina, nome, senhaEsperada){
   const senha = prompt('Digite a senha para acessar ' + nome + ':');
-  if(senha === '1406'){
+  if(senha === senhaEsperada){
     window.open(pagina, '_blank');
   }else if(senha !== null){
     alert('Senha incorreta. Acesso negado.');
   }
 }
 </script>
+</main></div>
 
 </body>
 </html>
