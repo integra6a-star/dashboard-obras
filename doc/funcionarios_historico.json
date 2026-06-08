@@ -1,9 +1,9 @@
 {
-  "atualizado_em": "2026-05-19T13:01:50.816379+00:00",
+  "atualizado_em": "2026-06-08T18:57:32.393725+00:00",
   "series": [
     {
       "mes": "2026-05",
-      "atualizado_em": "2026-05-19T10:01:50.803544-03:00",
+      "atualizado_em": "2026-05-29T07:25:36.379096-03:00",
       "ativos": 324,
       "afastados": 4,
       "total_salarios": 1199375.7,
@@ -17,6 +17,19 @@
       "custo_mensal_total": 2054185.7,
       "salario_clt": 947475.7,
       "salario_pj": 251900.0
+    },
+    {
+      "mes": "2026-06",
+      "atualizado_em": "2026-06-08T15:57:32.393725-03:00",
+      "ativos": 312,
+      "afastados": 7,
+      "total_salarios": 1035499.57,
+      "total_vr": 224656.0,
+      "total_combustivel": 19200.0,
+      "total_frota": 521000.0,
+      "custo_mensal_total": 1781155.57,
+      "salario_clt": 812849.57,
+      "salario_pj": 222650.0
     }
   ]
 }

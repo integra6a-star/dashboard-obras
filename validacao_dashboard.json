@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-08 08:05:14",
+  "atualizado_em": "2026-06-08 15:58:37",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17586.28,
@@ -735,25 +735,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.5,
-      "modificado": "2026-06-08 07:31:35"
+      "modificado": "2026-06-08 12:32:45"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 86.1,
-      "modificado": "2026-06-08 07:54:44"
+      "modificado": "2026-06-08 12:32:45"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 383.2,
-      "modificado": "2026-06-08 07:43:01"
+      "modificado": "2026-06-08 12:32:45"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 482.3,
-      "modificado": "2026-06-08 07:43:33"
+      "modificado": "2026-06-08 12:32:45"
     }
   ]
 }
