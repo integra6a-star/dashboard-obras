@@ -1,43 +1,51 @@
 {
-  "atualizado_em": "2026-06-02 07:42:29",
+  "atualizado_em": "2026-06-08 07:44:17",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 17349.75,
+    "base_executado": 17586.28,
     "mapa_executado": 16382.29,
-    "diferenca_base_mapa": 967.46,
-    "saldo_total": 22338.64
+    "diferenca_base_mapa": 1203.98,
+    "saldo_total": 22102.11
   },
   "pds": {
-    "total": 2671,
-    "ultima_data": "2026-06-02",
-    "hoje": 21,
+    "total": 2777,
+    "ultima_data": "2026-06-08",
+    "hoje": 22,
     "por_obra_ultima_data": [
+      {
+        "obra": "RCE São Lucas",
+        "atividades": 7
+      },
       {
         "obra": "CT João Canzi",
         "atividades": 4
-      },
-      {
-        "obra": "RCE São Lucas",
-        "atividades": 4
-      },
-      {
-        "obra": "João Canzi",
-        "atividades": 3
-      },
-      {
-        "obra": "CTS Lourdes Complementar",
-        "atividades": 2
       },
       {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "Iti 15",
+        "obra": "CTS Lageado",
         "atividades": 1
       },
       {
-        "obra": "Lourdes",
+        "obra": "CTS Lourdes Complementar",
+        "atividades": 1
+      },
+      {
+        "obra": "Iti 15 – Henko (osmar)",
+        "atividades": 1
+      },
+      {
+        "obra": "João Canzi – Henko (marcio)",
+        "atividades": 1
+      },
+      {
+        "obra": "João Canzi – Henko (wellington/thiago)",
+        "atividades": 1
+      },
+      {
+        "obra": "RCE Américo Machado/elis Regina",
         "atividades": 1
       },
       {
@@ -45,31 +53,47 @@
         "atividades": 1
       },
       {
-        "obra": "RCE Elias Sleiman / CT João Canzi",
+        "obra": "RCE Elias Sleiman",
         "atividades": 1
       },
       {
         "obra": "RCE Elvira",
         "atividades": 1
-      },
-      {
-        "obra": "RCE Rua São João",
-        "atividades": 1
       }
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 967.46 m",
-    "6 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 1,203.98 m",
+    "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 888.0,
+      "executado_base": 943.4,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 888.0,
-      "saldo": 911.2,
+      "diferenca_base_mapa": 943.4,
+      "saldo": 855.8,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 736.35,
+      "executado_mapa": 592.21,
+      "diferenca_base_mapa": 144.14,
+      "saldo": 122.15,
+      "linhas_base": 2,
+      "linhas_mapa": 9
+    },
+    {
+      "obra": "RCE Rua São João",
+      "planejado": 95.0,
+      "executado_base": 93.1,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 93.1,
+      "saldo": 1.9,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -92,16 +116,6 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
-    },
-    {
-      "obra": "RCE Rua São João",
-      "planejado": 95.0,
-      "executado_base": 56.1,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 56.1,
-      "saldo": 38.9,
-      "linhas_base": 2,
-      "linhas_mapa": 0
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -186,16 +200,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 888.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 888.0,
-      "saldo": 911.2,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "INTERL. TRÊS MENINAS",
       "planejado": 865.43,
       "executado_base": 0.0,
@@ -212,6 +216,16 @@
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 0.0,
       "saldo": 860.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 943.4,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 943.4,
+      "saldo": 855.8,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -334,16 +348,6 @@
       "saldo": 338.5,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 592.21,
-      "executado_mapa": 592.21,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 266.29,
-      "linhas_base": 2,
-      "linhas_mapa": 9
     },
     {
       "obra": "RCE RUA ALTO JURUÁ",
@@ -546,6 +550,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 736.35,
+      "executado_mapa": 592.21,
+      "diferenca_base_mapa": 144.14,
+      "saldo": 122.15,
+      "linhas_base": 2,
+      "linhas_mapa": 9
+    },
+    {
       "obra": "RCE RUA IGARAÇU",
       "planejado": 110.0,
       "executado_base": 0.0,
@@ -626,16 +640,6 @@
       "linhas_mapa": 14
     },
     {
-      "obra": "RCE Rua São João",
-      "planejado": 95.0,
-      "executado_base": 56.1,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 56.1,
-      "saldo": 38.9,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE RUA CARMEM COSTA",
       "planejado": 34.0,
       "executado_base": 0.0,
@@ -686,6 +690,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE Rua São João",
+      "planejado": 95.0,
+      "executado_base": 93.1,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 93.1,
+      "saldo": 1.9,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "EEE TRÊS MENINAS",
       "planejado": 0.0,
       "executado_base": 0.0,
@@ -718,10 +732,10 @@
     {
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
-      "executado_base": 308.31,
+      "executado_base": 308.3,
       "executado_mapa": 308.31,
-      "diferenca_base_mapa": 0.0,
-      "saldo": -308.31,
+      "diferenca_base_mapa": -0.01,
+      "saldo": -308.3,
       "linhas_base": 1,
       "linhas_mapa": 4
     }
@@ -730,26 +744,26 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 35.4,
-      "modificado": "2026-06-02 07:40:39"
+      "tamanho_kb": 35.5,
+      "modificado": "2026-06-08 07:31:35"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 85.7,
-      "modificado": "2026-06-02 07:32:10"
+      "modificado": "2026-06-08 07:04:53"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 370.9,
-      "modificado": "2026-06-02 07:42:19"
+      "tamanho_kb": 383.2,
+      "modificado": "2026-06-08 07:43:01"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 463.2,
-      "modificado": "2026-06-02 07:42:24"
+      "tamanho_kb": 482.3,
+      "modificado": "2026-06-08 07:43:33"
     }
   ]
 }

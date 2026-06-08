@@ -21366,5 +21366,853 @@
     "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CT João Canzi",
+    "equipe": "Goiânia Drill",
+    "atividade": "Puxe do PV-16 ao PV-17",
+    "trecho": "16-17",
+    "pv": "16 ao 17"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CT João Canzi",
+    "equipe": "Bruno",
+    "atividade": "Apoio ao HDD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CT João Canzi",
+    "equipe": "Medeiros",
+    "atividade": "Shaft PV 10.1",
+    "trecho": "",
+    "pv": "10.1"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CT João Canzi",
+    "equipe": "Cidão",
+    "atividade": "Transformação PV 15",
+    "trecho": "",
+    "pv": "15"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CT João Canzi",
+    "equipe": "Márcio",
+    "atividade": "Nivelamento BGS",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE Elvira",
+    "equipe": "Valter",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE Conj. União",
+    "equipe": "Jonathan",
+    "atividade": "Transformação PV 40.1",
+    "trecho": "",
+    "pv": "40.1"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE Elias Sleiman / CT João Canzi",
+    "equipe": "Edvando",
+    "atividade": "VCA + interl PV 17 ao PV 22",
+    "trecho": "17-22",
+    "pv": "17 ao 22"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE São Lucas",
+    "equipe": "Ricardo",
+    "atividade": "VCA, PVs e Ligações; (PI 08 ao PI 09)",
+    "trecho": "08-09",
+    "pv": "08 ao 09"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE São Lucas",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Ligações; (PI 37 ao PI 38)",
+    "trecho": "37-38",
+    "pv": "37 ao 38"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE São Lucas",
+    "equipe": "Miro",
+    "atividade": "VCA, PVs e Ligações; (PI 32 ao PI 60)",
+    "trecho": "32-60",
+    "pv": "32 ao 60"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE São Lucas",
+    "equipe": "Emanuel",
+    "atividade": "VCA, PVs e Ligações; (PI 32 ao PI 60)",
+    "trecho": "32-60",
+    "pv": "32 ao 60"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "RCE Rua São João",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Ligações; (PV 02 ao PV 04)*",
+    "trecho": "02-04",
+    "pv": "02 ao 04"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Cesar",
+    "atividade": "Transformação PV 03",
+    "trecho": "",
+    "pv": "03"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Transformação PV 04",
+    "trecho": "",
+    "pv": "04"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Botelho Mourão",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Márcio",
+    "atividade": "Nivelamento BGS PV 05",
+    "trecho": "",
+    "pv": "05"
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "João Canzi – Henko (wellington/thiago)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Wellington/Thiago)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "João Canzi – Renasce (raimundo)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Renasce (Raimundo)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "Lourdes – Henko (marcio)",
+    "equipe": "Vacal",
+    "atividade": "Lourdes – Henko (Marcio)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "Iti 15 – Henko (osmar)",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 – Henko (Osmar)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Marcio - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-03",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CT João Canzi",
+    "equipe": "Goiânia Drill",
+    "atividade": "Piloto do PV-17 ao PV-18",
+    "trecho": "17-18",
+    "pv": "17 ao 18"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CT João Canzi",
+    "equipe": "Bruno",
+    "atividade": "Apoio ao HDD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CT João Canzi",
+    "equipe": "Medeiros",
+    "atividade": "Shaft PV 10.1",
+    "trecho": "",
+    "pv": "10.1"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CT João Canzi",
+    "equipe": "Cesar",
+    "atividade": "Transformação PV 16",
+    "trecho": "",
+    "pv": "16"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE Elvira",
+    "equipe": "Valter",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE Conj. União",
+    "equipe": "Jonathan",
+    "atividade": "Transformação PV 40.1",
+    "trecho": "",
+    "pv": "40.1"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE Elias Sleiman / CT João Canzi",
+    "equipe": "Edvando",
+    "atividade": "VCA + interl PV 17 ao PV 22",
+    "trecho": "17-22",
+    "pv": "17 ao 22"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE São Lucas",
+    "equipe": "Ricardo",
+    "atividade": "VCA, PVs e Ligações; (PI 08 ao PI 09)",
+    "trecho": "08-09",
+    "pv": "08 ao 09"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE São Lucas",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Ligações; (PI 37 ao PI 38)",
+    "trecho": "37-38",
+    "pv": "37 ao 38"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE São Lucas",
+    "equipe": "Miro",
+    "atividade": "VCA, PVs e Ligações; (PI 32 ao PI 60)",
+    "trecho": "32-60",
+    "pv": "32 ao 60"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE São Lucas",
+    "equipe": "Emanuel",
+    "atividade": "VCA, PVs e Ligações; (PI 32 ao PI 60)",
+    "trecho": "32-60",
+    "pv": "32 ao 60"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "RCE Rua São João",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Ligações; (PV 02 ao PV 04)*",
+    "trecho": "02-04",
+    "pv": "02 ao 04"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Transformação PV 04",
+    "trecho": "",
+    "pv": "04"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Botelho Mourão",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Márcio",
+    "atividade": "Nivelamento BGS PV 05",
+    "trecho": "",
+    "pv": "05"
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Márcio",
+    "atividade": "SOUTO MAIOR/BENFICA - GABRIEL",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Cidão",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "João Canzi – Henko (márcio)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Márcio)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "Iti 15 – Henko (wellington)",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 – Henko (Wellington)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Cidão",
+    "atividade": "Henko (Osmar) - Raspagem",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Marcio - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CT João Canzi",
+    "equipe": "Goiânia Drill",
+    "atividade": "Puxe do PV-17 ao PV-18",
+    "trecho": "17-18",
+    "pv": "17 ao 18"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CT João Canzi",
+    "equipe": "Bruno",
+    "atividade": "Apoio ao HDD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CT João Canzi",
+    "equipe": "Medeiros",
+    "atividade": "Shaft PV 10.1",
+    "trecho": "",
+    "pv": "10.1"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CT João Canzi",
+    "equipe": "Cesar",
+    "atividade": "Transformação PV 16",
+    "trecho": "",
+    "pv": "16"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE Elvira",
+    "equipe": "Valter",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE Conj. União",
+    "equipe": "Jonathan",
+    "atividade": "Transformação PV 40.1",
+    "trecho": "",
+    "pv": "40.1"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE Elias Sleiman / CT João Canzi",
+    "equipe": "Edvando",
+    "atividade": "VCA + interl PV 17 ao PV 22",
+    "trecho": "17-22",
+    "pv": "17 ao 22"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE São Lucas",
+    "equipe": "Ricardo",
+    "atividade": "VCA, PVs e Ligações; (PI 08 ao PI 09)",
+    "trecho": "08-09",
+    "pv": "08 ao 09"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE São Lucas",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Ligações; (PI 37 ao PI 38)",
+    "trecho": "37-38",
+    "pv": "37 ao 38"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE São Lucas",
+    "equipe": "Miro",
+    "atividade": "VCA, PVs e Ligações; (PI 32 ao PI 60)",
+    "trecho": "32-60",
+    "pv": "32 ao 60"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE São Lucas",
+    "equipe": "Emanuel",
+    "atividade": "VCA, PVs e Ligações; (PI 25 ao PI 26)",
+    "trecho": "25-26",
+    "pv": "25 ao 26"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Ligações; (Início Ponto 04)*",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Transformação PV 04",
+    "trecho": "",
+    "pv": "04"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Márcio",
+    "atividade": "Shaft PV 05",
+    "trecho": "",
+    "pv": "05"
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Márcio",
+    "atividade": "Mar de Coral/BENFICA - GABRIEL",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Cidão",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "João Canzi – Henko (wellington/thiago)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Wellington/Thiago)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "Lourdes – Henko (marcio)",
+    "equipe": "Vacal",
+    "atividade": "Lourdes – Henko (Marcio)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "Iti 15 – Henko (osmar)",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 – Henko (Osmar)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Marcio - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "CT João Canzi",
+    "equipe": "Goiânia Drill",
+    "atividade": "Complemento Puxe PV 10.1 ao PV 10",
+    "trecho": "10.1-10",
+    "pv": "10.1 ao 10"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "CT João Canzi",
+    "equipe": "Bruno",
+    "atividade": "Apoio ao HDD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "CT João Canzi",
+    "equipe": "Jhonatan",
+    "atividade": "Transformação PV 17",
+    "trecho": "",
+    "pv": "17"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE Maria Santos Machado",
+    "equipe": "Cesar",
+    "atividade": "VCA e PVP-0",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE Elias Sleiman / CT João Canzi",
+    "equipe": "Edvando",
+    "atividade": "VCA + interl PV 21 ao PV 22",
+    "trecho": "21-22",
+    "pv": "21 ao 22"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE Elias Sleiman / CT João Canzi",
+    "equipe": "Cidão",
+    "atividade": "VCA + interl PV 25 ao PV 26",
+    "trecho": "25-26",
+    "pv": "25 ao 26"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Shaft PV 05",
+    "trecho": "",
+    "pv": "05"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Ricardo",
+    "atividade": "VCA, PVs e Ligações; (PI 08 ao PI 09)",
+    "trecho": "08-09",
+    "pv": "08 ao 09"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Ligações; (PI 37 ao PI 38)",
+    "trecho": "37-38",
+    "pv": "37 ao 38"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Miro",
+    "atividade": "VCA, PVs e Ligações; (PI 60 ao PI 61)",
+    "trecho": "60-61",
+    "pv": "60 ao 61"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Emanuel",
+    "atividade": "VCA, PVs e Ligações; (PI 25 ao PI 26)",
+    "trecho": "25-26",
+    "pv": "25 ao 26"
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Ligações; (Inicio Ponto 04)*",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "SERVIÇOS REPOSIÇÃO – LEANDRO",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "João Canzi – Henko (wellington/thiago)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Wellington/Thiago)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "João Canzi – Henko (marcio)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Marcio)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "Iti 15 – Henko (osmar)",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 – Henko (Osmar)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "CT João Canzi",
+    "equipe": "Goiânia Drill",
+    "atividade": "Puxe do PV-18 ao PV-19",
+    "trecho": "18-19",
+    "pv": "18 ao 19"
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "CT João Canzi",
+    "equipe": "Bruno",
+    "atividade": "Apoio ao HDD",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "CT João Canzi",
+    "equipe": "Medeiros",
+    "atividade": "Reaterro Shaft PV 10.1",
+    "trecho": "",
+    "pv": "10.1"
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "CT João Canzi",
+    "equipe": "Márcio",
+    "atividade": "Transformação PV 10",
+    "trecho": "",
+    "pv": "10"
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE Elvira",
+    "equipe": "Valter",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE Elias Sleiman",
+    "equipe": "Edvando",
+    "atividade": "VCA PV 22 ao PV 23",
+    "trecho": "22-23",
+    "pv": "22 ao 23"
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE Conj. União",
+    "equipe": "Jhonatan",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE Américo Machado/elis Regina",
+    "equipe": "Cesar",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Transformação PV 05 + Interligação",
+    "trecho": "",
+    "pv": "05"
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Ricardo",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Miro",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Emanuel",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "SERVIÇOS REPOSIÇÃO – LEANDRO",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "CTS Lageado",
+    "equipe": "Cidão",
+    "atividade": "Acabamentos gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "João Canzi – Henko (wellington/thiago)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Wellington/Thiago)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "João Canzi – Henko (marcio)",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Henko (Marcio)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "Iti 15 – Henko (osmar)",
+    "equipe": "Vacal",
+    "atividade": "ITI 15 – Henko (Osmar)",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Marcio - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-08",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz - Apoio as equipes",
+    "trecho": "",
+    "pv": ""
   }
 ]

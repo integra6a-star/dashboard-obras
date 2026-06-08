@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "01/06/2026 18:19",
+  "atualizado_em": "08/06/2026 07:41",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -56,11 +56,11 @@
     {
       "codigo": "P006",
       "descricao": "TUBO PEAD ESGOTO D 450",
-      "estoque_atual": "175 barras",
+      "estoque_atual": "158 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 175,
+      "quantidade": 158,
       "situacao_planilha": ""
     },
     {
@@ -96,21 +96,21 @@
     {
       "codigo": "P010",
       "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "327",
+      "estoque_atual": "256",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 327,
+      "quantidade": 256,
       "situacao_planilha": ""
     },
     {
       "codigo": "P011",
       "descricao": "TUBO CRAVADO 1500 mm",
-      "estoque_atual": "79",
+      "estoque_atual": "83",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 79,
+      "quantidade": 83,
       "situacao_planilha": ""
     }
   ],

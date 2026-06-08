@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-02T07:42:15.646482-03:00",
+  "atualizado_em": "2026-06-08T07:41:07.000118-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -492,7 +492,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
       "Bloco": "12",
       "Tipo": "HDD",
@@ -506,7 +506,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
       "Bloco": "12",
       "Tipo": "VCA",
@@ -576,7 +576,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
       "Bloco": "12",
       "Tipo": "HDD",
@@ -2295,13 +2295,14 @@
       "Bloco": "61",
       "Tipo": "VCA",
       "Planejado_m": 1799.2,
-      "Executado_m": 888.0,
+      "Executado_m": 943.4,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 888.0
+        "2026-05": 888.0,
+        "2026-06": 55.4
       }
     },
     {
@@ -2841,7 +2842,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "Bloco": "75",
       "Tipo": "HDD",
@@ -2855,7 +2856,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "Bloco": "75",
       "Tipo": "VCA",
@@ -2958,13 +2959,14 @@
       "Bloco": "75",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 592.21,
+      "Executado_m": 736.35,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 592.21
+        "2026-05": 592.21,
+        "2026-06": 144.14
       }
     },
     {
@@ -3011,7 +3013,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE ELVIRA DE ARAUJO",
       "Bloco": "75",
       "Tipo": "HDD",
@@ -3025,7 +3027,7 @@
     },
     {
       "Data": "",
-      "Status": "",
+      "Status": "em andamento",
       "Obra": "RCE ELVIRA DE ARAUJO",
       "Bloco": "75",
       "Tipo": "VCA",
@@ -3142,13 +3144,14 @@
       "Bloco": "76",
       "Tipo": "VCA",
       "Planejado_m": 95.0,
-      "Executado_m": 56.1,
+      "Executado_m": 93.1,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 56.1
+        "2026-05": 56.1,
+        "2026-06": 37.0
       }
     },
     {
@@ -3301,7 +3304,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-06-02T07:42:15.646440-03:00",
+    "atualizado_em": "2026-06-08T07:41:07.000118-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
@@ -3326,8 +3329,8 @@
       },
       "2026": {
         "eap": 28768.36,
-        "produzido": 8611.674,
-        "saldo": -20156.686
+        "produzido": 8848.214,
+        "saldo": -19920.146
       }
     },
     "mensal": [
@@ -3500,12 +3503,12 @@
         "ano": 2026,
         "mes": "Jun",
         "eap": 3108.25,
-        "produzido": 0.0,
+        "produzido": 236.54,
         "economias_eap": 2874.0,
         "economias_recebidas": 0.0,
-        "saldo_mes": -3108.25,
+        "saldo_mes": -2871.71,
         "saldo_economias": -2874.0,
-        "saldo_acum": -6123.086
+        "saldo_acum": -5886.546
       },
       {
         "ano": 2026,
@@ -3516,7 +3519,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3269.49,
         "saldo_economias": -4487.0,
-        "saldo_acum": -9392.576
+        "saldo_acum": -9156.036
       },
       {
         "ano": 2026,
@@ -3527,7 +3530,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3305.21,
         "saldo_economias": -4543.0,
-        "saldo_acum": -12697.786
+        "saldo_acum": -12461.246
       },
       {
         "ano": 2026,
@@ -3538,7 +3541,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -3138.09,
         "saldo_economias": -3432.0,
-        "saldo_acum": -15835.876
+        "saldo_acum": -15599.336
       },
       {
         "ano": 2026,
@@ -3549,7 +3552,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -2251.28,
         "saldo_economias": -1923.0,
-        "saldo_acum": -18087.156
+        "saldo_acum": -17850.616
       },
       {
         "ano": 2026,
@@ -3560,7 +3563,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -1527.07,
         "saldo_economias": -713.0,
-        "saldo_acum": -19614.226
+        "saldo_acum": -19377.686
       },
       {
         "ano": 2026,
@@ -3571,7 +3574,7 @@
         "economias_recebidas": 0.0,
         "saldo_mes": -542.46,
         "saldo_economias": -39.0,
-        "saldo_acum": -20156.686
+        "saldo_acum": -19920.146
       }
     ],
     "eap_economias": {
