@@ -4340,7 +4340,7 @@
       "cota_tampa": 763.82,
       "cota_fundo": 760.67,
       "profundidade_m": 3.15,
-      "observacao": "Plano de furo FL-01 versao 01, 05.MAI.2026"
+      "observacao": "Plano de furo FL-01 versão 01, 05.MAI.2026"
     },
     {
       "obra_id": "cts_joao_canzi",
@@ -5679,12 +5679,12 @@
       "nome_ponto": "PV-18",
       "coord_n": 7397124.485,
       "coord_e": 358806.429,
+      "latitude": -23.5300223,
+      "longitude": -46.3831139,
       "cota_tampa": 783.619,
       "cota_fundo": 780.119,
       "profundidade_m": 3.5,
-      "observacao": "Plano de furo FL-07 versao 01, 02.JUN.2026; trecho PV-17 ao PV-18.",
-      "latitude": -23.5300223,
-      "longitude": -46.3831139
+      "observacao": "Plano de furo FL-07 versao 01, 02.JUN.2026; trecho PV-17 ao PV-18."
     }
   ],
   "trechos": [
