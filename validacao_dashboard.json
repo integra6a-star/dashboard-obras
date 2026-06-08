@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-08 07:44:17",
+  "atualizado_em": "2026-06-08 08:05:14",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17586.28,
-    "mapa_executado": 16382.29,
-    "diferenca_base_mapa": 1203.98,
+    "mapa_executado": 16526.44,
+    "diferenca_base_mapa": 1059.84,
     "saldo_total": 22102.11
   },
   "pds": {
@@ -63,8 +63,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 1,203.98 m",
-    "7 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 1,059.84 m",
+    "6 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -76,16 +76,6 @@
       "saldo": 855.8,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 736.35,
-      "executado_mapa": 592.21,
-      "diferenca_base_mapa": 144.14,
-      "saldo": 122.15,
-      "linhas_base": 2,
-      "linhas_mapa": 9
     },
     {
       "obra": "RCE Rua São João",
@@ -553,11 +543,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 736.35,
-      "executado_mapa": 592.21,
-      "diferenca_base_mapa": 144.14,
+      "executado_mapa": 736.36,
+      "diferenca_base_mapa": -0.01,
       "saldo": 122.15,
       "linhas_base": 2,
-      "linhas_mapa": 9
+      "linhas_mapa": 11
     },
     {
       "obra": "RCE RUA IGARAÇU",
@@ -750,8 +740,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 85.7,
-      "modificado": "2026-06-08 07:04:53"
+      "tamanho_kb": 86.1,
+      "modificado": "2026-06-08 07:54:44"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
