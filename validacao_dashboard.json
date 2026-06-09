@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-06-08 15:58:37",
+  "atualizado_em": "2026-06-09 08:10:43",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17586.28,
-    "mapa_executado": 16526.44,
-    "diferenca_base_mapa": 1059.84,
+    "mapa_executado": 16721.39,
+    "diferenca_base_mapa": 864.88,
     "saldo_total": 22102.11
   },
   "pds": {
-    "total": 2777,
-    "ultima_data": "2026-06-08",
+    "total": 2799,
+    "ultima_data": "2026-06-09",
     "hoje": 22,
     "por_obra_ultima_data": [
       {
@@ -25,6 +25,10 @@
         "atividades": 2
       },
       {
+        "obra": "João Canzi",
+        "atividades": 2
+      },
+      {
         "obra": "CTS Lageado",
         "atividades": 1
       },
@@ -33,15 +37,7 @@
         "atividades": 1
       },
       {
-        "obra": "Iti 15 – Henko (osmar)",
-        "atividades": 1
-      },
-      {
-        "obra": "João Canzi – Henko (marcio)",
-        "atividades": 1
-      },
-      {
-        "obra": "João Canzi – Henko (wellington/thiago)",
+        "obra": "Iti 15",
         "atividades": 1
       },
       {
@@ -53,7 +49,7 @@
         "atividades": 1
       },
       {
-        "obra": "RCE Elias Sleiman",
+        "obra": "RCE Elias Sleiman / CT João Canzi",
         "atividades": 1
       },
       {
@@ -63,8 +59,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 1,059.84 m",
-    "6 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 864.88 m",
+    "8 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -78,6 +74,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "rce_elias_sleiman",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": -103.03,
+      "saldo": 0.0,
+      "linhas_base": 0,
+      "linhas_mapa": 2
+    },
+    {
       "obra": "RCE Rua São João",
       "planejado": 95.0,
       "executado_base": 93.1,
@@ -86,6 +92,16 @@
       "saldo": 1.9,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 736.35,
+      "executado_mapa": 828.28,
+      "diferenca_base_mapa": -91.93,
+      "saldo": 122.15,
+      "linhas_base": 2,
+      "linhas_mapa": 15
     },
     {
       "obra": "Interligação Água Boa",
@@ -543,11 +559,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 736.35,
-      "executado_mapa": 736.36,
-      "diferenca_base_mapa": -0.01,
+      "executado_mapa": 828.28,
+      "diferenca_base_mapa": -91.93,
       "saldo": 122.15,
       "linhas_base": 2,
-      "linhas_mapa": 11
+      "linhas_mapa": 15
     },
     {
       "obra": "RCE RUA IGARAÇU",
@@ -700,6 +716,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "rce_elias_sleiman",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": -103.03,
+      "saldo": 0.0,
+      "linhas_base": 0,
+      "linhas_mapa": 2
+    },
+    {
       "obra": "RCE AV. Fernando Pacheco Jordão",
       "planejado": 205.5,
       "executado_base": 220.59,
@@ -735,25 +761,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.5,
-      "modificado": "2026-06-08 12:32:45"
+      "modificado": "2026-06-09 07:37:51"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 86.1,
-      "modificado": "2026-06-08 12:32:45"
+      "tamanho_kb": 86.7,
+      "modificado": "2026-06-09 08:10:10"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 383.2,
-      "modificado": "2026-06-08 12:32:45"
+      "tamanho_kb": 382.3,
+      "modificado": "2026-06-09 08:10:34"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 482.3,
-      "modificado": "2026-06-08 12:32:45"
+      "tamanho_kb": 486.2,
+      "modificado": "2026-06-09 08:10:38"
     }
   ]
 }

@@ -446,5 +446,21 @@
     "diferenca": 1059.84,
     "pds_hoje": 22,
     "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-09 08:08:12",
+    "base_executado": 17586.28,
+    "mapa_executado": 16593.16,
+    "diferenca": 993.11,
+    "pds_hoje": 22,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-09 08:10:43",
+    "base_executado": 17586.28,
+    "mapa_executado": 16721.39,
+    "diferenca": 864.88,
+    "pds_hoje": 22,
+    "alertas": 2
   }
 ]
