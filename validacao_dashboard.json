@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-09 08:44:12",
+  "atualizado_em": "2026-06-09 13:09:48",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17776.23,
-    "mapa_executado": 16721.39,
-    "diferenca_base_mapa": 1054.84,
+    "mapa_executado": 17414.41,
+    "diferenca_base_mapa": 361.82,
     "saldo_total": 21912.16
   },
   "pds": {
@@ -59,19 +59,29 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 1,054.84 m",
-    "7 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 361.82 m",
+    "8 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 759.41,
+      "executado_mapa": 615.27,
+      "diferenca_base_mapa": 144.14,
+      "saldo": 99.09,
+      "linhas_base": 2,
+      "linhas_mapa": 9
+    },
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
       "executado_base": 943.4,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 943.4,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 106.24,
       "saldo": 855.8,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 32
     },
     {
       "obra": "RCE Rua São João",
@@ -219,11 +229,11 @@
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
       "executado_base": 943.4,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 943.4,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 106.24,
       "saldo": 855.8,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 32
     },
     {
       "obra": "RCE RUA PREFEITO TAKUNE KOIKE",
@@ -579,11 +589,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 759.41,
-      "executado_mapa": 759.42,
-      "diferenca_base_mapa": -0.01,
+      "executado_mapa": 615.27,
+      "diferenca_base_mapa": 144.14,
       "saldo": 99.09,
       "linhas_base": 2,
-      "linhas_mapa": 11
+      "linhas_mapa": 9
     },
     {
       "obra": "CTS Jardim Lourdes",
@@ -746,20 +756,20 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 86.9,
-      "modificado": "2026-06-09 08:23:25"
+      "tamanho_kb": 110.7,
+      "modificado": "2026-06-09 11:32:43"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 382.3,
-      "modificado": "2026-06-09 08:35:55"
+      "modificado": "2026-06-09 13:08:25"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 486.2,
-      "modificado": "2026-06-09 08:35:59"
+      "modificado": "2026-06-09 13:08:28"
     }
   ]
 }

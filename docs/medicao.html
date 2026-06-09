@@ -142,6 +142,7 @@
     }
     .tbl tbody tr:nth-child(even){background:#f7fbff}
     .tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+    .hide-from-report{display:none !important}
     .tbl tfoot td{
       padding:10px;
       border-top:2px solid rgba(59,130,246,.85);
@@ -209,11 +210,11 @@
           <div class="v" id="kContrato">R$ 0,00</div>
           <div class="l">TOTAL CONTRATO</div>
         </div>
-        <div class="kpi">
+        <div class="kpi hide-from-report">
           <div class="v" id="kMedBruto">R$ 0,00</div>
           <div class="l">VALOR BRUTO</div>
         </div>
-        <div class="kpi">
+        <div class="kpi hide-from-report">
           <div class="v" id="kMedLiquido">R$ 0,00</div>
           <div class="l">VALOR LÍQUIDO</div>
         </div>
@@ -244,7 +245,7 @@
         <tfoot>
           <tr>
             <td>Total</td>
-            <td class="num" id="tfMed">R$ 0,00</td>
+            <td class="num hide-from-report" id="tfMed">R$ 0,00</td>
             <td class="num" id="tfMedAcum">R$ 0,00</td>
             <td class="num" id="tfSaldoContr">R$ 0,00</td>
           </tr>
@@ -267,11 +268,11 @@
           <div class="v" id="kAmoBruto">R$ 0,00</div>
           <div class="l">VALOR BRUTO</div>
         </div>
-        <div class="kpi">
+        <div class="kpi hide-from-report">
           <div class="v" id="kAmoLiquido">R$ 0,00</div>
           <div class="l">VALOR LÍQUIDO</div>
         </div>
-        <div class="kpi">
+        <div class="kpi hide-from-report">
           <div class="v" id="kAmort">R$ 0,00</div>
           <div class="l">TOTAL AMORTIZADO</div>
         </div>
@@ -298,7 +299,7 @@
         <tfoot>
           <tr>
             <td>Total</td>
-            <td class="num" id="tfAmo">R$ 0,00</td>
+            <td class="num hide-from-report" id="tfAmo">R$ 0,00</td>
             <td class="num" id="tfAmoAcum">R$ 0,00</td>
             <td class="num" id="tfSaldoAmo">R$ 0,00</td>
           </tr>
