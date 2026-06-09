@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-09T08:24:48.402074-03:00",
+  "atualizado_em": "2026-06-09T08:35:47.690999-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -2861,7 +2861,7 @@
       "Bloco": "75",
       "Tipo": "VCA",
       "Planejado_m": 338.5,
-      "Executado_m": 0.0,
+      "Executado_m": 103.03,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
@@ -2961,13 +2961,13 @@
       "Bloco": "75",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 736.35,
+      "Executado_m": 759.415,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 592.21,
+        "2026-05": 548.5500000000001,
         "2026-06": 210.86499999999998
       }
     },
@@ -3034,12 +3034,13 @@
       "Bloco": "75",
       "Tipo": "VCA",
       "Planejado_m": 180.0,
-      "Executado_m": 0.0,
+      "Executado_m": 63.86,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
+        "2026-05": 43.66,
         "2026-06": 20.2
       }
     },
@@ -3308,7 +3309,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-06-09T08:24:48.402000-03:00",
+    "atualizado_em": "2026-06-09T08:35:47.690930-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
