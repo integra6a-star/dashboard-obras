@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-09 13:09:48",
+  "atualizado_em": "2026-06-09 13:19:08",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17776.23,
-    "mapa_executado": 17414.41,
-    "diferenca_base_mapa": 361.82,
+    "mapa_executado": 17558.55,
+    "diferenca_base_mapa": 217.68,
     "saldo_total": 21912.16
   },
   "pds": {
@@ -59,20 +59,10 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 361.82 m",
-    "8 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 217.68 m",
+    "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 759.41,
-      "executado_mapa": 615.27,
-      "diferenca_base_mapa": 144.14,
-      "saldo": 99.09,
-      "linhas_base": 2,
-      "linhas_mapa": 9
-    },
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
@@ -589,11 +579,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 759.41,
-      "executado_mapa": 615.27,
-      "diferenca_base_mapa": 144.14,
+      "executado_mapa": 759.42,
+      "diferenca_base_mapa": -0.01,
       "saldo": 99.09,
       "linhas_base": 2,
-      "linhas_mapa": 9
+      "linhas_mapa": 11
     },
     {
       "obra": "CTS Jardim Lourdes",
@@ -756,20 +746,20 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 110.7,
-      "modificado": "2026-06-09 11:32:43"
+      "tamanho_kb": 93.2,
+      "modificado": "2026-06-09 13:18:41"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 382.3,
-      "modificado": "2026-06-09 13:08:25"
+      "modificado": "2026-06-09 13:19:01"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 486.2,
-      "modificado": "2026-06-09 13:08:28"
+      "modificado": "2026-06-09 13:19:04"
     }
   ]
 }

@@ -6308,6 +6308,20 @@
       "cota_fundo": null,
       "profundidade_m": null,
       "observacao": "Ponto auxiliar obtido via Google Earth."
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-17-FL07",
+      "nome_ponto": "PV-17",
+      "coord_n": 7397122.275,
+      "coord_e": 358726.884,
+      "latitude": -23.5300354,
+      "longitude": -46.3838931,
+      "cota_tampa": 782.299,
+      "cota_fundo": 779.199,
+      "profundidade_m": 3.1,
+      "observacao": "Plano de furo FL-07 versao 01, 02.JUN.2026; trechos PV-16 ao PV-17 e PV-17 ao PV-18."
     }
   ],
   "trechos": [
@@ -15290,6 +15304,46 @@
       "lon_inicio": -46.3768722,
       "lat_fim": -23.5198,
       "lon_fim": -46.3763
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-014",
+      "trecho_nome": "PV-16 - PV-17",
+      "pv_inicio": "PV-16",
+      "pv_fim": "PV-17",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 64.572,
+      "prof_inicial_m": 3.1,
+      "prof_final_m": 3.1,
+      "prof_max_m": 5.48,
+      "status": "em andamento",
+      "observacao": "Plano de furo FL-07 versao 01, 02.JUN.2026; PV-16 ao PV-17; arquivo: planos_furo/cts_joao_canzi_fl07_pv16_pv17.pdf; taxa 0,0707.",
+      "lat_inicio": -23.5299843,
+      "lon_inicio": -46.3845231,
+      "lat_fim": -23.5300354,
+      "lon_fim": -46.3838931
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "trecho_id": "JC-015",
+      "trecho_nome": "PV-17 - PV-18",
+      "pv_inicio": "PV-17",
+      "pv_fim": "PV-18",
+      "material": "PEAD LISO",
+      "dn": 355,
+      "metodo": "Metodo Nao Destrutivo - MND",
+      "extensao_m": 79.576,
+      "prof_inicial_m": 3.1,
+      "prof_final_m": 3.5,
+      "prof_max_m": 3.56,
+      "status": "em andamento",
+      "observacao": "Plano de furo FL-07 versao 01, 02.JUN.2026; PV-17 ao PV-18; arquivo: planos_furo/cts_joao_canzi_fl07_pv17_pv18.pdf; taxa 0,0116.",
+      "lat_inicio": -23.5300354,
+      "lon_inicio": -46.3838931,
+      "lat_fim": -23.5300223,
+      "lon_fim": -46.3831139
     }
   ]
 }

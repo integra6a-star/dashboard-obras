@@ -1,10 +1,10 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-06-09 13:09:48
+Atualizado em: 2026-06-09 13:19:08
 
 Planejado Base Dash: 39,688.39 m
 Executado Base Dash: 17,776.23 m
-Executado Mapa: 17,414.41 m
-Diferença Base - Mapa: 361.82 m
+Executado Mapa: 17,558.55 m
+Diferença Base - Mapa: 217.68 m
 Saldo total: 21,912.16 m
 
 PDS total: 2799 registros
@@ -12,11 +12,10 @@ PDS hoje: 22 registros
 Última data PDS: 2026-06-09
 
 Alertas:
-- Diferença total entre Base Dash e mapa: 361.82 m
-- 8 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença total entre Base Dash e mapa: 217.68 m
+- 7 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
-- CTS João Canzi: Base 759.41 m | Mapa 615.27 m | Dif. 144.14 m
 - RCE São Lucas: Base 943.40 m | Mapa 837.16 m | Dif. 106.24 m
 - RCE Rua São João: Base 93.10 m | Mapa 0.00 m | Dif. 93.10 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
