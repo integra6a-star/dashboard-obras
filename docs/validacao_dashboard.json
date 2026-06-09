@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-09 08:10:43",
+  "atualizado_em": "2026-06-09 08:25:06",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17586.28,
@@ -60,7 +60,7 @@
   },
   "alertas": [
     "Diferença total entre Base Dash e mapa: 864.88 m",
-    "8 obra(s) com divergência entre executado da Base Dash e mapa."
+    "9 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -94,16 +94,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 736.35,
-      "executado_mapa": 828.28,
-      "diferenca_base_mapa": -91.93,
-      "saldo": 122.15,
-      "linhas_base": 2,
-      "linhas_mapa": 15
-    },
-    {
       "obra": "Interligação Água Boa",
       "planejado": 425.0,
       "executado_base": 201.71,
@@ -122,6 +112,26 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
+    },
+    {
+      "obra": "rce_elvira_de_araujo",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": -68.86,
+      "saldo": 0.0,
+      "linhas_base": 0,
+      "linhas_mapa": 4
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 736.35,
+      "executado_mapa": 759.42,
+      "diferenca_base_mapa": -23.07,
+      "saldo": 122.15,
+      "linhas_base": 2,
+      "linhas_mapa": 11
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -559,11 +569,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 736.35,
-      "executado_mapa": 828.28,
-      "diferenca_base_mapa": -91.93,
+      "executado_mapa": 759.42,
+      "diferenca_base_mapa": -23.07,
       "saldo": 122.15,
       "linhas_base": 2,
-      "linhas_mapa": 15
+      "linhas_mapa": 11
     },
     {
       "obra": "RCE RUA IGARAÇU",
@@ -726,6 +736,16 @@
       "linhas_mapa": 2
     },
     {
+      "obra": "rce_elvira_de_araujo",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": -68.86,
+      "saldo": 0.0,
+      "linhas_base": 0,
+      "linhas_mapa": 4
+    },
+    {
       "obra": "RCE AV. Fernando Pacheco Jordão",
       "planejado": 205.5,
       "executado_base": 220.59,
@@ -766,20 +786,20 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 86.7,
-      "modificado": "2026-06-09 08:10:10"
+      "tamanho_kb": 86.9,
+      "modificado": "2026-06-09 08:23:25"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 382.3,
-      "modificado": "2026-06-09 08:10:34"
+      "modificado": "2026-06-09 08:24:56"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 486.2,
-      "modificado": "2026-06-09 08:10:38"
+      "modificado": "2026-06-09 08:25:01"
     }
   ]
 }

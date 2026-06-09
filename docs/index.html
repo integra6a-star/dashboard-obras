@@ -928,11 +928,20 @@ function getCurvaMensal(rows){
       return anoA - anoB || mesA - mesB;
     });
 
-    return {
-      labels: base.map(i => `${i.mes}/${String(i.ano).slice(2)}`),
-      planMensal: base.map(i => Number(i.eap || 0)),
-      execMensal: base.map(i => Number(i.produzido || 0))
-    };
+    const labels = base.map(i => `${i.mes}/${String(i.ano).slice(2)}`);
+    const planMensal = base.map(i => Number(i.eap || 0));
+    const execMensal = base.map(i => Number(i.produzido || 0));
+    const totalExecDashboard = rows.reduce((a,r)=>a + Number(r.Executado_m || r.Extensao_Executada_m || 0),0);
+    const chaveMes = i => `${i.ano}-${String(ordemMes[String(i?.mes || '').trim()] || 0).padStart(2,'0')}`;
+    let idxReferencia = UPDATED_MONTH ? base.findIndex(i => chaveMes(i) === UPDATED_MONTH) : -1;
+    if(idxReferencia < 0) idxReferencia = execMensal.reduce((acc,v,i)=> Number(v||0) > 0 ? i : acc, -1);
+    if(idxReferencia >= 0 && totalExecDashboard > 0){
+      const acumuladoCurva = execMensal.slice(0, idxReferencia + 1).reduce((a,b)=>a + Number(b || 0),0);
+      const ajuste = totalExecDashboard - acumuladoCurva;
+      if(Math.abs(ajuste) > 0.005) execMensal[idxReferencia] = Math.max(0, Number(execMensal[idxReferencia] || 0) + ajuste);
+    }
+
+    return { labels, planMensal, execMensal };
   }
 
   // Com filtro por obra, mantém a lógica baseada na produção mensal por registro
