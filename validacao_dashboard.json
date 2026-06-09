@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-09 08:36:05",
+  "atualizado_em": "2026-06-09 08:44:12",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17776.23,
@@ -60,7 +60,7 @@
   },
   "alertas": [
     "Diferença total entre Base Dash e mapa: 1,054.84 m",
-    "10 obra(s) com divergência entre executado da Base Dash e mapa."
+    "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -72,26 +72,6 @@
       "saldo": 855.8,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 103.03,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 103.03,
-      "saldo": 235.47,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "rce_elias_sleiman",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": -103.03,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 2
     },
     {
       "obra": "RCE Rua São João",
@@ -124,26 +104,6 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "rce_elvira_de_araujo",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": -68.86,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 4
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 63.86,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 63.86,
-      "saldo": 116.14,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
       "executado_base": 468.09,
@@ -152,6 +112,16 @@
       "saldo": -77.34,
       "linhas_base": 4,
       "linhas_mapa": 11
+    },
+    {
+      "obra": "RCE Elvira de Araújo",
+      "planejado": 180.0,
+      "executado_base": 63.86,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": -5.0,
+      "saldo": 116.14,
+      "linhas_base": 2,
+      "linhas_mapa": 4
     },
     {
       "obra": "CTS Conceição",
@@ -396,14 +366,14 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "obra": "RCE Elias Sleiman",
       "planejado": 338.5,
       "executado_base": 103.03,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 103.03,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": 0.0,
       "saldo": 235.47,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 2
     },
     {
       "obra": "RCE VIELA DA RUA INÊS SABINO",
@@ -566,14 +536,14 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE ELVIRA DE ARAUJO",
+      "obra": "RCE Elvira de Araújo",
       "planejado": 180.0,
       "executado_base": 63.86,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 63.86,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": -5.0,
       "saldo": 116.14,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 4
     },
     {
       "obra": "RCE RUA IGARAÇU",
@@ -734,26 +704,6 @@
       "saldo": 0.0,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "rce_elias_sleiman",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": -103.03,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 2
-    },
-    {
-      "obra": "rce_elvira_de_araujo",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": -68.86,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 4
     },
     {
       "obra": "RCE AV. Fernando Pacheco Jordão",
