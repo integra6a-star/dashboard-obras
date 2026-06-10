@@ -358,8 +358,8 @@ function renderTabelaProducao(rows){
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.ano ? ""}</td>
-      <td>${r.mes ? ""}</td>
+      <td>${r.ano || ""}</td>
+      <td>${r.mes || ""}</td>
       <td class="num">${fmt0(Math.round(eap))}</td>
       <td class="num">${fmt0(Math.round(prod))}</td>
       <td class="num">${fmt0(Math.round(saldo))}</td>
@@ -381,8 +381,8 @@ function renderTabelaEconomias(rows){
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.ano ? ""}</td>
-      <td>${r.mes ? ""}</td>
+      <td>${r.ano || ""}</td>
+      <td>${r.mes || ""}</td>
       <td class="num">${fmt0(Math.round(eap))}</td>
       <td class="num">${fmt0(Math.round(rec))}</td>
       <td class="num">${fmt0(Math.round(saldo))}</td>
@@ -392,7 +392,15 @@ function renderTabelaEconomias(rows){
   });
 }
 
+function chartOk(metaEl){
+  if(window.Chart) return true;
+  metaEl.textContent = "Grafico indisponivel: biblioteca Chart.js nao carregou. Cards e tabelas foram atualizados.";
+  return false;
+}
+
 function renderGraficoProducao(rows){
+  if(!chartOk(metaMensal)) return;
+
   const labels = rows.map(r => labelMes(r.ano, r.mes));
   const eap = rows.map(r => Number(r.eap || 0));
   const prod = rows.map(r => {
@@ -435,6 +443,8 @@ function renderGraficoProducao(rows){
 }
 
 function renderGraficoEconomias(rows){
+  if(!chartOk(metaEconomias)) return;
+
   const labels = rows.map(r => labelMes(r.ano, r.mes));
   const eap = rows.map(r => Number(r.economiasEap || 0));
   const rec = rows.map(r => {
@@ -580,21 +590,29 @@ function normalizarLinhas(sheet){
   return out;
 }
 
+function normalizarPayloadJson(payload){
+  const mensal = Array.isArray(payload?.mensal)
+    ? payload.mensal
+    : (Array.isArray(payload?.eap_producao?.mensal) ? payload.eap_producao.mensal : []);
+
+  return mensal.map(r => ({
+    ano: Number(r.ano),
+    mes: String(r.mes || ""),
+    eap: Number(r.eap || 0),
+    produzido: (r.produzido === null || r.produzido === undefined || r.produzido === "") ? null : Number(r.produzido || 0),
+    economiasEap: Number(r.economias_eap ?? r.economiasEap ?? 0),
+    economiasRecebidas: Number(r.economias_recebidas ?? r.economiasRecebidas ?? 0)
+  })).filter(r => r.ano && r.mes);
+}
+
 async function carregarXlsx(){
   badgeFonte.textContent = "Fonte: carregando...";
   try{
     const jsonRes = await fetch(ARQ_JSON + "?cb=" + Date.now());
     if(jsonRes.ok){
       const payload = await jsonRes.json();
-      if(Array.isArray(payload.mensal) && payload.mensal.length){
-        DADOS = payload.mensal.map(r => ({
-          ano: Number(r.ano),
-          mes: String(r.mes || ""),
-          eap: Number(r.eap || 0),
-          produzido: (r.produzido === null || r.produzido === undefined || r.produzido === "") ? null : Number(r.produzido || 0),
-          economiasEap: Number(r.economias_eap || 0),
-          economiasRecebidas: Number(r.economias_recebidas || 0)
-        }));
+      DADOS = normalizarPayloadJson(payload);
+      if(DADOS.length){
         fillSelectAno();
         badgeFonte.textContent = `Fonte: ${ARQ_JSON.split("/").pop()} • Linhas: ${DADOS.length}`;
         update();
