@@ -9728,14 +9728,14 @@
           labels: ranking.map(r => r.lider),
           datasets: [
             {
-              label: "Conformidade (%)",
-              data: ranking.map(r => Number(r.conformidade.toFixed(1))),
+              label: "Conformes (qtde)",
+              data: ranking.map(r => r.conformes),
               backgroundColor: "#2563eb",
               borderRadius: 8
             },
             {
-              label: "Não Conformidade (%)",
-              data: ranking.map(r => Number(r.naoConformidade.toFixed(1))),
+              label: "Não conformes (qtde)",
+              data: ranking.map(r => r.naoConformes),
               backgroundColor: "#ef4444",
               borderRadius: 8
             }
@@ -9751,7 +9751,11 @@
             tooltip: {
               callbacks: {
                 label: function(context) {
-                  return `${context.dataset.label}: ${context.raw}%`;
+                  const item = ranking[context.dataIndex];
+                  const pct = context.datasetIndex === 0
+                    ? item.conformidade.toFixed(1)
+                    : item.naoConformidade.toFixed(1);
+                  return `${context.dataset.label}: ${context.raw} (${pct}%)`;
                 }
               }
             }
@@ -9759,7 +9763,7 @@
           scales: {
             y: {
               beginAtZero:true,
-              max:100
+              ticks:{ precision:0 }
             }
           }
         }
