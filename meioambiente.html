@@ -346,27 +346,32 @@
       const select = document.getElementById("filtroMes");
       select.innerHTML = "";
 
-      const meses = [...new Set(
+      const mesesComDados = [...new Set(
         registros
           .filter(r => r.data)
           .map(r => chaveMes(r.data))
       )].sort();
 
-      if (meses.length === 0) {
+      if (mesesComDados.length === 0) {
         select.innerHTML = `<option value="sem-dados">Sem dados</option>`;
         return;
       }
 
+      const anos = [...new Set(mesesComDados.map(mes => mes.substring(0, 4)))].sort();
+      const meses = anos.flatMap(ano =>
+        Array.from({ length: 12 }, (_, i) => `${ano}-${String(i + 1).padStart(2, "0")}`)
+      );
+
       meses.forEach(mes => {
-        const exemplo = registros.find(r => chaveMes(r.data) === mes);
+        const dataReferencia = `${mes}-01`;
         select.innerHTML += `
           <option value="${mes}">
-            ${nomeMes(exemplo.data)}
+            ${nomeMes(dataReferencia)}
           </option>
         `;
       });
 
-      select.value = meses[meses.length - 1];
+      select.value = mesesComDados[mesesComDados.length - 1];
     }
 
     function percentual(valor, total){
