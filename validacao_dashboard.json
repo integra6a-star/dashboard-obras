@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-11 09:30:48",
+  "atualizado_em": "2026-06-11 10:18:39",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17950.49,
-    "mapa_executado": 17558.55,
-    "diferenca_base_mapa": 391.94,
+    "mapa_executado": 17621.23,
+    "diferenca_base_mapa": 329.27,
     "saldo_total": 21737.9
   },
   "pds": {
@@ -55,7 +55,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 391.94 m",
+    "Diferença total entre Base Dash e mapa: 329.27 m",
     "11 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -140,16 +140,6 @@
       "linhas_mapa": 4
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 823.1,
-      "executado_mapa": 759.42,
-      "diferenca_base_mapa": 63.67,
-      "saldo": 35.4,
-      "linhas_base": 2,
-      "linhas_mapa": 11
-    },
-    {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
       "executado_base": 468.09,
@@ -168,6 +158,16 @@
       "saldo": 46.61,
       "linhas_base": 4,
       "linhas_mapa": 14
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 823.1,
+      "executado_mapa": 822.09,
+      "diferenca_base_mapa": 1.0,
+      "saldo": 35.4,
+      "linhas_base": 2,
+      "linhas_mapa": 12
     }
   ],
   "saldo_por_obra": [
@@ -665,11 +665,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 823.1,
-      "executado_mapa": 759.42,
-      "diferenca_base_mapa": 63.67,
+      "executado_mapa": 822.09,
+      "diferenca_base_mapa": 1.0,
       "saldo": 35.4,
       "linhas_base": 2,
-      "linhas_mapa": 11
+      "linhas_mapa": 12
     },
     {
       "obra": "RCE RUA CARMEM COSTA",
@@ -802,8 +802,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 93.2,
-      "modificado": "2026-06-09 13:18:42"
+      "tamanho_kb": 93.1,
+      "modificado": "2026-06-11 10:17:52"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
