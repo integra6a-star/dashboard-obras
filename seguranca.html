@@ -310,32 +310,6 @@
       font-size:14px;
     }
 
-    .grafico-card-topo {
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-    }
-
-    .btn-voltar-grafico {
-      border:1px solid rgba(148,163,184,.55);
-      background:#fff;
-      color:#334155;
-      border-radius:10px;
-      padding:8px 12px;
-      font-weight:800;
-      cursor:pointer;
-      box-shadow:0 8px 18px rgba(15,23,42,.08);
-    }
-
-    .btn-voltar-grafico:hover {
-      background:#f8fafc;
-    }
-
-    .btn-voltar-grafico[hidden] {
-      display:none;
-    }
-
     .grafico-card canvas {
       width:100% !important;
       max-height:330px;
@@ -929,11 +903,11 @@
 
       <div class="kpi-card" style="--accent:#8b5cf6">
         <div class="kpi-head">
-          <div class="kpi-title">Principal apontamento</div>
+          <div class="kpi-title">Principal categoria</div>
           <div class="kpi-icon">📌</div>
         </div>
         <div class="kpi-number" id="kpiCategoria" style="font-size:25px; line-height:1.15;">-</div>
-        <div class="kpi-note" id="kpiCategoriaNota">Maior volume de códigos</div>
+        <div class="kpi-note" id="kpiCategoriaNota">Maior volume de desvios</div>
       </div>
     </section>
 
@@ -945,13 +919,8 @@
       </div>
 
       <div class="grafico-card">
-        <div class="grafico-card-topo">
-          <div>
-            <h2>🥧 Distribuição por apontamento</h2>
-            <p class="desc" id="graficoCategoriasDesc">Categorias principais dos apontamentos.</p>
-          </div>
-          <button type="button" class="btn-voltar-grafico" id="btnVoltarCategorias" onclick="voltarGraficoCategorias()" hidden>Voltar</button>
-        </div>
+        <h2>🥧 Distribuição por categoria</h2>
+        <p class="desc">Classificação por grupo da tabela oficial de códigos.</p>
         <canvas id="graficoCategorias"></canvas>
       </div>
 
@@ -1035,16 +1004,6 @@
 
     const mesesNome = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
     let graficoLideres, graficoCategorias, graficoMensal, graficoTST;
-    let dadosGraficoCategorias = [];
-    let grupoAtualCategorias = null;
-    const CORES_CATEGORIAS = ["#ef4444","#f97316","#f59e0b","#2563eb","#06b6d4","#8b5cf6","#64748b","#14b8a6","#a855f7","#ec4899","#84cc16","#0ea5e9"];
-    const GRUPOS_APONTAMENTO = {
-      A:"A. Posição das Pessoas",
-      B:"B. Equipamento de Proteção Individual",
-      C:"C. Ferramentas e Equipamentos",
-      D:"D. Procedimentos e Técnicas",
-      E:"E. Organização e Limpeza"
-    };
 
     function chaveMes(dataISO){
       return dataISO ? dataISO.substring(0,7) : "sem-data";
@@ -1066,116 +1025,6 @@
       return Object.entries(mapa)
         .map(([nome, quantidade]) => ({ nome, quantidade }))
         .sort((a,b) => b.quantidade - a.quantidade);
-    }
-
-    function codigoApontamento(d){
-      const codigo = String(d.classificacao_codigo || d.codigo || "").trim().toUpperCase();
-      if (codigo) return codigo;
-      const origem = String(d.categoria_detalhe || d.categoria || d.classificacao_original || "").trim().toUpperCase();
-      const encontrado = origem.match(/\b[A-Z]\d+\b/);
-      return encontrado ? encontrado[0] : "";
-    }
-
-    function grupoApontamento(d){
-      const grupoDireto = String(d.grupo_codigo || "").trim().toUpperCase();
-      if (GRUPOS_APONTAMENTO[grupoDireto]) return grupoDireto;
-
-      const grupoTexto = String(d.classificacao_grupo || d.categoria_grupo || "").trim().toUpperCase();
-      const grupoEncontrado = grupoTexto.match(/^[A-E]/);
-      if (grupoEncontrado && GRUPOS_APONTAMENTO[grupoEncontrado[0]]) return grupoEncontrado[0];
-
-      const codigo = codigoApontamento(d);
-      if (codigo.startsWith("F")) return "E";
-      const grupoCodigo = codigo.charAt(0);
-      return GRUPOS_APONTAMENTO[grupoCodigo] ? grupoCodigo : "";
-    }
-
-    function normalizarCodigoApontamento(d){
-      const grupo = grupoApontamento(d);
-      const codigo = codigoApontamento(d);
-      if (grupo === "E" && codigo.startsWith("F")) return `E${codigo.slice(1)}`;
-      return codigo;
-    }
-
-    function labelGrupoApontamento(grupo){
-      return GRUPOS_APONTAMENTO[grupo] || grupo || "Não informado";
-    }
-
-    function labelSubitemApontamento(d){
-      const codigo = normalizarCodigoApontamento(d);
-      const descricao = String(d.classificacao_descricao || "").trim();
-      if (codigo && descricao) return `${codigo}. ${descricao}`;
-
-      const detalhe = String(d.categoria_detalhe || d.categoria || "").trim();
-      if (!codigo) return detalhe || "Não informado";
-      return detalhe ? detalhe.replace(/^[A-Z]\d+/, codigo) : codigo;
-    }
-
-    function ordenarApontamentos(a,b){
-      const codigoA = String(a.codigo || a.grupo || a.nome || "");
-      const codigoB = String(b.codigo || b.grupo || b.nome || "");
-      return codigoA.localeCompare(codigoB, "pt-BR", {numeric:true});
-    }
-
-    function montarDadosCategorias(desvios){
-      const grupos = {};
-
-      desvios.forEach(d => {
-        const grupo = grupoApontamento(d);
-        if (!grupo) return;
-
-        if (!grupos[grupo]) {
-          grupos[grupo] = {grupo, nome:labelGrupoApontamento(grupo), quantidade:0, subitens:{}};
-        }
-
-        grupos[grupo].quantidade += 1;
-
-        const codigo = normalizarCodigoApontamento(d);
-        const label = labelSubitemApontamento(d);
-        const chave = codigo || label;
-        if (!grupos[grupo].subitens[chave]) {
-          grupos[grupo].subitens[chave] = {codigo, nome:label, quantidade:0};
-        }
-        grupos[grupo].subitens[chave].quantidade += 1;
-      });
-
-      return Object.keys(GRUPOS_APONTAMENTO)
-        .map(grupo => grupos[grupo] || {grupo, nome:labelGrupoApontamento(grupo), quantidade:0, subitens:{}})
-        .filter(item => item.quantidade > 0)
-        .map(item => ({
-          ...item,
-          subitensLista:Object.values(item.subitens).sort(ordenarApontamentos)
-        }));
-    }
-
-    function itensGraficoCategorias(grupo){
-      if (!grupo) return dadosGraficoCategorias;
-      const dadosGrupo = dadosGraficoCategorias.find(item => item.grupo === grupo);
-      return dadosGrupo ? dadosGrupo.subitensLista.filter(item => item.quantidade > 0) : [];
-    }
-
-    function atualizarGraficoCategorias(grupo){
-      grupoAtualCategorias = grupo || null;
-      const itens = itensGraficoCategorias(grupoAtualCategorias);
-      const btnVoltar = document.getElementById("btnVoltarCategorias");
-      const desc = document.getElementById("graficoCategoriasDesc");
-
-      if (btnVoltar) btnVoltar.hidden = !grupoAtualCategorias;
-      if (desc) {
-        desc.innerText = grupoAtualCategorias
-          ? `${labelGrupoApontamento(grupoAtualCategorias)} - subitens detalhados.`
-          : "Categorias principais dos apontamentos.";
-      }
-
-      if (!graficoCategorias) return;
-      graficoCategorias.data.labels = itens.map(i => i.nome);
-      graficoCategorias.data.datasets[0].data = itens.map(i => i.quantidade);
-      graficoCategorias.data.datasets[0].backgroundColor = CORES_CATEGORIAS.slice(0, Math.max(1, itens.length));
-      graficoCategorias.update();
-    }
-
-    function voltarGraficoCategorias(){
-      atualizarGraficoCategorias(null);
     }
 
     function agruparInspecoesPorLider(inspecoes){
@@ -1275,7 +1124,7 @@
       document.getElementById("kpiDDS").innerText = dds.length;
       document.getElementById("kpiDDSNota").innerText = `${participantes} participantes registrados`;
       document.getElementById("kpiCategoria").innerText = principalCategoria ? principalCategoria.nome : "-";
-      document.getElementById("kpiCategoriaNota").innerText = principalCategoria ? `${principalCategoria.quantidade} ocorrências` : "Sem desvios no filtro";
+      document.getElementById("kpiCategoriaNota").innerText = principalCategoria ? `${principalCategoria.quantidade} desvios` : "Sem desvios no filtro";
       document.getElementById("statusGeral").innerText = desvios.length === 0 ? "Sem desvios no filtro" : `${desvios.length} desvios monitorados`;
       document.getElementById("badgePeriodo").innerText = nomeMes(mes);
 
@@ -1390,8 +1239,8 @@
             <td>${d.local}</td>
             <td>${d.lider}</td>
             <td>${d.tst}</td>
-            <td><strong>${d.classificacao_grupo || d.categoria_grupo || "-"}</strong></td>
-            <td>${d.categoria_detalhe || d.categoria || "-"}</td>
+            <td><strong>${d.categoria}</strong></td>
+            <td>${d.classificacao_descricao || d.categoria_detalhe || "-"}</td>
             <td>${d.desvio}</td>
           </tr>
         `;
@@ -1402,9 +1251,7 @@
       destruirGraficos();
 
       const porLider = contar(desvios, "lider").slice(0, 12);
-      dadosGraficoCategorias = montarDadosCategorias(desvios);
-      grupoAtualCategorias = null;
-      const porCategoria = itensGraficoCategorias(null);
+      const porCategoria = contar(desvios, "categoria");
       const porTST = contar(desvios, "tst").slice(0, 10);
 
       const porMes = {};
@@ -1452,20 +1299,11 @@
           labels: porCategoria.map(i => i.nome),
           datasets:[{
             data: porCategoria.map(i => i.quantidade),
-            backgroundColor:CORES_CATEGORIAS.slice(0, Math.max(1, porCategoria.length))
+            backgroundColor:["#ef4444","#f97316","#f59e0b","#2563eb","#06b6d4","#8b5cf6","#64748b"]
           }]
         },
         options:{
           responsive:true,
-          onClick:function(event, elements){
-            if (grupoAtualCategorias || !elements.length) return;
-            const index = elements[0].index;
-            const grupo = dadosGraficoCategorias[index] && dadosGraficoCategorias[index].grupo;
-            if (grupo) atualizarGraficoCategorias(grupo);
-          },
-          onHover:function(event, elements){
-            event.native.target.style.cursor = (!grupoAtualCategorias && elements.length) ? "pointer" : "default";
-          },
           plugins:{
             legend:{position:"bottom", labels:{boxWidth:14, font:{size:11}}},
             tooltip:{
@@ -1480,7 +1318,6 @@
           }
         }
       });
-      atualizarGraficoCategorias(null);
 
       graficoMensal = new Chart(document.getElementById("graficoMensal"), {
         type:"line",

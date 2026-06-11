@@ -141,7 +141,7 @@ def split_parts(value: str) -> list[str]:
     value = clean(value)
     if not value:
         return []
-    value = value.replace("•", ";").replace("â€¢", ";")
+    value = value.replace("•", ";")
     parts = [clean(part, "") for part in re.split(r";+|\n+", value)]
     return [part for part in parts if part]
 
@@ -180,22 +180,28 @@ def build_classification_lookup(rows: list[list[str]]) -> dict[str, dict[str, st
 
 def parse_classificacoes(value: str, lookup: dict[str, dict[str, str]]) -> list[dict[str, str]]:
     classificacoes = []
-    value = clean(value)
-    matches = list(re.finditer(r"\b([ABCDF]\d+)\.?", value, flags=re.IGNORECASE))
-    for index, match in enumerate(matches):
+    for part in split_parts(value):
+        match = re.match(r"^([A-Z]\d+)\.?\s*(.*)$", part, flags=re.IGNORECASE)
+        if not match:
+            classificacoes.append(
+                {
+                    "codigo": "",
+                    "grupo_codigo": "",
+                    "grupo": "Não classificado",
+                    "descricao": part,
+                    "texto": part,
+                }
+            )
+            continue
         code = match.group(1).upper()
-        next_start = matches[index + 1].start() if index + 1 < len(matches) else len(value)
-        descricao = value[match.end() : next_start]
-        descricao = re.sub(r"^[\s.;:/\\-]+", "", descricao)
-        descricao = re.sub(r"[\s.;:/\\-]+$", "", descricao)
-        descricao = clean(descricao)
+        descricao = clean(match.group(2))
         base = lookup.get(code, {})
-        final_descricao = base.get("descricao", "") or descricao
+        final_descricao = descricao or base.get("descricao", "")
         classificacoes.append(
             {
                 "codigo": code,
                 "grupo_codigo": base.get("grupo_codigo", code[0]),
-                "grupo": base.get("grupo", f"{code[0]}. Nao classificado"),
+                "grupo": base.get("grupo", f"{code[0]}. Não classificado"),
                 "descricao": final_descricao,
                 "texto": clean(f"{code}. {final_descricao}"),
             }
@@ -219,10 +225,8 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
     lookup = {clean(name).upper(): idx for idx, name in enumerate(header)}
     classificacao_lookup = build_classification_lookup(rows)
 
-    def get(row: list[str], name: str, fallback_idx: int | None = None) -> str:
+    def get(row: list[str], name: str) -> str:
         idx = lookup.get(name)
-        if idx is None and fallback_idx is not None:
-            idx = fallback_idx
         return row[idx] if idx is not None and idx < len(row) else ""
 
     inspecoes = []
@@ -230,17 +234,17 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
     for row in rows:
         if is_header_or_empty(row):
             continue
-        data = excel_date(get(row, "DATA", 0))
-        local = clean(get(row, "LOCAL", 1), "Sem localização")
-        lider = clean(get(row, "ENCARREGADO OU LIDER DE EQUIPE", 2), "Não informado")
-        descricao = clean(get(row, "DESCRIÇÃO", 4))
-        classificacao_original = clean(get(row, "CLASSIFICAÇÃO", 5), "Não classificado")
+        data = excel_date(get(row, "DATA"))
+        local = clean(get(row, "LOCAL"), "Sem localização")
+        lider = clean(get(row, "ENCARREGADO OU LIDER DE EQUIPE"), "Não informado")
+        descricao = clean(get(row, "DESCRIÇÃO"))
+        classificacao_original = clean(get(row, "CLASSIFICAÇÃO"), "Não classificado")
         classificacoes = parse_classificacoes(classificacao_original, classificacao_lookup)
         categoria = join_unique([item["grupo"] for item in classificacoes], "Não classificado")
         categoria_detalhe = join_unique([item["texto"] for item in classificacoes], classificacao_original)
-        qtd_desvios = integer(get(row, "QUANTIDADE DESVIOS", 3))
-        qtd_inspecoes = integer(get(row, "QUANTIDADE INSPEÇÕES", 6)) or 1
-        tst = clean(get(row, "TÉCNICO DE SEGURANÇA  APLICADOR", 7), "Não informado")
+        qtd_desvios = integer(get(row, "QUANTIDADE DESVIOS"))
+        qtd_inspecoes = integer(get(row, "QUANTIDADE INSPEÇÕES")) or 1
+        tst = clean(get(row, "TÉCNICO DE SEGURANÇA  APLICADOR"), "Não informado")
 
         if not data and not descricao and local == "Sem localização":
             continue
@@ -261,23 +265,34 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
             }
         )
 
-        if classificacoes:
-            for index, classificacao in enumerate(classificacoes, start=1):
+        descricao_parts = split_parts(descricao)
+        if descricao_parts or qtd_desvios > 0:
+            if not descricao_parts:
+                descricao_parts = [descricao or "Desvio sem descrição"]
+            for index, desvio in enumerate(descricao_parts, start=1):
+                classificacao = classificacoes[index - 1] if index - 1 < len(classificacoes) else (
+                    classificacoes[0] if classificacoes else {
+                        "codigo": "",
+                        "grupo_codigo": "",
+                        "grupo": "Não classificado",
+                        "descricao": "",
+                        "texto": "Não classificado",
+                    }
+                )
                 desvios.append(
                     {
                         "data": data,
                         "local": local,
                         "lider": lider,
                         "tst": tst,
-                        "categoria": classificacao["texto"],
-                        "categoria_grupo": classificacao["grupo"],
+                        "categoria": classificacao["grupo"],
                         "categoria_detalhe": classificacao["texto"],
                         "classificacao_codigo": classificacao["codigo"],
                         "classificacao_grupo": classificacao["grupo"],
                         "classificacao_descricao": classificacao["descricao"],
                         "classificacao_original": classificacao_original,
-                        "desvio": descricao,
-                        "descricao": descricao,
+                        "desvio": desvio,
+                        "descricao": desvio,
                         "quantidade_desvios": qtd_desvios,
                         "ordem_desvio": index,
                     }

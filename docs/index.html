@@ -444,17 +444,17 @@
 </div>
 <nav class="side-nav">
 <a class="active" href="#"><span class="side-ico">🏠</span>Início</a>
-<a href="#" onclick="abrirComSenha('./mapa_real.html', 'Mapa', '886041'); return false;"><span class="side-ico">🗺️</span>Mapa</a>
-<a href="#" onclick="abrirComSenha('./iti15.html', 'ITI-15', '886041'); return false;"><span class="side-ico">📍</span>ITI-15</a>
+<a href="./mapa_real.html" target="_blank" rel="noopener"><span class="side-ico">🗺️</span>Mapa</a>
+<a href="./iti15.html" target="_blank" rel="noopener"><span class="side-ico">📍</span>ITI-15</a>
 <a href="./tubos.html" target="_blank" rel="noopener"><span class="side-ico">🛢️</span>Tubos</a>
-<a href="#" onclick="abrirComSenha('./almoxarifado.html', 'Almoxarifado', '886041'); return false;"><span class="side-ico">📦</span>Almoxarifado</a>
-<a href="#" onclick="abrirComSenha('./medicao.html', 'Medição', '886041'); return false;"><span class="side-ico">📋</span>Medição</a>
+<a href="almoxarifado.html"><span class="side-ico">📦</span>Almoxarifado</a>
+<a href="#" onclick="abrirComSenha('./medicao.html', 'Medição'); return false;"><span class="side-ico">📋</span>Medição</a>
 <a href="./pds.html" target="_blank" rel="noopener"><span class="side-ico">🗓️</span>PDS</a>
-<a href="#" onclick="abrirComSenha('./funcionarios.html', 'Funcionários', '886041'); return false;"><span class="side-ico">👥</span>Funcionários</a>
+<a href="./funcionarios.html" target="_blank" rel="noopener"><span class="side-ico">👥</span>Funcionários</a>
 <a href="./EAPxProduzido.html" target="_blank" rel="noopener"><span class="side-ico">📈</span>EAP / Curva</a>
-<a href="#" onclick="abrirComSenha('./qsms.html', 'QSMS', '2010'); return false;"><span class="side-ico">🛡️</span>QSMS</a>
-<a href="./relatorio_mensal.html" target="_blank" rel="noopener"><span class="side-ico">📄</span>Relatório Mensal</a>
-<a href="#" onclick="abrirComSenha('./reclamacoes.html', 'Reclamações', '886041'); return false;"><span class="side-ico">⚠️</span>Reclamações</a>
+<a href="./qsms.html" target="_blank" rel="noopener"><span class="side-ico">🛡️</span>QSMS</a>
+<a href="#" onclick="abrirComSenha('./relatorio_mensal.html', 'Relatório Mensal'); return false;"><span class="side-ico">📄</span>Relatório Mensal</a>
+<a href="#" onclick="abrirReclamacoes()"><span class="side-ico">⚠️</span>Reclamações</a>
 </nav>
 </aside>
 <main class="main-shell">
@@ -928,20 +928,11 @@ function getCurvaMensal(rows){
       return anoA - anoB || mesA - mesB;
     });
 
-    const labels = base.map(i => `${i.mes}/${String(i.ano).slice(2)}`);
-    const planMensal = base.map(i => Number(i.eap || 0));
-    const execMensal = base.map(i => Number(i.produzido || 0));
-    const totalExecDashboard = rows.reduce((a,r)=>a + Number(r.Executado_m || r.Extensao_Executada_m || 0),0);
-    const chaveMes = i => `${i.ano}-${String(ordemMes[String(i?.mes || '').trim()] || 0).padStart(2,'0')}`;
-    let idxReferencia = UPDATED_MONTH ? base.findIndex(i => chaveMes(i) === UPDATED_MONTH) : -1;
-    if(idxReferencia < 0) idxReferencia = execMensal.reduce((acc,v,i)=> Number(v||0) > 0 ? i : acc, -1);
-    if(idxReferencia >= 0 && totalExecDashboard > 0){
-      const acumuladoCurva = execMensal.slice(0, idxReferencia + 1).reduce((a,b)=>a + Number(b || 0),0);
-      const ajuste = totalExecDashboard - acumuladoCurva;
-      if(Math.abs(ajuste) > 0.005) execMensal[idxReferencia] = Math.max(0, Number(execMensal[idxReferencia] || 0) + ajuste);
-    }
-
-    return { labels, planMensal, execMensal };
+    return {
+      labels: base.map(i => `${i.mes}/${String(i.ano).slice(2)}`),
+      planMensal: base.map(i => Number(i.eap || 0)),
+      execMensal: base.map(i => Number(i.produzido || 0))
+    };
   }
 
   // Com filtro por obra, mantém a lógica baseada na produção mensal por registro
@@ -1445,8 +1436,8 @@ function calcularIndicadoresPlanilha(nomeObraFiltro=''){
     });
   }
 
-  // A planilha_base_mapa.xlsx representa somente os trechos que já têm geometria/plano no mapa.
-  // O executado oficial do dashboard vem da Base Dash, porque há obras produzidas ainda sem plano de furo.
+  // A planilha_base_mapa.xlsx representa a extensão executada real do mapa.
+  // Por isso o executado do dashboard vem da soma da extensão dos trechos da planilha.
   const extensaoTotal = trechos.reduce((s,t) => s + numeroBase(pegarCampo(t, ['extensao_m','extensão_m','extensao','extensão','comprimento_m','planejado_m'])), 0);
 
   const executado = extensaoTotal;
@@ -1499,10 +1490,10 @@ function updateUI(){
   // Planejado/extensão total permanece do dashboard original.
   const plan = totals.plan;
 
-  // Executado oficial vem da Base Dash/dados.json.
-  const exec = totals.exec;
+  // Executado vem da planilha_base_mapa.xlsx: soma da extensão dos trechos do mapa.
+  const exec = indPlanilha ? indPlanilha.exec : totals.exec;
 
-  // Saldo = planejado original - executado oficial.
+  // Saldo = planejado original - executado vindo da planilha do mapa.
   const saldo = Math.max(0, plan - exec);
   const av = pct(plan,exec);
 
@@ -1559,6 +1550,7 @@ async function loadMaintenance(){
   const titleEl = document.getElementById('maintenanceTitle');
   const msgEl = document.getElementById('maintenanceMessage');
   const subEl = document.getElementById('maintenanceSub');
+  if(!overlay || !titleEl || !msgEl || !subEl) return;
   try{
     const res = await fetch('./manutencao.json?cb=' + Date.now());
     if(!res.ok) return;
@@ -1638,16 +1630,30 @@ loadMaintenance();
 loadData().catch(e=>alert('Erro ao carregar dados.json: '+e.message));
 </script>
 <script>
-function abrirComSenha(pagina, nome, senhaEsperada){
+const SENHA_RECLAMACOES = "2010";
+function abrirReclamacoes(){
+  const s = prompt("Digite a senha para acessar Reclamações:");
+  if(s === SENHA_RECLAMACOES){
+    window.open("./reclamacoes.html","_blank");
+  }else if(s !== null){
+    alert("Senha incorreta!");
+  }
+}
+</script>
+</main></div>
+
+
+
+<script>
+function abrirComSenha(pagina, nome){
   const senha = prompt('Digite a senha para acessar ' + nome + ':');
-  if(senha === senhaEsperada){
+  if(senha === '1406'){
     window.open(pagina, '_blank');
   }else if(senha !== null){
     alert('Senha incorreta. Acesso negado.');
   }
 }
 </script>
-</main></div>
 
 </body>
 </html>

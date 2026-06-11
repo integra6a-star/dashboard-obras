@@ -96,7 +96,7 @@ def read_base(aliases: dict[str, str]) -> dict:
             # A produção mensal é o histórico acumulado lançado na Base Dash.
             # Quando ela supera a coluna de executado, a validação deve considerar
             # o acumulado mensal para não esconder avanço lançado por mês.
-            executado = executado_coluna
+            executado = max(executado_coluna, executado_mensal)
 
             by_obra[obra]["planejado"] += planejado
             by_obra[obra]["executado"] += executado
