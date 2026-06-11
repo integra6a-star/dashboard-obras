@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-06-11 08:03:06
+Atualizado em: 2026-06-11 09:30:48
 
 Planejado Base Dash: 39,688.39 m
 Executado Base Dash: 17,950.49 m
@@ -13,11 +13,10 @@ PDS hoje: 20 registros
 
 Alertas:
 - Diferença total entre Base Dash e mapa: 391.94 m
-- 12 obra(s) com divergência entre executado da Base Dash e mapa.
+- 11 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
-- RCE São Lucas: Base 1,028.40 m | Mapa 0.00 m | Dif. 1,028.40 m
-- rce_comunidade_sao_lucas: Base 0.00 m | Mapa 837.16 m | Dif. -837.16 m
+- RCE São Lucas: Base 1,028.40 m | Mapa 837.16 m | Dif. 191.24 m
 - RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 123.60 m | Mapa 0.00 m | Dif. 123.60 m
 - rce_elias_sleiman: Base 0.00 m | Mapa 103.03 m | Dif. -103.03 m
 - RCE Rua São João: Base 93.10 m | Mapa 0.00 m | Dif. 93.10 m
@@ -26,3 +25,4 @@ Maiores divergências por obra:
 - RCE ELVIRA DE ARAUJO: Base 68.86 m | Mapa 0.00 m | Dif. 68.86 m
 - rce_elvira_de_araujo: Base 0.00 m | Mapa 68.86 m | Dif. -68.86 m
 - CTS João Canzi: Base 823.10 m | Mapa 759.42 m | Dif. 63.67 m
+- CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
