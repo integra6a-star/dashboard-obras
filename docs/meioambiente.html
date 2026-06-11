@@ -511,7 +511,7 @@
               <td>${item.total}</td>
               <td>${item.conformes}</td>
               <td>${item.naoConformes}</td>
-              <td><strong>${item.conformidade.toFixed(1)}%</strong></td>
+              <td><strong>${item.conformidade.toFixed(1)}%</strong> (${item.conformes}/${item.total})</td>
             </tr>
           `;
         });
@@ -642,12 +642,16 @@
             {
               label: "Conformidade (%)",
               data: ranking.map(r => Number(r.conformidade.toFixed(1))),
+              quantidades: ranking.map(r => r.conformes),
+              totais: ranking.map(r => r.total),
               backgroundColor: "#2563eb",
               borderRadius: 8
             },
             {
               label: "Não Conformidade (%)",
               data: ranking.map(r => Number(r.naoConformidade.toFixed(1))),
+              quantidades: ranking.map(r => r.naoConformes),
+              totais: ranking.map(r => r.total),
               backgroundColor: "#ef4444",
               borderRadius: 8
             }
@@ -663,7 +667,9 @@
             tooltip: {
               callbacks: {
                 label: function(context) {
-                  return `${context.dataset.label}: ${context.raw}%`;
+                  const quantidade = context.dataset.quantidades?.[context.dataIndex] ?? 0;
+                  const total = context.dataset.totais?.[context.dataIndex] ?? 0;
+                  return `${context.dataset.label}: ${context.raw}% (${quantidade}/${total})`;
                 }
               }
             }

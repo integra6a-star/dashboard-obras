@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-11 07:46:50",
+  "atualizado_em": "2026-06-11 08:03:06",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17950.49,
@@ -8,24 +8,24 @@
     "saldo_total": 21737.9
   },
   "pds": {
-    "total": 2714,
-    "ultima_data": "2026-06-10",
-    "hoje": 0,
+    "total": 2734,
+    "ultima_data": "2026-06-11",
+    "hoje": 20,
     "por_obra_ultima_data": [
       {
         "obra": "RCE São Lucas",
-        "atividades": 7
-      },
-      {
-        "obra": "CT João Canzi",
         "atividades": 5
       },
       {
-        "obra": "Guindauto",
-        "atividades": 2
+        "obra": "CT João Canzi",
+        "atividades": 4
       },
       {
-        "obra": "João Canzi",
+        "obra": "Vacal",
+        "atividades": 3
+      },
+      {
+        "obra": "Guindauto",
         "atividades": 2
       },
       {
@@ -33,11 +33,7 @@
         "atividades": 1
       },
       {
-        "obra": "Iti 15",
-        "atividades": 1
-      },
-      {
-        "obra": "RCE Américo Machado/elis Regina",
+        "obra": "RCE Américo Machado/Elis Regina",
         "atividades": 1
       },
       {
@@ -45,15 +41,22 @@
         "atividades": 1
       },
       {
+        "obra": "RCE Elias Sleiman / CT João Canzi",
+        "atividades": 1
+      },
+      {
         "obra": "RCE Elvira",
+        "atividades": 1
+      },
+      {
+        "obra": "Serviços Reposição",
         "atividades": 1
       }
     ]
   },
   "alertas": [
     "Diferença total entre Base Dash e mapa: 391.94 m",
-    "12 obra(s) com divergência entre executado da Base Dash e mapa.",
-    "PDS sem registros na data de hoje."
+    "12 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -825,14 +828,14 @@
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 374.6,
-      "modificado": "2026-06-11 07:46:41"
+      "tamanho_kb": 376.4,
+      "modificado": "2026-06-11 08:01:24"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 470.8,
-      "modificado": "2026-06-11 07:46:46"
+      "tamanho_kb": 474.3,
+      "modificado": "2026-06-11 08:01:57"
     }
   ]
 }

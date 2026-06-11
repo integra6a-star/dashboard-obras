@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-06-11 07:46:50
+Atualizado em: 2026-06-11 08:03:06
 
 Planejado Base Dash: 39,688.39 m
 Executado Base Dash: 17,950.49 m
@@ -7,14 +7,13 @@ Executado Mapa: 17,558.55 m
 Diferença Base - Mapa: 391.94 m
 Saldo total: 21,737.90 m
 
-PDS total: 2714 registros
-PDS hoje: 0 registros
-Última data PDS: 2026-06-10
+PDS total: 2734 registros
+PDS hoje: 20 registros
+Última data PDS: 2026-06-11
 
 Alertas:
 - Diferença total entre Base Dash e mapa: 391.94 m
 - 12 obra(s) com divergência entre executado da Base Dash e mapa.
-- PDS sem registros na data de hoje.
 
 Maiores divergências por obra:
 - RCE São Lucas: Base 1,028.40 m | Mapa 0.00 m | Dif. 1,028.40 m
