@@ -13,7 +13,7 @@ TARGET_DATES = {"2026-06-12", "2026-06-13", "2026-06-15"}
 
 
 def pv_da_atividade(atividade):
-    m = re.search(r"\bPV[-\s]*([A-Z]?\d+(?:\.\d+)?|[A-Z])", atividade, re.I)
+    m = re.search(r"\bPV(?!s\b)[-\s]*([A-Z]?\d+(?:\.\d+)?|[A-Z])", atividade, re.I)
     return m.group(1) if m else ""
 
 
