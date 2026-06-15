@@ -1,71 +1,71 @@
 {
-  "atualizado_em": "11/06/2026 07:46",
+  "atualizado_em": "15/06/2026 10:51",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Bandeirantes",
   "titulo": "Bandeirantes (Canteiro 2)",
   "produtos": [
     {
       "codigo": "P001",
       "descricao": "ADUELA DE 1000 x 1000",
-      "estoque_atual": "94",
+      "estoque_atual": "65",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 94,
+      "quantidade": 65,
       "situacao_planilha": ""
     },
     {
       "codigo": "P002",
       "descricao": "ADUELA DE 1000 x 500",
-      "estoque_atual": "31",
+      "estoque_atual": "30",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 31,
+      "quantidade": 30,
       "situacao_planilha": ""
     },
     {
       "codigo": "P003",
       "descricao": "ADUELA DE 600",
-      "estoque_atual": "46",
+      "estoque_atual": "27",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 46,
+      "quantidade": 27,
       "situacao_planilha": ""
     },
     {
       "codigo": "P004",
       "descricao": "LAJE INFERIOR DE 1000",
-      "estoque_atual": "14",
+      "estoque_atual": "1",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 14,
+      "quantidade": 1,
       "situacao_planilha": ""
     },
     {
       "codigo": "P005",
       "descricao": "LAJE INFERIOR DE 600",
-      "estoque_atual": "149",
+      "estoque_atual": "146",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 149,
+      "quantidade": 146,
       "situacao_planilha": ""
     },
     {
       "codigo": "P006",
       "descricao": "LAJE SURPERIOR DE 1000",
-      "estoque_atual": "31",
+      "estoque_atual": "24",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 31,
+      "quantidade": 24,
       "situacao_planilha": ""
     },
     {
       "codigo": "P007",
-      "descricao": "TUBO PEAD ESGOTO D 355",
+      "descricao": "TUBO PEAD ESGOTO D 355 ( Ver projetos de obras para este material)",
       "estoque_atual": "201 barras",
       "estoque_minimo": 0,
       "entradas": 0,
@@ -146,31 +146,31 @@
     {
       "codigo": "P015",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 100 CM 6M",
-      "estoque_atual": "519 barras",
+      "estoque_atual": "506 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 519,
+      "quantidade": 506,
       "situacao_planilha": ""
     },
     {
       "codigo": "P016",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 150 CM 6M",
-      "estoque_atual": "5 barras",
+      "estoque_atual": "4 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 5,
+      "quantidade": 4,
       "situacao_planilha": ""
     },
     {
       "codigo": "P017",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 200 CM 6M",
-      "estoque_atual": "533 barras",
+      "estoque_atual": "490 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 533,
+      "quantidade": 490,
       "situacao_planilha": ""
     },
     {

@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-11 10:18:39",
+  "atualizado_em": "2026-06-15 10:59:53",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 17950.49,
@@ -8,48 +8,56 @@
     "saldo_total": 21737.9
   },
   "pds": {
-    "total": 2734,
-    "ultima_data": "2026-06-11",
-    "hoje": 20,
+    "total": 2769,
+    "ultima_data": "2026-06-15",
+    "hoje": 19,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE São Lucas",
+        "obra": "RCE SÃO LUCAS",
         "atividades": 5
-      },
-      {
-        "obra": "CT João Canzi",
-        "atividades": 4
-      },
-      {
-        "obra": "Vacal",
-        "atividades": 3
       },
       {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "CTS Lourdes Complementar",
+        "obra": "RCE RAULZITO",
+        "atividades": 2
+      },
+      {
+        "obra": "Vacal: João Canzi",
+        "atividades": 2
+      },
+      {
+        "obra": "CT JOÃO CANZI",
         "atividades": 1
       },
       {
-        "obra": "RCE Américo Machado/Elis Regina",
+        "obra": "CTS LOURDES Complementar",
         "atividades": 1
       },
       {
-        "obra": "RCE Conj. União",
+        "obra": "INTERL. AYRTON SENNA",
         "atividades": 1
       },
       {
-        "obra": "RCE Elias Sleiman / CT João Canzi",
+        "obra": "RCE CONJ. UNIÃO",
         "atividades": 1
       },
       {
-        "obra": "RCE Elvira",
+        "obra": "RCE ELIAS SLEIMAN",
         "atividades": 1
       },
       {
-        "obra": "Serviços Reposição",
+        "obra": "RCE ELVIRA",
+        "atividades": 1
+      },
+      {
+        "obra": "SERVIÇOS REPOSIÇÃO",
+        "atividades": 1
+      },
+      {
+        "obra": "Vacal: ITI 15",
         "atividades": 1
       }
     ]
@@ -797,25 +805,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.6,
-      "modificado": "2026-06-11 07:03:20"
+      "modificado": "2026-06-15 10:58:20"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 93.1,
-      "modificado": "2026-06-11 10:17:52"
+      "modificado": "2026-06-15 10:58:21"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 376.4,
-      "modificado": "2026-06-11 08:01:24"
+      "tamanho_kb": 376.5,
+      "modificado": "2026-06-15 10:56:05"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 474.3,
-      "modificado": "2026-06-11 08:01:57"
+      "tamanho_kb": 480.2,
+      "modificado": "2026-06-15 10:56:05"
     }
   ]
 }

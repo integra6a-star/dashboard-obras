@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-06-11 10:18:39
+Atualizado em: 2026-06-15 10:59:53
 
 Planejado Base Dash: 39,688.39 m
 Executado Base Dash: 17,950.49 m
@@ -7,9 +7,9 @@ Executado Mapa: 17,621.23 m
 Diferença Base - Mapa: 329.27 m
 Saldo total: 21,737.90 m
 
-PDS total: 2734 registros
-PDS hoje: 20 registros
-Última data PDS: 2026-06-11
+PDS total: 2769 registros
+PDS hoje: 19 registros
+Última data PDS: 2026-06-15
 
 Alertas:
 - Diferença total entre Base Dash e mapa: 329.27 m

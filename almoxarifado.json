@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "11/06/2026 07:46",
+  "atualizado_em": "15/06/2026 10:51",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Tancredo",
   "titulo": "Tancredo (Canteiro 1)",
   "produtos": [
@@ -16,11 +16,11 @@
     {
       "codigo": "P002",
       "descricao": "CURVA 45 GR PVC PB JE ESG DN 200 - JEI LONGA",
-      "estoque_atual": "188",
+      "estoque_atual": "187",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 188,
+      "quantidade": 187,
       "situacao_planilha": ""
     },
     {
@@ -36,11 +36,11 @@
     {
       "codigo": "P004",
       "descricao": "CURVA 45GR PVC CTA PB ESG DN100 JEI/JERI",
-      "estoque_atual": "135",
+      "estoque_atual": "91",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 135,
+      "quantidade": 91,
       "situacao_planilha": ""
     },
     {
@@ -66,11 +66,11 @@
     {
       "codigo": "P007",
       "descricao": "CURVA 90 GR PVC PB JE ESG DN200 LONGA",
-      "estoque_atual": "27",
+      "estoque_atual": "23",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 27,
+      "quantidade": 23,
       "situacao_planilha": ""
     },
     {
@@ -86,11 +86,11 @@
     {
       "codigo": "P009",
       "descricao": "CURVA PVC OCRE DN 200 X 90º",
-      "estoque_atual": "17",
+      "estoque_atual": "15",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 17,
+      "quantidade": 15,
       "situacao_planilha": ""
     },
     {
@@ -106,31 +106,31 @@
     {
       "codigo": "P011",
       "descricao": "LUVA CORRER BB ESG DN 100 - JEI",
-      "estoque_atual": "456",
+      "estoque_atual": "420",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 456,
+      "quantidade": 420,
       "situacao_planilha": ""
     },
     {
       "codigo": "P012",
       "descricao": "LUVA CORRER BB ESG DN 150 - JEI",
-      "estoque_atual": "5",
+      "estoque_atual": "3",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 5,
+      "quantidade": 3,
       "situacao_planilha": ""
     },
     {
       "codigo": "P013",
       "descricao": "LUVA CORRER BB ESG DN 200 - JEI",
-      "estoque_atual": "54",
+      "estoque_atual": "52",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 54,
+      "quantidade": 52,
       "situacao_planilha": ""
     },
     {
@@ -176,11 +176,11 @@
     {
       "codigo": "P018",
       "descricao": "SELIM AJUST TUBO PVC E CER DN 200X100",
-      "estoque_atual": "1333",
+      "estoque_atual": "1307",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 1333,
+      "quantidade": 1307,
       "situacao_planilha": ""
     },
     {
@@ -206,11 +206,11 @@
     {
       "codigo": "P021",
       "descricao": "TAMPÃO DE 600 ESG",
-      "estoque_atual": "64",
+      "estoque_atual": "57",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 64,
+      "quantidade": 57,
       "situacao_planilha": ""
     },
     {
@@ -236,11 +236,11 @@
     {
       "codigo": "P024",
       "descricao": "TE PVC COLETOR OCRE BBP JE DN 200 X 200",
-      "estoque_atual": "3",
+      "estoque_atual": "1",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 3,
+      "quantidade": 1,
       "situacao_planilha": ""
     },
     {
@@ -296,21 +296,21 @@
     {
       "codigo": "P030",
       "descricao": "UNIÃO PARA PEAD 20 MM",
-      "estoque_atual": "74",
+      "estoque_atual": "795",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 74,
+      "quantidade": 795,
       "situacao_planilha": ""
     },
     {
       "codigo": "P031",
       "descricao": "TE DE SERVIÇO INTEGRADO 50 X 20 MM",
-      "estoque_atual": "5",
+      "estoque_atual": "1",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 5,
+      "quantidade": 1,
       "situacao_planilha": ""
     }
   ],

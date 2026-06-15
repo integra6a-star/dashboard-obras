@@ -444,15 +444,15 @@
 </div>
 <nav class="side-nav">
 <a class="active" href="#"><span class="side-ico">🏠</span>Início</a>
-<a href="./mapa_real.html" target="_blank" rel="noopener"><span class="side-ico">🗺️</span>Mapa</a>
-<a href="./iti15.html" target="_blank" rel="noopener"><span class="side-ico">📍</span>ITI-15</a>
+<a href="#" onclick="abrirComSenha('./mapa_real.html', 'Mapa'); return false;"><span class="side-ico">🗺️</span>Mapa</a>
+<a href="#" onclick="abrirComSenha('./iti15.html', 'ITI-15'); return false;"><span class="side-ico">📍</span>ITI-15</a>
 <a href="./tubos.html" target="_blank" rel="noopener"><span class="side-ico">🛢️</span>Tubos</a>
-<a href="almoxarifado.html"><span class="side-ico">📦</span>Almoxarifado</a>
+<a href="#" onclick="abrirComSenha('./almoxarifado.html', 'Almoxarifado'); return false;"><span class="side-ico">📦</span>Almoxarifado</a>
 <a href="#" onclick="abrirComSenha('./medicao.html', 'Medição'); return false;"><span class="side-ico">📋</span>Medição</a>
 <a href="./pds.html" target="_blank" rel="noopener"><span class="side-ico">🗓️</span>PDS</a>
-<a href="./funcionarios.html" target="_blank" rel="noopener"><span class="side-ico">👥</span>Funcionários</a>
+<a href="#" onclick="abrirComSenha('./funcionarios.html', 'Funcionários'); return false;"><span class="side-ico">👥</span>Funcionários</a>
 <a href="./EAPxProduzido.html" target="_blank" rel="noopener"><span class="side-ico">📈</span>EAP / Curva</a>
-<a href="./qsms.html" target="_blank" rel="noopener"><span class="side-ico">🛡️</span>QSMS</a>
+<a href="#" onclick="abrirQsms(); return false;"><span class="side-ico">🛡️</span>QSMS</a>
 <a href="#" onclick="abrirComSenha('./relatorio_mensal.html', 'Relatório Mensal'); return false;"><span class="side-ico">📄</span>Relatório Mensal</a>
 <a href="#" onclick="abrirReclamacoes()"><span class="side-ico">⚠️</span>Reclamações</a>
 </nav>
@@ -952,10 +952,6 @@ function acumular(lista){
     soma += Number(v || 0);
     return soma;
   });
-}
-function getCurvaExecTotal(){
-  if(!Array.isArray(CURVA_MENSAL) || !CURVA_MENSAL.length) return null;
-  return CURVA_MENSAL.reduce((total, item)=> total + Number(item?.produzido || 0), 0);
 }
 function renderChart(rows){
   const curva = getCurvaMensal(rows);
@@ -1494,11 +1490,10 @@ function updateUI(){
   // Planejado/extensão total permanece do dashboard original.
   const plan = totals.plan;
 
-  // Sem filtro, o executado oficial deve bater com a curva de produção.
-  const execCurva = !fObra.value ? getCurvaExecTotal() : null;
-  const exec = execCurva !== null ? execCurva : totals.exec;
+  // Executado vem da planilha_base_mapa.xlsx: soma da extensão dos trechos do mapa.
+  const exec = indPlanilha ? indPlanilha.exec : totals.exec;
 
-  // Saldo = planejado original - executado oficial da curva/base.
+  // Saldo = planejado original - executado vindo da planilha do mapa.
   const saldo = Math.max(0, plan - exec);
   const av = pct(plan,exec);
 
@@ -1555,7 +1550,6 @@ async function loadMaintenance(){
   const titleEl = document.getElementById('maintenanceTitle');
   const msgEl = document.getElementById('maintenanceMessage');
   const subEl = document.getElementById('maintenanceSub');
-  if(!overlay || !titleEl || !msgEl || !subEl) return;
   try{
     const res = await fetch('./manutencao.json?cb=' + Date.now());
     if(!res.ok) return;
@@ -1635,13 +1629,23 @@ loadMaintenance();
 loadData().catch(e=>alert('Erro ao carregar dados.json: '+e.message));
 </script>
 <script>
-const SENHA_RECLAMACOES = "2010";
+const SENHA_PADRAO = "886041";
+const SENHA_QSMS = "2010";
+const SENHA_RECLAMACOES = SENHA_PADRAO;
 function abrirReclamacoes(){
   const s = prompt("Digite a senha para acessar Reclamações:");
   if(s === SENHA_RECLAMACOES){
     window.open("./reclamacoes.html","_blank");
   }else if(s !== null){
     alert("Senha incorreta!");
+  }
+}
+function abrirQsms(){
+  const senha = prompt('Digite a senha para acessar QSMS:');
+  if(senha === SENHA_QSMS){
+    window.open('./qsms.html', '_blank');
+  }else if(senha !== null){
+    alert('Senha incorreta. Acesso negado.');
   }
 }
 </script>
@@ -1652,7 +1656,7 @@ function abrirReclamacoes(){
 <script>
 function abrirComSenha(pagina, nome){
   const senha = prompt('Digite a senha para acessar ' + nome + ':');
-  if(senha === '1406'){
+  if(senha === SENHA_PADRAO){
     window.open(pagina, '_blank');
   }else if(senha !== null){
     alert('Senha incorreta. Acesso negado.');

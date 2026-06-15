@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "11/06/2026 07:46",
+  "atualizado_em": "15/06/2026 10:51",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -66,11 +66,11 @@
     {
       "codigo": "P007",
       "descricao": "CHAPA ARMICO",
-      "estoque_atual": "556",
+      "estoque_atual": "538",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 556,
+      "quantidade": 538,
       "situacao_planilha": ""
     },
     {
@@ -96,11 +96,11 @@
     {
       "codigo": "P010",
       "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "256",
+      "estoque_atual": "238",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 256,
+      "quantidade": 238,
       "situacao_planilha": ""
     },
     {
