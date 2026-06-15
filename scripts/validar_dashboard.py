@@ -53,7 +53,7 @@ def num(value) -> float:
 def load_de_para() -> dict[str, str]:
     if not DE_PARA.exists():
         return {}
-    raw = json.loads(DE_PARA.read_text(encoding="utf-8"))
+    raw = json.loads(DE_PARA.read_text(encoding="utf-8-sig"))
     return {norm(k): v for k, v in raw.items()}
 
 
