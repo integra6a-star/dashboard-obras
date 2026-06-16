@@ -236,7 +236,7 @@
         <tfoot>
           <tr>
             <td>Total</td>
-            <td class="num" id="tfMed">R$ 0,00</td>
+            <td class="num"></td>
             <td class="num" id="tfMedAcum">R$ 0,00</td>
             <td class="num" id="tfSaldoContr">R$ 0,00</td>
           </tr>
@@ -282,7 +282,7 @@
         <tfoot>
           <tr>
             <td>Total</td>
-            <td class="num" id="tfAmo">R$ 0,00</td>
+            <td class="num"></td>
             <td class="num" id="tfAmoAcum">R$ 0,00</td>
             <td class="num" id="tfSaldoAmo">R$ 0,00</td>
           </tr>
@@ -458,11 +458,9 @@ async function loadData(){
   renderTable(tbMed, medSerie);
   renderTable(tbAmo, amoSerie);
 
-  tfMed.textContent = brMoney(totalMedido);
   tfMedAcum.textContent = brMoney(totalMedido);
   tfSaldoContr.textContent = brMoney(pickNum(med, ["saldo_contratual","saldo"], 0));
 
-  tfAmo.textContent = brMoney(totalAmortizado);
   tfAmoAcum.textContent = brMoney(totalAmortizado);
   tfSaldoAmo.textContent = brMoney(saldoAmortizacao);
 
