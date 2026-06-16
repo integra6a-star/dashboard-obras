@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-16 07:23:19",
+  "atualizado_em": "2026-06-16 08:28:26",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18019.99,
@@ -8,7 +8,7 @@
     "saldo_total": 21668.4
   },
   "pds": {
-    "total": 2789,
+    "total": 2918,
     "ultima_data": "2026-06-16",
     "hoje": 20,
     "por_obra_ultima_data": [
@@ -770,14 +770,14 @@
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 376.7,
-      "modificado": "2026-06-16 07:09:25"
+      "tamanho_kb": 389.1,
+      "modificado": "2026-06-16 08:27:41"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 483.6,
-      "modificado": "2026-06-16 07:09:26"
+      "tamanho_kb": 506.4,
+      "modificado": "2026-06-16 08:27:58"
     }
   ]
 }
