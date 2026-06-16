@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-16 07:11:01",
+  "atualizado_em": "2026-06-16 07:23:19",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18019.99,
@@ -68,7 +68,7 @@
   },
   "alertas": [
     "Diferença total entre Base Dash e mapa: 398.77 m",
-    "10 obra(s) com divergência entre executado da Base Dash e mapa."
+    "8 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -110,26 +110,6 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 68.86,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 68.86,
-      "saldo": 111.14,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "rce_elvira_de_araujo",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": -68.86,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 4
     },
     {
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
@@ -577,11 +557,11 @@
       "obra": "RCE ELVIRA DE ARAUJO",
       "planejado": 180.0,
       "executado_base": 68.86,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 68.86,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": 0.0,
       "saldo": 111.14,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 4
     },
     {
       "obra": "RCE RUA IGARAÇU",
@@ -742,16 +722,6 @@
       "saldo": 0.0,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "rce_elvira_de_araujo",
-      "planejado": 0.0,
-      "executado_base": 0.0,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": -68.86,
-      "saldo": 0.0,
-      "linhas_base": 0,
-      "linhas_mapa": 4
     },
     {
       "obra": "RCE AV. Fernando Pacheco Jordão",
