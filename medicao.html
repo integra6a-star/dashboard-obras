@@ -72,7 +72,7 @@
       padding:12px;
       margin-bottom:12px;
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:10px;
     }
     .kpi{
@@ -210,14 +210,6 @@
           <div class="l">TOTAL CONTRATO</div>
         </div>
         <div class="kpi">
-          <div class="v" id="kMedBruto">R$ 0,00</div>
-          <div class="l">VALOR BRUTO</div>
-        </div>
-        <div class="kpi">
-          <div class="v" id="kMedLiquido">R$ 0,00</div>
-          <div class="l">VALOR LÍQUIDO</div>
-        </div>
-        <div class="kpi">
           <div class="v" id="kMedido">R$ 0,00</div>
           <div class="l">TOTAL MEDIDO</div>
         </div>
@@ -264,14 +256,6 @@
           <div class="l">ADIANTAMENTO</div>
         </div>
         <div class="kpi">
-          <div class="v" id="kAmoBruto">R$ 0,00</div>
-          <div class="l">VALOR BRUTO</div>
-        </div>
-        <div class="kpi">
-          <div class="v" id="kAmoLiquido">R$ 0,00</div>
-          <div class="l">VALOR LÍQUIDO</div>
-        </div>
-        <div class="kpi">
           <div class="v" id="kAmort">R$ 0,00</div>
           <div class="l">TOTAL AMORTIZADO</div>
         </div>
@@ -309,13 +293,6 @@
       <div class="chart-box"><canvas id="chAmo"></canvas></div>
     </div>
 
-  </div>
-
-  <div class="result-wrap">
-    <div class="result-panel">
-      <div class="result-value" id="kTotalRecebidoAdto">R$ 0,00</div>
-      <div class="result-label">TOTAL RECEBIDO C/ ADIANTAMENTO</div>
-    </div>
   </div>
 
 </div>
@@ -449,50 +426,19 @@ async function loadData(){
   const totalMedido = pickNum(med, ["total_medido","total","medido"], 0);
   const totalAmortizado = pickNum(amo, ["total_amortizado","total","amortizado"], 0);
 
-  const medBruto = pickNum(
-    med,
-    ["total_bruto","bruto","valor_bruto","medicao_bruta","total_medido_bruto"],
-    totalMedido
-  );
-
-  const medLiquido = pickNum(
-    med,
-    ["total_liquido","liquido","valor_liquido","medicao_liquida","total_medido_liquido"],
-    Math.max(totalMedido - totalAmortizado, 0)
-  );
-
-  const amoBruto = pickNum(
-    amo,
-    ["total_bruto","bruto","valor_bruto","amortizacao_bruta","total_amortizado_bruto"],
-    totalAmortizado
-  );
-
-  const amoLiquido = pickNum(
-    amo,
-    ["total_liquido","liquido","valor_liquido","amortizacao_liquida","total_amortizado_liquido"],
-    totalAmortizado
-  );
-
   const adiantamento = ADIANTAMENTO_FIXO;
   const saldoAmortizacao = Math.max(adiantamento - totalAmortizado, 0);
   const pctAmortizado = adiantamento > 0 ? (totalAmortizado / adiantamento) * 100 : 0;
-  const totalRecebidoComAdiantamento = medBruto + adiantamento - amoLiquido;
 
   kContrato.textContent   = brMoney(pickNum(med, ["total_contrato","contrato"], 0));
-  kMedBruto.textContent   = brMoney(medBruto);
-  kMedLiquido.textContent = brMoney(medLiquido);
   kMedido.textContent     = brMoney(totalMedido);
   kSaldoContr.textContent = brMoney(pickNum(med, ["saldo_contratual","saldo"], 0));
   kPctFat.textContent     = brPct(pickNum(med, ["pct_faturado","percentual_faturado","pct"], 0));
 
   kAdiant.textContent     = brMoney(adiantamento);
-  kAmoBruto.textContent   = brMoney(amoBruto);
-  kAmoLiquido.textContent = brMoney(amoLiquido);
   kAmort.textContent      = brMoney(totalAmortizado);
   kSaldoAmo.textContent   = brMoney(saldoAmortizacao);
   kPctAmo.textContent     = brPct(pctAmortizado);
-
-  kTotalRecebidoAdto.textContent = brMoney(totalRecebidoComAdiantamento);
 
   const medSerie = Array.isArray(med.serie) ? med.serie : [];
   const amoSerieRaw = Array.isArray(amo.serie) ? amo.serie : [];

@@ -1,16 +1,16 @@
 {
-  "atualizado_em": "2026-06-15 11:17:50",
+  "atualizado_em": "2026-06-16 07:11:01",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 17950.49,
+    "base_executado": 18019.99,
     "mapa_executado": 17621.23,
-    "diferenca_base_mapa": 329.27,
-    "saldo_total": 21737.9
+    "diferenca_base_mapa": 398.77,
+    "saldo_total": 21668.4
   },
   "pds": {
-    "total": 2769,
-    "ultima_data": "2026-06-15",
-    "hoje": 19,
+    "total": 2789,
+    "ultima_data": "2026-06-16",
+    "hoje": 20,
     "por_obra_ultima_data": [
       {
         "obra": "RCE SÃO LUCAS",
@@ -29,7 +29,7 @@
         "atividades": 2
       },
       {
-        "obra": "CT JOÃO CANZI",
+        "obra": "CTS JOÃO CANZI",
         "atividades": 1
       },
       {
@@ -53,6 +53,10 @@
         "atividades": 1
       },
       {
+        "obra": "RCE MARIA DOS SANTOS MACHADO",
+        "atividades": 1
+      },
+      {
         "obra": "SERVIÇOS REPOSIÇÃO",
         "atividades": 1
       },
@@ -63,17 +67,17 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 329.27 m",
+    "Diferença total entre Base Dash e mapa: 398.77 m",
     "10 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 1028.4,
+      "executado_base": 1097.9,
       "executado_mapa": 837.16,
-      "diferenca_base_mapa": 191.24,
-      "saldo": 770.8,
+      "diferenca_base_mapa": 260.74,
+      "saldo": 701.3,
       "linhas_base": 2,
       "linhas_mapa": 32
     },
@@ -260,16 +264,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1028.4,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 191.24,
-      "saldo": 770.8,
-      "linhas_base": 2,
-      "linhas_mapa": 32
-    },
-    {
       "obra": "RCE Souto Maior",
       "planejado": 1398.6,
       "executado_base": 638.14,
@@ -288,6 +282,16 @@
       "saldo": 747.0,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1097.9,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 260.74,
+      "saldo": 701.3,
+      "linhas_base": 2,
+      "linhas_mapa": 32
     },
     {
       "obra": "RCE TRAV. DOS JESUITAS",
@@ -785,25 +789,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.6,
-      "modificado": "2026-06-15 10:58:20"
+      "modificado": "2026-06-15 16:44:01"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 93.1,
-      "modificado": "2026-06-15 10:58:21"
+      "modificado": "2026-06-11 10:17:52"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 376.5,
-      "modificado": "2026-06-15 11:04:47"
+      "tamanho_kb": 376.7,
+      "modificado": "2026-06-16 07:09:25"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 480.2,
-      "modificado": "2026-06-15 11:04:47"
+      "tamanho_kb": 483.6,
+      "modificado": "2026-06-16 07:09:26"
     }
   ]
 }
