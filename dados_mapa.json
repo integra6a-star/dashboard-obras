@@ -6322,6 +6322,20 @@
       "cota_fundo": 779.199,
       "profundidade_m": 3.1,
       "observacao": "Plano de furo FL-07 versao 01, 02.JUN.2026; trechos PV-16 ao PV-17 e PV-17 ao PV-18."
+    },
+    {
+      "obra_id": "cts_joao_canzi",
+      "tipo_ponto": "PV",
+      "ponto_id": "JC-PV-20",
+      "nome_ponto": "PV-20",
+      "coord_n": 7397174.5,
+      "coord_e": 358918.3,
+      "latitude": -23.5295804,
+      "longitude": -46.3820136,
+      "cota_tampa": 794.6,
+      "cota_fundo": 790.638,
+      "profundidade_m": 3.96,
+      "observacao": "Plano de furo FL-07 versao 01, 05.JUN.2026; trecho PV-19 ao PV-20."
     }
   ],
   "trechos": [
@@ -15347,23 +15361,23 @@
     },
     {
       "obra_id": "cts_joao_canzi",
-      "trecho_id": "JC-005",
-      "trecho_nome": "PV-10 - PV-11",
-      "pv_inicio": "PV-10",
-      "pv_fim": "PV-11",
+      "trecho_id": "JC-016",
+      "trecho_nome": "PV-19 - PV-20",
+      "pv_inicio": "PV-19",
+      "pv_fim": "PV-20",
       "material": "PEAD LISO",
       "dn": 355,
       "metodo": "Metodo Nao Destrutivo - MND",
-      "extensao_m": 62.673,
-      "prof_inicial_m": 3,
-      "prof_final_m": 6.1,
-      "prof_max_m": 6.1,
+      "extensao_m": 57.846,
+      "prof_inicial_m": 4,
+      "prof_final_m": 3.96,
+      "prof_max_m": 4,
       "status": "em andamento",
-      "observacao": "Plano de furo FL-05; PV-10 ao PV-11; arquivo: planos_furo/cts_joao_canzi_fl05_pv10_pv11.pdf.",
-      "lat_inicio": -23.5317269,
-      "lon_inicio": -46.3867492,
-      "lat_fim": -23.5315615,
-      "lon_fim": -46.3861622
+      "observacao": "Plano de furo FL-07 versao 01, 05.JUN.2026; PV-19 ao PV-20; arquivo: planos_furo/cts_joao_canzi_fl07_pv19_pv20.pdf; taxa 0,1224.",
+      "lat_inicio": -23.529877,
+      "lon_inicio": -46.3824799,
+      "lat_fim": -23.5295804,
+      "lon_fim": -46.3820136
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-06-16 08:28:26",
+  "atualizado_em": "2026-06-17 10:08:57",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 18019.99,
-    "mapa_executado": 17621.23,
-    "diferenca_base_mapa": 398.77,
-    "saldo_total": 21668.4
+    "base_executado": 18422.14,
+    "mapa_executado": 17616.4,
+    "diferenca_base_mapa": 805.74,
+    "saldo_total": 21266.25
   },
   "pds": {
-    "total": 2918,
-    "ultima_data": "2026-06-16",
+    "total": 2938,
+    "ultima_data": "2026-06-17",
     "hoje": 20,
     "por_obra_ultima_data": [
       {
@@ -17,11 +17,11 @@
         "atividades": 5
       },
       {
-        "obra": "Guindauto",
-        "atividades": 2
+        "obra": "RCE RAULZITO",
+        "atividades": 4
       },
       {
-        "obra": "RCE RAULZITO",
+        "obra": "Guindauto",
         "atividades": 2
       },
       {
@@ -30,14 +30,6 @@
       },
       {
         "obra": "CTS JOÃO CANZI",
-        "atividades": 1
-      },
-      {
-        "obra": "CTS LOURDES Complementar",
-        "atividades": 1
-      },
-      {
-        "obra": "INTERL. AYRTON SENNA",
         "atividades": 1
       },
       {
@@ -67,19 +59,29 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 398.77 m",
-    "8 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 805.74 m",
+    "9 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 1097.9,
+      "executado_base": 1227.2,
       "executado_mapa": 837.16,
-      "diferenca_base_mapa": 260.74,
-      "saldo": 701.3,
+      "diferenca_base_mapa": 390.04,
+      "saldo": 572.0,
       "linhas_base": 2,
       "linhas_mapa": 32
+    },
+    {
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 300.3,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": 197.27,
+      "saldo": 38.2,
+      "linhas_base": 2,
+      "linhas_mapa": 2
     },
     {
       "obra": "RCE Rua São João",
@@ -112,14 +114,24 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 123.6,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": 20.57,
-      "saldo": 214.9,
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 880.94,
+      "executado_mapa": 817.27,
+      "diferenca_base_mapa": 63.67,
+      "saldo": -22.44,
       "linhas_base": 2,
-      "linhas_mapa": 2
+      "linhas_mapa": 12
+    },
+    {
+      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
+      "planejado": 55.0,
+      "executado_base": 38.3,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 38.3,
+      "saldo": 16.7,
+      "linhas_base": 2,
+      "linhas_mapa": 0
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -140,16 +152,6 @@
       "saldo": 46.61,
       "linhas_base": 4,
       "linhas_mapa": 14
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 823.1,
-      "executado_mapa": 822.09,
-      "diferenca_base_mapa": 1.0,
-      "saldo": 35.4,
-      "linhas_base": 2,
-      "linhas_mapa": 12
     }
   ],
   "saldo_por_obra": [
@@ -264,16 +266,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1097.9,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 260.74,
-      "saldo": 701.3,
-      "linhas_base": 2,
-      "linhas_mapa": 32
-    },
-    {
       "obra": "RCE TRAV. DOS JESUITAS",
       "planejado": 619.5,
       "executado_base": 0.0,
@@ -292,6 +284,16 @@
       "saldo": 589.5,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1227.2,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 390.04,
+      "saldo": 572.0,
+      "linhas_base": 2,
+      "linhas_mapa": 32
     },
     {
       "obra": "CTS Água Vermelha - MD",
@@ -432,16 +434,6 @@
       "saldo": 220.48,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 123.6,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": 20.57,
-      "saldo": 214.9,
-      "linhas_base": 2,
-      "linhas_mapa": 2
     },
     {
       "obra": "CTS TRÊS MENINAS AUX.",
@@ -624,16 +616,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
-      "planejado": 55.0,
-      "executado_base": 0.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 55.0,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "CTS Conceição",
       "planejado": 812.5,
       "executado_base": 765.89,
@@ -644,14 +626,14 @@
       "linhas_mapa": 14
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 823.1,
-      "executado_mapa": 822.09,
-      "diferenca_base_mapa": 1.0,
-      "saldo": 35.4,
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 300.3,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": 197.27,
+      "saldo": 38.2,
       "linhas_base": 2,
-      "linhas_mapa": 12
+      "linhas_mapa": 2
     },
     {
       "obra": "RCE RUA CARMEM COSTA",
@@ -704,6 +686,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
+      "planejado": 55.0,
+      "executado_base": 38.3,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 38.3,
+      "saldo": 16.7,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "RCE Rua São João",
       "planejado": 95.0,
       "executado_base": 93.1,
@@ -734,6 +726,16 @@
       "linhas_mapa": 5
     },
     {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 880.94,
+      "executado_mapa": 817.27,
+      "diferenca_base_mapa": 63.67,
+      "saldo": -22.44,
+      "linhas_base": 2,
+      "linhas_mapa": 12
+    },
+    {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
       "executado_base": 468.09,
@@ -759,25 +761,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.6,
-      "modificado": "2026-06-15 16:44:01"
+      "modificado": "2026-06-17 09:57:10"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 93.1,
-      "modificado": "2026-06-11 10:17:52"
+      "tamanho_kb": 93.4,
+      "modificado": "2026-06-17 10:07:45"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 389.1,
-      "modificado": "2026-06-16 08:27:41"
+      "tamanho_kb": 391.8,
+      "modificado": "2026-06-17 10:07:50"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 506.4,
-      "modificado": "2026-06-16 08:27:58"
+      "tamanho_kb": 509.8,
+      "modificado": "2026-06-17 10:08:05"
     }
   ]
 }

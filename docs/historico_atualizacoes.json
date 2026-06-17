@@ -472,34 +472,18 @@
     "alertas": 2
   },
   {
-    "atualizado_em": "2026-06-16 07:09:48",
-    "base_executado": 17950.49,
-    "mapa_executado": 17621.23,
-    "diferenca": 329.27,
-    "pds_hoje": 20,
+    "atualizado_em": "2026-06-17 10:07:08",
+    "base_executado": 18422.14,
+    "mapa_executado": 17616.4,
+    "diferenca": 805.74,
+    "pds_hoje": 41,
     "alertas": 2
   },
   {
-    "atualizado_em": "2026-06-16 07:11:01",
-    "base_executado": 18019.99,
-    "mapa_executado": 17621.23,
-    "diferenca": 398.77,
-    "pds_hoje": 20,
-    "alertas": 2
-  },
-  {
-    "atualizado_em": "2026-06-16 07:23:19",
-    "base_executado": 18019.99,
-    "mapa_executado": 17621.23,
-    "diferenca": 398.77,
-    "pds_hoje": 20,
-    "alertas": 2
-  },
-  {
-    "atualizado_em": "2026-06-16 08:28:26",
-    "base_executado": 18019.99,
-    "mapa_executado": 17621.23,
-    "diferenca": 398.77,
+    "atualizado_em": "2026-06-17 10:08:57",
+    "base_executado": 18422.14,
+    "mapa_executado": 17616.4,
+    "diferenca": 805.74,
     "pds_hoje": 20,
     "alertas": 2
   }
