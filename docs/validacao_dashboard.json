@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-17 10:08:57",
+  "atualizado_em": "2026-06-17 10:22:44",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18422.14,
-    "mapa_executado": 17616.4,
-    "diferenca_base_mapa": 805.74,
+    "mapa_executado": 17679.07,
+    "diferenca_base_mapa": 743.07,
     "saldo_total": 21266.25
   },
   "pds": {
@@ -59,7 +59,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 805.74 m",
+    "Diferença total entre Base Dash e mapa: 743.07 m",
     "9 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -114,16 +114,6 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 880.94,
-      "executado_mapa": 817.27,
-      "diferenca_base_mapa": 63.67,
-      "saldo": -22.44,
-      "linhas_base": 2,
-      "linhas_mapa": 12
-    },
-    {
       "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
       "planejado": 55.0,
       "executado_base": 38.3,
@@ -152,6 +142,16 @@
       "saldo": 46.61,
       "linhas_base": 4,
       "linhas_mapa": 14
+    },
+    {
+      "obra": "CTS João Canzi",
+      "planejado": 858.5,
+      "executado_base": 880.94,
+      "executado_mapa": 879.94,
+      "diferenca_base_mapa": 1.0,
+      "saldo": -22.44,
+      "linhas_base": 2,
+      "linhas_mapa": 13
     }
   ],
   "saldo_por_obra": [
@@ -729,11 +729,11 @@
       "obra": "CTS João Canzi",
       "planejado": 858.5,
       "executado_base": 880.94,
-      "executado_mapa": 817.27,
-      "diferenca_base_mapa": 63.67,
+      "executado_mapa": 879.94,
+      "diferenca_base_mapa": 1.0,
       "saldo": -22.44,
       "linhas_base": 2,
-      "linhas_mapa": 12
+      "linhas_mapa": 13
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -766,8 +766,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 93.4,
-      "modificado": "2026-06-17 10:07:45"
+      "tamanho_kb": 93.5,
+      "modificado": "2026-06-17 10:22:33"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
