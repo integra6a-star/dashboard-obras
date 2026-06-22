@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "22/06/2026 08:06",
+  "atualizado_em": "22/06/2026 08:13",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -96,11 +96,11 @@
     {
       "codigo": "P010",
       "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "238",
+      "estoque_atual": "227",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 238,
+      "quantidade": 227,
       "situacao_planilha": ""
     },
     {

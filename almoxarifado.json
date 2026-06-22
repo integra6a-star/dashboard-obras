@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "22/06/2026 08:06",
+  "atualizado_em": "22/06/2026 08:13",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Tancredo",
   "titulo": "Tancredo (Canteiro 1)",
   "produtos": [
@@ -16,11 +16,11 @@
     {
       "codigo": "P002",
       "descricao": "CURVA 45 GR PVC PB JE ESG DN 200 - JEI LONGA",
-      "estoque_atual": "187",
+      "estoque_atual": "186",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 187,
+      "quantidade": 186,
       "situacao_planilha": ""
     },
     {
@@ -36,11 +36,11 @@
     {
       "codigo": "P004",
       "descricao": "CURVA 45GR PVC CTA PB ESG DN100 JEI/JERI",
-      "estoque_atual": "91",
+      "estoque_atual": "0",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 91,
+      "quantidade": 0,
       "situacao_planilha": ""
     },
     {
@@ -76,21 +76,21 @@
     {
       "codigo": "P008",
       "descricao": "CURVA 90GR PVC CTA PB ESG DN100 JEI/JERI",
-      "estoque_atual": "0",
+      "estoque_atual": "28",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 0,
+      "quantidade": 28,
       "situacao_planilha": ""
     },
     {
       "codigo": "P009",
       "descricao": "CURVA PVC OCRE DN 200 X 90º",
-      "estoque_atual": "15",
+      "estoque_atual": "11",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 15,
+      "quantidade": 11,
       "situacao_planilha": ""
     },
     {
@@ -106,31 +106,31 @@
     {
       "codigo": "P011",
       "descricao": "LUVA CORRER BB ESG DN 100 - JEI",
-      "estoque_atual": "420",
+      "estoque_atual": "375",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 420,
+      "quantidade": 375,
       "situacao_planilha": ""
     },
     {
       "codigo": "P012",
       "descricao": "LUVA CORRER BB ESG DN 150 - JEI",
-      "estoque_atual": "3",
+      "estoque_atual": "4",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 3,
+      "quantidade": 4,
       "situacao_planilha": ""
     },
     {
       "codigo": "P013",
       "descricao": "LUVA CORRER BB ESG DN 200 - JEI",
-      "estoque_atual": "52",
+      "estoque_atual": "45",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 52,
+      "quantidade": 45,
       "situacao_planilha": ""
     },
     {
@@ -176,11 +176,11 @@
     {
       "codigo": "P018",
       "descricao": "SELIM AJUST TUBO PVC E CER DN 200X100",
-      "estoque_atual": "1307",
+      "estoque_atual": "1242",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 1307,
+      "quantidade": 1242,
       "situacao_planilha": ""
     },
     {
@@ -206,21 +206,21 @@
     {
       "codigo": "P021",
       "descricao": "TAMPÃO DE 600 ESG",
-      "estoque_atual": "57",
+      "estoque_atual": "47",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 57,
+      "quantidade": 47,
       "situacao_planilha": ""
     },
     {
       "codigo": "P022",
       "descricao": "TE ESG OCRE DN 200X150",
-      "estoque_atual": "32",
+      "estoque_atual": "30",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 32,
+      "quantidade": 30,
       "situacao_planilha": ""
     },
     {
@@ -236,11 +236,11 @@
     {
       "codigo": "P024",
       "descricao": "TE PVC COLETOR OCRE BBP JE DN 200 X 200",
-      "estoque_atual": "1",
+      "estoque_atual": "2",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 1,
+      "quantidade": 2,
       "situacao_planilha": ""
     },
     {
@@ -286,31 +286,31 @@
     {
       "codigo": "P029",
       "descricao": "TIL TUBO DE INSPEÇÃO DN 100X100",
-      "estoque_atual": "50",
+      "estoque_atual": "48",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 50,
+      "quantidade": 48,
       "situacao_planilha": ""
     },
     {
       "codigo": "P030",
       "descricao": "UNIÃO PARA PEAD 20 MM",
-      "estoque_atual": "795",
+      "estoque_atual": "689",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 795,
+      "quantidade": 689,
       "situacao_planilha": ""
     },
     {
       "codigo": "P031",
       "descricao": "TE DE SERVIÇO INTEGRADO 50 X 20 MM",
-      "estoque_atual": "1",
+      "estoque_atual": "0",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 1,
+      "quantidade": 0,
       "situacao_planilha": ""
     }
   ],
