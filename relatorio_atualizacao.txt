@@ -1,10 +1,10 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-06-22 13:10:07
+Atualizado em: 2026-06-22 13:15:55
 
 Planejado Base Dash: 39,688.39 m
 Executado Base Dash: 18,657.14 m
-Executado Mapa: 17,679.07 m
-Diferença Base - Mapa: 978.07 m
+Executado Mapa: 17,973.98 m
+Diferença Base - Mapa: 683.16 m
 Saldo total: 21,031.25 m
 
 PDS total: 2977 registros
@@ -12,12 +12,12 @@ PDS hoje: 19 registros
 Última data PDS: 2026-06-22
 
 Alertas:
-- Diferença total entre Base Dash e mapa: 978.07 m
+- Diferença total entre Base Dash e mapa: 683.16 m
 - 12 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
 - RCE São Lucas: Base 1,316.70 m | Mapa 837.16 m | Dif. 479.54 m
-- RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 300.30 m | Mapa 103.03 m | Dif. 197.27 m
+- RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 300.30 m | Mapa 397.94 m | Dif. -97.64 m
 - RCE Rua São João: Base 93.10 m | Mapa 0.00 m | Dif. 93.10 m
 - RCE ELVIRA DE ARAUJO: Base 160.86 m | Mapa 68.86 m | Dif. 92.00 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m

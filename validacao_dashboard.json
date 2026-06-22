@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-22 13:10:07",
+  "atualizado_em": "2026-06-22 13:15:55",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18657.14,
-    "mapa_executado": 17679.07,
-    "diferenca_base_mapa": 978.07,
+    "mapa_executado": 17973.98,
+    "diferenca_base_mapa": 683.16,
     "saldo_total": 21031.25
   },
   "pds": {
@@ -59,7 +59,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 978.07 m",
+    "Diferença total entre Base Dash e mapa: 683.16 m",
     "12 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -77,11 +77,11 @@
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
       "executado_base": 300.3,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": 197.27,
+      "executado_mapa": 397.94,
+      "diferenca_base_mapa": -97.64,
       "saldo": 38.2,
       "linhas_base": 2,
-      "linhas_mapa": 2
+      "linhas_mapa": 8
     },
     {
       "obra": "RCE Rua São João",
@@ -649,11 +649,11 @@
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
       "executado_base": 300.3,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": 197.27,
+      "executado_mapa": 397.94,
+      "diferenca_base_mapa": -97.64,
       "saldo": 38.2,
       "linhas_base": 2,
-      "linhas_mapa": 2
+      "linhas_mapa": 8
     },
     {
       "obra": "RCE RUA CARMEM COSTA",
@@ -796,8 +796,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 93.5,
-      "modificado": "2026-06-17 10:22:33"
+      "tamanho_kb": 94.2,
+      "modificado": "2026-06-22 13:15:46"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
