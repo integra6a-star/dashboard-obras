@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-06-17 10:22:44",
+  "atualizado_em": "2026-06-22 08:11:11",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 18422.14,
+    "base_executado": 18657.14,
     "mapa_executado": 17679.07,
-    "diferenca_base_mapa": 743.07,
-    "saldo_total": 21266.25
+    "diferenca_base_mapa": 978.07,
+    "saldo_total": 21031.25
   },
   "pds": {
-    "total": 2938,
-    "ultima_data": "2026-06-17",
-    "hoje": 20,
+    "total": 2977,
+    "ultima_data": "2026-06-22",
+    "hoje": 19,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE SÃO LUCAS",
+        "obra": "RCE São Lucas",
         "atividades": 5
       },
       {
-        "obra": "RCE RAULZITO",
+        "obra": "RCE Raulzito",
         "atividades": 4
       },
       {
@@ -25,51 +25,51 @@
         "atividades": 2
       },
       {
-        "obra": "Vacal: João Canzi",
-        "atividades": 2
-      },
-      {
-        "obra": "CTS JOÃO CANZI",
+        "obra": "CT Água Vermelha ME",
         "atividades": 1
       },
       {
-        "obra": "RCE CONJ. UNIÃO",
+        "obra": "ITI 15",
         "atividades": 1
       },
       {
-        "obra": "RCE ELIAS SLEIMAN",
+        "obra": "RCE Conj. União",
         "atividades": 1
       },
       {
-        "obra": "RCE ELVIRA",
+        "obra": "RCE Elias Sleiman",
         "atividades": 1
       },
       {
-        "obra": "RCE MARIA DOS SANTOS MACHADO",
+        "obra": "RCE Elvira",
         "atividades": 1
       },
       {
-        "obra": "SERVIÇOS REPOSIÇÃO",
+        "obra": "RCE Maria Dos Santos Machado",
         "atividades": 1
       },
       {
-        "obra": "Vacal: ITI 15",
+        "obra": "Serviços Reposição",
+        "atividades": 1
+      },
+      {
+        "obra": "Água Vermelha",
         "atividades": 1
       }
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 743.07 m",
-    "9 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 978.07 m",
+    "12 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 1227.2,
+      "executado_base": 1316.7,
       "executado_mapa": 837.16,
-      "diferenca_base_mapa": 390.04,
-      "saldo": 572.0,
+      "diferenca_base_mapa": 479.54,
+      "saldo": 482.5,
       "linhas_base": 2,
       "linhas_mapa": 32
     },
@@ -94,6 +94,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE ELVIRA DE ARAUJO",
+      "planejado": 180.0,
+      "executado_base": 160.86,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": 92.0,
+      "saldo": 19.14,
+      "linhas_base": 2,
+      "linhas_mapa": 4
+    },
+    {
       "obra": "Interligação Água Boa",
       "planejado": 425.0,
       "executado_base": 201.71,
@@ -114,12 +124,32 @@
       "linhas_mapa": 15
     },
     {
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 42.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 42.0,
+      "saldo": 184.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
       "planejado": 55.0,
       "executado_base": 38.3,
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 38.3,
       "saldo": 16.7,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
+      "planejado": 205.0,
+      "executado_base": 11.5,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 11.5,
+      "saldo": 193.5,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -286,16 +316,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1227.2,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 390.04,
-      "saldo": 572.0,
-      "linhas_base": 2,
-      "linhas_mapa": 32
-    },
-    {
       "obra": "CTS Água Vermelha - MD",
       "planejado": 1700.5,
       "executado_base": 1184.68,
@@ -304,6 +324,16 @@
       "saldo": 515.82,
       "linhas_base": 18,
       "linhas_mapa": 26
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1316.7,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 479.54,
+      "saldo": 482.5,
+      "linhas_base": 2,
+      "linhas_mapa": 32
     },
     {
       "obra": "CTS Água Vermelha - ME",
@@ -396,16 +426,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE COMUNIDADE JD. UNIÃO",
-      "planejado": 226.5,
-      "executado_base": 0.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 226.5,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "CTS Jaraguá",
       "planejado": 632.63,
       "executado_base": 408.17,
@@ -446,22 +466,32 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
-      "planejado": 205.0,
-      "executado_base": 0.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 205.0,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE RUA DOS GIRASSÓIS",
       "planejado": 201.5,
       "executado_base": 0.0,
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 0.0,
       "saldo": 201.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
+      "planejado": 205.0,
+      "executado_base": 11.5,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 11.5,
+      "saldo": 193.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 42.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 42.0,
+      "saldo": 184.5,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -544,16 +574,6 @@
       "saldo": 125.0,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 68.86,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 111.14,
-      "linhas_base": 2,
-      "linhas_mapa": 4
     },
     {
       "obra": "RCE RUA IGARAÇU",
@@ -676,6 +696,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE ELVIRA DE ARAUJO",
+      "planejado": 180.0,
+      "executado_base": 160.86,
+      "executado_mapa": 68.86,
+      "diferenca_base_mapa": 92.0,
+      "saldo": 19.14,
+      "linhas_base": 2,
+      "linhas_mapa": 4
+    },
+    {
       "obra": "RCE RUA MARIA DAS GRAÇAS SILVA",
       "planejado": 17.0,
       "executado_base": 0.0,
@@ -761,7 +791,7 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.6,
-      "modificado": "2026-06-17 09:57:10"
+      "modificado": "2026-06-22 06:53:12"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -772,14 +802,14 @@
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 391.8,
-      "modificado": "2026-06-17 10:07:50"
+      "tamanho_kb": 395.0,
+      "modificado": "2026-06-22 08:10:53"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 509.8,
-      "modificado": "2026-06-17 10:08:05"
+      "tamanho_kb": 516.6,
+      "modificado": "2026-06-22 08:11:01"
     }
   ]
 }

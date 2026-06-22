@@ -494,5 +494,29 @@
     "diferenca": 743.07,
     "pds_hoje": 20,
     "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:06:32",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 38,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:09:23",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:11:11",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 19,
+    "alertas": 2
   }
 ]

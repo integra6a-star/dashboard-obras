@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-17T10:06:46.516165-03:00",
+  "atualizado_em": "2026-06-22T08:06:13.056795-03:00",
   "fonte": "EAP_PRODUCAO.xlsx",
   "aba": "EAP_PRODUCAO",
   "meses": [
@@ -24,8 +24,8 @@
     },
     "2026": {
       "eap": 28768.36,
-      "produzido": 9684.065,
-      "saldo": -19084.295
+      "produzido": 9919.064,
+      "saldo": -18849.296
     }
   },
   "mensal": [
@@ -198,12 +198,12 @@
       "ano": 2026,
       "mes": "Jun",
       "eap": 3108.25,
-      "produzido": 1072.391,
+      "produzido": 1307.39,
       "economias_eap": 2874.0,
       "economias_recebidas": 0.0,
-      "saldo_mes": -2035.859,
+      "saldo_mes": -1800.86,
       "saldo_economias": -2874.0,
-      "saldo_acum": -5050.695
+      "saldo_acum": -4815.696
     },
     {
       "ano": 2026,
@@ -214,7 +214,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3269.49,
       "saldo_economias": -4487.0,
-      "saldo_acum": -8320.185
+      "saldo_acum": -8085.186
     },
     {
       "ano": 2026,
@@ -225,7 +225,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3305.21,
       "saldo_economias": -4543.0,
-      "saldo_acum": -11625.395
+      "saldo_acum": -11390.396
     },
     {
       "ano": 2026,
@@ -236,7 +236,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -3138.09,
       "saldo_economias": -3432.0,
-      "saldo_acum": -14763.485
+      "saldo_acum": -14528.486
     },
     {
       "ano": 2026,
@@ -247,7 +247,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -2251.28,
       "saldo_economias": -1923.0,
-      "saldo_acum": -17014.765
+      "saldo_acum": -16779.766
     },
     {
       "ano": 2026,
@@ -258,7 +258,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -1527.07,
       "saldo_economias": -713.0,
-      "saldo_acum": -18541.835
+      "saldo_acum": -18306.836
     },
     {
       "ano": 2026,
@@ -269,7 +269,7 @@
       "economias_recebidas": 0.0,
       "saldo_mes": -542.46,
       "saldo_economias": -39.0,
-      "saldo_acum": -19084.295
+      "saldo_acum": -18849.296
     }
   ],
   "eap_economias": {
