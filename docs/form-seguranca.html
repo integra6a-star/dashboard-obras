@@ -750,10 +750,11 @@
       <div class="inspecao-head">
         <div>
           <h2>Formulário de Inspeção em Saúde e Segurança</h2>
-          <p>Modelo digital baseado no formulário 6. Inspeção de Segurança, com checklist C/NC/NA, tratativas e quatro fotos da inspeção.</p>
+          <p>Modelo digital baseado no formulário 6. Inspeção de Segurança - Novo 06.26, com checklist C/NC/NA, tratativas e seis fotos da inspeção.</p>
         </div>
         <div class="inspecao-actions">
           <button class="btn-form" type="button" onclick="salvarInspecaoSeguranca()">Salvar rascunho</button>
+          <button class="btn-form" type="button" onclick="window.open('inspecao-seguranca-novo-06-26.pdf','_blank')">Abrir modelo PDF</button>
           <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaWord()">Exportar Word</button>
           <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaPDF()">Gerar PDF</button>
           <button class="btn-form primary" type="button" onclick="window.print()">Imprimir</button>
@@ -769,7 +770,7 @@
           </div>
           <div class="form-field">
             <label>Relatório nº</label>
-            <input name="relatorio" placeholder="____ / 25">
+            <input name="relatorio" placeholder="____ / 26">
           </div>
           <div class="form-field">
             <label>Data emissão</label>
@@ -836,6 +837,24 @@
               <label for="fotoInspecao4">Selecionar foto</label>
               <input id="fotoInspecao4" type="file" accept="image/*" onchange="carregarFotoInspecao(4,this)">
               <button type="button" onclick="removerFotoInspecao(4)">Remover</button>
+            </div>
+          </div>
+          <div class="foto-box">
+            <div class="foto-title">Imagem Nº 05</div>
+            <div class="foto-preview" id="fotoPreview5">Adicionar foto</div>
+            <div class="foto-actions">
+              <label for="fotoInspecao5">Selecionar foto</label>
+              <input id="fotoInspecao5" type="file" accept="image/*" onchange="carregarFotoInspecao(5,this)">
+              <button type="button" onclick="removerFotoInspecao(5)">Remover</button>
+            </div>
+          </div>
+          <div class="foto-box">
+            <div class="foto-title">Imagem Nº 06</div>
+            <div class="foto-preview" id="fotoPreview6">Adicionar foto</div>
+            <div class="foto-actions">
+              <label for="fotoInspecao6">Selecionar foto</label>
+              <input id="fotoInspecao6" type="file" accept="image/*" onchange="carregarFotoInspecao(6,this)">
+              <button type="button" onclick="removerFotoInspecao(6)">Remover</button>
             </div>
           </div>
         </div>
@@ -916,7 +935,7 @@
 
       <div class="kpi-card" style="--accent:#8b5cf6">
         <div class="kpi-head">
-          <div class="kpi-title">Principal categoria</div>
+          <div class="kpi-title">Grupo crítico</div>
           <div class="kpi-icon">📌</div>
         </div>
         <div class="kpi-number" id="kpiCategoria" style="font-size:25px; line-height:1.15;">-</div>
@@ -932,7 +951,7 @@
       </div>
 
       <div class="grafico-card">
-        <h2>🥧 Distribuição por categoria</h2>
+        <h2>🥧 Distribuição por grupo</h2>
         <p class="desc">Classificação por grupo da tabela oficial de códigos.</p>
         <canvas id="graficoCategorias"></canvas>
       </div>
@@ -1040,6 +1059,28 @@
         .sort((a,b) => b.quantidade - a.quantidade);
     }
 
+    function contarPor(lista, seletor){
+      const mapa = {};
+      lista.forEach(item => {
+        const valor = seletor(item) || "Não informado";
+        mapa[valor] = (mapa[valor] || 0) + 1;
+      });
+      return Object.entries(mapa)
+        .map(([nome, quantidade]) => ({ nome, quantidade }))
+        .sort((a,b) => b.quantidade - a.quantidade);
+    }
+
+    function grupoIndicadorSeguranca(item){
+      const bruto = String(item.classificacao_grupo || item.categoria || "").trim();
+      const texto = bruto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      if (texto.includes("protecao coletiva")) return "C. Equipamento de Proteção Coletiva";
+      if (texto.includes("ferrament") || (texto.includes("equipamentos") && !texto.includes("pesados"))) return "D. Ferramentas e Equipamentos Leves";
+      if (texto.includes("equipamentos pesados")) return "E. Equipamentos Pesados";
+      if (texto.includes("procediment") || texto.includes("tecnic")) return "F. Procedimentos e Técnicas";
+      if (texto.includes("organiz") || texto.includes("limpeza")) return "G. Organização e Limpeza";
+      return bruto || "Não classificado";
+    }
+
     function agruparInspecoesPorLider(inspecoes){
       return contar(inspecoes, "lider");
     }
@@ -1125,7 +1166,7 @@
     function atualizarDashboard(){
       const { desvios, inspecoes, dds, mes } = filtrarBase();
 
-      const categorias = contar(desvios, "categoria");
+      const categorias = contarPor(desvios, grupoIndicadorSeguranca);
       const principalCategoria = categorias[0];
 
       const participantes = dds.reduce((soma, d) => soma + Number(d.participantes || 0), 0);
@@ -1252,7 +1293,7 @@
             <td>${d.local}</td>
             <td>${d.lider}</td>
             <td>${d.tst}</td>
-            <td><strong>${d.categoria}</strong></td>
+            <td><strong>${grupoIndicadorSeguranca(d)}</strong></td>
             <td>${d.classificacao_descricao || d.categoria_detalhe || "-"}</td>
             <td>${d.desvio}</td>
           </tr>
@@ -1264,7 +1305,7 @@
       destruirGraficos();
 
       const porLider = contar(desvios, "lider").slice(0, 12);
-      const porCategoria = contar(desvios, "categoria");
+      const porCategoria = contarPor(desvios, grupoIndicadorSeguranca);
       const porTST = contar(desvios, "tst").slice(0, 10);
 
       const porMes = {};
@@ -1397,13 +1438,15 @@
 
     const INSPECAO_SEGURANCA_STORAGE = "integra6a_inspecao_seguranca_rascunho";
     const fotosInspecaoSeguranca = {};
+    const FOTOS_INSPECAO_SEGURANCA = [1,2,3,4,5,6];
     const CHECKLIST_INSPECAO_SEGURANCA = [
-      {titulo:"1.1 - Equipamento de Proteção Individual", itens:["Uniforme completo","Capacete com jugular","Botina com biqueira","Bota de borracha","Óculos de proteção","Protetor auricular plug / concha","Máscara proteção PFF2","Luva de vaqueta","Luva de látex","Luva de borracha","Luva anti vibração","Capa de chuva","Cinto de segurança veicular","Crachá de identificação","Cinto de segurança talabarte duplo"]},
-      {titulo:"1.2 - Equipamento de Proteção Coletiva", itens:["Isolamento de área (tapumes, tela, cerquite, etc.)","Sinalização adequada da via e obra","Plano de sinalização viária","SIGA e PARE em vias movimentadas","Espaço para circulação de pedestre","Escoramento de valas acima de 1,25 m","Prancha de escoramento / blindado / ármico","Tripé metálico / insuflador de ar para PV","Monitoramento de gás em espaços confinados","Trava quedas / linha de vida","Cabo de aço anti chicoteamento","Coletores de resíduos"]},
-      {titulo:"1.3 - Caminhões / Retroescavadeiras", itens:["Condições dos pneus dos veículos","Sinal sonoro de ré / caçamba erguida","Parte elétrica e iluminação do veículo","Uso de calços nos caminhões","Vazamento de óleo no veículo","Cinto de segurança veicular"]},
-      {titulo:"1.4 - Equipamentos", itens:["Vazamento de óleo no equipamento","Condições das mangueiras de ar e óleo","Check list dos equipamentos / veículos / retro"]},
-      {titulo:"1.5 - Documentações diversas", itens:["APR - Análise Preliminar de Risco no veículo","DDS - Diálogo Diário de Segurança","PT de espaço confinado PV / shaft / valas","PT de trabalho em altura","PT de escavação de valas acima de 1,25 m","PAE - Plano Atendimento Emergencial","Documentos gerais (Plano de Escoramento, TPOV, PDDT, sinalização, etc.)"]},
-      {titulo:"1.6 - Qualidade e organização de obra", itens:["Limpeza da obra","Banheiro químico higienizado","Área de vivência com mesas e cadeiras","Água potável disponível","Copo descartável disponível","Kit de higienização de mãos disponível","Lona plástica de separação de materiais","Distância da terra da borda de vala (30% em relação à profundidade)","Carimbo de provisório na vala"]}
+      {titulo:"A. Posição das Pessoas", itens:["A1. Bater contra / Ser atingido por (Ex: retroescavadeira, tráfego local)","A2. Ficar preso / Soterramento (Ex: valas sem escoramento)","A3. Risco de queda (Ex: valas abertas, poços de visita)","A4. Risco de queimadura / Contato térmico","A5. Risco de choque elétrico (Ex: redes subterrâneas/aéreas)","A6. Risco de contaminação / Agentes biológicos (Ex: esgoto bruto)","A7. Postura inadequada","A8. Esforço inadequado / Movimentação manual de tubos"]},
+      {titulo:"B. Equipamento de Proteção Individual", itens:["B1. Cabeça (Ex: capacete sem jugular)","B2. Sistema respiratório (Ex: gases em PVs)","B3. Olhos e rosto (Ex: projeção de partículas)","B4. Ouvidos (Ex: ruído de martelete)","B5. Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos)","B6. Tronco (Ex: falta de vestimenta de alta visibilidade)","B7. Pés e pernas (Ex: bota de PVC em falta para áreas úmidas)"]},
+      {titulo:"C. Equipamento de Proteção Coletiva", itens:["C1. Sem isolamento ou insuficiente (Ex: falta de tapumes/grades na vala)","C2. Inadequados para atividade","C3. Em condições inseguras (Ex: falta de guarda-corpo ou insuficiente)","C4. Escoramento divergente do projeto / Ausência de escoramento de vala","C5. Sinalização viária insuficiente (Ex: falta de cones, placas de desvio, barreiras)","C6. Monitoramento incorreto ou equipamento danificado (Ex: detector de gás)","C7. Falta de passadiços / Passarelas para pedestres","C8. Insuflação e/ou exaustão de ar inadequada (Ex: não utilização do insuflador de ar)"]},
+      {titulo:"D. Ferramentas e Equipamentos Leves", itens:["D1. Impróprias para o serviço (Ex: rompedores, bombas de sucção)","D2. Usadas incorretamente","D3. Em condições inseguras (Ex: extensões elétricas danificadas em contato com água)","D4. Não autorizado, capacitado e habilitado"]},
+      {titulo:"E. Equipamentos Pesados", itens:["E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: problema mecânico)","E2. Condições inseguras (Ex: patolamento inadequado de equipamento em solo instável)","E3. Ausência de responsável (Ex: operação próxima a redes elétricas ou valas sem supervisão)","E4. Sem isolamento do raio de ação de equipamentos pesados (Ex: caminhão Munck)","E5. Não identificado, autorizado, capacitado e habilitado"]},
+      {titulo:"F. Procedimentos e Técnicas", itens:["F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências)","F2. Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV)","F3. Adequados e não seguidos (Ex: utilização do trava-quedas)","F4. Existente e não seguidos (Ex: projeto de Armico)","F5. Ausência de Análise Preliminar de Risco (APR) no local","F6. Trabalho em espaço confinado (PV) sem vigia ou exaustão","F7. PAE no local e compreendido pela equipe"]},
+      {titulo:"G. Organização e Limpeza", itens:["G1. Local sujo (Ex: lama / efluente espalhado na via pública)","G2. Local desorganizado / Obstrução de calçadas e passagens de pedestres","G3. Organização documental (Ex: pasta de segurança completa e conservada)","G4. Resíduos dispostos incorretamente (Ex: solo escavado depositado na borda da vala)"]}
     ];
 
     function abrirFormularioInspecao(){
@@ -1470,7 +1513,7 @@
       const linhasChecklist = checklistInspecaoLinhas(dados)
         .map(linha => `<tr><td>${textoExportacao(linha.grupo)}</td><td>${textoExportacao(linha.item)}</td><td>${textoExportacao(linha.resultado)}</td></tr>`)
         .join("");
-      const linhasFotos = [1,2,3,4].map(numero => {
+      const linhasFotos = FOTOS_INSPECAO_SEGURANCA.map(numero => {
         const src = dados.fotos && dados.fotos[numero];
         const foto = src ? `<img src="${src}" style="max-width:260px;max-height:180px;">` : "Sem foto";
         return `<tr><td>Imagem ${String(numero).padStart(2,"0")}</td><td>${foto}</td></tr>`;
@@ -1616,7 +1659,7 @@
       if (!confirm("Limpar o formulário de inspeção e apagar o rascunho salvo neste navegador?")) return;
       const form = document.getElementById("inspecaoSegurancaForm");
       if (form) form.reset();
-      [1,2,3,4].forEach(numero => preencherFotoInspecao(numero, ""));
+      FOTOS_INSPECAO_SEGURANCA.forEach(numero => preencherFotoInspecao(numero, ""));
       localStorage.removeItem(INSPECAO_SEGURANCA_STORAGE);
       atualizarResumoInspecaoSeguranca();
     }

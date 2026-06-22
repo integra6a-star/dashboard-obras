@@ -21,6 +21,7 @@ SOURCE_CANDIDATES = [
     ROOT / "Planilha de controle de segurança do trabalho (2).xlsx",
     Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho (2).xlsx"),
 ]
+TREINAMENTOS_ADMISSAO_FALLBACK = 96
 
 
 def text_of(element: ET.Element | None) -> str:
@@ -151,6 +152,86 @@ def is_header_or_empty(row: list[str]) -> bool:
     return not first or first in {"DATA", "NOME", "COLABORADOR", "TOTAL"}
 
 
+NOVA_CLASSIFICACAO = {
+    "A1": ("A", "A. Posição das Pessoas", "Bater contra / Ser atingido por"),
+    "A2": ("A", "A. Posição das Pessoas", "Ficar preso / Soterramento"),
+    "A3": ("A", "A. Posição das Pessoas", "Risco de queda"),
+    "A4": ("A", "A. Posição das Pessoas", "Risco de queimadura / Contato térmico"),
+    "A5": ("A", "A. Posição das Pessoas", "Risco de choque elétrico"),
+    "A6": ("A", "A. Posição das Pessoas", "Risco de contaminação / Agentes biológicos"),
+    "A7": ("A", "A. Posição das Pessoas", "Postura inadequada"),
+    "A8": ("A", "A. Posição das Pessoas", "Esforço inadequado / Movimentação manual de tubos"),
+    "B1": ("B", "B. Equipamento de Proteção Individual", "Cabeça"),
+    "B2": ("B", "B. Equipamento de Proteção Individual", "Sistema respiratório"),
+    "B3": ("B", "B. Equipamento de Proteção Individual", "Olhos e rosto"),
+    "B4": ("B", "B. Equipamento de Proteção Individual", "Ouvidos"),
+    "B5": ("B", "B. Equipamento de Proteção Individual", "Mãos e braços"),
+    "B6": ("B", "B. Equipamento de Proteção Individual", "Tronco"),
+    "B7": ("B", "B. Equipamento de Proteção Individual", "Pés e pernas"),
+    "C1": ("C", "C. Equipamento de Proteção Coletiva", "Sem isolamento ou insuficiente"),
+    "C2": ("C", "C. Equipamento de Proteção Coletiva", "Inadequados para atividade"),
+    "C3": ("C", "C. Equipamento de Proteção Coletiva", "Em condições inseguras"),
+    "C4": ("C", "C. Equipamento de Proteção Coletiva", "Escoramento divergente do projeto / Ausência de escoramento de vala"),
+    "C5": ("C", "C. Equipamento de Proteção Coletiva", "Sinalização viária insuficiente"),
+    "C6": ("C", "C. Equipamento de Proteção Coletiva", "Monitoramento incorreto ou equipamento danificado"),
+    "C7": ("C", "C. Equipamento de Proteção Coletiva", "Falta de passadiços / Passarelas para pedestres"),
+    "C8": ("C", "C. Equipamento de Proteção Coletiva", "Insuflação e/ou exaustão de ar inadequada"),
+    "D1": ("D", "D. Ferramentas e Equipamentos Leves", "Impróprias para o serviço"),
+    "D2": ("D", "D. Ferramentas e Equipamentos Leves", "Usadas incorretamente"),
+    "D3": ("D", "D. Ferramentas e Equipamentos Leves", "Em condições inseguras"),
+    "D4": ("D", "D. Ferramentas e Equipamentos Leves", "Não autorizado, capacitado e habilitado"),
+    "E1": ("E", "E. Equipamentos Pesados", "Retroescavadeira / Caminhão em condições inadequadas"),
+    "E2": ("E", "E. Equipamentos Pesados", "Condições inseguras"),
+    "E3": ("E", "E. Equipamentos Pesados", "Ausência de responsável"),
+    "E4": ("E", "E. Equipamentos Pesados", "Sem isolamento do raio de ação de equipamentos pesados"),
+    "E5": ("E", "E. Equipamentos Pesados", "Não identificado, autorizado, capacitado e habilitado"),
+    "F1": ("F", "F. Procedimentos e Técnicas", "Inadequados para atividade"),
+    "F2": ("F", "F. Procedimentos e Técnicas", "Não existem projetos / procedimentos escritos"),
+    "F3": ("F", "F. Procedimentos e Técnicas", "Adequados e não seguidos"),
+    "F4": ("F", "F. Procedimentos e Técnicas", "Existente e não seguidos"),
+    "F5": ("F", "F. Procedimentos e Técnicas", "Ausência de Análise Preliminar de Risco (APR) no local"),
+    "F6": ("F", "F. Procedimentos e Técnicas", "Trabalho em espaço confinado (PV) sem vigia ou exaustão"),
+    "F7": ("F", "F. Procedimentos e Técnicas", "PAE no local e compreendido pela equipe"),
+    "G1": ("G", "G. Organização e Limpeza", "Local sujo"),
+    "G2": ("G", "G. Organização e Limpeza", "Local desorganizado / Obstrução de calçadas e passagens de pedestres"),
+    "G3": ("G", "G. Organização e Limpeza", "Organização documental"),
+    "G4": ("G", "G. Organização e Limpeza", "Resíduos dispostos incorretamente"),
+}
+
+
+def classificacao_estatica(code: str) -> dict[str, str] | None:
+    item = NOVA_CLASSIFICACAO.get(code.upper())
+    if not item:
+        return None
+    grupo_codigo, grupo, descricao = item
+    return {
+        "codigo": code.upper(),
+        "grupo_codigo": grupo_codigo,
+        "grupo": grupo,
+        "descricao": descricao,
+        "texto": clean(f"{code.upper()}. {descricao}"),
+    }
+
+
+def normalizar_grupo_legado(grupo: str, grupo_codigo: str) -> tuple[str, str]:
+    chave = normalize_key(grupo)
+    if "protecao coletiva" in chave:
+        return "C", "C. Equipamento de Proteção Coletiva"
+    if "ferrament" in chave or ("equipamentos" in chave and "pesados" not in chave):
+        return "D", "D. Ferramentas e Equipamentos Leves"
+    if "equipamentos pesados" in chave:
+        return "E", "E. Equipamentos Pesados"
+    if "procediment" in chave or "tecnic" in chave:
+        return "F", "F. Procedimentos e Técnicas"
+    if "organiz" in chave or "limpeza" in chave:
+        return "G", "G. Organização e Limpeza"
+    if grupo_codigo == "F":
+        return "F", "F. Procedimentos e Técnicas"
+    if grupo_codigo == "G":
+        return "G", "G. Organização e Limpeza"
+    return grupo_codigo, grupo
+
+
 def build_classification_lookup(rows: list[list[str]]) -> dict[str, dict[str, str]]:
     group_columns = [(9, 10), (12, 13), (15, 16), (18, 19), (21, 22)]
     lookup: dict[str, dict[str, str]] = {}
@@ -168,13 +249,16 @@ def build_classification_lookup(rows: list[list[str]]) -> dict[str, dict[str, st
                 continue
             if item_match:
                 code = item_match.group(1).upper()
+                grupo_codigo, grupo_final = normalizar_grupo_legado(group, group_letter or code[0])
                 lookup[code] = {
                     "codigo": code,
-                    "grupo_codigo": group_letter or code[0],
-                    "grupo": group or f"{code[0]}. Não classificado",
+                    "grupo_codigo": grupo_codigo or code[0],
+                    "grupo": grupo_final or f"{code[0]}. Não classificado",
                     "descricao": desc_cell,
                     "texto": clean(f"{code}. {desc_cell}"),
                 }
+    for code in NOVA_CLASSIFICACAO:
+        lookup.setdefault(code, classificacao_estatica(code) or {})
     return lookup
 
 
@@ -195,7 +279,7 @@ def parse_classificacoes(value: str, lookup: dict[str, dict[str, str]]) -> list[
             continue
         code = match.group(1).upper()
         descricao = clean(match.group(2))
-        base = lookup.get(code, {})
+        base = lookup.get(code) or classificacao_estatica(code) or {}
         final_descricao = descricao or base.get("descricao", "")
         classificacoes.append(
             {
@@ -368,6 +452,8 @@ def build_payload(source: Path):
         inspecoes, desvios = parse_inspecoes(zf, inspecoes_path, shared)
         dds = parse_dds(zf, dds_path, shared) if dds_path else []
         treinamentos = count_treinamentos(zf, treinamentos_path, shared) if treinamentos_path else 0
+        if treinamentos == 0:
+            treinamentos = TREINAMENTOS_ADMISSAO_FALLBACK
         listas = parse_listas(zf, listas_path, shared) if listas_path else {}
 
     return {
