@@ -254,847 +254,68 @@
     const registrosChecklist = JSON.parse(localStorage.getItem("registrosAmbientais")) || [];
 
     const basePlanilha = [
-      {
-            "data": "2026-04-01",
-            "lider": "Antônio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 25
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Antônio",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 10
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Bruno",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 7
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Bruno",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Carlos",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 23
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Carlos",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Cidão",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 16
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Cidão",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 5
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Claudinei",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 25
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Claudinei",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 5
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "César",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 21
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "César",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 4
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Edvando",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 26
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Edvando",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 6
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Emanuel",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 7
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Emanuel",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Higor",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Higor",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Jonathan",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 18
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Jonathan",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Marcelo",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 34
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Marcelo",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Marcio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Medeiros",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 17
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Medeiros",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Márcio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Márcio",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Ricardo",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 14
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Ricardo",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Sérgio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Sérgio",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Valter",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Valter",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Almiro ( + Emanuel)",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 28
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Almiro ( + Emanuel)",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 5
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Antônio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 24
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Antônio",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Aparecido (Cidão)",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 17
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Aparecido (Cidão)",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Bruno",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Carlos",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Carlos",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Claudinei",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 16
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Claudinei",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 4
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "César",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "César",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Edvando",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Edvando",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Higor",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Higor",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Jonathan",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 16
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Jonathan",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Marcelo",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 10
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Marcelo",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Medeiros",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 17
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Medeiros",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 6
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Márcio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Márcio",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Ricardo",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 10
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Ricardo",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Valter",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 17
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Valter",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "César",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 11
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "César",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Edvando",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 10
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Edvando",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Medeiros",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 7
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Medeiros",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Márcio",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 7
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Márcio",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Valter",
-            "item": "Base da planilha",
-            "resultado": "Conforme",
-            "observacao": "Base real",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Valter",
-            "item": "Base da planilha",
-            "resultado": "Não Conforme",
-            "observacao": "Base real",
-            "quantidade": 3
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "possui bomba.",
-            "quantidade": 7
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "tem bomba",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "tem bomba.",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - galão de combustivel",
-            "resultado": "Não Conforme",
-            "observacao": "TEM",
-            "quantidade": 9
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - galão de combustivel",
-            "resultado": "Não Conforme",
-            "observacao": "TEM ;Quebrou",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção para gerador",
-            "resultado": "Não Conforme",
-            "observacao": "TEM",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Caminhão com lona",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Caminhão com lona",
-            "resultado": "Não Conforme",
-            "observacao": "Solicitar a instalação de braço carioca",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Galão de combustivel",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Galão de água para lavar a mão",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 6
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Separação adequada dos residuos",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 11
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Separação adequada dos residuos",
-            "resultado": "Não Conforme",
-            "observacao": "Plástico na lixeira de orgânico",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-04-01",
-            "lider": "Base Geral",
-            "item": "Tambor de contaminados",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "TEM",
-            "quantidade": 4
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "possui bomba.",
-            "quantidade": 5
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "possui.",
-            "quantidade": 5
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "possuo bomba.",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "tem bom a",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "tem bomba",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "tem.",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - galão de combustivel",
-            "resultado": "Não Conforme",
-            "observacao": "TEM",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção para gerador",
-            "resultado": "Não Conforme",
-            "observacao": "TEM",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Bl - tem alguma bl que precisa de tela ?",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 6
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Galão de água para lavar a mão",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Masseira",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 2
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Separação adequada dos residuos",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 8
-      },
-      {
-            "data": "2026-05-01",
-            "lider": "Base Geral",
-            "item": "Vegetação - precisa de isolamento ?",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 6
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Base Geral",
-            "item": "Assinatura do lider na ficha do banheiro",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Base Geral",
-            "item": "Bandeja de contenção - bomba",
-            "resultado": "Não Conforme",
-            "observacao": "TEM",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Base Geral",
-            "item": "Bl - tem alguma bl que precisa de tela ?",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 5
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Base Geral",
-            "item": "Caminhão com lona",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Base Geral",
-            "item": "Separação adequada dos residuos",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 1
-      },
-      {
-            "data": "2026-06-01",
-            "lider": "Base Geral",
-            "item": "Vegetação - precisa de isolamento ?",
-            "resultado": "Não Conforme",
-            "observacao": "Não",
-            "quantidade": 3
-      }
-];
+      { data:"2026-05-01", lider:"Antonio", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:96 },
+      { data:"2026-05-01", lider:"Antonio", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:18 },
+
+      { data:"2026-05-01", lider:"Aparecido (Cidão)", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:63 },
+      { data:"2026-05-01", lider:"Aparecido (Cidão)", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:13 },
+
+      { data:"2026-05-01", lider:"Claudinei", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:83 },
+      { data:"2026-05-01", lider:"Claudinei", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:12 },
+
+      { data:"2026-05-01", lider:"Carlos", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:66 },
+      { data:"2026-05-01", lider:"Carlos", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:10 },
+
+      { data:"2026-05-01", lider:"Edvando", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:67 },
+      { data:"2026-05-01", lider:"Edvando", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:9 },
+
+      { data:"2026-05-01", lider:"Jonathan", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:67 },
+      { data:"2026-05-01", lider:"Jonathan", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:9 },
+
+      { data:"2026-05-01", lider:"Ricardo", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:31 },
+      { data:"2026-05-01", lider:"Ricardo", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:7 },
+
+      { data:"2026-05-01", lider:"Medeiros", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:51 },
+      { data:"2026-05-01", lider:"Medeiros", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:6 },
+
+      { data:"2026-05-01", lider:"Marcelo", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:71 },
+      { data:"2026-05-01", lider:"Marcelo", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:5 },
+
+      { data:"2026-05-01", lider:"Cesar", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:52 },
+      { data:"2026-05-01", lider:"Cesar", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:5 },
+
+      { data:"2026-05-01", lider:"Almiro (Goiânia Mauá)", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:34 },
+      { data:"2026-05-01", lider:"Almiro (Goiânia Mauá)", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:4 },
+
+      { data:"2026-05-01", lider:"Higor", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:34 },
+      { data:"2026-05-01", lider:"Higor", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:4 },
+
+      { data:"2026-05-01", lider:"Emanuel", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:16 },
+      { data:"2026-05-01", lider:"Emanuel", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:3 },
+
+      { data:"2026-05-01", lider:"Marcio", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:36 },
+      { data:"2026-05-01", lider:"Marcio", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:2 },
+
+      { data:"2026-05-01", lider:"Valter", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:36 },
+      { data:"2026-05-01", lider:"Valter", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:2 },
+
+      { data:"2026-05-01", lider:"Bruno", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:17 },
+      { data:"2026-05-01", lider:"Bruno", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:2 },
+
+      { data:"2026-05-01", lider:"Sérgio", item:"Base da planilha", resultado:"Conforme", observacao:"Base real", quantidade:18 },
+      { data:"2026-05-01", lider:"Sérgio", item:"Base da planilha", resultado:"Não Conforme", observacao:"Base real", quantidade:1 },
+
+      { data:"2026-05-01", lider:"Base Geral", item:"Bandeja de contenção - bomba", resultado:"Não Conforme", observacao:"Não", quantidade:34 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Separação adequada dos resíduos", resultado:"Não Conforme", observacao:"Não", quantidade:16 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Kit mitigação", resultado:"Não Conforme", observacao:"Faltando itens", quantidade:14 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Bandeja de contenção - galão de combustível", resultado:"Não Conforme", observacao:"Não tem", quantidade:11 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Galão de água para lavar a mão", resultado:"Não Conforme", observacao:"Não", quantidade:8 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Itens do kit mitigação", resultado:"Não Conforme", observacao:"Manta absorvente", quantidade:7 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Documentos ambientais - FDS", resultado:"Não Conforme", observacao:"FDS cimento", quantidade:6 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Documentos ambientais - licenças", resultado:"Não Conforme", observacao:"Não tem", quantidade:5 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Caminhão com lona", resultado:"Não Conforme", observacao:"Não", quantidade:4 },
+      { data:"2026-05-01", lider:"Base Geral", item:"Lavatório", resultado:"Não Conforme", observacao:"Precisando de manutenção", quantidade:3 }
+    ];
 
     const registros = [...basePlanilha, ...registrosChecklist];
 
@@ -1290,7 +511,7 @@
               <td>${item.total}</td>
               <td>${item.conformes}</td>
               <td>${item.naoConformes}</td>
-              <td><strong>${item.conformidade.toFixed(1)}%</strong> (${item.conformes}/${item.total})</td>
+              <td><strong>${item.conformidade.toFixed(1)}%</strong></td>
             </tr>
           `;
         });
@@ -1421,16 +642,12 @@
             {
               label: "Conformidade (%)",
               data: ranking.map(r => Number(r.conformidade.toFixed(1))),
-              quantidades: ranking.map(r => r.conformes),
-              totais: ranking.map(r => r.total),
               backgroundColor: "#2563eb",
               borderRadius: 8
             },
             {
               label: "Não Conformidade (%)",
               data: ranking.map(r => Number(r.naoConformidade.toFixed(1))),
-              quantidades: ranking.map(r => r.naoConformes),
-              totais: ranking.map(r => r.total),
               backgroundColor: "#ef4444",
               borderRadius: 8
             }
@@ -1446,9 +663,7 @@
             tooltip: {
               callbacks: {
                 label: function(context) {
-                  const quantidade = context.dataset.quantidades?.[context.dataIndex] ?? 0;
-                  const total = context.dataset.totais?.[context.dataIndex] ?? 0;
-                  return `${context.dataset.label}: ${context.raw}% (${quantidade}/${total})`;
+                  return `${context.dataset.label}: ${context.raw}%`;
                 }
               }
             }

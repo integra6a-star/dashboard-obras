@@ -1,16 +1,16 @@
 {
-  "atualizado_em": "2026-06-22 13:15:55",
+  "atualizado_em": "2026-06-23 07:01:50",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 18657.14,
-    "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 683.16,
-    "saldo_total": 21031.25
+    "base_executado": 18734.64,
+    "mapa_executado": 17679.07,
+    "diferenca_base_mapa": 1055.57,
+    "saldo_total": 20953.75
   },
   "pds": {
-    "total": 2977,
-    "ultima_data": "2026-06-22",
-    "hoje": 19,
+    "total": 3017,
+    "ultima_data": "2026-06-23",
+    "hoje": 20,
     "por_obra_ultima_data": [
       {
         "obra": "RCE São Lucas",
@@ -18,26 +18,30 @@
       },
       {
         "obra": "RCE Raulzito",
-        "atividades": 4
+        "atividades": 3
+      },
+      {
+        "obra": "CT Lourdes",
+        "atividades": 2
       },
       {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
+        "obra": "CT Bandeirantes",
+        "atividades": 1
+      },
+      {
+        "obra": "CT Barão de Arariba",
+        "atividades": 1
+      },
+      {
         "obra": "CT Água Vermelha ME",
         "atividades": 1
       },
       {
-        "obra": "ITI 15",
-        "atividades": 1
-      },
-      {
         "obra": "RCE Conj. União",
-        "atividades": 1
-      },
-      {
-        "obra": "RCE Elias Sleiman",
         "atividades": 1
       },
       {
@@ -59,7 +63,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 683.16 m",
+    "Diferença total entre Base Dash e mapa: 1,055.57 m",
     "12 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -76,12 +80,12 @@
     {
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
-      "executado_base": 300.3,
-      "executado_mapa": 397.94,
-      "diferenca_base_mapa": -97.64,
-      "saldo": 38.2,
+      "executado_base": 377.8,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": 274.77,
+      "saldo": -39.3,
       "linhas_base": 2,
-      "linhas_mapa": 8
+      "linhas_mapa": 2
     },
     {
       "obra": "RCE Rua São João",
@@ -646,16 +650,6 @@
       "linhas_mapa": 14
     },
     {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 300.3,
-      "executado_mapa": 397.94,
-      "diferenca_base_mapa": -97.64,
-      "saldo": 38.2,
-      "linhas_base": 2,
-      "linhas_mapa": 8
-    },
-    {
       "obra": "RCE RUA CARMEM COSTA",
       "planejado": 34.0,
       "executado_base": 0.0,
@@ -766,6 +760,16 @@
       "linhas_mapa": 13
     },
     {
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 377.8,
+      "executado_mapa": 103.03,
+      "diferenca_base_mapa": 274.77,
+      "saldo": -39.3,
+      "linhas_base": 2,
+      "linhas_mapa": 2
+    },
+    {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
       "executado_base": 468.09,
@@ -791,25 +795,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.6,
-      "modificado": "2026-06-22 06:53:12"
+      "modificado": "2026-06-23 06:58:43"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 94.2,
-      "modificado": "2026-06-22 13:15:46"
+      "tamanho_kb": 93.5,
+      "modificado": "2026-06-17 10:22:33"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 395.0,
-      "modificado": "2026-06-22 08:10:53"
+      "tamanho_kb": 396.1,
+      "modificado": "2026-06-23 07:01:34"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 516.6,
-      "modificado": "2026-06-22 08:11:01"
+      "tamanho_kb": 523.5,
+      "modificado": "2026-06-23 07:01:43"
     }
   ]
 }
