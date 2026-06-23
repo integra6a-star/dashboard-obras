@@ -1533,13 +1533,8 @@ function updateUI(){
   document.getElementById('curvePlan').textContent = fmtInt(plan);
   document.getElementById('curveExec').textContent = fmtInt(exec);
   const projAtual = Math.round(mediaDiariaMensal * 30);
-  const diffProjAtual = exec - projAtual;
-  const curveGap = document.getElementById('curveGap');
   document.getElementById('curveProj').textContent = fmtInt(projAtual);
-  curveGap.textContent = diffProjAtual >= 0
-    ? `Ultrapassada em ${fmtInt(diffProjAtual)} m`
-    : `Faltam ${fmtInt(Math.abs(diffProjAtual))} m`;
-  curveGap.style.color = diffProjAtual >= 0 ? '#2f9d62' : '#dc4b4b';
+  document.getElementById('curveGap').textContent = '';
   document.getElementById('kSemana').textContent = (av>=META?'+':'') + (av-META).toFixed(0) + '% vs meta';
   pillFiltro.textContent = 'Obra atual: ' + (fObra.value || '(Todas)');
   setGauge(av);
