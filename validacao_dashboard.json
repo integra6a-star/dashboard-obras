@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-23 07:01:50",
+  "atualizado_em": "2026-06-23 07:11:26",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18734.64,
-    "mapa_executado": 17679.07,
-    "diferenca_base_mapa": 1055.57,
+    "mapa_executado": 17973.98,
+    "diferenca_base_mapa": 760.66,
     "saldo_total": 20953.75
   },
   "pds": {
@@ -63,7 +63,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 1,055.57 m",
+    "Diferença total entre Base Dash e mapa: 760.66 m",
     "12 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -76,16 +76,6 @@
       "saldo": 482.5,
       "linhas_base": 2,
       "linhas_mapa": 32
-    },
-    {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 377.8,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": 274.77,
-      "saldo": -39.3,
-      "linhas_base": 2,
-      "linhas_mapa": 2
     },
     {
       "obra": "RCE Rua São João",
@@ -146,6 +136,16 @@
       "saldo": 16.7,
       "linhas_base": 2,
       "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 377.8,
+      "executado_mapa": 397.94,
+      "diferenca_base_mapa": -20.14,
+      "saldo": -39.3,
+      "linhas_base": 2,
+      "linhas_mapa": 8
     },
     {
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
@@ -763,11 +763,11 @@
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
       "executado_base": 377.8,
-      "executado_mapa": 103.03,
-      "diferenca_base_mapa": 274.77,
+      "executado_mapa": 397.94,
+      "diferenca_base_mapa": -20.14,
       "saldo": -39.3,
       "linhas_base": 2,
-      "linhas_mapa": 2
+      "linhas_mapa": 8
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -800,8 +800,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 93.5,
-      "modificado": "2026-06-17 10:22:33"
+      "tamanho_kb": 94.7,
+      "modificado": "2026-06-23 07:11:18"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
