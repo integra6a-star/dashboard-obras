@@ -957,22 +957,6 @@ function totalRealizadoCurva(){
   if(!Array.isArray(CURVA_MENSAL) || !CURVA_MENSAL.length) return null;
   return CURVA_MENSAL.reduce((s, item)=> s + Number(item?.produzido || 0), 0);
 }
-function realizadoMesAtual(rows){
-  if(!fObra.value && Array.isArray(CURVA_MENSAL) && CURVA_MENSAL.length){
-    const atual = UPDATED_MONTH || new Date().toISOString().slice(0,7);
-    const [anoAtual, mesAtual] = atual.split('-').map(Number);
-    const ordemMes = {Jan:1, Fev:2, Mar:3, Abr:4, Mai:5, Jun:6, Jul:7, Ago:8, Set:9, Out:10, Nov:11, Dez:12};
-    const item = CURVA_MENSAL.find(i => Number(i?.ano || 0) === anoAtual && ordemMes[String(i?.mes || '').trim()] === mesAtual);
-    return item ? Number(item.produzido || 0) : 0;
-  }
-
-  const mensal = calcMensal(rows);
-  const meses = Array.isArray(mensal?.meses) ? mensal.meses : [];
-  const values = Array.isArray(mensal?.values) ? mensal.values : [];
-  const atual = UPDATED_MONTH || new Date().toISOString().slice(0,7);
-  const idx = meses.indexOf(atual);
-  return idx >= 0 ? Number(values[idx] || 0) : Number(values[values.length - 1] || 0);
-}
 function renderChart(rows){
   const curva = getCurvaMensal(rows);
   const planAcum = acumular(curva.planMensal);
@@ -1549,7 +1533,7 @@ function updateUI(){
   document.getElementById('curvePlan').textContent = fmtInt(plan);
   document.getElementById('curveExec').textContent = fmtInt(exec);
   const projAtual = Math.round(mediaDiariaMensal * 30);
-  const diffProjAtual = realizadoMesAtual(rows) - projAtual;
+  const diffProjAtual = exec - projAtual;
   const curveGap = document.getElementById('curveGap');
   document.getElementById('curveProj').textContent = fmtInt(projAtual);
   curveGap.textContent = diffProjAtual >= 0
