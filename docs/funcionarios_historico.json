@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-23T10:01:46.705510+00:00",
+  "atualizado_em": "2026-06-24T11:53:30.828771+00:00",
   "series": [
     {
       "mes": "2026-05",
@@ -20,20 +20,16 @@
     },
     {
       "mes": "2026-06",
-      "atualizado_em": "2026-06-23T07:01:46.691728-03:00",
-      "ativos": 324,
-      "afastados": 4,
-      "total_salarios": 1199375.7,
-      "total_vr": 246810.0,
-      "total_combustivel": 34600.0,
-      "total_frota": 608000.0,
-      "total_frota_leve": 0.0,
-      "total_caminhoes": 0.0,
-      "total_maquinas": 0.0,
-      "total_outros_ativos": 0.0,
-      "custo_mensal_total": 2054185.7,
-      "salario_clt": 947475.7,
-      "salario_pj": 251900.0
+      "atualizado_em": "2026-06-24T08:53:30.828771-03:00",
+      "ativos": 253,
+      "afastados": 7,
+      "total_salarios": 1015800.33,
+      "total_vr": 1015800.33,
+      "total_combustivel": 48800.0,
+      "total_frota": 902987.01,
+      "custo_mensal_total": 2934587.67,
+      "salario_clt": 777150.33,
+      "salario_pj": 238650.0
     }
   ]
 }

@@ -399,7 +399,10 @@ def main():
     print("✅ Excel lido de:", ARQ_EXCEL)
     print("✅ Aba detectada:", sh_values.title)
 
-    registros = read_rows(sh_values, sh_formulas)
+    registros_todos = read_rows(sh_values, sh_formulas)
+    registros = [r for r in registros_todos if norm_header(r.get("status", "")) != "inativo"]
+    removidos_inativos = len(registros_todos) - len(registros)
+    print(f"✅ Inativos removidos do JSON: {removidos_inativos}")
 
     mes = infer_mes_competencia()
 

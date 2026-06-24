@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-23 07:11:26",
+  "atualizado_em": "2026-06-24 10:25:31",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18734.64,
@@ -8,8 +8,8 @@
     "saldo_total": 20953.75
   },
   "pds": {
-    "total": 3017,
-    "ultima_data": "2026-06-23",
+    "total": 3037,
+    "ultima_data": "2026-06-24",
     "hoje": 20,
     "por_obra_ultima_data": [
       {
@@ -21,23 +21,23 @@
         "atividades": 3
       },
       {
-        "obra": "CT Lourdes",
-        "atividades": 2
-      },
-      {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "CT Bandeirantes",
+        "obra": "Vacal: CT Lourdes",
+        "atividades": 2
+      },
+      {
+        "obra": "CTs Bandeirantes",
         "atividades": 1
       },
       {
-        "obra": "CT Barão de Arariba",
+        "obra": "CTs Barão de Arariba",
         "atividades": 1
       },
       {
-        "obra": "CT Água Vermelha ME",
+        "obra": "CTs Água Vermelha ME",
         "atividades": 1
       },
       {
@@ -49,7 +49,7 @@
         "atividades": 1
       },
       {
-        "obra": "RCE Maria Dos Santos Machado",
+        "obra": "RCE Maria dos Santos Machado",
         "atividades": 1
       },
       {
@@ -57,7 +57,7 @@
         "atividades": 1
       },
       {
-        "obra": "Água Vermelha",
+        "obra": "Vacal: Água Vermelha",
         "atividades": 1
       }
     ]
@@ -795,25 +795,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 35.6,
-      "modificado": "2026-06-23 06:58:43"
+      "modificado": "2026-06-24 10:24:06"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 94.7,
-      "modificado": "2026-06-23 07:11:18"
+      "modificado": "2026-06-24 10:24:06"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 396.1,
-      "modificado": "2026-06-23 07:01:34"
+      "tamanho_kb": 399.5,
+      "modificado": "2026-06-24 08:52:19"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 523.5,
-      "modificado": "2026-06-23 07:01:43"
+      "tamanho_kb": 527.0,
+      "modificado": "2026-06-24 08:52:19"
     }
   ]
 }
