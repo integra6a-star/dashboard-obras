@@ -235,7 +235,7 @@
 
     <div class="cards">
       <div class="card big">
-        <div class="t">Custo Mensal Total (R$)</div>
+        <div class="t">Custo Total (R$)</div>
         <div class="v" id="kCustoTotal">0</div>
         <div class="s" id="kCustoMedio">—</div>
       </div>
@@ -259,7 +259,6 @@
       <div class="card"><div class="t">Valor Mensal (R$)</div><div class="v" id="kValorMensal">0</div><div class="s">Consolidado da planilha</div></div>
       <div class="card"><div class="t">Custo Pessoal (R$)</div><div class="v" id="kCustoPessoal">0</div><div class="s">Sem inativos</div></div>
       <div class="card"><div class="t">Custo Frota (R$)</div><div class="v" id="kFrota">0</div><div class="s">Sem inativos</div></div>
-      <div class="card"><div class="t">Custo Total (R$)</div><div class="v" id="kCustoTotalCard">0</div><div class="s">Sem inativos</div></div>
     </div>
 
     <div class="charts">
@@ -1052,7 +1051,6 @@ function renderKPIs(){
   kCustoPessoal.textContent = fmt(custoPessoalView);
   kFrota.textContent = fmt(frotaView);
   kCustoTotal.textContent = fmt(custoTotal);
-  kCustoTotalCard.textContent = fmt(custoTotal);
 
   const baseMedia = (ativos + afastados) > 0 ? (ativos + afastados) : (tf.length>0 ? tf.length : 0);
   const medio = baseMedia>0 ? (custoTotal/baseMedia) : 0;
