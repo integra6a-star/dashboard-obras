@@ -669,8 +669,10 @@ async function loadFuncionarios(){
     hideWarn(); hideInfo();
 
     const json = await fetchJsonAny([
-      "./docs/funcionarios.json",
-      "./funcionarios.json"
+      "/dashboard-obras/funcionarios.json",
+      "./funcionarios.json",
+      "../funcionarios.json",
+      "./docs/funcionarios.json"
     ]);
 
     const atualizado = json.atualizado_em || json.gerado_em || json.geradoEm || "-";
