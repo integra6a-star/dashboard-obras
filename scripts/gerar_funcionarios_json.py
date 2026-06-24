@@ -255,6 +255,11 @@ def read_rows(values_sh, formulas_sh):
     c_reg    = col(hmap, "Regime", "Regime de Contratacao", "Regime de Contratação", "Vínculo", "Vinculo", "Regime_Contratacao", "regime_contratacao")
     c_sal    = col(hmap, "Custo TOTAL MO", "Custo Total MO", "Custo Mao de Obra", "Custo Mão de Obra", "Salario", "Salário")
     c_sal_base = col(hmap, "Salario", "Salário")
+    c_he     = col(hmap, "Custo HE c/ DSR", "Custo HE c DSR")
+    c_benef  = col(hmap, "Custo Benefício", "Custo Beneficio", "Custo Benefícios", "Custo Beneficios")
+    c_enc    = col(hmap, "Custo Encargo", "Custo Encargos")
+    c_prov   = col(hmap, "Provisões - 13º + Férias", "Provisoes 13 Ferias", "Provisões", "Provisoes")
+    c_desc   = col(hmap, "Desconto", "Descontos")
     c_custo_pessoal = col(hmap, "custo_pessoal", "Custo Pessoal")
     c_custo_total = col(hmap, "custo_total", "Custo Total")
     c_vr     = col(hmap, "ValeRefeicao", "Vale Refeicao", "Vale Refeição", "VR", "vale_refeic")
@@ -344,6 +349,11 @@ def read_rows(values_sh, formulas_sh):
 
         salario = get_money(c_sal)
         salario_base = get_money(c_sal_base)
+        custo_he_dsr = get_money(c_he)
+        custo_beneficio = get_money(c_benef)
+        custo_encargo = get_money(c_enc)
+        provisoes = get_money(c_prov)
+        desconto = get_money(c_desc)
         vr = get_money(c_vr)
         combustivel = get_money(c_comb)
 
@@ -353,14 +363,9 @@ def read_rows(values_sh, formulas_sh):
         valor_mensal = get_money(c_valm) if c_valm else 0.0
         valor_veiculo = get_money(c_valv) if c_valv else 0.0
 
-        if c_cfrota:
-            frota = custo_frota
-        elif (c_valm and valor_mensal > 0):
-            frota = valor_mensal
-        else:
-            frota = valor_veiculo
+        frota = (valor_mensal + valor_veiculo) or custo_frota
 
-        custo_total = custo_total_planilha or (custo_pessoal + frota) or (salario + vr + combustivel + frota)
+        custo_total = (custo_pessoal + frota) or custo_total_planilha or (salario + vr + combustivel + frota)
 
         registros.append({
             "setor": setor,
@@ -378,11 +383,17 @@ def read_rows(values_sh, formulas_sh):
             "tipo": tipo,
             "salario": round(salario, 2),
             "salario_base": round(salario_base, 2),
+            "custo_he_dsr": round(custo_he_dsr, 2),
+            "custo_beneficio": round(custo_beneficio, 2),
+            "custo_encargo": round(custo_encargo, 2),
+            "provisoes": round(provisoes, 2),
+            "desconto": round(desconto, 2),
             "custo_mao_obra": round(salario, 2),
             "custo_pessoal": round(custo_pessoal or (salario + vr + combustivel), 2),
             "vr": round(vr, 2),
             "frota": round(frota, 2),
             "combustivel": round(combustivel, 2),
+            "valor_veiculo": round(valor_veiculo, 2),
             "valor_mensal": round(valor_mensal, 2),
             "custo_frota": round(frota, 2),
             "categoria_frota": categoria_frota,
@@ -426,6 +437,43 @@ def read_planilha_totais(values_sh):
     }
 
 
+def read_totais_sem_inativos(values_sh):
+    header_row = detect_header_row(values_sh)
+    hmap = build_header_map(values_sh, header_row)
+    c_nome = col(hmap, "Nome")
+    c_stat = col(hmap, "Status", "Situação")
+
+    campos = {
+        "total_salarios": col(hmap, "Custo TOTAL MO", "Custo Total MO"),
+        "salario_base": col(hmap, "Salario", "Salário"),
+        "total_he_dsr": col(hmap, "Custo HE c/ DSR", "Custo HE c DSR"),
+        "total_beneficio": col(hmap, "Custo Benefício", "Custo Beneficio", "Custo Benefícios", "Custo Beneficios"),
+        "total_encargo": col(hmap, "Custo Encargo", "Custo Encargos"),
+        "total_provisoes": col(hmap, "Provisões - 13º + Férias", "Provisoes 13 Ferias", "Provisões", "Provisoes"),
+        "total_desconto": col(hmap, "Desconto", "Descontos"),
+        "total_vr": col(hmap, "vale_refeicao", "Vale Refeicao", "Vale Refeição"),
+        "total_valor_veiculo": col(hmap, "valor_veiculo", "Valor Veiculo", "Valor Veículo"),
+        "total_combustivel": col(hmap, "combustivel", "Combustivel", "Combustível"),
+        "custo_pessoal": col(hmap, "custo_pessoal", "Custo Pessoal"),
+    }
+    totais = {k: 0.0 for k in campos}
+
+    for r in range(header_row + 1, values_sh.max_row + 1):
+        if c_nome and not to_text(values_sh.cell(row=r, column=c_nome).value):
+            continue
+        status = normalize_status(to_text(values_sh.cell(row=r, column=c_stat).value if c_stat else ""))
+        if norm_header(status) == "inativo":
+            continue
+        if norm_header(status) not in ("ativo", "afastado"):
+            continue
+
+        for k, c in campos.items():
+            if c:
+                totais[k] += to_float(values_sh.cell(row=r, column=c).value)
+
+    return {k: round(v, 2) for k, v in totais.items()}
+
+
 def main():
     if ARQ_EXCEL is None:
         raise FileNotFoundError(
@@ -444,6 +492,7 @@ def main():
 
     registros_todos = read_rows(sh_values, sh_formulas)
     totais_planilha = read_planilha_totais(sh_values)
+    totais_sem_inativos = read_totais_sem_inativos(sh_values)
     registros = [r for r in registros_todos if norm_header(r.get("status", "")) != "inativo"]
     removidos_inativos = len(registros_todos) - len(registros)
     print(f"✅ Inativos removidos do JSON: {removidos_inativos}")
@@ -457,17 +506,27 @@ def main():
     ativos = sum(1 for r in registros if norm_header(r.get("status")) == "ativo")
     afastados = sum(1 for r in registros if norm_header(r.get("status")) == "afastado")
 
-    total_salarios_calc = round(sum(r["salario"] for r in registros if conta_custo(r)), 2)
-    total_vr_calc = round(sum(r["vr"] for r in registros if conta_custo(r)), 2)
-    total_combustivel_calc = round(sum(r["combustivel"] for r in registros if conta_custo(r)), 2)
-    total_frota_calc = round(sum(r["frota"] for r in registros if conta_custo(r)), 2)
-    custo_mensal_total_calc = round(sum(r["custo_total"] for r in registros if conta_custo(r)), 2)
+    total_salarios_calc = totais_sem_inativos["total_salarios"]
+    salario_base_calc = totais_sem_inativos["salario_base"]
+    total_he_dsr_calc = totais_sem_inativos["total_he_dsr"]
+    total_beneficio_calc = totais_sem_inativos["total_beneficio"]
+    total_encargo_calc = totais_sem_inativos["total_encargo"]
+    total_provisoes_calc = totais_sem_inativos["total_provisoes"]
+    total_desconto_calc = totais_sem_inativos["total_desconto"]
+    total_vr_calc = totais_sem_inativos["total_vr"]
+    total_combustivel_calc = totais_sem_inativos["total_combustivel"]
+    total_valor_veiculo_calc = totais_sem_inativos["total_valor_veiculo"]
+    total_valor_mensal_calc = round(sum(r["valor_mensal"] for r in registros if conta_custo(r)), 2)
+    custo_pessoal_calc = totais_sem_inativos["custo_pessoal"]
+    total_valor_mensal = totais_planilha["total_valor_mensal"] or total_valor_mensal_calc
+    total_frota_calc = round(total_valor_veiculo_calc + total_valor_mensal, 2)
+    custo_mensal_total_calc = round(custo_pessoal_calc + total_frota_calc, 2)
 
-    total_salarios = totais_planilha["total_salarios"] or total_salarios_calc
-    total_vr = totais_planilha["total_vr"] or total_vr_calc
-    total_combustivel = totais_planilha["total_combustivel"] or total_combustivel_calc
-    total_frota = totais_planilha["total_frota"] or total_frota_calc
-    custo_mensal_total = totais_planilha["custo_mensal_total"] or custo_mensal_total_calc
+    total_salarios = total_salarios_calc
+    total_vr = total_vr_calc
+    total_combustivel = total_combustivel_calc
+    total_frota = total_frota_calc
+    custo_mensal_total = custo_mensal_total_calc
 
     salario_clt = round(sum(r["salario"] for r in registros if conta_custo(r) and r.get("tipo") == "CLT"), 2)
     salario_pj = round(sum(r["salario"] for r in registros if conta_custo(r) and r.get("tipo") == "PJ"), 2)
@@ -504,11 +563,16 @@ def main():
             "total_combustivel": total_combustivel,
             "total_frota": total_frota,
             "custo_mensal_total": custo_mensal_total,
-            "custo_pessoal": totais_planilha["custo_pessoal"],
-            "salario_base": totais_planilha["salario_base"],
-            "total_he_dsr": totais_planilha["total_he_dsr"],
-            "total_valor_veiculo": totais_planilha["total_valor_veiculo"],
-            "total_valor_mensal": totais_planilha["total_valor_mensal"],
+            "custo_pessoal": custo_pessoal_calc,
+            "salario_base": salario_base_calc,
+            "total_he_dsr": total_he_dsr_calc,
+            "total_beneficio": total_beneficio_calc,
+            "total_encargo": total_encargo_calc,
+            "total_provisoes": total_provisoes_calc,
+            "total_desconto": total_desconto_calc,
+            "total_valor_veiculo": total_valor_veiculo_calc,
+            "total_valor_mensal": total_valor_mensal,
+            "totais_linha_1_planilha": totais_planilha,
             "salario_clt": salario_clt,
             "salario_pj": salario_pj,
             "qtd_registros": len(registros),
@@ -545,7 +609,7 @@ def main():
         "total_combustivel": total_combustivel,
         "total_frota": total_frota,
         "custo_mensal_total": custo_mensal_total,
-        "custo_pessoal": totais_planilha["custo_pessoal"],
+        "custo_pessoal": custo_pessoal_calc,
         "salario_clt": salario_clt,
         "salario_pj": salario_pj,
     }
