@@ -246,16 +246,20 @@
       <div class="card" id="cardHomens"><div class="t">Homens</div><div class="v" id="kHomens">0</div><div class="s" id="kHomensInfo">—</div></div>
       <div class="card" id="cardMulheres"><div class="t">Mulheres</div><div class="v" id="kMulheres">0</div><div class="s" id="kMulheresInfo">—</div></div>
 
-      <div class="card"><div class="t">Total Salários (R$)</div><div class="v" id="kSal">0</div><div class="s">Somente Ativos + Afastados</div></div>
-      <div class="card"><div class="t">Salário CLT (R$)</div><div class="v" id="kSalCLT">0</div><div class="s">Somente Ativos/Afastados • CLT</div></div>
-      <div class="card"><div class="t">Salário PJ (R$)</div><div class="v" id="kSalPJ">0</div><div class="s">Somente Ativos/Afastados • PJ</div></div>
-      <div class="card"><div class="t">Total VR (R$)</div><div class="v" id="kVR">0</div><div class="s">Somente Ativos + Afastados</div></div>
-
-      <div class="card"><div class="t">Combustível (R$)</div><div class="v" id="kComb">0</div><div class="s">Somente Ativos + Afastados</div></div>
-      <div class="card"><div class="t">Veículos (R$)</div><div class="v" id="kFrota">0</div><div class="s">Somente Ativos + Afastados</div></div>
-      <div class="card"><div class="t">Frota Leve (R$)</div><div class="v" id="kFrotaLeve">0</div><div class="s">Somente Ativos + Afastados</div></div>
-      <div class="card"><div class="t">Caminhões (R$)</div><div class="v" id="kFrotaCaminhoes">0</div><div class="s">Somente Ativos + Afastados</div></div>
-      <div class="card"><div class="t">Máquinas (Retro/Munck) (R$)</div><div class="v" id="kFrotaMaquinas">0</div><div class="s">Somente Ativos + Afastados</div></div>
+      <div class="card"><div class="t">Custo TOTAL MO (R$)</div><div class="v" id="kCustoMO">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Salário (R$)</div><div class="v" id="kSalarioBase">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Custo HE c/ DSR (R$)</div><div class="v" id="kHE">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Custo Benefícios (R$)</div><div class="v" id="kBeneficios">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Custo Encargos (R$)</div><div class="v" id="kEncargos">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Provisões - 13º + Férias (R$)</div><div class="v" id="kProvisoes">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Descontos (R$)</div><div class="v" id="kDescontos">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Vale Refeição (R$)</div><div class="v" id="kVR">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Valor Veículo (R$)</div><div class="v" id="kValorVeiculo">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Combustível (R$)</div><div class="v" id="kComb">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Valor Mensal (R$)</div><div class="v" id="kValorMensal">0</div><div class="s">Consolidado da planilha</div></div>
+      <div class="card"><div class="t">Custo Pessoal (R$)</div><div class="v" id="kCustoPessoal">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Custo Frota (R$)</div><div class="v" id="kFrota">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Custo Total (R$)</div><div class="v" id="kCustoTotalCard">0</div><div class="s">Sem inativos</div></div>
     </div>
 
     <div class="charts">
@@ -494,7 +498,13 @@ function mapRow(r){
     "tipo","Tipo"
   ]));
 
-  const Salario = toNum(pick(r, ["salario","Salario"]));
+  const CustoMO = toNum(pick(r, ["custo_mao_obra","CustoMaoObra","Custo TOTAL MO","salario","Salario"]));
+  const Salario = toNum(pick(r, ["salario_base","SalarioBase","salario","Salario"]));
+  const HE = toNum(pick(r, ["custo_he_dsr","CustoHeDsr","Custo HE c/ DSR"]));
+  const Beneficios = toNum(pick(r, ["custo_beneficio","CustoBeneficio","Custo Benefícios","Custo Beneficios"]));
+  const Encargos = toNum(pick(r, ["custo_encargo","CustoEncargo","Custo Encargos"]));
+  const Provisoes = toNum(pick(r, ["provisoes","Provisoes","Provisões - 13º + Férias"]));
+  const Descontos = toNum(pick(r, ["desconto","Desconto","descontos","Descontos"]));
   const VR = toNum(pick(r, [
     "vr","VR",
     "vale_refeicao","ValeRefeicao","Vale Refeição",
@@ -502,19 +512,22 @@ function mapRow(r){
     "vale_refec","vale_refe"
   ]));
   const Comb = toNum(pick(r, ["combustivel","Combustivel","Combustível","Comb"]));
+  const ValorVeiculo = toNum(pick(r, ["valor_veiculo","ValorVeiculo","Valor Veículo","valor veiculo","valor veículo"]));
+  const ValorMensal = toNum(pick(r, ["valor_mensal","ValorMensal","Valor Mensal"]));
   const Frota = toNum(pick(r, [
     "custo_frota","CustoFrota","custo frota",
     "frota","Frota",
     "valor_veiculo","ValorVeiculo","Valor Veículo","valor veiculo","valor veículo"
   ]));
 
-  const OutrosAtivos = toNum(pick(r, ["outros_ativos","OutrosAtivos","valor_mensal","ValorMensal"]));
+  const CustoPessoal = toNum(pick(r, ["custo_pessoal","CustoPessoal","custo pessoal"]));
+  const OutrosAtivos = ValorMensal;
   const CategoriaFrota = normCat(pick(r, ["categoria_frota","CategoriaFrota","Categoria Frota"]));
   const TipoEquipamento = norm(pick(r, ["tipo_equipamento","TipoEquipamento","Tipo Equipamento"]));
   const SexoN = normSexo(pick(r, ["sexo","Sexo","genero","Genero","Gênero"]));
 
   const custoTotalRaw = pick(r, ["custo_total","CustoTotal","Custo Total"], null);
-  const CustoTotal = (custoTotalRaw!=null && custoTotalRaw!=="") ? toNum(custoTotalRaw) : (Salario + VR + Comb + Frota);
+  const CustoTotal = (custoTotalRaw!=null && custoTotalRaw!=="") ? toNum(custoTotalRaw) : (CustoPessoal + Frota);
 
   return {
     Setor, Equipe, Responsavel, Matricula, Nome, Funcao,
@@ -522,7 +535,9 @@ function mapRow(r){
     Regime: norm(pick(r, ["regime","Regime","regime_contratacao","Regime_Contratacao","tipo","Tipo"])),
     StatusN, RegimeN, SexoN,
     Custo: norm(pick(r, ["custo","Custo"])),
-    Salario, VR, Comb, Frota, OutrosAtivos, CategoriaFrota, TipoEquipamento,
+    CustoMO, Salario, HE, Beneficios, Encargos, Provisoes, Descontos,
+    VR, Comb, ValorVeiculo, ValorMensal, Frota, CustoPessoal, OutrosAtivos,
+    CategoriaFrota, TipoEquipamento,
     CustoTotal,
     __isPJ: RegimeN==="PJ",
     __isCLT: RegimeN==="CLT"
@@ -963,9 +978,18 @@ function renderKPIs(){
   const ativos = tf.filter(x=> x.StatusN==="Ativo").length;
   const afastados = tf.filter(x=> x.StatusN==="Afastado").length;
 
+  const custoMO = tf.reduce((s,r)=>s + (r.CustoMO||0), 0);
   const sal = tf.reduce((s,r)=>s + (r.Salario||0), 0);
+  const he = tf.reduce((s,r)=>s + (r.HE||0), 0);
+  const beneficios = tf.reduce((s,r)=>s + (r.Beneficios||0), 0);
+  const encargos = tf.reduce((s,r)=>s + (r.Encargos||0), 0);
+  const provisoes = tf.reduce((s,r)=>s + (r.Provisoes||0), 0);
+  const descontos = tf.reduce((s,r)=>s + (r.Descontos||0), 0);
   const vr = tf.reduce((s,r)=>s + (r.VR||0), 0);
+  const valorVeiculo = tf.reduce((s,r)=>s + (r.ValorVeiculo||0), 0);
   const comb = tf.reduce((s,r)=>s + (r.Comb||0), 0);
+  const valorMensal = tf.reduce((s,r)=>s + (r.ValorMensal||0), 0);
+  const custoPessoal = tf.reduce((s,r)=>s + (r.CustoPessoal||0), 0);
   const frota = tf.reduce((s,r)=>s + (r.Frota||0), 0);
 
   const frotaLeve = tf.filter(x => (x.CategoriaFrota||"") === "Leve").reduce((s,r)=>s + (r.Frota||0), 0);
@@ -973,11 +997,20 @@ function renderKPIs(){
   const frotaMaquinas = tf.filter(x => (x.CategoriaFrota||"") === "Máquina").reduce((s,r)=>s + (r.Frota||0), 0);
 
   const usarResumo = SUMMARY && !hasActiveFilters();
-  const salView = usarResumo ? toNum(SUMMARY.total_salarios) : sal;
+  const custoMOView = usarResumo ? toNum(SUMMARY.total_salarios) : custoMO;
+  const salView = usarResumo ? toNum(SUMMARY.salario_base) : sal;
+  const heView = usarResumo ? toNum(SUMMARY.total_he_dsr) : he;
+  const beneficiosView = usarResumo ? toNum(SUMMARY.total_beneficio) : beneficios;
+  const encargosView = usarResumo ? toNum(SUMMARY.total_encargo) : encargos;
+  const provisoesView = usarResumo ? toNum(SUMMARY.total_provisoes) : provisoes;
+  const descontosView = usarResumo ? toNum(SUMMARY.total_desconto) : descontos;
   const vrView = usarResumo ? toNum(SUMMARY.total_vr) : vr;
+  const valorVeiculoView = usarResumo ? toNum(SUMMARY.total_valor_veiculo) : valorVeiculo;
   const combView = usarResumo ? toNum(SUMMARY.total_combustivel) : comb;
+  const valorMensalView = usarResumo ? toNum(SUMMARY.total_valor_mensal) : valorMensal;
+  const custoPessoalView = usarResumo ? toNum(SUMMARY.custo_pessoal) : custoPessoal;
   const frotaView = usarResumo ? toNum(SUMMARY.total_frota) : frota;
-  const custoTotal = usarResumo ? toNum(SUMMARY.custo_mensal_total) : (sal + vr + comb + frota);
+  const custoTotal = usarResumo ? toNum(SUMMARY.custo_mensal_total) : (custoPessoal + frota);
   const salCLT = tf.filter(x=>x.RegimeN==="CLT").reduce((s,r)=>s + (r.Salario||0), 0);
   const salPJ  = tf.filter(x=>x.RegimeN==="PJ").reduce((s,r)=>s + (r.Salario||0), 0);
 
@@ -1003,21 +1036,25 @@ function renderKPIs(){
     kHomensInfo.textContent = `${pH.toFixed(1).replace(".",",")}% do efetivo`;
   }
 
-  kSal.textContent = fmt(salView);
+  kCustoMO.textContent = fmt(custoMOView);
+  kSalarioBase.textContent = fmt(salView);
+  kHE.textContent = fmt(heView);
+  kBeneficios.textContent = fmt(beneficiosView);
+  kEncargos.textContent = fmt(encargosView);
+  kProvisoes.textContent = fmt(provisoesView);
+  kDescontos.textContent = fmt(descontosView);
   kVR.textContent = fmt(vrView);
+  kValorVeiculo.textContent = fmt(valorVeiculoView);
   kComb.textContent = fmt(combView);
+  kValorMensal.textContent = fmt(valorMensalView);
+  kCustoPessoal.textContent = fmt(custoPessoalView);
   kFrota.textContent = fmt(frotaView);
-  kFrotaLeve.textContent = fmt(frotaLeve);
-  kFrotaCaminhoes.textContent = fmt(frotaCaminhoes);
-  kFrotaMaquinas.textContent = fmt(frotaMaquinas);
   kCustoTotal.textContent = fmt(custoTotal);
+  kCustoTotalCard.textContent = fmt(custoTotal);
 
   const baseMedia = (ativos + afastados) > 0 ? (ativos + afastados) : (tf.length>0 ? tf.length : 0);
   const medio = baseMedia>0 ? (custoTotal/baseMedia) : 0;
   kCustoMedio.textContent = `Custo médio (base): ${money(medio)}`;
-
-  kSalCLT.textContent = fmt(salCLT);
-  kSalPJ.textContent = fmt(salPJ);
 
   kSubQtd.textContent =
     `Equipes: ${new Set(tf.map(x=>x.Equipe).filter(v=>!isBlankVal(v))).size} • Resp.: ${new Set(tf.map(x=>x.Responsavel).filter(v=>!isBlankVal(v))).size}`;
