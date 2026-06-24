@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-24T17:21:50.665266+00:00",
+  "atualizado_em": "2026-06-24T18:15:03.072688+00:00",
   "series": [
     {
       "mes": "2026-05",
@@ -20,15 +20,16 @@
     },
     {
       "mes": "2026-06",
-      "atualizado_em": "2026-06-24T14:21:50.665266-03:00",
+      "atualizado_em": "2026-06-24T15:15:03.072688-03:00",
       "ativos": 253,
       "afastados": 7,
-      "total_salarios": 1831047.34,
+      "total_salarios": 2659254.56,
       "total_vr": 210012.0,
       "total_combustivel": 48800.0,
-      "total_frota": 902987.01,
-      "custo_mensal_total": 2944046.35,
-      "salario_clt": 1535447.34,
+      "total_frota": 1179487.01,
+      "custo_mensal_total": 4097553.57,
+      "custo_pessoal": 2918066.56,
+      "salario_clt": 1489611.86,
       "salario_pj": 295600.0
     }
   ]

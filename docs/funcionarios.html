@@ -353,6 +353,7 @@
 
 let RAWF = [];
 let VIEW = [];
+let SUMMARY = null;
 let CHARTS = {};
 let groupOpen = new Map();
 let allCollapsed = false;
@@ -421,6 +422,18 @@ function normStatus(st){
 }
 function isStatusFinanceiro(stNorm){
   return stNorm === "Ativo" || stNorm === "Afastado";
+}
+function hasActiveFilters(){
+  return !!(
+    norm(fResponsavel?.value) ||
+    norm(fEquipe?.value) ||
+    norm(fSetor?.value) ||
+    norm(fStatus?.value) ||
+    norm(fRegime?.value) ||
+    norm(fCusto?.value) ||
+    norm(fFuncao?.value) ||
+    norm(fBusca?.value)
+  );
 }
 function pick(obj, keys, fallback=""){
   for(const k of keys){
@@ -647,6 +660,7 @@ async function loadFuncionarios(){
 
     const atualizado = json.atualizado_em || json.gerado_em || json.geradoEm || "-";
     badgeAtualizado.textContent="Atualizado: "+atualizado;
+    SUMMARY = json.resumo || null;
 
     const registros = (json.funcionarios || json.registros || []);
     RAWF = registros.map(mapRow).filter(r=> (r.Nome || r.Matricula));
@@ -958,7 +972,12 @@ function renderKPIs(){
   const frotaCaminhoes = tf.filter(x => (x.CategoriaFrota||"") === "Caminhão").reduce((s,r)=>s + (r.Frota||0), 0);
   const frotaMaquinas = tf.filter(x => (x.CategoriaFrota||"") === "Máquina").reduce((s,r)=>s + (r.Frota||0), 0);
 
-  const custoTotal = sal + vr + comb + frota;
+  const usarResumo = SUMMARY && !hasActiveFilters();
+  const salView = usarResumo ? toNum(SUMMARY.total_salarios) : sal;
+  const vrView = usarResumo ? toNum(SUMMARY.total_vr) : vr;
+  const combView = usarResumo ? toNum(SUMMARY.total_combustivel) : comb;
+  const frotaView = usarResumo ? toNum(SUMMARY.total_frota) : frota;
+  const custoTotal = usarResumo ? toNum(SUMMARY.custo_mensal_total) : (sal + vr + comb + frota);
   const salCLT = tf.filter(x=>x.RegimeN==="CLT").reduce((s,r)=>s + (r.Salario||0), 0);
   const salPJ  = tf.filter(x=>x.RegimeN==="PJ").reduce((s,r)=>s + (r.Salario||0), 0);
 
@@ -984,10 +1003,10 @@ function renderKPIs(){
     kHomensInfo.textContent = `${pH.toFixed(1).replace(".",",")}% do efetivo`;
   }
 
-  kSal.textContent = fmt(sal);
-  kVR.textContent = fmt(vr);
-  kComb.textContent = fmt(comb);
-  kFrota.textContent = fmt(frota);
+  kSal.textContent = fmt(salView);
+  kVR.textContent = fmt(vrView);
+  kComb.textContent = fmt(combView);
+  kFrota.textContent = fmt(frotaView);
   kFrotaLeve.textContent = fmt(frotaLeve);
   kFrotaCaminhoes.textContent = fmt(frotaCaminhoes);
   kFrotaMaquinas.textContent = fmt(frotaMaquinas);
