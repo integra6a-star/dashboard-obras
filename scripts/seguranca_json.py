@@ -17,6 +17,9 @@ NAMESPACE = {
 }
 
 SOURCE_CANDIDATES = [
+    ROOT / "Planilha de controle de segurança do trabalho.xlsx",
+    ROOT / "docs" / "Planilha de controle de segurança do trabalho.xlsx",
+    Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho.xlsx"),
     ROOT / "Planilha de controle de seguranca do trabalho.xlsx",
     ROOT / "Planilha de controle de segurança do trabalho (2).xlsx",
     Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho (2).xlsx"),

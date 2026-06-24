@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-06-24 10:36:16",
+  "atualizado_em": "2026-06-24 14:22:37",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 18734.64,
+    "base_executado": 18845.14,
     "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 760.66,
-    "saldo_total": 20953.75
+    "diferenca_base_mapa": 871.16,
+    "saldo_total": 20843.25
   },
   "pds": {
     "total": 3037,
@@ -63,17 +63,17 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 760.66 m",
-    "12 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre Base Dash e mapa: 871.16 m",
+    "13 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 1316.7,
+      "executado_base": 1403.2,
       "executado_mapa": 837.16,
-      "diferenca_base_mapa": 479.54,
-      "saldo": 482.5,
+      "diferenca_base_mapa": 566.04,
+      "saldo": 396.0,
       "linhas_base": 2,
       "linhas_mapa": 32
     },
@@ -134,6 +134,16 @@
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 38.3,
       "saldo": 16.7,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMUNIDADE RAUZITO",
+      "planejado": 1566.27,
+      "executado_base": 24.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 24.0,
+      "saldo": 1542.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -222,10 +232,10 @@
     {
       "obra": "RCE COMUNIDADE RAUZITO",
       "planejado": 1566.27,
-      "executado_base": 0.0,
+      "executado_base": 24.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 1566.27,
+      "diferenca_base_mapa": 24.0,
+      "saldo": 1542.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -330,16 +340,6 @@
       "linhas_mapa": 26
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1316.7,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 479.54,
-      "saldo": 482.5,
-      "linhas_base": 2,
-      "linhas_mapa": 32
-    },
-    {
       "obra": "CTS Água Vermelha - ME",
       "planejado": 1769.02,
       "executado_base": 1305.04,
@@ -378,6 +378,16 @@
       "saldo": 426.31,
       "linhas_base": 6,
       "linhas_mapa": 30
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1403.2,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 566.04,
+      "saldo": 396.0,
+      "linhas_base": 2,
+      "linhas_mapa": 32
     },
     {
       "obra": "RCE TERRA PROMETIDA",
@@ -794,8 +804,8 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 35.6,
-      "modificado": "2026-06-24 10:24:06"
+      "tamanho_kb": 35.7,
+      "modificado": "2026-06-24 11:31:17"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -807,13 +817,13 @@
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 399.5,
-      "modificado": "2026-06-24 10:35:46"
+      "modificado": "2026-06-24 14:21:53"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 527.0,
-      "modificado": "2026-06-24 10:35:46"
+      "modificado": "2026-06-24 14:21:53"
     }
   ]
 }

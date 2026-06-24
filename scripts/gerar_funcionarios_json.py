@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 import re
+import unicodedata
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -91,6 +92,15 @@ def norm_header(s: str) -> str:
 
     s = re.sub(r"\s+", " ", s)
     return s
+
+
+def norm_header(s: str) -> str:
+    if s is None:
+        return ""
+    s = unicodedata.normalize("NFKD", str(s).strip().lower())
+    s = "".join(ch for ch in s if not unicodedata.combining(ch))
+    s = re.sub(r"[^a-z0-9]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def to_float(v):
@@ -243,7 +253,10 @@ def read_rows(values_sh, formulas_sh):
     c_stat   = col(hmap, "Status", "Situação")
     c_hor    = col(hmap, "Horario", "Horário")
     c_reg    = col(hmap, "Regime", "Regime de Contratacao", "Regime de Contratação", "Vínculo", "Vinculo", "Regime_Contratacao", "regime_contratacao")
-    c_sal    = col(hmap, "Salario", "Salário")
+    c_sal    = col(hmap, "Custo TOTAL MO", "Custo Total MO", "Custo Mao de Obra", "Custo Mão de Obra", "Salario", "Salário")
+    c_sal_base = col(hmap, "Salario", "Salário")
+    c_custo_pessoal = col(hmap, "custo_pessoal", "Custo Pessoal")
+    c_custo_total = col(hmap, "custo_total", "Custo Total")
     c_vr     = col(hmap, "ValeRefeicao", "Vale Refeicao", "Vale Refeição", "VR", "vale_refeic")
     c_valv   = col(hmap, "ValorVeiculo", "Valor Veiculo", "Valor Veículo", "Frota")
     c_comb   = col(hmap, "Combustivel", "Combustível")
@@ -282,7 +295,7 @@ def read_rows(values_sh, formulas_sh):
     c_sexo   = idx_or_fallback(c_sexo,   "Sexo")
 
     print(f"✅ Cabeçalho na linha: {header_row}")
-    print(f"✅ Colunas (1-based): Responsável={c_resp} | Nome={c_nome} | Sexo={c_sexo} | Salário={c_sal} | VR={c_vr} | Frota={c_valv} | Combustível={c_comb}")
+    print(f"✅ Colunas (1-based): Responsável={c_resp} | Nome={c_nome} | Sexo={c_sexo} | Custo MO={c_sal} | VR={c_vr} | Combustível={c_comb} | Frota final={c_cfrota} | Custo total={c_custo_total}")
 
     formula_sem_cache = 0
     registros = []
@@ -330,10 +343,13 @@ def read_rows(values_sh, formulas_sh):
         tipo_equipamento = get_text(c_tipoeq)
 
         salario = get_money(c_sal)
+        salario_base = get_money(c_sal_base)
         vr = get_money(c_vr)
         combustivel = get_money(c_comb)
 
         custo_frota = get_money(c_cfrota) if c_cfrota else 0.0
+        custo_pessoal = get_money(c_custo_pessoal) if c_custo_pessoal else 0.0
+        custo_total_planilha = get_money(c_custo_total) if c_custo_total else 0.0
         valor_mensal = get_money(c_valm) if c_valm else 0.0
         valor_veiculo = get_money(c_valv) if c_valv else 0.0
 
@@ -344,7 +360,7 @@ def read_rows(values_sh, formulas_sh):
         else:
             frota = valor_veiculo
 
-        custo_total = salario + vr + frota
+        custo_total = custo_total_planilha or (custo_pessoal + frota) or (salario + vr + combustivel + frota)
 
         registros.append({
             "setor": setor,
@@ -361,6 +377,9 @@ def read_rows(values_sh, formulas_sh):
             "regime": regime,
             "tipo": tipo,
             "salario": round(salario, 2),
+            "salario_base": round(salario_base, 2),
+            "custo_mao_obra": round(salario, 2),
+            "custo_pessoal": round(custo_pessoal or (salario + vr + combustivel), 2),
             "vr": round(vr, 2),
             "frota": round(frota, 2),
             "combustivel": round(combustivel, 2),

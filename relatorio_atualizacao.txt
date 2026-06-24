@@ -1,28 +1,28 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-06-24 10:36:16
+Atualizado em: 2026-06-24 14:22:37
 
 Planejado Base Dash: 39,688.39 m
-Executado Base Dash: 18,734.64 m
+Executado Base Dash: 18,845.14 m
 Executado Mapa: 17,973.98 m
-Diferença Base - Mapa: 760.66 m
-Saldo total: 20,953.75 m
+Diferença Base - Mapa: 871.16 m
+Saldo total: 20,843.25 m
 
 PDS total: 3037 registros
 PDS hoje: 20 registros
 Última data PDS: 2026-06-24
 
 Alertas:
-- Diferença total entre Base Dash e mapa: 760.66 m
-- 12 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença total entre Base Dash e mapa: 871.16 m
+- 13 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
-- RCE São Lucas: Base 1,316.70 m | Mapa 837.16 m | Dif. 479.54 m
+- RCE São Lucas: Base 1,403.20 m | Mapa 837.16 m | Dif. 566.04 m
 - RCE Rua São João: Base 93.10 m | Mapa 0.00 m | Dif. 93.10 m
 - RCE ELVIRA DE ARAUJO: Base 160.86 m | Mapa 68.86 m | Dif. 92.00 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - RCE COMUNIDADE JD. UNIÃO: Base 42.00 m | Mapa 0.00 m | Dif. 42.00 m
 - RCE RUA AMÉRICO MACHADO - ELIS R: Base 38.30 m | Mapa 0.00 m | Dif. 38.30 m
+- RCE COMUNIDADE RAUZITO: Base 24.00 m | Mapa 0.00 m | Dif. 24.00 m
 - RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 377.80 m | Mapa 397.94 m | Dif. -20.14 m
 - RCE - RUA MARIA DOS SANTOS MACHADO: Base 11.50 m | Mapa 0.00 m | Dif. 11.50 m
-- CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
