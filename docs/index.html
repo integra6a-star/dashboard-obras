@@ -147,6 +147,9 @@
     .soft-kpi .label{font-size:16px;font-weight:800;color:#4c596c;line-height:1.25}
     .soft-kpi .value{font-size:26px;font-weight:900;margin-top:10px;color:#2f6fe4}
     .soft-kpi.green .value{color:#2f9d62}
+    .soft-kpi .percent-badge{display:inline-flex;align-items:baseline;gap:5px;margin-top:10px;padding:7px 9px;border-radius:10px;background:#dcfce7;color:#166534;font-weight:900;line-height:1;box-shadow:inset 0 0 0 1px rgba(22,101,52,.12)}
+    .soft-kpi .percent-badge .percent-value{font-size:18px}
+    .soft-kpi .percent-badge .percent-label{font-size:11px;font-weight:800}
     .prod-box{margin-top:12px;background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
     .prod-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px}
     .prod-head .title-small{font-size:16px;font-weight:800}
@@ -629,7 +632,7 @@
 <div class="soft-kpi green">
 <div class="label">Economias Realizadas (nº)</div>
 <div class="value" id="ecoRec">0</div>
-<div class="subtle" id="ecoRecPct">62,45% de recebidas</div>
+<div class="percent-badge" id="ecoRecPct"><span class="percent-value">62,45%</span><span class="percent-label">recebidas</span></div>
 </div>
 <div class="soft-kpi green">
 <div class="label">TL-00 Recebidas (nº)</div>
