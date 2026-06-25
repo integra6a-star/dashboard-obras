@@ -4,7 +4,7 @@ Gera os JSONs do dashboard antigo a partir das planilhas oficiais.
 
 Fontes principais:
 - docs/BASE_DASH_EXTENSAO_POWERBI.xlsx  -> registros do dashboard principal
-- docs/EAP_PRODUCAO.xlsx                 -> EAP x Produção e Economias (colunas F/G)
+- docs/EAP_PRODUCAO.xlsx                 -> EAP x Produção e Economias (colunas F/G/H)
 
 Saídas:
 - docs/dados.json
@@ -239,6 +239,7 @@ def ler_eap_producao():
         "produzido": find_col(headers_norm, ["Produzido"]),
         "economias_eap": find_col(headers_norm, ["Economias EAP", "Economias Previstas", "Economias prevista"]),
         "economias_recebidas": find_col(headers_norm, ["Economias Recebidas", "Economias recebida"]),
+        "tl0_recebidas": find_col(headers_norm, ["TL-0 Recebidas", "TL0 Recebidas", "TL 0 Recebidas"]),
     }
 
     mensal = []
@@ -258,6 +259,7 @@ def ler_eap_producao():
             "produzido": round(to_float(row[cols["produzido"]]), 6),
             "economias_eap": round(to_float(row[cols["economias_eap"]]) if cols["economias_eap"] is not None else 0, 6),
             "economias_recebidas": round(to_float(row[cols["economias_recebidas"]]) if cols["economias_recebidas"] is not None else 0, 6),
+            "tl0_recebidas": round(to_float(row[cols["tl0_recebidas"]]) if cols["tl0_recebidas"] is not None else 0, 6),
         }
         item["saldo_mes"] = round(item["produzido"] - item["eap"], 6)
         item["saldo_economias"] = round(item["economias_recebidas"] - item["economias_eap"], 6)
@@ -272,13 +274,14 @@ def ler_eap_producao():
     for item in mensal:
         ano = str(item["ano"])
         cards.setdefault(ano, {"eap": 0.0, "produzido": 0.0, "saldo": 0.0})
-        econ_cards.setdefault(ano, {"economias_eap": 0.0, "economias_recebidas": 0.0, "saldo": 0.0})
+        econ_cards.setdefault(ano, {"economias_eap": 0.0, "economias_recebidas": 0.0, "tl0_recebidas": 0.0, "saldo": 0.0})
         saldo_acum_por_ano[ano] = saldo_acum_por_ano.get(ano, 0.0) + item["saldo_mes"]
         item["saldo_acum"] = round(saldo_acum_por_ano[ano], 6)
         cards[ano]["eap"] += item["eap"]
         cards[ano]["produzido"] += item["produzido"]
         econ_cards[ano]["economias_eap"] += item["economias_eap"]
         econ_cards[ano]["economias_recebidas"] += item["economias_recebidas"]
+        econ_cards[ano]["tl0_recebidas"] += item["tl0_recebidas"]
 
     for ano, c in cards.items():
         c["eap"] = round(c["eap"], 6)
@@ -287,11 +290,13 @@ def ler_eap_producao():
     for ano, c in econ_cards.items():
         c["economias_eap"] = round(c["economias_eap"], 6)
         c["economias_recebidas"] = round(c["economias_recebidas"], 6)
+        c["tl0_recebidas"] = round(c["tl0_recebidas"], 6)
         c["saldo"] = round(c["economias_recebidas"] - c["economias_eap"], 6)
 
     total_econ = {
         "economias_eap": round(sum(c["economias_eap"] for c in econ_cards.values()), 6),
         "economias_recebidas": round(sum(c["economias_recebidas"] for c in econ_cards.values()), 6),
+        "tl0_recebidas": round(sum(c["tl0_recebidas"] for c in econ_cards.values()), 6),
     }
     total_econ["saldo"] = round(total_econ["economias_recebidas"] - total_econ["economias_eap"], 6)
 
@@ -311,6 +316,7 @@ def ler_eap_producao():
                     "mes": i["mes"],
                     "economias_eap": i["economias_eap"],
                     "economias_recebidas": i["economias_recebidas"],
+                    "tl0_recebidas": i["tl0_recebidas"],
                     "saldo": i["saldo_economias"],
                 }
                 for i in mensal
@@ -382,6 +388,7 @@ def main():
     print(f"Registros: {len(registros)}")
     print(f"Economias EAP/Previstas: {total['economias_eap']:.0f}")
     print(f"Economias Recebidas/Realizadas: {total['economias_recebidas']:.0f}")
+    print(f"TL-0 Recebidas: {total['tl0_recebidas']:.0f}")
     print(f"Saldo Economias: {total['saldo']:.0f}")
 
 

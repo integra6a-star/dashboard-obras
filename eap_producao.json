@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-24T14:22:20.758587-03:00",
+  "atualizado_em": "2026-06-25T16:04:37.230880-03:00",
   "fonte": "EAP_PRODUCAO.xlsx",
   "aba": "EAP_PRODUCAO",
   "meses": [
@@ -36,6 +36,7 @@
       "produzido": 0.0,
       "economias_eap": 0.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -159.15,
       "saldo_economias": 0.0,
       "saldo_acum": -159.15
@@ -47,6 +48,7 @@
       "produzido": 47.5,
       "economias_eap": 0.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -676.2,
       "saldo_economias": 0.0,
       "saldo_acum": -835.35
@@ -58,6 +60,7 @@
       "produzido": 397.82,
       "economias_eap": 0.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -508.17,
       "saldo_economias": 0.0,
       "saldo_acum": -1343.52
@@ -69,6 +72,7 @@
       "produzido": 364.53,
       "economias_eap": 191.0,
       "economias_recebidas": 2611.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -724.61,
       "saldo_economias": 2420.0,
       "saldo_acum": -2068.13
@@ -80,6 +84,7 @@
       "produzido": 1061.675,
       "economias_eap": 489.0,
       "economias_recebidas": 584.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": 473.395,
       "saldo_economias": 95.0,
       "saldo_acum": -1594.735
@@ -91,6 +96,7 @@
       "produzido": 1533.835,
       "economias_eap": 1635.0,
       "economias_recebidas": 3598.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": 306.595,
       "saldo_economias": 1963.0,
       "saldo_acum": -1288.14
@@ -102,6 +108,7 @@
       "produzido": 1369.69,
       "economias_eap": 1110.0,
       "economias_recebidas": 3229.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -544.96,
       "saldo_economias": 2119.0,
       "saldo_acum": -1833.1
@@ -113,6 +120,7 @@
       "produzido": 1342.07,
       "economias_eap": 763.0,
       "economias_recebidas": 1433.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -407.4,
       "saldo_economias": 670.0,
       "saldo_acum": -2240.5
@@ -124,6 +132,7 @@
       "produzido": 1118.625,
       "economias_eap": 4493.0,
       "economias_recebidas": 2359.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -824.275,
       "saldo_economias": -2134.0,
       "saldo_acum": -3064.775
@@ -135,6 +144,7 @@
       "produzido": 1502.325,
       "economias_eap": 4252.0,
       "economias_recebidas": 3356.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -86.285,
       "saldo_economias": -896.0,
       "saldo_acum": -3151.06
@@ -146,6 +156,7 @@
       "produzido": 1272.417,
       "economias_eap": 1436.0,
       "economias_recebidas": 1152.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -912.923,
       "saldo_economias": -284.0,
       "saldo_acum": -912.923
@@ -157,6 +168,7 @@
       "produzido": 2291.454,
       "economias_eap": 2834.0,
       "economias_recebidas": 1928.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -48.946,
       "saldo_economias": -906.0,
       "saldo_acum": -961.869
@@ -168,6 +180,7 @@
       "produzido": 1588.66,
       "economias_eap": 2813.0,
       "economias_recebidas": 1159.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -539.42,
       "saldo_economias": -1654.0,
       "saldo_acum": -1501.289
@@ -179,6 +192,7 @@
       "produzido": 1466.67,
       "economias_eap": 2735.0,
       "economias_recebidas": 5246.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -960.17,
       "saldo_economias": 2511.0,
       "saldo_acum": -2461.459
@@ -189,9 +203,10 @@
       "eap": 2545.85,
       "produzido": 1992.473,
       "economias_eap": 2361.0,
-      "economias_recebidas": 0.0,
+      "economias_recebidas": 87.0,
+      "tl0_recebidas": 189.0,
       "saldo_mes": -553.377,
-      "saldo_economias": -2361.0,
+      "saldo_economias": -2274.0,
       "saldo_acum": -3014.836
     },
     {
@@ -201,6 +216,7 @@
       "produzido": 1495.391,
       "economias_eap": 2874.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -1612.859,
       "saldo_economias": -2874.0,
       "saldo_acum": -4627.695
@@ -212,6 +228,7 @@
       "produzido": 0.0,
       "economias_eap": 4487.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -3269.49,
       "saldo_economias": -4487.0,
       "saldo_acum": -7897.185
@@ -223,6 +240,7 @@
       "produzido": 0.0,
       "economias_eap": 4543.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -3305.21,
       "saldo_economias": -4543.0,
       "saldo_acum": -11202.395
@@ -234,6 +252,7 @@
       "produzido": 0.0,
       "economias_eap": 3432.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -3138.09,
       "saldo_economias": -3432.0,
       "saldo_acum": -14340.485
@@ -245,6 +264,7 @@
       "produzido": 0.0,
       "economias_eap": 1923.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -2251.28,
       "saldo_economias": -1923.0,
       "saldo_acum": -16591.765
@@ -256,6 +276,7 @@
       "produzido": 0.0,
       "economias_eap": 713.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -1527.07,
       "saldo_economias": -713.0,
       "saldo_acum": -18118.835
@@ -267,6 +288,7 @@
       "produzido": 0.0,
       "economias_eap": 39.0,
       "economias_recebidas": 0.0,
+      "tl0_recebidas": 0.0,
       "saldo_mes": -542.46,
       "saldo_economias": -39.0,
       "saldo_acum": -18661.295
@@ -277,18 +299,21 @@
       "2025": {
         "economias_eap": 12933.0,
         "economias_recebidas": 17170.0,
+        "tl0_recebidas": 0.0,
         "saldo": 4237.0
       },
       "2026": {
         "economias_eap": 30190.0,
-        "economias_recebidas": 9485.0,
-        "saldo": -20705.0
+        "economias_recebidas": 9572.0,
+        "tl0_recebidas": 189.0,
+        "saldo": -20618.0
       }
     },
     "total": {
       "economias_eap": 43123.0,
-      "economias_recebidas": 26655.0,
-      "saldo": -16468.0
+      "economias_recebidas": 26742.0,
+      "tl0_recebidas": 189.0,
+      "saldo": -16381.0
     },
     "mensal": [
       {
@@ -296,6 +321,7 @@
         "mes": "Mar",
         "economias_eap": 0.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": 0.0
       },
       {
@@ -303,6 +329,7 @@
         "mes": "Abr",
         "economias_eap": 0.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": 0.0
       },
       {
@@ -310,6 +337,7 @@
         "mes": "Mai",
         "economias_eap": 0.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": 0.0
       },
       {
@@ -317,6 +345,7 @@
         "mes": "Jun",
         "economias_eap": 191.0,
         "economias_recebidas": 2611.0,
+        "tl0_recebidas": 0.0,
         "saldo": 2420.0
       },
       {
@@ -324,6 +353,7 @@
         "mes": "Jul",
         "economias_eap": 489.0,
         "economias_recebidas": 584.0,
+        "tl0_recebidas": 0.0,
         "saldo": 95.0
       },
       {
@@ -331,6 +361,7 @@
         "mes": "Ago",
         "economias_eap": 1635.0,
         "economias_recebidas": 3598.0,
+        "tl0_recebidas": 0.0,
         "saldo": 1963.0
       },
       {
@@ -338,6 +369,7 @@
         "mes": "Set",
         "economias_eap": 1110.0,
         "economias_recebidas": 3229.0,
+        "tl0_recebidas": 0.0,
         "saldo": 2119.0
       },
       {
@@ -345,6 +377,7 @@
         "mes": "Out",
         "economias_eap": 763.0,
         "economias_recebidas": 1433.0,
+        "tl0_recebidas": 0.0,
         "saldo": 670.0
       },
       {
@@ -352,6 +385,7 @@
         "mes": "Nov",
         "economias_eap": 4493.0,
         "economias_recebidas": 2359.0,
+        "tl0_recebidas": 0.0,
         "saldo": -2134.0
       },
       {
@@ -359,6 +393,7 @@
         "mes": "Dez",
         "economias_eap": 4252.0,
         "economias_recebidas": 3356.0,
+        "tl0_recebidas": 0.0,
         "saldo": -896.0
       },
       {
@@ -366,6 +401,7 @@
         "mes": "Jan",
         "economias_eap": 1436.0,
         "economias_recebidas": 1152.0,
+        "tl0_recebidas": 0.0,
         "saldo": -284.0
       },
       {
@@ -373,6 +409,7 @@
         "mes": "Fev",
         "economias_eap": 2834.0,
         "economias_recebidas": 1928.0,
+        "tl0_recebidas": 0.0,
         "saldo": -906.0
       },
       {
@@ -380,6 +417,7 @@
         "mes": "Mar",
         "economias_eap": 2813.0,
         "economias_recebidas": 1159.0,
+        "tl0_recebidas": 0.0,
         "saldo": -1654.0
       },
       {
@@ -387,20 +425,23 @@
         "mes": "Abr",
         "economias_eap": 2735.0,
         "economias_recebidas": 5246.0,
+        "tl0_recebidas": 0.0,
         "saldo": 2511.0
       },
       {
         "ano": 2026,
         "mes": "Mai",
         "economias_eap": 2361.0,
-        "economias_recebidas": 0.0,
-        "saldo": -2361.0
+        "economias_recebidas": 87.0,
+        "tl0_recebidas": 189.0,
+        "saldo": -2274.0
       },
       {
         "ano": 2026,
         "mes": "Jun",
         "economias_eap": 2874.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -2874.0
       },
       {
@@ -408,6 +449,7 @@
         "mes": "Jul",
         "economias_eap": 4487.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -4487.0
       },
       {
@@ -415,6 +457,7 @@
         "mes": "Ago",
         "economias_eap": 4543.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -4543.0
       },
       {
@@ -422,6 +465,7 @@
         "mes": "Set",
         "economias_eap": 3432.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -3432.0
       },
       {
@@ -429,6 +473,7 @@
         "mes": "Out",
         "economias_eap": 1923.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -1923.0
       },
       {
@@ -436,6 +481,7 @@
         "mes": "Nov",
         "economias_eap": 713.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -713.0
       },
       {
@@ -443,6 +489,7 @@
         "mes": "Dez",
         "economias_eap": 39.0,
         "economias_recebidas": 0.0,
+        "tl0_recebidas": 0.0,
         "saldo": -39.0
       }
     ]

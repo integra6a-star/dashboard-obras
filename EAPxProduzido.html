@@ -223,6 +223,12 @@
       <div class="s"></div>
     </div>
 
+    <div class="card" id="cTl0">
+      <div class="t">TL-0 Recebidas</div>
+      <div class="v" id="kTl0">0</div>
+      <div class="s"></div>
+    </div>
+
     <div class="card" id="cEcoSaldo">
       <div class="t">Saldo (Recebidas − EAP)</div>
       <div class="v" id="kEcoSaldo">0</div>
@@ -264,6 +270,7 @@
               <th>Mês</th>
               <th class="num">Economias EAP</th>
               <th class="num">Economias Recebidas</th>
+              <th class="num">TL-0 Recebidas</th>
               <th class="num">Saldo</th>
               <th class="num">Atingimento</th>
             </tr>
@@ -376,6 +383,9 @@ function renderTabelaEconomias(rows){
     const rec = (r.economiasRecebidas === null || r.economiasRecebidas === undefined || Number.isNaN(r.economiasRecebidas))
       ? 0
       : Number(r.economiasRecebidas || 0);
+    const tl0 = (r.tl0Recebidas === null || r.tl0Recebidas === undefined || Number.isNaN(r.tl0Recebidas))
+      ? 0
+      : Number(r.tl0Recebidas || 0);
     const saldo = rec - eap;
     const pct = eap > 0 ? (rec / eap * 100) : null;
 
@@ -385,6 +395,7 @@ function renderTabelaEconomias(rows){
       <td>${r.mes || ""}</td>
       <td class="num">${fmt0(Math.round(eap))}</td>
       <td class="num">${fmt0(Math.round(rec))}</td>
+      <td class="num">${fmt0(Math.round(tl0))}</td>
       <td class="num">${fmt0(Math.round(saldo))}</td>
       <td class="num">${pct === null ? "—" : Math.round(pct) + "%"}</td>
     `;
@@ -441,6 +452,10 @@ function renderGraficoEconomias(rows){
     const v = r.economiasRecebidas;
     return (v === null || v === undefined || Number.isNaN(v)) ? 0 : Number(v || 0);
   });
+  const tl0 = rows.map(r => {
+    const v = r.tl0Recebidas;
+    return (v === null || v === undefined || Number.isNaN(v)) ? 0 : Number(v || 0);
+  });
   const saldo = rows.map((_, i) => (rec[i] - eap[i]));
 
   if(chartEconomias) chartEconomias.destroy();
@@ -450,6 +465,7 @@ function renderGraficoEconomias(rows){
       labels,
       datasets:[
         { type:"bar", label:"Economias Recebidas", data: rec, backgroundColor:"#0b57d0" },
+        { type:"bar", label:"TL-0 Recebidas", data: tl0, backgroundColor:"#059669" },
         { type:"bar", label:"Economias EAP", data: eap, backgroundColor:"#dc2626" },
         { type:"line", label:"Saldo (Recebidas − EAP)", data: saldo, borderColor:"#111827", tension:0.25, yAxisID:"y" }
       ]
@@ -472,8 +488,9 @@ function renderGraficoEconomias(rows){
 
   const somaEap = eap.reduce((s,v)=>s+v,0);
   const somaRec = rec.reduce((s,v)=>s+v,0);
+  const somaTl0 = tl0.reduce((s,v)=>s+v,0);
   const somaSaldo = somaRec - somaEap;
-  metaEconomias.textContent = `Meses: ${rows.length} | Recebidas: ${fmt0(Math.round(somaRec))} | Economias EAP: ${fmt0(Math.round(somaEap))} | Saldo: ${fmt0(Math.round(somaSaldo))}`;
+  metaEconomias.textContent = `Meses: ${rows.length} | Recebidas: ${fmt0(Math.round(somaRec))} | TL-0: ${fmt0(Math.round(somaTl0))} | Economias EAP: ${fmt0(Math.round(somaEap))} | Saldo: ${fmt0(Math.round(somaSaldo))}`;
 }
 
 function update(){
@@ -503,11 +520,16 @@ function update(){
     const v = r.economiasRecebidas;
     return s + ((v===null || v===undefined || Number.isNaN(v)) ? 0 : Number(v||0));
   },0);
+  const somaTl0 = rows.reduce((s,r)=>{
+    const v = r.tl0Recebidas;
+    return s + ((v===null || v===undefined || Number.isNaN(v)) ? 0 : Number(v||0));
+  },0);
   const ecoSaldo = somaRec - somaEcoEap;
   const ecoPct = somaEcoEap > 0 ? (somaRec / somaEcoEap * 100) : null;
 
   kRec.textContent = fmt0(Math.round(somaRec));
   kEcoEap.textContent = fmt0(Math.round(somaEcoEap));
+  kTl0.textContent = fmt0(Math.round(somaTl0));
   kEcoSaldo.textContent = fmt0(Math.round(ecoSaldo));
   kEcoPct.textContent = (ecoPct === null ? "—" : Math.round(ecoPct) + "%");
 
@@ -545,6 +567,7 @@ function normalizarLinhas(sheet){
   const idxProd = headers.findIndex(h => String(h).toLowerCase().includes("produz"));
   const idxEcoEap = headers.findIndex(h => String(h).toLowerCase() === "economias eap");
   const idxEcoRec = headers.findIndex(h => String(h).toLowerCase() === "economias recebidas");
+  const idxTl0 = headers.findIndex(h => ["tl-0 recebidas", "tl0 recebidas", "tl 0 recebidas"].includes(String(h).toLowerCase()));
 
   if(idxAno < 0 || idxMes < 0 || idxEap < 0 || idxProd < 0){
     throw new Error("Colunas obrigatórias não encontradas (Ano, Mes, EAP, Produzido).");
@@ -561,9 +584,11 @@ function normalizarLinhas(sheet){
 
     const ecoEapRaw = idxEcoEap >= 0 ? r[idxEcoEap] : 0;
     const ecoRecRaw = idxEcoRec >= 0 ? r[idxEcoRec] : 0;
+    const tl0Raw = idxTl0 >= 0 ? r[idxTl0] : 0;
 
     const economiasEap = (ecoEapRaw === null || ecoEapRaw === undefined || ecoEapRaw === "") ? 0 : Number(ecoEapRaw);
     const economiasRecebidas = (ecoRecRaw === null || ecoRecRaw === undefined || ecoRecRaw === "") ? 0 : Number(ecoRecRaw);
+    const tl0Recebidas = (tl0Raw === null || tl0Raw === undefined || tl0Raw === "") ? 0 : Number(tl0Raw);
 
     if(!ano || !mes) continue;
 
@@ -573,7 +598,8 @@ function normalizarLinhas(sheet){
       eap: Number.isNaN(eap) ? 0 : eap,
       produzido: (produzido !== null && Number.isNaN(produzido)) ? null : produzido,
       economiasEap: Number.isNaN(economiasEap) ? 0 : economiasEap,
-      economiasRecebidas: Number.isNaN(economiasRecebidas) ? 0 : economiasRecebidas
+      economiasRecebidas: Number.isNaN(economiasRecebidas) ? 0 : economiasRecebidas,
+      tl0Recebidas: Number.isNaN(tl0Recebidas) ? 0 : tl0Recebidas
     });
   }
 
@@ -593,7 +619,8 @@ async function carregarXlsx(){
           eap: Number(r.eap || 0),
           produzido: (r.produzido === null || r.produzido === undefined || r.produzido === "") ? null : Number(r.produzido || 0),
           economiasEap: Number(r.economias_eap || 0),
-          economiasRecebidas: Number(r.economias_recebidas || 0)
+          economiasRecebidas: Number(r.economias_recebidas || 0),
+          tl0Recebidas: Number(r.tl0_recebidas || 0)
         }));
         fillSelectAno();
         badgeFonte.textContent = `Fonte: ${ARQ_JSON.split("/").pop()} • Linhas: ${DADOS.length}`;

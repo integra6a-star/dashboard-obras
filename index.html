@@ -141,6 +141,7 @@
     .validacao-metric.warn b{color:#dc2626}
     .validacao-alert{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:999px;padding:8px 12px;font-weight:800}
     .kpi-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+    .kpi-pair.economias-grid{grid-template-columns:repeat(3,1fr)}
     .soft-kpi{background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:18px}
     .soft-kpi.green{background:#f2faf3}
     .soft-kpi .label{font-size:16px;font-weight:800;color:#4c596c;line-height:1.25}
@@ -281,7 +282,7 @@
       .metric{border-right:none;border-bottom:1px solid var(--line)}
       .metric .value{font-size:42px}
       .metric:last-child{border-bottom:none}
-      .weather-row,.kpi-pair{grid-template-columns:1fr}
+      .weather-row,.kpi-pair,.kpi-pair.economias-grid{grid-template-columns:1fr}
       .forecast-days{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
       .forecast-day{min-width:88px}
       .panel-head{align-items:flex-start;flex-direction:column}
@@ -620,7 +621,7 @@
 </section>
 <section class="card">
 <div class="panel-head"><h2 class="title" style="margin:0">DESTAQUE</h2></div>
-<div class="kpi-pair">
+<div class="kpi-pair economias-grid">
 <div class="soft-kpi">
 <div class="label">Economias Previstas (nº)</div>
 <div class="value" id="ecoPrev">0</div>
@@ -628,6 +629,10 @@
 <div class="soft-kpi green">
 <div class="label">Economias Realizadas (nº)</div>
 <div class="value" id="ecoRec">0</div>
+</div>
+<div class="soft-kpi green">
+<div class="label">TL-0 Recebidas (nº)</div>
+<div class="value" id="ecoTl0">0</div>
 </div>
 </div>
 <div class="prod-box">
@@ -753,7 +758,7 @@ let RAW = [];
 let MESES = [];
 let UPDATED_MONTH = '';
 let CURVA_MENSAL = [];
-let ECONOMIAS_GLOBAL = null; // vem de EAP_PRODUCAO.xlsx: F = Economias EAP, G = Economias Recebidas
+let ECONOMIAS_GLOBAL = null; // vem de EAP_PRODUCAO.xlsx: F = Economias EAP, G = Economias Recebidas, H = TL-0 Recebidas
 let MAPA_BASE = {obras:[], pontos:[], trechos:[], carregado:false};
 const CURVA_PLANILHA = [{"ano": 2025, "mes": "Mar", "eap": 159.15, "produzido": 0.0}, {"ano": 2025, "mes": "Abr", "eap": 723.7, "produzido": 47.5}, {"ano": 2025, "mes": "Mai", "eap": 905.99, "produzido": 389.15}, {"ano": 2025, "mes": "Jun", "eap": 1089.14, "produzido": 340.32}, {"ano": 2025, "mes": "Jul", "eap": 588.28, "produzido": 1061.675}, {"ano": 2025, "mes": "Ago", "eap": 1227.24, "produzido": 1750.96}, {"ano": 2025, "mes": "Set", "eap": 1914.65, "produzido": 1351.83}, {"ano": 2025, "mes": "Out", "eap": 1749.47, "produzido": 1163.0}, {"ano": 2025, "mes": "Nov", "eap": 1942.9, "produzido": 1090.665}, {"ano": 2025, "mes": "Dez", "eap": 1588.61, "produzido": 1453.725}, {"ano": 2026, "mes": "Jan", "eap": 2185.34, "produzido": 1258.07}, {"ano": 2026, "mes": "Fev", "eap": 2340.4, "produzido": 2135.09}, {"ano": 2026, "mes": "Mar", "eap": 2128.08, "produzido": 1511.27}, {"ano": 2026, "mes": "Abr", "eap": 2426.84, "produzido": 230.96}, {"ano": 2026, "mes": "Mai", "eap": 2545.85, "produzido": 0.0}, {"ano": 2026, "mes": "Jun", "eap": 3108.25, "produzido": 0.0}, {"ano": 2026, "mes": "Jul", "eap": 3269.49, "produzido": 0.0}, {"ano": 2026, "mes": "Ago", "eap": 3305.21, "produzido": 0.0}, {"ano": 2026, "mes": "Set", "eap": 3138.09, "produzido": 0.0}, {"ano": 2026, "mes": "Out", "eap": 2251.28, "produzido": 0.0}, {"ano": 2026, "mes": "Nov", "eap": 1527.07, "produzido": 0.0}, {"ano": 2026, "mes": "Dez", "eap": 542.46, "produzido": 0.0}];
 let chartMensal = null;
@@ -1509,11 +1514,13 @@ function updateUI(){
   const prof = totals.prof;
   let ep = totals.ep;
   let er = totals.er;
+  let tl0 = 0;
   // Sem filtro de obra: usa a planilha EAP_PRODUCAO.xlsx como fonte oficial das economias.
-  // Coluna F = Economias EAP/Previstas | Coluna G = Economias Recebidas/Realizadas.
+  // Coluna F = Economias EAP/Previstas | Coluna G = Economias Recebidas/Realizadas | Coluna H = TL-0 Recebidas.
   if(!fObra.value && ECONOMIAS_GLOBAL){
     ep = Number(ECONOMIAS_GLOBAL.economias_eap || 0);
     er = Number(ECONOMIAS_GLOBAL.economias_recebidas || 0);
+    tl0 = Number(ECONOMIAS_GLOBAL.tl0_recebidas || 0);
   }
   const mediaDiariaMensal = calcMediaDiariaMensal(rows);
   document.getElementById('kAvanco').textContent = av.toFixed(0)+'%';
@@ -1529,6 +1536,7 @@ function updateUI(){
   document.getElementById('pvProfMini').textContent = `${fmtInt(pv)} / ${fmtInt(pi)} / ${fmt1(profMedia)} m`;
   document.getElementById('ecoPrev').textContent = fmtInt(ep);
   document.getElementById('ecoRec').textContent = fmtInt(er);
+  document.getElementById('ecoTl0').textContent = fmtInt(tl0);
   document.getElementById('prodAtual').textContent = fmt1(calcMediaDiariaMensal(rows));
   document.getElementById('curvePlan').textContent = fmtInt(plan);
   document.getElementById('curveExec').textContent = fmtInt(exec);
