@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-25 07:44:14",
+  "atualizado_em": "2026-06-25 09:32:51",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18845.14,
@@ -812,14 +812,14 @@
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 399.5,
-      "modificado": "2026-06-24 14:21:53"
+      "tamanho_kb": 400.2,
+      "modificado": "2026-06-25 09:31:33"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 530.3,
-      "modificado": "2026-06-25 07:44:00"
+      "modificado": "2026-06-25 09:32:29"
     }
   ]
 }
