@@ -224,7 +224,7 @@
     </div>
 
     <div class="card" id="cTl0">
-      <div class="t">TL-0 Recebidas</div>
+      <div class="t">TL-00 Recebidas</div>
       <div class="v" id="kTl0">0</div>
       <div class="s"></div>
     </div>
@@ -270,7 +270,7 @@
               <th>Mês</th>
               <th class="num">Economias EAP</th>
               <th class="num">Economias Recebidas</th>
-              <th class="num">TL-0 Recebidas</th>
+              <th class="num">TL-00 Recebidas</th>
               <th class="num">Saldo</th>
               <th class="num">Atingimento</th>
             </tr>
@@ -465,7 +465,7 @@ function renderGraficoEconomias(rows){
       labels,
       datasets:[
         { type:"bar", label:"Economias Recebidas", data: rec, backgroundColor:"#0b57d0" },
-        { type:"bar", label:"TL-0 Recebidas", data: tl0, backgroundColor:"#059669" },
+        { type:"bar", label:"TL-00 Recebidas", data: tl0, backgroundColor:"#059669" },
         { type:"bar", label:"Economias EAP", data: eap, backgroundColor:"#dc2626" },
         { type:"line", label:"Saldo (Recebidas − EAP)", data: saldo, borderColor:"#111827", tension:0.25, yAxisID:"y" }
       ]
@@ -490,7 +490,7 @@ function renderGraficoEconomias(rows){
   const somaRec = rec.reduce((s,v)=>s+v,0);
   const somaTl0 = tl0.reduce((s,v)=>s+v,0);
   const somaSaldo = somaRec - somaEap;
-  metaEconomias.textContent = `Meses: ${rows.length} | Recebidas: ${fmt0(Math.round(somaRec))} | TL-0: ${fmt0(Math.round(somaTl0))} | Economias EAP: ${fmt0(Math.round(somaEap))} | Saldo: ${fmt0(Math.round(somaSaldo))}`;
+  metaEconomias.textContent = `Meses: ${rows.length} | Recebidas: ${fmt0(Math.round(somaRec))} | TL-00: ${fmt0(Math.round(somaTl0))} | Economias EAP: ${fmt0(Math.round(somaEap))} | Saldo: ${fmt0(Math.round(somaSaldo))}`;
 }
 
 function update(){
