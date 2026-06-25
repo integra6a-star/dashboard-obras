@@ -119,13 +119,13 @@
     .forecast-days{display:flex;gap:8px;justify-content:space-between}
     .forecast-day{flex:1;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:12px;font-weight:700;color:#607086}
     .rank-list{display:grid;gap:12px;margin-top:8px}
-    .rank-item{display:grid;grid-template-columns:32px 1fr auto;gap:14px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .rank-item{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
     .rank-num{font-size:20px;font-weight:900;color:#1f2937;text-align:center}
     .rank-main{min-width:0}
-    .rank-name{font-size:18px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px}
+    .rank-name{font-size:15px;font-weight:900;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.18;margin-bottom:8px;overflow-wrap:anywhere}
     .rank-bar{height:12px;border-radius:999px;background:#e2e8f0;overflow:hidden}
     .rank-fill{height:100%;border-radius:999px}
-    .rank-right{font-size:18px;font-weight:900;color:#334155;min-width:70px;text-align:right}
+    .rank-right{grid-column:2;font-size:18px;font-weight:900;color:#334155;min-width:0;text-align:right;margin-top:4px}
     .saldo-list{display:grid;gap:10px;max-height:420px;overflow:auto;padding-right:4px}
     .saldo-item{display:grid;grid-template-columns:1.35fr repeat(3,.55fr);gap:10px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:14px;padding:12px}
     .saldo-name{font-weight:900;color:#1f2a44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -305,9 +305,9 @@
       .map-actions-inline .map-slim-btn{width:100%}
       .chart-wrap{height:220px}
       .chart-wrap.small{height:200px}
-      .rank-item{grid-template-columns:28px 1fr auto;gap:10px;padding:12px}
-      .rank-name{font-size:15px}
-      .rank-right{font-size:16px;min-width:54px}
+      .rank-item{grid-template-columns:28px minmax(0,1fr);gap:10px;padding:12px}
+      .rank-name{font-size:14px}
+      .rank-right{font-size:16px;min-width:0}
     }
 
 /* ===== CORREÇÃO MOBILE (SIMPLES E ESTÁVEL) ===== */
@@ -365,7 +365,7 @@
   .map-box{ height: 220px !important; }
 
   .rank-item{ padding: 10px !important; }
-  .rank-name{ font-size: 14px !important; }
+  .rank-name{ font-size: 13px !important; }
   .rank-right{ font-size: 14px !important; }
 
   .metric .value{ font-size: 34px !important; }
