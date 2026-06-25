@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-06-24 15:41:02",
+  "atualizado_em": "2026-06-25 07:44:14",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 18845.14,
@@ -8,12 +8,12 @@
     "saldo_total": 20843.25
   },
   "pds": {
-    "total": 3037,
-    "ultima_data": "2026-06-24",
+    "total": 3057,
+    "ultima_data": "2026-06-25",
     "hoje": 20,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE São Lucas",
+        "obra": "RCE S?o Lucas",
         "atividades": 5
       },
       {
@@ -21,27 +21,27 @@
         "atividades": 3
       },
       {
+        "obra": "Vacal",
+        "atividades": 3
+      },
+      {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "Vacal: CT Lourdes",
-        "atividades": 2
+        "obra": "CT ?gua Vermelha ME",
+        "atividades": 1
       },
       {
         "obra": "CTs Bandeirantes",
         "atividades": 1
       },
       {
-        "obra": "CTs Barão de Arariba",
+        "obra": "CTs Bar?o de Arariba",
         "atividades": 1
       },
       {
-        "obra": "CTs Água Vermelha ME",
-        "atividades": 1
-      },
-      {
-        "obra": "RCE Conj. União",
+        "obra": "RCE Conj. Uni?o",
         "atividades": 1
       },
       {
@@ -53,11 +53,7 @@
         "atividades": 1
       },
       {
-        "obra": "Serviços Reposição",
-        "atividades": 1
-      },
-      {
-        "obra": "Vacal: Água Vermelha",
+        "obra": "Servi?os Reposi??o",
         "atividades": 1
       }
     ]
@@ -822,8 +818,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 527.0,
-      "modificado": "2026-06-24 14:21:53"
+      "tamanho_kb": 530.3,
+      "modificado": "2026-06-25 07:44:00"
     }
   ]
 }

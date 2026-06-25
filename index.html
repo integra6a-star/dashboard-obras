@@ -1663,6 +1663,7 @@ function abrirQsms(){
 function abrirComSenha(pagina, nome){
   const senha = prompt('Digite a senha para acessar ' + nome + ':');
   if(senha === SENHA_PADRAO){
+    try{ localStorage.setItem("integra6a_auth_886041", String(Date.now())); }catch(e){}
     window.open(pagina, '_blank');
   }else if(senha !== null){
     alert('Senha incorreta. Acesso negado.');

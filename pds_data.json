@@ -7811,17 +7811,17 @@
     "data": "2026-02-25",
     "obra": "CT ÁGUA VERMELHA M.D",
     "equipe": "Marcelo",
-    "atividade": "Shaft PVD 16",
+    "atividade": "Apoio equipes",
     "trecho": "",
-    "pv": "16"
+    "pv": ""
   },
   {
     "data": "2026-02-25",
     "obra": "CT ÁGUA VERMELHA M.D",
     "equipe": "Marcelo",
-    "atividade": "Apoio equipes",
+    "atividade": "Shaft PVD 16",
     "trecho": "",
-    "pv": ""
+    "pv": "16"
   },
   {
     "data": "2026-02-25",
@@ -12499,7 +12499,7 @@
     "data": "2026-04-01",
     "obra": "CT Água Vermelha M.d. E M.e",
     "equipe": "Edivando",
-    "atividade": "Transformação PV.10.1",
+    "atividade": "Int. ÁGUA BOA – VALMIR",
     "trecho": "",
     "pv": ""
   },
@@ -12507,7 +12507,7 @@
     "data": "2026-04-01",
     "obra": "CT Água Vermelha M.d. E M.e",
     "equipe": "Edivando",
-    "atividade": "Int. ÁGUA BOA – VALMIR",
+    "atividade": "Transformação PV.10.1",
     "trecho": "",
     "pv": ""
   },
@@ -12731,7 +12731,7 @@
     "data": "2026-04-01",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Rodrigo - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -12739,7 +12739,7 @@
     "data": "2026-04-01",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Rodrigo - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -16683,17 +16683,17 @@
     "data": "2026-04-30",
     "obra": "CTS Agua Vermelha M.D",
     "equipe": "Cesar",
-    "atividade": "transformação PV17",
+    "atividade": "interligação PVD19",
     "trecho": "",
-    "pv": "17"
+    "pv": "19"
   },
   {
     "data": "2026-04-30",
     "obra": "CTS Agua Vermelha M.D",
     "equipe": "Cesar",
-    "atividade": "interligação PVD19",
+    "atividade": "transformação PV17",
     "trecho": "",
-    "pv": "19"
+    "pv": "17"
   },
   {
     "data": "2026-04-30",
@@ -16811,17 +16811,17 @@
     "data": "2026-05-02",
     "obra": "CTS Luis Botelho Mourão",
     "equipe": "Higor",
-    "atividade": "VCA PV 08 ao PV 09",
-    "trecho": "08-09",
-    "pv": "08 ao 09"
+    "atividade": "Integra 6A",
+    "trecho": "",
+    "pv": ""
   },
   {
     "data": "2026-05-02",
     "obra": "CTS Luis Botelho Mourão",
     "equipe": "Higor",
-    "atividade": "Integra 6A",
-    "trecho": "",
-    "pv": ""
+    "atividade": "VCA PV 08 ao PV 09",
+    "trecho": "08-09",
+    "pv": "08 ao 09"
   },
   {
     "data": "2026-05-02",
@@ -17091,7 +17091,7 @@
     "data": "2026-05-04",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17099,7 +17099,7 @@
     "data": "2026-05-04",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17139,7 +17139,7 @@
     "data": "2026-05-04",
     "obra": "RCE Barão De Arariba",
     "equipe": "Cesar",
-    "atividade": "PDS - Programação Diária de Serviços:",
+    "atividade": "Integra 6A",
     "trecho": "",
     "pv": ""
   },
@@ -17147,7 +17147,7 @@
     "data": "2026-05-04",
     "obra": "RCE Barão De Arariba",
     "equipe": "Cesar",
-    "atividade": "Integra 6A",
+    "atividade": "PDS - Programação Diária de Serviços:",
     "trecho": "",
     "pv": ""
   },
@@ -17275,7 +17275,7 @@
     "data": "2026-05-05",
     "obra": "Botelho Mourão",
     "equipe": "Vacal",
-    "atividade": "Botelho Mourão – Renasce",
+    "atividade": "Botelho Mourão – Hidrosol",
     "trecho": "",
     "pv": ""
   },
@@ -17283,7 +17283,7 @@
     "data": "2026-05-05",
     "obra": "Botelho Mourão",
     "equipe": "Vacal",
-    "atividade": "Botelho Mourão – Hidrosol",
+    "atividade": "Botelho Mourão – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -17451,7 +17451,7 @@
     "data": "2026-05-05",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17459,7 +17459,7 @@
     "data": "2026-05-05",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17491,9 +17491,9 @@
     "data": "2026-05-05",
     "obra": "RCE Barão De Arariba",
     "equipe": "Cesar",
-    "atividade": "Shaft PV 10",
+    "atividade": "Integra 6A",
     "trecho": "",
-    "pv": "10"
+    "pv": ""
   },
   {
     "data": "2026-05-05",
@@ -17507,9 +17507,9 @@
     "data": "2026-05-05",
     "obra": "RCE Barão De Arariba",
     "equipe": "Cesar",
-    "atividade": "Integra 6A",
+    "atividade": "Shaft PV 10",
     "trecho": "",
-    "pv": ""
+    "pv": "10"
   },
   {
     "data": "2026-05-05",
@@ -17635,7 +17635,7 @@
     "data": "2026-05-06",
     "obra": "Botelho Mourão",
     "equipe": "Vacal",
-    "atividade": "Botelho Mourão – Renasce",
+    "atividade": "Botelho Mourão – Hidrosol",
     "trecho": "",
     "pv": ""
   },
@@ -17643,7 +17643,7 @@
     "data": "2026-05-06",
     "obra": "Botelho Mourão",
     "equipe": "Vacal",
-    "atividade": "Botelho Mourão – Hidrosol",
+    "atividade": "Botelho Mourão – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -17747,7 +17747,7 @@
     "data": "2026-05-06",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17755,7 +17755,7 @@
     "data": "2026-05-06",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17907,7 +17907,7 @@
     "data": "2026-05-07",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -17915,7 +17915,7 @@
     "data": "2026-05-07",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18075,15 +18075,23 @@
     "data": "2026-05-08",
     "obra": "CTS Mar De Coral",
     "equipe": "Edvando",
+    "atividade": "Int. Arariba– VALMIR",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-08",
+    "obra": "CTS Mar De Coral",
+    "equipe": "Edvando",
     "atividade": "VCA e transformações de PVs entre PV 22.2 ao 22.4",
     "trecho": "22.2-22.4",
     "pv": "22.2 ao 22.4"
   },
   {
     "data": "2026-05-08",
-    "obra": "CTS Mar De Coral",
-    "equipe": "Edvando",
-    "atividade": "Int. Arariba– VALMIR",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18092,14 +18100,6 @@
     "obra": "Guindauto",
     "equipe": "Guindauto",
     "atividade": "Marcio - Apoio as equipes",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-08",
-    "obra": "Guindauto",
-    "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18675,7 +18675,7 @@
     "data": "2026-05-13",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18683,7 +18683,7 @@
     "data": "2026-05-13",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18707,7 +18707,7 @@
     "data": "2026-05-13",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce",
+    "atividade": "João Canzi – Henko",
     "trecho": "",
     "pv": ""
   },
@@ -18731,7 +18731,7 @@
     "data": "2026-05-13",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Henko",
+    "atividade": "João Canzi – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -18939,7 +18939,7 @@
     "data": "2026-05-14",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18947,15 +18947,7 @@
     "data": "2026-05-14",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-14",
-    "obra": "João Canzi",
-    "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -18964,6 +18956,14 @@
     "obra": "João Canzi",
     "equipe": "Vacal",
     "atividade": "João Canzi – Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-14",
+    "obra": "João Canzi",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -19115,7 +19115,7 @@
     "data": "2026-05-15",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19123,7 +19123,7 @@
     "data": "2026-05-15",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19299,7 +19299,7 @@
     "data": "2026-05-18",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19307,15 +19307,7 @@
     "data": "2026-05-18",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-18",
-    "obra": "João Canzi",
-    "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19324,6 +19316,14 @@
     "obra": "João Canzi",
     "equipe": "Vacal",
     "atividade": "João Canzi – Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-18",
+    "obra": "João Canzi",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -19483,7 +19483,7 @@
     "data": "2026-05-19",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19491,15 +19491,7 @@
     "data": "2026-05-19",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-19",
-    "obra": "João Canzi",
-    "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19508,6 +19500,14 @@
     "obra": "João Canzi",
     "equipe": "Vacal",
     "atividade": "João Canzi – Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-19",
+    "obra": "João Canzi",
+    "equipe": "Vacal",
+    "atividade": "João Canzi – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -19659,7 +19659,7 @@
     "data": "2026-05-20",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19667,7 +19667,7 @@
     "data": "2026-05-20",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19683,7 +19683,7 @@
     "data": "2026-05-20",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce",
+    "atividade": "João Canzi – Henko",
     "trecho": "",
     "pv": ""
   },
@@ -19691,7 +19691,7 @@
     "data": "2026-05-20",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Henko",
+    "atividade": "João Canzi – Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -19835,7 +19835,7 @@
     "data": "2026-05-21",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz Carlos - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19843,15 +19843,7 @@
     "data": "2026-05-21",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz Carlos - Apoio as equipes",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-21",
-    "obra": "João Canzi",
-    "equipe": "Vacal",
-    "atividade": "João Canzi - Renasce",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -19865,9 +19857,9 @@
   },
   {
     "data": "2026-05-21",
-    "obra": "Lourdes",
+    "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "Lourdes - Hidrosol",
+    "atividade": "João Canzi - Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -19876,6 +19868,14 @@
     "obra": "Lourdes",
     "equipe": "Vacal",
     "atividade": "Lourdes - Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-21",
+    "obra": "Lourdes",
+    "equipe": "Vacal",
+    "atividade": "Lourdes - Hidrosol",
     "trecho": "",
     "pv": ""
   },
@@ -20043,7 +20043,7 @@
     "data": "2026-05-22",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi - Renasce",
+    "atividade": "João Canzi - Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20051,15 +20051,7 @@
     "data": "2026-05-22",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi - Henko",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-22",
-    "obra": "Lourdes",
-    "equipe": "Vacal",
-    "atividade": "Lourdes - Hidrosol",
+    "atividade": "João Canzi - Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -20068,6 +20060,14 @@
     "obra": "Lourdes",
     "equipe": "Vacal",
     "atividade": "Lourdes - Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-22",
+    "obra": "Lourdes",
+    "equipe": "Vacal",
+    "atividade": "Lourdes - Hidrosol",
     "trecho": "",
     "pv": ""
   },
@@ -20227,7 +20227,7 @@
     "data": "2026-05-25",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi - Renasce",
+    "atividade": "João Canzi - Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20235,15 +20235,7 @@
     "data": "2026-05-25",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi - Henko",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-25",
-    "obra": "Lourdes",
-    "equipe": "Vacal",
-    "atividade": "Lourdes - Hidrosol",
+    "atividade": "João Canzi - Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -20252,6 +20244,14 @@
     "obra": "Lourdes",
     "equipe": "Vacal",
     "atividade": "Lourdes - Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-25",
+    "obra": "Lourdes",
+    "equipe": "Vacal",
+    "atividade": "Lourdes - Hidrosol",
     "trecho": "",
     "pv": ""
   },
@@ -20411,7 +20411,7 @@
     "data": "2026-05-26",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "Vacal João Canzi - Renasce",
+    "atividade": "Vacal João Canzi - Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20419,7 +20419,23 @@
     "data": "2026-05-26",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "Vacal João Canzi - Henko",
+    "atividade": "Vacal João Canzi - Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-26",
+    "obra": "Lourdes",
+    "equipe": "Vacal",
+    "atividade": "Vacal Lourdes - Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-26",
+    "obra": "Lourdes",
+    "equipe": "Vacal",
+    "atividade": "Vacal Lourdes - Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20428,22 +20444,6 @@
     "obra": "Lourdes",
     "equipe": "Vacal",
     "atividade": "Vacal Lourdes - Hidrosol",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-26",
-    "obra": "Lourdes",
-    "equipe": "Vacal",
-    "atividade": "Vacal Lourdes - Henko",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-26",
-    "obra": "Lourdes",
-    "equipe": "Vacal",
-    "atividade": "Vacal Lourdes - Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20539,9 +20539,9 @@
     "data": "2026-05-28",
     "obra": "CTS Lourdes Complementar Robson",
     "equipe": "Edvando",
-    "atividade": "Transformao PV 02",
+    "atividade": "Reparos Gerais",
     "trecho": "",
-    "pv": "02"
+    "pv": ""
   },
   {
     "data": "2026-05-28",
@@ -20555,9 +20555,9 @@
     "data": "2026-05-28",
     "obra": "CTS Lourdes Complementar Robson",
     "equipe": "Edvando",
-    "atividade": "Reparos Gerais",
+    "atividade": "Transformao PV 02",
     "trecho": "",
-    "pv": ""
+    "pv": "02"
   },
   {
     "data": "2026-05-28",
@@ -20659,14 +20659,6 @@
     "data": "2026-05-28",
     "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Joo Canzi Renasce",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-28",
-    "obra": "Servi?os Reposi??o",
-    "equipe": "Vacal",
     "atividade": "Joo Canzi Henko",
     "trecho": "",
     "pv": ""
@@ -20675,23 +20667,31 @@
     "data": "2026-05-28",
     "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
+    "atividade": "Joo Canzi Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Lourdes Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Lourdes Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-28",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
     "atividade": "Lourdes Hidrosol",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-28",
-    "obra": "Servi?os Reposi??o",
-    "equipe": "Vacal",
-    "atividade": "Lourdes Henko",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-28",
-    "obra": "Servi?os Reposi??o",
-    "equipe": "Vacal",
-    "atividade": "Lourdes Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20747,9 +20747,9 @@
     "data": "2026-05-29",
     "obra": "CTS Lourdes Complementar Caroline E Silvestre",
     "equipe": "Cido",
-    "atividade": "Transformao PV 04",
+    "atividade": "Reparos Gerais",
     "trecho": "",
-    "pv": "04"
+    "pv": ""
   },
   {
     "data": "2026-05-29",
@@ -20763,9 +20763,9 @@
     "data": "2026-05-29",
     "obra": "CTS Lourdes Complementar Caroline E Silvestre",
     "equipe": "Cido",
-    "atividade": "Reparos Gerais",
+    "atividade": "Transformao PV 04",
     "trecho": "",
-    "pv": ""
+    "pv": "04"
   },
   {
     "data": "2026-05-29",
@@ -20843,15 +20843,7 @@
     "data": "2026-05-29",
     "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
-    "atividade": "Joo Canzi Renasce",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-29",
-    "obra": "Servi?os Reposi??o",
-    "equipe": "Vacal",
-    "atividade": "Joo Canzi Renasce",
+    "atividade": "ITI 15 Henko",
     "trecho": "",
     "pv": ""
   },
@@ -20860,6 +20852,22 @@
     "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
     "atividade": "Joo Canzi Henko",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Joo Canzi Renasce",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-05-29",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Vacal",
+    "atividade": "Joo Canzi Renasce",
     "trecho": "",
     "pv": ""
   },
@@ -20876,14 +20884,6 @@
     "obra": "Servi?os Reposi??o",
     "equipe": "Vacal",
     "atividade": "Lourdes Henko",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-05-29",
-    "obra": "Servi?os Reposi??o",
-    "equipe": "Vacal",
-    "atividade": "ITI 15 Henko",
     "trecho": "",
     "pv": ""
   },
@@ -21091,7 +21091,7 @@
     "data": "2026-06-01",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21099,7 +21099,7 @@
     "data": "2026-06-01",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21123,7 +21123,7 @@
     "data": "2026-06-01",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce (Raimundo)",
+    "atividade": "João Canzi – Hidrosol (Jonathan)",
     "trecho": "",
     "pv": ""
   },
@@ -21131,7 +21131,7 @@
     "data": "2026-06-01",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Hidrosol (Jonathan)",
+    "atividade": "João Canzi – Renasce (Raimundo)",
     "trecho": "",
     "pv": ""
   },
@@ -21251,7 +21251,7 @@
     "data": "2026-06-02",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21259,7 +21259,7 @@
     "data": "2026-06-02",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21283,7 +21283,7 @@
     "data": "2026-06-02",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Renasce (Raimundo)",
+    "atividade": "João Canzi – Hidrosol (Jonathan)",
     "trecho": "",
     "pv": ""
   },
@@ -21291,7 +21291,7 @@
     "data": "2026-06-02",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Hidrosol (Jonathan)",
+    "atividade": "João Canzi – Renasce (Raimundo)",
     "trecho": "",
     "pv": ""
   },
@@ -21419,17 +21419,17 @@
     "data": "2026-06-03",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Marcelo",
-    "atividade": "Transformação PV 04",
+    "atividade": "Botelho Mourão",
     "trecho": "",
-    "pv": "04"
+    "pv": ""
   },
   {
     "data": "2026-06-03",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Marcelo",
-    "atividade": "Botelho Mourão",
+    "atividade": "Transformação PV 04",
     "trecho": "",
-    "pv": ""
+    "pv": "04"
   },
   {
     "data": "2026-06-03",
@@ -21443,7 +21443,7 @@
     "data": "2026-06-03",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21451,7 +21451,7 @@
     "data": "2026-06-03",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21587,7 +21587,7 @@
     "data": "2026-06-04",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Cidão",
-    "atividade": "Reparos Gerais",
+    "atividade": "Henko (Osmar) - Raspagem",
     "trecho": "",
     "pv": ""
   },
@@ -21595,7 +21595,15 @@
     "data": "2026-06-04",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Cidão",
-    "atividade": "Henko (Osmar) - Raspagem",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-04",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Marcelo",
+    "atividade": "Botelho Mourão",
     "trecho": "",
     "pv": ""
   },
@@ -21606,14 +21614,6 @@
     "atividade": "Transformação PV 04",
     "trecho": "",
     "pv": "04"
-  },
-  {
-    "data": "2026-06-04",
-    "obra": "CTS Lourdes Complementar",
-    "equipe": "Marcelo",
-    "atividade": "Botelho Mourão",
-    "trecho": "",
-    "pv": ""
   },
   {
     "data": "2026-06-04",
@@ -21635,7 +21635,7 @@
     "data": "2026-06-04",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21643,7 +21643,7 @@
     "data": "2026-06-04",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21763,7 +21763,7 @@
     "data": "2026-06-05",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Cidão",
-    "atividade": "Reparos Gerais",
+    "atividade": "INTEGRA 6A",
     "trecho": "",
     "pv": ""
   },
@@ -21771,7 +21771,7 @@
     "data": "2026-06-05",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Cidão",
-    "atividade": "INTEGRA 6A",
+    "atividade": "Reparos Gerais",
     "trecho": "",
     "pv": ""
   },
@@ -21787,15 +21787,23 @@
     "data": "2026-06-05",
     "obra": "CTS Lourdes Complementar",
     "equipe": "Márcio",
+    "atividade": "Mar de Coral/BENFICA - GABRIEL",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-05",
+    "obra": "CTS Lourdes Complementar",
+    "equipe": "Márcio",
     "atividade": "Shaft PV 05",
     "trecho": "",
     "pv": "05"
   },
   {
     "data": "2026-06-05",
-    "obra": "CTS Lourdes Complementar",
-    "equipe": "Márcio",
-    "atividade": "Mar de Coral/BENFICA - GABRIEL",
+    "obra": "Guindauto",
+    "equipe": "Guindauto",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21804,14 +21812,6 @@
     "obra": "Guindauto",
     "equipe": "Guindauto",
     "atividade": "Marcio - Apoio as equipes",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-06-05",
-    "obra": "Guindauto",
-    "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -21955,7 +21955,7 @@
     "data": "2026-06-06",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Henko (Wellington/Thiago)",
+    "atividade": "João Canzi – Henko (Marcio)",
     "trecho": "",
     "pv": ""
   },
@@ -21963,7 +21963,7 @@
     "data": "2026-06-06",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Henko (Marcio)",
+    "atividade": "João Canzi – Henko (Wellington/Thiago)",
     "trecho": "",
     "pv": ""
   },
@@ -21995,15 +21995,7 @@
     "data": "2026-06-06",
     "obra": "RCE São Lucas",
     "equipe": "Antonio",
-    "atividade": "VCA, PVs e Ligações; (Inicio Ponto 04)*",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-06-06",
-    "obra": "RCE São Lucas",
-    "equipe": "Antonio",
-    "atividade": "SERVIÇOS REPOSIÇÃO – LEANDRO",
+    "atividade": "INTEGRA 6A",
     "trecho": "",
     "pv": ""
   },
@@ -22019,7 +22011,15 @@
     "data": "2026-06-06",
     "obra": "RCE São Lucas",
     "equipe": "Antonio",
-    "atividade": "INTEGRA 6A",
+    "atividade": "SERVIÇOS REPOSIÇÃO – LEANDRO",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-06",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Ligações; (Inicio Ponto 04)*",
     "trecho": "",
     "pv": ""
   },
@@ -22107,7 +22107,7 @@
     "data": "2026-06-08",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22115,7 +22115,7 @@
     "data": "2026-06-08",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22131,7 +22131,7 @@
     "data": "2026-06-08",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Henko (Wellington/Thiago)",
+    "atividade": "João Canzi – Henko (Marcio)",
     "trecho": "",
     "pv": ""
   },
@@ -22139,7 +22139,7 @@
     "data": "2026-06-08",
     "obra": "João Canzi",
     "equipe": "Vacal",
-    "atividade": "João Canzi – Henko (Marcio)",
+    "atividade": "João Canzi – Henko (Wellington/Thiago)",
     "trecho": "",
     "pv": ""
   },
@@ -22179,7 +22179,7 @@
     "data": "2026-06-08",
     "obra": "RCE São Lucas",
     "equipe": "Antonio",
-    "atividade": "VCA, PVs e Ligações",
+    "atividade": "Reparos Gerais",
     "trecho": "",
     "pv": ""
   },
@@ -22195,7 +22195,7 @@
     "data": "2026-06-08",
     "obra": "RCE São Lucas",
     "equipe": "Antonio",
-    "atividade": "Reparos Gerais",
+    "atividade": "VCA, PVs e Ligações",
     "trecho": "",
     "pv": ""
   },
@@ -22283,7 +22283,7 @@
     "data": "2026-06-09",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22291,7 +22291,7 @@
     "data": "2026-06-09",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22355,7 +22355,7 @@
     "data": "2026-06-09",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "VCA, PVs e Ligações",
+    "atividade": "Reparos Gerais",
     "trecho": "",
     "pv": ""
   },
@@ -22371,7 +22371,7 @@
     "data": "2026-06-09",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "Reparos Gerais",
+    "atividade": "VCA, PVs e Ligações",
     "trecho": "",
     "pv": ""
   },
@@ -22459,7 +22459,7 @@
     "data": "2026-06-10",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22467,7 +22467,7 @@
     "data": "2026-06-10",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22523,7 +22523,7 @@
     "data": "2026-06-10",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "VCA, PVs e Ligações",
+    "atividade": "Reparos Gerais",
     "trecho": "",
     "pv": ""
   },
@@ -22539,7 +22539,7 @@
     "data": "2026-06-10",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "Reparos Gerais",
+    "atividade": "VCA, PVs e Ligações",
     "trecho": "",
     "pv": ""
   },
@@ -22611,7 +22611,7 @@
     "data": "2026-06-11",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22619,7 +22619,7 @@
     "data": "2026-06-11",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -22675,23 +22675,7 @@
     "data": "2026-06-11",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "VCA, PVs e Ligações",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-06-11",
-    "obra": "RCE São Lucas",
-    "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "SERVIÇOS REPOSIÇÃO – LEANDRO",
-    "trecho": "",
-    "pv": ""
-  },
-  {
-    "data": "2026-06-11",
-    "obra": "RCE São Lucas",
-    "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "Reparos Gerais",
+    "atividade": "INTEGRA 6A",
     "trecho": "",
     "pv": ""
   },
@@ -22707,7 +22691,23 @@
     "data": "2026-06-11",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 55 Ao Pi 56)",
-    "atividade": "INTEGRA 6A",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-11",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio (pi 55 Ao Pi 56)",
+    "atividade": "SERVIÇOS REPOSIÇÃO – LEANDRO",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-11",
+    "obra": "RCE São Lucas",
+    "equipe": "Antonio (pi 55 Ao Pi 56)",
+    "atividade": "VCA, PVs e Ligações",
     "trecho": "",
     "pv": ""
   },
@@ -23683,7 +23683,7 @@
     "data": "2026-06-22",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Marcio - Apoio as equipes",
+    "atividade": "Luiz - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -23691,7 +23691,7 @@
     "data": "2026-06-22",
     "obra": "Guindauto",
     "equipe": "Guindauto",
-    "atividade": "Luiz - Apoio as equipes",
+    "atividade": "Marcio - Apoio as equipes",
     "trecho": "",
     "pv": ""
   },
@@ -23867,7 +23867,7 @@
     "data": "2026-06-22",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 18 Ao Pi 17)",
-    "atividade": "VCA, PVs e Ligações",
+    "atividade": "Reparos Gerais",
     "trecho": "",
     "pv": ""
   },
@@ -23883,7 +23883,7 @@
     "data": "2026-06-22",
     "obra": "RCE São Lucas",
     "equipe": "Antonio (pi 18 Ao Pi 17)",
-    "atividade": "Reparos Gerais",
+    "atividade": "VCA, PVs e Ligações",
     "trecho": "",
     "pv": ""
   },
@@ -24292,6 +24292,166 @@
     "obra": "Vacal: Água Vermelha",
     "equipe": "Henko",
     "atividade": "Apoio às equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "CT ?gua Vermelha ME",
+    "equipe": "Cesar",
+    "atividade": "Adequa??o PVE 07",
+    "trecho": "",
+    "pv": "PVE 07"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "CTs Bandeirantes",
+    "equipe": "Marcelo",
+    "atividade": "Shaft PV 33 + Interliga??o",
+    "trecho": "",
+    "pv": "33"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "CTs Bar?o de Arariba",
+    "equipe": "Edvando",
+    "atividade": "Adequa??o PV 10",
+    "trecho": "",
+    "pv": "10"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "Guindauto",
+    "equipe": "Luiz",
+    "atividade": "Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "Guindauto",
+    "equipe": "Marcio",
+    "atividade": "Apoio as equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE Conj. Uni?o",
+    "equipe": "Jhonatan",
+    "atividade": "VCA PV 48 ao PV 47",
+    "trecho": "PV 48-PV 47",
+    "pv": "48"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE Elvira",
+    "equipe": "Valter",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE Maria dos Santos Machado",
+    "equipe": "Marcio",
+    "atividade": "VCA PV 01 ao PV 02",
+    "trecho": "PV 01-PV 02",
+    "pv": "01"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE Raulzito",
+    "equipe": "Bruno",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 13-PI 14",
+    "pv": "13"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE Raulzito",
+    "equipe": "Cid?o",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 17-PI 18",
+    "pv": "17"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE Raulzito",
+    "equipe": "Medeiros",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 13-PI 14",
+    "pv": "13"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE S?o Lucas",
+    "equipe": "Antonio",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 18-PI 17",
+    "pv": "18"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE S?o Lucas",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 66-PI 42",
+    "pv": "66"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE S?o Lucas",
+    "equipe": "Emanuel",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 50-PI 51",
+    "pv": "50"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE S?o Lucas",
+    "equipe": "Miro",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 61-PI 62",
+    "pv": "61"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "RCE S?o Lucas",
+    "equipe": "Ricardo",
+    "atividade": "VCA, PVs e Liga??es",
+    "trecho": "PI 19-PI 20",
+    "pv": "19"
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "Servi?os Reposi??o",
+    "equipe": "Leandro",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "Vacal",
+    "equipe": "Henko",
+    "atividade": "Vacal: ?gua Vermelha",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "Vacal",
+    "equipe": "Henko",
+    "atividade": "Vacal: CT Bandeirantes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-06-25",
+    "obra": "Vacal",
+    "equipe": "Henko",
+    "atividade": "Vacal: ITI 15",
     "trecho": "",
     "pv": ""
   }

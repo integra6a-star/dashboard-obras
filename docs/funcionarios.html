@@ -254,9 +254,9 @@
       <div class="card"><div class="t">Provisões - 13º + Férias (R$)</div><div class="v" id="kProvisoes">0</div><div class="s">Sem inativos</div></div>
       <div class="card"><div class="t">Descontos (R$)</div><div class="v" id="kDescontos">0</div><div class="s">Sem inativos</div></div>
       <div class="card"><div class="t">Vale Refeição (R$)</div><div class="v" id="kVR">0</div><div class="s">Sem inativos</div></div>
-      <div class="card"><div class="t">Valor Veículo (R$)</div><div class="v" id="kValorVeiculo">0</div><div class="s">Sem inativos</div></div>
+      <div class="card"><div class="t">Veículos leve (R$)</div><div class="v" id="kValorVeiculo">0</div><div class="s">Sem inativos</div></div>
       <div class="card"><div class="t">Combustível (R$)</div><div class="v" id="kComb">0</div><div class="s">Sem inativos</div></div>
-      <div class="card"><div class="t">Valor Mensal (R$)</div><div class="v" id="kValorMensal">0</div><div class="s">Consolidado da planilha</div></div>
+      <div class="card"><div class="t">Equipamentos pesados (R$)</div><div class="v" id="kValorMensal">0</div><div class="s">Consolidado da planilha</div></div>
       <div class="card"><div class="t">Custo Pessoal (R$)</div><div class="v" id="kCustoPessoal">0</div><div class="s">Sem inativos</div></div>
       <div class="card"><div class="t">Custo Frota (R$)</div><div class="v" id="kFrota">0</div><div class="s">Sem inativos</div></div>
     </div>
@@ -350,8 +350,19 @@
 
 <script>
 (function(){
+  const key = "integra6a_auth_886041";
+  const validMs = 12 * 60 * 60 * 1000;
+  const last = Number(localStorage.getItem(key) || 0);
+  if(Date.now() - last < validMs) return;
+
   const _s = (prompt("Senha:") || "").trim();
-  if(_s!=="886041"){ alert("Senha incorreta. Acesso negado."); document.body.innerHTML=""; throw 0; }
+  if(_s==="886041"){
+    localStorage.setItem(key, String(Date.now()));
+    return;
+  }
+  alert("Senha incorreta. Acesso negado.");
+  document.body.innerHTML="";
+  throw 0;
 })();
 
 let RAWF = [];
