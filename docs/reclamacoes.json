@@ -126,34 +126,6 @@
     "Observação": ""
   },
   {
-    "ID": "10",
-    "Data": "2026-02-02",
-    "Obra": "CTS Jaraguá",
-    "Morador": "Valéria da Silva Goulart",
-    "Endereço": "Rua lagoa do Cajubá, 547 A",
-    "Tipo de dano": "danos causados pela obra",
-    "Descrição": "Fissuras",
-    "Valor estimado (R$)": "18000",
-    "Valor pago (R$)": "18000",
-    "Status": "pago",
-    "Responsável": "Bruno",
-    "Observação": ""
-  },
-  {
-    "ID": "11",
-    "Data": "2026-02-02",
-    "Obra": "CTS Jaraguá",
-    "Morador": "Valéria da Silva Goulart",
-    "Endereço": "Rua lagoa do Cajubá, 547 B",
-    "Tipo de dano": "danos causados pela obra",
-    "Descrição": "Fissuras",
-    "Valor estimado (R$)": "18500",
-    "Valor pago (R$)": "18500",
-    "Status": "pago",
-    "Responsável": "Bruno",
-    "Observação": ""
-  },
-  {
     "ID": "12",
     "Data": "2026-02-09",
     "Obra": "CT Lajeado Montante",
@@ -278,19 +250,5 @@
     "Status": "pago",
     "Responsável": "Bruno",
     "Observação": "pagamento referente ao dano no colchão e briquedos"
-  },
-  {
-    "ID": "21",
-    "Data": "2026-05-27",
-    "Obra": "veiculo fiscalização",
-    "Morador": "Clean Car",
-    "Endereço": "",
-    "Tipo de dano": "reparo",
-    "Descrição": "reparo",
-    "Valor estimado (R$)": "10074.39",
-    "Valor pago (R$)": "10074.39",
-    "Status": "pago",
-    "Responsável": "Bruno",
-    "Observação": "pagamento referente a batida de trânsito (TPF)"
   }
 ]
