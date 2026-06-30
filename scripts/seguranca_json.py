@@ -267,18 +267,34 @@ def build_classification_lookup(rows: list[list[str]]) -> dict[str, dict[str, st
 
 def parse_classificacoes(value: str, lookup: dict[str, dict[str, str]]) -> list[dict[str, str]]:
     classificacoes = []
-    for part in split_parts(value):
-        match = re.match(r"^([A-Z]\d+)\.?\s*(.*)$", part, flags=re.IGNORECASE)
+    parts = split_parts(value)
+    if len(parts) == 1:
+        codes = list(re.finditer(r"([A-Z]\d+)\.?\s*([^;/]*)", parts[0], flags=re.IGNORECASE))
+        if len(codes) > 1:
+            parts = [match.group(0) for match in codes]
+    for part in parts:
+        match = re.search(r"([A-Z]\d+)\.?\s*(.*)$", part, flags=re.IGNORECASE)
         if not match:
-            classificacoes.append(
-                {
-                    "codigo": "",
-                    "grupo_codigo": "",
-                    "grupo": "Não classificado",
-                    "descricao": part,
-                    "texto": part,
-                }
-            )
+            if normalize_key(part) in {"conforme", "nao classificado", "naoclassificado"}:
+                classificacoes.append(
+                    {
+                        "codigo": "",
+                        "grupo_codigo": "",
+                        "grupo": part,
+                        "descricao": part,
+                        "texto": part,
+                    }
+                )
+            else:
+                classificacoes.append(
+                    {
+                        "codigo": "",
+                        "grupo_codigo": "",
+                        "grupo": "Não classificado",
+                        "descricao": part,
+                        "texto": part,
+                    }
+                )
             continue
         code = match.group(1).upper()
         descricao = clean(match.group(2))
@@ -309,12 +325,15 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
     all_rows = list(iter_rows(zf, sheet_path, shared))
     header = all_rows[0] if all_rows else []
     rows = all_rows[1:]
-    lookup = {clean(name).upper(): idx for idx, name in enumerate(header)}
+    lookup = {normalize_key(name): idx for idx, name in enumerate(header) if clean(name)}
     classificacao_lookup = build_classification_lookup(rows)
 
-    def get(row: list[str], name: str) -> str:
-        idx = lookup.get(name)
-        return row[idx] if idx is not None and idx < len(row) else ""
+    def get(row: list[str], *names: str) -> str:
+        for name in names:
+            idx = lookup.get(normalize_key(name))
+            if idx is not None and idx < len(row):
+                return row[idx]
+        return ""
 
     inspecoes = []
     desvios = []
@@ -323,15 +342,15 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
             continue
         data = excel_date(get(row, "DATA"))
         local = clean(get(row, "LOCAL"), "Sem localização")
-        lider = clean(get(row, "ENCARREGADO OU LIDER DE EQUIPE"), "Não informado")
-        descricao = clean(get(row, "DESCRIÇÃO"))
-        classificacao_original = clean(get(row, "CLASSIFICAÇÃO"), "Não classificado")
+        lider = clean(get(row, "ENCARREGADO OU LIDER DE EQUIPE", "ENCARREGADO", "LIDER"), "Não informado")
+        descricao = clean(get(row, "DESCRIÇÃO", "DESCRICAO"))
+        classificacao_original = clean(get(row, "CLASSIFICAÇÃO", "CLASSIFICACAO"), "Não classificado")
         classificacoes = parse_classificacoes(classificacao_original, classificacao_lookup)
         categoria = join_unique([item["grupo"] for item in classificacoes], "Não classificado")
         categoria_detalhe = join_unique([item["texto"] for item in classificacoes], classificacao_original)
-        qtd_desvios = integer(get(row, "QUANTIDADE DESVIOS"))
-        qtd_inspecoes = integer(get(row, "QUANTIDADE INSPEÇÕES")) or 1
-        tst = clean(get(row, "TÉCNICO DE SEGURANÇA  APLICADOR"), "Não informado")
+        qtd_desvios = integer(get(row, "QUANTIDADE DESVIOS", "QTD DESVIOS"))
+        qtd_inspecoes = integer(get(row, "QUANTIDADE INSPEÇÕES", "QUANTIDADE INSPECOES", "QTD INSPECOES")) or 1
+        tst = clean(get(row, "TÉCNICO DE SEGURANÇA  APLICADOR", "TECNICO DE SEGURANCA APLICADOR", "TST"), "Não informado")
 
         if not data and not descricao and local == "Sem localização":
             continue
@@ -353,12 +372,11 @@ def parse_inspecoes(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
         )
 
         descricao_parts = split_parts(descricao)
-        if descricao_parts or qtd_desvios > 0:
-            if not descricao_parts:
-                descricao_parts = [descricao or "Desvio sem descrição"]
-            for index, desvio in enumerate(descricao_parts, start=1):
+        if qtd_desvios > 0:
+            for index in range(1, qtd_desvios + 1):
+                desvio = descricao_parts[index - 1] if index - 1 < len(descricao_parts) else (descricao or "Desvio registrado na planilha")
                 classificacao = classificacoes[index - 1] if index - 1 < len(classificacoes) else (
-                    classificacoes[0] if classificacoes else {
+                    classificacoes[-1] if classificacoes else {
                         "codigo": "",
                         "grupo_codigo": "",
                         "grupo": "Não classificado",

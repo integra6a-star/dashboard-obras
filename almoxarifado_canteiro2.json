@@ -1,16 +1,16 @@
 {
-  "atualizado_em": "23/06/2026 07:01",
+  "atualizado_em": "30/06/2026 13:20",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Bandeirantes",
   "titulo": "Bandeirantes (Canteiro 2)",
   "produtos": [
     {
       "codigo": "P001",
       "descricao": "ADUELA DE 1000 x 1000",
-      "estoque_atual": "100",
+      "estoque_atual": "91",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 100,
+      "quantidade": 91,
       "situacao_planilha": ""
     },
     {
@@ -26,51 +26,51 @@
     {
       "codigo": "P003",
       "descricao": "ADUELA DE 600",
-      "estoque_atual": "3",
+      "estoque_atual": "52",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 3,
+      "quantidade": 52,
       "situacao_planilha": ""
     },
     {
       "codigo": "P004",
       "descricao": "LAJE INFERIOR DE 1000",
-      "estoque_atual": "0",
+      "estoque_atual": "27",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 0,
+      "quantidade": 27,
       "situacao_planilha": ""
     },
     {
       "codigo": "P005",
       "descricao": "LAJE INFERIOR DE 600",
-      "estoque_atual": "135",
+      "estoque_atual": "131",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 135,
+      "quantidade": 131,
       "situacao_planilha": ""
     },
     {
       "codigo": "P006",
       "descricao": "LAJE SURPERIOR DE 1000",
-      "estoque_atual": "15",
+      "estoque_atual": "42",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 15,
+      "quantidade": 42,
       "situacao_planilha": ""
     },
     {
       "codigo": "P007",
-      "descricao": "TUBO PEAD ESGOTO D 355 ( Ver projetos de obras para este material)",
-      "estoque_atual": "201 barras",
+      "descricao": "TUBO PEAD ESGOTO D 355",
+      "estoque_atual": "191 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 201,
+      "quantidade": 191,
       "situacao_planilha": ""
     },
     {
@@ -106,11 +106,11 @@
     {
       "codigo": "P011",
       "descricao": "TUBO CORRUGADO ESGOTO DN 300",
-      "estoque_atual": "183 Barras",
+      "estoque_atual": "133 Barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 183,
+      "quantidade": 133,
       "situacao_planilha": ""
     },
     {
@@ -136,41 +136,41 @@
     {
       "codigo": "P014",
       "descricao": "BLOCO PV",
-      "estoque_atual": "753",
+      "estoque_atual": "646",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 753,
+      "quantidade": 646,
       "situacao_planilha": ""
     },
     {
       "codigo": "P015",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 100 CM 6M",
-      "estoque_atual": "487 barras",
+      "estoque_atual": "461 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 487,
+      "quantidade": 461,
       "situacao_planilha": ""
     },
     {
       "codigo": "P016",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 150 CM 6M",
-      "estoque_atual": "3 Barras",
+      "estoque_atual": "33 Barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 3,
+      "quantidade": 33,
       "situacao_planilha": ""
     },
     {
       "codigo": "P017",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 200 CM 6M",
-      "estoque_atual": "391Barras",
+      "estoque_atual": "331Barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 391,
+      "quantidade": 331,
       "situacao_planilha": ""
     },
     {
@@ -186,11 +186,11 @@
     {
       "codigo": "P019",
       "descricao": "TUBO PVC RIG JEI/JERI ESG DN 400 CM 6M",
-      "estoque_atual": "5 barras",
+      "estoque_atual": "4 barras",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 5,
+      "quantidade": 4,
       "situacao_planilha": ""
     }
   ],
