@@ -121,6 +121,8 @@
 
   </div>
 
+  <script src="forms-db-config.js"></script>
+  <script src="forms-db.js"></script>
   <script>
     const perguntas = [
       ["banheiro", "4. Banheiro", ["SIM", "NÃO", "Outra"]],
@@ -184,15 +186,16 @@
       return naoConforme.includes(valor) ? "Não Conforme" : "Conforme";
     }
 
-    function salvarChecklist(){
+    async function salvarChecklist(){
       const registros = JSON.parse(localStorage.getItem("registrosAmbientais")) || [];
+      const linhas = [];
 
       perguntas.forEach((p) => {
         const id = p[0];
         const titulo = p[1].replace(/^[0-9]+\. /, "").toUpperCase();
         const valor = document.getElementById(id).value;
 
-        registros.push({
+        linhas.push({
           data: document.getElementById("data").value,
           lider: document.getElementById("lider").value,
           equipe: document.getElementById("equipe").value,
@@ -203,9 +206,20 @@
         });
       });
 
+      registros.push(...linhas);
       localStorage.setItem("registrosAmbientais", JSON.stringify(registros));
 
-      alert("Checklist salvo com sucesso!");
+      if (window.IntegraFormsDB) {
+        await IntegraFormsDB.save("meioambiente_checklist", {
+          data: document.getElementById("data").value,
+          lider: document.getElementById("lider").value,
+          equipe: document.getElementById("equipe").value,
+          trecho: document.getElementById("trecho").value,
+          itens: linhas
+        });
+      }
+
+      alert("Checklist salvo com sucesso. Os indicadores serao atualizados no painel.");
       window.location.href = "meioambiente.html";
     }
   </script>

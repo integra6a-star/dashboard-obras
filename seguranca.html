@@ -9,6 +9,8 @@
   <link rel="shortcut icon" href="./icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="forms-db-config.js"></script>
+  <script src="forms-db.js"></script>
 
   <style>
     :root {
@@ -740,7 +742,7 @@
           <p>Modelo digital baseado no formulário 6. Inspeção de Segurança - Novo 06.26, com checklist C/NC/NA, tratativas e seis fotos da inspeção.</p>
         </div>
         <div class="inspecao-actions">
-          <button class="btn-form" type="button" onclick="salvarInspecaoSeguranca()">Salvar rascunho</button>
+          <button class="btn-form" type="button" onclick="salvarInspecaoSeguranca()">Salvar inspeÃ§Ã£o</button>
           <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaWord()">Exportar Word</button>
           <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaPDF()">Gerar PDF</button>
           <button class="btn-form" type="button" onclick="window.open('inspecao-seguranca-novo-06-26.pdf','_blank')">Abrir modelo PDF</button>
@@ -1011,7 +1013,7 @@
     async function carregarBaseSeguranca() {
       try {
         const resposta = await fetch('./seguranca_data.json?cb=' + Date.now(), { cache: 'no-store' });
-        if (!resposta.ok) return;
+        if (!resposta.ok) throw new Error("seguranca_data.json indisponivel");
         const dados = await resposta.json();
         if (dados && Array.isArray(dados.inspecoes) && Array.isArray(dados.desvios) && Array.isArray(dados.dds)) {
           BASE_SEGURANCA = dados;
@@ -1019,6 +1021,50 @@
       } catch (erro) {
         console.warn('Base de seguranca externa indisponivel; usando fallback embutido.', erro);
       }
+      await carregarInspecoesSegurancaOnline();
+    }
+
+    async function carregarInspecoesSegurancaOnline(){
+      if (!window.IntegraFormsDB) return;
+      const inspecoes = await IntegraFormsDB.listPayloads("seguranca_inspecao");
+      const novasInspecoes = [];
+      const novosDesvios = [];
+
+      inspecoes.forEach(payload => {
+        const campos = payload.campos || {};
+        const data = campos.dataEmissao || (payload.createdAt || "").slice(0,10);
+        const lider = campos.supervisor || "NÃ£o informado";
+        const local = campos.endereco || "NÃ£o informado";
+        const tst = campos.tecnicoSeguranca || "NÃ£o informado";
+        novasInspecoes.push({
+          data,
+          local,
+          lider,
+          descricao: campos.naoConformidades || campos.comportamentosInseguros || "Checklist preenchido em campo",
+          tst
+        });
+
+        checklistInspecaoLinhas(payload).forEach(linha => {
+          if (linha.resultado !== "NC") return;
+          novosDesvios.push({
+            data,
+            local,
+            lider,
+            tst,
+            categoria: linha.grupo,
+            classificacao_grupo: linha.grupo,
+            classificacao_descricao: linha.item,
+            desvio: linha.item,
+            descricao: linha.item
+          });
+        });
+      });
+
+      BASE_SEGURANCA = {
+        ...BASE_SEGURANCA,
+        inspecoes:[...(BASE_SEGURANCA.inspecoes || []), ...novasInspecoes],
+        desvios:[...(BASE_SEGURANCA.desvios || []), ...novosDesvios]
+      };
     }
 
     const mesesNome = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
@@ -1615,12 +1661,19 @@
       return dados;
     }
 
-    function salvarInspecaoSeguranca(silencioso=false){
+    async function salvarInspecaoSeguranca(silencioso=false){
       try{
-        localStorage.setItem(INSPECAO_SEGURANCA_STORAGE, JSON.stringify(coletarInspecaoSeguranca()));
-        if (!silencioso) alert("Rascunho da inspeção salvo neste navegador.");
+        const dados = coletarInspecaoSeguranca();
+        localStorage.setItem(INSPECAO_SEGURANCA_STORAGE, JSON.stringify(dados));
+        if (!silencioso && window.IntegraFormsDB) {
+          await IntegraFormsDB.save("seguranca_inspecao", {
+            ...dados,
+            createdAt:new Date().toISOString()
+          });
+        }
+        if (!silencioso) alert("Inspecao salva. Os indicadores serao atualizados no painel.");
       }catch(e){
-        alert("Não foi possível salvar o rascunho. Reduza o tamanho das fotos e tente novamente.");
+        alert("Nao foi possivel salvar. Reduza o tamanho das fotos e tente novamente.");
       }
     }
 

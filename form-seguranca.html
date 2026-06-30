@@ -9,6 +9,8 @@
   <link rel="shortcut icon" href="./icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="forms-db-config.js"></script>
+  <script src="forms-db.js"></script>
 
   <style>
     :root {
@@ -753,7 +755,7 @@
           <p>Modelo digital baseado no formulário 6. Inspeção de Segurança - Novo 06.26, com checklist C/NC/NA, tratativas e seis fotos da inspeção.</p>
         </div>
         <div class="inspecao-actions">
-          <button class="btn-form" type="button" onclick="salvarInspecaoSeguranca()">Salvar rascunho</button>
+          <button class="btn-form" type="button" onclick="salvarInspecaoSeguranca()">Salvar inspeÃ§Ã£o</button>
           <button class="btn-form" type="button" onclick="window.open('inspecao-seguranca-novo-06-26.pdf','_blank')">Abrir modelo PDF</button>
           <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaWord()">Exportar Word</button>
           <button class="btn-form" type="button" onclick="exportarInspecaoSegurancaPDF()">Gerar PDF</button>
@@ -1628,12 +1630,19 @@
       return dados;
     }
 
-    function salvarInspecaoSeguranca(silencioso=false){
+    async function salvarInspecaoSeguranca(silencioso=false){
       try{
-        localStorage.setItem(INSPECAO_SEGURANCA_STORAGE, JSON.stringify(coletarInspecaoSeguranca()));
-        if (!silencioso) alert("Rascunho da inspeção salvo neste navegador.");
+        const dados = coletarInspecaoSeguranca();
+        localStorage.setItem(INSPECAO_SEGURANCA_STORAGE, JSON.stringify(dados));
+        if (!silencioso && window.IntegraFormsDB) {
+          await IntegraFormsDB.save("seguranca_inspecao", {
+            ...dados,
+            createdAt:new Date().toISOString()
+          });
+        }
+        if (!silencioso) alert("Inspecao salva. Os indicadores serao atualizados no painel.");
       }catch(e){
-        alert("Não foi possível salvar o rascunho. Reduza o tamanho das fotos e tente novamente.");
+        alert("Nao foi possivel salvar. Reduza o tamanho das fotos e tente novamente.");
       }
     }
 
