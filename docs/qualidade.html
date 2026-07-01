@@ -1,60 +1,246 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qualidade - QSMS</title>
   <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./icon.png" sizes="1024x1024" type="image/png">
+  <link rel="icon" href="./icon.png" sizes="1024x1024" type="image/png">
   <link rel="shortcut icon" href="./icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
-<style>
-    .painel{
-      background:#fff;
-      border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,.1);
-      max-width:760px;
-      padding:30px;
-    }
-    .acoes{
-      margin-top:24px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .botao{
-      background:#2563eb;
-      border:none;
-      border-radius:10px;
-      color:#fff;
-      display:inline-block;
-      font-weight:700;
-      padding:12px 18px;
-      text-decoration:none;
-    }
-    .botao.secundario{
-      background:#fff;
-      border:1px solid #cbd5e1;
-      color:#1e293b;
-    }
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--bg:#f4f7fb;--card:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--blue:#2563eb;--green:#16a34a;--red:#ef4444;--amber:#f59e0b;--purple:#8b5cf6;--shadow:0 12px 30px rgba(15,23,42,.08)}
+    body{background:var(--bg);color:var(--text)}
+    .page{width:min(1420px,94%);margin:0 auto 48px}
+    .hero{margin-top:18px;background:linear-gradient(135deg,#0f172a,#155e75 55%,#2563eb);border-radius:28px;color:#fff;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:360px;height:360px;right:-120px;top:-120px;background:rgba(255,255,255,.12);border-radius:50%}
+    .hero-inner{position:relative;z-index:1;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+    .voltar{display:inline-flex;color:#dbeafe;text-decoration:none;font-weight:800;margin-bottom:18px}
+    .hero h1{font-size:42px;line-height:1.05;margin:0 0 10px}
+    .hero p{color:#dbeafe;margin:0;max-width:820px}
+    .status-pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:14px 18px;border-radius:18px;min-width:220px;text-align:center;font-weight:900}
+    .status-pill span{display:block;color:#bfdbfe;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+    .filtros{background:#fff;padding:18px;border-radius:22px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr auto;gap:14px;margin:24px 0;align-items:end}
+    .filtro label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:900;color:var(--muted);margin-bottom:8px}
+    .filtro select{width:100%;padding:12px 14px;border:1px solid #cbd5e1;border-radius:14px;font-size:15px;background:#fff}
+    .btn-limpar{border:0;background:#0f172a;color:#fff;padding:13px 16px;border-radius:14px;font-weight:900;cursor:pointer}
+    .atalhos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:24px 0}
+    .atalho-card,.kpi-card,.grafico-card,.tabela-card{background:#fff;border:1px solid rgba(226,232,240,.85);border-radius:22px;box-shadow:var(--shadow)}
+    .atalho-card{padding:22px;text-decoration:none;color:var(--text)}
+    .atalho-card .icone{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:#eff6ff;color:#1d4ed8;font-size:24px;margin-bottom:12px}
+    .atalho-card h2{margin:0 0 6px;font-size:21px}
+    .atalho-card p{margin:0;color:var(--muted);font-size:14px}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:18px}
+    .kpi-card{padding:22px;position:relative;overflow:hidden;min-height:142px}
+    .kpi-card:before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--accent,var(--blue))}
+    .kpi-title{color:var(--muted);font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+    .kpi-number{font-size:38px;line-height:1;font-weight:900;margin-top:12px}
+    .kpi-note{margin-top:10px;color:var(--muted);font-size:14px}
+    .dashboard-graficos{display:grid;grid-template-columns:repeat(2,minmax(360px,1fr));gap:22px;margin-top:24px}
+    .grafico-card{padding:24px;min-height:420px}
+    .grafico-card.grande{grid-column:span 2}
+    .grafico-card h2{margin:0 0 6px;font-size:22px}
+    .grafico-card .desc{color:var(--muted);margin:0 0 18px;font-size:14px}
+    .grafico-card canvas{width:100%!important;max-height:330px}
+    .tabela-card{margin-top:24px;padding:24px;overflow:auto}
+    .sec-title{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:14px}
+    .sec-title h2{margin:0;font-size:24px}
+    .badge{background:#eff6ff;color:#1d4ed8;padding:8px 12px;border-radius:999px;font-weight:900;font-size:13px;white-space:nowrap}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:18px}
+    th,td{padding:13px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top}
+    th{background:#0f172a;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+    tr:hover td{background:#f8fafc}
+    .right{text-align:right}
+    .ok{color:#15803d;font-weight:900}
+    .bad{color:#b91c1c;font-weight:900}
+    @media(max-width:1000px){.hero-inner{flex-direction:column}.filtros{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}.dashboard-graficos{grid-template-columns:1fr}.grafico-card.grande{grid-column:span 1}}
+    @media(max-width:620px){.hero{padding:22px;border-radius:22px}.hero h1{font-size:32px}.kpi-grid{grid-template-columns:1fr}th,td{font-size:12px;padding:10px 8px}}
   </style>
 </head>
 <body>
-<div class="page-brand">
-  <a href="./index.html" aria-label="Voltar ao app">
-    <img src="./icon-180.png" alt="Integra">
-  </a>
-</div>
-<div class="painel">
-    <a href="qsms.html">Voltar</a>
-    <h1 class="titulo">Qualidade</h1>
-    <p class="subtitulo">Area reservada para os indicadores de qualidade.</p>
-    <p>Esta tela ficou preparada para teste porque o pacote recebido trouxe apenas um arquivo vazio de Qualidade.</p>
-    <div class="acoes">
-      <a class="botao" href="qsms.html">Voltar ao QSMS</a>
-      <a class="botao secundario" href="./index.html">Voltar ao dashboard</a>
-    </div>
-  </div>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <a href="qsms.html" class="voltar">← Voltar para QSMS</a>
+          <h1>Qualidade</h1>
+          <p>Indicadores oficiais da planilha FOR-Q-05.1: auditorias internas, pendências em FVS, vistorias QSMS, NC Sabesp, satisfação do cliente, treinamentos e ensaios de campo.</p>
+        </div>
+        <div class="status-pill"><span>Status geral</span><strong id="statusGeral">Carregando...</strong></div>
+      </div>
+    </section>
+
+    <section class="filtros">
+      <div class="filtro"><label>Mês</label><select id="filtroMes" onchange="atualizarDashboard()"></select></div>
+      <div class="filtro"><label>Indicador</label><select id="filtroIndicador" onchange="atualizarDashboard()"></select></div>
+      <button class="btn-limpar" onclick="limparFiltros()">Limpar filtros</button>
+    </section>
+
+    <section class="atalhos">
+      <a href="FOR-Q-05.1%20-%20%20Planilha%20de%20indicadores.xlsx" class="atalho-card">
+        <div class="icone">📄</div><h2>Planilha Base</h2><p>Abrir o arquivo de indicadores usado no painel.</p>
+      </a>
+      <a href="qsms.html" class="atalho-card">
+        <div class="icone">📊</div><h2>QSMS</h2><p>Voltar para Segurança, Meio Ambiente e Qualidade.</p>
+      </a>
+    </section>
+
+    <section class="kpi-grid">
+      <div class="kpi-card" style="--accent:var(--blue)"><div class="kpi-title">Indicadores</div><div class="kpi-number" id="kpiIndicadores">0</div><div class="kpi-note" id="kpiFonte">Base da planilha</div></div>
+      <div class="kpi-card" style="--accent:var(--green)"><div class="kpi-title">Metas Atendidas</div><div class="kpi-number" id="kpiAtendidos">0</div><div class="kpi-note" id="kpiAtendidosNota">No filtro</div></div>
+      <div class="kpi-card" style="--accent:var(--red)"><div class="kpi-title">Fora da Meta</div><div class="kpi-number" id="kpiFora">0</div><div class="kpi-note">Pontos para acompanhamento</div></div>
+      <div class="kpi-card" style="--accent:var(--amber)"><div class="kpi-title">Ações Pendentes</div><div class="kpi-number" id="kpiPendentes">0</div><div class="kpi-note">Plano de ação</div></div>
+    </section>
+
+    <section class="dashboard-graficos">
+      <div class="grafico-card grande"><h2>📊 Resultado por indicador</h2><p class="desc">Comparativo do resultado contra a meta de referência.</p><canvas id="graficoIndicadores"></canvas></div>
+      <div class="grafico-card"><h2>🎯 Status das ações</h2><p class="desc">Distribuição do plano de ação da Qualidade.</p><canvas id="graficoAcoes"></canvas></div>
+      <div class="grafico-card"><h2>📈 Evolução mensal</h2><p class="desc">Percentual de indicadores que bateram meta por mês.</p><canvas id="graficoMensal"></canvas></div>
+    </section>
+
+    <section class="tabela-card">
+      <div class="sec-title"><h2>🏆 Indicadores de Qualidade</h2><span class="badge" id="badgePeriodo">Período</span></div>
+      <table>
+        <thead><tr><th>Nº</th><th>Indicador</th><th>Meta</th><th class="right">Resultado</th><th>Status</th><th>Frequência</th></tr></thead>
+        <tbody id="tabelaIndicadores"></tbody>
+      </table>
+    </section>
+
+    <section class="tabela-card">
+      <div class="sec-title"><h2>🛠 Plano de ação</h2><span class="badge">Análise de resultados</span></div>
+      <table>
+        <thead><tr><th>Indicador</th><th>Mês</th><th>Causa</th><th>Ação</th><th>Prazo</th><th>Status</th></tr></thead>
+        <tbody id="tabelaAcoes"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    let BASE = {metadata:{}, indicadores:[], acoes:[], resumo:{}};
+    let chartIndicadores, chartAcoes, chartMensal;
+
+    const ordemMeses = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+    const nomesMeses = {janeiro:"Jan",fevereiro:"Fev",março:"Mar",abril:"Abr",maio:"Mai",junho:"Jun",julho:"Jul",agosto:"Ago",setembro:"Set",outubro:"Out",novembro:"Nov",dezembro:"Dez"};
+    function pct(valor){ return `${Math.round(valor * 100)}%`; }
+    function metaLabel(ind){ return ind.meta_texto || "-"; }
+    function resultadoDoIndicador(ind, mes){
+      if(mes === "acumulado") return {resultado:ind.acumulado.resultado_base ?? ind.acumulado.resultado, label:ind.acumulado.resultado_formatado, atingiu:ind.acumulado.atingiu};
+      const item = (ind.meses || []).find(m => m.mes === mes);
+      return item ? {resultado:item.resultado, label:item.resultado_formatado, atingiu:item.atingiu} : {resultado:null,label:"-",atingiu:null};
+    }
+    function valorGrafico(ind, res){
+      if(res.resultado == null) return 0;
+      return ind.meta != null && ind.meta <= 1.5 ? res.resultado * 100 : res.resultado;
+    }
+    function metaGrafico(ind){
+      if(ind.meta == null) return 0;
+      return ind.meta <= 1.5 ? ind.meta * 100 : ind.meta;
+    }
+    function mesBR(data){
+      if(!data) return "-";
+      const d = new Date(data + "T00:00:00");
+      if(Number.isNaN(d.getTime())) return data;
+      return `${String(d.getMonth()+1).padStart(2,"0")}/${d.getFullYear()}`;
+    }
+
+    async function carregar(){
+      const res = await fetch("qualidade_data.json?v=" + Date.now());
+      BASE = await res.json();
+      montarFiltros();
+      atualizarDashboard();
+    }
+
+    function montarFiltros(){
+      const meses = new Set();
+      BASE.indicadores.forEach(ind => (ind.meses || []).forEach(m => meses.add(m.mes)));
+      filtroMes.innerHTML = `<option value="acumulado">Acumulado</option>` + ordemMeses.filter(m => meses.has(m)).map(m => `<option value="${m}">${nomesMeses[m]}</option>`).join("");
+      filtroIndicador.innerHTML = `<option value="todos">Todos os indicadores</option>` + BASE.indicadores.map(i => `<option value="${i.numero}">${i.numero} - ${i.nome}</option>`).join("");
+    }
+
+    function filtrarIndicadores(){
+      const indicador = filtroIndicador.value;
+      return BASE.indicadores.filter(i => indicador === "todos" || String(i.numero) === indicador);
+    }
+
+    function filtrarAcoes(){
+      const indicador = filtroIndicador.value;
+      return BASE.acoes.filter(a => indicador === "todos" || String(a.indicador) === indicador);
+    }
+
+    function atualizarDashboard(){
+      const mes = filtroMes.value;
+      const indicadores = filtrarIndicadores();
+      const acoes = filtrarAcoes();
+      const resultados = indicadores.map(ind => ({ind, res:resultadoDoIndicador(ind, mes)})).filter(i => i.res.resultado != null);
+      const atendidos = resultados.filter(i => i.res.atingiu === true).length;
+      const fora = resultados.filter(i => i.res.atingiu === false).length;
+      const pendentes = acoes.filter(a => (a.status || "").toLowerCase() !== "concluído").length;
+
+      kpiIndicadores.innerText = resultados.length;
+      kpiAtendidos.innerText = atendidos;
+      kpiFora.innerText = fora;
+      kpiPendentes.innerText = pendentes;
+      kpiAtendidosNota.innerText = resultados.length ? `${Math.round((atendidos / resultados.length) * 100)}% dentro da meta` : "Sem dados no filtro";
+      kpiFonte.innerText = BASE.metadata.fonte || "FOR-Q-05.1";
+      statusGeral.innerText = fora ? `${fora} indicador(es) fora da meta` : "Metas atendidas no filtro";
+      badgePeriodo.innerText = mes === "acumulado" ? "Acumulado" : nomesMeses[mes];
+
+      montarTabelaIndicadores(resultados);
+      montarTabelaAcoes(acoes);
+      montarGraficos(resultados, acoes);
+    }
+
+    function montarTabelaIndicadores(resultados){
+      tabelaIndicadores.innerHTML = resultados.length ? resultados.map(({ind,res}) => {
+        const cls = res.atingiu ? "ok" : "bad";
+        const status = res.atingiu ? "Dentro da meta" : "Fora da meta";
+        return `<tr><td><strong>${ind.numero}</strong></td><td>${ind.nome}</td><td>${metaLabel(ind)}</td><td class="right"><strong>${res.label}</strong></td><td class="${cls}">${status}</td><td>${ind.frequencia || "-"}</td></tr>`;
+      }).join("") : `<tr><td colspan="6">Nenhum indicador encontrado.</td></tr>`;
+    }
+
+    function montarTabelaAcoes(acoes){
+      tabelaAcoes.innerHTML = acoes.length ? acoes.slice(0,40).map(a => `<tr><td>${a.indicador} - ${a.indicador_nome}</td><td>${mesBR(a.mes)}</td><td>${a.causa || "-"}</td><td>${a.acao || "-"}</td><td>${mesBR(a.prazo)}</td><td>${a.status || "-"}</td></tr>`).join("") : `<tr><td colspan="6">Nenhuma ação registrada.</td></tr>`;
+    }
+
+    function destruirGraficos(){ [chartIndicadores,chartAcoes,chartMensal].forEach(g => g && g.destroy()); }
+    function montarGraficos(resultados, acoes){
+      destruirGraficos();
+      chartIndicadores = new Chart(document.getElementById("graficoIndicadores"), {
+        type:"bar",
+        data:{
+          labels:resultados.map(i => `${i.ind.numero}. ${i.ind.nome}`),
+          datasets:[
+            {label:"Resultado", data:resultados.map(i => valorGrafico(i.ind,i.res)), backgroundColor:"#2563eb", borderRadius:10},
+            {label:"Meta", data:resultados.map(i => metaGrafico(i.ind)), backgroundColor:"#94a3b8", borderRadius:10}
+          ]
+        },
+        options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom"}},scales:{x:{beginAtZero:true}}}
+      });
+      const status = {};
+      acoes.forEach(a => status[a.status || "Não informado"] = (status[a.status || "Não informado"] || 0) + 1);
+      chartAcoes = new Chart(document.getElementById("graficoAcoes"), {
+        type:"doughnut",
+        data:{labels:Object.keys(status),datasets:[{data:Object.values(status),backgroundColor:["#16a34a","#f59e0b","#ef4444","#2563eb","#8b5cf6"]}]},
+        options:{responsive:true,plugins:{legend:{position:"bottom"}}}
+      });
+      const mensal = ordemMeses.map(mes => {
+        const itens = BASE.indicadores.map(ind => resultadoDoIndicador(ind, mes)).filter(r => r.resultado != null);
+        const ok = itens.filter(r => r.atingiu).length;
+        return {mes, valor:itens.length ? Math.round((ok / itens.length) * 100) : null};
+      }).filter(i => i.valor != null);
+      chartMensal = new Chart(document.getElementById("graficoMensal"), {
+        type:"line",
+        data:{labels:mensal.map(i => nomesMeses[i.mes]),datasets:[{label:"Metas atendidas",data:mensal.map(i => i.valor),borderColor:"#2563eb",backgroundColor:"rgba(37,99,235,.12)",fill:true,tension:.35}]},
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom"}},scales:{y:{beginAtZero:true,max:100,ticks:{callback:v => v + "%"}}}}
+      });
+    }
+
+    function limparFiltros(){ filtroMes.value = "acumulado"; filtroIndicador.value = "todos"; atualizarDashboard(); }
+    carregar().catch(() => {
+      statusGeral.innerText = "Erro ao carregar";
+      tabelaIndicadores.innerHTML = `<tr><td colspan="6">Não foi possível carregar qualidade_data.json.</td></tr>`;
+    });
+  </script>
 </body>
 </html>
-

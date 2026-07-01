@@ -1,0 +1,730 @@
+{
+  "metadata": {
+    "fonte": "FOR-Q-05.1 -  Planilha de indicadores.xlsx",
+    "gerado_em": "2026-07-01T07:40:55",
+    "estrutura": "FOR-Q-05.1 - Planilha de indicadores"
+  },
+  "indicadores": [
+    {
+      "numero": "1",
+      "nome": "Atendimento nas auditorias internas",
+      "tema": "QUALIDADE",
+      "objetivo": "Avaliar o nível de conformidade do Sistema de Gestão",
+      "calculo": "I = Nº de itens atendidos / Nº total de itens",
+      "meta_texto": "≥70%",
+      "meta": 0.7,
+      "frequencia": "Semestral",
+      "medida_1": "Nº de itens atendidos",
+      "medida_2": "Nº total de itens",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 155.0,
+          "denominador": 196.0,
+          "resultado": 0.7908163265306123,
+          "resultado_formatado": "79.1%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 155.0,
+        "denominador": 196.0,
+        "resultado": 0.7908163265306123,
+        "media": 0.7908163265306123,
+        "resultado_base": 0.7908163265306123,
+        "resultado_formatado": "79.1%",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "janeiro",
+        "mes_nome": "Jan",
+        "numerador": 155.0,
+        "denominador": 196.0,
+        "resultado": 0.7908163265306123,
+        "resultado_formatado": "79.1%",
+        "meta": 0.7,
+        "meta_texto": "≥70%",
+        "atingiu": true
+      }
+    },
+    {
+      "numero": "2",
+      "nome": "Resolução de pendências em FVS",
+      "tema": "",
+      "objetivo": "Monitorar a eficácia e a agilidade da organização na tratativa de pendências identificadas",
+      "calculo": "I = Nº de desvios resolvidos / Nº de desvios apontados",
+      "meta_texto": "≥70%",
+      "meta": 0.7,
+      "frequencia": "Mensal",
+      "medida_1": "Nº de desvios apontados",
+      "medida_2": "Nº de desvios resolvidos",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 5.0,
+          "denominador": 5.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "fevereiro",
+          "mes_nome": "Fev",
+          "numerador": 6.0,
+          "denominador": 6.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "março",
+          "mes_nome": "Mar",
+          "numerador": 1.0,
+          "denominador": 1.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "abril",
+          "mes_nome": "Abr",
+          "numerador": 0.0,
+          "denominador": 0.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "maio",
+          "mes_nome": "Mai",
+          "numerador": 2.0,
+          "denominador": 2.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "junho",
+          "mes_nome": "Jun",
+          "numerador": 8.0,
+          "denominador": 8.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 22.0,
+        "denominador": 22.0,
+        "resultado": 1.0,
+        "media": 1.0,
+        "resultado_base": 1.0,
+        "resultado_formatado": "100.0%",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "junho",
+        "mes_nome": "Jun",
+        "numerador": 8.0,
+        "denominador": 8.0,
+        "resultado": 1.0,
+        "resultado_formatado": "100.0%",
+        "meta": 0.7,
+        "meta_texto": "≥70%",
+        "atingiu": true
+      }
+    },
+    {
+      "numero": "3",
+      "nome": "Vistorias QSMS",
+      "tema": "QUALIDADE",
+      "objetivo": "",
+      "calculo": "Nº vistorias realizadas",
+      "meta_texto": "≥80",
+      "meta": 0.8,
+      "frequencia": "Mensal",
+      "medida_1": "Nº vistorias realizadas",
+      "medida_2": "Nº vistorias planejadas",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 1.0,
+          "denominador": 1.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "fevereiro",
+          "mes_nome": "Fev",
+          "numerador": 6.0,
+          "denominador": 4.0,
+          "resultado": 1.5,
+          "resultado_formatado": "150.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "março",
+          "mes_nome": "Mar",
+          "numerador": 5.0,
+          "denominador": 4.0,
+          "resultado": 1.25,
+          "resultado_formatado": "125.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "abril",
+          "mes_nome": "Abr",
+          "numerador": 4.0,
+          "denominador": 4.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "maio",
+          "mes_nome": "Mai",
+          "numerador": 4.0,
+          "denominador": 4.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "junho",
+          "mes_nome": "Jun",
+          "numerador": 4.0,
+          "denominador": 4.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 24.0,
+        "denominador": 21.0,
+        "resultado": 1.1428571428571428,
+        "media": 1.0,
+        "resultado_base": 1.1428571428571428,
+        "resultado_formatado": "114.3%",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "junho",
+        "mes_nome": "Jun",
+        "numerador": 4.0,
+        "denominador": 4.0,
+        "resultado": 1.0,
+        "resultado_formatado": "100.0%",
+        "meta": 0.8,
+        "meta_texto": "≥80",
+        "atingiu": true
+      }
+    },
+    {
+      "numero": "4",
+      "nome": "Fechamento interno de relatórios de não conformidades Sabesp",
+      "tema": "QUALIDADE",
+      "objetivo": "",
+      "calculo": "Nº total de não conformidades resolvidas",
+      "meta_texto": "≥70%",
+      "meta": 0.7,
+      "frequencia": "Mensal",
+      "medida_1": "Nº total de não conformidades resolvidas",
+      "medida_2": "Nº total de não conformidades",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 0.0,
+          "denominador": 0.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "fevereiro",
+          "mes_nome": "Fev",
+          "numerador": 2.0,
+          "denominador": 4.0,
+          "resultado": 0.5,
+          "resultado_formatado": "50.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": false
+        },
+        {
+          "mes": "março",
+          "mes_nome": "Mar",
+          "numerador": 2.0,
+          "denominador": 6.0,
+          "resultado": 0.3333333333333333,
+          "resultado_formatado": "33.3%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": false
+        },
+        {
+          "mes": "abril",
+          "mes_nome": "Abr",
+          "numerador": 8.0,
+          "denominador": 8.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        },
+        {
+          "mes": "maio",
+          "mes_nome": "Mai",
+          "numerador": 4.0,
+          "denominador": 4.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.7,
+          "meta_texto": "≥70%",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 16.0,
+        "denominador": 22.0,
+        "resultado": 0.7272727272727273,
+        "media": 0.5,
+        "resultado_base": 0.7272727272727273,
+        "resultado_formatado": "72.7%",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "maio",
+        "mes_nome": "Mai",
+        "numerador": 4.0,
+        "denominador": 4.0,
+        "resultado": 1.0,
+        "resultado_formatado": "100.0%",
+        "meta": 0.7,
+        "meta_texto": "≥70%",
+        "atingiu": true
+      }
+    },
+    {
+      "numero": "5",
+      "nome": "Satisfação do cliente",
+      "tema": "",
+      "objetivo": "Monitorar a percepção do cliente em relação à qualidade dos serviços prestados, identificando oportunidades de melhoria e promovendo o aumento da satisfação e da confiança nos resultados entregues.",
+      "calculo": "I = FAC",
+      "meta_texto": "≥70",
+      "meta": 70.0,
+      "frequencia": "Mensal",
+      "medida_1": "FAC",
+      "medida_2": "Resultado",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 72.0,
+          "denominador": null,
+          "resultado": 72.0,
+          "resultado_formatado": "72.0",
+          "meta": 70.0,
+          "meta_texto": "≥70",
+          "atingiu": true
+        },
+        {
+          "mes": "fevereiro",
+          "mes_nome": "Fev",
+          "numerador": 75.5,
+          "denominador": null,
+          "resultado": 75.5,
+          "resultado_formatado": "75.5",
+          "meta": 70.0,
+          "meta_texto": "≥70",
+          "atingiu": true
+        },
+        {
+          "mes": "março",
+          "mes_nome": "Mar",
+          "numerador": 75.0,
+          "denominador": null,
+          "resultado": 75.0,
+          "resultado_formatado": "75.0",
+          "meta": 70.0,
+          "meta_texto": "≥70",
+          "atingiu": true
+        },
+        {
+          "mes": "abril",
+          "mes_nome": "Abr",
+          "numerador": 73.25,
+          "denominador": null,
+          "resultado": 73.25,
+          "resultado_formatado": "73.2",
+          "meta": 70.0,
+          "meta_texto": "≥70",
+          "atingiu": true
+        },
+        {
+          "mes": "maio",
+          "mes_nome": "Mai",
+          "numerador": 70.6,
+          "denominador": null,
+          "resultado": 70.6,
+          "resultado_formatado": "70.6",
+          "meta": 70.0,
+          "meta_texto": "≥70",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 366.35,
+        "denominador": null,
+        "resultado": 366.35,
+        "media": 74.125,
+        "resultado_base": 74.125,
+        "resultado_formatado": "74.1",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "maio",
+        "mes_nome": "Mai",
+        "numerador": 70.6,
+        "denominador": null,
+        "resultado": 70.6,
+        "resultado_formatado": "70.6",
+        "meta": 70.0,
+        "meta_texto": "≥70",
+        "atingiu": true
+      }
+    },
+    {
+      "numero": "6",
+      "nome": "Treinamentos realizados conforme cronograma",
+      "tema": "",
+      "objetivo": "Monitorar o cumprimento do cronograma de treinamentos, assegurando que os colaboradores recebam as capacitações planejadas dentro dos prazos estabelecidos.",
+      "calculo": "I = Nº treinamentos realizados / Nº treinamentos planejados",
+      "meta_texto": "≥80",
+      "meta": 0.8,
+      "frequencia": "Mensal",
+      "medida_1": "Nº treinamentos realizados",
+      "medida_2": "Nº treinamentos planejados",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 1.0,
+          "denominador": 0.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "fevereiro",
+          "mes_nome": "Fev",
+          "numerador": 6.0,
+          "denominador": 6.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "março",
+          "mes_nome": "Mar",
+          "numerador": 6.0,
+          "denominador": 5.0,
+          "resultado": 1.2,
+          "resultado_formatado": "120.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "abril",
+          "mes_nome": "Abr",
+          "numerador": 5.0,
+          "denominador": 4.0,
+          "resultado": 1.25,
+          "resultado_formatado": "125.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        },
+        {
+          "mes": "maio",
+          "mes_nome": "Mai",
+          "numerador": 5.0,
+          "denominador": 5.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.8,
+          "meta_texto": "≥80",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 23.0,
+        "denominador": 20.0,
+        "resultado": 1.15,
+        "media": 1.0,
+        "resultado_base": 1.15,
+        "resultado_formatado": "115.0%",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "maio",
+        "mes_nome": "Mai",
+        "numerador": 5.0,
+        "denominador": 5.0,
+        "resultado": 1.0,
+        "resultado_formatado": "100.0%",
+        "meta": 0.8,
+        "meta_texto": "≥80",
+        "atingiu": true
+      }
+    },
+    {
+      "numero": "7",
+      "nome": "Índice de aprovação em ensaios de campo",
+      "tema": "",
+      "objetivo": "Garantir a conformidade no controle tecnológico",
+      "calculo": "I = Nº de ensaios atendidos / Nº total de ensaios",
+      "meta_texto": "≥90",
+      "meta": 0.9,
+      "frequencia": "Mensal",
+      "medida_1": "Nº de ensaios atendidos",
+      "medida_2": "Nº total de ensaios",
+      "meses": [
+        {
+          "mes": "janeiro",
+          "mes_nome": "Jan",
+          "numerador": 19.0,
+          "denominador": 24.0,
+          "resultado": 0.7916666666666666,
+          "resultado_formatado": "79.2%",
+          "meta": 0.9,
+          "meta_texto": "≥90",
+          "atingiu": false
+        },
+        {
+          "mes": "fevereiro",
+          "mes_nome": "Fev",
+          "numerador": 7.0,
+          "denominador": 8.0,
+          "resultado": 0.875,
+          "resultado_formatado": "87.5%",
+          "meta": 0.9,
+          "meta_texto": "≥90",
+          "atingiu": false
+        },
+        {
+          "mes": "março",
+          "mes_nome": "Mar",
+          "numerador": 33.0,
+          "denominador": 34.0,
+          "resultado": 0.9705882352941176,
+          "resultado_formatado": "97.1%",
+          "meta": 0.9,
+          "meta_texto": "≥90",
+          "atingiu": true
+        },
+        {
+          "mes": "abril",
+          "mes_nome": "Abr",
+          "numerador": 54.0,
+          "denominador": 55.0,
+          "resultado": 0.9818181818181818,
+          "resultado_formatado": "98.2%",
+          "meta": 0.9,
+          "meta_texto": "≥90",
+          "atingiu": true
+        },
+        {
+          "mes": "maio",
+          "mes_nome": "Mai",
+          "numerador": 50.0,
+          "denominador": 54.0,
+          "resultado": 0.9259259259259259,
+          "resultado_formatado": "92.6%",
+          "meta": 0.9,
+          "meta_texto": "≥90",
+          "atingiu": true
+        },
+        {
+          "mes": "junho",
+          "mes_nome": "Jun",
+          "numerador": 14.0,
+          "denominador": 14.0,
+          "resultado": 1.0,
+          "resultado_formatado": "100.0%",
+          "meta": 0.9,
+          "meta_texto": "≥90",
+          "atingiu": true
+        }
+      ],
+      "acumulado": {
+        "numerador": 177.0,
+        "denominador": 189.0,
+        "resultado": 0.9365079365079365,
+        "media": 0.9705882352941176,
+        "resultado_base": 0.9365079365079365,
+        "resultado_formatado": "93.7%",
+        "atingiu": true
+      },
+      "ultimo": {
+        "mes": "junho",
+        "mes_nome": "Jun",
+        "numerador": 14.0,
+        "denominador": 14.0,
+        "resultado": 1.0,
+        "resultado_formatado": "100.0%",
+        "meta": 0.9,
+        "meta_texto": "≥90",
+        "atingiu": true
+      }
+    }
+  ],
+  "acoes": [
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-01-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Concluído",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-02-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Não iniciado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-03-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Em andamento",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-04-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Não informado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-05-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Não informado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-06-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Não informado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-07-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Não informado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-08-01",
+      "causa": "Auditoria não realizada",
+      "acao": "",
+      "prazo": "",
+      "status": "Não informado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "1",
+      "indicador_nome": "Atendimento nas auditorias internas",
+      "mes": "2025-09-01",
+      "causa": "Auditoria não realizada",
+      "acao": "Planejado para ser realizada em novembro",
+      "prazo": "2025-11-30",
+      "status": "Não iniciado",
+      "data_fechamento": ""
+    },
+    {
+      "indicador": "3",
+      "indicador_nome": "Vistorias QSMS",
+      "mes": "2025-09-01",
+      "causa": "Os checklists foram implantados em outubro",
+      "acao": "Os checklists foram implantados em outubro",
+      "prazo": "2025-10-31",
+      "status": "Em andamento",
+      "data_fechamento": ""
+    }
+  ],
+  "resumo": {
+    "total_indicadores": 7,
+    "indicadores_atingidos": 7,
+    "indicadores_fora_meta": 0,
+    "acoes_total": 10,
+    "acoes_pendentes": 9
+  }
+}
