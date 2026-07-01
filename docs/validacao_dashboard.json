@@ -1,32 +1,36 @@
 {
-  "atualizado_em": "2026-06-30 13:21:20",
+  "atualizado_em": "2026-07-01 13:19:49",
   "totais": {
-    "base_planejado": 39688.39,
-    "base_executado": 18845.14,
+    "base_planejado": 39449.87,
+    "base_executado": 18874.14,
     "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 871.16,
-    "saldo_total": 20843.25
+    "diferenca_base_mapa": 900.16,
+    "saldo_total": 20575.73
   },
   "pds": {
-    "total": 3094,
-    "ultima_data": "2026-06-30",
+    "total": 3112,
+    "ultima_data": "2026-07-01",
     "hoje": 18,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE Raulzito",
+        "obra": "RCE São Lucas",
         "atividades": 5
       },
       {
-        "obra": "RCE São Lucas",
-        "atividades": 5
+        "obra": "RCE Raulzito",
+        "atividades": 3
+      },
+      {
+        "obra": "CT Água Vermelha MD / ME",
+        "atividades": 2
       },
       {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "RCE Maria dos Santos Machado",
-        "atividades": 2
+        "obra": "CT Lourdes Complementar",
+        "atividades": 1
       },
       {
         "obra": "RCE Conj. União",
@@ -34,6 +38,10 @@
       },
       {
         "obra": "RCE Elvira",
+        "atividades": 1
+      },
+      {
+        "obra": "RCE Maria dos Santos Machado",
         "atividades": 1
       },
       {
@@ -47,17 +55,17 @@
     ]
   },
   "alertas": [
-    "Diferença total entre Base Dash e mapa: 871.16 m",
+    "Diferença total entre Base Dash e mapa: 900.16 m",
     "13 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 1403.2,
+      "executado_base": 1432.2,
       "executado_mapa": 837.16,
-      "diferenca_base_mapa": 566.04,
-      "saldo": 396.0,
+      "diferenca_base_mapa": 595.04,
+      "saldo": 367.0,
       "linhas_base": 2,
       "linhas_mapa": 32
     },
@@ -364,16 +372,6 @@
       "linhas_mapa": 30
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1403.2,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 566.04,
-      "saldo": 396.0,
-      "linhas_base": 2,
-      "linhas_mapa": 32
-    },
-    {
       "obra": "RCE TERRA PROMETIDA",
       "planejado": 382.5,
       "executado_base": 0.0,
@@ -384,22 +382,22 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1432.2,
+      "executado_mapa": 837.16,
+      "diferenca_base_mapa": 595.04,
+      "saldo": 367.0,
+      "linhas_base": 2,
+      "linhas_mapa": 32
+    },
+    {
       "obra": "RCE RUA ALTO JURUÁ",
       "planejado": 245.0,
       "executado_base": 0.0,
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 0.0,
       "saldo": 245.0,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE RUA JOSÉ MILITÃO",
-      "planejado": 238.52,
-      "executado_base": 0.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 238.52,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -734,6 +732,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE RUA JOSÉ MILITÃO",
+      "planejado": 0.0,
+      "executado_base": 0.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 0.0,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "RCE AV. Fernando Pacheco Jordão",
       "planejado": 205.5,
       "executado_base": 220.59,
@@ -788,8 +796,8 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 35.7,
-      "modificado": "2026-06-30 06:59:09"
+      "tamanho_kb": 35.8,
+      "modificado": "2026-07-01 11:03:38"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -800,14 +808,14 @@
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
-      "tamanho_kb": 400.2,
-      "modificado": "2026-06-30 06:59:10"
+      "tamanho_kb": 403.4,
+      "modificado": "2026-07-01 07:04:52"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 536.5,
-      "modificado": "2026-06-30 13:20:34"
+      "tamanho_kb": 539.6,
+      "modificado": "2026-07-01 07:04:46"
     }
   ]
 }

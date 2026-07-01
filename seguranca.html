@@ -1158,7 +1158,12 @@
         return okMes;
       });
 
-      return { desvios, inspecoes, dds, mes };
+      const proativos = (BASE_SEGURANCA.indicadoresProativos || []).filter(d => {
+        const okMes = mes === "todos" || chaveMes(d.data) === mes;
+        return okMes;
+      });
+
+      return { desvios, inspecoes, dds, proativos, mes };
     }
 
     function destruirGraficos(){
@@ -1197,19 +1202,24 @@
     }
 
     function atualizarDashboard(){
-      const { desvios, inspecoes, dds, mes } = filtrarBase();
+      const { desvios, inspecoes, dds, proativos, mes } = filtrarBase();
 
       const categorias = contarPor(desvios, grupoIndicadorSeguranca);
       const principalCategoria = categorias[0];
 
+      const ddsProativo = proativos.reduce((soma, d) => soma + Number(d.quantidade_dds || 0), 0);
+      const campanhasProativo = proativos.reduce((soma, d) => soma + Number(d.quantidade_campanhas || 0), 0);
       const participantes = dds.reduce((soma, d) => soma + Number(d.participantes || 0), 0);
+      const totalDDS = ddsProativo || dds.length;
       const desviosPorInspecao = inspecoes.length ? (desvios.length / inspecoes.length) : 0;
 
       document.getElementById("kpiDesvios").innerText = desvios.length;
       document.getElementById("kpiDesviosNota").innerText = `${desviosPorInspecao.toFixed(1)} desvios por inspeção`;
       document.getElementById("kpiInspecoes").innerText = inspecoes.length;
-      document.getElementById("kpiDDS").innerText = dds.length;
-      document.getElementById("kpiDDSNota").innerText = `${participantes} participantes registrados`;
+      document.getElementById("kpiDDS").innerText = totalDDS;
+      document.getElementById("kpiDDSNota").innerText = ddsProativo
+        ? `${campanhasProativo} campanhas no período`
+        : `${participantes} participantes registrados`;
       document.getElementById("kpiCategoria").innerText = principalCategoria ? principalCategoria.nome : "-";
       document.getElementById("kpiCategoriaNota").innerText = principalCategoria ? `${principalCategoria.quantidade} desvios` : "Sem desvios no filtro";
       document.getElementById("statusGeral").innerText = desvios.length === 0 ? "Sem desvios no filtro" : `${desvios.length} desvios monitorados`;
@@ -1460,10 +1470,15 @@
 
     function montarResumo(){
       const resumo = document.getElementById("resumoBase");
+      const totalDDSProativo = (BASE_SEGURANCA.indicadoresProativos || [])
+        .reduce((soma, item) => soma + Number(item.quantidade_dds || 0), 0);
+      const totalCampanhas = (BASE_SEGURANCA.indicadoresProativos || [])
+        .reduce((soma, item) => soma + Number(item.quantidade_campanhas || 0), 0);
       resumo.innerHTML = `
         <span class="chip">Base: ${BASE_SEGURANCA.inspecoes.length} inspeções</span>
         <span class="chip">Desvios válidos: ${BASE_SEGURANCA.desvios.filter(ehDesvioValido).length}</span>
-        <span class="chip">DDS: ${BASE_SEGURANCA.dds.length}</span>
+        <span class="chip">DDS: ${totalDDSProativo || BASE_SEGURANCA.dds.length}</span>
+        <span class="chip">Campanhas: ${totalCampanhas}</span>
         <span class="chip">Treinamentos admissionais: ${BASE_SEGURANCA.treinamentosAdmissao}</span>
         <span class="chip">Pronto para trocar arrays por API/banco de dados</span>
       `;

@@ -106,6 +106,12 @@ def to_float(v):
         return 0.0
 
 
+def is_rede_existente_ou_executada(status):
+    texto = strip_accents(status).lower()
+    texto = re.sub(r"\s+", " ", texto).strip()
+    return "rede existente" in texto or "rede executada" in texto
+
+
 def to_iso_date(v):
     if v is None or v == "":
         return ""
@@ -194,14 +200,27 @@ def ler_registros_base():
             i = col_index.get(name)
             return row[i] if i is not None and i < len(row) else None
 
+        status = str(get_idx("Status") or "").strip()
+        planejado_m = to_float(get_idx("Planejado_m"))
+        executado_m = to_float(get_idx("Executado_m"))
+        nao_contabilizar_extensao = is_rede_existente_ou_executada(status)
+        planejado_original_m = planejado_m
+        executado_original_m = executado_m
+        if nao_contabilizar_extensao:
+            planejado_m = 0.0
+            executado_m = 0.0
+
         registros.append({
             "Data": to_iso_date(get_idx("Data")),
-            "Status": str(get_idx("Status") or "").strip(),
+            "Status": status,
+            "Nao_contabilizar_extensao": nao_contabilizar_extensao,
             "Obra": str(get_idx("Obra") or "").strip(),
             "Bloco": str(get_idx("Bloco") or "").strip(),
             "Tipo": str(get_idx("Tipo") or "").strip(),
-            "Planejado_m": to_float(get_idx("Planejado_m")),
-            "Executado_m": to_float(get_idx("Executado_m")),
+            "Planejado_m": planejado_m,
+            "Executado_m": executado_m,
+            "Planejado_original_m": planejado_original_m,
+            "Executado_original_m": executado_original_m,
             "PV": to_float(get_idx("PV")),
             "Profundidade_m": to_float(get_idx("Profundidade_m")),
             "Economias_Previstas": to_float(get_idx("Economias_Previstas")),

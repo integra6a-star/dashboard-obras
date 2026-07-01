@@ -17,9 +17,11 @@ NAMESPACE = {
 }
 
 SOURCE_CANDIDATES = [
+    Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho (1).xlsx"),
     ROOT / "Planilha de controle de segurança do trabalho.xlsx",
     ROOT / "docs" / "Planilha de controle de segurança do trabalho.xlsx",
     Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho.xlsx"),
+    ROOT / "Planilha de controle de segurança do trabalho (1).xlsx",
     ROOT / "Planilha de controle de seguranca do trabalho.xlsx",
     ROOT / "Planilha de controle de segurança do trabalho (2).xlsx",
     Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho (2).xlsx"),
@@ -269,9 +271,12 @@ def parse_classificacoes(value: str, lookup: dict[str, dict[str, str]]) -> list[
     classificacoes = []
     parts = split_parts(value)
     if len(parts) == 1:
-        codes = list(re.finditer(r"([A-Z]\d+)\.?\s*([^;/]*)", parts[0], flags=re.IGNORECASE))
+        codes = list(re.finditer(r"([A-Z]\d+)\.?", parts[0], flags=re.IGNORECASE))
         if len(codes) > 1:
-            parts = [match.group(0) for match in codes]
+            parts = [
+                parts[0][match.start() : (codes[index + 1].start() if index + 1 < len(codes) else len(parts[0]))].strip(" ,;")
+                for index, match in enumerate(codes)
+            ]
     for part in parts:
         match = re.search(r"([A-Z]\d+)\.?\s*(.*)$", part, flags=re.IGNORECASE)
         if not match:
@@ -435,6 +440,56 @@ def parse_dds(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
     return dds
 
 
+MESES_NUM = {
+    "janeiro": 1,
+    "fevereiro": 2,
+    "marco": 3,
+    "março": 3,
+    "abril": 4,
+    "maio": 5,
+    "junho": 6,
+    "julho": 7,
+    "agosto": 8,
+    "setembro": 9,
+    "outubro": 10,
+    "novembro": 11,
+    "dezembro": 12,
+}
+
+
+def parse_indicador_proativo(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]):
+    rows = list(iter_rows(zf, sheet_path, shared))
+    if not rows:
+        return []
+    ano = datetime.now().year
+    title = clean(rows[0][0] if rows and rows[0] else "")
+    match = re.search(r"(20\d{2})", title)
+    if match:
+        ano = int(match.group(1))
+
+    indicadores = []
+    for row in rows[2:]:
+        mes_nome = clean(row[0] if len(row) > 0 else "")
+        mes_num = MESES_NUM.get(normalize_key(mes_nome))
+        if not mes_num:
+            continue
+        quantidade_dds = integer(row[1] if len(row) > 1 else "")
+        quantidade_campanhas = integer(row[2] if len(row) > 2 else "")
+        if quantidade_dds == 0 and quantidade_campanhas == 0:
+            continue
+        indicadores.append(
+            {
+                "data": f"{ano:04d}-{mes_num:02d}-01",
+                "ano": ano,
+                "mes": mes_num,
+                "mes_nome": mes_nome.title(),
+                "quantidade_dds": quantidade_dds,
+                "quantidade_campanhas": quantidade_campanhas,
+            }
+        )
+    return indicadores
+
+
 def count_treinamentos(zf: zipfile.ZipFile, sheet_path: str, shared: list[str]) -> int:
     total = 0
     for row in iter_rows(zf, sheet_path, shared):
@@ -466,12 +521,14 @@ def build_payload(source: Path):
         sheets = workbook_sheets(zf)
         inspecoes_path = get_sheet_path(sheets, "Inspeções", "Inspecoes")
         dds_path = get_sheet_path(sheets, "DDS")
+        proativo_path = get_sheet_path(sheets, "Indicador Pro-ativo", "Indicador Proativo")
         treinamentos_path = get_sheet_path(sheets, "Treinamentos admissionais")
         listas_path = get_sheet_path(sheets, "Listas")
         if not inspecoes_path:
             raise KeyError("Aba Inspeções não encontrada.")
         inspecoes, desvios = parse_inspecoes(zf, inspecoes_path, shared)
         dds = parse_dds(zf, dds_path, shared) if dds_path else []
+        indicadores_proativos = parse_indicador_proativo(zf, proativo_path, shared) if proativo_path else []
         treinamentos = count_treinamentos(zf, treinamentos_path, shared) if treinamentos_path else 0
         if treinamentos == 0:
             treinamentos = TREINAMENTOS_ADMISSAO_FALLBACK
@@ -486,15 +543,23 @@ def build_payload(source: Path):
         "inspecoes": inspecoes,
         "desvios": desvios,
         "dds": dds,
+        "indicadoresProativos": indicadores_proativos,
         "treinamentosAdmissao": treinamentos,
         "listas": listas,
     }
 
 
 def main() -> None:
-    source = next((path for path in SOURCE_CANDIDATES if path.exists()), None)
-    if not source:
+    sources = [path for path in SOURCE_CANDIDATES if path.exists()]
+    if not sources:
         raise FileNotFoundError("Planilha de segurança não encontrada.")
+    source = max(sources, key=lambda path: path.stat().st_mtime)
+    root_copy = ROOT / "Planilha de controle de segurança do trabalho.xlsx"
+    docs_copy = ROOT / "docs" / "Planilha de controle de segurança do trabalho.xlsx"
+    for target in [root_copy, docs_copy]:
+        if source.resolve() != target.resolve():
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(source.read_bytes())
     payload = build_payload(source)
     for target in [ROOT / "seguranca_data.json", ROOT / "docs" / "seguranca_data.json"]:
         target.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -503,6 +568,7 @@ def main() -> None:
         f"inspeções={len(payload['inspecoes'])}",
         f"desvios={len(payload['desvios'])}",
         f"dds={len(payload['dds'])}",
+        f"proativos={len(payload['indicadoresProativos'])}",
         f"treinamentos={payload['treinamentosAdmissao']}",
     )
 

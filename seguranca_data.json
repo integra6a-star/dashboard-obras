@@ -1,7 +1,7 @@
 {
   "metadata": {
     "fonte": "Planilha de controle de segurança do trabalho.xlsx",
-    "gerado_em": "2026-06-30T13:23:28",
+    "gerado_em": "2026-07-01T13:17:17",
     "estrutura": "Planilha de controle de segurança do trabalho"
   },
   "inspecoes": [
@@ -10210,22 +10210,22 @@
       "lider": "Não ID",
       "descricao": "Ruptura de Infraestrutura Subterrânea. Rede pública de serviços atingida de forma acidental durante operações de escavação mecânica, resultando no extravasamento massivo de efluente/material sobre o solo e leito carroçável da via pública.",
       "categoria": "F. Procedimentos e Técnicas; G. Organização e Limpeza",
-      "categoria_detalhe": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas); G1. Local sujo (Ex: lama",
+      "categoria_detalhe": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) /; G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacao_original": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) / G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacoes": [
         {
           "codigo": "F1",
           "grupo_codigo": "F",
           "grupo": "F. Procedimentos e Técnicas",
-          "descricao": "Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas)",
-          "texto": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas)"
+          "descricao": "Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) /",
+          "texto": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) /"
         },
         {
           "codigo": "G1",
           "grupo_codigo": "G",
           "grupo": "G. Organização e Limpeza",
-          "descricao": "Local sujo (Ex: lama",
-          "texto": "G1. Local sujo (Ex: lama"
+          "descricao": "Local sujo (Ex: lama / efluente espalhado na via pública)",
+          "texto": "G1. Local sujo (Ex: lama / efluente espalhado na via pública)"
         }
       ],
       "tst": "Jacson",
@@ -10259,22 +10259,22 @@
       "lider": "Valmir Encarregado",
       "descricao": "Içamento de Carga Crítico Inseguro. Operação com caminhão Munck utilizando pranchas de madeira danificadas/rachadas para o patolamento; posicionamento do veículo pesado sobre solo lamacento instável com risco de afundamento; uso inadequado de ganchos de quatro pontas sem cintas apropriadas; execução sem a emissão de Permissão de Trabalho (PT).",
       "categoria": "E. Equipamentos Pesados; F. Procedimentos e Técnicas; C. Equipamento de Proteção Coletiva",
-      "categoria_detalhe": "E2. Patolamento inadequado de equipamentos em solo instável; F2. Não existem projetos; C2. Inadequados para atividade",
+      "categoria_detalhe": "E2. Patolamento inadequado de equipamentos em solo instável /; F2. Não existem projetos / procedimentos escritos /; C2. Inadequados para atividade",
       "classificacao_original": "E2. Patolamento inadequado de equipamentos em solo instável / F2. Não existem projetos / procedimentos escritos / C2. Inadequados para atividade",
       "classificacoes": [
         {
           "codigo": "E2",
           "grupo_codigo": "E",
           "grupo": "E. Equipamentos Pesados",
-          "descricao": "Patolamento inadequado de equipamentos em solo instável",
-          "texto": "E2. Patolamento inadequado de equipamentos em solo instável"
+          "descricao": "Patolamento inadequado de equipamentos em solo instável /",
+          "texto": "E2. Patolamento inadequado de equipamentos em solo instável /"
         },
         {
           "codigo": "F2",
           "grupo_codigo": "F",
           "grupo": "F. Procedimentos e Técnicas",
-          "descricao": "Não existem projetos",
-          "texto": "F2. Não existem projetos"
+          "descricao": "Não existem projetos / procedimentos escritos /",
+          "texto": "F2. Não existem projetos / procedimentos escritos /"
         },
         {
           "codigo": "C2",
@@ -10294,8 +10294,8 @@
       "lider": "Não ID",
       "descricao": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "categoria": "B. Equipamento de Proteção Individual",
-      "categoria_detalhe": "B7. Pés e pernas; B4. Ouvidos (Ex: ruído de martelete)",
-      "classificacao_original": "B7. Pés e pernas; B4",
+      "categoria_detalhe": "B7. Pés e pernas; B4. Ouvidos",
+      "classificacao_original": "B7. Pés e pernas; B4.Ouvidos",
       "classificacoes": [
         {
           "codigo": "B7",
@@ -10308,8 +10308,8 @@
           "codigo": "B4",
           "grupo_codigo": "B",
           "grupo": "B. Equipamento de Proteção Individual",
-          "descricao": "Ouvidos (Ex: ruído de martelete)",
-          "texto": "B4. Ouvidos (Ex: ruído de martelete)"
+          "descricao": "Ouvidos",
+          "texto": "B4. Ouvidos"
         }
       ],
       "tst": "Rogerio",
@@ -10322,22 +10322,22 @@
       "lider": "Não ID",
       "descricao": "Risco Elétrico e de Incêndio. Atividade de soldagem PEAD executada sem extintor de incêndio próximo; ausência de Análise Preliminar de Risco (APR) na frente de serviço; utilização de extensão elétrica com isolamento danificado e sem plugue industrial adequado.",
       "categoria": "A. Posição das Pessoas; D. Ferramentas e Equipamentos Leves; F. Procedimentos e Técnicas",
-      "categoria_detalhe": "A5. Risco de choque elétrico; D3. Em condições inseguras (Extensões elétricas danificadas); F5. Ausência de Análise Preliminar de Risco (APR) no local",
+      "categoria_detalhe": "A5. Risco de choque elétrico /; D3. Em condições inseguras (Extensões elétricas danificadas) /; F5. Ausência de Análise Preliminar de Risco (APR) no local",
       "classificacao_original": "A5. Risco de choque elétrico / D3. Em condições inseguras (Extensões elétricas danificadas) / F5. Ausência de Análise Preliminar de Risco (APR) no local",
       "classificacoes": [
         {
           "codigo": "A5",
           "grupo_codigo": "A",
           "grupo": "A. Posição das Pessoas",
-          "descricao": "Risco de choque elétrico",
-          "texto": "A5. Risco de choque elétrico"
+          "descricao": "Risco de choque elétrico /",
+          "texto": "A5. Risco de choque elétrico /"
         },
         {
           "codigo": "D3",
           "grupo_codigo": "D",
           "grupo": "D. Ferramentas e Equipamentos Leves",
-          "descricao": "Em condições inseguras (Extensões elétricas danificadas)",
-          "texto": "D3. Em condições inseguras (Extensões elétricas danificadas)"
+          "descricao": "Em condições inseguras (Extensões elétricas danificadas) /",
+          "texto": "D3. Em condições inseguras (Extensões elétricas danificadas) /"
         },
         {
           "codigo": "F5",
@@ -10357,15 +10357,22 @@
       "lider": "Não ID",
       "descricao": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "categoria": "B. Equipamento de Proteção Individual",
-      "categoria_detalhe": "B7. Pés e pernas, B4.Ouvidos",
+      "categoria_detalhe": "B7. Pés e pernas; B4. Ouvidos",
       "classificacao_original": "B7.Pés e pernas, B4.Ouvidos",
       "classificacoes": [
         {
           "codigo": "B7",
           "grupo_codigo": "B",
           "grupo": "B. Equipamento de Proteção Individual",
-          "descricao": "Pés e pernas, B4.Ouvidos",
-          "texto": "B7. Pés e pernas, B4.Ouvidos"
+          "descricao": "Pés e pernas",
+          "texto": "B7. Pés e pernas"
+        },
+        {
+          "codigo": "B4",
+          "grupo_codigo": "B",
+          "grupo": "B. Equipamento de Proteção Individual",
+          "descricao": "Ouvidos",
+          "texto": "B4. Ouvidos"
         }
       ],
       "tst": "Rogerio",
@@ -10378,8 +10385,36 @@
       "lider": "Marcelo Alves",
       "descricao": "Escada sem fixação e extintor despressurizado",
       "categoria": "D. Ferramentas e Equipamentos Leves; E. Equipamentos Pesados",
+      "categoria_detalhe": "D3. Em condições inseguras; E1. Retroescavadeira / Caminhão em condições inadequadas",
+      "classificacao_original": "D3.Em condições inseguras; E1. Retroescavadeira / Caminhão em condições inadequadas",
+      "classificacoes": [
+        {
+          "codigo": "D3",
+          "grupo_codigo": "D",
+          "grupo": "D. Ferramentas e Equipamentos Leves",
+          "descricao": "Em condições inseguras",
+          "texto": "D3. Em condições inseguras"
+        },
+        {
+          "codigo": "E1",
+          "grupo_codigo": "E",
+          "grupo": "E. Equipamentos Pesados",
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas"
+        }
+      ],
+      "tst": "Jacson",
+      "quantidade_desvios": 2,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-03",
+      "local": "CT Lurdes",
+      "lider": "Marcelo Alves",
+      "descricao": "Escada sem fixação, extintor despressurizado, placa de sinalização ausente.",
+      "categoria": "D. Ferramentas e Equipamentos Leves; E. Equipamentos Pesados",
       "categoria_detalhe": "D3. Em condições inseguras; E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
-      "classificacao_original": "D3.Em condições inseguras; e1",
+      "classificacao_original": "D3, E1",
       "classificacoes": [
         {
           "codigo": "D3",
@@ -10581,15 +10616,15 @@
       "lider": "Frota",
       "descricao": "Falha de Implemento / Queda de Carga. Ocorrência de falha ou desprendimento acidental do implemento Clamshell da escavação mecânica durante preenchimento de poço (PV4) com rachão, resultando no desabamento do componente para o fundo do poço (sem lesões a pessoas).",
       "categoria": "E. Equipamentos Pesados; F. Procedimentos e Técnicas",
-      "categoria_detalhe": "E1. Retroescavadeira; F3. Adequados e não seguidos",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) /; F3. Adequados e não seguidos",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) / F3. Adequados e não seguidos",
       "classificacoes": [
         {
           "codigo": "E1",
           "grupo_codigo": "E",
           "grupo": "E. Equipamentos Pesados",
-          "descricao": "Retroescavadeira",
-          "texto": "E1. Retroescavadeira"
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) /",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) /"
         },
         {
           "codigo": "F3",
@@ -10714,8 +10749,8 @@
       "lider": "Ricardo Coutinho",
       "descricao": "Gerador sem aterramento adequado, uso de tomada inapropriada e ligação improvisada.",
       "categoria": "D. Ferramentas e Equipamentos Leves; A. Posição das Pessoas",
-      "categoria_detalhe": "D3. Em condições inseguras; A5. Risco de choque elétrico",
-      "classificacao_original": "D3.; A5",
+      "categoria_detalhe": "D3. Em condições inseguras; A5. Risco de Choque Elétrico",
+      "classificacao_original": "D3.Em condições inseguras; A5.Risco de Choque Elétrico",
       "classificacoes": [
         {
           "codigo": "D3",
@@ -10728,8 +10763,8 @@
           "codigo": "A5",
           "grupo_codigo": "A",
           "grupo": "A. Posição das Pessoas",
-          "descricao": "Risco de choque elétrico",
-          "texto": "A5. Risco de choque elétrico"
+          "descricao": "Risco de Choque Elétrico",
+          "texto": "A5. Risco de Choque Elétrico"
         }
       ],
       "tst": "Beatriz",
@@ -10784,15 +10819,15 @@
       "lider": "Não ID",
       "descricao": "Falhas de Sinalização e de Frenagem. Caminhão limpa-fossa Vacal (Placa RLM0E63) operando com farol esquerdo queimado, lanterna traseira sem lente de proteção, retrovisor direito fixado com arame e falha no freio de estacionamento (maneco), além do uso improvisado de uma pedra como calço de roda.",
       "categoria": "E. Equipamentos Pesados",
-      "categoria_detalhe": "E1. Retroescavadeira; E2. Patolamento inadequado de equipamentos em solo instável",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas /; E2. Patolamento inadequado de equipamentos em solo instável",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas / E2. Patolamento inadequado de equipamentos em solo instável",
       "classificacoes": [
         {
           "codigo": "E1",
           "grupo_codigo": "E",
           "grupo": "E. Equipamentos Pesados",
-          "descricao": "Retroescavadeira",
-          "texto": "E1. Retroescavadeira"
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas /",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas /"
         },
         {
           "codigo": "E2",
@@ -10833,15 +10868,15 @@
       "lider": "Oreste Medeiros",
       "descricao": "Deficiência de Fixação Estrutural. Elementos do revestimento metálico do Armco instalados sem fixação por parafusos em múltiplos pontos previstos no projeto, sob a justificativa de interferência com sapatas e vigas de concreto de muro vizinho.",
       "categoria": "C. Equipamento de Proteção Coletiva; F. Procedimentos e Técnicas",
-      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente); F3. Adequados e não seguidos",
+      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /; F3. Adequados e não seguidos",
       "classificacao_original": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) / F3. Adequados e não seguidos",
       "classificacoes": [
         {
           "codigo": "C3",
           "grupo_codigo": "C",
           "grupo": "C. Equipamento de Proteção Coletiva",
-          "descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)",
-          "texto": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)"
+          "descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /",
+          "texto": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /"
         },
         {
           "codigo": "F3",
@@ -10861,8 +10896,8 @@
       "lider": "Marcelo Alves",
       "descricao": "Risco para pedestres devido à movimentação de solo e abertura no solo.",
       "categoria": "A. Posição das Pessoas; G. Organização e Limpeza",
-      "categoria_detalhe": "A1. Bater contra / Ser atingidor por; G2. Local desorganizado / Obstrução de calçadas e passagens de pedestres",
-      "classificacao_original": "A1.Bater contra / Ser atingidor por; G2",
+      "categoria_detalhe": "A1. Bater contra / Ser atingidor por; G2. Local desorganizado",
+      "classificacao_original": "A1.Bater contra / Ser atingidor por; G2.Local desorganizado",
       "classificacoes": [
         {
           "codigo": "A1",
@@ -10875,8 +10910,8 @@
           "codigo": "G2",
           "grupo_codigo": "G",
           "grupo": "G. Organização e Limpeza",
-          "descricao": "Local desorganizado / Obstrução de calçadas e passagens de pedestres",
-          "texto": "G2. Local desorganizado / Obstrução de calçadas e passagens de pedestres"
+          "descricao": "Local desorganizado",
+          "texto": "G2. Local desorganizado"
         }
       ],
       "tst": "Beatriz",
@@ -10910,22 +10945,22 @@
       "lider": "Frota",
       "descricao": "Vazamento de Hidrocarbonetos. Retroescavadeira prefixo EVV 5010 apresentando vazamento de óleo lubrificante/hidráulico em sua parte inferior, com presença de gotejamento crônico e poças de óleo acumuladas no solo.",
       "categoria": "E. Equipamentos Pesados; G. Organização e Limpeza",
-      "categoria_detalhe": "E1. Retroescavadeira; G1. Local sujo (Ex: lama",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) /; G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) / G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacoes": [
         {
           "codigo": "E1",
           "grupo_codigo": "E",
           "grupo": "E. Equipamentos Pesados",
-          "descricao": "Retroescavadeira",
-          "texto": "E1. Retroescavadeira"
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) /",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) /"
         },
         {
           "codigo": "G1",
           "grupo_codigo": "G",
           "grupo": "G. Organização e Limpeza",
-          "descricao": "Local sujo (Ex: lama",
-          "texto": "G1. Local sujo (Ex: lama"
+          "descricao": "Local sujo (Ex: lama / efluente espalhado na via pública)",
+          "texto": "G1. Local sujo (Ex: lama / efluente espalhado na via pública)"
         }
       ],
       "tst": "Rogerio",
@@ -10939,7 +10974,7 @@
       "descricao": "Escada portátil sem ultrapassar 1m da borda e aberturas sem proteção.",
       "categoria": "A. Posição das Pessoas; D. Ferramentas e Equipamentos Leves",
       "categoria_detalhe": "A3. Risco de Queda; D3. Em condições inseguras",
-      "classificacao_original": "A3.Risco de Queda; D3",
+      "classificacao_original": "A3.Risco de Queda; D3.Em condições inseguras",
       "classificacoes": [
         {
           "codigo": "A3",
@@ -11008,15 +11043,15 @@
       "lider": "Eng. Robson",
       "descricao": "Tentativa Insegura de Acesso à Vala. Intervenção preventiva da engenharia civil ao flagrar colaborador posicionado em escada portátil com clara intenção de adentrar vala profunda sem a implantação prévia das medidas de proteção coletiva perimetrais.",
       "categoria": "F. Procedimentos e Técnicas; A. Posição das Pessoas",
-      "categoria_detalhe": "F3. Adequados e não seguidos; A3. Risco de queda (Ex: valas abertas, poços de visita)",
+      "categoria_detalhe": "F3. Adequados e não seguidos /; A3. Risco de queda (Ex: valas abertas, poços de visita)",
       "classificacao_original": "F3. Adequados e não seguidos / A3. Risco de queda (Ex: valas abertas, poços de visita)",
       "classificacoes": [
         {
           "codigo": "F3",
           "grupo_codigo": "F",
           "grupo": "F. Procedimentos e Técnicas",
-          "descricao": "Adequados e não seguidos",
-          "texto": "F3. Adequados e não seguidos"
+          "descricao": "Adequados e não seguidos /",
+          "texto": "F3. Adequados e não seguidos /"
         },
         {
           "codigo": "A3",
@@ -11211,15 +11246,15 @@
       "lider": "Eng. Eloizio",
       "descricao": "Instabilidade Crítica de Maciço e Infiltração. Escavação profunda com cerca de 8 metros evidenciou desprendimento e escorregamento localizado do solo perimetral (exigindo contenção com armadura e concreto projetado), agravada por severo acúmulo de água no fundo e trabalhadores expostos no interior da área instável.",
       "categoria": "A. Posição das Pessoas; E. Equipamentos Pesados",
-      "categoria_detalhe": "A2. Ficar preso; E2. Condições Inseguras",
+      "categoria_detalhe": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) /; E2. Condições Inseguras",
       "classificacao_original": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) / E2. Condições Inseguras",
       "classificacoes": [
         {
           "codigo": "A2",
           "grupo_codigo": "A",
           "grupo": "A. Posição das Pessoas",
-          "descricao": "Ficar preso",
-          "texto": "A2. Ficar preso"
+          "descricao": "Ficar preso / Soterramento (Ex: valas sem escoramento) /",
+          "texto": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) /"
         },
         {
           "codigo": "E2",
@@ -11302,15 +11337,15 @@
       "lider": "Antonio Vidal",
       "descricao": "Não Utilização de EPI de Proteção de Membros. Flagrante em campo evidenciado também via comunicação interna (Grupo Sismo Integra 6A) onde a equipe realizava atividades operacionais sem fazer o uso obrigatório de luvas de raspa/proteção.",
       "categoria": "B. Equipamento de Proteção Individual; F. Procedimentos e Técnicas",
-      "categoria_detalhe": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto; F3. Adequados e não seguidos",
+      "categoria_detalhe": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) /; F3. Adequados e não seguidos",
       "classificacao_original": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) / F3. Adequados e não seguidos",
       "classificacoes": [
         {
           "codigo": "B5",
           "grupo_codigo": "B",
           "grupo": "B. Equipamento de Proteção Individual",
-          "descricao": "Mãos e braços (Ex: luvas inadequadas para esgoto",
-          "texto": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto"
+          "descricao": "Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) /",
+          "texto": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) /"
         },
         {
           "codigo": "F3",
@@ -11330,15 +11365,15 @@
       "lider": "Eng. Eloizio",
       "descricao": "Acesso Inseguro a Escavação Profunda. Escada vertical utilizada para descida no interior de escavação com 8 metros de profundidade apresentando degraus com avarias físicas e sem sistema de fixação/amarração na extremidade superior.",
       "categoria": "C. Equipamento de Proteção Coletiva; F. Procedimentos e Técnicas",
-      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente); F3. Adequados e não seguidos",
+      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /; F3. Adequados e não seguidos",
       "classificacao_original": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) / F3. Adequados e não seguidos",
       "classificacoes": [
         {
           "codigo": "C3",
           "grupo_codigo": "C",
           "grupo": "C. Equipamento de Proteção Coletiva",
-          "descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)",
-          "texto": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)"
+          "descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /",
+          "texto": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /"
         },
         {
           "codigo": "F3",
@@ -11400,15 +11435,15 @@
       "lider": "Rogerio Gonçalves",
       "descricao": "Estrutura de madeira utilizada para tapumes apresentando diversos pregos expostos e salientes, gerando risco iminente de perfuração e cortes para os trabalhadores.",
       "categoria": "G. Organização e Limpeza; C. Equipamento de Proteção Coletiva",
-      "categoria_detalhe": "G1. Local sujo (risco de perfuração); C1. Sem isolamento adequado (tapume danificado).",
+      "categoria_detalhe": "G1. Local sujo (risco de perfuração) /; C1. Sem isolamento adequado (tapume danificado).",
       "classificacao_original": "G1. Local sujo (risco de perfuração) / C1. Sem isolamento adequado (tapume danificado).",
       "classificacoes": [
         {
           "codigo": "G1",
           "grupo_codigo": "G",
           "grupo": "G. Organização e Limpeza",
-          "descricao": "Local sujo (risco de perfuração)",
-          "texto": "G1. Local sujo (risco de perfuração)"
+          "descricao": "Local sujo (risco de perfuração) /",
+          "texto": "G1. Local sujo (risco de perfuração) /"
         },
         {
           "codigo": "C1",
@@ -11428,22 +11463,22 @@
       "lider": "Rogerio Gonçalves",
       "descricao": "Canteiro desorganizado com acúmulo de madeiras de tapumes contendo pregos expostos e vergalhões de aço sem isolamento, configurando área de risco para circulação.",
       "categoria": "G. Organização e Limpeza; A. Posição das Pessoas",
-      "categoria_detalhe": "G2. Local desorganizado; A1. Bater contra",
+      "categoria_detalhe": "G2. Local desorganizado /; A1. Bater contra / Ser atingido por",
       "classificacao_original": "G2. Local desorganizado / A1. Bater contra / Ser atingido por",
       "classificacoes": [
         {
           "codigo": "G2",
           "grupo_codigo": "G",
           "grupo": "G. Organização e Limpeza",
-          "descricao": "Local desorganizado",
-          "texto": "G2. Local desorganizado"
+          "descricao": "Local desorganizado /",
+          "texto": "G2. Local desorganizado /"
         },
         {
           "codigo": "A1",
           "grupo_codigo": "A",
           "grupo": "A. Posição das Pessoas",
-          "descricao": "Bater contra",
-          "texto": "A1. Bater contra"
+          "descricao": "Bater contra / Ser atingido por",
+          "texto": "A1. Bater contra / Ser atingido por"
         }
       ],
       "tst": "Rogerio",
@@ -11582,22 +11617,22 @@
       "lider": "Eng. Eloizio",
       "descricao": "Intervenção Irregular em Redes de Utilidades. Fixação improvisada de corda diretamente sobre cabos aéreos de telecomunicação de terceiros para erguer a fiação e abrir gabarito para a retroescavadeira, sem projeto, cálculo mecânico ou liberação técnica das operadoras.",
       "categoria": "D. Ferramentas e Equipamentos Leves; E. Equipamentos Pesados; F. Procedimentos e Técnicas",
-      "categoria_detalhe": "D2. Usadas incorretamente; E2. Condições Inseguras; F3. Adequados e não seguidos",
+      "categoria_detalhe": "D2. Usadas incorretamente /; E2. Condições Inseguras /; F3. Adequados e não seguidos",
       "classificacao_original": "D2. Usadas incorretamente / E2. Condições Inseguras / F3. Adequados e não seguidos",
       "classificacoes": [
         {
           "codigo": "D2",
           "grupo_codigo": "D",
           "grupo": "D. Ferramentas e Equipamentos Leves",
-          "descricao": "Usadas incorretamente",
-          "texto": "D2. Usadas incorretamente"
+          "descricao": "Usadas incorretamente /",
+          "texto": "D2. Usadas incorretamente /"
         },
         {
           "codigo": "E2",
           "grupo_codigo": "E",
           "grupo": "E. Equipamentos Pesados",
-          "descricao": "Condições Inseguras",
-          "texto": "E2. Condições Inseguras"
+          "descricao": "Condições Inseguras /",
+          "texto": "E2. Condições Inseguras /"
         },
         {
           "codigo": "F3",
@@ -11708,15 +11743,15 @@
       "lider": "Não ID",
       "descricao": "Operação sem Permissão e Recusa de EPI. Início de atividades em espaço confinado (PV) e em altura sem as assinaturas de validação e liberação das respectivas PET e PT; colaborador flagrado no interior da frente de serviço tendo removido o cinturão paraquedista de uso obrigatório.",
       "categoria": "F. Procedimentos e Técnicas",
-      "categoria_detalhe": "F2. Não existem projetos; F3. Adequados e não seguidos (Ex: Utilização do Trava Quedas)",
+      "categoria_detalhe": "F2. Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) /; F3. Adequados e não seguidos (Ex: Utilização do Trava Quedas)",
       "classificacao_original": "F2. Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) / F3. Adequados e não seguidos (Ex: Utilização do Trava Quedas)",
       "classificacoes": [
         {
           "codigo": "F2",
           "grupo_codigo": "F",
           "grupo": "F. Procedimentos e Técnicas",
-          "descricao": "Não existem projetos",
-          "texto": "F2. Não existem projetos"
+          "descricao": "Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) /",
+          "texto": "F2. Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) /"
         },
         {
           "codigo": "F3",
@@ -11736,22 +11771,22 @@
       "lider": "Não ID",
       "descricao": "Abertura de Vala Desprotegida. Abertura de vala com profundidade aproximada de 1,50 m sendo executada sem a instalação prévia de sistema de escoramento perimetral, agravada por condições climáticas desfavoráveis (garoa leve) com risco de perda de coesão do solo.",
       "categoria": "A. Posição das Pessoas; C. Equipamento de Proteção Coletiva",
-      "categoria_detalhe": "A2. Ficar preso; C4. Escoramento divergente do Projeto",
+      "categoria_detalhe": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) /; C4. Escoramento divergente do Projeto / Ausência de escoramento de vala",
       "classificacao_original": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) / C4. Escoramento divergente do Projeto / Ausência de escoramento de vala",
       "classificacoes": [
         {
           "codigo": "A2",
           "grupo_codigo": "A",
           "grupo": "A. Posição das Pessoas",
-          "descricao": "Ficar preso",
-          "texto": "A2. Ficar preso"
+          "descricao": "Ficar preso / Soterramento (Ex: valas sem escoramento) /",
+          "texto": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) /"
         },
         {
           "codigo": "C4",
           "grupo_codigo": "C",
           "grupo": "C. Equipamento de Proteção Coletiva",
-          "descricao": "Escoramento divergente do Projeto",
-          "texto": "C4. Escoramento divergente do Projeto"
+          "descricao": "Escoramento divergente do Projeto / Ausência de escoramento de vala",
+          "texto": "C4. Escoramento divergente do Projeto / Ausência de escoramento de vala"
         }
       ],
       "tst": "Rogerio",
@@ -11777,6 +11812,356 @@
       ],
       "tst": "Rogerio",
       "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "descricao": "Curto-circuito e princípio de incêndio em bomba de rebaixamento.",
+      "categoria": "D. Ferramentas e Equipamentos Leves; E. Equipamentos Pesados",
+      "categoria_detalhe": "D3. Em condições inseguras; E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_original": "D3, E1",
+      "classificacoes": [
+        {
+          "codigo": "D3",
+          "grupo_codigo": "D",
+          "grupo": "D. Ferramentas e Equipamentos Leves",
+          "descricao": "Em condições inseguras",
+          "texto": "D3. Em condições inseguras"
+        },
+        {
+          "codigo": "E1",
+          "grupo_codigo": "E",
+          "grupo": "E. Equipamentos Pesados",
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 2,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "Canteiro D'avó",
+      "lider": "Não ID",
+      "descricao": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "categoria": "C. Equipamento de Proteção Coletiva; G. Organização e Limpeza",
+      "categoria_detalhe": "C5. Sinalização viária insuficiente; C7. Falta de passadiços / Passarelas para pedestres; G3. Organização documental; G4. Resíduos dispostos incorretamente",
+      "classificacao_original": "C5, C7, G3, G4",
+      "classificacoes": [
+        {
+          "codigo": "C5",
+          "grupo_codigo": "C",
+          "grupo": "C. Equipamento de Proteção Coletiva",
+          "descricao": "Sinalização viária insuficiente",
+          "texto": "C5. Sinalização viária insuficiente"
+        },
+        {
+          "codigo": "C7",
+          "grupo_codigo": "C",
+          "grupo": "C. Equipamento de Proteção Coletiva",
+          "descricao": "Falta de passadiços / Passarelas para pedestres",
+          "texto": "C7. Falta de passadiços / Passarelas para pedestres"
+        },
+        {
+          "codigo": "G3",
+          "grupo_codigo": "G",
+          "grupo": "G. Organização e Limpeza",
+          "descricao": "Organização documental",
+          "texto": "G3. Organização documental"
+        },
+        {
+          "codigo": "G4",
+          "grupo_codigo": "G",
+          "grupo": "G. Organização e Limpeza",
+          "descricao": "Resíduos dispostos incorretamente",
+          "texto": "G4. Resíduos dispostos incorretamente"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 4,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "descricao": "Lanterna dianteira e luz de freio traseira inoperantes em caminhão Vacal, falhas intermitentes no sistema de freios.",
+      "categoria": "E. Equipamentos Pesados",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_original": "E1.",
+      "classificacoes": [
+        {
+          "codigo": "E1",
+          "grupo_codigo": "E",
+          "grupo": "E. Equipamentos Pesados",
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)"
+        }
+      ],
+      "tst": "Djailson",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "descricao": "Ausência de vigia durante atividade executada por equipe da empresa LVL.",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F6. Trabalho em espaço confinado (PV) sem vigia ou exaustão",
+      "classificacao_original": "F6.",
+      "classificacoes": [
+        {
+          "codigo": "F6",
+          "grupo_codigo": "F",
+          "grupo": "F. Procedimentos e Técnicas",
+          "descricao": "Trabalho em espaço confinado (PV) sem vigia ou exaustão",
+          "texto": "F6. Trabalho em espaço confinado (PV) sem vigia ou exaustão"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Emanuel (Goiania)",
+      "descricao": "Atividade executada sem o devido isolamento e sinalização da área, em desacordo com a NR 18.",
+      "categoria": "C. Equipamento de Proteção Coletiva",
+      "categoria_detalhe": "C1. Sem isolamento ou insuficiente",
+      "classificacao_original": "C1.",
+      "classificacoes": [
+        {
+          "codigo": "C1",
+          "grupo_codigo": "C",
+          "grupo": "C. Equipamento de Proteção Coletiva",
+          "descricao": "Sem isolamento ou insuficiente",
+          "texto": "C1. Sem isolamento ou insuficiente"
+        }
+      ],
+      "tst": "Andre",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-26",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "descricao": "Colaborador da empresa MR Locações sem integração obrigatória e sem cadastro no sistema Wehandler",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F2. Não existem projetos / procedimentos escritos",
+      "classificacao_original": "F2.",
+      "classificacoes": [
+        {
+          "codigo": "F2",
+          "grupo_codigo": "F",
+          "grupo": "F. Procedimentos e Técnicas",
+          "descricao": "Não existem projetos / procedimentos escritos",
+          "texto": "F2. Não existem projetos / procedimentos escritos"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-27",
+      "local": "CT ITI 15",
+      "lider": "Rogerio Gonçalves",
+      "descricao": "Pendências documentais, sem crachá, sem cinto, sem trava-quedas, sem detector de gases, sem área de vivência.",
+      "categoria": "D. Ferramentas e Equipamentos Leves; F. Procedimentos e Técnicas; G. Organização e Limpeza",
+      "categoria_detalhe": "D3. Em condições inseguras; F2. Não existem projetos / procedimentos escritos; G2. Local desorganizado / Obstrução de calçadas e passagens de pedestres",
+      "classificacao_original": "D3, F2, G2",
+      "classificacoes": [
+        {
+          "codigo": "D3",
+          "grupo_codigo": "D",
+          "grupo": "D. Ferramentas e Equipamentos Leves",
+          "descricao": "Em condições inseguras",
+          "texto": "D3. Em condições inseguras"
+        },
+        {
+          "codigo": "F2",
+          "grupo_codigo": "F",
+          "grupo": "F. Procedimentos e Técnicas",
+          "descricao": "Não existem projetos / procedimentos escritos",
+          "texto": "F2. Não existem projetos / procedimentos escritos"
+        },
+        {
+          "codigo": "G2",
+          "grupo_codigo": "G",
+          "grupo": "G. Organização e Limpeza",
+          "descricao": "Local desorganizado / Obstrução de calçadas e passagens de pedestres",
+          "texto": "G2. Local desorganizado / Obstrução de calçadas e passagens de pedestres"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-27",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "descricao": "Falta de maca e mochila de resgate em PVs específicos (PV-5 e PV-6).",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F7. PAE no local e compreendido pela equipe",
+      "classificacao_original": "F7.",
+      "classificacoes": [
+        {
+          "codigo": "F7",
+          "grupo_codigo": "F",
+          "grupo": "F. Procedimentos e Técnicas",
+          "descricao": "PAE no local e compreendido pela equipe",
+          "texto": "F7. PAE no local e compreendido pela equipe"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-27",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "descricao": "Concha da retroescavadeira sem ponto de içamento certificado.",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D1. Impróprias para o serviço",
+      "classificacao_original": "D1.",
+      "classificacoes": [
+        {
+          "codigo": "D1",
+          "grupo_codigo": "D",
+          "grupo": "D. Ferramentas e Equipamentos Leves",
+          "descricao": "Impróprias para o serviço",
+          "texto": "D1. Impróprias para o serviço"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 1,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CT ITI 15",
+      "lider": "Rogério Gonçalves",
+      "descricao": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "categoria": "A. Posição das Pessoas; E. Equipamentos Pesados; D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "A5. Risco de choque elétrico; E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico); D3. Em condições inseguras",
+      "classificacao_original": "A5, E1, D3",
+      "classificacoes": [
+        {
+          "codigo": "A5",
+          "grupo_codigo": "A",
+          "grupo": "A. Posição das Pessoas",
+          "descricao": "Risco de choque elétrico",
+          "texto": "A5. Risco de choque elétrico"
+        },
+        {
+          "codigo": "E1",
+          "grupo_codigo": "E",
+          "grupo": "E. Equipamentos Pesados",
+          "descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+          "texto": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)"
+        },
+        {
+          "codigo": "D3",
+          "grupo_codigo": "D",
+          "grupo": "D. Ferramentas e Equipamentos Leves",
+          "descricao": "Em condições inseguras",
+          "texto": "D3. Em condições inseguras"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 3,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CR ITI15",
+      "lider": "Silvestre Encarregado",
+      "descricao": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "categoria": "D. Ferramentas e Equipamentos Leves; E. Equipamentos Pesados; F. Procedimentos e Técnicas",
+      "categoria_detalhe": "D3. Em condições inseguras; E4. Falta de isolamento do raio de ação de equipamentos pesados (Ex: Movimentações com caminhão Munck); F2. Não existem projetos / procedimentos escritos",
+      "classificacao_original": "D3, E4, F2",
+      "classificacoes": [
+        {
+          "codigo": "D3",
+          "grupo_codigo": "D",
+          "grupo": "D. Ferramentas e Equipamentos Leves",
+          "descricao": "Em condições inseguras",
+          "texto": "D3. Em condições inseguras"
+        },
+        {
+          "codigo": "E4",
+          "grupo_codigo": "E",
+          "grupo": "E. Equipamentos Pesados",
+          "descricao": "Falta de isolamento do raio de ação de equipamentos pesados (Ex: Movimentações com caminhão Munck)",
+          "texto": "E4. Falta de isolamento do raio de ação de equipamentos pesados (Ex: Movimentações com caminhão Munck)"
+        },
+        {
+          "codigo": "F2",
+          "grupo_codigo": "F",
+          "grupo": "F. Procedimentos e Técnicas",
+          "descricao": "Não existem projetos / procedimentos escritos",
+          "texto": "F2. Não existem projetos / procedimentos escritos"
+        }
+      ],
+      "tst": "Rogerio",
+      "quantidade_desvios": 3,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-30",
+      "local": "CT Rauzito",
+      "lider": "Marcelo Alves",
+      "descricao": "Material escavado próximo à vala (< 1m) e Local sem isolamento",
+      "categoria": "C. Equipamento de Proteção Coletiva; G. Organização e Limpeza",
+      "categoria_detalhe": "C1. Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala); G4. Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+      "classificacao_original": "C1. Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala); G4.Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+      "classificacoes": [
+        {
+          "codigo": "C1",
+          "grupo_codigo": "C",
+          "grupo": "C. Equipamento de Proteção Coletiva",
+          "descricao": "Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala)",
+          "texto": "C1. Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala)"
+        },
+        {
+          "codigo": "G4",
+          "grupo_codigo": "G",
+          "grupo": "G. Organização e Limpeza",
+          "descricao": "Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+          "texto": "G4. Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)"
+        }
+      ],
+      "tst": "Jacson",
+      "quantidade_desvios": 2,
+      "quantidade_inspecoes": 1
+    },
+    {
+      "data": "2026-06-30",
+      "local": "CT Conj. União",
+      "lider": "Johnatan Queiroz",
+      "descricao": "Sem desvio",
+      "categoria": "Conforme",
+      "categoria_detalhe": "Conforme",
+      "classificacao_original": "Conforme",
+      "classificacoes": [
+        {
+          "codigo": "",
+          "grupo_codigo": "",
+          "grupo": "Conforme",
+          "descricao": "Conforme",
+          "texto": "Conforme"
+        }
+      ],
+      "tst": "Amarildo",
+      "quantidade_desvios": 0,
       "quantidade_inspecoes": 1
     }
   ],
@@ -21675,10 +22060,10 @@
       "lider": "Não ID",
       "tst": "Jacson",
       "categoria": "F. Procedimentos e Técnicas",
-      "categoria_detalhe": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas)",
+      "categoria_detalhe": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) /",
       "classificacao_codigo": "F1",
       "classificacao_grupo": "F. Procedimentos e Técnicas",
-      "classificacao_descricao": "Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas)",
+      "classificacao_descricao": "Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) /",
       "classificacao_original": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) / G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "desvio": "Ruptura de Infraestrutura Subterrânea. Rede pública de serviços atingida de forma acidental durante operações de escavação mecânica, resultando no extravasamento massivo de efluente/material sobre o solo e leito carroçável da via pública.",
       "descricao": "Ruptura de Infraestrutura Subterrânea. Rede pública de serviços atingida de forma acidental durante operações de escavação mecânica, resultando no extravasamento massivo de efluente/material sobre o solo e leito carroçável da via pública.",
@@ -21691,10 +22076,10 @@
       "lider": "Não ID",
       "tst": "Jacson",
       "categoria": "G. Organização e Limpeza",
-      "categoria_detalhe": "G1. Local sujo (Ex: lama",
+      "categoria_detalhe": "G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacao_codigo": "G1",
       "classificacao_grupo": "G. Organização e Limpeza",
-      "classificacao_descricao": "Local sujo (Ex: lama",
+      "classificacao_descricao": "Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacao_original": "F1. Inadequados para atividade (Ex: abertura de vala sem verificação de interferências cadastradas) / G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "desvio": "Ruptura de Infraestrutura Subterrânea. Rede pública de serviços atingida de forma acidental durante operações de escavação mecânica, resultando no extravasamento massivo de efluente/material sobre o solo e leito carroçável da via pública.",
       "descricao": "Ruptura de Infraestrutura Subterrânea. Rede pública de serviços atingida de forma acidental durante operações de escavação mecânica, resultando no extravasamento massivo de efluente/material sobre o solo e leito carroçável da via pública.",
@@ -21707,10 +22092,10 @@
       "lider": "Valmir Encarregado",
       "tst": "Rogerio",
       "categoria": "E. Equipamentos Pesados",
-      "categoria_detalhe": "E2. Patolamento inadequado de equipamentos em solo instável",
+      "categoria_detalhe": "E2. Patolamento inadequado de equipamentos em solo instável /",
       "classificacao_codigo": "E2",
       "classificacao_grupo": "E. Equipamentos Pesados",
-      "classificacao_descricao": "Patolamento inadequado de equipamentos em solo instável",
+      "classificacao_descricao": "Patolamento inadequado de equipamentos em solo instável /",
       "classificacao_original": "E2. Patolamento inadequado de equipamentos em solo instável / F2. Não existem projetos / procedimentos escritos / C2. Inadequados para atividade",
       "desvio": "Içamento de Carga Crítico Inseguro. Operação com caminhão Munck utilizando pranchas de madeira danificadas/rachadas para o patolamento",
       "descricao": "Içamento de Carga Crítico Inseguro. Operação com caminhão Munck utilizando pranchas de madeira danificadas/rachadas para o patolamento",
@@ -21723,10 +22108,10 @@
       "lider": "Valmir Encarregado",
       "tst": "Rogerio",
       "categoria": "F. Procedimentos e Técnicas",
-      "categoria_detalhe": "F2. Não existem projetos",
+      "categoria_detalhe": "F2. Não existem projetos / procedimentos escritos /",
       "classificacao_codigo": "F2",
       "classificacao_grupo": "F. Procedimentos e Técnicas",
-      "classificacao_descricao": "Não existem projetos",
+      "classificacao_descricao": "Não existem projetos / procedimentos escritos /",
       "classificacao_original": "E2. Patolamento inadequado de equipamentos em solo instável / F2. Não existem projetos / procedimentos escritos / C2. Inadequados para atividade",
       "desvio": "posicionamento do veículo pesado sobre solo lamacento instável com risco de afundamento",
       "descricao": "posicionamento do veículo pesado sobre solo lamacento instável com risco de afundamento",
@@ -21759,7 +22144,7 @@
       "classificacao_codigo": "B7",
       "classificacao_grupo": "B. Equipamento de Proteção Individual",
       "classificacao_descricao": "Pés e pernas",
-      "classificacao_original": "B7. Pés e pernas; B4",
+      "classificacao_original": "B7. Pés e pernas; B4.Ouvidos",
       "desvio": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "descricao": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "quantidade_desvios": 2,
@@ -21771,11 +22156,11 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "B. Equipamento de Proteção Individual",
-      "categoria_detalhe": "B4. Ouvidos (Ex: ruído de martelete)",
+      "categoria_detalhe": "B4. Ouvidos",
       "classificacao_codigo": "B4",
       "classificacao_grupo": "B. Equipamento de Proteção Individual",
-      "classificacao_descricao": "Ouvidos (Ex: ruído de martelete)",
-      "classificacao_original": "B7. Pés e pernas; B4",
+      "classificacao_descricao": "Ouvidos",
+      "classificacao_original": "B7. Pés e pernas; B4.Ouvidos",
       "desvio": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "descricao": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "quantidade_desvios": 2,
@@ -21787,10 +22172,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "A. Posição das Pessoas",
-      "categoria_detalhe": "A5. Risco de choque elétrico",
+      "categoria_detalhe": "A5. Risco de choque elétrico /",
       "classificacao_codigo": "A5",
       "classificacao_grupo": "A. Posição das Pessoas",
-      "classificacao_descricao": "Risco de choque elétrico",
+      "classificacao_descricao": "Risco de choque elétrico /",
       "classificacao_original": "A5. Risco de choque elétrico / D3. Em condições inseguras (Extensões elétricas danificadas) / F5. Ausência de Análise Preliminar de Risco (APR) no local",
       "desvio": "Risco Elétrico e de Incêndio. Atividade de soldagem PEAD executada sem extintor de incêndio próximo",
       "descricao": "Risco Elétrico e de Incêndio. Atividade de soldagem PEAD executada sem extintor de incêndio próximo",
@@ -21803,10 +22188,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "D. Ferramentas e Equipamentos Leves",
-      "categoria_detalhe": "D3. Em condições inseguras (Extensões elétricas danificadas)",
+      "categoria_detalhe": "D3. Em condições inseguras (Extensões elétricas danificadas) /",
       "classificacao_codigo": "D3",
       "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
-      "classificacao_descricao": "Em condições inseguras (Extensões elétricas danificadas)",
+      "classificacao_descricao": "Em condições inseguras (Extensões elétricas danificadas) /",
       "classificacao_original": "A5. Risco de choque elétrico / D3. Em condições inseguras (Extensões elétricas danificadas) / F5. Ausência de Análise Preliminar de Risco (APR) no local",
       "desvio": "ausência de Análise Preliminar de Risco (APR) na frente de serviço",
       "descricao": "ausência de Análise Preliminar de Risco (APR) na frente de serviço",
@@ -21835,10 +22220,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "B. Equipamento de Proteção Individual",
-      "categoria_detalhe": "B7. Pés e pernas, B4.Ouvidos",
+      "categoria_detalhe": "B7. Pés e pernas",
       "classificacao_codigo": "B7",
       "classificacao_grupo": "B. Equipamento de Proteção Individual",
-      "classificacao_descricao": "Pés e pernas, B4.Ouvidos",
+      "classificacao_descricao": "Pés e pernas",
       "classificacao_original": "B7.Pés e pernas, B4.Ouvidos",
       "desvio": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "descricao": "Ausência de bota de borracha e protetor auricular tipo plug.",
@@ -21851,10 +22236,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "B. Equipamento de Proteção Individual",
-      "categoria_detalhe": "B7. Pés e pernas, B4.Ouvidos",
-      "classificacao_codigo": "B7",
+      "categoria_detalhe": "B4. Ouvidos",
+      "classificacao_codigo": "B4",
       "classificacao_grupo": "B. Equipamento de Proteção Individual",
-      "classificacao_descricao": "Pés e pernas, B4.Ouvidos",
+      "classificacao_descricao": "Ouvidos",
       "classificacao_original": "B7.Pés e pernas, B4.Ouvidos",
       "desvio": "Ausência de bota de borracha e protetor auricular tipo plug.",
       "descricao": "Ausência de bota de borracha e protetor auricular tipo plug.",
@@ -21871,9 +22256,41 @@
       "classificacao_codigo": "D3",
       "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
       "classificacao_descricao": "Em condições inseguras",
-      "classificacao_original": "D3.Em condições inseguras; e1",
+      "classificacao_original": "D3.Em condições inseguras; E1. Retroescavadeira / Caminhão em condições inadequadas",
       "desvio": "Escada sem fixação e extintor despressurizado",
       "descricao": "Escada sem fixação e extintor despressurizado",
+      "quantidade_desvios": 2,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-03",
+      "local": "CT Lurdes",
+      "lider": "Marcelo Alves",
+      "tst": "Jacson",
+      "categoria": "E. Equipamentos Pesados",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas",
+      "classificacao_codigo": "E1",
+      "classificacao_grupo": "E. Equipamentos Pesados",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas",
+      "classificacao_original": "D3.Em condições inseguras; E1. Retroescavadeira / Caminhão em condições inadequadas",
+      "desvio": "Escada sem fixação e extintor despressurizado",
+      "descricao": "Escada sem fixação e extintor despressurizado",
+      "quantidade_desvios": 2,
+      "ordem_desvio": 2
+    },
+    {
+      "data": "2026-06-03",
+      "local": "CT Lurdes",
+      "lider": "Marcelo Alves",
+      "tst": "Jacson",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D3. Em condições inseguras",
+      "classificacao_codigo": "D3",
+      "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
+      "classificacao_descricao": "Em condições inseguras",
+      "classificacao_original": "D3, E1",
+      "desvio": "Escada sem fixação, extintor despressurizado, placa de sinalização ausente.",
+      "descricao": "Escada sem fixação, extintor despressurizado, placa de sinalização ausente.",
       "quantidade_desvios": 2,
       "ordem_desvio": 1
     },
@@ -21887,9 +22304,9 @@
       "classificacao_codigo": "E1",
       "classificacao_grupo": "E. Equipamentos Pesados",
       "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
-      "classificacao_original": "D3.Em condições inseguras; e1",
-      "desvio": "Escada sem fixação e extintor despressurizado",
-      "descricao": "Escada sem fixação e extintor despressurizado",
+      "classificacao_original": "D3, E1",
+      "desvio": "Escada sem fixação, extintor despressurizado, placa de sinalização ausente.",
+      "descricao": "Escada sem fixação, extintor despressurizado, placa de sinalização ausente.",
       "quantidade_desvios": 2,
       "ordem_desvio": 2
     },
@@ -21979,10 +22396,10 @@
       "lider": "Frota",
       "tst": "Djailson",
       "categoria": "E. Equipamentos Pesados",
-      "categoria_detalhe": "E1. Retroescavadeira",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) /",
       "classificacao_codigo": "E1",
       "classificacao_grupo": "E. Equipamentos Pesados",
-      "classificacao_descricao": "Retroescavadeira",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) /",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidráulico) / F3. Adequados e não seguidos",
       "desvio": "Falha de Implemento / Queda de Carga. Ocorrência de falha ou desprendimento acidental do implemento Clamshell da escavação mecânica durante preenchimento de poço (PV4) com rachão, resultando no desabamento do componente para o fundo do poço (sem lesões a pessoas).",
       "descricao": "Falha de Implemento / Queda de Carga. Ocorrência de falha ou desprendimento acidental do implemento Clamshell da escavação mecânica durante preenchimento de poço (PV4) com rachão, resultando no desabamento do componente para o fundo do poço (sem lesões a pessoas).",
@@ -22063,7 +22480,7 @@
       "classificacao_codigo": "D3",
       "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
       "classificacao_descricao": "Em condições inseguras",
-      "classificacao_original": "D3.; A5",
+      "classificacao_original": "D3.Em condições inseguras; A5.Risco de Choque Elétrico",
       "desvio": "Gerador sem aterramento adequado, uso de tomada inapropriada e ligação improvisada.",
       "descricao": "Gerador sem aterramento adequado, uso de tomada inapropriada e ligação improvisada.",
       "quantidade_desvios": 2,
@@ -22075,11 +22492,11 @@
       "lider": "Ricardo Coutinho",
       "tst": "Beatriz",
       "categoria": "A. Posição das Pessoas",
-      "categoria_detalhe": "A5. Risco de choque elétrico",
+      "categoria_detalhe": "A5. Risco de Choque Elétrico",
       "classificacao_codigo": "A5",
       "classificacao_grupo": "A. Posição das Pessoas",
-      "classificacao_descricao": "Risco de choque elétrico",
-      "classificacao_original": "D3.; A5",
+      "classificacao_descricao": "Risco de Choque Elétrico",
+      "classificacao_original": "D3.Em condições inseguras; A5.Risco de Choque Elétrico",
       "desvio": "Gerador sem aterramento adequado, uso de tomada inapropriada e ligação improvisada.",
       "descricao": "Gerador sem aterramento adequado, uso de tomada inapropriada e ligação improvisada.",
       "quantidade_desvios": 2,
@@ -22107,10 +22524,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "E. Equipamentos Pesados",
-      "categoria_detalhe": "E1. Retroescavadeira",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas /",
       "classificacao_codigo": "E1",
       "classificacao_grupo": "E. Equipamentos Pesados",
-      "classificacao_descricao": "Retroescavadeira",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas /",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas / E2. Patolamento inadequado de equipamentos em solo instável",
       "desvio": "Falhas de Sinalização e de Frenagem. Caminhão limpa-fossa Vacal (Placa RLM0E63) operando com farol esquerdo queimado, lanterna traseira sem lente de proteção, retrovisor direito fixado com arame e falha no freio de estacionamento (maneco), além do uso improvisado de uma pedra como calço de roda.",
       "descricao": "Falhas de Sinalização e de Frenagem. Caminhão limpa-fossa Vacal (Placa RLM0E63) operando com farol esquerdo queimado, lanterna traseira sem lente de proteção, retrovisor direito fixado com arame e falha no freio de estacionamento (maneco), além do uso improvisado de uma pedra como calço de roda.",
@@ -22139,10 +22556,10 @@
       "lider": "Oreste Medeiros",
       "tst": "Rogerio",
       "categoria": "C. Equipamento de Proteção Coletiva",
-      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)",
+      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /",
       "classificacao_codigo": "C3",
       "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
-      "classificacao_descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)",
+      "classificacao_descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /",
       "classificacao_original": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) / F3. Adequados e não seguidos",
       "desvio": "Deficiência de Fixação Estrutural. Elementos do revestimento metálico do Armco instalados sem fixação por parafusos em múltiplos pontos previstos no projeto, sob a justificativa de interferência com sapatas e vigas de concreto de muro vizinho.",
       "descricao": "Deficiência de Fixação Estrutural. Elementos do revestimento metálico do Armco instalados sem fixação por parafusos em múltiplos pontos previstos no projeto, sob a justificativa de interferência com sapatas e vigas de concreto de muro vizinho.",
@@ -22175,7 +22592,7 @@
       "classificacao_codigo": "A1",
       "classificacao_grupo": "A. Posição das Pessoas",
       "classificacao_descricao": "Bater contra / Ser atingidor por",
-      "classificacao_original": "A1.Bater contra / Ser atingidor por; G2",
+      "classificacao_original": "A1.Bater contra / Ser atingidor por; G2.Local desorganizado",
       "desvio": "Risco para pedestres devido à movimentação de solo e abertura no solo.",
       "descricao": "Risco para pedestres devido à movimentação de solo e abertura no solo.",
       "quantidade_desvios": 2,
@@ -22187,11 +22604,11 @@
       "lider": "Marcelo Alves",
       "tst": "Beatriz",
       "categoria": "G. Organização e Limpeza",
-      "categoria_detalhe": "G2. Local desorganizado / Obstrução de calçadas e passagens de pedestres",
+      "categoria_detalhe": "G2. Local desorganizado",
       "classificacao_codigo": "G2",
       "classificacao_grupo": "G. Organização e Limpeza",
-      "classificacao_descricao": "Local desorganizado / Obstrução de calçadas e passagens de pedestres",
-      "classificacao_original": "A1.Bater contra / Ser atingidor por; G2",
+      "classificacao_descricao": "Local desorganizado",
+      "classificacao_original": "A1.Bater contra / Ser atingidor por; G2.Local desorganizado",
       "desvio": "Risco para pedestres devido à movimentação de solo e abertura no solo.",
       "descricao": "Risco para pedestres devido à movimentação de solo e abertura no solo.",
       "quantidade_desvios": 2,
@@ -22219,10 +22636,10 @@
       "lider": "Frota",
       "tst": "Rogerio",
       "categoria": "E. Equipamentos Pesados",
-      "categoria_detalhe": "E1. Retroescavadeira",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) /",
       "classificacao_codigo": "E1",
       "classificacao_grupo": "E. Equipamentos Pesados",
-      "classificacao_descricao": "Retroescavadeira",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) /",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) / G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "desvio": "Vazamento de Hidrocarbonetos. Retroescavadeira prefixo EVV 5010 apresentando vazamento de óleo lubrificante/hidráulico em sua parte inferior, com presença de gotejamento crônico e poças de óleo acumuladas no solo.",
       "descricao": "Vazamento de Hidrocarbonetos. Retroescavadeira prefixo EVV 5010 apresentando vazamento de óleo lubrificante/hidráulico em sua parte inferior, com presença de gotejamento crônico e poças de óleo acumuladas no solo.",
@@ -22235,10 +22652,10 @@
       "lider": "Frota",
       "tst": "Rogerio",
       "categoria": "G. Organização e Limpeza",
-      "categoria_detalhe": "G1. Local sujo (Ex: lama",
+      "categoria_detalhe": "G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacao_codigo": "G1",
       "classificacao_grupo": "G. Organização e Limpeza",
-      "classificacao_descricao": "Local sujo (Ex: lama",
+      "classificacao_descricao": "Local sujo (Ex: lama / efluente espalhado na via pública)",
       "classificacao_original": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico) / G1. Local sujo (Ex: lama / efluente espalhado na via pública)",
       "desvio": "Vazamento de Hidrocarbonetos. Retroescavadeira prefixo EVV 5010 apresentando vazamento de óleo lubrificante/hidráulico em sua parte inferior, com presença de gotejamento crônico e poças de óleo acumuladas no solo.",
       "descricao": "Vazamento de Hidrocarbonetos. Retroescavadeira prefixo EVV 5010 apresentando vazamento de óleo lubrificante/hidráulico em sua parte inferior, com presença de gotejamento crônico e poças de óleo acumuladas no solo.",
@@ -22255,7 +22672,7 @@
       "classificacao_codigo": "A3",
       "classificacao_grupo": "A. Posição das Pessoas",
       "classificacao_descricao": "Risco de Queda",
-      "classificacao_original": "A3.Risco de Queda; D3",
+      "classificacao_original": "A3.Risco de Queda; D3.Em condições inseguras",
       "desvio": "Escada portátil sem ultrapassar 1m da borda e aberturas sem proteção.",
       "descricao": "Escada portátil sem ultrapassar 1m da borda e aberturas sem proteção.",
       "quantidade_desvios": 2,
@@ -22271,7 +22688,7 @@
       "classificacao_codigo": "D3",
       "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
       "classificacao_descricao": "Em condições inseguras",
-      "classificacao_original": "A3.Risco de Queda; D3",
+      "classificacao_original": "A3.Risco de Queda; D3.Em condições inseguras",
       "desvio": "Escada portátil sem ultrapassar 1m da borda e aberturas sem proteção.",
       "descricao": "Escada portátil sem ultrapassar 1m da borda e aberturas sem proteção.",
       "quantidade_desvios": 2,
@@ -22315,10 +22732,10 @@
       "lider": "Eng. Robson",
       "tst": "Rogerio",
       "categoria": "F. Procedimentos e Técnicas",
-      "categoria_detalhe": "F3. Adequados e não seguidos",
+      "categoria_detalhe": "F3. Adequados e não seguidos /",
       "classificacao_codigo": "F3",
       "classificacao_grupo": "F. Procedimentos e Técnicas",
-      "classificacao_descricao": "Adequados e não seguidos",
+      "classificacao_descricao": "Adequados e não seguidos /",
       "classificacao_original": "F3. Adequados e não seguidos / A3. Risco de queda (Ex: valas abertas, poços de visita)",
       "desvio": "Tentativa Insegura de Acesso à Vala. Intervenção preventiva da engenharia civil ao flagrar colaborador posicionado em escada portátil com clara intenção de adentrar vala profunda sem a implantação prévia das medidas de proteção coletiva perimetrais.",
       "descricao": "Tentativa Insegura de Acesso à Vala. Intervenção preventiva da engenharia civil ao flagrar colaborador posicionado em escada portátil com clara intenção de adentrar vala profunda sem a implantação prévia das medidas de proteção coletiva perimetrais.",
@@ -22443,10 +22860,10 @@
       "lider": "Eng. Eloizio",
       "tst": "Rogerio",
       "categoria": "A. Posição das Pessoas",
-      "categoria_detalhe": "A2. Ficar preso",
+      "categoria_detalhe": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) /",
       "classificacao_codigo": "A2",
       "classificacao_grupo": "A. Posição das Pessoas",
-      "classificacao_descricao": "Ficar preso",
+      "classificacao_descricao": "Ficar preso / Soterramento (Ex: valas sem escoramento) /",
       "classificacao_original": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) / E2. Condições Inseguras",
       "desvio": "Instabilidade Crítica de Maciço e Infiltração. Escavação profunda com cerca de 8 metros evidenciou desprendimento e escorregamento localizado do solo perimetral (exigindo contenção com armadura e concreto projetado), agravada por severo acúmulo de água no fundo e trabalhadores expostos no interior da área instável.",
       "descricao": "Instabilidade Crítica de Maciço e Infiltração. Escavação profunda com cerca de 8 metros evidenciou desprendimento e escorregamento localizado do solo perimetral (exigindo contenção com armadura e concreto projetado), agravada por severo acúmulo de água no fundo e trabalhadores expostos no interior da área instável.",
@@ -22507,10 +22924,10 @@
       "lider": "Antonio Vidal",
       "tst": "Amarildo",
       "categoria": "B. Equipamento de Proteção Individual",
-      "categoria_detalhe": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto",
+      "categoria_detalhe": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) /",
       "classificacao_codigo": "B5",
       "classificacao_grupo": "B. Equipamento de Proteção Individual",
-      "classificacao_descricao": "Mãos e braços (Ex: luvas inadequadas para esgoto",
+      "classificacao_descricao": "Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) /",
       "classificacao_original": "B5. Mãos e braços (Ex: luvas inadequadas para esgoto/abrasivos) / F3. Adequados e não seguidos",
       "desvio": "Não Utilização de EPI de Proteção de Membros. Flagrante em campo evidenciado também via comunicação interna (Grupo Sismo Integra 6A) onde a equipe realizava atividades operacionais sem fazer o uso obrigatório de luvas de raspa/proteção.",
       "descricao": "Não Utilização de EPI de Proteção de Membros. Flagrante em campo evidenciado também via comunicação interna (Grupo Sismo Integra 6A) onde a equipe realizava atividades operacionais sem fazer o uso obrigatório de luvas de raspa/proteção.",
@@ -22539,10 +22956,10 @@
       "lider": "Eng. Eloizio",
       "tst": "Rogerio",
       "categoria": "C. Equipamento de Proteção Coletiva",
-      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)",
+      "categoria_detalhe": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /",
       "classificacao_codigo": "C3",
       "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
-      "classificacao_descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente)",
+      "classificacao_descricao": "Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) /",
       "classificacao_original": "C3. Em condições inseguras (Ex: Falta de Guarda Corpo ou Insuficiente) / F3. Adequados e não seguidos",
       "desvio": "Acesso Inseguro a Escavação Profunda. Escada vertical utilizada para descida no interior de escavação com 8 metros de profundidade apresentando degraus com avarias físicas e sem sistema de fixação/amarração na extremidade superior.",
       "descricao": "Acesso Inseguro a Escavação Profunda. Escada vertical utilizada para descida no interior de escavação com 8 metros de profundidade apresentando degraus com avarias físicas e sem sistema de fixação/amarração na extremidade superior.",
@@ -22603,10 +23020,10 @@
       "lider": "Rogerio Gonçalves",
       "tst": "Rogerio",
       "categoria": "G. Organização e Limpeza",
-      "categoria_detalhe": "G1. Local sujo (risco de perfuração)",
+      "categoria_detalhe": "G1. Local sujo (risco de perfuração) /",
       "classificacao_codigo": "G1",
       "classificacao_grupo": "G. Organização e Limpeza",
-      "classificacao_descricao": "Local sujo (risco de perfuração)",
+      "classificacao_descricao": "Local sujo (risco de perfuração) /",
       "classificacao_original": "G1. Local sujo (risco de perfuração) / C1. Sem isolamento adequado (tapume danificado).",
       "desvio": "Estrutura de madeira utilizada para tapumes apresentando diversos pregos expostos e salientes, gerando risco iminente de perfuração e cortes para os trabalhadores.",
       "descricao": "Estrutura de madeira utilizada para tapumes apresentando diversos pregos expostos e salientes, gerando risco iminente de perfuração e cortes para os trabalhadores.",
@@ -22635,10 +23052,10 @@
       "lider": "Rogerio Gonçalves",
       "tst": "Rogerio",
       "categoria": "G. Organização e Limpeza",
-      "categoria_detalhe": "G2. Local desorganizado",
+      "categoria_detalhe": "G2. Local desorganizado /",
       "classificacao_codigo": "G2",
       "classificacao_grupo": "G. Organização e Limpeza",
-      "classificacao_descricao": "Local desorganizado",
+      "classificacao_descricao": "Local desorganizado /",
       "classificacao_original": "G2. Local desorganizado / A1. Bater contra / Ser atingido por",
       "desvio": "Canteiro desorganizado com acúmulo de madeiras de tapumes contendo pregos expostos e vergalhões de aço sem isolamento, configurando área de risco para circulação.",
       "descricao": "Canteiro desorganizado com acúmulo de madeiras de tapumes contendo pregos expostos e vergalhões de aço sem isolamento, configurando área de risco para circulação.",
@@ -22651,10 +23068,10 @@
       "lider": "Rogerio Gonçalves",
       "tst": "Rogerio",
       "categoria": "A. Posição das Pessoas",
-      "categoria_detalhe": "A1. Bater contra",
+      "categoria_detalhe": "A1. Bater contra / Ser atingido por",
       "classificacao_codigo": "A1",
       "classificacao_grupo": "A. Posição das Pessoas",
-      "classificacao_descricao": "Bater contra",
+      "classificacao_descricao": "Bater contra / Ser atingido por",
       "classificacao_original": "G2. Local desorganizado / A1. Bater contra / Ser atingido por",
       "desvio": "Canteiro desorganizado com acúmulo de madeiras de tapumes contendo pregos expostos e vergalhões de aço sem isolamento, configurando área de risco para circulação.",
       "descricao": "Canteiro desorganizado com acúmulo de madeiras de tapumes contendo pregos expostos e vergalhões de aço sem isolamento, configurando área de risco para circulação.",
@@ -22763,10 +23180,10 @@
       "lider": "Eng. Eloizio",
       "tst": "Rogerio",
       "categoria": "D. Ferramentas e Equipamentos Leves",
-      "categoria_detalhe": "D2. Usadas incorretamente",
+      "categoria_detalhe": "D2. Usadas incorretamente /",
       "classificacao_codigo": "D2",
       "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
-      "classificacao_descricao": "Usadas incorretamente",
+      "classificacao_descricao": "Usadas incorretamente /",
       "classificacao_original": "D2. Usadas incorretamente / E2. Condições Inseguras / F3. Adequados e não seguidos",
       "desvio": "Intervenção Irregular em Redes de Utilidades. Fixação improvisada de corda diretamente sobre cabos aéreos de telecomunicação de terceiros para erguer a fiação e abrir gabarito para a retroescavadeira, sem projeto, cálculo mecânico ou liberação técnica das operadoras.",
       "descricao": "Intervenção Irregular em Redes de Utilidades. Fixação improvisada de corda diretamente sobre cabos aéreos de telecomunicação de terceiros para erguer a fiação e abrir gabarito para a retroescavadeira, sem projeto, cálculo mecânico ou liberação técnica das operadoras.",
@@ -22779,10 +23196,10 @@
       "lider": "Eng. Eloizio",
       "tst": "Rogerio",
       "categoria": "E. Equipamentos Pesados",
-      "categoria_detalhe": "E2. Condições Inseguras",
+      "categoria_detalhe": "E2. Condições Inseguras /",
       "classificacao_codigo": "E2",
       "classificacao_grupo": "E. Equipamentos Pesados",
-      "classificacao_descricao": "Condições Inseguras",
+      "classificacao_descricao": "Condições Inseguras /",
       "classificacao_original": "D2. Usadas incorretamente / E2. Condições Inseguras / F3. Adequados e não seguidos",
       "desvio": "Intervenção Irregular em Redes de Utilidades. Fixação improvisada de corda diretamente sobre cabos aéreos de telecomunicação de terceiros para erguer a fiação e abrir gabarito para a retroescavadeira, sem projeto, cálculo mecânico ou liberação técnica das operadoras.",
       "descricao": "Intervenção Irregular em Redes de Utilidades. Fixação improvisada de corda diretamente sobre cabos aéreos de telecomunicação de terceiros para erguer a fiação e abrir gabarito para a retroescavadeira, sem projeto, cálculo mecânico ou liberação técnica das operadoras.",
@@ -22843,10 +23260,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "F. Procedimentos e Técnicas",
-      "categoria_detalhe": "F2. Não existem projetos",
+      "categoria_detalhe": "F2. Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) /",
       "classificacao_codigo": "F2",
       "classificacao_grupo": "F. Procedimentos e Técnicas",
-      "classificacao_descricao": "Não existem projetos",
+      "classificacao_descricao": "Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) /",
       "classificacao_original": "F2. Não existem projetos / procedimentos escritos (Ex: PET para espaço confinado/PV) / F3. Adequados e não seguidos (Ex: Utilização do Trava Quedas)",
       "desvio": "Operação sem Permissão e Recusa de EPI. Início de atividades em espaço confinado (PV) e em altura sem as assinaturas de validação e liberação das respectivas PET e PT",
       "descricao": "Operação sem Permissão e Recusa de EPI. Início de atividades em espaço confinado (PV) e em altura sem as assinaturas de validação e liberação das respectivas PET e PT",
@@ -22875,10 +23292,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "A. Posição das Pessoas",
-      "categoria_detalhe": "A2. Ficar preso",
+      "categoria_detalhe": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) /",
       "classificacao_codigo": "A2",
       "classificacao_grupo": "A. Posição das Pessoas",
-      "classificacao_descricao": "Ficar preso",
+      "classificacao_descricao": "Ficar preso / Soterramento (Ex: valas sem escoramento) /",
       "classificacao_original": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) / C4. Escoramento divergente do Projeto / Ausência de escoramento de vala",
       "desvio": "Abertura de Vala Desprotegida. Abertura de vala com profundidade aproximada de 1,50 m sendo executada sem a instalação prévia de sistema de escoramento perimetral, agravada por condições climáticas desfavoráveis (garoa leve) com risco de perda de coesão do solo.",
       "descricao": "Abertura de Vala Desprotegida. Abertura de vala com profundidade aproximada de 1,50 m sendo executada sem a instalação prévia de sistema de escoramento perimetral, agravada por condições climáticas desfavoráveis (garoa leve) com risco de perda de coesão do solo.",
@@ -22891,10 +23308,10 @@
       "lider": "Não ID",
       "tst": "Rogerio",
       "categoria": "C. Equipamento de Proteção Coletiva",
-      "categoria_detalhe": "C4. Escoramento divergente do Projeto",
+      "categoria_detalhe": "C4. Escoramento divergente do Projeto / Ausência de escoramento de vala",
       "classificacao_codigo": "C4",
       "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
-      "classificacao_descricao": "Escoramento divergente do Projeto",
+      "classificacao_descricao": "Escoramento divergente do Projeto / Ausência de escoramento de vala",
       "classificacao_original": "A2. Ficar preso / Soterramento (Ex: valas sem escoramento) / C4. Escoramento divergente do Projeto / Ausência de escoramento de vala",
       "desvio": "Abertura de Vala Desprotegida. Abertura de vala com profundidade aproximada de 1,50 m sendo executada sem a instalação prévia de sistema de escoramento perimetral, agravada por condições climáticas desfavoráveis (garoa leve) com risco de perda de coesão do solo.",
       "descricao": "Abertura de Vala Desprotegida. Abertura de vala com profundidade aproximada de 1,50 m sendo executada sem a instalação prévia de sistema de escoramento perimetral, agravada por condições climáticas desfavoráveis (garoa leve) com risco de perda de coesão do solo.",
@@ -22916,9 +23333,387 @@
       "descricao": "Extintor de incêndio despressurizado/sem condições de uso após ter sido utilizado em um princípio de incêndio anterior",
       "quantidade_desvios": 1,
       "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D3. Em condições inseguras",
+      "classificacao_codigo": "D3",
+      "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
+      "classificacao_descricao": "Em condições inseguras",
+      "classificacao_original": "D3, E1",
+      "desvio": "Curto-circuito e princípio de incêndio em bomba de rebaixamento.",
+      "descricao": "Curto-circuito e princípio de incêndio em bomba de rebaixamento.",
+      "quantidade_desvios": 2,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "E. Equipamentos Pesados",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_codigo": "E1",
+      "classificacao_grupo": "E. Equipamentos Pesados",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_original": "D3, E1",
+      "desvio": "Curto-circuito e princípio de incêndio em bomba de rebaixamento.",
+      "descricao": "Curto-circuito e princípio de incêndio em bomba de rebaixamento.",
+      "quantidade_desvios": 2,
+      "ordem_desvio": 2
+    },
+    {
+      "data": "2026-06-25",
+      "local": "Canteiro D'avó",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "C. Equipamento de Proteção Coletiva",
+      "categoria_detalhe": "C5. Sinalização viária insuficiente",
+      "classificacao_codigo": "C5",
+      "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
+      "classificacao_descricao": "Sinalização viária insuficiente",
+      "classificacao_original": "C5, C7, G3, G4",
+      "desvio": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "descricao": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "quantidade_desvios": 4,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "Canteiro D'avó",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "C. Equipamento de Proteção Coletiva",
+      "categoria_detalhe": "C7. Falta de passadiços / Passarelas para pedestres",
+      "classificacao_codigo": "C7",
+      "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
+      "classificacao_descricao": "Falta de passadiços / Passarelas para pedestres",
+      "classificacao_original": "C5, C7, G3, G4",
+      "desvio": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "descricao": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "quantidade_desvios": 4,
+      "ordem_desvio": 2
+    },
+    {
+      "data": "2026-06-25",
+      "local": "Canteiro D'avó",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "G. Organização e Limpeza",
+      "categoria_detalhe": "G3. Organização documental",
+      "classificacao_codigo": "G3",
+      "classificacao_grupo": "G. Organização e Limpeza",
+      "classificacao_descricao": "Organização documental",
+      "classificacao_original": "C5, C7, G3, G4",
+      "desvio": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "descricao": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "quantidade_desvios": 4,
+      "ordem_desvio": 3
+    },
+    {
+      "data": "2026-06-25",
+      "local": "Canteiro D'avó",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "G. Organização e Limpeza",
+      "categoria_detalhe": "G4. Resíduos dispostos incorretamente",
+      "classificacao_codigo": "G4",
+      "classificacao_grupo": "G. Organização e Limpeza",
+      "classificacao_descricao": "Resíduos dispostos incorretamente",
+      "classificacao_original": "C5, C7, G3, G4",
+      "desvio": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "descricao": "Tubos sem amarração, falta de rota de pedestres, ausência de placas de EPI, escada sem fita antiderrapante, falta de extintores.",
+      "quantidade_desvios": 4,
+      "ordem_desvio": 4
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Djailson",
+      "categoria": "E. Equipamentos Pesados",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_codigo": "E1",
+      "classificacao_grupo": "E. Equipamentos Pesados",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_original": "E1.",
+      "desvio": "Lanterna dianteira e luz de freio traseira inoperantes em caminhão Vacal, falhas intermitentes no sistema de freios.",
+      "descricao": "Lanterna dianteira e luz de freio traseira inoperantes em caminhão Vacal, falhas intermitentes no sistema de freios.",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F6. Trabalho em espaço confinado (PV) sem vigia ou exaustão",
+      "classificacao_codigo": "F6",
+      "classificacao_grupo": "F. Procedimentos e Técnicas",
+      "classificacao_descricao": "Trabalho em espaço confinado (PV) sem vigia ou exaustão",
+      "classificacao_original": "F6.",
+      "desvio": "Ausência de vigia durante atividade executada por equipe da empresa LVL.",
+      "descricao": "Ausência de vigia durante atividade executada por equipe da empresa LVL.",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-25",
+      "local": "CT ITI 15",
+      "lider": "Emanuel (Goiania)",
+      "tst": "Andre",
+      "categoria": "C. Equipamento de Proteção Coletiva",
+      "categoria_detalhe": "C1. Sem isolamento ou insuficiente",
+      "classificacao_codigo": "C1",
+      "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
+      "classificacao_descricao": "Sem isolamento ou insuficiente",
+      "classificacao_original": "C1.",
+      "desvio": "Atividade executada sem o devido isolamento e sinalização da área, em desacordo com a NR 18.",
+      "descricao": "Atividade executada sem o devido isolamento e sinalização da área, em desacordo com a NR 18.",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-26",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F2. Não existem projetos / procedimentos escritos",
+      "classificacao_codigo": "F2",
+      "classificacao_grupo": "F. Procedimentos e Técnicas",
+      "classificacao_descricao": "Não existem projetos / procedimentos escritos",
+      "classificacao_original": "F2.",
+      "desvio": "Colaborador da empresa MR Locações sem integração obrigatória e sem cadastro no sistema Wehandler",
+      "descricao": "Colaborador da empresa MR Locações sem integração obrigatória e sem cadastro no sistema Wehandler",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-27",
+      "local": "CT ITI 15",
+      "lider": "Rogerio Gonçalves",
+      "tst": "Rogerio",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D3. Em condições inseguras",
+      "classificacao_codigo": "D3",
+      "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
+      "classificacao_descricao": "Em condições inseguras",
+      "classificacao_original": "D3, F2, G2",
+      "desvio": "Pendências documentais, sem crachá, sem cinto, sem trava-quedas, sem detector de gases, sem área de vivência.",
+      "descricao": "Pendências documentais, sem crachá, sem cinto, sem trava-quedas, sem detector de gases, sem área de vivência.",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-27",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F7. PAE no local e compreendido pela equipe",
+      "classificacao_codigo": "F7",
+      "classificacao_grupo": "F. Procedimentos e Técnicas",
+      "classificacao_descricao": "PAE no local e compreendido pela equipe",
+      "classificacao_original": "F7.",
+      "desvio": "Falta de maca e mochila de resgate em PVs específicos (PV-5 e PV-6).",
+      "descricao": "Falta de maca e mochila de resgate em PVs específicos (PV-5 e PV-6).",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-27",
+      "local": "CT ITI 15",
+      "lider": "Não ID",
+      "tst": "Rogerio",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D1. Impróprias para o serviço",
+      "classificacao_codigo": "D1",
+      "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
+      "classificacao_descricao": "Impróprias para o serviço",
+      "classificacao_original": "D1.",
+      "desvio": "Concha da retroescavadeira sem ponto de içamento certificado.",
+      "descricao": "Concha da retroescavadeira sem ponto de içamento certificado.",
+      "quantidade_desvios": 1,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CT ITI 15",
+      "lider": "Rogério Gonçalves",
+      "tst": "Rogerio",
+      "categoria": "A. Posição das Pessoas",
+      "categoria_detalhe": "A5. Risco de choque elétrico",
+      "classificacao_codigo": "A5",
+      "classificacao_grupo": "A. Posição das Pessoas",
+      "classificacao_descricao": "Risco de choque elétrico",
+      "classificacao_original": "A5, E1, D3",
+      "desvio": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "descricao": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "quantidade_desvios": 3,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CT ITI 15",
+      "lider": "Rogério Gonçalves",
+      "tst": "Rogerio",
+      "categoria": "E. Equipamentos Pesados",
+      "categoria_detalhe": "E1. Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_codigo": "E1",
+      "classificacao_grupo": "E. Equipamentos Pesados",
+      "classificacao_descricao": "Retroescavadeira / Caminhão em condições inadequadas (Ex: Sem alarme de ré funcionando ou Vazamento Hidraulico)",
+      "classificacao_original": "A5, E1, D3",
+      "desvio": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "descricao": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "quantidade_desvios": 3,
+      "ordem_desvio": 2
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CT ITI 15",
+      "lider": "Rogério Gonçalves",
+      "tst": "Rogerio",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D3. Em condições inseguras",
+      "classificacao_codigo": "D3",
+      "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
+      "classificacao_descricao": "Em condições inseguras",
+      "classificacao_original": "A5, E1, D3",
+      "desvio": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "descricao": "Sem aterramento (bomba de concreto), sem parada de emergência, sem extintor e sem identificação de operadores.",
+      "quantidade_desvios": 3,
+      "ordem_desvio": 3
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CR ITI15",
+      "lider": "Silvestre Encarregado",
+      "tst": "Rogerio",
+      "categoria": "D. Ferramentas e Equipamentos Leves",
+      "categoria_detalhe": "D3. Em condições inseguras",
+      "classificacao_codigo": "D3",
+      "classificacao_grupo": "D. Ferramentas e Equipamentos Leves",
+      "classificacao_descricao": "Em condições inseguras",
+      "classificacao_original": "D3, E4, F2",
+      "desvio": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "descricao": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "quantidade_desvios": 3,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CR ITI15",
+      "lider": "Silvestre Encarregado",
+      "tst": "Rogerio",
+      "categoria": "E. Equipamentos Pesados",
+      "categoria_detalhe": "E4. Falta de isolamento do raio de ação de equipamentos pesados (Ex: Movimentações com caminhão Munck)",
+      "classificacao_codigo": "E4",
+      "classificacao_grupo": "E. Equipamentos Pesados",
+      "classificacao_descricao": "Falta de isolamento do raio de ação de equipamentos pesados (Ex: Movimentações com caminhão Munck)",
+      "classificacao_original": "D3, E4, F2",
+      "desvio": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "descricao": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "quantidade_desvios": 3,
+      "ordem_desvio": 2
+    },
+    {
+      "data": "2026-06-28",
+      "local": "CR ITI15",
+      "lider": "Silvestre Encarregado",
+      "tst": "Rogerio",
+      "categoria": "F. Procedimentos e Técnicas",
+      "categoria_detalhe": "F2. Não existem projetos / procedimentos escritos",
+      "classificacao_codigo": "F2",
+      "classificacao_grupo": "F. Procedimentos e Técnicas",
+      "classificacao_descricao": "Não existem projetos / procedimentos escritos",
+      "classificacao_original": "D3, E4, F2",
+      "desvio": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "descricao": "Guarda-corpo deficiente, ajudante sem talabarte, ausência de Plano de Rigging.",
+      "quantidade_desvios": 3,
+      "ordem_desvio": 3
+    },
+    {
+      "data": "2026-06-30",
+      "local": "CT Rauzito",
+      "lider": "Marcelo Alves",
+      "tst": "Jacson",
+      "categoria": "C. Equipamento de Proteção Coletiva",
+      "categoria_detalhe": "C1. Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala)",
+      "classificacao_codigo": "C1",
+      "classificacao_grupo": "C. Equipamento de Proteção Coletiva",
+      "classificacao_descricao": "Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala)",
+      "classificacao_original": "C1. Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala); G4.Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+      "desvio": "Material escavado próximo à vala (< 1m) e Local sem isolamento",
+      "descricao": "Material escavado próximo à vala (< 1m) e Local sem isolamento",
+      "quantidade_desvios": 2,
+      "ordem_desvio": 1
+    },
+    {
+      "data": "2026-06-30",
+      "local": "CT Rauzito",
+      "lider": "Marcelo Alves",
+      "tst": "Jacson",
+      "categoria": "G. Organização e Limpeza",
+      "categoria_detalhe": "G4. Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+      "classificacao_codigo": "G4",
+      "classificacao_grupo": "G. Organização e Limpeza",
+      "classificacao_descricao": "Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+      "classificacao_original": "C1. Sem isolamento ou Insuficiente (Ex: falta de tapumes/grades na vala); G4.Resíduos dispostos incorretamente (Ex: Solo escavado depositado na borda da vala)",
+      "desvio": "Material escavado próximo à vala (< 1m) e Local sem isolamento",
+      "descricao": "Material escavado próximo à vala (< 1m) e Local sem isolamento",
+      "quantidade_desvios": 2,
+      "ordem_desvio": 2
     }
   ],
   "dds": [],
+  "indicadoresProativos": [
+    {
+      "data": "2026-01-01",
+      "ano": 2026,
+      "mes": 1,
+      "mes_nome": "Janeiro",
+      "quantidade_dds": 295,
+      "quantidade_campanhas": 1
+    },
+    {
+      "data": "2026-02-01",
+      "ano": 2026,
+      "mes": 2,
+      "mes_nome": "Fevereiro",
+      "quantidade_dds": 260,
+      "quantidade_campanhas": 1
+    },
+    {
+      "data": "2026-03-01",
+      "ano": 2026,
+      "mes": 3,
+      "mes_nome": "Março",
+      "quantidade_dds": 410,
+      "quantidade_campanhas": 1
+    },
+    {
+      "data": "2026-04-01",
+      "ano": 2026,
+      "mes": 4,
+      "mes_nome": "Abril",
+      "quantidade_dds": 196,
+      "quantidade_campanhas": 1
+    },
+    {
+      "data": "2026-05-01",
+      "ano": 2026,
+      "mes": 5,
+      "mes_nome": "Maio",
+      "quantidade_dds": 301,
+      "quantidade_campanhas": 2
+    }
+  ],
   "treinamentosAdmissao": 96,
   "listas": {
     "Natureza da Lesão": [

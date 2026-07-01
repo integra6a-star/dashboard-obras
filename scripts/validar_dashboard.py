@@ -50,6 +50,11 @@ def num(value) -> float:
         return 0.0
 
 
+def is_rede_existente_ou_executada(status) -> bool:
+    texto = norm(status)
+    return "REDE EXISTENTE" in texto or "REDE EXECUTADA" in texto
+
+
 def load_de_para() -> dict[str, str]:
     if not DE_PARA.exists():
         return {}
@@ -76,6 +81,7 @@ def read_base(aliases: dict[str, str]) -> dict:
         col_obra = headers.get("Obra", 1)
         col_plan = headers.get("Extensao_Planej", 5)
         col_exec = headers.get("Extensao_Execut", 6)
+        col_status = headers.get("Status")
         prod_cols = [
             c for name, c in headers.items()
             if norm(name).startswith("PRODUCAO")
@@ -92,6 +98,11 @@ def read_base(aliases: dict[str, str]) -> dict:
             planejado = num(row[col_plan - 1]) if len(row) >= col_plan else 0.0
             executado_coluna = num(row[col_exec - 1]) if len(row) >= col_exec else 0.0
             executado_mensal = sum(num(row[c - 1]) for c in prod_cols if len(row) >= c)
+            status = row[col_status - 1] if col_status and len(row) >= col_status else ""
+            if is_rede_existente_ou_executada(status):
+                planejado = 0.0
+                executado_coluna = 0.0
+                executado_mensal = 0.0
 
             # A produção mensal é o histórico acumulado lançado na Base Dash.
             # Quando ela supera a coluna de executado, a validação deve considerar

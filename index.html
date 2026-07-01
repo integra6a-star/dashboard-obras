@@ -904,6 +904,14 @@ function renderRanking(rows){
   });
 }
 function calcMediaDiariaMensal(rows){
+  if(!fObra.value && Array.isArray(CURVA_MENSAL) && CURVA_MENSAL.length){
+    const ultimoMesComProducao = [...CURVA_MENSAL]
+      .reverse()
+      .find(item => Number(item?.produzido || 0) > 0);
+    if(ultimoMesComProducao){
+      return Number(ultimoMesComProducao.produzido || 0) / 30;
+    }
+  }
   const s = calcMensal(rows);
   const values = Array.isArray(s?.values) ? s.values.map(v=>Number(v||0)) : [];
   const meses = Array.isArray(s?.meses) ? s.meses : [];
