@@ -4,7 +4,7 @@
     "base_planejado": 38438.39,
     "base_executado": 19623.2,
     "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 1649.22,
+    "diferenca_base_mapa": 1296.35,
     "saldo_total": 18815.19
   },
   "pds": {
@@ -59,7 +59,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 1.649,22 m",
+    "Diferença total entre EAP Produzido e mapa: 1.296,35 m",
     "15 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
