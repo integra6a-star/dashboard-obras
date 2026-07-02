@@ -59,8 +59,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 1,259.25 m",
-    "16 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre EAP Produzido e mapa: 1.649,22 m",
+    "15 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -72,16 +72,6 @@
       "saldo": 367.0,
       "linhas_base": 2,
       "linhas_mapa": 32
-    },
-    {
-      "obra": "CTS Jardim Miriam",
-      "planejado": 2092.7,
-      "executado_base": 1952.26,
-      "executado_mapa": 1952.26,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 140.44,
-      "linhas_base": 10,
-      "linhas_mapa": 56
     },
     {
       "obra": "RCE ELVIRA DE ARAUJO",
@@ -370,7 +360,7 @@
       "planejado": 1700.5,
       "executado_base": 1184.68,
       "executado_mapa": 1184.68,
-      "diferenca_base_mapa": -0.0,
+      "diferenca_base_mapa": 0.0,
       "saldo": 515.82,
       "linhas_base": 18,
       "linhas_mapa": 26
@@ -530,7 +520,7 @@
       "planejado": 941.5,
       "executado_base": 762.09,
       "executado_mapa": 762.09,
-      "diferenca_base_mapa": -0.0,
+      "diferenca_base_mapa": 0.0,
       "saldo": 179.41,
       "linhas_base": 6,
       "linhas_mapa": 22
@@ -760,7 +750,7 @@
       "planejado": 205.5,
       "executado_base": 220.59,
       "executado_mapa": 220.59,
-      "diferenca_base_mapa": -0.0,
+      "diferenca_base_mapa": 0.0,
       "saldo": -15.09,
       "linhas_base": 2,
       "linhas_mapa": 5

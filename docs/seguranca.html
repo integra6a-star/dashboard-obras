@@ -1044,6 +1044,11 @@
           <div class="dds-card-note" id="ddsCardMedia">Média por DDS</div>
         </div>
         <div class="dds-card">
+          <div class="dds-card-label">Campanhas</div>
+          <div class="dds-card-number" id="campanhasCardTotal">0</div>
+          <div class="dds-card-note" id="campanhasCardPeriodo">Total do Indicador Pro-ativo</div>
+        </div>
+        <div class="dds-card">
           <div class="dds-card-label">Temas mais frequentes</div>
           <div class="dds-temas" id="ddsCardTemas"></div>
         </div>
@@ -1206,6 +1211,16 @@
       return Number(alvo?.quantidade_dds || 0);
     }
 
+    function totalCampanhas(base = BASE_SEGURANCA){
+      return Number(base?.metadata?.campanhas_total_indicador || 0);
+    }
+
+    function totalCampanhasFiltrado(base, mes){
+      if (mes === "todos") return totalCampanhas(base);
+      const alvo = base.indicadoresProativos?.find(item => String(item.data || "").slice(0, 7) === mes);
+      return Number(alvo?.quantidade_campanhas || 0);
+    }
+
     function nomeMes(chave){
       if (chave === "todos") return "Período completo";
       if (!chave || chave === "sem-data") return "Sem data";
@@ -1325,6 +1340,14 @@
         : `<div class="dds-card-note">Sem temas no filtro</div>`;
     }
 
+    function montarCardCampanhas(mes){
+      const total = totalCampanhasFiltrado(BASE_SEGURANCA, mes);
+      const cardTotal = document.getElementById("campanhasCardTotal");
+      const cardPeriodo = document.getElementById("campanhasCardPeriodo");
+      if (cardTotal) cardTotal.innerText = total;
+      if (cardPeriodo) cardPeriodo.innerText = mes === "todos" ? "Total do Indicador Pro-ativo" : nomeMes(mes);
+    }
+
     function montarFiltros(){
       const meses = [...new Set(BASE_SEGURANCA.inspecoes.map(d => chaveMes(d.data)).filter(Boolean))]
         .filter(m => m !== "sem-data")
@@ -1376,6 +1399,7 @@
       montarRanking(desvios, inspecoes);
       montarUltimosDesvios(desvios);
       montarCardDDS(dds, mes);
+      montarCardCampanhas(mes);
       montarGraficos(desvios);
       montarResumo();
     }
@@ -1623,7 +1647,7 @@
         <span class="chip">Base: ${BASE_SEGURANCA.inspecoes.length} inspeções</span>
         <span class="chip">Desvios válidos: ${BASE_SEGURANCA.desvios.filter(ehDesvioValido).length}</span>
         <span class="chip">DDS: ${totalDDS(BASE_SEGURANCA)}</span>
-        <span class="chip">Treinamentos admissionais: ${BASE_SEGURANCA.treinamentosAdmissao}</span>
+        <span class="chip">Campanhas: ${totalCampanhas(BASE_SEGURANCA)}</span>\n        <span class="chip">Treinamentos admissionais: ${BASE_SEGURANCA.treinamentosAdmissao}</span>
         <span class="chip">Pronto para trocar arrays por API/banco de dados</span>
       `;
     }
