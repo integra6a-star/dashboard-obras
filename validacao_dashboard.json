@@ -2,10 +2,10 @@
   "atualizado_em": "2026-07-02 07:41:30",
   "totais": {
     "base_planejado": 38438.39,
-    "base_executado": 19233.24,
+    "base_executado": 19623.2,
     "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 1259.25,
-    "saldo_total": 19205.15
+    "diferenca_base_mapa": 1649.22,
+    "saldo_total": 18815.19
   },
   "pds": {
     "total": 3055,
@@ -76,10 +76,10 @@
     {
       "obra": "CTS Jardim Miriam",
       "planejado": 2092.7,
-      "executado_base": 1562.3,
+      "executado_base": 1952.26,
       "executado_mapa": 1952.26,
-      "diferenca_base_mapa": -389.96,
-      "saldo": 530.4,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 140.44,
       "linhas_base": 10,
       "linhas_mapa": 56
     },
@@ -358,10 +358,10 @@
     {
       "obra": "CTS Jardim Miriam",
       "planejado": 2092.7,
-      "executado_base": 1562.3,
+      "executado_base": 1952.26,
       "executado_mapa": 1952.26,
-      "diferenca_base_mapa": -389.96,
-      "saldo": 530.4,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 140.44,
       "linhas_base": 10,
       "linhas_mapa": 56
     },
