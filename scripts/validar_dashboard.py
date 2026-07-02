@@ -18,6 +18,7 @@ from openpyxl import load_workbook
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 BASE_XLSX = ROOT / "BASE_DASH_EXTENSAO_POWERBI.xlsx"
+EAP_PRODUCAO_JSON = ROOT / "eap_producao.json"
 MAPA_XLSX = ROOT / "planilha_base_mapa.xlsx"
 PDS_JSON = DOCS / "pds_data.json"
 DE_PARA = ROOT / "de_para_obras.json"
@@ -50,11 +51,6 @@ def num(value) -> float:
         return 0.0
 
 
-def is_rede_existente_ou_executada(status) -> bool:
-    texto = norm(status)
-    return "REDE EXISTENTE" in texto or "REDE EXECUTADA" in texto
-
-
 def load_de_para() -> dict[str, str]:
     if not DE_PARA.exists():
         return {}
@@ -81,7 +77,6 @@ def read_base(aliases: dict[str, str]) -> dict:
         col_obra = headers.get("Obra", 1)
         col_plan = headers.get("Extensao_Planej", 5)
         col_exec = headers.get("Extensao_Execut", 6)
-        col_status = headers.get("Status")
         prod_cols = [
             c for name, c in headers.items()
             if norm(name).startswith("PRODUCAO")
@@ -98,11 +93,6 @@ def read_base(aliases: dict[str, str]) -> dict:
             planejado = num(row[col_plan - 1]) if len(row) >= col_plan else 0.0
             executado_coluna = num(row[col_exec - 1]) if len(row) >= col_exec else 0.0
             executado_mensal = sum(num(row[c - 1]) for c in prod_cols if len(row) >= c)
-            status = row[col_status - 1] if col_status and len(row) >= col_status else ""
-            if is_rede_existente_ou_executada(status):
-                planejado = 0.0
-                executado_coluna = 0.0
-                executado_mensal = 0.0
 
             # A produção mensal é o histórico acumulado lançado na Base Dash.
             # Quando ela supera a coluna de executado, a validação deve considerar
@@ -175,6 +165,17 @@ def read_mapa(aliases: dict[str, str]) -> dict:
     finally:
         wb.close()
 
+def read_eap_total_produzido() -> float:
+    if not EAP_PRODUCAO_JSON.exists():
+        return 0.0
+    try:
+        payload = json.loads(EAP_PRODUCAO_JSON.read_text(encoding="utf-8"))
+        mensal = payload.get("mensal") or []
+        return sum(num(item.get("produzido")) for item in mensal)
+    except Exception:
+        return 0.0
+
+
 def read_pds() -> dict:
     if not PDS_JSON.exists():
         return {"total": 0, "ultima_data": "", "hoje": 0, "por_obra_ultima_data": []}
@@ -212,6 +213,7 @@ def build_validation() -> dict:
     base = read_base(aliases)
     mapa = read_mapa(aliases)
     pds = read_pds()
+    eap_total_produzido = read_eap_total_produzido() or base["executado"]
 
     obras = sorted(set(base["obras"].keys()) | set(mapa["obras"].keys()))
     divergencias = []
@@ -240,10 +242,10 @@ def build_validation() -> dict:
 
     divergencias.sort(key=lambda x: abs(x["diferenca_base_mapa"]), reverse=True)
     saldo_por_obra.sort(key=lambda x: x["saldo"], reverse=True)
-    total_diff = base["executado"] - mapa["executado_mapa"]
+    total_diff = eap_total_produzido - mapa["executado_mapa"]
     alertas = []
     if abs(total_diff) > 0.05:
-        alertas.append(f"Diferença total entre Base Dash e mapa: {total_diff:,.2f} m")
+        alertas.append(f"Diferença total entre EAP Produzido e mapa: {total_diff:,.2f} m")
     if divergencias:
         alertas.append(f"{len(divergencias)} obra(s) com divergência entre executado da Base Dash e mapa.")
     if pds["hoje"] == 0:
@@ -253,10 +255,10 @@ def build_validation() -> dict:
         "atualizado_em": now_iso(),
         "totais": {
             "base_planejado": round(base["planejado"], 2),
-            "base_executado": round(base["executado"], 2),
+            "base_executado": round(eap_total_produzido, 2),
             "mapa_executado": round(mapa["executado_mapa"], 2),
             "diferenca_base_mapa": round(total_diff, 2),
-            "saldo_total": round(base["planejado"] - base["executado"], 2),
+            "saldo_total": round(base["planejado"] - eap_total_produzido, 2),
         },
         "pds": pds,
         "alertas": alertas,
@@ -297,9 +299,9 @@ def write_report(payload: dict) -> None:
         f"Atualizado em: {payload['atualizado_em']}",
         "",
         f"Planejado Base Dash: {totals['base_planejado']:,.2f} m",
-        f"Executado Base Dash: {totals['base_executado']:,.2f} m",
+        f"Executado EAP Produzido: {totals['base_executado']:,.2f} m",
         f"Executado Mapa: {totals['mapa_executado']:,.2f} m",
-        f"Diferença Base - Mapa: {totals['diferenca_base_mapa']:,.2f} m",
+        f"Diferença EAP Produzido - Mapa: {totals['diferenca_base_mapa']:,.2f} m",
         f"Saldo total: {totals['saldo_total']:,.2f} m",
         "",
         f"PDS total: {payload['pds']['total']} registros",
@@ -341,7 +343,7 @@ def main() -> None:
             shutil.copy2(path, DOCS / path.name)
 
         print("Validação automática gerada.")
-        print(f"Diferença Base - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
+        print(f"Diferença EAP Produzido - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
         print(f"Alertas: {len(payload['alertas'])}")
     except Exception as exc:
         print(f"ERRO ao gerar validação do dashboard: {exc}")

@@ -233,6 +233,29 @@ function getValue(obj, names){
   }
   return '';
 }
+
+async function tryFetchJson(paths){
+  for(const path of paths){
+    try{
+      const res = await fetch(path + '?v=' + Date.now(), { cache: 'no-store' });
+      if(!res.ok) continue;
+      const data = await res.json();
+      if(Array.isArray(data)) return data;
+    }catch(e){}
+  }
+  return null;
+}
+function normalizarRegistroPDS(row){
+  const data = String(row.data || row.Data || '').trim();
+  const obra = String(row.obra || row.Obra || '').trim();
+  const equipe = String(row.equipe || row.Equipe || '').trim();
+  const atividade = String(row.atividade || row.Atividade || '').trim();
+  const pv = String(row.pv || row.PV || row.PV_Texto || '').trim();
+  const trecho = String(row.trecho || row.Trecho || '').trim();
+  if(!data || !obra || !equipe || !atividade) return null;
+  return { data, obra, equipe, atividade, pv, trecho };
+}
+
 async function tryFetchArrayBuffer(paths){
   for(const path of paths){
     try{
@@ -246,13 +269,21 @@ async function tryFetchArrayBuffer(paths){
 async function carregarDaPlanilha(){
   const warn = document.getElementById('warnBox');
   warn.style.display = 'none';
+  const jsonData = await tryFetchJson([
+    './pds_data.json',
+    './docs/pds_data.json'
+  ]);
+  if(jsonData){
+    DATA = jsonData.map(normalizarRegistroPDS).filter(Boolean);
+    return;
+  }
   const buffer = await tryFetchArrayBuffer([
     './pds_word_completo_preenchido(2).xlsx',
     './docs/pds_word_completo_preenchido(2).xlsx'
   ]);
   if(!buffer){
     warn.style.display = '';
-    warn.textContent = 'Não encontrei a planilha pds_word_completo_preenchido(2).xlsx na pasta docs.';
+    warn.textContent = 'Não encontrei pds_data.json nem a planilha pds_word_completo_preenchido(2).xlsx.';
     DATA = [];
     return;
   }

@@ -75,7 +75,7 @@
     .grid-main{display:grid;grid-template-columns:2.6fr .94fr;gap:16px}
     .left-grid{display:grid;grid-template-columns:1fr 1.34fr;gap:16px}
     .right-grid{display:grid;gap:16px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;min-width:0}
     .title{font-size:22px;font-weight:900;margin:0 0 16px}
     .subtle{color:var(--muted);font-size:13px}
     .overview-grid{display:grid;grid-template-columns:250px 1fr;gap:16px;align-items:stretch}
@@ -90,11 +90,11 @@
     .gauge .big{font-size:48px;font-weight:900;color:var(--red);line-height:1}
     .gauge .week{font-size:16px;font-weight:800;color:var(--green);margin-top:8px}
     .gauge-note{font-size:14px;font-weight:700;color:#66758d}
-    .kpis-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:14px}
-    .metric{min-width:0;padding:12px;border:1px solid var(--line);border-radius:14px;background:#fff}
-    .metric:last-child{border-right:1px solid var(--line)}
+    .kpis-top{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+    .metric{padding:2px 8px 10px 8px;border-right:1px solid var(--line)}
+    .metric:last-child{border-right:none}
     .metric .label{font-size:16px;font-weight:800;color:#556274;margin-bottom:10px}
-    .metric .value{font-size:clamp(34px,2.5vw,46px);font-weight:900;letter-spacing:0;white-space:nowrap;line-height:1.05}
+    .metric .value{font-size:58px;font-weight:900;letter-spacing:-1px}
     .metric .foot{font-size:14px;color:#7b8798;margin-top:6px}
     .meta-bar{background:#f7f9fc;border-radius:16px;padding:16px;margin-top:4px}
     .progress-track{height:14px;background:#e8eef6;border-radius:999px;overflow:hidden;display:flex;margin:10px 0 8px}
@@ -116,16 +116,16 @@
     .weather-mini{border-top:1px solid var(--line);padding-top:12px;display:flex;gap:14px;align-items:center}
     .weather-big{font-size:28px;font-weight:900}
     .wx-col{background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:12px}
-    .forecast-days{display:flex;gap:8px;justify-content:space-between}
-    .forecast-day{flex:1;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:12px;font-weight:700;color:#607086}
+    .forecast-days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+    .forecast-day{min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:12px;font-weight:700;color:#607086;overflow-wrap:anywhere}
     .rank-list{display:grid;gap:12px;margin-top:8px}
-    .rank-item{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .rank-item{display:grid;grid-template-columns:32px 1fr auto;gap:14px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
     .rank-num{font-size:20px;font-weight:900;color:#1f2937;text-align:center}
     .rank-main{min-width:0}
-    .rank-name{font-size:15px;font-weight:900;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.18;margin-bottom:8px;overflow-wrap:anywhere}
+    .rank-name{font-size:18px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px}
     .rank-bar{height:12px;border-radius:999px;background:#e2e8f0;overflow:hidden}
     .rank-fill{height:100%;border-radius:999px}
-    .rank-right{grid-column:2;font-size:18px;font-weight:900;color:#334155;min-width:0;text-align:right;margin-top:4px}
+    .rank-right{font-size:18px;font-weight:900;color:#334155;min-width:70px;text-align:right}
     .saldo-list{display:grid;gap:10px;max-height:420px;overflow:auto;padding-right:4px}
     .saldo-item{display:grid;grid-template-columns:1.35fr repeat(3,.55fr);gap:10px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:14px;padding:12px}
     .saldo-name{font-weight:900;color:#1f2a44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -141,15 +141,11 @@
     .validacao-metric.warn b{color:#dc2626}
     .validacao-alert{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:999px;padding:8px 12px;font-weight:800}
     .kpi-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
-    .kpi-pair.economias-grid{grid-template-columns:repeat(3,1fr)}
     .soft-kpi{background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:18px}
     .soft-kpi.green{background:#f2faf3}
     .soft-kpi .label{font-size:16px;font-weight:800;color:#4c596c;line-height:1.25}
     .soft-kpi .value{font-size:26px;font-weight:900;margin-top:10px;color:#2f6fe4}
     .soft-kpi.green .value{color:#2f9d62}
-    .soft-kpi .percent-badge{display:inline-flex;align-items:baseline;gap:5px;margin-top:10px;padding:7px 9px;border-radius:10px;background:#dcfce7;color:#166534;font-weight:900;line-height:1;box-shadow:inset 0 0 0 1px rgba(22,101,52,.12)}
-    .soft-kpi .percent-badge .percent-value{font-size:18px}
-    .soft-kpi .percent-badge .percent-label{font-size:11px;font-weight:800}
     .prod-box{margin-top:12px;background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:14px}
     .prod-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px}
     .prod-head .title-small{font-size:16px;font-weight:800}
@@ -167,12 +163,13 @@
     .map-slim-btn{height:40px;border:none;border-radius:12px;padding:0 14px;font-weight:800;cursor:pointer}
     .map-slim-btn.primary{background:var(--blue);color:#fff;box-shadow:0 10px 20px rgba(47,111,228,.18)}
     .map-slim-btn.soft{background:#fff;border:1px solid var(--line);color:#334155}
-    .map-layout{display:grid;grid-template-columns:minmax(320px,1.15fr) minmax(280px,.85fr);gap:14px;align-items:stretch}
+    .map-layout{display:grid;grid-template-columns:minmax(260px,1.15fr) minmax(220px,.85fr);gap:14px;align-items:stretch;min-width:0}
     .weather-side{display:grid;grid-template-rows:auto auto auto auto;gap:12px;min-width:0}
     .weather-summary{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
     .weather-summary-main{display:flex;gap:12px;align-items:center}
     .weather-summary-icon{font-size:34px;line-height:1}
     .weather-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .map-box,.wx-col,.weather-summary,.map-legend-card{min-width:0}
     .map-overlay{display:none}
     .map-legend-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
     .map-legend-title{font-size:12px;font-weight:900;color:#1f2937;text-transform:uppercase;letter-spacing:.02em}
@@ -217,8 +214,13 @@
     .status-warn{background:#fff6df;color:#b58100}
     .status-bad{background:#fdecec;color:#c23535}
     @media(max-width:1200px){
+      .grid-main{grid-template-columns:1fr}
+      .left-grid{grid-template-columns:1fr}
       .mini-cards-grid{grid-template-columns:repeat(2,1fr)}
       .analytics-grid-top,.analytics-grid-mid{grid-template-columns:1fr}
+    }
+    @media(max-width:980px){
+      .map-layout{grid-template-columns:1fr}
     }
     @media(max-width:760px){
       .wrap{padding:10px}
@@ -285,7 +287,7 @@
       .metric{border-right:none;border-bottom:1px solid var(--line)}
       .metric .value{font-size:42px}
       .metric:last-child{border-bottom:none}
-      .weather-row,.kpi-pair,.kpi-pair.economias-grid{grid-template-columns:1fr}
+      .weather-row,.kpi-pair{grid-template-columns:1fr}
       .forecast-days{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
       .forecast-day{min-width:88px}
       .panel-head{align-items:flex-start;flex-direction:column}
@@ -305,9 +307,9 @@
       .map-actions-inline .map-slim-btn{width:100%}
       .chart-wrap{height:220px}
       .chart-wrap.small{height:200px}
-      .rank-item{grid-template-columns:28px minmax(0,1fr);gap:10px;padding:12px}
-      .rank-name{font-size:14px}
-      .rank-right{font-size:16px;min-width:0}
+      .rank-item{grid-template-columns:28px 1fr auto;gap:10px;padding:12px}
+      .rank-name{font-size:15px}
+      .rank-right{font-size:16px;min-width:54px}
     }
 
 /* ===== CORREÇÃO MOBILE (SIMPLES E ESTÁVEL) ===== */
@@ -365,7 +367,7 @@
   .map-box{ height: 220px !important; }
 
   .rank-item{ padding: 10px !important; }
-  .rank-name{ font-size: 13px !important; }
+  .rank-name{ font-size: 14px !important; }
   .rank-right{ font-size: 14px !important; }
 
   .metric .value{ font-size: 34px !important; }
@@ -499,7 +501,7 @@
 </div>
 <button class="btn-detail" id="btnDetalhes">Ver detalhes</button>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;align-items:center;">
+<div style="display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:center;">
 <div class="gauge-box">
 <div class="gauge">
 <svg viewbox="0 0 120 120">
@@ -624,7 +626,7 @@
 </section>
 <section class="card">
 <div class="panel-head"><h2 class="title" style="margin:0">DESTAQUE</h2></div>
-<div class="kpi-pair economias-grid">
+<div class="kpi-pair">
 <div class="soft-kpi">
 <div class="label">Economias Previstas (nº)</div>
 <div class="value" id="ecoPrev">0</div>
@@ -632,13 +634,6 @@
 <div class="soft-kpi green">
 <div class="label">Economias Realizadas (nº)</div>
 <div class="value" id="ecoRec">0</div>
-<div class="percent-badge" id="ecoRecPct" style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;padding:8px 10px;border-radius:12px;background:#16a34a;color:#fff;font-weight:900;line-height:1;box-shadow:0 8px 16px rgba(22,163,74,.24)">
-<span class="percent-value" style="font-size:20px">62,45%</span><span class="percent-label" style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0">recebidas</span>
-</div>
-</div>
-<div class="soft-kpi green">
-<div class="label">TL-00 Recebidas (nº)</div>
-<div class="value" id="ecoTl0">0</div>
 </div>
 </div>
 <div class="prod-box">
@@ -764,7 +759,7 @@ let RAW = [];
 let MESES = [];
 let UPDATED_MONTH = '';
 let CURVA_MENSAL = [];
-let ECONOMIAS_GLOBAL = null; // vem de EAP_PRODUCAO.xlsx: F = Economias EAP, G = Economias Recebidas, H = TL-00 Recebidas
+let ECONOMIAS_GLOBAL = null; // vem de EAP_PRODUCAO.xlsx: F = Economias EAP, G = Economias Recebidas
 let MAPA_BASE = {obras:[], pontos:[], trechos:[], carregado:false};
 const CURVA_PLANILHA = [{"ano": 2025, "mes": "Mar", "eap": 159.15, "produzido": 0.0}, {"ano": 2025, "mes": "Abr", "eap": 723.7, "produzido": 47.5}, {"ano": 2025, "mes": "Mai", "eap": 905.99, "produzido": 389.15}, {"ano": 2025, "mes": "Jun", "eap": 1089.14, "produzido": 340.32}, {"ano": 2025, "mes": "Jul", "eap": 588.28, "produzido": 1061.675}, {"ano": 2025, "mes": "Ago", "eap": 1227.24, "produzido": 1750.96}, {"ano": 2025, "mes": "Set", "eap": 1914.65, "produzido": 1351.83}, {"ano": 2025, "mes": "Out", "eap": 1749.47, "produzido": 1163.0}, {"ano": 2025, "mes": "Nov", "eap": 1942.9, "produzido": 1090.665}, {"ano": 2025, "mes": "Dez", "eap": 1588.61, "produzido": 1453.725}, {"ano": 2026, "mes": "Jan", "eap": 2185.34, "produzido": 1258.07}, {"ano": 2026, "mes": "Fev", "eap": 2340.4, "produzido": 2135.09}, {"ano": 2026, "mes": "Mar", "eap": 2128.08, "produzido": 1511.27}, {"ano": 2026, "mes": "Abr", "eap": 2426.84, "produzido": 230.96}, {"ano": 2026, "mes": "Mai", "eap": 2545.85, "produzido": 0.0}, {"ano": 2026, "mes": "Jun", "eap": 3108.25, "produzido": 0.0}, {"ano": 2026, "mes": "Jul", "eap": 3269.49, "produzido": 0.0}, {"ano": 2026, "mes": "Ago", "eap": 3305.21, "produzido": 0.0}, {"ano": 2026, "mes": "Set", "eap": 3138.09, "produzido": 0.0}, {"ano": 2026, "mes": "Out", "eap": 2251.28, "produzido": 0.0}, {"ano": 2026, "mes": "Nov", "eap": 1527.07, "produzido": 0.0}, {"ano": 2026, "mes": "Dez", "eap": 542.46, "produzido": 0.0}];
 let chartMensal = null;
@@ -904,14 +899,6 @@ function renderRanking(rows){
   });
 }
 function calcMediaDiariaMensal(rows){
-  if(!fObra.value && Array.isArray(CURVA_MENSAL) && CURVA_MENSAL.length){
-    const ultimoMesComProducao = [...CURVA_MENSAL]
-      .reverse()
-      .find(item => Number(item?.produzido || 0) > 0);
-    if(ultimoMesComProducao){
-      return Number(ultimoMesComProducao.produzido || 0) / 30;
-    }
-  }
   const s = calcMensal(rows);
   const values = Array.isArray(s?.values) ? s.values.map(v=>Number(v||0)) : [];
   const meses = Array.isArray(s?.meses) ? s.meses : [];
@@ -1211,14 +1198,14 @@ function renderValidacaoDashboard(data){
   if(updated) updated.textContent = data?.atualizado_em ? `Atualizado: ${formatarDataHora(data.atualizado_em)}` : 'Sem conferência';
   cards.innerHTML = `
     <div class="mini-kpi ${Math.abs(Number(totais.diferenca_base_mapa||0)) > 0.05 ? 'alert' : ''}">
-      <div class="mini-label">Diferença Base x Mapa</div>
+      <div class="mini-label">Diferença EAP x Mapa</div>
       <div class="mini-value">${fmt2m(totais.diferenca_base_mapa)} m</div>
-      <div class="mini-foot">Executado da Base menos trechos do mapa</div>
+      <div class="mini-foot">Produzido da EAP menos trechos do mapa</div>
     </div>
     <div class="mini-kpi">
       <div class="mini-label">Saldo total</div>
       <div class="mini-value">${fmt2m(totais.saldo_total)} m</div>
-      <div class="mini-foot">Planejado menos executado da Base</div>
+      <div class="mini-foot">Planejado menos produzido da EAP</div>
     </div>
     <div class="mini-kpi">
       <div class="mini-label">PDS hoje</div>
@@ -1528,13 +1515,11 @@ function updateUI(){
   const prof = totals.prof;
   let ep = totals.ep;
   let er = totals.er;
-  let tl0 = 0;
   // Sem filtro de obra: usa a planilha EAP_PRODUCAO.xlsx como fonte oficial das economias.
-  // Coluna F = Economias EAP/Previstas | Coluna G = Economias Recebidas/Realizadas | Coluna H = TL-00 Recebidas.
+  // Coluna F = Economias EAP/Previstas | Coluna G = Economias Recebidas/Realizadas.
   if(!fObra.value && ECONOMIAS_GLOBAL){
     ep = Number(ECONOMIAS_GLOBAL.economias_eap || 0);
     er = Number(ECONOMIAS_GLOBAL.economias_recebidas || 0);
-    tl0 = Number(ECONOMIAS_GLOBAL.tl0_recebidas || 0);
   }
   const mediaDiariaMensal = calcMediaDiariaMensal(rows);
   document.getElementById('kAvanco').textContent = av.toFixed(0)+'%';
@@ -1550,7 +1535,6 @@ function updateUI(){
   document.getElementById('pvProfMini').textContent = `${fmtInt(pv)} / ${fmtInt(pi)} / ${fmt1(profMedia)} m`;
   document.getElementById('ecoPrev').textContent = fmtInt(ep);
   document.getElementById('ecoRec').textContent = fmtInt(er);
-  document.getElementById('ecoTl0').textContent = fmtInt(tl0);
   document.getElementById('prodAtual').textContent = fmt1(calcMediaDiariaMensal(rows));
   document.getElementById('curvePlan').textContent = fmtInt(plan);
   document.getElementById('curveExec').textContent = fmtInt(exec);
@@ -1685,7 +1669,6 @@ function abrirQsms(){
 function abrirComSenha(pagina, nome){
   const senha = prompt('Digite a senha para acessar ' + nome + ':');
   if(senha === SENHA_PADRAO){
-    try{ localStorage.setItem("integra6a_auth_886041", String(Date.now())); }catch(e){}
     window.open(pagina, '_blank');
   }else if(senha !== null){
     alert('Senha incorreta. Acesso negado.');
