@@ -1177,7 +1177,8 @@
       if (ddsDetalhado.length) return ddsDetalhado.length;
       if (mes === "todos") return totalDDS(base);
       const alvo = base.indicadoresProativos?.find(item => String(item.data || "").slice(0, 7) === mes);
-      return Number(alvo?.quantidade_dds || 0);
+      const valorMes = Number(alvo?.quantidade_dds || 0);
+      return valorMes || totalDDS(base);
     }
 
     function totalCampanhas(base = BASE_SEGURANCA){
@@ -1187,7 +1188,8 @@
     function totalCampanhasFiltrado(base, mes){
       if (mes === "todos") return totalCampanhas(base);
       const alvo = base.indicadoresProativos?.find(item => String(item.data || "").slice(0, 7) === mes);
-      return Number(alvo?.quantidade_campanhas || 0);
+      const valorMes = Number(alvo?.quantidade_campanhas || 0);
+      return valorMes || totalCampanhas(base);
     }
 
     function nomeMes(chave){
@@ -1303,7 +1305,7 @@
       document.getElementById("ddsCardMedia").innerText = dds.length ? `${media.toFixed(1)} participantes por DDS` : "Detalhe não disponível na planilha";
       document.getElementById("ddsCardPeriodo").innerText = ultimo
         ? `Último: ${formatarDataDDS(ultimo.data)} - ${ultimo.responsavel || "Responsável não informado"}`
-        : "Total importado do Indicador Pro-ativo";
+        : "Total da planilha";
       document.getElementById("ddsCardTemas").innerHTML = temas.length
         ? temas.map(t => `<div class="dds-tema-row"><span>${t.nome}</span><strong>${t.quantidade}</strong></div>`).join("")
         : `<div class="dds-card-note">Sem temas no filtro</div>`;
@@ -1314,7 +1316,7 @@
       const cardTotal = document.getElementById("campanhasCardTotal");
       const cardPeriodo = document.getElementById("campanhasCardPeriodo");
       if (cardTotal) cardTotal.innerText = total;
-      if (cardPeriodo) cardPeriodo.innerText = mes === "todos" ? "Total do Indicador Pro-ativo" : nomeMes(mes);
+      if (cardPeriodo) cardPeriodo.innerText = total === totalCampanhas(BASE_SEGURANCA) ? "Total da planilha" : nomeMes(mes);
     }
 
     function montarFiltros(){
@@ -1359,7 +1361,7 @@
       document.getElementById("kpiDesviosNota").innerText = `${desviosPorInspecao.toFixed(1)} desvios por inspeção`;
       document.getElementById("kpiInspecoes").innerText = inspecoes.length;
       document.getElementById("kpiDDS").innerText = totalDDSFiltrado(BASE_SEGURANCA, mes, dds);
-      document.getElementById("kpiDDSNota").innerText = dds.length ? `${participantes} participantes registrados` : "Total do Indicador Pro-ativo";
+      document.getElementById("kpiDDSNota").innerText = dds.length ? `${participantes} participantes registrados` : "Total da planilha";
       document.getElementById("kpiCategoria").innerText = principalCategoria ? principalCategoria.nome : "-";
       document.getElementById("kpiCategoriaNota").innerText = principalCategoria ? `${principalCategoria.quantidade} desvios` : "Sem desvios no filtro";
       document.getElementById("statusGeral").innerText = desvios.length === 0 ? "Sem desvios no filtro" : `${desvios.length} desvios monitorados`;
@@ -1616,7 +1618,8 @@
         <span class="chip">Base: ${BASE_SEGURANCA.inspecoes.length} inspeções</span>
         <span class="chip">Desvios válidos: ${BASE_SEGURANCA.desvios.filter(ehDesvioValido).length}</span>
         <span class="chip">DDS: ${totalDDS(BASE_SEGURANCA)}</span>
-        <span class="chip">Campanhas: ${totalCampanhas(BASE_SEGURANCA)}</span>\n        <span class="chip">Treinamentos admissionais: ${BASE_SEGURANCA.treinamentosAdmissao}</span>
+        <span class="chip">Campanhas: ${totalCampanhas(BASE_SEGURANCA)}</span>
+        <span class="chip">Treinamentos admissionais: ${BASE_SEGURANCA.treinamentosAdmissao}</span>
         <span class="chip">Pronto para trocar arrays por API/banco de dados</span>
       `;
     }
