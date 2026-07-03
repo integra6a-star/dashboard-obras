@@ -1,12 +1,12 @@
 {
-  "atualizado_em": "2026-07-03 07:00:58",
+  "atualizado_em": "2026-07-03 07:06:18",
   "totais": {
     "base_planejado": 38438.39,
     "base_executado": 19233.24,
     "dashboard_executado": 19233.24,
     "mapa_executado": 17973.98,
     "diferenca_base_mapa": 1259.25,
-    "saldo_total": 19205.15
+    "saldo_total": 19233.24
   },
   "pds": {
     "total": 3073,
@@ -850,7 +850,7 @@
       "arquivo": "pds_data.json",
       "existe": true,
       "tamanho_kb": 533.3,
-      "modificado": "2026-07-03 07:00:56"
+      "modificado": "2026-07-03 07:06:16"
     }
   ]
 }

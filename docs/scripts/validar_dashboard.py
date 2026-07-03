@@ -287,7 +287,7 @@ def build_validation() -> dict:
             "dashboard_executado": round(dashboard_total_executado, 2),
             "mapa_executado": round(mapa["executado_mapa"], 2),
             "diferenca_base_mapa": round(total_diff, 2),
-            "saldo_total": round(base["planejado"] - eap_total_produzido, 2),
+            "saldo_total": round(dashboard_total_executado, 2),
         },
         "pds": pds,
         "alertas": alertas,
