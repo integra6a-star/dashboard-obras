@@ -1,15 +1,16 @@
 {
-  "atualizado_em": "2026-07-02 07:41:30",
+  "atualizado_em": "2026-07-03 07:00:58",
   "totais": {
     "base_planejado": 38438.39,
-    "base_executado": 19623.2,
+    "base_executado": 19233.24,
+    "dashboard_executado": 19233.24,
     "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 1296.35,
-    "saldo_total": 18815.19
+    "diferenca_base_mapa": 1259.25,
+    "saldo_total": 19205.15
   },
   "pds": {
-    "total": 3055,
-    "ultima_data": "2026-07-02",
+    "total": 3073,
+    "ultima_data": "2026-07-03",
     "hoje": 18,
     "por_obra_ultima_data": [
       {
@@ -17,7 +18,7 @@
         "atividades": 5
       },
       {
-        "obra": "CT Água Vermelha MD / ME",
+        "obra": "CTS Água Vermelha MD / ME",
         "atividades": 2
       },
       {
@@ -33,7 +34,7 @@
         "atividades": 1
       },
       {
-        "obra": "CT Lourdes Complementar",
+        "obra": "CTS Lourdes Complementar",
         "atividades": 1
       },
       {
@@ -59,8 +60,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 1.296,35 m",
-    "15 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre EAP Produzido e mapa: 1,259.25 m",
+    "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -72,6 +73,16 @@
       "saldo": 367.0,
       "linhas_base": 2,
       "linhas_mapa": 32
+    },
+    {
+      "obra": "CTS Jardim Miriam",
+      "planejado": 2092.7,
+      "executado_base": 1562.3,
+      "executado_mapa": 1952.26,
+      "diferenca_base_mapa": -389.96,
+      "saldo": 530.4,
+      "linhas_base": 10,
+      "linhas_mapa": 56
     },
     {
       "obra": "RCE ELVIRA DE ARAUJO",
@@ -348,10 +359,10 @@
     {
       "obra": "CTS Jardim Miriam",
       "planejado": 2092.7,
-      "executado_base": 1952.26,
+      "executado_base": 1562.3,
       "executado_mapa": 1952.26,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 140.44,
+      "diferenca_base_mapa": -389.96,
+      "saldo": 530.4,
       "linhas_base": 10,
       "linhas_mapa": 56
     },
@@ -360,7 +371,7 @@
       "planejado": 1700.5,
       "executado_base": 1184.68,
       "executado_mapa": 1184.68,
-      "diferenca_base_mapa": 0.0,
+      "diferenca_base_mapa": -0.0,
       "saldo": 515.82,
       "linhas_base": 18,
       "linhas_mapa": 26
@@ -520,7 +531,7 @@
       "planejado": 941.5,
       "executado_base": 762.09,
       "executado_mapa": 762.09,
-      "diferenca_base_mapa": 0.0,
+      "diferenca_base_mapa": -0.0,
       "saldo": 179.41,
       "linhas_base": 6,
       "linhas_mapa": 22
@@ -750,7 +761,7 @@
       "planejado": 205.5,
       "executado_base": 220.59,
       "executado_mapa": 220.59,
-      "diferenca_base_mapa": 0.0,
+      "diferenca_base_mapa": -0.0,
       "saldo": -15.09,
       "linhas_base": 2,
       "linhas_mapa": 5
@@ -827,7 +838,7 @@
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 94.7,
-      "modificado": "2026-06-23 07:11:18"
+      "modificado": "2026-07-02 07:46:09"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
@@ -838,8 +849,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 530.1,
-      "modificado": "2026-07-02 07:08:16"
+      "tamanho_kb": 533.3,
+      "modificado": "2026-07-03 07:00:56"
     }
   ]
 }

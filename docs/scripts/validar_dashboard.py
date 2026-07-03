@@ -18,6 +18,8 @@ from openpyxl import load_workbook
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 BASE_XLSX = ROOT / "BASE_DASH_EXTENSAO_POWERBI.xlsx"
+EAP_PRODUCAO_JSON = ROOT / "eap_producao.json"
+DADOS_JSON = ROOT / "dados.json"
 MAPA_XLSX = ROOT / "planilha_base_mapa.xlsx"
 PDS_JSON = DOCS / "pds_data.json"
 DE_PARA = ROOT / "de_para_obras.json"
@@ -53,7 +55,7 @@ def num(value) -> float:
 def load_de_para() -> dict[str, str]:
     if not DE_PARA.exists():
         return {}
-    raw = json.loads(DE_PARA.read_text(encoding="utf-8"))
+    raw = json.loads(DE_PARA.read_text(encoding="utf-8-sig"))
     return {norm(k): v for k, v in raw.items()}
 
 
@@ -96,7 +98,7 @@ def read_base(aliases: dict[str, str]) -> dict:
             # A produção mensal é o histórico acumulado lançado na Base Dash.
             # Quando ela supera a coluna de executado, a validação deve considerar
             # o acumulado mensal para não esconder avanço lançado por mês.
-            executado = executado_coluna
+            executado = max(executado_coluna, executado_mensal)
 
             by_obra[obra]["planejado"] += planejado
             by_obra[obra]["executado"] += executado
@@ -164,6 +166,43 @@ def read_mapa(aliases: dict[str, str]) -> dict:
     finally:
         wb.close()
 
+def read_eap_total_produzido() -> float:
+    if not EAP_PRODUCAO_JSON.exists():
+        return 0.0
+    try:
+        payload = json.loads(EAP_PRODUCAO_JSON.read_text(encoding="utf-8"))
+        cards = (payload.get("eap_producao") or {}).get("cards") or payload.get("cards") or {}
+        if isinstance(cards, dict):
+            total_cards = sum(num(item.get("produzido")) for item in cards.values() if isinstance(item, dict))
+            if total_cards:
+                return total_cards
+        mensal = payload.get("mensal") or []
+        return sum(num(item.get("produzido")) for item in mensal)
+    except Exception:
+        return 0.0
+
+
+def read_dashboard_total_executado() -> float:
+    if not DADOS_JSON.exists():
+        return 0.0
+    try:
+        payload = json.loads(DADOS_JSON.read_text(encoding="utf-8"))
+        eap = payload.get("eap_producao") or {}
+        cards = eap.get("cards") or {}
+        if isinstance(cards, dict):
+            total_cards = sum(num(item.get("produzido")) for item in cards.values() if isinstance(item, dict))
+            if total_cards:
+                return total_cards
+        curva = eap.get("mensal") or payload.get("curva_mensal") or payload.get("curvaMensal") or []
+        if isinstance(curva, list):
+            total = sum(num(item.get("produzido")) for item in curva if isinstance(item, dict))
+            if total:
+                return total
+    except Exception:
+        return 0.0
+    return 0.0
+
+
 def read_pds() -> dict:
     if not PDS_JSON.exists():
         return {"total": 0, "ultima_data": "", "hoje": 0, "por_obra_ultima_data": []}
@@ -201,6 +240,8 @@ def build_validation() -> dict:
     base = read_base(aliases)
     mapa = read_mapa(aliases)
     pds = read_pds()
+    eap_total_produzido = read_eap_total_produzido() or base["executado"]
+    dashboard_total_executado = read_dashboard_total_executado() or eap_total_produzido
 
     obras = sorted(set(base["obras"].keys()) | set(mapa["obras"].keys()))
     divergencias = []
@@ -229,10 +270,10 @@ def build_validation() -> dict:
 
     divergencias.sort(key=lambda x: abs(x["diferenca_base_mapa"]), reverse=True)
     saldo_por_obra.sort(key=lambda x: x["saldo"], reverse=True)
-    total_diff = base["executado"] - mapa["executado_mapa"]
+    total_diff = eap_total_produzido - mapa["executado_mapa"]
     alertas = []
     if abs(total_diff) > 0.05:
-        alertas.append(f"Diferença total entre Base Dash e mapa: {total_diff:,.2f} m")
+        alertas.append(f"Diferença total entre EAP Produzido e mapa: {total_diff:,.2f} m")
     if divergencias:
         alertas.append(f"{len(divergencias)} obra(s) com divergência entre executado da Base Dash e mapa.")
     if pds["hoje"] == 0:
@@ -242,10 +283,11 @@ def build_validation() -> dict:
         "atualizado_em": now_iso(),
         "totais": {
             "base_planejado": round(base["planejado"], 2),
-            "base_executado": round(base["executado"], 2),
+            "base_executado": round(eap_total_produzido, 2),
+            "dashboard_executado": round(dashboard_total_executado, 2),
             "mapa_executado": round(mapa["executado_mapa"], 2),
             "diferenca_base_mapa": round(total_diff, 2),
-            "saldo_total": round(base["planejado"] - base["executado"], 2),
+            "saldo_total": round(base["planejado"] - eap_total_produzido, 2),
         },
         "pds": pds,
         "alertas": alertas,
@@ -286,9 +328,9 @@ def write_report(payload: dict) -> None:
         f"Atualizado em: {payload['atualizado_em']}",
         "",
         f"Planejado Base Dash: {totals['base_planejado']:,.2f} m",
-        f"Executado Base Dash: {totals['base_executado']:,.2f} m",
+        f"Executado EAP Produzido: {totals['base_executado']:,.2f} m",
         f"Executado Mapa: {totals['mapa_executado']:,.2f} m",
-        f"Diferença Base - Mapa: {totals['diferenca_base_mapa']:,.2f} m",
+        f"Diferença EAP Produzido - Mapa: {totals['diferenca_base_mapa']:,.2f} m",
         f"Saldo total: {totals['saldo_total']:,.2f} m",
         "",
         f"PDS total: {payload['pds']['total']} registros",
@@ -330,7 +372,7 @@ def main() -> None:
             shutil.copy2(path, DOCS / path.name)
 
         print("Validação automática gerada.")
-        print(f"Diferença Base - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
+        print(f"Diferença EAP Produzido - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
         print(f"Alertas: {len(payload['alertas'])}")
     except Exception as exc:
         print(f"ERRO ao gerar validação do dashboard: {exc}")

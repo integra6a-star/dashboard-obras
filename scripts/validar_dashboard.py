@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 BASE_XLSX = ROOT / "BASE_DASH_EXTENSAO_POWERBI.xlsx"
 EAP_PRODUCAO_JSON = ROOT / "eap_producao.json"
+DADOS_JSON = ROOT / "dados.json"
 MAPA_XLSX = ROOT / "planilha_base_mapa.xlsx"
 PDS_JSON = DOCS / "pds_data.json"
 DE_PARA = ROOT / "de_para_obras.json"
@@ -170,10 +171,36 @@ def read_eap_total_produzido() -> float:
         return 0.0
     try:
         payload = json.loads(EAP_PRODUCAO_JSON.read_text(encoding="utf-8"))
+        cards = (payload.get("eap_producao") or {}).get("cards") or payload.get("cards") or {}
+        if isinstance(cards, dict):
+            total_cards = sum(num(item.get("produzido")) for item in cards.values() if isinstance(item, dict))
+            if total_cards:
+                return total_cards
         mensal = payload.get("mensal") or []
         return sum(num(item.get("produzido")) for item in mensal)
     except Exception:
         return 0.0
+
+
+def read_dashboard_total_executado() -> float:
+    if not DADOS_JSON.exists():
+        return 0.0
+    try:
+        payload = json.loads(DADOS_JSON.read_text(encoding="utf-8"))
+        eap = payload.get("eap_producao") or {}
+        cards = eap.get("cards") or {}
+        if isinstance(cards, dict):
+            total_cards = sum(num(item.get("produzido")) for item in cards.values() if isinstance(item, dict))
+            if total_cards:
+                return total_cards
+        curva = eap.get("mensal") or payload.get("curva_mensal") or payload.get("curvaMensal") or []
+        if isinstance(curva, list):
+            total = sum(num(item.get("produzido")) for item in curva if isinstance(item, dict))
+            if total:
+                return total
+    except Exception:
+        return 0.0
+    return 0.0
 
 
 def read_pds() -> dict:
@@ -214,6 +241,7 @@ def build_validation() -> dict:
     mapa = read_mapa(aliases)
     pds = read_pds()
     eap_total_produzido = read_eap_total_produzido() or base["executado"]
+    dashboard_total_executado = read_dashboard_total_executado() or eap_total_produzido
 
     obras = sorted(set(base["obras"].keys()) | set(mapa["obras"].keys()))
     divergencias = []
@@ -256,6 +284,7 @@ def build_validation() -> dict:
         "totais": {
             "base_planejado": round(base["planejado"], 2),
             "base_executado": round(eap_total_produzido, 2),
+            "dashboard_executado": round(dashboard_total_executado, 2),
             "mapa_executado": round(mapa["executado_mapa"], 2),
             "diferenca_base_mapa": round(total_diff, 2),
             "saldo_total": round(base["planejado"] - eap_total_produzido, 2),

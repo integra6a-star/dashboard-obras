@@ -190,5 +190,437 @@
     "diferenca": -179.46,
     "pds_hoje": 46,
     "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-19 10:37:40",
+    "base_executado": 15570.35,
+    "mapa_executado": 15749.81,
+    "diferenca": -179.46,
+    "pds_hoje": 46,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-19 10:48:15",
+    "base_executado": 15570.35,
+    "mapa_executado": 15749.81,
+    "diferenca": -179.46,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-19 10:51:03",
+    "base_executado": 15570.35,
+    "mapa_executado": 15749.81,
+    "diferenca": -179.46,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-20 07:24:17",
+    "base_executado": 15570.35,
+    "mapa_executado": 15877.79,
+    "diferenca": -307.44,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-20 07:31:49",
+    "base_executado": 15570.35,
+    "mapa_executado": 15877.79,
+    "diferenca": -307.44,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-20 07:38:39",
+    "base_executado": 15698.33,
+    "mapa_executado": 15877.79,
+    "diferenca": -179.46,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-21 07:19:36",
+    "base_executado": 15707.01,
+    "mapa_executado": 15877.79,
+    "diferenca": -170.79,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-21 07:22:31",
+    "base_executado": 15707.01,
+    "mapa_executado": 15877.79,
+    "diferenca": -170.79,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-21 07:25:55",
+    "base_executado": 15707.01,
+    "mapa_executado": 15877.79,
+    "diferenca": -170.79,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-21 07:29:38",
+    "base_executado": 15707.01,
+    "mapa_executado": 15877.79,
+    "diferenca": -170.79,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-22 07:36:06",
+    "base_executado": 15379.76,
+    "mapa_executado": 15877.79,
+    "diferenca": -498.03,
+    "pds_hoje": 47,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-22 07:40:45",
+    "base_executado": 15379.76,
+    "mapa_executado": 15877.79,
+    "diferenca": -498.03,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-22 07:43:13",
+    "base_executado": 15379.76,
+    "mapa_executado": 15877.79,
+    "diferenca": -498.03,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-22 07:47:38",
+    "base_executado": 15379.76,
+    "mapa_executado": 15877.79,
+    "diferenca": -498.03,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-22 08:09:45",
+    "base_executado": 15379.76,
+    "mapa_executado": 15940.49,
+    "diferenca": -560.73,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-22 14:37:45",
+    "base_executado": 15379.76,
+    "mapa_executado": 15940.49,
+    "diferenca": -560.73,
+    "pds_hoje": 23,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-26 08:50:15",
+    "base_executado": 16203.56,
+    "mapa_executado": 16099.23,
+    "diferenca": 104.34,
+    "pds_hoje": 48,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-05-29 07:25:38",
+    "base_executado": 16605.23,
+    "mapa_executado": 16099.23,
+    "diferenca": 506.0,
+    "pds_hoje": 24,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 07:40:10",
+    "base_executado": 16750.64,
+    "mapa_executado": 16099.23,
+    "diferenca": 651.41,
+    "pds_hoje": 42,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 07:41:32",
+    "base_executado": 16750.64,
+    "mapa_executado": 16099.23,
+    "diferenca": 651.41,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 08:04:01",
+    "base_executado": 16750.64,
+    "mapa_executado": 16244.64,
+    "diferenca": 506.0,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 08:19:01",
+    "base_executado": 16613.0,
+    "mapa_executado": 16244.64,
+    "diferenca": 368.36,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 08:32:21",
+    "base_executado": 16613.0,
+    "mapa_executado": 16244.64,
+    "diferenca": 368.36,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 18:19:49",
+    "base_executado": 17297.13,
+    "mapa_executado": 16329.67,
+    "diferenca": 967.46,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-01 18:35:00",
+    "base_executado": 17297.13,
+    "mapa_executado": 16329.67,
+    "diferenca": 967.46,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-02 07:21:37",
+    "base_executado": 17297.13,
+    "mapa_executado": 16382.29,
+    "diferenca": 914.84,
+    "pds_hoje": 42,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-02 07:26:58",
+    "base_executado": 17297.13,
+    "mapa_executado": 16382.29,
+    "diferenca": 914.84,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-02 07:32:31",
+    "base_executado": 17297.13,
+    "mapa_executado": 16382.29,
+    "diferenca": 914.84,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-02 07:42:29",
+    "base_executado": 17349.75,
+    "mapa_executado": 16382.29,
+    "diferenca": 967.46,
+    "pds_hoje": 21,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-09 08:03:58",
+    "base_executado": 17776.24,
+    "mapa_executado": 16577.25,
+    "diferenca": 1199.0,
+    "pds_hoje": 22,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-11 07:46:50",
+    "base_executado": 17950.49,
+    "mapa_executado": 17558.55,
+    "diferenca": 391.94,
+    "pds_hoje": 0,
+    "alertas": 3
+  },
+  {
+    "atualizado_em": "2026-06-15 10:57:47",
+    "base_executado": 17950.49,
+    "mapa_executado": 17558.55,
+    "diferenca": 391.94,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-15 10:59:53",
+    "base_executado": 17950.49,
+    "mapa_executado": 17621.23,
+    "diferenca": 329.27,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-15 11:17:13",
+    "base_executado": 17950.49,
+    "mapa_executado": 17621.23,
+    "diferenca": 329.27,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-15 11:17:50",
+    "base_executado": 17950.49,
+    "mapa_executado": 17621.23,
+    "diferenca": 329.27,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-17 10:07:08",
+    "base_executado": 18422.14,
+    "mapa_executado": 17616.4,
+    "diferenca": 805.74,
+    "pds_hoje": 41,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-17 10:08:57",
+    "base_executado": 18422.14,
+    "mapa_executado": 17616.4,
+    "diferenca": 805.74,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-17 10:22:44",
+    "base_executado": 18422.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 743.07,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:06:32",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 38,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:09:23",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:11:11",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:13:56",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-22 08:42:22",
+    "base_executado": 18657.14,
+    "mapa_executado": 17679.07,
+    "diferenca": 978.07,
+    "pds_hoje": 19,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-23 07:01:50",
+    "base_executado": 18734.64,
+    "mapa_executado": 17679.07,
+    "diferenca": 1055.57,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-23 07:11:26",
+    "base_executado": 18734.64,
+    "mapa_executado": 17973.98,
+    "diferenca": 760.66,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-24 08:52:36",
+    "base_executado": 18734.64,
+    "mapa_executado": 17973.98,
+    "diferenca": 760.66,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-06-24 08:54:52",
+    "base_executado": 18734.64,
+    "mapa_executado": 17973.98,
+    "diferenca": 760.66,
+    "pds_hoje": 20,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-02 07:18:37",
+    "base_executado": 18880.38,
+    "mapa_executado": 17973.98,
+    "diferenca": 906.39,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-02 07:30:51",
+    "base_executado": 18880.38,
+    "mapa_executado": 17973.98,
+    "diferenca": 906.39,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-02 07:40:39",
+    "base_executado": 19233.24,
+    "mapa_executado": 17973.98,
+    "diferenca": 1259.25,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-02 07:41:14",
+    "base_executado": 19233.24,
+    "mapa_executado": 17973.98,
+    "diferenca": 1259.25,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-02 07:41:30",
+    "base_executado": 19233.24,
+    "mapa_executado": 17973.98,
+    "diferenca": 1259.25,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-03 06:59:19",
+    "base_executado": 18880.38,
+    "mapa_executado": 17973.98,
+    "diferenca": 906.39,
+    "pds_hoje": 18,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-03 07:00:58",
+    "base_executado": 19233.24,
+    "mapa_executado": 17973.98,
+    "diferenca": 1259.25,
+    "pds_hoje": 18,
+    "alertas": 2
   }
 ]

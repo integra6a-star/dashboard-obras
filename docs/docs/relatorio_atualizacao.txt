@@ -1,25 +1,28 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-05-19 10:06:49
+Atualizado em: 2026-07-03 07:00:58
 
-Planejado Base Dash: 40,615.99 m
-Executado Base Dash: 15,570.35 m
-Executado Mapa: 15,749.81 m
-Diferença Base - Mapa: -179.46 m
-Saldo total: 25,045.64 m
+Planejado Base Dash: 38,438.39 m
+Executado EAP Produzido: 19,233.24 m
+Executado Mapa: 17,973.98 m
+Diferença EAP Produzido - Mapa: 1,259.25 m
+Saldo total: 19,205.15 m
 
-PDS total: 2469 registros
-PDS hoje: 46 registros
-Última data PDS: 2026-05-19
+PDS total: 3073 registros
+PDS hoje: 18 registros
+Última data PDS: 2026-07-03
 
 Alertas:
-- Diferença total entre Base Dash e mapa: -179.46 m
-- 7 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença total entre EAP Produzido e mapa: 1,259.25 m
+- 16 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
-- CTS Mar de Coral: Base 1,471.49 m | Mapa 1,746.61 m | Dif. -275.12 m
+- RCE São Lucas: Base 1,432.20 m | Mapa 837.16 m | Dif. 595.04 m
+- CTS Jardim Miriam: Base 1,562.30 m | Mapa 1,952.26 m | Dif. -389.96 m
+- RCE ELVIRA DE ARAUJO: Base 242.46 m | Mapa 68.86 m | Dif. 173.60 m
+- RCE - RUA MARIA DOS SANTOS MACHADO: Base 169.10 m | Mapa 0.00 m | Dif. 169.10 m
+- RCE COMUNIDADE JD. UNIÃO: Base 100.70 m | Mapa 0.00 m | Dif. 100.70 m
+- RCE Rua São João: Base 93.20 m | Mapa 0.00 m | Dif. 93.20 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
-- RCE São Lucas: Base 81.00 m | Mapa 0.00 m | Dif. 81.00 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
-- CTS Domingos João de Carvalho: Base 515.25 m | Mapa 523.92 m | Dif. -8.67 m
-- CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
-- CTS Conceição: Base 765.89 m | Mapa 767.01 m | Dif. -1.12 m
+- INTERL. RUA AYRTON SENNA: Base 68.20 m | Mapa 0.00 m | Dif. 68.20 m
+- RCE COMUNIDADE RAUZITO: Base 42.00 m | Mapa 0.00 m | Dif. 42.00 m
