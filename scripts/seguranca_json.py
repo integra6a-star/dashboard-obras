@@ -17,6 +17,7 @@ NAMESPACE = {
 }
 
 SOURCE_CANDIDATES = [
+    Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho (1) (1).xlsx"),
     Path(r"C:\Users\micro\Downloads\Planilha de controle de segurança do trabalho (1).xlsx"),
     ROOT / "Planilha de controle de segurança do trabalho.xlsx",
     ROOT / "docs" / "Planilha de controle de segurança do trabalho.xlsx",
@@ -576,7 +577,7 @@ def main() -> None:
     sources = [path for path in SOURCE_CANDIDATES if path.exists()]
     if not sources:
         raise FileNotFoundError("Planilha de segurança não encontrada.")
-    source = max(sources, key=lambda path: path.stat().st_mtime)
+    source = sources[0]
     root_copy = ROOT / "Planilha de controle de segurança do trabalho.xlsx"
     docs_copy = ROOT / "docs" / "Planilha de controle de segurança do trabalho.xlsx"
     for target in [root_copy, docs_copy]:

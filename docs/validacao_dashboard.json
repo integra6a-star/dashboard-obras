@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-03 07:06:18",
+  "atualizado_em": "2026-07-07 07:13:16",
   "totais": {
     "base_planejado": 38438.39,
     "base_executado": 19233.24,
@@ -9,52 +9,52 @@
     "saldo_total": 19233.24
   },
   "pds": {
-    "total": 3073,
-    "ultima_data": "2026-07-03",
-    "hoje": 18,
+    "total": 3110,
+    "ultima_data": "2026-07-07",
+    "hoje": 19,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE São Lucas",
+        "obra": "RCE RAULZITO",
         "atividades": 5
       },
       {
-        "obra": "CTS Água Vermelha MD / ME",
-        "atividades": 2
+        "obra": "RCE SÃO LUCAS",
+        "atividades": 3
       },
       {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "RCE Raulzito",
+        "obra": "Vacal",
         "atividades": 2
       },
       {
-        "obra": "CT Lageado",
+        "obra": "CT LAGEADO",
         "atividades": 1
       },
       {
-        "obra": "CTS Lourdes Complementar",
+        "obra": "CT ÁGUA VERMELHA MD / ME",
         "atividades": 1
       },
       {
-        "obra": "RCE Conj. União",
+        "obra": "RCE CONJ. UNIÃO",
         "atividades": 1
       },
       {
-        "obra": "RCE Elvira",
+        "obra": "RCE ELVIRA",
         "atividades": 1
       },
       {
-        "obra": "RCE Maria dos Santos Machado",
+        "obra": "RCE MARIA DOS SANTOS MACHADO",
         "atividades": 1
       },
       {
-        "obra": "Serviços Reposição",
+        "obra": "RCE TERRA PROMETIDA",
         "atividades": 1
       },
       {
-        "obra": "Vacal: ITI 15",
+        "obra": "SERVIÇOS REPOSIÇÃO",
         "atividades": 1
       }
     ]
@@ -832,25 +832,25 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 27.0,
-      "modificado": "2026-07-02 07:07:23"
+      "modificado": "2026-07-07 07:05:33"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
       "tamanho_kb": 94.7,
-      "modificado": "2026-07-02 07:46:09"
+      "modificado": "2026-07-07 07:05:33"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
       "existe": true,
       "tamanho_kb": 398.3,
-      "modificado": "2026-07-02 07:07:28"
+      "modificado": "2026-07-07 07:05:33"
     },
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 533.3,
-      "modificado": "2026-07-03 07:06:16"
+      "tamanho_kb": 539.5,
+      "modificado": "2026-07-07 07:12:56"
     }
   ]
 }
