@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-07 07:13:16",
+  "atualizado_em": "2026-07-08 08:04:29",
   "totais": {
     "base_planejado": 38438.39,
     "base_executado": 19233.24,
@@ -9,13 +9,17 @@
     "saldo_total": 19233.24
   },
   "pds": {
-    "total": 3110,
-    "ultima_data": "2026-07-07",
-    "hoje": 19,
+    "total": 3130,
+    "ultima_data": "2026-07-08",
+    "hoje": 20,
     "por_obra_ultima_data": [
       {
         "obra": "RCE RAULZITO",
         "atividades": 5
+      },
+      {
+        "obra": "Vacal",
+        "atividades": 4
       },
       {
         "obra": "RCE SÃO LUCAS",
@@ -23,10 +27,6 @@
       },
       {
         "obra": "Guindauto",
-        "atividades": 2
-      },
-      {
-        "obra": "Vacal",
         "atividades": 2
       },
       {
@@ -39,10 +39,6 @@
       },
       {
         "obra": "RCE CONJ. UNIÃO",
-        "atividades": 1
-      },
-      {
-        "obra": "RCE ELVIRA",
         "atividades": 1
       },
       {
@@ -849,8 +845,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 539.5,
-      "modificado": "2026-07-07 07:12:56"
+      "tamanho_kb": 542.8,
+      "modificado": "2026-07-08 08:04:21"
     }
   ]
 }
