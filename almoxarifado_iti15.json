@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "30/06/2026 13:20",
+  "atualizado_em": "11/07/2026 07:42",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -26,21 +26,21 @@
     {
       "codigo": "P003",
       "descricao": "LAJE INFERIOR DE 1000",
-      "estoque_atual": "8",
+      "estoque_atual": "4",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 8,
+      "quantidade": 4,
       "situacao_planilha": ""
     },
     {
       "codigo": "P004",
       "descricao": "LAJE INFERIOR DE 600",
-      "estoque_atual": "2",
+      "estoque_atual": "1",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 2,
+      "quantidade": 1,
       "situacao_planilha": ""
     },
     {
@@ -66,11 +66,11 @@
     {
       "codigo": "P007",
       "descricao": "CHAPA ARMICO",
-      "estoque_atual": "538",
+      "estoque_atual": "490",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 538,
+      "quantidade": 490,
       "situacao_planilha": ""
     },
     {
@@ -96,11 +96,11 @@
     {
       "codigo": "P010",
       "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "227",
+      "estoque_atual": "205",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 227,
+      "quantidade": 205,
       "situacao_planilha": ""
     },
     {

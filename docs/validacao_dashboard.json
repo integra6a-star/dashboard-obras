@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-08 11:58:30",
+  "atualizado_em": "2026-07-11 07:42:21",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 19683.03,
@@ -9,17 +9,13 @@
     "saldo_total": 19683.03
   },
   "pds": {
-    "total": 3130,
-    "ultima_data": "2026-07-08",
-    "hoje": 20,
+    "total": 3160,
+    "ultima_data": "2026-07-10",
+    "hoje": 0,
     "por_obra_ultima_data": [
       {
         "obra": "RCE RAULZITO",
         "atividades": 5
-      },
-      {
-        "obra": "Vacal",
-        "atividades": 4
       },
       {
         "obra": "RCE SÃO LUCAS",
@@ -27,6 +23,10 @@
       },
       {
         "obra": "Guindauto",
+        "atividades": 2
+      },
+      {
+        "obra": "Vacal",
         "atividades": 2
       },
       {
@@ -57,7 +57,8 @@
   },
   "alertas": [
     "Diferença total entre EAP Produzido e mapa: 1,709.05 m",
-    "15 obra(s) com divergência entre executado da Base Dash e mapa."
+    "15 obra(s) com divergência entre executado da Base Dash e mapa.",
+    "PDS sem registros na data de hoje."
   ],
   "divergencias": [
     {
@@ -835,8 +836,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 542.8,
-      "modificado": "2026-07-08 08:04:21"
+      "tamanho_kb": 547.9,
+      "modificado": "2026-07-11 07:42:09"
     }
   ]
 }

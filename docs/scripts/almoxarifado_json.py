@@ -247,10 +247,10 @@ def processar_planilha_consolidada(caminho, info):
     col_estoque = None
     for i, row in enumerate(linhas):
         normalizadas = [chave(c) for c in row]
-        if "descricao" in normalizadas and "estoqueatual" in normalizadas:
+        if "descricao" in normalizadas and ("estoqueatual" in normalizadas or "quantidade" in normalizadas):
             header_idx = i
             col_desc = normalizadas.index("descricao")
-            col_estoque = normalizadas.index("estoqueatual")
+            col_estoque = normalizadas.index("estoqueatual") if "estoqueatual" in normalizadas else normalizadas.index("quantidade")
             break
 
     if header_idx is None:

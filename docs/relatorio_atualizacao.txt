@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-08 11:58:30
+Atualizado em: 2026-07-11 07:42:21
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 19,683.03 m
@@ -7,13 +7,14 @@ Executado Mapa: 17,973.98 m
 Diferença EAP Produzido - Mapa: 1,709.05 m
 Saldo total: 19,683.03 m
 
-PDS total: 3130 registros
-PDS hoje: 20 registros
-Última data PDS: 2026-07-08
+PDS total: 3160 registros
+PDS hoje: 0 registros
+Última data PDS: 2026-07-10
 
 Alertas:
 - Diferença total entre EAP Produzido e mapa: 1,709.05 m
 - 15 obra(s) com divergência entre executado da Base Dash e mapa.
+- PDS sem registros na data de hoje.
 
 Maiores divergências por obra:
 - RCE São Lucas: Base 1,696.20 m | Mapa 837.16 m | Dif. 859.04 m
