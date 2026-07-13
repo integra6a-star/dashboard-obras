@@ -1,17 +1,17 @@
 {
-  "atualizado_em": "2026-07-11 07:42:21",
+  "atualizado_em": "2026-07-13 11:59:22",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 19683.03,
-    "dashboard_executado": 19683.03,
+    "base_executado": 19996.83,
+    "dashboard_executado": 19996.83,
     "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 1709.05,
-    "saldo_total": 19683.03
+    "diferenca_base_mapa": 2022.85,
+    "saldo_total": 19996.83
   },
   "pds": {
-    "total": 3160,
-    "ultima_data": "2026-07-10",
-    "hoje": 0,
+    "total": 3178,
+    "ultima_data": "2026-07-13",
+    "hoje": 18,
     "por_obra_ultima_data": [
       {
         "obra": "RCE RAULZITO",
@@ -56,9 +56,8 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 1,709.05 m",
-    "15 obra(s) com divergência entre executado da Base Dash e mapa.",
-    "PDS sem registros na data de hoje."
+    "Diferença total entre EAP Produzido e mapa: 2,022.85 m",
+    "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -72,32 +71,32 @@
       "linhas_mapa": 32
     },
     {
-      "obra": "RCE COMUNIDADE JD. UNIÃO",
-      "planejado": 226.5,
-      "executado_base": 189.9,
+      "obra": "RCE COMUNIDADE RAUZITO",
+      "planejado": 1566.27,
+      "executado_base": 332.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 189.9,
-      "saldo": 36.6,
+      "diferenca_base_mapa": 332.0,
+      "saldo": 1234.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE COMUNIDADE RAUZITO",
-      "planejado": 1566.27,
-      "executado_base": 176.0,
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 258.7,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 176.0,
-      "saldo": 1390.27,
+      "diferenca_base_mapa": 258.7,
+      "saldo": -32.2,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
     {
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
       "planejado": 205.0,
-      "executado_base": 169.1,
+      "executado_base": 216.1,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 169.1,
-      "saldo": 35.9,
+      "diferenca_base_mapa": 216.1,
+      "saldo": -11.1,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -148,6 +147,16 @@
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 68.2,
       "saldo": -8.7,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE TERRA PROMETIDA",
+      "planejado": 382.5,
+      "executado_base": 42.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 42.0,
+      "saldo": 340.5,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -246,10 +255,10 @@
     {
       "obra": "RCE COMUNIDADE RAUZITO",
       "planejado": 1566.27,
-      "executado_base": 176.0,
+      "executado_base": 332.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 176.0,
-      "saldo": 1390.27,
+      "diferenca_base_mapa": 332.0,
+      "saldo": 1234.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -396,10 +405,10 @@
     {
       "obra": "RCE TERRA PROMETIDA",
       "planejado": 382.5,
-      "executado_base": 0.0,
+      "executado_base": 42.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 0.0,
-      "saldo": 382.5,
+      "diferenca_base_mapa": 42.0,
+      "saldo": 340.5,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -644,26 +653,6 @@
       "linhas_mapa": 14
     },
     {
-      "obra": "RCE COMUNIDADE JD. UNIÃO",
-      "planejado": 226.5,
-      "executado_base": 189.9,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 189.9,
-      "saldo": 36.6,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
-      "planejado": 205.0,
-      "executado_base": 169.1,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 169.1,
-      "saldo": 35.9,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE RUA CARMEM COSTA",
       "planejado": 34.0,
       "executado_base": 0.0,
@@ -764,6 +753,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
+      "planejado": 205.0,
+      "executado_base": 216.1,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 216.1,
+      "saldo": -11.1,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "RCE AV. Fernando Pacheco Jordão",
       "planejado": 205.5,
       "executado_base": 220.59,
@@ -782,6 +781,16 @@
       "saldo": -22.44,
       "linhas_base": 2,
       "linhas_mapa": 13
+    },
+    {
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 258.7,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 258.7,
+      "saldo": -32.2,
+      "linhas_base": 2,
+      "linhas_mapa": 0
     },
     {
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
@@ -818,8 +827,8 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 35.5,
-      "modificado": "2026-07-08 11:57:06"
+      "tamanho_kb": 35.6,
+      "modificado": "2026-07-13 10:25:48"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -836,8 +845,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 547.9,
-      "modificado": "2026-07-11 07:42:09"
+      "tamanho_kb": 550.9,
+      "modificado": "2026-07-13 11:59:05"
     }
   ]
 }
