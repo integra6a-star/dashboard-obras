@@ -1,28 +1,28 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-13 11:59:22
+Atualizado em: 2026-07-15 08:09:19
 
 Planejado Base Dash: 39,688.39 m
-Executado EAP Produzido: 19,996.83 m
+Executado EAP Produzido: 20,043.83 m
 Executado Mapa: 17,973.98 m
-Diferença EAP Produzido - Mapa: 2,022.85 m
-Saldo total: 19,996.83 m
+Diferença EAP Produzido - Mapa: 2,069.85 m
+Saldo total: 20,043.83 m
 
-PDS total: 3178 registros
+PDS total: 3196 registros
 PDS hoje: 18 registros
-Última data PDS: 2026-07-13
+Última data PDS: 2026-07-15
 
 Alertas:
-- Diferença total entre EAP Produzido e mapa: 2,022.85 m
+- Diferença total entre EAP Produzido e mapa: 2,069.85 m
 - 16 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
 - RCE São Lucas: Base 1,696.20 m | Mapa 837.16 m | Dif. 859.04 m
-- RCE COMUNIDADE RAUZITO: Base 332.00 m | Mapa 0.00 m | Dif. 332.00 m
-- RCE COMUNIDADE JD. UNIÃO: Base 258.70 m | Mapa 0.00 m | Dif. 258.70 m
+- RCE COMUNIDADE RAUZITO: Base 401.00 m | Mapa 0.00 m | Dif. 401.00 m
 - RCE - RUA MARIA DOS SANTOS MACHADO: Base 216.10 m | Mapa 0.00 m | Dif. 216.10 m
+- RCE COMUNIDADE JD. UNIÃO: Base 210.70 m | Mapa 0.00 m | Dif. 210.70 m
 - RCE ELVIRA DE ARAUJO: Base 167.96 m | Mapa 68.86 m | Dif. 99.10 m
 - RCE Rua São João: Base 93.20 m | Mapa 0.00 m | Dif. 93.20 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - INTERL. RUA AYRTON SENNA: Base 68.20 m | Mapa 0.00 m | Dif. 68.20 m
-- RCE TERRA PROMETIDA: Base 42.00 m | Mapa 0.00 m | Dif. 42.00 m
+- RCE TERRA PROMETIDA: Base 68.00 m | Mapa 0.00 m | Dif. 68.00 m
