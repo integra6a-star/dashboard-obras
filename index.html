@@ -634,6 +634,7 @@
 <div class="soft-kpi green">
 <div class="label">Economias Realizadas (nº)</div>
 <div class="value" id="ecoRec">0</div>
+<div class="subtle" id="ecoRecPct">0,0% realizado</div>
 </div>
 </div>
 <div class="prod-box">
@@ -1541,6 +1542,8 @@ function updateUI(){
   document.getElementById('pvProfMini').textContent = `${fmtInt(pv)} / ${fmtInt(pi)} / ${fmt1(profMedia)} m`;
   document.getElementById('ecoPrev').textContent = fmtInt(ep);
   document.getElementById('ecoRec').textContent = fmtInt(er);
+  const ecoPct = ep > 0 ? (er / ep * 100) : 0;
+  document.getElementById('ecoRecPct').textContent = ecoPct.toLocaleString('pt-BR', {minimumFractionDigits:1, maximumFractionDigits:1}) + '% realizado';
   document.getElementById('prodAtual').textContent = fmt1(calcMediaDiariaMensal(rows));
   document.getElementById('curvePlan').textContent = fmtInt(plan);
   document.getElementById('curveExec').textContent = fmtInt(exec);
