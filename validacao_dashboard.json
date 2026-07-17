@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-07-17 09:40:18",
+  "atualizado_em": "2026-07-17 09:46:27",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
     "dashboard_executado": 20043.83,
-    "mapa_executado": 18341.24,
-    "diferenca_base_mapa": 1702.59,
+    "mapa_executado": 18356.85,
+    "diferenca_base_mapa": 1686.98,
     "saldo_total": 20043.83
   },
   "pds": {
@@ -44,7 +44,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 1,702.59 m",
+    "Diferença total entre EAP Produzido e mapa: 1,686.98 m",
     "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -159,16 +159,6 @@
       "linhas_mapa": 7
     },
     {
-      "obra": "CTS Lourdes Complementar",
-      "planejado": 0.0,
-      "executado_base": 320.31,
-      "executado_mapa": 308.31,
-      "diferenca_base_mapa": 12.0,
-      "saldo": -320.31,
-      "linhas_base": 1,
-      "linhas_mapa": 4
-    },
-    {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
       "executado_base": 468.09,
@@ -187,6 +177,16 @@
       "saldo": -11.1,
       "linhas_base": 2,
       "linhas_mapa": 4
+    },
+    {
+      "obra": "CTS Lourdes Complementar",
+      "planejado": 0.0,
+      "executado_base": 320.31,
+      "executado_mapa": 323.92,
+      "diferenca_base_mapa": -3.61,
+      "saldo": -320.31,
+      "linhas_base": 1,
+      "linhas_mapa": 5
     },
     {
       "obra": "CTS Conceição",
@@ -804,11 +804,11 @@
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
       "executado_base": 320.31,
-      "executado_mapa": 308.31,
-      "diferenca_base_mapa": 12.0,
+      "executado_mapa": 323.92,
+      "diferenca_base_mapa": -3.61,
       "saldo": -320.31,
       "linhas_base": 1,
-      "linhas_mapa": 4
+      "linhas_mapa": 5
     }
   ],
   "arquivos": [
@@ -821,8 +821,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 96.5,
-      "modificado": "2026-07-17 09:29:01"
+      "tamanho_kb": 96.8,
+      "modificado": "2026-07-17 09:46:11"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",

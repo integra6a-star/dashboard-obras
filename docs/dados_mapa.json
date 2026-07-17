@@ -6553,6 +6553,20 @@
       "cota_fundo": 780.861,
       "profundidade_m": 1.72,
       "observacao": "Atualizado via prints enviados em 17/07/2026: continuidade da RCE Elvira de Araújo do PV-02 ao PV-05."
+    },
+    {
+      "obra_id": "cts_lourdes_complementar",
+      "tipo_ponto": "PV",
+      "ponto_id": "LOUR-PT-001",
+      "nome_ponto": "PT-001",
+      "coord_n": 7397075.247974937,
+      "coord_e": 357881.2343928794,
+      "latitude": -23.5303862,
+      "longitude": -46.3921796,
+      "cota_tampa": null,
+      "cota_fundo": null,
+      "profundidade_m": 0,
+      "observacao": "Interligação VCA adicionada em 17/07/2026 entre PV-05 do CTS Lourdes Complementar e PT-001 do CTS Jardim Lourdes."
     }
   ],
   "trechos": [
@@ -15895,6 +15909,26 @@
       "lon_inicio": -46.3879199,
       "lat_fim": -23.5305801,
       "lon_fim": -46.387986
+    },
+    {
+      "obra_id": "cts_lourdes_complementar",
+      "trecho_id": "LOUR-005",
+      "trecho_nome": "PV-05 - PT-001",
+      "pv_inicio": "PV-05",
+      "pv_fim": "PT-001",
+      "material": "PVC",
+      "dn": 300,
+      "metodo": "Vala a Ceu Aberto - VCA",
+      "extensao_m": 15.61,
+      "prof_inicial_m": 2.2,
+      "prof_final_m": 0,
+      "prof_max_m": 2.2,
+      "status": "em andamento",
+      "observacao": "Interligação VCA adicionada em 17/07/2026 entre PV-05 do CTS Lourdes Complementar e PT-001 do CTS Jardim Lourdes.",
+      "lat_inicio": -23.530465,
+      "lon_inicio": -46.3923061,
+      "lat_fim": -23.5303862,
+      "lon_fim": -46.3921796
     }
   ]
 }
