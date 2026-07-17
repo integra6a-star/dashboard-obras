@@ -25566,5 +25566,125 @@
     "atividade": "Apoio às equipes",
     "trecho": "",
     "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "CT LAGEADO",
+    "equipe": "Marcelo",
+    "atividade": "Adequação PV 03",
+    "trecho": "",
+    "pv": "03"
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 1",
+    "equipe": "Cidão",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "PI 34 ao PI 36",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 1",
+    "equipe": "Bruno",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "PI 15 ao PI 16",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 1",
+    "equipe": "Valter",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 2",
+    "equipe": "Edvando",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "PV 49.3 ao PI 49",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 2",
+    "equipe": "Ricardo",
+    "atividade": "Shaft PV 49.3",
+    "trecho": "",
+    "pv": "49.3"
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 2",
+    "equipe": "Claudinei",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "PI 49.2 ao PV 49.3",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE RAULZITO TRECHO 2",
+    "equipe": "Jhonatan",
+    "atividade": "VCA, PVs e Ligações",
+    "trecho": "PI 92 ao 98",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "RCE SÃO LUCAS",
+    "equipe": "Emanuel e Miro",
+    "atividade": "Reposição e acabamentos",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "SERVIÇOS REPOSIÇÃO",
+    "equipe": "Leandro",
+    "atividade": "Reparos Gerais",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "Vacal",
+    "equipe": "ITI 15 - Henko (Osmar)",
+    "atividade": "Vacal",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "Vacal",
+    "equipe": "LAGEADO - Henko (Marcio)",
+    "atividade": "Vacal",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "Vacal",
+    "equipe": "RAULZITO - Henko (Jonathan)",
+    "atividade": "Vacal",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "Guindauto",
+    "equipe": "Marcio",
+    "atividade": "Apoio às equipes",
+    "trecho": "",
+    "pv": ""
+  },
+  {
+    "data": "2026-07-17",
+    "obra": "Guindauto",
+    "equipe": "Luiz",
+    "atividade": "Apoio às equipes",
+    "trecho": "",
+    "pv": ""
   }
 ]

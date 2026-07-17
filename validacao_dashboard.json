@@ -1,24 +1,24 @@
 {
-  "atualizado_em": "2026-07-15 08:09:19",
+  "atualizado_em": "2026-07-17 09:40:18",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
     "dashboard_executado": 20043.83,
-    "mapa_executado": 17973.98,
-    "diferenca_base_mapa": 2069.85,
+    "mapa_executado": 18341.24,
+    "diferenca_base_mapa": 1702.59,
     "saldo_total": 20043.83
   },
   "pds": {
-    "total": 3196,
-    "ultima_data": "2026-07-15",
-    "hoje": 18,
+    "total": 3211,
+    "ultima_data": "2026-07-17",
+    "hoje": 15,
     "por_obra_ultima_data": [
       {
         "obra": "RCE RAULZITO TRECHO 2",
-        "atividades": 3
+        "atividades": 4
       },
       {
-        "obra": "RCE SÃO LUCAS",
+        "obra": "RCE RAULZITO TRECHO 1",
         "atividades": 3
       },
       {
@@ -26,23 +26,15 @@
         "atividades": 3
       },
       {
-        "obra": "CT LAGEADO",
-        "atividades": 2
-      },
-      {
         "obra": "Guindauto",
         "atividades": 2
       },
       {
-        "obra": "RCE RAULZITO TRECHO 1",
-        "atividades": 2
-      },
-      {
-        "obra": "RCE ELVIRA",
+        "obra": "CT LAGEADO",
         "atividades": 1
       },
       {
-        "obra": "RCE TERRA PROMETIDA",
+        "obra": "RCE SÃO LUCAS",
         "atividades": 1
       },
       {
@@ -52,7 +44,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 2,069.85 m",
+    "Diferença total entre EAP Produzido e mapa: 1,702.59 m",
     "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -77,16 +69,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
-      "planejado": 205.0,
-      "executado_base": 216.1,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 216.1,
-      "saldo": -11.1,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE COMUNIDADE JD. UNIÃO",
       "planejado": 226.5,
       "executado_base": 210.7,
@@ -95,16 +77,6 @@
       "saldo": 15.8,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 167.96,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": 99.1,
-      "saldo": 12.04,
-      "linhas_base": 2,
-      "linhas_mapa": 4
     },
     {
       "obra": "RCE Rua São João",
@@ -157,6 +129,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 377.8,
+      "executado_mapa": 421.26,
+      "diferenca_base_mapa": -43.46,
+      "saldo": -39.3,
+      "linhas_base": 2,
+      "linhas_mapa": 9
+    },
+    {
       "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
       "planejado": 55.0,
       "executado_base": 38.3,
@@ -167,14 +149,14 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 377.8,
-      "executado_mapa": 397.94,
-      "diferenca_base_mapa": -20.14,
-      "saldo": -39.3,
+      "obra": "RCE ELVIRA DE ARAUJO",
+      "planejado": 180.0,
+      "executado_base": 167.96,
+      "executado_mapa": 200.86,
+      "diferenca_base_mapa": -32.9,
+      "saldo": 12.04,
       "linhas_base": 2,
-      "linhas_mapa": 8
+      "linhas_mapa": 7
     },
     {
       "obra": "CTS Lourdes Complementar",
@@ -195,6 +177,16 @@
       "saldo": -77.34,
       "linhas_base": 4,
       "linhas_mapa": 11
+    },
+    {
+      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
+      "planejado": 205.0,
+      "executado_base": 216.1,
+      "executado_mapa": 211.94,
+      "diferenca_base_mapa": 4.16,
+      "saldo": -11.1,
+      "linhas_base": 2,
+      "linhas_mapa": 4
     },
     {
       "obra": "CTS Conceição",
@@ -722,11 +714,11 @@
       "obra": "RCE ELVIRA DE ARAUJO",
       "planejado": 180.0,
       "executado_base": 167.96,
-      "executado_mapa": 68.86,
-      "diferenca_base_mapa": 99.1,
+      "executado_mapa": 200.86,
+      "diferenca_base_mapa": -32.9,
       "saldo": 12.04,
       "linhas_base": 2,
-      "linhas_mapa": 4
+      "linhas_mapa": 7
     },
     {
       "obra": "RCE Rua São João",
@@ -762,11 +754,11 @@
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
       "planejado": 205.0,
       "executado_base": 216.1,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 216.1,
+      "executado_mapa": 211.94,
+      "diferenca_base_mapa": 4.16,
       "saldo": -11.1,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 4
     },
     {
       "obra": "RCE AV. Fernando Pacheco Jordão",
@@ -792,11 +784,11 @@
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
       "executado_base": 377.8,
-      "executado_mapa": 397.94,
-      "diferenca_base_mapa": -20.14,
+      "executado_mapa": 421.26,
+      "diferenca_base_mapa": -43.46,
       "saldo": -39.3,
       "linhas_base": 2,
-      "linhas_mapa": 8
+      "linhas_mapa": 9
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -829,8 +821,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 94.7,
-      "modificado": "2026-07-07 07:05:33"
+      "tamanho_kb": 96.5,
+      "modificado": "2026-07-17 09:29:01"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
@@ -841,8 +833,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 553.9,
-      "modificado": "2026-07-15 08:08:59"
+      "tamanho_kb": 556.5,
+      "modificado": "2026-07-17 09:37:37"
     }
   ]
 }

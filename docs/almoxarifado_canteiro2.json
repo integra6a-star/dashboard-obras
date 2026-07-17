@@ -1,56 +1,56 @@
 {
-  "atualizado_em": "11/07/2026 07:42",
+  "atualizado_em": "17/07/2026 09:38",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Bandeirantes",
   "titulo": "Bandeirantes (Canteiro 2)",
   "produtos": [
     {
       "codigo": "P001",
       "descricao": "ADUELA DE PV 1000 x 1000 MM",
-      "estoque_atual": "82",
+      "estoque_atual": "79",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 82,
+      "quantidade": 79,
       "situacao_planilha": ""
     },
     {
       "codigo": "P002",
       "descricao": "ADOELA DE 600",
-      "estoque_atual": "44",
+      "estoque_atual": "125",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 44,
+      "quantidade": 125,
       "situacao_planilha": ""
     },
     {
       "codigo": "P003",
       "descricao": "LAJE INFERIOR DE 1000",
-      "estoque_atual": "22",
+      "estoque_atual": "19",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 22,
+      "quantidade": 19,
       "situacao_planilha": ""
     },
     {
       "codigo": "P004",
       "descricao": "LAJE INFERIOR DE 600",
-      "estoque_atual": "126",
+      "estoque_atual": "122",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 126,
+      "quantidade": 122,
       "situacao_planilha": ""
     },
     {
       "codigo": "P005",
       "descricao": "LAJE SURPERIOR DE 1000",
-      "estoque_atual": "41",
+      "estoque_atual": "39",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 41,
+      "quantidade": 39,
       "situacao_planilha": ""
     },
     {
@@ -96,51 +96,51 @@
     {
       "codigo": "P010",
       "descricao": "TUBO CURRUGADO ESGOTO DN 300",
-      "estoque_atual": "92",
+      "estoque_atual": "72",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 92,
+      "quantidade": 72,
       "situacao_planilha": ""
     },
     {
       "codigo": "P011",
       "descricao": "TUBO ESGOTO PVC DN 300",
-      "estoque_atual": "249",
+      "estoque_atual": "247",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 249,
+      "quantidade": 247,
       "situacao_planilha": ""
     },
     {
       "codigo": "P012",
       "descricao": "TUBO ESGOTO PVC DN 200",
-      "estoque_atual": "184",
+      "estoque_atual": "496",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 184,
+      "quantidade": 496,
       "situacao_planilha": ""
     },
     {
       "codigo": "P013",
       "descricao": "TUBO ESGOTO PVC DN 150",
-      "estoque_atual": "31",
+      "estoque_atual": "29",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 31,
+      "quantidade": 29,
       "situacao_planilha": ""
     },
     {
       "codigo": "P014",
       "descricao": "TUBO ESGOTO PVC DN 100",
-      "estoque_atual": "360",
+      "estoque_atual": "308",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 360,
+      "quantidade": 308,
       "situacao_planilha": ""
     },
     {
@@ -156,11 +156,11 @@
     {
       "codigo": "P016",
       "descricao": "BLOCO DE PV",
-      "estoque_atual": "554",
+      "estoque_atual": "534",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 554,
+      "quantidade": 534,
       "situacao_planilha": ""
     },
     {
@@ -206,31 +206,31 @@
     {
       "codigo": "P021",
       "descricao": "LAJE PRE MONTADA SURPERIOR /COM TAMPÃO DN 600",
-      "estoque_atual": "37",
+      "estoque_atual": "36",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 37,
+      "quantidade": 36,
       "situacao_planilha": ""
     },
     {
       "codigo": "P022",
       "descricao": "TAMPÃO FF DN 600",
-      "estoque_atual": "128",
+      "estoque_atual": "116",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 128,
+      "quantidade": 116,
       "situacao_planilha": ""
     },
     {
       "codigo": "P023",
       "descricao": "BLOCO DE CONCRETO CURVO PI",
-      "estoque_atual": "160",
+      "estoque_atual": "140",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 160,
+      "quantidade": 140,
       "situacao_planilha": ""
     }
   ],
