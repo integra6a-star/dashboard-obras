@@ -6497,6 +6497,20 @@
       "cota_fundo": null,
       "profundidade_m": null,
       "observacao": "Adicionado via coordenada PI-4 enviada em 17/07/2026; ligação no PV-16 do CTS João Canzi; PIs intermediários distribuídos por distância informada."
+    },
+    {
+      "obra_id": "rce_elias_sleiman",
+      "tipo_ponto": "PV",
+      "ponto_id": "ELIAS-PV-17-LIG-JC",
+      "nome_ponto": "PV-17",
+      "coord_n": 7397122.275,
+      "coord_e": 358726.884,
+      "latitude": -23.5300354,
+      "longitude": -46.3838931,
+      "cota_tampa": 782.299,
+      "cota_fundo": 779.199,
+      "profundidade_m": 3.1,
+      "observacao": "Interligação adicionada em 17/07/2026 entre o PV-17 do CTS João Canzi e o PV-21 da RCE Elias Sleiman."
     }
   ],
   "trechos": [
@@ -15759,6 +15773,26 @@
       "lon_inicio": -46.384906,
       "lat_fim": -23.5281583,
       "lon_fim": -46.3851111
+    },
+    {
+      "obra_id": "rce_elias_sleiman",
+      "trecho_id": "ELIAS-000",
+      "trecho_nome": "PV-17 - PV-21",
+      "pv_inicio": "PV-17",
+      "pv_fim": "PV-21",
+      "material": "PVC",
+      "dn": 200,
+      "metodo": "Vala a Ceu Aberto - VCA",
+      "extensao_m": 23.32,
+      "prof_inicial_m": 3.1,
+      "prof_final_m": 2.08,
+      "prof_max_m": 3.1,
+      "status": "em andamento",
+      "observacao": "Interligação adicionada em 17/07/2026 entre o PV-17 do CTS João Canzi e o PV-21 da RCE Elias Sleiman.",
+      "lat_inicio": -23.5300354,
+      "lon_inicio": -46.3838931,
+      "lat_fim": -23.5301384,
+      "lon_fim": -46.3836941
     }
   ]
 }
