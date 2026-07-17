@@ -1,10 +1,10 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-17 09:46:27
+Atualizado em: 2026-07-17 15:42:57
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,043.83 m
-Executado Mapa: 18,356.85 m
-Diferença EAP Produzido - Mapa: 1,686.98 m
+Executado Mapa: 19,218.94 m
+Diferença EAP Produzido - Mapa: 824.89 m
 Saldo total: 20,043.83 m
 
 PDS total: 3211 registros
@@ -12,11 +12,10 @@ PDS hoje: 15 registros
 Última data PDS: 2026-07-17
 
 Alertas:
-- Diferença total entre EAP Produzido e mapa: 1,686.98 m
+- Diferença total entre EAP Produzido e mapa: 824.89 m
 - 16 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
-- RCE São Lucas: Base 1,696.20 m | Mapa 837.16 m | Dif. 859.04 m
 - RCE COMUNIDADE RAUZITO: Base 401.00 m | Mapa 0.00 m | Dif. 401.00 m
 - RCE COMUNIDADE JD. UNIÃO: Base 210.70 m | Mapa 0.00 m | Dif. 210.70 m
 - RCE Rua São João: Base 93.20 m | Mapa 0.00 m | Dif. 93.20 m
@@ -26,3 +25,4 @@ Maiores divergências por obra:
 - RCE TERRA PROMETIDA: Base 68.00 m | Mapa 0.00 m | Dif. 68.00 m
 - RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 377.80 m | Mapa 421.26 m | Dif. -43.46 m
 - RCE RUA AMÉRICO MACHADO - ELIS R: Base 38.30 m | Mapa 0.00 m | Dif. 38.30 m
+- RCE ELVIRA DE ARAUJO: Base 167.96 m | Mapa 200.86 m | Dif. -32.90 m

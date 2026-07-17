@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-07-17 09:46:27",
+  "atualizado_em": "2026-07-17 15:42:57",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
     "dashboard_executado": 20043.83,
-    "mapa_executado": 18356.85,
-    "diferenca_base_mapa": 1686.98,
+    "mapa_executado": 19218.94,
+    "diferenca_base_mapa": 824.89,
     "saldo_total": 20043.83
   },
   "pds": {
@@ -44,20 +44,10 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 1,686.98 m",
+    "Diferença total entre EAP Produzido e mapa: 824.89 m",
     "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
-    {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1696.2,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 859.04,
-      "saldo": 103.0,
-      "linhas_base": 2,
-      "linhas_mapa": 32
-    },
     {
       "obra": "RCE COMUNIDADE RAUZITO",
       "planejado": 1566.27,
@@ -187,6 +177,16 @@
       "saldo": -320.31,
       "linhas_base": 1,
       "linhas_mapa": 5
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1696.2,
+      "executado_mapa": 1699.25,
+      "diferenca_base_mapa": -3.05,
+      "saldo": 103.0,
+      "linhas_base": 2,
+      "linhas_mapa": 75
     },
     {
       "obra": "CTS Conceição",
@@ -594,11 +594,11 @@
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
       "executado_base": 1696.2,
-      "executado_mapa": 837.16,
-      "diferenca_base_mapa": 859.04,
+      "executado_mapa": 1699.25,
+      "diferenca_base_mapa": -3.05,
       "saldo": 103.0,
       "linhas_base": 2,
-      "linhas_mapa": 32
+      "linhas_mapa": 75
     },
     {
       "obra": "RCE Barão Luis de Arariba",
@@ -821,8 +821,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 96.8,
-      "modificado": "2026-07-17 09:46:11"
+      "tamanho_kb": 103.9,
+      "modificado": "2026-07-17 15:42:26"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
