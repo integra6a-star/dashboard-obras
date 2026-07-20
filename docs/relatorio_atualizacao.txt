@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-20 07:12:23
+Atualizado em: 2026-07-20 07:15:54
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,043.83 m
@@ -7,14 +7,13 @@ Executado Mapa: 19,226.31 m
 Diferença EAP Produzido - Mapa: 817.52 m
 Saldo total: 20,043.83 m
 
-PDS total: 3211 registros
-PDS hoje: 0 registros
-Última data PDS: 2026-07-17
+PDS total: 3227 registros
+PDS hoje: 16 registros
+Última data PDS: 2026-07-20
 
 Alertas:
 - Diferença total entre EAP Produzido e mapa: 817.52 m
 - 16 obra(s) com divergência entre executado da Base Dash e mapa.
-- PDS sem registros na data de hoje.
 
 Maiores divergências por obra:
 - RCE COMUNIDADE RAUZITO: Base 401.00 m | Mapa 0.00 m | Dif. 401.00 m

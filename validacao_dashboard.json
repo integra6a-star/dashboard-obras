@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-20 07:12:23",
+  "atualizado_em": "2026-07-20 07:15:54",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
@@ -9,17 +9,17 @@
     "saldo_total": 20043.83
   },
   "pds": {
-    "total": 3211,
-    "ultima_data": "2026-07-17",
-    "hoje": 0,
+    "total": 3227,
+    "ultima_data": "2026-07-20",
+    "hoje": 16,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE RAULZITO TRECHO 2",
+        "obra": "RCE RAULZITO TRECHO 1",
         "atividades": 4
       },
       {
-        "obra": "RCE RAULZITO TRECHO 1",
-        "atividades": 3
+        "obra": "RCE RAULZITO TRECHO 2",
+        "atividades": 4
       },
       {
         "obra": "Vacal",
@@ -30,7 +30,7 @@
         "atividades": 2
       },
       {
-        "obra": "CT LAGEADO",
+        "obra": "CTS JOÃO CANZI",
         "atividades": 1
       },
       {
@@ -45,8 +45,7 @@
   },
   "alertas": [
     "Diferença total entre EAP Produzido e mapa: 817.52 m",
-    "16 obra(s) com divergência entre executado da Base Dash e mapa.",
-    "PDS sem registros na data de hoje."
+    "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -834,8 +833,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 556.5,
-      "modificado": "2026-07-17 09:37:37"
+      "tamanho_kb": 559.3,
+      "modificado": "2026-07-20 07:15:47"
     }
   ]
 }
