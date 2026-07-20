@@ -1396,13 +1396,12 @@ function monitorBuildLines(selected){
 function monitorBuildCritical(selected, lines, maior){
   const fromJson = Array.isArray(selected?.trechos_criticos) ? selected.trechos_criticos : [];
   if(fromJson.length) return fromJson;
-  const base = lines.length ? lines.slice(0, 4).map(line=>`${line.nome} - maior amplitude`) : [];
-  if(!base.length && Math.abs(maior) > 0) base.push('Maior amplitude observada');
-  return base.map((nome, i)=>({ nome, status:selected?.status || 'sem_classificacao', variacao_mm:maior, ordem:i+1 }));
+  return [];
 }
 function monitorBars(line, status, maior){
   const serie = Array.isArray(line?.serie) ? line.serie.map(Number).filter(Number.isFinite) : [];
-  const values = serie.length ? serie.slice(-32) : Array.from({length:16}, (_,i)=>Math.abs(maior) ? Math.max(3, Math.abs(maior) * (0.45 + ((i % 5) * 0.12))) : 0);
+  if(!serie.length) return '';
+  const values = serie.slice(-32);
   const max = Math.max(...values.map(v=>Math.abs(v)), 1);
   return values.map(v=>{
     const h = Math.max(8, Math.round(10 + (Math.abs(v) / max) * 48));
@@ -1501,11 +1500,8 @@ function renderMonitoramentoTopografico(data, selectedName){
   if(lines){
     lines.innerHTML = lineData.length ? lineData.map((line,i)=>{
       const count = Number.isFinite(Number(line.medicoes)) ? fmtInt(Number(line.medicoes)) : medicoes;
-      const trechos = line.trechos?.length ? line.trechos : [
-        { nome:`${line.nome} - A3 para A1`, variacao_mm:maiorValue },
-        { nome:`${line.nome} - A1 para A2`, variacao_mm:maiorValue },
-        { nome:`${line.nome} - A2 para A3`, variacao_mm:maiorValue },
-      ];
+      const trechos = line.trechos?.length ? line.trechos : [];
+      const hasSerie = Array.isArray(line.serie) && line.serie.length;
       return `<div class="monitor-line-card ${i === 0 ? 'open' : ''}">
         <button class="monitor-line-head" type="button" data-monitor-line="${i}">
           <span class="monitor-plus">${i === 0 ? '-' : '+'}</span>
@@ -1513,8 +1509,8 @@ function renderMonitoramentoTopografico(data, selectedName){
           <span class="monitor-line-measures">${count} medições</span>
         </button>
         <div class="monitor-line-detail">
-          <div class="monitor-line-chart">${monitorBars(line, selectedStatus, maiorValue)}</div>
-          <div class="monitor-line-meta">${trechos.map(t=>`<div class="monitor-small-card"><b>${monitorEscape(t.nome || t.trecho || 'Trecho')}</b><span>amplitude ${fmt1(monitorNumericValue(t.variacao_mm, maiorValue))} mm</span></div>`).join('')}</div>
+          ${hasSerie ? `<div class="monitor-line-chart">${monitorBars(line, selectedStatus, maiorValue)}</div>` : '<div class="monitor-empty">Quantidade de medições capturada. Série histórica detalhada ainda não veio do SolcadGIS nesta sincronização.</div>'}
+          ${trechos.length ? `<div class="monitor-line-meta">${trechos.map(t=>`<div class="monitor-small-card"><b>${monitorEscape(t.nome || t.trecho || 'Trecho')}</b><span>amplitude ${fmt1(monitorNumericValue(t.variacao_mm, maiorValue))} mm</span></div>`).join('')}</div>` : ''}
         </div>
       </div>`;
     }).join('') : '<div class="monitor-empty">O SolcadGIS não retornou linhas detalhadas para este poço nesta sincronização.</div>';
@@ -1529,7 +1525,7 @@ function renderMonitoramentoTopografico(data, selectedName){
   }
   if(list){
     list.innerHTML = lineData.length ? lineData.map(line=>`
-      <div class="monitor-small-card"><b>${monitorEscape(line.nome)}</b><span>${Number.isFinite(Number(line.medicoes)) ? fmtInt(Number(line.medicoes)) : medicoes} medições | amplitude ${maior} mm</span></div>`).join('') : '<div class="monitor-empty">Aguardando detalhes de linha vindos da fonte.</div>';
+      <div class="monitor-small-card"><b>${monitorEscape(line.nome)}</b><span>${Number.isFinite(Number(line.medicoes)) ? fmtInt(Number(line.medicoes)) : medicoes} medições capturadas</span></div>`).join('') : '<div class="monitor-empty">Aguardando detalhes de linha vindos da fonte.</div>';
   }
   if(temporalTitle) temporalTitle.textContent = `Status temporal da obra - poço - ${selectedPoco}`;
   if(triangles){
