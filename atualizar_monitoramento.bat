@@ -1,0 +1,14 @@
+@echo off
+setlocal
+cd /d "%~dp0"
+set "NODE_PATH=C:\Users\micro\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules"
+"C:\Users\micro\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" "scripts\solcadgis_monitoramento.js"
+if errorlevel 1 (
+  echo.
+  echo Falha ao atualizar monitoramento topografico.
+  pause
+  exit /b 1
+)
+echo.
+echo Monitoramento topografico atualizado.
+pause

@@ -1,0 +1,21 @@
+{
+  "atualizado_em": null,
+  "fonte": "SolcadGIS - Relatório de Monitoramento",
+  "status_geral": "sem_dados",
+  "resumo": {
+    "total_pocos": 0,
+    "estaveis": 0,
+    "atencao": 0,
+    "alerta": 0,
+    "sem_medicao_recente": 0,
+    "maior_variacao_mm": 0,
+    "ultima_medicao": null
+  },
+  "alertas": [
+    {
+      "nivel": "info",
+      "mensagem": "Monitoramento topográfico ainda não sincronizado. Rode atualizar_monitoramento.bat neste computador para buscar o relatório do SolcadGIS."
+    }
+  ],
+  "pocos": []
+}

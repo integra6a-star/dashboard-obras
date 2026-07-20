@@ -2,3 +2,8 @@
 *.pyc
 *.pyo
 
+# Sessao local do SolcadGIS. Nao publicar credenciais/cookies no GitHub Pages.
+.solcadgis-profile/
+.solcadgis-downloads/
+monitoramento_raw.json
+
