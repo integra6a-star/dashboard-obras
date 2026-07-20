@@ -70,6 +70,36 @@ function classify(text, maiorVariacao) {
   return "sem_classificacao";
 }
 
+function hasAccessDenied(rawTexts) {
+  const text = normalize((rawTexts || []).join("\n"));
+  return text.includes("ACESSO NAO AUTORIZADO") || text.includes("VOCE NAO TEM PERMISSAO");
+}
+
+function buildAccessDeniedPayload(rawTexts, source) {
+  return {
+    atualizado_em: nowIso(),
+    fonte: source || "SolcadGIS - Relatorio de Monitoramento",
+    status_geral: "sem_acesso",
+    resumo: {
+      total_pocos: 0,
+      estaveis: 0,
+      atencao: 0,
+      alerta: 0,
+      sem_medicao_recente: 0,
+      maior_variacao_mm: 0,
+      ultima_medicao: null,
+    },
+    alertas: [{
+      nivel: "atencao",
+      mensagem: "SolcadGIS retornou acesso nao autorizado para o Relatorio de Monitoramento. Solicite a liberacao dessa permissao no perfil do usuario.",
+    }],
+    pocos: [],
+    bruto_amostra: (rawTexts || [])
+      .filter((text) => !normalize(text).includes("CLEULTON"))
+      .slice(0, 12),
+  };
+}
+
 function buildPayload(items, rawTexts, source) {
   const pocos = items.map((item) => {
     const maiorVariacao = parseMm(item.texto);
@@ -164,6 +194,13 @@ async function openMonitoringReport(page) {
   }
   await clickByText(page, ["Relatório de Monitoramento", "RELATÓRIO DE MONITORAMENTO", "Relatorio de Monitoramento"], 5000);
   await page.waitForLoadState("domcontentloaded").catch(() => {});
+  await page.waitForTimeout(1200);
+
+  const reportText = normalize(await page.locator("body").innerText().catch(() => ""));
+  if (reportText.includes("MONITORAMENTO DE POCO")) {
+    await clickByText(page, ["Monitoramento de Poço", "MONITORAMENTO DE POÇO", "Monitoramento de Poco"], 5000);
+    await page.waitForLoadState("domcontentloaded").catch(() => {});
+  }
   await page.waitForTimeout(2500);
 }
 
@@ -174,6 +211,10 @@ async function collectFromPage(page) {
       .filter((text) => text && text.length > 2 && text.length < 1200)
       .slice(0, 600);
   }).catch(() => []);
+
+  if (hasAccessDenied(rawTexts)) {
+    return { items: [], rawTexts, selects: [], accessDenied: true };
+  }
 
   const selects = await page.locator("select").evaluateAll((nodes) => {
     return nodes.map((select) => ({
@@ -213,6 +254,7 @@ async function collectFromPage(page) {
     const body = await page.locator("body").innerText().catch(() => "");
     const blocks = body.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
     blocks.forEach((block) => {
+      if (normalize(block).includes("MONITORAMENTO DE POCO")) return;
       const m = block.match(/\b(POSTE\s+PV-\d+|PV-\d+(?:\.\d+)?|PVE-\d+|PIE-\d+|PO[ÇC]O\s+[A-Z0-9.-]+)/i);
       if (m) items.push({ poco: m[1].trim(), texto: block });
     });
@@ -235,24 +277,15 @@ async function main() {
   });
   const page = context.pages()[0] || await context.newPage();
 
-  const jsonResponses = [];
-  page.on("response", async (response) => {
-    const ct = response.headers()["content-type"] || "";
-    if (!ct.includes("json")) return;
-    try {
-      const url = response.url();
-      const data = await response.json();
-      jsonResponses.push({ url, data });
-    } catch (_) {}
-  });
-
   try {
     await openMonitoringReport(page);
     const collected = await collectFromPage(page);
-    const payload = buildPayload(collected.items, collected.rawTexts, "SolcadGIS - Relatório de Monitoramento");
+    const payload = collected.accessDenied
+      ? buildAccessDeniedPayload(collected.rawTexts, "SolcadGIS - Relatorio de Monitoramento")
+      : buildPayload(collected.items, collected.rawTexts, "SolcadGIS - Relatório de Monitoramento");
     fs.writeFileSync(OUT_JSON, JSON.stringify(payload, null, 2), "utf8");
     fs.writeFileSync(DOCS_JSON, JSON.stringify(payload, null, 2), "utf8");
-    fs.writeFileSync(RAW_JSON, JSON.stringify({ coletado_em: nowIso(), respostas_json: jsonResponses, pagina: collected }, null, 2), "utf8");
+    fs.writeFileSync(RAW_JSON, JSON.stringify({ coletado_em: nowIso(), pagina: collected }, null, 2), "utf8");
     console.log(`Monitoramento salvo: ${payload.resumo.total_pocos} poço(s), ${payload.alertas.length} alerta(s).`);
   } finally {
     await context.close();
@@ -263,3 +296,4 @@ main().catch((error) => {
   console.error(error);
   process.exit(1);
 });
+

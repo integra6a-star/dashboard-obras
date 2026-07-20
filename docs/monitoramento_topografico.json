@@ -1,7 +1,7 @@
 {
-  "atualizado_em": null,
-  "fonte": "SolcadGIS - Relatório de Monitoramento",
-  "status_geral": "sem_dados",
+  "atualizado_em": "2026-07-20 08:18:33",
+  "fonte": "SolcadGIS - Relatorio de Monitoramento",
+  "status_geral": "sem_acesso",
   "resumo": {
     "total_pocos": 0,
     "estaveis": 0,
@@ -13,9 +13,14 @@
   },
   "alertas": [
     {
-      "nivel": "info",
-      "mensagem": "Monitoramento topográfico ainda não sincronizado. Rode atualizar_monitoramento.bat neste computador para buscar o relatório do SolcadGIS."
+      "nivel": "atencao",
+      "mensagem": "SolcadGIS retornou acesso nao autorizado para o Relatorio de Monitoramento. Solicite a liberacao dessa permissao no perfil do usuario."
     }
   ],
-  "pocos": []
+  "pocos": [],
+  "bruto_amostra": [
+    "Acesso nao autorizado",
+    "Voce nao tem permissao",
+    "Seu perfil nao possui acesso ao Relatorio de Monitoramento."
+  ]
 }
