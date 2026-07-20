@@ -11,12 +11,14 @@ const path = require("path");
 
 let chromium;
 try {
-  const runtimeModules = "C:\\Users\\micro\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules";
-  if (!process.env.NODE_PATH) {
-    process.env.NODE_PATH = runtimeModules;
-  } else if (!process.env.NODE_PATH.includes(runtimeModules)) {
-    process.env.NODE_PATH += path.delimiter + runtimeModules;
-  }
+  const runtimeModules = 'C:\\Users\\micro\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules';
+  const runtimeExtraModules = [
+    runtimeModules,
+    path.join(runtimeModules, '.pnpm', 'node_modules'),
+    path.join(runtimeModules, '.pnpm', 'playwright@1.61.1', 'node_modules'),
+  ];
+  const currentNodePath = process.env.NODE_PATH ? process.env.NODE_PATH.split(path.delimiter) : [];
+  process.env.NODE_PATH = [...new Set([...currentNodePath, ...runtimeExtraModules])].join(path.delimiter);
   require("module").Module._initPaths();
   try {
     ({ chromium } = require("playwright"));
