@@ -1,17 +1,17 @@
 {
-  "atualizado_em": "2026-07-17 15:42:57",
+  "atualizado_em": "2026-07-20 07:12:23",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
     "dashboard_executado": 20043.83,
-    "mapa_executado": 19218.94,
-    "diferenca_base_mapa": 824.89,
+    "mapa_executado": 19226.31,
+    "diferenca_base_mapa": 817.52,
     "saldo_total": 20043.83
   },
   "pds": {
     "total": 3211,
     "ultima_data": "2026-07-17",
-    "hoje": 15,
+    "hoje": 0,
     "por_obra_ultima_data": [
       {
         "obra": "RCE RAULZITO TRECHO 2",
@@ -44,8 +44,9 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 824.89 m",
-    "16 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre EAP Produzido e mapa: 817.52 m",
+    "16 obra(s) com divergência entre executado da Base Dash e mapa.",
+    "PDS sem registros na data de hoje."
   ],
   "divergencias": [
     {
@@ -119,34 +120,24 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 377.8,
-      "executado_mapa": 421.26,
-      "diferenca_base_mapa": -43.46,
-      "saldo": -39.3,
+      "obra": "RCE ELVIRA DE ARAUJO",
+      "planejado": 180.0,
+      "executado_base": 167.96,
+      "executado_mapa": 201.41,
+      "diferenca_base_mapa": -33.45,
+      "saldo": 12.04,
       "linhas_base": 2,
       "linhas_mapa": 9
     },
     {
-      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
-      "planejado": 55.0,
-      "executado_base": 38.3,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 38.3,
-      "saldo": 16.7,
+      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
+      "planejado": 338.5,
+      "executado_base": 377.8,
+      "executado_mapa": 390.49,
+      "diferenca_base_mapa": -12.69,
+      "saldo": -39.3,
       "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 167.96,
-      "executado_mapa": 200.86,
-      "diferenca_base_mapa": -32.9,
-      "saldo": 12.04,
-      "linhas_base": 2,
-      "linhas_mapa": 7
+      "linhas_mapa": 8
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -162,8 +153,8 @@
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
       "planejado": 205.0,
       "executado_base": 216.1,
-      "executado_mapa": 211.94,
-      "diferenca_base_mapa": 4.16,
+      "executado_mapa": 211.95,
+      "diferenca_base_mapa": 4.15,
       "saldo": -11.1,
       "linhas_base": 2,
       "linhas_mapa": 4
@@ -207,6 +198,16 @@
       "saldo": -22.44,
       "linhas_base": 2,
       "linhas_mapa": 13
+    },
+    {
+      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
+      "planejado": 55.0,
+      "executado_base": 38.3,
+      "executado_mapa": 37.58,
+      "diferenca_base_mapa": 0.72,
+      "saldo": 16.7,
+      "linhas_base": 2,
+      "linhas_mapa": 1
     }
   ],
   "saldo_por_obra": [
@@ -694,11 +695,11 @@
       "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
       "planejado": 55.0,
       "executado_base": 38.3,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 38.3,
+      "executado_mapa": 37.58,
+      "diferenca_base_mapa": 0.72,
       "saldo": 16.7,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 1
     },
     {
       "obra": "RCE COMUNIDADE JD. UNIÃO",
@@ -714,11 +715,11 @@
       "obra": "RCE ELVIRA DE ARAUJO",
       "planejado": 180.0,
       "executado_base": 167.96,
-      "executado_mapa": 200.86,
-      "diferenca_base_mapa": -32.9,
+      "executado_mapa": 201.41,
+      "diferenca_base_mapa": -33.45,
       "saldo": 12.04,
       "linhas_base": 2,
-      "linhas_mapa": 7
+      "linhas_mapa": 9
     },
     {
       "obra": "RCE Rua São João",
@@ -754,8 +755,8 @@
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
       "planejado": 205.0,
       "executado_base": 216.1,
-      "executado_mapa": 211.94,
-      "diferenca_base_mapa": 4.16,
+      "executado_mapa": 211.95,
+      "diferenca_base_mapa": 4.15,
       "saldo": -11.1,
       "linhas_base": 2,
       "linhas_mapa": 4
@@ -784,11 +785,11 @@
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
       "executado_base": 377.8,
-      "executado_mapa": 421.26,
-      "diferenca_base_mapa": -43.46,
+      "executado_mapa": 390.49,
+      "diferenca_base_mapa": -12.69,
       "saldo": -39.3,
       "linhas_base": 2,
-      "linhas_mapa": 9
+      "linhas_mapa": 8
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -821,8 +822,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 103.9,
-      "modificado": "2026-07-17 15:42:26"
+      "tamanho_kb": 104.4,
+      "modificado": "2026-07-20 07:12:07"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",

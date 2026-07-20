@@ -1,19 +1,20 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-17 15:42:57
+Atualizado em: 2026-07-20 07:12:23
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,043.83 m
-Executado Mapa: 19,218.94 m
-Diferença EAP Produzido - Mapa: 824.89 m
+Executado Mapa: 19,226.31 m
+Diferença EAP Produzido - Mapa: 817.52 m
 Saldo total: 20,043.83 m
 
 PDS total: 3211 registros
-PDS hoje: 15 registros
+PDS hoje: 0 registros
 Última data PDS: 2026-07-17
 
 Alertas:
-- Diferença total entre EAP Produzido e mapa: 824.89 m
+- Diferença total entre EAP Produzido e mapa: 817.52 m
 - 16 obra(s) com divergência entre executado da Base Dash e mapa.
+- PDS sem registros na data de hoje.
 
 Maiores divergências por obra:
 - RCE COMUNIDADE RAUZITO: Base 401.00 m | Mapa 0.00 m | Dif. 401.00 m
@@ -23,6 +24,6 @@ Maiores divergências por obra:
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - INTERL. RUA AYRTON SENNA: Base 68.20 m | Mapa 0.00 m | Dif. 68.20 m
 - RCE TERRA PROMETIDA: Base 68.00 m | Mapa 0.00 m | Dif. 68.00 m
-- RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 377.80 m | Mapa 421.26 m | Dif. -43.46 m
-- RCE RUA AMÉRICO MACHADO - ELIS R: Base 38.30 m | Mapa 0.00 m | Dif. 38.30 m
-- RCE ELVIRA DE ARAUJO: Base 167.96 m | Mapa 200.86 m | Dif. -32.90 m
+- RCE ELVIRA DE ARAUJO: Base 167.96 m | Mapa 201.41 m | Dif. -33.45 m
+- RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 377.80 m | Mapa 390.49 m | Dif. -12.69 m
+- CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
