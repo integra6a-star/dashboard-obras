@@ -37,6 +37,7 @@ const OUT_JSON = path.join(ROOT, "monitoramento_topografico.json");
 const DOCS_JSON = path.join(ROOT, "docs", "monitoramento_topografico.json");
 const RAW_JSON = path.join(ROOT, "monitoramento_raw.json");
 const SOLCAD_URL = "https://www.solcadgis.com/#/";
+const DEFAULT_OBRA = process.env.SOLCAD_OBRA || "INTERCEPTOR ITI-15";
 
 function nowIso() {
   const d = new Date();
@@ -70,6 +71,29 @@ function classify(text, maiorVariacao) {
   if (n.includes("STATUS GERAL ATENCAO") || /[1-9]\d*\s+POSSIVEL/.test(n) || Math.abs(maiorVariacao) >= 3) return "atencao";
   if (n.includes("ESTAVEL") || n.includes("ESTÁVEL")) return "estavel";
   return "sem_classificacao";
+}
+
+function parseLinhaDados(text) {
+  const source = String(text || "");
+  const lines = [];
+  const seen = new Set();
+  const countMatches = [...source.matchAll(/\b(L\d+)\b\s*(?:\n|\s)+(\d+)\s+medi[cç][oõ]es/gi)];
+  countMatches.forEach((match) => {
+    const nome = match[1].toUpperCase();
+    if (seen.has(nome)) return;
+    seen.add(nome);
+    lines.push({ nome, medicoes: Number(match[2]), trechos: [], serie: [] });
+  });
+  if (lines.length) return lines;
+
+  [...source.matchAll(/\b(L\d+)\b/g)].forEach((match) => {
+    const nome = match[1].toUpperCase();
+    if (!seen.has(nome)) {
+      seen.add(nome);
+      lines.push({ nome, medicoes: null, trechos: [], serie: [] });
+    }
+  });
+  return lines;
 }
 
 function hasAccessDenied(rawTexts) {
@@ -113,6 +137,7 @@ function buildPayload(items, rawTexts, source) {
       maior_variacao_mm: maiorVariacao,
       ultima_medicao: item.ultima_medicao || null,
       medicoes: item.medicoes || null,
+      linhas: parseLinhaDados(item.texto),
       detalhe: item.texto.slice(0, 600),
     };
   });
@@ -206,7 +231,82 @@ async function openMonitoringReport(page) {
   await page.waitForTimeout(2500);
 }
 
+async function selectMonitoringObra(page, obraName = DEFAULT_OBRA) {
+  const wanted = normalize(obraName);
+
+  const selectCount = await page.locator("select").count().catch(() => 0);
+  for (let i = 0; i < selectCount; i += 1) {
+    const select = page.locator("select").nth(i);
+    const options = await select.evaluate((node) => Array.from(node.options || []).map((opt) => ({
+      text: opt.textContent.trim(),
+      value: opt.value,
+    }))).catch(() => []);
+    const match = options.find((opt) => normalize(opt.text).includes(wanted) || wanted.includes(normalize(opt.text)));
+    if (match) {
+      await select.selectOption(match.value || { label: match.text }).catch(async () => select.selectOption({ label: match.text }));
+      await page.waitForTimeout(1200);
+      return true;
+    }
+  }
+
+  const inputCandidates = [
+    page.getByPlaceholder(/selecione uma obra/i),
+    page.locator('input[placeholder*="obra" i]'),
+    page.locator('input').filter({ hasText: /obra/i }),
+  ];
+
+  for (const candidate of inputCandidates) {
+    const input = candidate.first();
+    try {
+      await input.waitFor({ state: "visible", timeout: 2500 });
+      await input.click();
+      await page.waitForTimeout(500);
+      await input.fill(obraName).catch(async () => {
+        await page.keyboard.press(process.platform === "darwin" ? "Meta+A" : "Control+A");
+        await page.keyboard.type(obraName);
+      });
+      await page.waitForTimeout(800);
+
+      const optionByText = page.getByText(obraName, { exact: true }).last();
+      if (await optionByText.isVisible({ timeout: 1500 }).catch(() => false)) {
+        await optionByText.click();
+        await page.waitForTimeout(1500);
+        return true;
+      }
+
+      const looseOption = page.getByText(new RegExp(obraName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i")).last();
+      if (await looseOption.isVisible({ timeout: 1500 }).catch(() => false)) {
+        await looseOption.click();
+        await page.waitForTimeout(1500);
+        return true;
+      }
+
+      await page.keyboard.press("ArrowDown");
+      await page.keyboard.press("Enter");
+      await page.waitForTimeout(1500);
+      return true;
+    } catch (_) {
+      // tenta outro campo
+    }
+  }
+
+  const bodyText = normalize(await page.locator("body").innerText().catch(() => ""));
+  return bodyText.includes(wanted);
+}
+
+async function expandMonitoringDetails(page) {
+  await page.locator("button").evaluateAll((buttons) => {
+    buttons
+      .filter((button) => (button.innerText || "").trim() === "+")
+      .forEach((button) => button.click());
+  }).catch(() => {});
+  await page.waitForTimeout(600);
+}
+
 async function collectFromPage(page) {
+  await selectMonitoringObra(page);
+  await page.waitForTimeout(1200);
+
   const rawTexts = await page.locator("body *").evaluateAll((nodes) => {
     return nodes
       .map((node) => (node.innerText || "").trim())
@@ -245,6 +345,7 @@ async function collectFromPage(page) {
       const select = page.locator("select").filter({ hasText: name }).first();
       await select.selectOption({ label: name }).catch(async () => select.selectOption(option.value));
       await page.waitForTimeout(900);
+      await expandMonitoringDetails(page);
       const text = await page.locator("body").innerText({ timeout: 5000 });
       items.push({ poco: name, texto: text });
     } catch (_) {
