@@ -223,8 +223,12 @@ async function collectFromPage(page) {
 
 async function main() {
   fs.mkdirSync(DOWNLOAD_DIR, { recursive: true });
+  const edgePath = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
+  const chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+  const executablePath = fs.existsSync(edgePath) ? edgePath : fs.existsSync(chromePath) ? chromePath : undefined;
   const context = await chromium.launchPersistentContext(PROFILE_DIR, {
     headless: false,
+    executablePath,
     acceptDownloads: true,
     downloadsPath: DOWNLOAD_DIR,
     viewport: { width: 1440, height: 900 },
