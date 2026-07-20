@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-20 07:15:54
+Atualizado em: 2026-07-20 07:27:58
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,043.83 m
@@ -18,11 +18,11 @@ Alertas:
 Maiores divergências por obra:
 - RCE COMUNIDADE RAUZITO: Base 401.00 m | Mapa 0.00 m | Dif. 401.00 m
 - RCE COMUNIDADE JD. UNIÃO: Base 210.70 m | Mapa 0.00 m | Dif. 210.70 m
-- RCE Rua São João: Base 93.20 m | Mapa 0.00 m | Dif. 93.20 m
 - Interligação Água Boa: Base 201.71 m | Mapa 115.04 m | Dif. 86.67 m
+- RCE São Lucas: Base 1,696.20 m | Mapa 1,616.26 m | Dif. 79.94 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - INTERL. RUA AYRTON SENNA: Base 68.20 m | Mapa 0.00 m | Dif. 68.20 m
 - RCE TERRA PROMETIDA: Base 68.00 m | Mapa 0.00 m | Dif. 68.00 m
 - RCE ELVIRA DE ARAUJO: Base 167.96 m | Mapa 201.41 m | Dif. -33.45 m
 - RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 377.80 m | Mapa 390.49 m | Dif. -12.69 m
-- CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
+- RCE Rua São João: Base 93.20 m | Mapa 82.99 m | Dif. 10.21 m

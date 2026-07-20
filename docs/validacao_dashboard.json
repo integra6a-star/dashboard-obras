@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-20 07:15:54",
+  "atualizado_em": "2026-07-20 07:27:58",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
@@ -69,16 +69,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE Rua São João",
-      "planejado": 95.0,
-      "executado_base": 93.2,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 93.2,
-      "saldo": 1.8,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "Interligação Água Boa",
       "planejado": 425.0,
       "executado_base": 201.71,
@@ -87,6 +77,16 @@
       "saldo": 223.29,
       "linhas_base": 2,
       "linhas_mapa": 4
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1696.2,
+      "executado_mapa": 1616.26,
+      "diferenca_base_mapa": 79.94,
+      "saldo": 103.0,
+      "linhas_base": 2,
+      "linhas_mapa": 73
     },
     {
       "obra": "RCE Barão Luis de Arariba",
@@ -139,6 +139,16 @@
       "linhas_mapa": 8
     },
     {
+      "obra": "RCE Rua São João",
+      "planejado": 95.0,
+      "executado_base": 93.2,
+      "executado_mapa": 82.99,
+      "diferenca_base_mapa": 10.21,
+      "saldo": 1.8,
+      "linhas_base": 2,
+      "linhas_mapa": 2
+    },
+    {
       "obra": "CTS Luis Botelho Mourão",
       "planejado": 390.75,
       "executado_base": 468.09,
@@ -167,16 +177,6 @@
       "saldo": -320.31,
       "linhas_base": 1,
       "linhas_mapa": 5
-    },
-    {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1696.2,
-      "executado_mapa": 1699.25,
-      "diferenca_base_mapa": -3.05,
-      "saldo": 103.0,
-      "linhas_base": 2,
-      "linhas_mapa": 75
     },
     {
       "obra": "CTS Conceição",
@@ -594,11 +594,11 @@
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
       "executado_base": 1696.2,
-      "executado_mapa": 1699.25,
-      "diferenca_base_mapa": -3.05,
+      "executado_mapa": 1616.26,
+      "diferenca_base_mapa": 79.94,
       "saldo": 103.0,
       "linhas_base": 2,
-      "linhas_mapa": 75
+      "linhas_mapa": 73
     },
     {
       "obra": "RCE Barão Luis de Arariba",
@@ -724,11 +724,11 @@
       "obra": "RCE Rua São João",
       "planejado": 95.0,
       "executado_base": 93.2,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 93.2,
+      "executado_mapa": 82.99,
+      "diferenca_base_mapa": 10.21,
       "saldo": 1.8,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 2
     },
     {
       "obra": "EEE TRÊS MENINAS",
@@ -821,8 +821,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 104.4,
-      "modificado": "2026-07-20 07:12:07"
+      "tamanho_kb": 104.7,
+      "modificado": "2026-07-20 07:27:49"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",
