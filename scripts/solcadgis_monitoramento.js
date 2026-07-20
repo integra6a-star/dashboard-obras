@@ -54,9 +54,11 @@ function normalize(text) {
 }
 
 function parseMm(text) {
-  const matches = String(text || "").match(/-?\d+(?:[,.]\d+)?\s*mm/gi) || [];
+  const source = String(text || "");
+  const amplitude = source.match(/MAIOR AMPLITUDE OBSERVADA\s*\n\s*(-?\+?\d+(?:[,.]\d+)?)\s*mm/i);
+  const matches = amplitude ? [`${amplitude[1]} mm`] : source.match(/-?\+?\d+(?:[,.]\d+)?\s*mm/gi) || [];
   const values = matches
-    .map((m) => Number(m.replace(/mm/i, "").trim().replace(",", ".")))
+    .map((m) => Number(m.replace(/mm/i, "").replace("+", "").trim().replace(",", ".")))
     .filter(Number.isFinite);
   if (!values.length) return 0;
   return values.reduce((max, v) => Math.abs(v) > Math.abs(max) ? v : max, 0);
@@ -64,8 +66,8 @@ function parseMm(text) {
 
 function classify(text, maiorVariacao) {
   const n = normalize(text);
-  if (n.includes("ALERTA") || Math.abs(maiorVariacao) > 5) return "alerta";
-  if (n.includes("ATENCAO") || n.includes("POSSIVEL") || Math.abs(maiorVariacao) >= 3) return "atencao";
+  if (n.includes("STATUS GERAL ALERTA") || /[1-9]\d*\s+ALERTA\(S\)/.test(n) || Math.abs(maiorVariacao) > 5) return "alerta";
+  if (n.includes("STATUS GERAL ATENCAO") || /[1-9]\d*\s+POSSIVEL/.test(n) || Math.abs(maiorVariacao) >= 3) return "atencao";
   if (n.includes("ESTAVEL") || n.includes("ESTÁVEL")) return "estavel";
   return "sem_classificacao";
 }

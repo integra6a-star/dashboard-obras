@@ -1,26 +1,111 @@
 {
-  "atualizado_em": "2026-07-20 08:18:33",
-  "fonte": "SolcadGIS - Relatorio de Monitoramento",
-  "status_geral": "sem_acesso",
+  "atualizado_em": "2026-07-20 08:30:13",
+  "fonte": "SolcadGIS - Relatório de Monitoramento",
+  "status_geral": "estavel",
   "resumo": {
-    "total_pocos": 0,
-    "estaveis": 0,
+    "total_pocos": 8,
+    "estaveis": 8,
     "atencao": 0,
     "alerta": 0,
-    "sem_medicao_recente": 0,
-    "maior_variacao_mm": 0,
+    "sem_medicao_recente": 8,
+    "maior_variacao_mm": 2.0,
     "ultima_medicao": null
   },
-  "alertas": [
+  "alertas": [],
+  "pocos": [
     {
-      "nivel": "atencao",
-      "mensagem": "SolcadGIS retornou acesso nao autorizado para o Relatorio de Monitoramento. Solicite a liberacao dessa permissao no perfil do usuario."
+      "obra": null,
+      "poco": "POSTE PV-06",
+      "status": "estavel",
+      "maior_variacao_mm": 1.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nPOSTE\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:05\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPOSTE PV-06\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nNo período analisado, o PV permaneceu dentro da tolerância de +5.0 mm, sem tendência consistente de deslocamento.\n\nMAIOR AMPLITUDE OBSERVADA\n1.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-1.0 mm\nMAIOR\n0.0 "
+    },
+    {
+      "obra": null,
+      "poco": "PV-02",
+      "status": "estavel",
+      "maior_variacao_mm": 0.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:06\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPV-02\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nSelecione um PV com medições para gerar a conclusão automática.\n\nMAIOR AMPLITUDE OBSERVADA\n0.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-\nMAIOR\n-\nComparação por período\nGERAL\n-\n0 medições\n30 DIAS\n-\n0 medições\n7 DIAS\n"
+    },
+    {
+      "obra": null,
+      "poco": "PV-04",
+      "status": "estavel",
+      "maior_variacao_mm": 0.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: -\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPV-04\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nSelecione um PV com medições para gerar a conclusão automática.\n\nMAIOR AMPLITUDE OBSERVADA\n0.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-\nMAIOR\n-\nComparação por período\nGERAL\n-\n0 medições\n30 DIAS\n-\n0 medições\n7 DIAS\n-\n0 med"
+    },
+    {
+      "obra": null,
+      "poco": "PV-05",
+      "status": "estavel",
+      "maior_variacao_mm": 2.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nL1\nL2\nL3\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:09\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPV-05\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nNo período analisado, o PV permaneceu dentro da tolerância de +5.0 mm, sem tendência consistente de deslocamento.\n\nMAIOR AMPLITUDE OBSERVADA\n2.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-2.0 mm\nMAIOR\n+2.0 mm"
+    },
+    {
+      "obra": null,
+      "poco": "PV-06",
+      "status": "estavel",
+      "maior_variacao_mm": 1.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nL1\nL2\nL3\nL4\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:10\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPV-06\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nNo período analisado, o PV permaneceu dentro da tolerância de +5.0 mm, sem tendência consistente de deslocamento.\n\nMAIOR AMPLITUDE OBSERVADA\n1.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-1.0 mm\nMAIOR\n0.0 "
+    },
+    {
+      "obra": null,
+      "poco": "PV-07",
+      "status": "estavel",
+      "maior_variacao_mm": 0.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:11\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPV-07\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nSelecione um PV com medições para gerar a conclusão automática.\n\nMAIOR AMPLITUDE OBSERVADA\n0.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-\nMAIOR\n-\nComparação por período\nGERAL\n-\n0 medições\n30 DIAS\n-\n0 medições\n7 DIAS\n"
+    },
+    {
+      "obra": null,
+      "poco": "PVE-01",
+      "status": "estavel",
+      "maior_variacao_mm": 0.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:12\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPVE-01\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nSelecione um PV com medições para gerar a conclusão automática.\n\nMAIOR AMPLITUDE OBSERVADA\n0.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-\nMAIOR\n-\nComparação por período\nGERAL\n-\n0 medições\n30 DIAS\n-\n0 medições\n7 DIAS"
+    },
+    {
+      "obra": null,
+      "poco": "PVE-02",
+      "status": "estavel",
+      "maior_variacao_mm": 0.0,
+      "ultima_medicao": null,
+      "medicoes": null,
+      "detalhe": "MODO DE VISUALIZAÇÃO\nVariação absoluta\nVariação em mm\nFILTRO DE LINHA\nTodas\nUsuários\n3\nSair\nNotificação Fulltime\nÚLTIMA ATUALIZAÇÃO: 08:30:13\nNenhuma medição nova detectada desde que este PV foi aberto.\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\nPVE-02\nSELECIONAR POÇO\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02\nRelatórios\nSTATUS GERAL\nEstável\n\nSelecione um PV com medições para gerar a conclusão automática.\n\nMAIOR AMPLITUDE OBSERVADA\n0.0 mm\n0 alerta(s) | 0 possível(is) erro(s)\nResumo\nMENOR\n-\nMAIOR\n-\nComparação por período\nGERAL\n-\n0 medições\n30 DIAS\n-\n0 medições\n7 DIAS"
     }
   ],
-  "pocos": [],
   "bruto_amostra": [
-    "Acesso nao autorizado",
-    "Voce nao tem permissao",
-    "Seu perfil nao possui acesso ao Relatorio de Monitoramento."
+    "Usuários\n3\nSair\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\n\nSelecione a obra e o PV para comparar as medições em gráfico linear e conferir o alinhamento dos trechos.\n\n1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.\n\nSELECIONAR OBRA\nx\nSELECIONAR PV\nSelecione um PV\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02",
+    "Usuários\n3\nSair\nTOPOGRAFIA\nMONITORAMENTO DE POÇO\n\nSelecione a obra e o PV para comparar as medições em gráfico linear e conferir o alinhamento dos trechos.\n\n1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.\n\nSELECIONAR OBRA\nx\nSELECIONAR PV\nSelecione um PV\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02",
+    "Usuários\n3\nSair",
+    "Usuários\n3\nSair",
+    "Usuários\n3\nSair",
+    "Usuários\n3",
+    "Usuários\n3",
+    "Usuários",
+    "Sair",
+    "TOPOGRAFIA\nMONITORAMENTO DE POÇO\n\nSelecione a obra e o PV para comparar as medições em gráfico linear e conferir o alinhamento dos trechos.\n\n1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.\n\nSELECIONAR OBRA\nx\nSELECIONAR PV\nSelecione um PV\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02",
+    "TOPOGRAFIA\nMONITORAMENTO DE POÇO\n\nSelecione a obra e o PV para comparar as medições em gráfico linear e conferir o alinhamento dos trechos.",
+    "TOPOGRAFIA",
+    "MONITORAMENTO DE POÇO",
+    "Selecione a obra e o PV para comparar as medições em gráfico linear e conferir o alinhamento dos trechos.",
+    "1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.\n\nSELECIONAR OBRA\nx\nSELECIONAR PV\nSelecione um PV\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02",
+    "1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.\n\nSELECIONAR OBRA\nx\nSELECIONAR PV\nSelecione um PV\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02",
+    "1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.\n\nSELECIONAR OBRA\nx\nSELECIONAR PV\nSelecione um PV\nPonto de Controle\nPOSTE PV-06\nPV-02\nPV-04\nPV-05\nPV-06\nPV-07\nPVE-01\nPVE-01\nPVE-02",
+    "1\nDados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.",
+    "Dados da consulta\n\nEscolha a obra e o PV para carregar o histórico de medições cadastradas.",
+    "Dados da consulta"
   ]
 }
