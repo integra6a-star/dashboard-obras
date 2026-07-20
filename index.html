@@ -1360,6 +1360,11 @@ function monitorNumericValue(value, fallback=0){
   const n = Number(value);
   return Number.isFinite(n) ? n : fallback;
 }
+function monitorFormatDate(value){
+  const m = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(m) return `${m[3]}/${m[2]}/${m[1]}`;
+  return value ? formatarDataHora(value) : '-';
+}
 function monitorEscape(value){
   return String(value ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
@@ -1383,29 +1388,66 @@ function monitorExtractLines(text){
   }
   return lines;
 }
-function monitorBuildLines(selected){
+function monitorFindHistory(data, poco){
+  const historico = data?.historico;
+  const pocos = Array.isArray(historico?.pocos) ? historico.pocos : [];
+  return pocos.find(p=>String(p.poco).toUpperCase() === String(poco).toUpperCase()) || null;
+}
+function monitorBuildLines(selected, history){
   const fromJson = Array.isArray(selected?.linhas) ? selected.linhas : [];
-  if(fromJson.length) return fromJson.map((line,i)=>({
-    nome: line.nome || line.linha || `L${i+1}`,
-    medicoes: Number.isFinite(Number(line.medicoes)) ? Number(line.medicoes) : null,
-    trechos: Array.isArray(line.trechos) ? line.trechos : [],
-    serie: Array.isArray(line.serie) ? line.serie : []
-  }));
-  return monitorExtractLines(selected?.detalhe);
+  const historyLines = Array.isArray(history?.linhas) ? history.linhas : [];
+  const byName = new Map(historyLines.map(line=>[String(line.nome || '').toUpperCase(), line]));
+  const base = fromJson.length ? fromJson : monitorExtractLines(selected?.detalhe);
+  const merged = base.map((line,i)=>{
+    const nome = String(line.nome || line.linha || `L${i+1}`).toUpperCase();
+    const hist = byName.get(nome);
+    const histSerie = Array.isArray(hist?.serie) ? hist.serie : [];
+    const histMm = histSerie.filter(row=>String(row?.tipo || '').toLowerCase() === 'variacao_mm');
+    return {
+      nome,
+      medicoes: Number.isFinite(Number(hist?.medicoes)) ? Number(hist.medicoes) : Number.isFinite(Number(line.medicoes)) ? Number(line.medicoes) : null,
+      trechos: Array.isArray(hist?.trechos) && hist.trechos.length ? hist.trechos : Array.isArray(line.trechos) ? line.trechos : [],
+      serie: histMm.length ? histMm : histSerie.length ? histSerie : Array.isArray(line.serie) ? line.serie : [],
+    };
+  });
+  historyLines.forEach((hist)=>{
+    const nome = String(hist.nome || '').toUpperCase();
+    if(nome && !merged.some(line=>line.nome === nome)){
+      const histSerie = Array.isArray(hist.serie) ? hist.serie : [];
+      const histMm = histSerie.filter(row=>String(row?.tipo || '').toLowerCase() === 'variacao_mm');
+      merged.push({
+        nome,
+        medicoes: Number.isFinite(Number(hist.medicoes)) ? Number(hist.medicoes) : null,
+        trechos: Array.isArray(hist.trechos) ? hist.trechos : [],
+        serie: histMm.length ? histMm : histSerie,
+      });
+    }
+  });
+  return merged;
 }
 function monitorBuildCritical(selected, lines, maior){
   const fromJson = Array.isArray(selected?.trechos_criticos) ? selected.trechos_criticos : [];
   if(fromJson.length) return fromJson;
-  return [];
+  return lines.flatMap(line=>(Array.isArray(line.trechos) ? line.trechos : []).map(t=>({
+    nome: t.nome || t.trecho,
+    status: selected?.status || 'sem_classificacao',
+    variacao_mm: monitorNumericValue(t.amplitude_mm, monitorNumericValue(t.variacao_mm, 0)),
+    deslocamento_mm: monitorNumericValue(t.deslocamento_mm, 0),
+  }))).sort((a,b)=>Math.abs(b.variacao_mm)-Math.abs(a.variacao_mm)).slice(0,6);
 }
 function monitorBars(line, status, maior){
-  const serie = Array.isArray(line?.serie) ? line.serie.map(Number).filter(Number.isFinite) : [];
+  const serie = Array.isArray(line?.serie) ? line.serie.map(row=>{
+    if(typeof row === 'number') return { value: row, label: `${fmt1(row)} mm` };
+    const value = monitorNumericValue(row?.amplitude_mm, monitorNumericValue(row?.maior_mm, 0));
+    const label = `${row?.data || ''} | amplitude ${fmt1(value)} mm`.trim();
+    return { value, label };
+  }).filter(row=>Number.isFinite(row.value)) : [];
   if(!serie.length) return '';
   const values = serie.slice(-32);
-  const max = Math.max(...values.map(v=>Math.abs(v)), 1);
-  return values.map(v=>{
-    const h = Math.max(8, Math.round(10 + (Math.abs(v) / max) * 48));
-    return `<span class="monitor-timebar ${status}" title="${fmt1(v)} mm" style="height:${h}px"></span>`;
+  const max = Math.max(...values.map(row=>Math.abs(row.value)), 1);
+  return values.map(row=>{
+    const h = Math.max(8, Math.round(10 + (Math.abs(row.value) / max) * 48));
+    return `<span class="monitor-timebar ${status}" title="${monitorEscape(row.label)}" style="height:${h}px"></span>`;
   }).join('');
 }
 function monitorTriangleSvg(label){
@@ -1448,7 +1490,8 @@ function renderMonitoramentoTopografico(data, selectedName){
   const medicoes = monitorMeasurementCount(detalhe);
   const menor = monitorExtractNumber(detalhe, 'MENOR');
   const maiorResumo = monitorExtractNumber(detalhe, 'MAIOR');
-  const lineData = monitorBuildLines(selected);
+  const history = monitorFindHistory(data, selectedPoco);
+  const lineData = monitorBuildLines(selected, history);
   const critical = monitorBuildCritical(selected, lineData, maiorValue);
   const stableText = selectedStatus === 'estavel'
     ? `No período analisado, o PV permaneceu dentro da tolerância de +5,0 mm, sem tendência consistente de deslocamento.`
@@ -1460,7 +1503,7 @@ function renderMonitoramentoTopografico(data, selectedName){
 
   if(updated) updated.textContent = data?.atualizado_em ? `ÚLTIMA ATUALIZAÇÃO: ${formatarDataHora(data.atualizado_em)}` : 'SEM SINCRONIZAÇÃO';
   if(title) title.textContent = selectedPoco;
-  if(note) note.textContent = alertas[0]?.mensagem || 'Nenhuma medição nova detectada desde que este PV foi aberto.';
+  if(note) note.textContent = alertas[0]?.mensagem || (history ? `Histórico carregado: ${fmtInt(history.total_relatorios || 0)} relatório(s), última data ${monitorFormatDate(history.ultima_data || '')}.` : 'Nenhuma medição nova detectada desde que este PV foi aberto.');
   if(select){
     select.innerHTML = pocos.map(p=>`<option value="${monitorEscape(p.poco || '')}" ${p.poco === selectedPoco ? 'selected' : ''}>${monitorEscape(p.poco || 'Poço sem identificação')}</option>`).join('');
     select.onchange = () => renderMonitoramentoTopografico(data, select.value);
@@ -1475,7 +1518,7 @@ function renderMonitoramentoTopografico(data, selectedName){
       </div>
       <div class="monitor-mini-card"><div class="monitor-mini-label">Maior amplitude</div><div class="monitor-mini-value">${maior} mm</div><div class="monitor-mini-foot">${selectedPoco}</div></div>
       <div class="monitor-mini-card"><div class="monitor-mini-label">Alertas</div><div class="monitor-mini-value">${fmtInt(resumo.alerta || 0)}</div><div class="monitor-mini-foot">na sincronização</div></div>
-      <div class="monitor-mini-card"><div class="monitor-mini-label">Atenção</div><div class="monitor-mini-value">${fmtInt(resumo.atencao || 0)}</div><div class="monitor-mini-foot">acompanhar</div></div>
+      <div class="monitor-mini-card"><div class="monitor-mini-label">Histórico</div><div class="monitor-mini-value">${fmtInt(history?.total_relatorios || 0)}</div><div class="monitor-mini-foot">relatórios PDF</div></div>
       </div>
     `;
 
@@ -1510,7 +1553,7 @@ function renderMonitoramentoTopografico(data, selectedName){
         </button>
         <div class="monitor-line-detail">
           ${hasSerie ? `<div class="monitor-line-chart">${monitorBars(line, selectedStatus, maiorValue)}</div>` : '<div class="monitor-empty">Quantidade de medições capturada. Série histórica detalhada ainda não veio do SolcadGIS nesta sincronização.</div>'}
-          ${trechos.length ? `<div class="monitor-line-meta">${trechos.map(t=>`<div class="monitor-small-card"><b>${monitorEscape(t.nome || t.trecho || 'Trecho')}</b><span>amplitude ${fmt1(monitorNumericValue(t.variacao_mm, maiorValue))} mm</span></div>`).join('')}</div>` : ''}
+          ${trechos.length ? `<div class="monitor-line-meta">${trechos.map(t=>`<div class="monitor-small-card"><b>${monitorEscape(t.nome || t.trecho || 'Trecho')}</b><span>amplitude ${fmt1(monitorNumericValue(t.amplitude_mm, monitorNumericValue(t.variacao_mm, maiorValue)))} mm | desloc. ${fmt1(monitorNumericValue(t.deslocamento_mm, 0))} mm</span></div>`).join('')}</div>` : ''}
         </div>
       </div>`;
     }).join('') : '<div class="monitor-empty">O SolcadGIS não retornou linhas detalhadas para este poço nesta sincronização.</div>';
@@ -1525,7 +1568,7 @@ function renderMonitoramentoTopografico(data, selectedName){
   }
   if(list){
     list.innerHTML = lineData.length ? lineData.map(line=>`
-      <div class="monitor-small-card"><b>${monitorEscape(line.nome)}</b><span>${Number.isFinite(Number(line.medicoes)) ? fmtInt(Number(line.medicoes)) : medicoes} medições capturadas</span></div>`).join('') : '<div class="monitor-empty">Aguardando detalhes de linha vindos da fonte.</div>';
+      <div class="monitor-small-card"><b>${monitorEscape(line.nome)}</b><span>${Number.isFinite(Number(line.medicoes)) ? fmtInt(Number(line.medicoes)) : medicoes} medições | ${fmtInt(Array.isArray(line.serie) ? line.serie.length : 0)} pontos no histórico</span></div>`).join('') : '<div class="monitor-empty">Aguardando detalhes de linha vindos da fonte.</div>';
   }
   if(temporalTitle) temporalTitle.textContent = `Status temporal da obra - poço - ${selectedPoco}`;
   if(triangles){
@@ -1545,7 +1588,10 @@ async function loadMonitoramentoTopografico(){
   try{
     const res = await fetch('./monitoramento_topografico.json?cb=' + Date.now());
     if(!res.ok) throw new Error('monitoramento_topografico.json indisponível');
-    renderMonitoramentoTopografico(await res.json());
+    const data = await res.json();
+    const histRes = await fetch('./monitoramento_historico.json?cb=' + Date.now()).catch(()=>null);
+    if(histRes && histRes.ok) data.historico = await histRes.json();
+    renderMonitoramentoTopografico(data);
   }catch(e){
     if(cards) cards.innerHTML = '';
     if(list) list.innerHTML = '<div class="subtle">Monitoramento topográfico ainda não configurado.</div>';

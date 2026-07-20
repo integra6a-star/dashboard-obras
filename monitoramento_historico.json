@@ -1,0 +1,3916 @@
+{
+  "gerado_em": "2026-07-20 16:15:43",
+  "fonte": "PDFs historicos de monitoramento topografico",
+  "total_relatorios": 83,
+  "total_pocos": 4,
+  "pocos": [
+    {
+      "poco": "POSTE PV-06",
+      "linhas": [
+        {
+          "nome": "POSTE",
+          "serie": [
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 1.146,
+              "maior_mm": 2.505,
+              "amplitude_mm": 2.505,
+              "medicoes": 9
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.2,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 9
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": -0.2,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 9
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "POSTE - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "POSTE - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "POSTE - A3 PARA A1",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": -1.0
+            }
+          ],
+          "medicoes": 9
+        }
+      ],
+      "total_relatorios": 3,
+      "ultima_data": "2026-07-20"
+    },
+    {
+      "poco": "PV-04",
+      "linhas": [
+        {
+          "nome": "L1",
+          "serie": [
+            {
+              "data": "2026-05-27",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -4.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 215
+            },
+            {
+              "data": "2026-05-28",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 212
+            },
+            {
+              "data": "2026-05-29",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -3.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 216
+            },
+            {
+              "data": "2026-05-30",
+              "tipo": "variacao_mm",
+              "media_mm": 1.0,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 213
+            },
+            {
+              "data": "2026-05-31",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 207
+            },
+            {
+              "data": "2026-06-02",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 216
+            },
+            {
+              "data": "2026-06-03",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 225
+            },
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 225
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 231
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 231
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 225
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 225
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 234
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -5.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 230
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 239
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.9,
+              "menor_mm": -5.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 239
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 249
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 250
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 250
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": -1.2,
+              "menor_mm": -48.0,
+              "maior_mm": 14.0,
+              "amplitude_mm": 48.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": -1.9,
+              "menor_mm": -49.0,
+              "maior_mm": 14.0,
+              "amplitude_mm": 49.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -1.8,
+              "menor_mm": -48.0,
+              "maior_mm": 14.0,
+              "amplitude_mm": 48.0,
+              "medicoes": 247
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -1.8,
+              "menor_mm": -48.0,
+              "maior_mm": 15.0,
+              "amplitude_mm": 48.0,
+              "medicoes": 235
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -2.6,
+              "menor_mm": -48.0,
+              "maior_mm": 14.0,
+              "amplitude_mm": 48.0,
+              "medicoes": 229
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -3.0,
+              "menor_mm": -48.0,
+              "maior_mm": 14.0,
+              "amplitude_mm": 48.0,
+              "medicoes": 238
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -3.1,
+              "menor_mm": -46.0,
+              "maior_mm": 14.0,
+              "amplitude_mm": 46.0,
+              "medicoes": 235
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.282,
+              "maior_mm": 6.566,
+              "amplitude_mm": 6.566,
+              "medicoes": 92
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.282,
+              "maior_mm": 6.566,
+              "amplitude_mm": 6.566,
+              "medicoes": 98
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.281,
+              "maior_mm": 6.552,
+              "amplitude_mm": 6.552,
+              "medicoes": 125
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.281,
+              "maior_mm": 6.552,
+              "amplitude_mm": 6.552,
+              "medicoes": 116
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.281,
+              "maior_mm": 6.552,
+              "amplitude_mm": 6.552,
+              "medicoes": 107
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 98
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -2.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 71
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L1 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": -2.0
+            },
+            {
+              "nome": "L1 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 1.0
+            },
+            {
+              "nome": "L1 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 252
+        },
+        {
+          "nome": "L2",
+          "serie": [
+            {
+              "data": "2026-05-27",
+              "tipo": "variacao_mm",
+              "media_mm": -1.7,
+              "menor_mm": -10.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 10.0,
+              "medicoes": 212
+            },
+            {
+              "data": "2026-05-28",
+              "tipo": "variacao_mm",
+              "media_mm": -1.9,
+              "menor_mm": -10.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 10.0,
+              "medicoes": 211
+            },
+            {
+              "data": "2026-05-29",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 214
+            },
+            {
+              "data": "2026-05-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 211
+            },
+            {
+              "data": "2026-05-31",
+              "tipo": "variacao_mm",
+              "media_mm": -1.0,
+              "menor_mm": -7.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 205
+            },
+            {
+              "data": "2026-06-02",
+              "tipo": "variacao_mm",
+              "media_mm": -1.1,
+              "menor_mm": -7.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 214
+            },
+            {
+              "data": "2026-06-03",
+              "tipo": "variacao_mm",
+              "media_mm": -1.1,
+              "menor_mm": -7.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 222
+            },
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": -2.2,
+              "menor_mm": -8.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 222
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": -2.3,
+              "menor_mm": -8.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 229
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": -1.0,
+              "menor_mm": -5.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 230
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.9,
+              "menor_mm": -4.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 225
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": -1.3,
+              "menor_mm": -4.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 225
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": -1.2,
+              "menor_mm": -4.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 234
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": -1.3,
+              "menor_mm": -5.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": -1.0,
+              "menor_mm": -5.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": -1.0,
+              "menor_mm": -4.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": -0.8,
+              "menor_mm": -4.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 231
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": -0.8,
+              "menor_mm": -4.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": 0.6,
+              "menor_mm": -2.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 249
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.6,
+              "menor_mm": -2.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 249
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 242
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 250
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 253
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": 0.8,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 250
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 244
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 253
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": 0.6,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 253
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": 1.3,
+              "menor_mm": -2.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 254
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": 0.7,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 257
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": 0.8,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": 0.8,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": 0.8,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 246
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": 0.9,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.38,
+              "maior_mm": 6.556,
+              "amplitude_mm": 6.556,
+              "medicoes": 88
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.38,
+              "maior_mm": 6.556,
+              "amplitude_mm": 6.556,
+              "medicoes": 94
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.378,
+              "maior_mm": 6.556,
+              "amplitude_mm": 6.556,
+              "medicoes": 138
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.378,
+              "maior_mm": 6.556,
+              "amplitude_mm": 6.556,
+              "medicoes": 129
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 6.378,
+              "maior_mm": 6.556,
+              "amplitude_mm": 6.556,
+              "medicoes": 120
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 111
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": -1.7,
+              "menor_mm": -6.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 84
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L2 - A1 PARA A2",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": -6.0
+            },
+            {
+              "nome": "L2 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 1.0
+            },
+            {
+              "nome": "L2 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 257
+        },
+        {
+          "nome": "L3",
+          "serie": [
+            {
+              "data": "2026-05-27",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -3.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 213
+            },
+            {
+              "data": "2026-05-28",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 210
+            },
+            {
+              "data": "2026-05-29",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 214
+            },
+            {
+              "data": "2026-05-30",
+              "tipo": "variacao_mm",
+              "media_mm": 1.0,
+              "menor_mm": -3.0,
+              "maior_mm": 7.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 211
+            },
+            {
+              "data": "2026-05-31",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 205
+            },
+            {
+              "data": "2026-06-02",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 214
+            },
+            {
+              "data": "2026-06-03",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 223
+            },
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 223
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 229
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 227
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.8,
+              "menor_mm": -116.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 116.0,
+              "medicoes": 221
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -5.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 220
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -5.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 229
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -6.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -6.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -6.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -5.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 229
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -5.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 238
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": 1.4,
+              "menor_mm": -3.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 238
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -3.0,
+              "maior_mm": 7.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 247
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -4.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 247
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -4.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 251
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -5.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 251
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -5.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 250
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": -0.5,
+              "menor_mm": -5.0,
+              "maior_mm": 7.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": -0.5,
+              "menor_mm": -5.0,
+              "maior_mm": 7.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -5.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -5.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 255
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 245
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -5.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 240
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -5.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 249
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.8,
+              "menor_mm": -6.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 246
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.858,
+              "maior_mm": 6.193,
+              "amplitude_mm": 6.193,
+              "medicoes": 88
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.858,
+              "maior_mm": 6.193,
+              "amplitude_mm": 6.193,
+              "medicoes": 94
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.857,
+              "maior_mm": 6.195,
+              "amplitude_mm": 6.195,
+              "medicoes": 138
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.857,
+              "maior_mm": 6.195,
+              "amplitude_mm": 6.195,
+              "medicoes": 129
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.857,
+              "maior_mm": 6.195,
+              "amplitude_mm": 6.195,
+              "medicoes": 120
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 111
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 84
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L3 - A1 PARA A2",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": -3.0
+            },
+            {
+              "nome": "L3 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A3 PARA A1",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 4.0
+            },
+            {
+              "nome": "L3 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 255
+        },
+        {
+          "nome": "L4",
+          "serie": [
+            {
+              "data": "2026-05-27",
+              "tipo": "variacao_mm",
+              "media_mm": 1.7,
+              "menor_mm": -3.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 212
+            },
+            {
+              "data": "2026-05-28",
+              "tipo": "variacao_mm",
+              "media_mm": 1.8,
+              "menor_mm": -2.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 209
+            },
+            {
+              "data": "2026-05-29",
+              "tipo": "variacao_mm",
+              "media_mm": 1.9,
+              "menor_mm": -2.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 212
+            },
+            {
+              "data": "2026-05-30",
+              "tipo": "variacao_mm",
+              "media_mm": 1.3,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 209
+            },
+            {
+              "data": "2026-05-31",
+              "tipo": "variacao_mm",
+              "media_mm": 1.4,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 203
+            },
+            {
+              "data": "2026-06-02",
+              "tipo": "variacao_mm",
+              "media_mm": 1.4,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 211
+            },
+            {
+              "data": "2026-06-03",
+              "tipo": "variacao_mm",
+              "media_mm": 1.4,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 220
+            },
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": 1.6,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 220
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": 1.2,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 226
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 226
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 221
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": -0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 221
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.2,
+              "menor_mm": -3.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 230
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": -0.2,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": 0.9,
+              "menor_mm": -2.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 227
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": 0.9,
+              "menor_mm": -2.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 236
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -4.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 245
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.2,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 245
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -5.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 245
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -5.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 242
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 251
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": 0.3,
+              "menor_mm": -3.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -4.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 252
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 255
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 246
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.7,
+              "menor_mm": -5.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 243
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.98,
+              "maior_mm": 6.325,
+              "amplitude_mm": 6.325,
+              "medicoes": 87
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.98,
+              "maior_mm": 6.325,
+              "amplitude_mm": 6.325,
+              "medicoes": 93
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.98,
+              "maior_mm": 6.326,
+              "amplitude_mm": 6.326,
+              "medicoes": 138
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.98,
+              "maior_mm": 6.326,
+              "amplitude_mm": 6.326,
+              "medicoes": 129
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.98,
+              "maior_mm": 6.326,
+              "amplitude_mm": 6.326,
+              "medicoes": 120
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 1.9,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 111
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 2.0,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 84
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L4 - A1 PARA A2",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 4.0
+            },
+            {
+              "nome": "L4 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L4 - A2 PARA A3",
+              "amplitude_mm": 2.0,
+              "deslocamento_mm": -3.0
+            },
+            {
+              "nome": "L4 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L4 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 5.0
+            },
+            {
+              "nome": "L4 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 255
+        },
+        {
+          "nome": "L5",
+          "serie": [
+            {
+              "data": "2026-05-27",
+              "tipo": "variacao_mm",
+              "media_mm": -1.3,
+              "menor_mm": -5.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 120
+            },
+            {
+              "data": "2026-05-28",
+              "tipo": "variacao_mm",
+              "media_mm": -1.4,
+              "menor_mm": -5.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 126
+            },
+            {
+              "data": "2026-05-29",
+              "tipo": "variacao_mm",
+              "media_mm": -1.5,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 135
+            },
+            {
+              "data": "2026-05-30",
+              "tipo": "variacao_mm",
+              "media_mm": -1.5,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 141
+            },
+            {
+              "data": "2026-05-31",
+              "tipo": "variacao_mm",
+              "media_mm": -1.5,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 144
+            },
+            {
+              "data": "2026-06-02",
+              "tipo": "variacao_mm",
+              "media_mm": -1.5,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 153
+            },
+            {
+              "data": "2026-06-03",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 162
+            },
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 171
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 180
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 189
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 204
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": -1.6,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 213
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": -1.7,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 222
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": -1.7,
+              "menor_mm": -6.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": -0.8,
+              "menor_mm": -5.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -5.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": -1.7,
+              "menor_mm": -6.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 228
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": -1.7,
+              "menor_mm": -6.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 6.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": -2.5,
+              "menor_mm": -8.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 237
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -7.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 246
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -8.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 245
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": -0.7,
+              "menor_mm": -8.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 238
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -8.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 246
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -8.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 249
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": -0.5,
+              "menor_mm": -8.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -7.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 7.0,
+              "medicoes": 248
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -8.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 239
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -8.0,
+              "maior_mm": 6.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 239
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -9.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 239
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -9.0,
+              "maior_mm": 9.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 239
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -8.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 242
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.9,
+              "menor_mm": -9.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 230
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -9.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 224
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -9.0,
+              "maior_mm": 8.0,
+              "amplitude_mm": 9.0,
+              "medicoes": 233
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.3,
+              "menor_mm": -4.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 5.0,
+              "medicoes": 230
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.49,
+              "maior_mm": 5.941,
+              "amplitude_mm": 5.941,
+              "medicoes": 89
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.49,
+              "maior_mm": 5.941,
+              "amplitude_mm": 5.941,
+              "medicoes": 95
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.489,
+              "maior_mm": 5.944,
+              "amplitude_mm": 5.944,
+              "medicoes": 123
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.489,
+              "maior_mm": 5.944,
+              "amplitude_mm": 5.944,
+              "medicoes": 114
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.489,
+              "maior_mm": 5.943,
+              "amplitude_mm": 5.943,
+              "medicoes": 105
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": -3.1,
+              "menor_mm": -8.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 96
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": -3.1,
+              "menor_mm": -8.0,
+              "maior_mm": -1.0,
+              "amplitude_mm": 8.0,
+              "medicoes": 69
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L5 - A1 PARA A2",
+              "amplitude_mm": 2.0,
+              "deslocamento_mm": -8.0
+            },
+            {
+              "nome": "L5 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L5 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": -1.0
+            },
+            {
+              "nome": "L5 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L5 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": -1.0
+            },
+            {
+              "nome": "L5 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 249
+        },
+        {
+          "nome": "L6",
+          "serie": [
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 24
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -1.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 39
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -1.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 48
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -1.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 57
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -1.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 77
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -1.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 86
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.4,
+              "menor_mm": -2.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 95
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 113
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 122
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 134
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 148
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 151
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 169
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 173
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 173
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": 0.5,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 173
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": -5.1,
+              "menor_mm": -147.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 147.0,
+              "medicoes": 183
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": -9.4,
+              "menor_mm": -147.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 147.0,
+              "medicoes": 192
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -14.5,
+              "menor_mm": -147.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 147.0,
+              "medicoes": 204
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -16.8,
+              "menor_mm": -147.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 147.0,
+              "medicoes": 210
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -20.7,
+              "menor_mm": -147.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 147.0,
+              "medicoes": 213
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -23.8,
+              "menor_mm": -147.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 147.0,
+              "medicoes": 222
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -32.1,
+              "menor_mm": -148.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 148.0,
+              "medicoes": 219
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.68,
+              "maior_mm": 6.002,
+              "amplitude_mm": 6.002,
+              "medicoes": 94
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.68,
+              "maior_mm": 6.002,
+              "amplitude_mm": 6.002,
+              "medicoes": 100
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.777,
+              "maior_mm": 6.051,
+              "amplitude_mm": 6.051,
+              "medicoes": 105
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.777,
+              "maior_mm": 6.051,
+              "amplitude_mm": 6.051,
+              "medicoes": 96
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.777,
+              "maior_mm": 6.051,
+              "amplitude_mm": 6.051,
+              "medicoes": 87
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.6,
+              "menor_mm": -2.0,
+              "maior_mm": 4.0,
+              "amplitude_mm": 4.0,
+              "medicoes": 78
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.6,
+              "menor_mm": -2.0,
+              "maior_mm": 3.0,
+              "amplitude_mm": 3.0,
+              "medicoes": 51
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L6 - A1 PARA A2",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": -1.0
+            },
+            {
+              "nome": "L6 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L6 - A2 PARA A3",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L6 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L6 - A3 PARA A1",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 3.0
+            },
+            {
+              "nome": "L6 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 222
+        },
+        {
+          "nome": "L7",
+          "serie": [
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 15
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 18
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 36
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-07-02",
+              "tipo": "variacao_mm",
+              "media_mm": -19.6,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 49
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": -33.2,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 58
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -45.8,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 70
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -50.7,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 76
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -56.6,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 85
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -61.5,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 94
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -67.7,
+              "menor_mm": -222.0,
+              "maior_mm": 5.0,
+              "amplitude_mm": 222.0,
+              "medicoes": 109
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.133,
+              "maior_mm": 6.069,
+              "amplitude_mm": 6.069,
+              "medicoes": 93
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.133,
+              "maior_mm": 6.069,
+              "amplitude_mm": 6.069,
+              "medicoes": 99
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.128,
+              "maior_mm": 6.174,
+              "amplitude_mm": 6.174,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.128,
+              "maior_mm": 6.174,
+              "amplitude_mm": 6.174,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.128,
+              "maior_mm": 6.174,
+              "amplitude_mm": 6.174,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L7 - A3 PARA A1",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L7 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L7 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L7 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L7 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L7 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 109
+        }
+      ],
+      "total_relatorios": 42,
+      "ultima_data": "2026-07-20"
+    },
+    {
+      "poco": "PV-05",
+      "linhas": [
+        {
+          "nome": "L1",
+          "serie": [
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 22
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 31
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 40
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 49
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 58
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 61
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 70
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 79
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 97
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 106
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 115
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 115
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 124
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 124
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 136
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 139
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 148
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 157
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 157
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 166
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 171
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 175
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 163
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 172
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 181
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 178
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.72,
+              "maior_mm": 4.067,
+              "amplitude_mm": 4.067,
+              "medicoes": 178
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.72,
+              "maior_mm": 4.067,
+              "amplitude_mm": 4.067,
+              "medicoes": 178
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.72,
+              "maior_mm": 4.067,
+              "amplitude_mm": 4.067,
+              "medicoes": 184
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.72,
+              "maior_mm": 4.067,
+              "amplitude_mm": 4.067,
+              "medicoes": 184
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.72,
+              "maior_mm": 4.067,
+              "amplitude_mm": 4.067,
+              "medicoes": 184
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 193
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 200
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L1 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 200
+        },
+        {
+          "nome": "L2",
+          "serie": [
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 21
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 30
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 39
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": 0.1,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 39
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 48
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 57
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 60
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 69
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 78
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 97
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 106
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 115
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 115
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 124
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 124
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 136
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 139
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 148
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 157
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 157
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 166
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 172
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -99.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 99.0,
+              "medicoes": 175
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.6,
+              "menor_mm": -99.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 99.0,
+              "medicoes": 163
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 171
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 180
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 177
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 2.994,
+              "maior_mm": 3.977,
+              "amplitude_mm": 3.977,
+              "medicoes": 177
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 2.994,
+              "maior_mm": 3.977,
+              "amplitude_mm": 3.977,
+              "medicoes": 176
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 2.994,
+              "maior_mm": 3.977,
+              "amplitude_mm": 3.977,
+              "medicoes": 182
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 2.994,
+              "maior_mm": 3.977,
+              "amplitude_mm": 3.977,
+              "medicoes": 182
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 2.994,
+              "maior_mm": 3.977,
+              "amplitude_mm": 3.977,
+              "medicoes": 182
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 191
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 197
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L2 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 197
+        },
+        {
+          "nome": "L3",
+          "serie": [
+            {
+              "data": "2026-06-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 21
+            },
+            {
+              "data": "2026-06-05",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 32
+            },
+            {
+              "data": "2026-06-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 41
+            },
+            {
+              "data": "2026-06-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 41
+            },
+            {
+              "data": "2026-06-09",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 50
+            },
+            {
+              "data": "2026-06-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 59
+            },
+            {
+              "data": "2026-06-11",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 62
+            },
+            {
+              "data": "2026-06-12",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 71
+            },
+            {
+              "data": "2026-06-13",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 80
+            },
+            {
+              "data": "2026-06-16",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 98
+            },
+            {
+              "data": "2026-06-17",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 107
+            },
+            {
+              "data": "2026-06-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 116
+            },
+            {
+              "data": "2026-06-19",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 116
+            },
+            {
+              "data": "2026-06-20",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 125
+            },
+            {
+              "data": "2026-06-22",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 125
+            },
+            {
+              "data": "2026-06-23",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 137
+            },
+            {
+              "data": "2026-06-24",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 140
+            },
+            {
+              "data": "2026-06-26",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 149
+            },
+            {
+              "data": "2026-06-27",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 158
+            },
+            {
+              "data": "2026-06-30",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 158
+            },
+            {
+              "data": "2026-07-01",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 167
+            },
+            {
+              "data": "2026-07-03",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 173
+            },
+            {
+              "data": "2026-07-04",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 176
+            },
+            {
+              "data": "2026-07-06",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 162
+            },
+            {
+              "data": "2026-07-07",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 171
+            },
+            {
+              "data": "2026-07-08",
+              "tipo": "variacao_mm",
+              "media_mm": -0.1,
+              "menor_mm": -1.0,
+              "maior_mm": 1.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 180
+            },
+            {
+              "data": "2026-07-10",
+              "tipo": "variacao_mm",
+              "media_mm": -0.4,
+              "menor_mm": -2.0,
+              "maior_mm": 2.0,
+              "amplitude_mm": 2.0,
+              "medicoes": 177
+            },
+            {
+              "data": "2026-07-13",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.3,
+              "maior_mm": 3.714,
+              "amplitude_mm": 3.714,
+              "medicoes": 177
+            },
+            {
+              "data": "2026-07-14",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.3,
+              "maior_mm": 3.714,
+              "amplitude_mm": 3.714,
+              "medicoes": 177
+            },
+            {
+              "data": "2026-07-15",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.3,
+              "maior_mm": 3.714,
+              "amplitude_mm": 3.714,
+              "medicoes": 183
+            },
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.3,
+              "maior_mm": 3.713,
+              "amplitude_mm": 3.713,
+              "medicoes": 183
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 3.3,
+              "maior_mm": 3.713,
+              "amplitude_mm": 3.713,
+              "medicoes": 183
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 192
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 199
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L3 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A3 PARA A1",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 199
+        }
+      ],
+      "total_relatorios": 34,
+      "ultima_data": "2026-07-20"
+    },
+    {
+      "poco": "PV-06",
+      "linhas": [
+        {
+          "nome": "L1",
+          "serie": [
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.346,
+              "maior_mm": 6.286,
+              "amplitude_mm": 6.286,
+              "medicoes": 9
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.346,
+              "maior_mm": 6.286,
+              "amplitude_mm": 6.286,
+              "medicoes": 18
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 27
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 36
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L1 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L1 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 36
+        },
+        {
+          "nome": "L2",
+          "serie": [
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.926,
+              "maior_mm": 6.177,
+              "amplitude_mm": 6.177,
+              "medicoes": 9
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.926,
+              "maior_mm": 6.177,
+              "amplitude_mm": 6.177,
+              "medicoes": 18
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 27
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 36
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L2 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L2 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 36
+        },
+        {
+          "nome": "L3",
+          "serie": [
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 4.947,
+              "maior_mm": 5.788,
+              "amplitude_mm": 5.788,
+              "medicoes": 9
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 4.947,
+              "maior_mm": 5.788,
+              "amplitude_mm": 5.788,
+              "medicoes": 18
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 27
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": 0.0,
+              "menor_mm": 0.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 0,
+              "medicoes": 36
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L3 - A1 PARA A2",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L3 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 36
+        },
+        {
+          "nome": "L4",
+          "serie": [
+            {
+              "data": "2026-07-16",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.413,
+              "maior_mm": 5.754,
+              "amplitude_mm": 5.754,
+              "medicoes": 9
+            },
+            {
+              "data": "2026-07-17",
+              "tipo": "absoluto",
+              "media_mm": null,
+              "menor_mm": 5.413,
+              "maior_mm": 5.754,
+              "amplitude_mm": 5.754,
+              "medicoes": 18
+            },
+            {
+              "data": "2026-07-18",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 27
+            },
+            {
+              "data": "2026-07-20",
+              "tipo": "variacao_mm",
+              "media_mm": -0.0,
+              "menor_mm": -1.0,
+              "maior_mm": 0.0,
+              "amplitude_mm": 1.0,
+              "medicoes": 36
+            }
+          ],
+          "trechos": [
+            {
+              "nome": "L4 - A1 PARA A2",
+              "amplitude_mm": 1.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L4 - A2 PARA A3",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            },
+            {
+              "nome": "L4 - A3 PARA A1",
+              "amplitude_mm": 0.0,
+              "deslocamento_mm": 0.0
+            }
+          ],
+          "medicoes": 36
+        }
+      ],
+      "total_relatorios": 4,
+      "ultima_data": "2026-07-20"
+    }
+  ],
+  "erros": []
+}
