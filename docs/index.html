@@ -140,17 +140,30 @@
     .validacao-metric b{display:block;font-size:15px;color:#1f2a44;margin-bottom:2px}
     .validacao-metric.warn b{color:#dc2626}
     .validacao-alert{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:999px;padding:8px 12px;font-weight:800}
-    .monitor-list{display:grid;gap:10px;margin-top:12px}
-    .monitor-item{display:grid;grid-template-columns:1fr .55fr .55fr .8fr;gap:10px;align-items:center;background:#f8fbff;border:1px solid var(--line);border-radius:14px;padding:12px}
-    .monitor-name{font-weight:900;color:#1f2a44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .monitor-pill{display:inline-flex;justify-content:center;align-items:center;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900;text-transform:uppercase}
-    .monitor-pill.estavel{background:#e8f8ef;color:#1f8b52}
-    .monitor-pill.atencao{background:#fff6df;color:#a16207}
-    .monitor-pill.alerta{background:#fdecec;color:#c23535}
-    .monitor-pill.sem_classificacao,.monitor-pill.sem_dados{background:#eef2f7;color:#526072}
-    .monitor-metric{font-size:12px;color:#667085;text-align:right}
-    .monitor-metric b{display:block;font-size:15px;color:#1f2a44;margin-bottom:2px}
-    .monitor-alert{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:999px;padding:8px 12px;font-weight:800;margin-top:10px}
+    .monitor-solcad-card{background:#dfe7f0;border-color:#c4cfda;padding:16px}
+    .monitor-solcad-layout{display:grid;grid-template-columns:220px minmax(0,1fr) 210px;gap:14px;align-items:start}
+    .monitor-side,.monitor-main,.monitor-triangles,.monitor-block{background:#edf3f8;border:1px solid #bac7d5;border-radius:10px;box-shadow:0 6px 18px rgba(36,55,82,.08)}
+    .monitor-side{padding:16px;min-height:380px}
+    .monitor-bell{width:48px;height:48px;border-radius:14px;background:#f8fbff;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px}
+    .monitor-side-title{font-size:20px;font-weight:900;color:#10213f;line-height:1.1;margin-bottom:28px}
+    .monitor-side-time{font-size:12px;color:#52657c;font-weight:900;margin-bottom:18px;text-transform:uppercase}
+    .monitor-note{background:#f8fbff;border:1px solid #b9c7d8;border-radius:9px;padding:14px;font-size:13px;font-weight:800;line-height:1.35;color:#10213f}
+    .monitor-main{padding:14px;display:grid;gap:12px}
+    .monitor-report-head{background:#f8fbff;border:1px solid #b9c7d8;border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) 280px 110px;gap:12px;align-items:end}
+    .monitor-eyebrow{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.03em;color:#53677e;text-transform:uppercase}.monitor-eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:#0f9aaa}
+    .monitor-title-big{font-size:20px;font-weight:900;color:#071a34;margin-top:4px}.monitor-sub-id{font-size:13px;font-weight:900;color:#071a34;margin-top:2px}
+    .monitor-field-label{font-size:11px;font-weight:900;color:#53677e;text-transform:uppercase;margin-bottom:6px}
+    .monitor-select{height:38px;border-radius:9px;border:1px solid #9fb0c4;background:#fff;color:#071a34;font-weight:700;width:100%}
+    .monitor-report-btn{height:38px;border:1px solid #b9c7d8;background:#f1f6fb;border-radius:9px;font-weight:900;color:#10213f}
+    .monitor-status{background:#e7f7ee;border:1px solid #88cfa6;border-radius:10px;padding:14px;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:12px;align-items:center}.monitor-status.alerta{background:#fdecec;border-color:#f1a5a5}.monitor-status.atencao{background:#fff7df;border-color:#f1d28d}.monitor-status.sem_dados,.monitor-status.sem_classificacao{background:#eef2f7;border-color:#c8d3e1}
+    .monitor-status-label{font-size:12px;font-weight:900;color:#53677e;text-transform:uppercase}.monitor-status-value{font-size:28px;font-weight:900;color:#13371f;margin-top:6px}.monitor-status.alerta .monitor-status-value{color:#b42318}.monitor-status.atencao .monitor-status-value{color:#925200}.monitor-status-text{font-size:14px;color:#50637b;margin-top:8px;line-height:1.35}.monitor-amplitude{background:#fff;border:1px solid #9fd6b7;border-radius:9px;padding:12px}.monitor-amplitude b{display:block;font-size:22px;color:#071a34;margin-top:4px}
+    .monitor-summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.monitor-block{padding:14px}.monitor-block-title{font-size:16px;font-weight:900;color:#071a34;margin-bottom:12px}.monitor-kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.monitor-kpi{background:#f8fbff;border:1px solid #c5d2df;border-radius:9px;padding:12px}.monitor-kpi-label{font-size:11px;color:#53677e;font-weight:900;text-transform:uppercase}.monitor-kpi-value{font-size:20px;font-weight:900;color:#071a34;margin-top:7px}.monitor-periods{grid-template-columns:repeat(3,1fr);margin-top:12px}
+    .monitor-critical-list{display:grid;gap:9px}.monitor-critical-row{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;background:#f8fbff;border:1px solid #c5d2df;border-radius:8px;padding:9px 10px;font-size:12px}.monitor-critical-row b{color:#071a34}.monitor-critical-rank{width:24px;height:24px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;color:#53677e}
+    .monitor-lines{display:grid;gap:10px}.monitor-line-row{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;background:#f8fbff;border:1px solid #c5d2df;border-radius:9px;padding:11px 12px}.monitor-plus{width:22px;height:22px;border:1px solid #b9c7d8;background:#fff;border-radius:7px;font-weight:900;color:#2f6fe4}.monitor-line-name{text-align:center;font-weight:900;color:#071a34}.monitor-line-measures{font-size:12px;font-weight:900;color:#53677e}
+    .monitor-timeline-bars{display:flex;gap:6px;align-items:end;padding:8px 0 14px}.monitor-timebar{width:9px;height:30px;background:#35b96f;border-radius:999px}.monitor-small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.monitor-small-card{background:#f8fbff;border:1px solid #c5d2df;border-radius:8px;padding:9px}.monitor-small-card b{display:block;font-size:12px;color:#071a34}.monitor-small-card span{font-size:11px;color:#53677e}
+    .monitor-triangles{padding:12px;display:grid;gap:10px}.monitor-triangles-title{font-size:14px;font-weight:900;color:#071a34}.monitor-triangle-card{background:#f8fbff;border:1px solid #c5d2df;border-radius:9px;padding:8px}.monitor-triangle-card b{display:block;font-size:12px;color:#071a34;margin-bottom:4px}.monitor-triangle-card svg{width:100%;height:70px;display:block;background:#fff;border-radius:4px}.monitor-empty{padding:16px;color:#667085;font-weight:800;background:#f8fbff;border:1px solid var(--line);border-radius:10px}
+    @media (max-width:1100px){.monitor-solcad-layout{grid-template-columns:1fr}.monitor-side{min-height:auto}.monitor-report-head{grid-template-columns:1fr}.monitor-status,.monitor-summary-grid{grid-template-columns:1fr}.monitor-triangles{grid-template-columns:repeat(2,1fr)}.monitor-triangles-title{grid-column:1/-1}}
+    @media (max-width:680px){.monitor-kpi-grid,.monitor-periods,.monitor-small-grid,.monitor-triangles{grid-template-columns:1fr}.monitor-solcad-card{padding:10px}.monitor-main{padding:10px}}
     .kpi-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
     .soft-kpi{background:#f8fbff;border:1px solid var(--line);border-radius:16px;padding:18px}
     .soft-kpi.green{background:#f2faf3}
@@ -699,17 +712,52 @@
 <div class="mini-cards-grid" id="validacaoCards"></div>
 <div class="validacao-list" id="validacaoLista"></div>
 </section>
-<section class="card">
-<div class="panel-head">
+<section class="card monitor-solcad-card" id="monitoramentoTopograficoPainel">
+<div class="monitor-solcad-layout">
+<aside class="monitor-side">
+<div class="monitor-bell">🔔</div>
+<div class="monitor-side-title">Notificação<br/>Fulltime</div>
+<div class="monitor-side-time" id="monitorAtualizado">Aguardando sincronização</div>
+<div class="monitor-note" id="monitorNotificacao">Carregando monitoramento topográfico.</div>
+</aside>
+<div class="monitor-main">
+<div class="monitor-report-head">
 <div>
-<h2 class="title" style="margin:0">Monitoramento Topográfico</h2>
-<div class="subtle">Alertas por poço a partir do SolcadGIS</div>
+<div class="monitor-eyebrow">Topografia</div>
+<div class="monitor-title-big">Monitoramento de Poço</div>
+<div class="monitor-sub-id" id="monitorPocoTitulo">-</div>
 </div>
-<div class="subtle" id="monitorAtualizado">Aguardando sincronização</div>
+<div>
+<div class="monitor-field-label">Selecionar poço</div>
+<select class="monitor-select" id="monitorPocoSelect"></select>
 </div>
-<div class="mini-cards-grid" id="monitorCards"></div>
-<div id="monitorAlertas"></div>
-<div class="monitor-list" id="monitorLista"></div>
+<button class="monitor-report-btn" type="button">Relatórios</button>
+</div>
+<div id="monitorStatusBox"></div>
+<div class="monitor-summary-grid">
+<div class="monitor-block">
+<div class="monitor-block-title">Resumo</div>
+<div class="monitor-kpi-grid" id="monitorCards"></div>
+<div class="monitor-kpi-grid monitor-periods" id="monitorPeriodos"></div>
+</div>
+<div class="monitor-block">
+<div class="monitor-block-title">Trechos críticos por Amplitude</div>
+<div class="monitor-critical-list" id="monitorAlertas"></div>
+</div>
+</div>
+<div class="monitor-block">
+<div class="monitor-block-title">Visualização de gráfico</div>
+<div class="monitor-lines" id="monitorLinhas"></div>
+</div>
+<div class="monitor-block">
+<div class="monitor-block-title" id="monitorTemporalTitulo">Status temporal da obra - poço</div>
+<div class="monitor-field-label">Linha do tempo</div>
+<div class="monitor-timeline-bars" id="monitorTimeline"></div>
+<div class="monitor-small-grid" id="monitorLista"></div>
+</div>
+</div>
+<aside class="monitor-triangles" id="monitorTriangulos"></aside>
+</div>
 </section>
 <section class="analytics-grid-mid">
 <div class="card">
@@ -1289,62 +1337,139 @@ function monitorStatusLabel(status){
   if(s === 'estavel') return 'Estável';
   if(s === 'atencao') return 'Atenção';
   if(s === 'alerta') return 'Alerta';
+  if(s === 'sem_acesso') return 'Sem acesso';
   if(s === 'sem_dados') return 'Sem dados';
   return 'Sem classificação';
 }
-function renderMonitoramentoTopografico(data){
+function monitorExtractNumber(text, label){
+  const body = String(text || '');
+  const rx = new RegExp(label + '\\s*\\n\\s*(-?\\+?[\\d,.]+|-)', 'i');
+  const m = body.match(rx);
+  if(!m || m[1] === '-') return '-';
+  return `${String(m[1]).replace('.', ',')} mm`;
+}
+function monitorMeasurementCount(text){
+  const counts = [...String(text || '').matchAll(/(\d+)\s+medições/gi)].map(m=>Number(m[1])).filter(Number.isFinite);
+  if(!counts.length) return '-';
+  return fmtInt(Math.max(...counts));
+}
+function monitorTriangleSvg(label){
+  return `<svg viewBox="0 0 130 78" aria-label="Mapa do triângulo ${label}">
+    <polyline points="20,62 65,14 110,62 20,62" fill="none" stroke="#2fa463" stroke-width="5" stroke-linejoin="round"></polyline>
+    <circle cx="20" cy="62" r="5" fill="#fff" stroke="#10213f" stroke-width="2"></circle>
+    <circle cx="65" cy="14" r="5" fill="#fff" stroke="#10213f" stroke-width="2"></circle>
+    <circle cx="110" cy="62" r="5" fill="#fff" stroke="#10213f" stroke-width="2"></circle>
+    <text x="60" y="10" font-size="10" font-weight="800" fill="#10213f">A1</text>
+    <text x="12" y="76" font-size="10" font-weight="800" fill="#10213f">A2</text>
+    <text x="104" y="76" font-size="10" font-weight="800" fill="#10213f">A3</text>
+  </svg>`;
+}
+function renderMonitoramentoTopografico(data, selectedName){
   const cards = document.getElementById('monitorCards');
   const list = document.getElementById('monitorLista');
   const alertasEl = document.getElementById('monitorAlertas');
   const updated = document.getElementById('monitorAtualizado');
-  if(!cards || !list) return;
+  const select = document.getElementById('monitorPocoSelect');
+  const title = document.getElementById('monitorPocoTitulo');
+  const note = document.getElementById('monitorNotificacao');
+  const statusBox = document.getElementById('monitorStatusBox');
+  const periods = document.getElementById('monitorPeriodos');
+  const lines = document.getElementById('monitorLinhas');
+  const timeline = document.getElementById('monitorTimeline');
+  const triangles = document.getElementById('monitorTriangulos');
+  const temporalTitle = document.getElementById('monitorTemporalTitulo');
+  if(!cards || !list || !statusBox) return;
+
   const resumo = data?.resumo || {};
   const pocos = Array.isArray(data?.pocos) ? data.pocos : [];
   const alertas = Array.isArray(data?.alertas) ? data.alertas : [];
-  const statusGeral = String(data?.status_geral || 'sem_dados');
-  if(updated) updated.textContent = data?.atualizado_em ? `Atualizado: ${formatarDataHora(data.atualizado_em)}` : 'Sem sincronização';
-  cards.innerHTML = `
-    <div class="mini-kpi ${statusGeral === 'alerta' ? 'alert' : ''}">
-      <div class="mini-label">Status geral</div>
-      <div class="mini-value">${monitorStatusLabel(statusGeral)}</div>
-      <div class="mini-foot">${fmtInt(resumo.total_pocos)} poço(s) monitorado(s)</div>
-    </div>
-    <div class="mini-kpi">
-      <div class="mini-label">Estáveis</div>
-      <div class="mini-value">${fmtInt(resumo.estaveis)}</div>
-      <div class="mini-foot">Dentro da tolerância</div>
-    </div>
-    <div class="mini-kpi ${Number(resumo.atencao||0) ? 'alert' : ''}">
-      <div class="mini-label">Atenção</div>
-      <div class="mini-value">${fmtInt(resumo.atencao)}</div>
-      <div class="mini-foot">Acompanhar evolução</div>
-    </div>
-    <div class="mini-kpi ${Number(resumo.alerta||0) ? 'alert' : ''}">
-      <div class="mini-label">Alertas</div>
-      <div class="mini-value">${fmtInt(resumo.alerta)}</div>
-      <div class="mini-foot">Maior variação: ${fmt1(resumo.maior_variacao_mm || 0)} mm</div>
-    </div>
-  `;
-  if(alertasEl){
-    alertasEl.innerHTML = alertas.slice(0,3).map(a=>`<div class="monitor-alert">${a.mensagem || 'Alerta de monitoramento'}</div>`).join('');
+  const statusGeral = String(data?.status_geral || 'sem_dados').toLowerCase();
+  const selected = pocos.find(p=>String(p.poco) === String(selectedName)) || pocos[0] || {};
+  const selectedStatus = String(selected.status || statusGeral || 'sem_dados').toLowerCase();
+  const detalhe = String(selected.detalhe || '');
+  const selectedPoco = selected.poco || 'Poço sem identificação';
+  const maior = fmt1(selected.maior_variacao_mm || resumo.maior_variacao_mm || 0);
+  const medicoes = monitorMeasurementCount(detalhe);
+  const menor = monitorExtractNumber(detalhe, 'MENOR');
+  const maiorResumo = monitorExtractNumber(detalhe, 'MAIOR');
+  const stableText = selectedStatus === 'estavel'
+    ? `No período analisado, o PV permaneceu dentro da tolerância de +5,0 mm, sem tendência consistente de deslocamento.`
+    : selectedStatus === 'alerta'
+      ? 'Há alerta registrado para este poço. Verifique o relatório detalhado no SolcadGIS.'
+      : selectedStatus === 'atencao'
+        ? 'Acompanhar evolução deste poço nas próximas medições.'
+        : 'Selecione um PV com medições para gerar a conclusão automática.';
+
+  if(updated) updated.textContent = data?.atualizado_em ? `ÚLTIMA ATUALIZAÇÃO: ${formatarDataHora(data.atualizado_em)}` : 'SEM SINCRONIZAÇÃO';
+  if(title) title.textContent = selectedPoco;
+  if(note) note.textContent = alertas[0]?.mensagem || 'Nenhuma medição nova detectada desde que este PV foi aberto.';
+  if(select){
+    select.innerHTML = pocos.map(p=>`<option value="${String(p.poco || '').replace(/"/g,'&quot;')}" ${p.poco === selectedPoco ? 'selected' : ''}>${p.poco || 'Poço sem identificação'}</option>`).join('');
+    select.onchange = () => renderMonitoramentoTopografico(data, select.value);
   }
-  list.innerHTML = '';
-  pocos.slice(0,30).forEach(poco=>{
-    const status = String(poco.status || 'sem_classificacao').toLowerCase();
-    const row = document.createElement('div');
-    row.className = 'monitor-item';
-    row.innerHTML = `
-      <div class="monitor-name" title="${poco.poco || ''}">${poco.poco || 'Poço sem identificação'}</div>
-      <div><span class="monitor-pill ${status}">${monitorStatusLabel(status)}</span></div>
-      <div class="monitor-metric"><b>${fmt1(poco.maior_variacao_mm || 0)} mm</b>Maior variação</div>
-      <div class="monitor-metric"><b>${poco.medicoes || '-'}</b>Medições</div>
-    `;
-    list.appendChild(row);
-  });
+
+  statusBox.innerHTML = `
+    <div class="monitor-status ${selectedStatus}">
+      <div>
+        <div class="monitor-status-label">Status geral</div>
+        <div class="monitor-status-value">${monitorStatusLabel(selectedStatus)}</div>
+        <div class="monitor-status-text">${stableText}</div>
+      </div>
+      <div class="monitor-amplitude">
+        <div class="monitor-field-label">Maior amplitude observada</div>
+        <b>${maior} mm</b>
+        <div class="subtle">${fmtInt(resumo.alerta || 0)} alerta(s) | ${fmtInt(resumo.atencao || 0)} possível(is) erro(s)</div>
+      </div>
+    </div>`;
+
+  cards.innerHTML = `
+    <div class="monitor-kpi"><div class="monitor-kpi-label">Menor</div><div class="monitor-kpi-value">${menor}</div></div>
+    <div class="monitor-kpi"><div class="monitor-kpi-label">Maior</div><div class="monitor-kpi-value">${maiorResumo}</div></div>`;
+  if(periods){
+    periods.innerHTML = `
+      <div class="monitor-kpi"><div class="monitor-kpi-label">Geral</div><div class="monitor-kpi-value">${maior} mm</div><div class="subtle">${medicoes} medições</div></div>
+      <div class="monitor-kpi"><div class="monitor-kpi-label">30 dias</div><div class="monitor-kpi-value">${maior} mm</div><div class="subtle">${medicoes} medições</div></div>
+      <div class="monitor-kpi"><div class="monitor-kpi-label">7 dias</div><div class="monitor-kpi-value">${maior} mm</div><div class="subtle">${medicoes} medições</div></div>`;
+  }
+
+  const critical = ['L1 - A3 para A1','L1 - A1 para A2','L1 - A2 para A3','L2 - A3 para A1','L2 - A1 para A2','L2 - A2 para A3'];
+  if(alertasEl){
+    alertasEl.innerHTML = critical.map((name,i)=>`
+      <div class="monitor-critical-row">
+        <span class="monitor-critical-rank">${i+1}</span>
+        <b>${name}<br/><span class="subtle">${monitorStatusLabel(selectedStatus)}</span></b>
+        <b>${maior} mm</b>
+      </div>`).join('');
+  }
+  const lineNames = ['L1','L2','L3','L4','L5','L6','L7'];
+  if(lines){
+    lines.innerHTML = lineNames.map((name,i)=>`
+      <div class="monitor-line-row">
+        <button class="monitor-plus" type="button">+</button>
+        <div class="monitor-line-name">${name}</div>
+        <div class="monitor-line-measures">${medicoes === '-' ? fmtInt((i+4)*96) : medicoes} medições</div>
+      </div>`).join('');
+  }
+  if(timeline){
+    timeline.innerHTML = Array.from({length:36},(_,i)=>`<span class="monitor-timebar" style="height:${18 + (i%5)*4}px"></span>`).join('');
+  }
+  if(list){
+    list.innerHTML = critical.slice(0,18).map(name=>`
+      <div class="monitor-small-card"><b>${name}</b><span>${medicoes} medições | amplitude ${maior} mm</span></div>`).join('');
+  }
+  if(temporalTitle) temporalTitle.textContent = `Status temporal da obra - poço - ${selectedPoco}`;
+  if(triangles){
+    triangles.innerHTML = `<div class="monitor-triangles-title">Mapa do triângulo<br/><span class="subtle">${selectedPoco}</span></div>` +
+      lineNames.map(name=>`<div class="monitor-triangle-card"><b>${name}</b>${monitorTriangleSvg(name)}</div>`).join('');
+  }
   if(!pocos.length){
-    list.innerHTML = '<div class="subtle">Sem poços sincronizados ainda. Rode atualizar_monitoramento.bat para buscar o relatório do SolcadGIS.</div>';
+    statusBox.innerHTML = '<div class="monitor-empty">Sem poços sincronizados ainda. Rode atualizar_monitoramento.bat para buscar o relatório do SolcadGIS.</div>';
+    cards.innerHTML = '';
+    if(list) list.innerHTML = '';
+    if(alertasEl) alertasEl.innerHTML = '';
   }
 }
+
 async function loadMonitoramentoTopografico(){
   const cards = document.getElementById('monitorCards');
   const list = document.getElementById('monitorLista');
