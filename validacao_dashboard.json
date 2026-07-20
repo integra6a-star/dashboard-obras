@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-07-20 07:34:49",
+  "atualizado_em": "2026-07-20 09:35:39",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
     "dashboard_executado": 20043.83,
-    "mapa_executado": 19288.36,
-    "diferenca_base_mapa": 755.47,
+    "mapa_executado": 19375.72,
+    "diferenca_base_mapa": 668.11,
     "saldo_total": 20043.83
   },
   "pds": {
@@ -44,7 +44,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 755.47 m",
+    "Diferença total entre EAP Produzido e mapa: 668.11 m",
     "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -67,16 +67,6 @@
       "saldo": 15.8,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "Interligação Água Boa",
-      "planejado": 425.0,
-      "executado_base": 201.71,
-      "executado_mapa": 115.04,
-      "diferenca_base_mapa": 86.67,
-      "saldo": 223.29,
-      "linhas_base": 2,
-      "linhas_mapa": 4
     },
     {
       "obra": "RCE São Lucas",
@@ -207,6 +197,16 @@
       "saldo": 16.7,
       "linhas_base": 2,
       "linhas_mapa": 1
+    },
+    {
+      "obra": "Interligação Água Boa",
+      "planejado": 425.0,
+      "executado_base": 201.71,
+      "executado_mapa": 202.4,
+      "diferenca_base_mapa": -0.69,
+      "saldo": 223.29,
+      "linhas_base": 2,
+      "linhas_mapa": 10
     }
   ],
   "saldo_por_obra": [
@@ -454,11 +454,11 @@
       "obra": "Interligação Água Boa",
       "planejado": 425.0,
       "executado_base": 201.71,
-      "executado_mapa": 115.04,
-      "diferenca_base_mapa": 86.67,
+      "executado_mapa": 202.4,
+      "diferenca_base_mapa": -0.69,
       "saldo": 223.29,
       "linhas_base": 2,
-      "linhas_mapa": 4
+      "linhas_mapa": 10
     },
     {
       "obra": "RCE RUA TERRA SEM MALES",
@@ -821,8 +821,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 105.5,
-      "modificado": "2026-07-20 07:34:41"
+      "tamanho_kb": 106.1,
+      "modificado": "2026-07-20 09:35:23"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",

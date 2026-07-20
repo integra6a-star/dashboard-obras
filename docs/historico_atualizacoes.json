@@ -774,5 +774,21 @@
     "diferenca": 755.47,
     "pds_hoje": 16,
     "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-20 09:34:02",
+    "base_executado": 20043.83,
+    "mapa_executado": 19288.36,
+    "diferenca": 755.47,
+    "pds_hoje": 16,
+    "alertas": 2
+  },
+  {
+    "atualizado_em": "2026-07-20 09:35:39",
+    "base_executado": 20043.83,
+    "mapa_executado": 19375.72,
+    "diferenca": 668.11,
+    "pds_hoje": 16,
+    "alertas": 2
   }
 ]
