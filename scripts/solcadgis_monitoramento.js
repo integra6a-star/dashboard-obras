@@ -11,12 +11,23 @@ const path = require("path");
 
 let chromium;
 try {
-  ({ chromium } = require("playwright"));
+  const runtimeModules = "C:\\Users\\micro\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules";
+  if (!process.env.NODE_PATH) {
+    process.env.NODE_PATH = runtimeModules;
+  } else if (!process.env.NODE_PATH.includes(runtimeModules)) {
+    process.env.NODE_PATH += path.delimiter + runtimeModules;
+  }
+  require("module").Module._initPaths();
+  try {
+    ({ chromium } = require("playwright"));
+  } catch (_) {
+    ({ chromium } = require(path.join(runtimeModules, "playwright")));
+  }
 } catch (error) {
-  console.error("Playwright não encontrado. Verifique NODE_PATH no atualizar_monitoramento.bat.");
+  console.error("Playwright não encontrado no runtime do Codex.");
+  console.error(error.message || error);
   process.exit(1);
 }
-
 const ROOT = path.resolve(__dirname, "..");
 const PROFILE_DIR = path.join(ROOT, ".solcadgis-profile");
 const DOWNLOAD_DIR = path.join(ROOT, ".solcadgis-downloads");
