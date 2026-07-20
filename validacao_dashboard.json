@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-07-20 07:27:58",
+  "atualizado_em": "2026-07-20 07:34:49",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20043.83,
     "dashboard_executado": 20043.83,
-    "mapa_executado": 19226.31,
-    "diferenca_base_mapa": 817.52,
+    "mapa_executado": 19288.36,
+    "diferenca_base_mapa": 755.47,
     "saldo_total": 20043.83
   },
   "pds": {
@@ -44,7 +44,7 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 817.52 m",
+    "Diferença total entre EAP Produzido e mapa: 755.47 m",
     "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
@@ -99,16 +99,6 @@
       "linhas_mapa": 15
     },
     {
-      "obra": "INTERL. RUA AYRTON SENNA",
-      "planejado": 59.5,
-      "executado_base": 68.2,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 68.2,
-      "saldo": -8.7,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE TERRA PROMETIDA",
       "planejado": 382.5,
       "executado_base": 68.0,
@@ -157,6 +147,16 @@
       "saldo": -77.34,
       "linhas_base": 4,
       "linhas_mapa": 11
+    },
+    {
+      "obra": "INTERL. RUA AYRTON SENNA",
+      "planejado": 59.5,
+      "executado_base": 68.2,
+      "executado_mapa": 62.05,
+      "diferenca_base_mapa": 6.15,
+      "saldo": -8.7,
+      "linhas_base": 2,
+      "linhas_mapa": 2
     },
     {
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
@@ -744,11 +744,11 @@
       "obra": "INTERL. RUA AYRTON SENNA",
       "planejado": 59.5,
       "executado_base": 68.2,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 68.2,
+      "executado_mapa": 62.05,
+      "diferenca_base_mapa": 6.15,
       "saldo": -8.7,
       "linhas_base": 2,
-      "linhas_mapa": 0
+      "linhas_mapa": 2
     },
     {
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
@@ -821,8 +821,8 @@
     {
       "arquivo": "planilha_base_mapa.xlsx",
       "existe": true,
-      "tamanho_kb": 104.7,
-      "modificado": "2026-07-20 07:27:49"
+      "tamanho_kb": 105.5,
+      "modificado": "2026-07-20 07:34:41"
     },
     {
       "arquivo": "pds_word_completo_preenchido(2).xlsx",

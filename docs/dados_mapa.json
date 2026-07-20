@@ -195,6 +195,13 @@
       "tipo": "RCE",
       "subtitulo": "Base real do shape enviado em 20/07/2026: 10 pontos e 8 trechos.",
       "ativa": "SIM"
+    },
+    {
+      "obra_id": "interl_rua_ayrton_senna",
+      "nome_obra": "INTERL. RUA AYRTON SENNA",
+      "tipo": "INTERL",
+      "subtitulo": "As built INT Ayrton Senna enviado em 20/07/2026: PIE-01 ao PI-02, 3 pontos, 2 trechos em VCA, PVC DN200. Extensao total no perfil: 62,05 m.",
+      "ativa": "SIM"
     }
   ],
   "pontos": [
@@ -7239,6 +7246,48 @@
       "cota_fundo": 779.251,
       "profundidade_m": 3.31,
       "observacao": "Base substituída/adicionada pelo shape enviado em 20/07/2026: RCE Elias Sleiman."
+    },
+    {
+      "obra_id": "interl_rua_ayrton_senna",
+      "tipo_ponto": "PI",
+      "ponto_id": "AS-PIE-01",
+      "nome_ponto": "PIE-01",
+      "coord_n": 7397669.226,
+      "coord_e": 358321.476,
+      "latitude": -23.525061,
+      "longitude": -46.3878118,
+      "cota_tampa": 798.56,
+      "cota_fundo": 796.98,
+      "profundidade_m": 1.58,
+      "observacao": "As built INT Ayrton Senna enviado em 20/07/2026: PIE-01 ao PI-02, 3 pontos, 2 trechos em VCA, PVC DN200."
+    },
+    {
+      "obra_id": "interl_rua_ayrton_senna",
+      "tipo_ponto": "PI",
+      "ponto_id": "AS-PI-01",
+      "nome_ponto": "PI-01",
+      "coord_n": 7397708.236,
+      "coord_e": 358282.877,
+      "latitude": -23.5247053,
+      "longitude": -46.3881861,
+      "cota_tampa": 800.347,
+      "cota_fundo": 798.687,
+      "profundidade_m": 1.66,
+      "observacao": "As built INT Ayrton Senna enviado em 20/07/2026: PIE-01 ao PI-02, 3 pontos, 2 trechos em VCA, PVC DN200."
+    },
+    {
+      "obra_id": "interl_rua_ayrton_senna",
+      "tipo_ponto": "PI",
+      "ponto_id": "AS-PI-02",
+      "nome_ponto": "PI-02",
+      "coord_n": 7397706.339,
+      "coord_e": 358275.959,
+      "latitude": -23.5247218,
+      "longitude": -46.388254,
+      "cota_tampa": 799.735,
+      "cota_fundo": 798.765,
+      "profundidade_m": 0.97,
+      "observacao": "As built INT Ayrton Senna enviado em 20/07/2026: PIE-01 ao PI-02, 3 pontos, 2 trechos em VCA, PVC DN200."
     }
   ],
   "trechos": [
@@ -17501,6 +17550,46 @@
       "lon_inicio": -46.3837632,
       "lat_fim": -23.5300372,
       "lon_fim": -46.3838928
+    },
+    {
+      "obra_id": "interl_rua_ayrton_senna",
+      "trecho_id": "AS-001",
+      "trecho_nome": "PIE-01 - PI-01",
+      "pv_inicio": "PIE-01",
+      "pv_fim": "PI-01",
+      "material": "PVC",
+      "dn": 200,
+      "metodo": "Vala a Céu Aberto - VCA",
+      "extensao_m": 54.88,
+      "prof_inicial_m": 1.58,
+      "prof_final_m": 1.66,
+      "prof_max_m": 1.66,
+      "status": "concluída",
+      "observacao": "As built INT Ayrton Senna enviado em 20/07/2026: PIE-01 ao PI-02, 3 pontos, 2 trechos em VCA, PVC DN200.",
+      "lat_inicio": -23.525061,
+      "lon_inicio": -46.3878118,
+      "lat_fim": -23.5247053,
+      "lon_fim": -46.3881861
+    },
+    {
+      "obra_id": "interl_rua_ayrton_senna",
+      "trecho_id": "AS-002",
+      "trecho_nome": "PI-01 - PI-02",
+      "pv_inicio": "PI-01",
+      "pv_fim": "PI-02",
+      "material": "PVC",
+      "dn": 200,
+      "metodo": "Vala a Céu Aberto - VCA",
+      "extensao_m": 7.17,
+      "prof_inicial_m": 1.66,
+      "prof_final_m": 0.97,
+      "prof_max_m": 1.66,
+      "status": "concluída",
+      "observacao": "As built INT Ayrton Senna enviado em 20/07/2026: PIE-01 ao PI-02, 3 pontos, 2 trechos em VCA, PVC DN200.",
+      "lat_inicio": -23.5247053,
+      "lon_inicio": -46.3881861,
+      "lat_fim": -23.5247218,
+      "lon_fim": -46.388254
     }
   ]
 }
