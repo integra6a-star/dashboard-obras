@@ -155,10 +155,17 @@
       "ativa": "SIM"
     },
     {
+      "obra_id": "rce_sao_joao",
+      "nome_obra": "RCE São João",
+      "tipo": "RCE",
+      "subtitulo": "Trecho corrigido em 20/07/2026: PV-4.1 ao PV-06, 3 PVs, 2 trechos em VCA, 82,99 m de PVC DN200.",
+      "ativa": "SIM"
+    },
+    {
       "obra_id": "rce_comunidade_sao_lucas",
       "nome_obra": "RCE Comunidade São Lucas",
       "tipo": "RCE",
-      "subtitulo": "Base real substituída pelo shape completo enviado em 17/07/2026: 19 PVs, 59 PIs e 75 trechos em VCA.",
+      "subtitulo": "Base real substituída pelo shape completo enviado em 17/07/2026, com trecho PV-4.1 ao PV-06 separado para RCE São João em 20/07/2026: 16 PVs, 59 PIs e 73 trechos em VCA.",
       "ativa": "SIM"
     },
     {
@@ -6604,9 +6611,9 @@
       "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas."
     },
     {
-      "obra_id": "rce_comunidade_sao_lucas",
+      "obra_id": "rce_sao_joao",
       "tipo_ponto": "PV",
-      "ponto_id": "SL-PV-05",
+      "ponto_id": "SJ-PV-05",
       "nome_ponto": "PV-05",
       "coord_n": 7398312.698,
       "coord_e": 359424.764,
@@ -6615,12 +6622,12 @@
       "cota_tampa": 759.841,
       "cota_fundo": 758.021,
       "profundidade_m": 1.82,
-      "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas."
+      "observacao": "Trecho reclassificado para RCE São João em 20/07/2026, conforme conferência em mapa."
     },
     {
-      "obra_id": "rce_comunidade_sao_lucas",
+      "obra_id": "rce_sao_joao",
       "tipo_ponto": "PV",
-      "ponto_id": "SL-PV-06",
+      "ponto_id": "SJ-PV-06",
       "nome_ponto": "PV-06",
       "coord_n": 7398353.611,
       "coord_e": 359416.746,
@@ -6629,7 +6636,7 @@
       "cota_tampa": 759.617,
       "cota_fundo": 757.527,
       "profundidade_m": 2.09,
-      "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas."
+      "observacao": "Trecho reclassificado para RCE São João em 20/07/2026, conforme conferência em mapa."
     },
     {
       "obra_id": "rce_comunidade_sao_lucas",
@@ -6842,9 +6849,9 @@
       "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas."
     },
     {
-      "obra_id": "rce_comunidade_sao_lucas",
+      "obra_id": "rce_sao_joao",
       "tipo_ponto": "PV",
-      "ponto_id": "SL-PV-4.1",
+      "ponto_id": "SJ-PV-4.1",
       "nome_ponto": "PV-4.1",
       "coord_n": 7398262.156,
       "coord_e": 359438.381,
@@ -6853,7 +6860,7 @@
       "cota_tampa": 760.651,
       "cota_fundo": 759.521,
       "profundidade_m": 1.13,
-      "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas."
+      "observacao": "Trecho reclassificado para RCE São João em 20/07/2026, conforme conferência em mapa."
     },
     {
       "obra_id": "rce_rua_elis_regina",
@@ -16056,8 +16063,8 @@
       "lon_fim": -46.376875
     },
     {
-      "obra_id": "rce_comunidade_sao_lucas",
-      "trecho_id": "SL-026",
+      "obra_id": "rce_sao_joao",
+      "trecho_id": "SJ-002",
       "trecho_nome": "PV-05 - PV-06",
       "pv_inicio": "PV-05",
       "pv_fim": "PV-06",
@@ -16069,7 +16076,7 @@
       "prof_final_m": 1.85,
       "prof_max_m": 1.85,
       "status": "em andamento",
-      "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas.",
+      "observacao": "Trecho reclassificado para RCE São João em 20/07/2026, conforme conferência em mapa.",
       "lat_inicio": -23.5193462,
       "lon_inicio": -46.3769465,
       "lat_fim": -23.5189761,
@@ -16916,8 +16923,8 @@
       "lon_fim": -46.3768999
     },
     {
-      "obra_id": "rce_comunidade_sao_lucas",
-      "trecho_id": "SL-069",
+      "obra_id": "rce_sao_joao",
+      "trecho_id": "SJ-001",
       "trecho_nome": "PV-4.1 - PV-05",
       "pv_inicio": "PV-4.1",
       "pv_fim": "PV-05",
@@ -16929,7 +16936,7 @@
       "prof_final_m": 1.82,
       "prof_max_m": 1.82,
       "status": "em andamento",
-      "observacao": "Base substituída pelo shape completo enviado em 17/07/2026: Cadastro PV, Cadastro PI e Cadastro Rede da RCE Comunidade São Lucas.",
+      "observacao": "Trecho reclassificado para RCE São João em 20/07/2026, conforme conferência em mapa.",
       "lat_inicio": -23.5198038,
       "lon_inicio": -46.3768179,
       "lat_fim": -23.5193462,
