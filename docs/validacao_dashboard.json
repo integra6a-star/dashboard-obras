@@ -1,17 +1,17 @@
 {
-  "atualizado_em": "2026-07-20 09:35:39",
+  "atualizado_em": "2026-07-21 07:52:39",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 20043.83,
-    "dashboard_executado": 20043.83,
+    "base_executado": 20251.53,
+    "dashboard_executado": 20251.53,
     "mapa_executado": 19375.72,
-    "diferenca_base_mapa": 668.11,
-    "saldo_total": 20043.83
+    "diferenca_base_mapa": 875.81,
+    "saldo_total": 20251.53
   },
   "pds": {
-    "total": 3227,
-    "ultima_data": "2026-07-20",
-    "hoje": 16,
+    "total": 3246,
+    "ultima_data": "2026-07-21",
+    "hoje": 19,
     "por_obra_ultima_data": [
       {
         "obra": "RCE RAULZITO TRECHO 1",
@@ -23,7 +23,7 @@
       },
       {
         "obra": "Vacal",
-        "atividades": 3
+        "atividades": 4
       },
       {
         "obra": "Guindauto",
@@ -31,6 +31,14 @@
       },
       {
         "obra": "CTS JOÃO CANZI",
+        "atividades": 1
+      },
+      {
+        "obra": "LAVAGEM REDE",
+        "atividades": 1
+      },
+      {
+        "obra": "RCE RUA IGARAÇÚ",
         "atividades": 1
       },
       {
@@ -44,17 +52,17 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 668.11 m",
+    "Diferença total entre EAP Produzido e mapa: 875.81 m",
     "16 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE COMUNIDADE RAUZITO",
       "planejado": 1566.27,
-      "executado_base": 401.0,
+      "executado_base": 531.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 401.0,
-      "saldo": 1165.27,
+      "diferenca_base_mapa": 531.0,
+      "saldo": 1035.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -69,12 +77,22 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE TERRA PROMETIDA",
+      "planejado": 382.5,
+      "executado_base": 126.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 126.0,
+      "saldo": 256.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
       "obra": "RCE São Lucas",
       "planejado": 1799.2,
-      "executado_base": 1696.2,
+      "executado_base": 1716.2,
       "executado_mapa": 1616.26,
-      "diferenca_base_mapa": 79.94,
-      "saldo": 103.0,
+      "diferenca_base_mapa": 99.94,
+      "saldo": 83.0,
       "linhas_base": 2,
       "linhas_mapa": 73
     },
@@ -87,16 +105,6 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
-    },
-    {
-      "obra": "RCE TERRA PROMETIDA",
-      "planejado": 382.5,
-      "executado_base": 68.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 68.0,
-      "saldo": 314.5,
-      "linhas_base": 2,
-      "linhas_mapa": 0
     },
     {
       "obra": "RCE ELVIRA DE ARAUJO",
@@ -243,10 +251,10 @@
     {
       "obra": "RCE COMUNIDADE RAUZITO",
       "planejado": 1566.27,
-      "executado_base": 401.0,
+      "executado_base": 531.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 401.0,
-      "saldo": 1165.27,
+      "diferenca_base_mapa": 531.0,
+      "saldo": 1035.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -393,10 +401,10 @@
     {
       "obra": "RCE TERRA PROMETIDA",
       "planejado": 382.5,
-      "executado_base": 68.0,
+      "executado_base": 126.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 68.0,
-      "saldo": 314.5,
+      "diferenca_base_mapa": 126.0,
+      "saldo": 256.5,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -591,16 +599,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1696.2,
-      "executado_mapa": 1616.26,
-      "diferenca_base_mapa": 79.94,
-      "saldo": 103.0,
-      "linhas_base": 2,
-      "linhas_mapa": 73
-    },
-    {
       "obra": "RCE Barão Luis de Arariba",
       "planejado": 649.0,
       "executado_base": 548.9,
@@ -619,6 +617,16 @@
       "saldo": 96.55,
       "linhas_base": 8,
       "linhas_mapa": 21
+    },
+    {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1716.2,
+      "executado_mapa": 1616.26,
+      "diferenca_base_mapa": 99.94,
+      "saldo": 83.0,
+      "linhas_base": 2,
+      "linhas_mapa": 73
     },
     {
       "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 1",
@@ -815,8 +823,8 @@
     {
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
-      "tamanho_kb": 35.5,
-      "modificado": "2026-07-15 08:02:53"
+      "tamanho_kb": 36.5,
+      "modificado": "2026-07-21 07:44:11"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -833,8 +841,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 559.3,
-      "modificado": "2026-07-20 07:15:47"
+      "tamanho_kb": 562.6,
+      "modificado": "2026-07-21 07:52:27"
     }
   ]
 }

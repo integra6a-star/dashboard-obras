@@ -1,26 +1,26 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-20 09:35:39
+Atualizado em: 2026-07-21 07:52:39
 
 Planejado Base Dash: 39,688.39 m
-Executado EAP Produzido: 20,043.83 m
+Executado EAP Produzido: 20,251.53 m
 Executado Mapa: 19,375.72 m
-Diferença EAP Produzido - Mapa: 668.11 m
-Saldo total: 20,043.83 m
+Diferença EAP Produzido - Mapa: 875.81 m
+Saldo total: 20,251.53 m
 
-PDS total: 3227 registros
-PDS hoje: 16 registros
-Última data PDS: 2026-07-20
+PDS total: 3246 registros
+PDS hoje: 19 registros
+Última data PDS: 2026-07-21
 
 Alertas:
-- Diferença total entre EAP Produzido e mapa: 668.11 m
+- Diferença total entre EAP Produzido e mapa: 875.81 m
 - 16 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
-- RCE COMUNIDADE RAUZITO: Base 401.00 m | Mapa 0.00 m | Dif. 401.00 m
+- RCE COMUNIDADE RAUZITO: Base 531.00 m | Mapa 0.00 m | Dif. 531.00 m
 - RCE COMUNIDADE JD. UNIÃO: Base 210.70 m | Mapa 0.00 m | Dif. 210.70 m
-- RCE São Lucas: Base 1,696.20 m | Mapa 1,616.26 m | Dif. 79.94 m
+- RCE TERRA PROMETIDA: Base 126.00 m | Mapa 0.00 m | Dif. 126.00 m
+- RCE São Lucas: Base 1,716.20 m | Mapa 1,616.26 m | Dif. 99.94 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
-- RCE TERRA PROMETIDA: Base 68.00 m | Mapa 0.00 m | Dif. 68.00 m
 - RCE ELVIRA DE ARAUJO: Base 167.96 m | Mapa 201.41 m | Dif. -33.45 m
 - RCE COMPLEMENTAR RUA ELIAS SLEIMAN: Base 377.80 m | Mapa 390.49 m | Dif. -12.69 m
 - RCE Rua São João: Base 93.20 m | Mapa 82.99 m | Dif. 10.21 m
