@@ -1,24 +1,24 @@
 {
-  "atualizado_em": "2026-07-21 07:52:39",
+  "atualizado_em": "2026-07-22 07:10:00",
   "totais": {
     "base_planejado": 39688.39,
-    "base_executado": 20251.53,
-    "dashboard_executado": 20251.53,
+    "base_executado": 20213.67,
+    "dashboard_executado": 20213.67,
     "mapa_executado": 19375.72,
-    "diferenca_base_mapa": 875.81,
-    "saldo_total": 20251.53
+    "diferenca_base_mapa": 837.95,
+    "saldo_total": 20213.67
   },
   "pds": {
-    "total": 3246,
-    "ultima_data": "2026-07-21",
-    "hoje": 19,
+    "total": 3266,
+    "ultima_data": "2026-07-22",
+    "hoje": 20,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE RAULZITO TRECHO 1",
-        "atividades": 4
+        "obra": "RCE RAULZITO TRECHO 2",
+        "atividades": 5
       },
       {
-        "obra": "RCE RAULZITO TRECHO 2",
+        "obra": "RCE RAULZITO TRECHO 1",
         "atividades": 4
       },
       {
@@ -26,16 +26,12 @@
         "atividades": 4
       },
       {
-        "obra": "Guindauto",
+        "obra": "CTS JOÃO CANZI",
         "atividades": 2
       },
       {
-        "obra": "CTS JOÃO CANZI",
-        "atividades": 1
-      },
-      {
-        "obra": "LAVAGEM REDE",
-        "atividades": 1
+        "obra": "Guindauto",
+        "atividades": 2
       },
       {
         "obra": "RCE RUA IGARAÇÚ",
@@ -52,27 +48,27 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 875.81 m",
-    "16 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença total entre EAP Produzido e mapa: 837.95 m",
+    "11 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
       "obra": "RCE COMUNIDADE RAUZITO",
       "planejado": 1566.27,
-      "executado_base": 531.0,
+      "executado_base": 561.0,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 531.0,
-      "saldo": 1035.27,
+      "diferenca_base_mapa": 561.0,
+      "saldo": 1005.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
     {
       "obra": "RCE COMUNIDADE JD. UNIÃO",
       "planejado": 226.5,
-      "executado_base": 210.7,
+      "executado_base": 223.39,
       "executado_mapa": 0.0,
-      "diferenca_base_mapa": 210.7,
-      "saldo": 15.8,
+      "diferenca_base_mapa": 223.39,
+      "saldo": 3.11,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -87,16 +83,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1716.2,
-      "executado_mapa": 1616.26,
-      "diferenca_base_mapa": 99.94,
-      "saldo": 83.0,
-      "linhas_base": 2,
-      "linhas_mapa": 73
-    },
-    {
       "obra": "RCE Barão Luis de Arariba",
       "planejado": 649.0,
       "executado_base": 548.9,
@@ -105,36 +91,6 @@
       "saldo": 100.1,
       "linhas_base": 4,
       "linhas_mapa": 15
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 167.96,
-      "executado_mapa": 201.41,
-      "diferenca_base_mapa": -33.45,
-      "saldo": 12.04,
-      "linhas_base": 2,
-      "linhas_mapa": 9
-    },
-    {
-      "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
-      "planejado": 338.5,
-      "executado_base": 377.8,
-      "executado_mapa": 390.49,
-      "diferenca_base_mapa": -12.69,
-      "saldo": -39.3,
-      "linhas_base": 2,
-      "linhas_mapa": 8
-    },
-    {
-      "obra": "RCE Rua São João",
-      "planejado": 95.0,
-      "executado_base": 93.2,
-      "executado_mapa": 82.99,
-      "diferenca_base_mapa": 10.21,
-      "saldo": 1.8,
-      "linhas_base": 2,
-      "linhas_mapa": 2
     },
     {
       "obra": "CTS Luis Botelho Mourão",
@@ -155,16 +111,6 @@
       "saldo": -8.7,
       "linhas_base": 2,
       "linhas_mapa": 2
-    },
-    {
-      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
-      "planejado": 205.0,
-      "executado_base": 216.1,
-      "executado_mapa": 211.95,
-      "diferenca_base_mapa": 4.15,
-      "saldo": -11.1,
-      "linhas_base": 2,
-      "linhas_mapa": 4
     },
     {
       "obra": "CTS Lourdes Complementar",
@@ -249,16 +195,6 @@
       "linhas_mapa": 0
     },
     {
-      "obra": "RCE COMUNIDADE RAUZITO",
-      "planejado": 1566.27,
-      "executado_base": 531.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 531.0,
-      "saldo": 1035.27,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
       "obra": "RCE  JD.HELOISA",
       "planejado": 1021.03,
       "executado_base": 0.0,
@@ -275,6 +211,16 @@
       "executado_mapa": 0.0,
       "diferenca_base_mapa": 0.0,
       "saldo": 1011.6,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMUNIDADE RAUZITO",
+      "planejado": 1566.27,
+      "executado_base": 561.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 561.0,
+      "saldo": 1005.27,
       "linhas_base": 2,
       "linhas_mapa": 0
     },
@@ -499,6 +445,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE São Lucas",
+      "planejado": 1799.2,
+      "executado_base": 1616.26,
+      "executado_mapa": 1616.26,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 182.94,
+      "linhas_base": 2,
+      "linhas_mapa": 73
+    },
+    {
       "obra": "CTS Benfica",
       "planejado": 941.5,
       "executado_base": 762.09,
@@ -619,16 +575,6 @@
       "linhas_mapa": 21
     },
     {
-      "obra": "RCE São Lucas",
-      "planejado": 1799.2,
-      "executado_base": 1716.2,
-      "executado_mapa": 1616.26,
-      "diferenca_base_mapa": 99.94,
-      "saldo": 83.0,
-      "linhas_base": 2,
-      "linhas_mapa": 73
-    },
-    {
       "obra": "RCE AV. PRESIDENTE TANCREDO DE A. NEVES 1",
       "planejado": 69.0,
       "executado_base": 0.0,
@@ -709,34 +655,24 @@
       "linhas_mapa": 1
     },
     {
-      "obra": "RCE COMUNIDADE JD. UNIÃO",
-      "planejado": 226.5,
-      "executado_base": 210.7,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 210.7,
-      "saldo": 15.8,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE ELVIRA DE ARAUJO",
-      "planejado": 180.0,
-      "executado_base": 167.96,
-      "executado_mapa": 201.41,
-      "diferenca_base_mapa": -33.45,
-      "saldo": 12.04,
-      "linhas_base": 2,
-      "linhas_mapa": 9
-    },
-    {
       "obra": "RCE Rua São João",
       "planejado": 95.0,
-      "executado_base": 93.2,
+      "executado_base": 82.99,
       "executado_mapa": 82.99,
-      "diferenca_base_mapa": 10.21,
-      "saldo": 1.8,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 12.01,
       "linhas_base": 2,
       "linhas_mapa": 2
+    },
+    {
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 223.39,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 223.39,
+      "saldo": 3.11,
+      "linhas_base": 2,
+      "linhas_mapa": 0
     },
     {
       "obra": "EEE TRÊS MENINAS",
@@ -749,6 +685,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
+      "planejado": 205.0,
+      "executado_base": 211.95,
+      "executado_mapa": 211.95,
+      "diferenca_base_mapa": -0.0,
+      "saldo": -6.95,
+      "linhas_base": 2,
+      "linhas_mapa": 4
+    },
+    {
       "obra": "INTERL. RUA AYRTON SENNA",
       "planejado": 59.5,
       "executado_base": 68.2,
@@ -759,16 +705,6 @@
       "linhas_mapa": 2
     },
     {
-      "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
-      "planejado": 205.0,
-      "executado_base": 216.1,
-      "executado_mapa": 211.95,
-      "diferenca_base_mapa": 4.15,
-      "saldo": -11.1,
-      "linhas_base": 2,
-      "linhas_mapa": 4
-    },
-    {
       "obra": "RCE AV. Fernando Pacheco Jordão",
       "planejado": 205.5,
       "executado_base": 220.59,
@@ -777,6 +713,16 @@
       "saldo": -15.09,
       "linhas_base": 2,
       "linhas_mapa": 5
+    },
+    {
+      "obra": "RCE ELVIRA DE ARAUJO",
+      "planejado": 180.0,
+      "executado_base": 201.41,
+      "executado_mapa": 201.41,
+      "diferenca_base_mapa": 0.0,
+      "saldo": -21.41,
+      "linhas_base": 2,
+      "linhas_mapa": 9
     },
     {
       "obra": "CTS João Canzi",
@@ -791,10 +737,10 @@
     {
       "obra": "RCE COMPLEMENTAR RUA ELIAS SLEIMAN",
       "planejado": 338.5,
-      "executado_base": 377.8,
+      "executado_base": 390.49,
       "executado_mapa": 390.49,
-      "diferenca_base_mapa": -12.69,
-      "saldo": -39.3,
+      "diferenca_base_mapa": 0.0,
+      "saldo": -51.99,
       "linhas_base": 2,
       "linhas_mapa": 8
     },
@@ -824,7 +770,7 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 36.5,
-      "modificado": "2026-07-21 07:44:11"
+      "modificado": "2026-07-22 07:00:52"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",
@@ -841,8 +787,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 562.6,
-      "modificado": "2026-07-21 07:52:27"
+      "tamanho_kb": 566.1,
+      "modificado": "2026-07-22 07:09:53"
     }
   ]
 }

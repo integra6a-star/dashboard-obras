@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-21T07:50:27.146452-03:00",
+  "atualizado_em": "2026-07-22T07:07:59.816611-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -2666,16 +2666,16 @@
       "Bloco": "12",
       "Tipo": "VCA",
       "Planejado_m": 205.0,
-      "Executado_m": 216.1,
+      "Executado_m": 211.95,
       "Planejado_original_m": 205.0,
-      "Executado_original_m": 216.1,
+      "Executado_original_m": 211.95,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
         "2026-06": 169.1,
-        "2026-07": 47.0
+        "2026-07": 42.85
       }
     },
     {
@@ -3020,9 +3020,9 @@
       "Bloco": "75",
       "Tipo": "VCA",
       "Planejado_m": 338.5,
-      "Executado_m": 377.8,
+      "Executado_m": 390.49,
       "Planejado_original_m": 338.5,
-      "Executado_original_m": 377.8,
+      "Executado_original_m": 390.49,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
@@ -3065,7 +3065,7 @@
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
         "2026-06": 100.7,
-        "2026-07": 110.0
+        "2026-07": 122.69
       }
     },
     {
@@ -3093,16 +3093,16 @@
       "Bloco": "76",
       "Tipo": "VCA",
       "Planejado_m": 1566.27,
-      "Executado_m": 531.0,
+      "Executado_m": 561.0,
       "Planejado_original_m": 1566.27,
-      "Executado_original_m": 531.0,
+      "Executado_original_m": 561.0,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
         "2026-06": 42.0,
-        "2026-07": 489.0
+        "2026-07": 519.0
       }
     },
     {
@@ -3130,15 +3130,15 @@
       "Bloco": "75",
       "Tipo": "VCA",
       "Planejado_m": 180.0,
-      "Executado_m": 167.96,
+      "Executado_m": 201.41,
       "Planejado_original_m": 180.0,
-      "Executado_original_m": 167.96,
+      "Executado_original_m": 201.41,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 43.66,
+        "2026-05": 77.11,
         "2026-06": 89.8,
         "2026-07": 34.5
       }
@@ -3720,15 +3720,15 @@
       "Bloco": "76",
       "Tipo": "VCA",
       "Planejado_m": 95.0,
-      "Executado_m": 93.2,
+      "Executado_m": 82.99,
       "Planejado_original_m": 95.0,
-      "Executado_original_m": 93.2,
+      "Executado_original_m": 82.99,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 93.2
+        "2026-05": 82.99
       }
     },
     {
@@ -3756,15 +3756,15 @@
       "Bloco": "61",
       "Tipo": "VCA",
       "Planejado_m": 1799.2,
-      "Executado_m": 1716.2,
+      "Executado_m": 1616.26,
       "Planejado_original_m": 1799.2,
-      "Executado_original_m": 1716.2,
+      "Executado_original_m": 1616.26,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-05": 930.0,
+        "2026-05": 830.06,
         "2026-06": 584.2,
         "2026-07": 202.0
       }
@@ -3977,7 +3977,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-07-21T07:50:27.146452-03:00",
+    "atualizado_em": "2026-07-22T07:07:59.816165-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [
@@ -4002,8 +4002,8 @@
       },
       "2026": {
         "eap": 28768.36,
-        "produzido": 11513.465,
-        "saldo": -17254.895
+        "produzido": 11475.605,
+        "saldo": -17292.755
       }
     },
     "mensal": [
@@ -4179,13 +4179,13 @@
         "ano": 2026,
         "mes": "Mai",
         "eap": 2545.85,
-        "produzido": 2071.573,
+        "produzido": 1994.873,
         "economias_eap": 2361.0,
         "economias_recebidas": 87.0,
         "tl0_recebidas": 189.0,
-        "saldo_mes": -474.277,
+        "saldo_mes": -550.977,
         "saldo_economias": -2274.0,
-        "saldo_acum": -2935.736
+        "saldo_acum": -3012.436
       },
       {
         "ano": 2026,
@@ -4197,19 +4197,19 @@
         "tl0_recebidas": 0.0,
         "saldo_mes": -1293.759,
         "saldo_economias": -2874.0,
-        "saldo_acum": -4229.495
+        "saldo_acum": -4306.195
       },
       {
         "ano": 2026,
         "mes": "Jul",
         "eap": 3269.49,
-        "produzido": 1008.2,
+        "produzido": 1047.04,
         "economias_eap": 4487.0,
         "economias_recebidas": 0.0,
         "tl0_recebidas": 0.0,
-        "saldo_mes": -2261.29,
+        "saldo_mes": -2222.45,
         "saldo_economias": -4487.0,
-        "saldo_acum": -6490.785
+        "saldo_acum": -6528.645
       },
       {
         "ano": 2026,
@@ -4221,7 +4221,7 @@
         "tl0_recebidas": 0.0,
         "saldo_mes": -3305.21,
         "saldo_economias": -4543.0,
-        "saldo_acum": -9795.995
+        "saldo_acum": -9833.855
       },
       {
         "ano": 2026,
@@ -4233,7 +4233,7 @@
         "tl0_recebidas": 0.0,
         "saldo_mes": -3138.09,
         "saldo_economias": -3432.0,
-        "saldo_acum": -12934.085
+        "saldo_acum": -12971.945
       },
       {
         "ano": 2026,
@@ -4245,7 +4245,7 @@
         "tl0_recebidas": 0.0,
         "saldo_mes": -2251.28,
         "saldo_economias": -1923.0,
-        "saldo_acum": -15185.365
+        "saldo_acum": -15223.225
       },
       {
         "ano": 2026,
@@ -4257,7 +4257,7 @@
         "tl0_recebidas": 0.0,
         "saldo_mes": -1527.07,
         "saldo_economias": -713.0,
-        "saldo_acum": -16712.435
+        "saldo_acum": -16750.295
       },
       {
         "ano": 2026,
@@ -4269,7 +4269,7 @@
         "tl0_recebidas": 0.0,
         "saldo_mes": -542.46,
         "saldo_economias": -39.0,
-        "saldo_acum": -17254.895
+        "saldo_acum": -17292.755
       }
     ],
     "eap_economias": {
