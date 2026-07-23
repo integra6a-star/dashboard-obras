@@ -1290,10 +1290,10 @@ function renderValidacaoDashboard(data){
       <div class="mini-value">${fmt2m(totais.saldo_total)} m</div>
       <div class="mini-foot">Valor acumulado conferido</div>
     </div>
-    <div class="mini-kpi ${Number(totais.base_sem_mapa||0) > 0.05 ? 'alert' : ''}">
-      <div class="mini-label">Base sem mapa</div>
+    <div class="mini-kpi">
+      <div class="mini-label">Somente na planilha</div>
       <div class="mini-value">${fmt2m(totais.base_sem_mapa)} m</div>
-      <div class="mini-foot">Producao que precisa revisar tracado</div>
+      <div class="mini-foot">Nao entra na comparacao do mapa</div>
     </div>
     <div class="mini-kpi ${alertas.length ? 'alert' : ''}">
       <div class="mini-label">Alertas</div>
@@ -1322,7 +1322,7 @@ function renderValidacaoDashboard(data){
   if(baseSemMapa.length){
     const title = document.createElement('div');
     title.className = 'validacao-alert';
-    title.textContent = 'Producao na Base Dash ainda sem trecho correspondente no mapa';
+    title.textContent = 'Obras apontadas na planilha e ainda sem cadastro no mapa';
     list.appendChild(title);
   }
   baseSemMapa.forEach(item=>{
@@ -1332,14 +1332,14 @@ function renderValidacaoDashboard(data){
       <div class="validacao-name" title="${item.obra}">${item.obra}</div>
       <div class="validacao-metric"><b>${fmt2m(item.executado_base)}</b>Base Dash</div>
       <div class="validacao-metric"><b>${fmtInt(item.linhas_base)}</b>Linhas base</div>
-      <div class="validacao-metric warn"><b>Revisar</b>Sem mapa</div>
+      <div class="validacao-metric"><b>Info</b>So planilha</div>
     `;
     list.appendChild(row);
   });
   if(mapaSemBase.length){
     const title = document.createElement('div');
     title.className = 'validacao-alert';
-    title.textContent = 'Trechos no mapa ainda sem producao correspondente na Base Dash';
+    title.textContent = 'Trechos no mapa ainda sem apontamento correspondente na Base Dash';
     list.appendChild(title);
   }
   mapaSemBase.forEach(item=>{
@@ -1349,7 +1349,7 @@ function renderValidacaoDashboard(data){
       <div class="validacao-name" title="${item.obra}">${item.obra}</div>
       <div class="validacao-metric"><b>${fmt2m(item.executado_mapa)}</b>Mapa</div>
       <div class="validacao-metric"><b>${fmtInt(item.linhas_mapa)}</b>Linhas mapa</div>
-      <div class="validacao-metric warn"><b>Revisar</b>Sem base</div>
+      <div class="validacao-metric warn"><b>Revisar</b>So mapa</div>
     `;
     list.appendChild(row);
   });

@@ -295,8 +295,6 @@ def build_validation() -> dict:
         alertas.append(f"Diferença em obras mapeadas: {total_diff:,.2f} m")
     if divergencias:
         alertas.append(f"{len(divergencias)} obra(s) com divergência entre executado da Base Dash e mapa.")
-    if base_sem_mapa:
-        alertas.append(f"{len(base_sem_mapa)} obra(s) com produção na Base Dash ainda sem trecho no mapa.")
     if mapa_sem_base:
         alertas.append(f"{len(mapa_sem_base)} obra(s) no mapa ainda sem produção na Base Dash.")
     if pds["hoje"] == 0:
