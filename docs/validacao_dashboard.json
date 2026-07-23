@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-22 07:10:00",
+  "atualizado_em": "2026-07-23 07:03:24",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20213.67,
@@ -9,13 +9,13 @@
     "saldo_total": 20213.67
   },
   "pds": {
-    "total": 3266,
-    "ultima_data": "2026-07-22",
-    "hoje": 20,
+    "total": 3287,
+    "ultima_data": "2026-07-23",
+    "hoje": 21,
     "por_obra_ultima_data": [
       {
-        "obra": "RCE RAULZITO TRECHO 2",
-        "atividades": 5
+        "obra": "CTS JOÃO CANZI",
+        "atividades": 4
       },
       {
         "obra": "RCE RAULZITO TRECHO 1",
@@ -26,12 +26,16 @@
         "atividades": 4
       },
       {
-        "obra": "CTS JOÃO CANZI",
-        "atividades": 2
+        "obra": "RCE RAULZITO TRECHO 2",
+        "atividades": 3
       },
       {
         "obra": "Guindauto",
         "atividades": 2
+      },
+      {
+        "obra": "CTS ÁGUA VERMELHA ME",
+        "atividades": 1
       },
       {
         "obra": "RCE RUA IGARAÇÚ",
@@ -787,8 +791,8 @@
     {
       "arquivo": "pds_data.json",
       "existe": true,
-      "tamanho_kb": 566.1,
-      "modificado": "2026-07-22 07:09:53"
+      "tamanho_kb": 569.7,
+      "modificado": "2026-07-23 07:02:28"
     }
   ]
 }

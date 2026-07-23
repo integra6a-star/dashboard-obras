@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-22 07:10:00
+Atualizado em: 2026-07-23 07:03:24
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,213.67 m
@@ -7,9 +7,9 @@ Executado Mapa: 19,375.72 m
 Diferença EAP Produzido - Mapa: 837.95 m
 Saldo total: 20,213.67 m
 
-PDS total: 3266 registros
-PDS hoje: 20 registros
-Última data PDS: 2026-07-22
+PDS total: 3287 registros
+PDS hoje: 21 registros
+Última data PDS: 2026-07-23
 
 Alertas:
 - Diferença total entre EAP Produzido e mapa: 837.95 m
