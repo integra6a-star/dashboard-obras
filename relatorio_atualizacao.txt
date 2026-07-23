@@ -1,10 +1,12 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-23 11:18:30
+Atualizado em: 2026-07-23 11:25:39
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,213.67 m
 Executado Mapa: 19,375.72 m
-Diferença EAP Produzido - Mapa: 837.95 m
+Diferença em obras mapeadas: -66.16 m
+Produção Base Dash sem trecho no mapa: 910.39 m
+Trechos no mapa sem produção na Base Dash: 0.00 m
 Saldo total: 20,213.67 m
 
 PDS total: 3287 registros
@@ -12,13 +14,11 @@ PDS hoje: 21 registros
 Última data PDS: 2026-07-23
 
 Alertas:
-- Diferença total entre EAP Produzido e mapa: 837.95 m
-- 7 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença em obras mapeadas: -66.16 m
+- 4 obra(s) com divergência entre executado da Base Dash e mapa.
+- 3 obra(s) com produção na Base Dash ainda sem trecho no mapa.
 
 Maiores divergências por obra:
-- RCE COMUNIDADE RAUZITO: Base 561.00 m | Mapa 0.00 m | Dif. 561.00 m
-- RCE COMUNIDADE JD. UNIÃO: Base 223.39 m | Mapa 0.00 m | Dif. 223.39 m
-- RCE TERRA PROMETIDA: Base 126.00 m | Mapa 0.00 m | Dif. 126.00 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
 - CTS Lourdes Complementar: Base 320.31 m | Mapa 323.92 m | Dif. -3.61 m

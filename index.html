@@ -1274,33 +1274,33 @@ function renderValidacaoDashboard(data){
   const updated = document.getElementById('validacaoAtualizado');
   if(!cards || !list) return;
   const totais = data?.totais || {};
-  const pds = data?.pds || {};
   const divergencias = (Array.isArray(data?.divergencias) ? data.divergencias : []).filter(item => Math.abs(Number(item.diferenca_base_mapa || 0)) > 0.05);
+  const baseSemMapa = Array.isArray(data?.base_sem_mapa) ? data.base_sem_mapa : [];
+  const mapaSemBase = Array.isArray(data?.mapa_sem_base) ? data.mapa_sem_base : [];
   const alertas = Array.isArray(data?.alertas) ? data.alertas : [];
-  if(updated) updated.textContent = data?.atualizado_em ? `Atualizado: ${formatarDataHora(data.atualizado_em)}` : 'Sem conferência';
+  if(updated) updated.textContent = data?.atualizado_em ? `Atualizado: ${formatarDataHora(data.atualizado_em)}` : 'Sem conferencia';
   cards.innerHTML = `
     <div class="mini-kpi ${Math.abs(Number(totais.diferenca_base_mapa||0)) > 0.05 ? 'alert' : ''}">
-      <div class="mini-label">Diferença EAP x Mapa</div>
+      <div class="mini-label">Diferenca mapeada</div>
       <div class="mini-value">${fmt2m(totais.diferenca_base_mapa)} m</div>
-      <div class="mini-foot">Produzido da EAP menos trechos do mapa</div>
+      <div class="mini-foot">Somente obras com base e mapa</div>
     </div>
     <div class="mini-kpi">
-      <div class="mini-label">Saldo total</div>
+      <div class="mini-label">Produzido Base Dash</div>
       <div class="mini-value">${fmt2m(totais.saldo_total)} m</div>
-      <div class="mini-foot">Valor conferido no dashboard</div>
+      <div class="mini-foot">Valor acumulado conferido</div>
     </div>
-    <div class="mini-kpi">
-      <div class="mini-label">PDS hoje</div>
-      <div class="mini-value">${fmtInt(pds.hoje)}</div>
-      <div class="mini-foot">Última data: ${pds.ultima_data || '-'}</div>
+    <div class="mini-kpi ${Number(totais.base_sem_mapa||0) > 0.05 ? 'alert' : ''}">
+      <div class="mini-label">Base sem mapa</div>
+      <div class="mini-value">${fmt2m(totais.base_sem_mapa)} m</div>
+      <div class="mini-foot">Producao que precisa revisar tracado</div>
     </div>
     <div class="mini-kpi ${alertas.length ? 'alert' : ''}">
       <div class="mini-label">Alertas</div>
       <div class="mini-value">${fmtInt(alertas.length)}</div>
-      <div class="mini-foot">Conferência automática</div>
+      <div class="mini-foot">Conferencia automatica</div>
     </div>
   `;
-  const divergenciasVisiveis = divergencias;
   list.innerHTML = '';
   if(alertas.length){
     const alert = document.createElement('div');
@@ -1308,19 +1308,53 @@ function renderValidacaoDashboard(data){
     alert.textContent = alertas[0];
     list.appendChild(alert);
   }
-  divergenciasVisiveis.forEach(item=>{
+  divergencias.forEach(item=>{
     const row = document.createElement('div');
     row.className = 'validacao-item';
     row.innerHTML = `
       <div class="validacao-name" title="${item.obra}">${item.obra}</div>
       <div class="validacao-metric"><b>${fmt2m(item.executado_base)}</b>Base Dash</div>
       <div class="validacao-metric"><b>${fmt2m(item.executado_mapa)}</b>Mapa</div>
-      <div class="validacao-metric warn"><b>${fmt2m(item.diferenca_base_mapa)}</b>Diferença</div>
+      <div class="validacao-metric warn"><b>${fmt2m(item.diferenca_base_mapa)}</b>Diferenca</div>
     `;
     list.appendChild(row);
   });
-  if(!alertas.length && !divergenciasVisiveis.length){
-    list.innerHTML = '<div class="subtle">Sem divergências críticas na última conferência.</div>';
+  if(baseSemMapa.length){
+    const title = document.createElement('div');
+    title.className = 'validacao-alert';
+    title.textContent = 'Producao na Base Dash ainda sem trecho correspondente no mapa';
+    list.appendChild(title);
+  }
+  baseSemMapa.forEach(item=>{
+    const row = document.createElement('div');
+    row.className = 'validacao-item';
+    row.innerHTML = `
+      <div class="validacao-name" title="${item.obra}">${item.obra}</div>
+      <div class="validacao-metric"><b>${fmt2m(item.executado_base)}</b>Base Dash</div>
+      <div class="validacao-metric"><b>${fmtInt(item.linhas_base)}</b>Linhas base</div>
+      <div class="validacao-metric warn"><b>Revisar</b>Sem mapa</div>
+    `;
+    list.appendChild(row);
+  });
+  if(mapaSemBase.length){
+    const title = document.createElement('div');
+    title.className = 'validacao-alert';
+    title.textContent = 'Trechos no mapa ainda sem producao correspondente na Base Dash';
+    list.appendChild(title);
+  }
+  mapaSemBase.forEach(item=>{
+    const row = document.createElement('div');
+    row.className = 'validacao-item';
+    row.innerHTML = `
+      <div class="validacao-name" title="${item.obra}">${item.obra}</div>
+      <div class="validacao-metric"><b>${fmt2m(item.executado_mapa)}</b>Mapa</div>
+      <div class="validacao-metric"><b>${fmtInt(item.linhas_mapa)}</b>Linhas mapa</div>
+      <div class="validacao-metric warn"><b>Revisar</b>Sem base</div>
+    `;
+    list.appendChild(row);
+  });
+  if(!alertas.length && !divergencias.length && !baseSemMapa.length && !mapaSemBase.length){
+    list.innerHTML = '<div class="subtle">Sem divergencias criticas na ultima conferencia.</div>';
   }
 }
 async function loadValidacaoDashboard(){

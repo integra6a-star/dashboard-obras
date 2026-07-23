@@ -245,13 +245,20 @@ def build_validation() -> dict:
 
     obras = sorted(set(base["obras"].keys()) | set(mapa["obras"].keys()))
     divergencias = []
+    base_sem_mapa = []
+    mapa_sem_base = []
     saldo_por_obra = []
+    total_diff_mapeadas = 0.0
+    total_base_sem_mapa = 0.0
+    total_mapa_sem_base = 0.0
     for obra in obras:
         b = base["obras"].get(obra, {})
         m = mapa["obras"].get(obra, {})
         planejado = float(b.get("planejado", 0.0))
         executado_base = float(b.get("executado", 0.0))
         executado_mapa = float(m.get("executado_mapa", 0.0))
+        linhas_base = int(b.get("linhas", 0))
+        linhas_mapa = int(m.get("linhas", 0))
         diff = executado_base - executado_mapa
         saldo = planejado - executado_base
         item = {
@@ -261,21 +268,37 @@ def build_validation() -> dict:
             "executado_mapa": round(executado_mapa, 2),
             "diferenca_base_mapa": round(diff, 2),
             "saldo": round(saldo, 2),
-            "linhas_base": int(b.get("linhas", 0)),
-            "linhas_mapa": int(m.get("linhas", 0)),
+            "linhas_base": linhas_base,
+            "linhas_mapa": linhas_mapa,
         }
         saldo_por_obra.append(item)
-        if abs(diff) > 0.05 or (executado_base and not executado_mapa) or (executado_mapa and not executado_base):
+        if linhas_base and linhas_mapa:
+            total_diff_mapeadas += diff
+        if linhas_base and not linhas_mapa and executado_base > 0:
+            total_base_sem_mapa += executado_base
+            base_sem_mapa.append(item)
+            continue
+        if linhas_mapa and not linhas_base and executado_mapa > 0:
+            total_mapa_sem_base += executado_mapa
+            mapa_sem_base.append(item)
+            continue
+        if abs(diff) > 0.05:
             divergencias.append(item)
 
     divergencias.sort(key=lambda x: abs(x["diferenca_base_mapa"]), reverse=True)
+    base_sem_mapa.sort(key=lambda x: x["executado_base"], reverse=True)
+    mapa_sem_base.sort(key=lambda x: x["executado_mapa"], reverse=True)
     saldo_por_obra.sort(key=lambda x: x["saldo"], reverse=True)
-    total_diff = eap_total_produzido - mapa["executado_mapa"]
+    total_diff = total_diff_mapeadas
     alertas = []
     if abs(total_diff) > 0.05:
-        alertas.append(f"Diferença total entre EAP Produzido e mapa: {total_diff:,.2f} m")
+        alertas.append(f"Diferença em obras mapeadas: {total_diff:,.2f} m")
     if divergencias:
         alertas.append(f"{len(divergencias)} obra(s) com divergência entre executado da Base Dash e mapa.")
+    if base_sem_mapa:
+        alertas.append(f"{len(base_sem_mapa)} obra(s) com produção na Base Dash ainda sem trecho no mapa.")
+    if mapa_sem_base:
+        alertas.append(f"{len(mapa_sem_base)} obra(s) no mapa ainda sem produção na Base Dash.")
     if pds["hoje"] == 0:
         alertas.append("PDS sem registros na data de hoje.")
 
@@ -287,11 +310,15 @@ def build_validation() -> dict:
             "dashboard_executado": round(dashboard_total_executado, 2),
             "mapa_executado": round(mapa["executado_mapa"], 2),
             "diferenca_base_mapa": round(total_diff, 2),
+            "base_sem_mapa": round(total_base_sem_mapa, 2),
+            "mapa_sem_base": round(total_mapa_sem_base, 2),
             "saldo_total": round(dashboard_total_executado, 2),
         },
         "pds": pds,
         "alertas": alertas,
         "divergencias": divergencias[:30],
+        "base_sem_mapa": base_sem_mapa[:30],
+        "mapa_sem_base": mapa_sem_base[:30],
         "saldo_por_obra": saldo_por_obra[:80],
         "arquivos": [
             file_info(BASE_XLSX),
@@ -330,7 +357,9 @@ def write_report(payload: dict) -> None:
         f"Planejado Base Dash: {totals['base_planejado']:,.2f} m",
         f"Executado EAP Produzido: {totals['base_executado']:,.2f} m",
         f"Executado Mapa: {totals['mapa_executado']:,.2f} m",
-        f"Diferença EAP Produzido - Mapa: {totals['diferenca_base_mapa']:,.2f} m",
+        f"Diferença em obras mapeadas: {totals['diferenca_base_mapa']:,.2f} m",
+        f"Produção Base Dash sem trecho no mapa: {totals.get('base_sem_mapa', 0):,.2f} m",
+        f"Trechos no mapa sem produção na Base Dash: {totals.get('mapa_sem_base', 0):,.2f} m",
         f"Saldo total: {totals['saldo_total']:,.2f} m",
         "",
         f"PDS total: {payload['pds']['total']} registros",
@@ -372,7 +401,7 @@ def main() -> None:
             shutil.copy2(path, DOCS / path.name)
 
         print("Validação automática gerada.")
-        print(f"Diferença EAP Produzido - Mapa: {payload['totais']['diferenca_base_mapa']:,.2f} m")
+        print(f"Diferença em obras mapeadas: {payload['totais']['diferenca_base_mapa']:,.2f} m")
         print(f"Alertas: {len(payload['alertas'])}")
     except Exception as exc:
         print(f"ERRO ao gerar validação do dashboard: {exc}")

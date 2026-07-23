@@ -1,11 +1,13 @@
 {
-  "atualizado_em": "2026-07-23 11:18:30",
+  "atualizado_em": "2026-07-23 11:25:39",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20213.67,
     "dashboard_executado": 20213.67,
     "mapa_executado": 19375.72,
-    "diferenca_base_mapa": 837.95,
+    "diferenca_base_mapa": -66.16,
+    "base_sem_mapa": 910.39,
+    "mapa_sem_base": 0.0,
     "saldo_total": 20213.67
   },
   "pds": {
@@ -52,40 +54,11 @@
     ]
   },
   "alertas": [
-    "Diferença total entre EAP Produzido e mapa: 837.95 m",
-    "7 obra(s) com divergência entre executado da Base Dash e mapa."
+    "Diferença em obras mapeadas: -66.16 m",
+    "4 obra(s) com divergência entre executado da Base Dash e mapa.",
+    "3 obra(s) com produção na Base Dash ainda sem trecho no mapa."
   ],
   "divergencias": [
-    {
-      "obra": "RCE COMUNIDADE RAUZITO",
-      "planejado": 1566.27,
-      "executado_base": 561.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 561.0,
-      "saldo": 1005.27,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE COMUNIDADE JD. UNIÃO",
-      "planejado": 226.5,
-      "executado_base": 223.39,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 223.39,
-      "saldo": 3.11,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE TERRA PROMETIDA",
-      "planejado": 382.5,
-      "executado_base": 126.0,
-      "executado_mapa": 0.0,
-      "diferenca_base_mapa": 126.0,
-      "saldo": 256.5,
-      "linhas_base": 2,
-      "linhas_mapa": 0
-    },
     {
       "obra": "RCE Barão Luis de Arariba",
       "planejado": 649.0,
@@ -127,6 +100,39 @@
       "linhas_mapa": 2
     }
   ],
+  "base_sem_mapa": [
+    {
+      "obra": "RCE COMUNIDADE RAUZITO",
+      "planejado": 1566.27,
+      "executado_base": 561.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 561.0,
+      "saldo": 1005.27,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE COMUNIDADE JD. UNIÃO",
+      "planejado": 226.5,
+      "executado_base": 223.39,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 223.39,
+      "saldo": 3.11,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    },
+    {
+      "obra": "RCE TERRA PROMETIDA",
+      "planejado": 382.5,
+      "executado_base": 126.0,
+      "executado_mapa": 0.0,
+      "diferenca_base_mapa": 126.0,
+      "saldo": 256.5,
+      "linhas_base": 2,
+      "linhas_mapa": 0
+    }
+  ],
+  "mapa_sem_base": [],
   "saldo_por_obra": [
     {
       "obra": "LINHA DE RECALQUE TRÊS MENINAS",
