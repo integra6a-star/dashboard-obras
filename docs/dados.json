@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-22T07:07:59.816611-03:00",
+  "atualizado_em": "2026-07-23T11:18:24.205086-03:00",
   "fonte_registros": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
   "fonte_eap_economias": "EAP_PRODUCAO.xlsx",
   "meses_producao": [
@@ -1275,15 +1275,15 @@
       "Bloco": "25",
       "Tipo": "VCA",
       "Planejado_m": 194.5,
-      "Executado_m": 12.02,
+      "Executado_m": 13.14,
       "Planejado_original_m": 194.5,
-      "Executado_original_m": 12.02,
+      "Executado_original_m": 13.14,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-03": 12.02
+        "2026-03": 13.14
       }
     },
     {
@@ -2069,16 +2069,16 @@
       "Bloco": "75",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 880.941,
+      "Executado_m": 879.941,
       "Planejado_original_m": 0.0,
-      "Executado_original_m": 880.941,
+      "Executado_original_m": 879.941,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
         "2026-05": 548.5500000000001,
-        "2026-06": 332.39099999999996
+        "2026-06": 331.39099999999996
       }
     },
     {
@@ -2458,15 +2458,15 @@
       "Bloco": "74",
       "Tipo": "VCA",
       "Planejado_m": 83.8,
-      "Executado_m": 55.83,
+      "Executado_m": 56.52,
       "Planejado_original_m": 83.8,
-      "Executado_original_m": 55.83,
+      "Executado_original_m": 56.52,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-04": 55.83
+        "2026-04": 56.519999999999996
       }
     },
     {
@@ -2494,15 +2494,15 @@
       "Bloco": "62",
       "Tipo": "VCA",
       "Planejado_m": 59.5,
-      "Executado_m": 68.2,
+      "Executado_m": 61.69,
       "Planejado_original_m": 59.5,
-      "Executado_original_m": 68.2,
+      "Executado_original_m": 61.69,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-06": 68.2
+        "2026-06": 61.690000000000005
       }
     },
     {
@@ -3429,15 +3429,15 @@
       "Bloco": "12",
       "Tipo": "HDD",
       "Planejado_m": 0.0,
-      "Executado_m": 38.3,
+      "Executado_m": 37.58,
       "Planejado_original_m": 0.0,
-      "Executado_original_m": 38.3,
+      "Executado_original_m": 37.58,
       "PV": 0.0,
       "Profundidade_m": 0.0,
       "Economias_Previstas": 0.0,
       "Economias_Recebidas": 0.0,
       "ProducaoMensal": {
-        "2026-06": 38.3
+        "2026-06": 37.58
       }
     },
     {
@@ -3977,7 +3977,7 @@
     }
   ],
   "eap_producao": {
-    "atualizado_em": "2026-07-22T07:07:59.816165-03:00",
+    "atualizado_em": "2026-07-23T11:18:24.205086-03:00",
     "fonte": "EAP_PRODUCAO.xlsx",
     "aba": "EAP_PRODUCAO",
     "meses": [

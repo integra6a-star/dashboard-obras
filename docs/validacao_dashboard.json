@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-07-23 07:03:24",
+  "atualizado_em": "2026-07-23 11:18:30",
   "totais": {
     "base_planejado": 39688.39,
     "base_executado": 20213.67,
@@ -53,7 +53,7 @@
   },
   "alertas": [
     "Diferença total entre EAP Produzido e mapa: 837.95 m",
-    "11 obra(s) com divergência entre executado da Base Dash e mapa."
+    "7 obra(s) com divergência entre executado da Base Dash e mapa."
   ],
   "divergencias": [
     {
@@ -107,16 +107,6 @@
       "linhas_mapa": 11
     },
     {
-      "obra": "INTERL. RUA AYRTON SENNA",
-      "planejado": 59.5,
-      "executado_base": 68.2,
-      "executado_mapa": 62.05,
-      "diferenca_base_mapa": 6.15,
-      "saldo": -8.7,
-      "linhas_base": 2,
-      "linhas_mapa": 2
-    },
-    {
       "obra": "CTS Lourdes Complementar",
       "planejado": 0.0,
       "executado_base": 320.31,
@@ -127,44 +117,14 @@
       "linhas_mapa": 5
     },
     {
-      "obra": "CTS Conceição",
-      "planejado": 812.5,
-      "executado_base": 765.89,
-      "executado_mapa": 767.01,
-      "diferenca_base_mapa": -1.12,
-      "saldo": 46.61,
-      "linhas_base": 4,
-      "linhas_mapa": 14
-    },
-    {
-      "obra": "CTS João Canzi",
-      "planejado": 858.5,
-      "executado_base": 880.94,
-      "executado_mapa": 879.94,
-      "diferenca_base_mapa": 1.0,
-      "saldo": -22.44,
+      "obra": "INTERL. RUA AYRTON SENNA",
+      "planejado": 59.5,
+      "executado_base": 61.69,
+      "executado_mapa": 62.05,
+      "diferenca_base_mapa": -0.36,
+      "saldo": -2.19,
       "linhas_base": 2,
-      "linhas_mapa": 13
-    },
-    {
-      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
-      "planejado": 55.0,
-      "executado_base": 38.3,
-      "executado_mapa": 37.58,
-      "diferenca_base_mapa": 0.72,
-      "saldo": 16.7,
-      "linhas_base": 2,
-      "linhas_mapa": 1
-    },
-    {
-      "obra": "Interligação Água Boa",
-      "planejado": 425.0,
-      "executado_base": 201.71,
-      "executado_mapa": 202.4,
-      "diferenca_base_mapa": -0.69,
-      "saldo": 223.29,
-      "linhas_base": 2,
-      "linhas_mapa": 10
+      "linhas_mapa": 2
     }
   ],
   "saldo_por_obra": [
@@ -411,10 +371,10 @@
     {
       "obra": "Interligação Água Boa",
       "planejado": 425.0,
-      "executado_base": 201.71,
+      "executado_base": 202.4,
       "executado_mapa": 202.4,
-      "diferenca_base_mapa": -0.69,
-      "saldo": 223.29,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 222.6,
       "linhas_base": 2,
       "linhas_mapa": 10
     },
@@ -591,10 +551,10 @@
     {
       "obra": "CTS Conceição",
       "planejado": 812.5,
-      "executado_base": 765.89,
+      "executado_base": 767.01,
       "executado_mapa": 767.01,
-      "diferenca_base_mapa": -1.12,
-      "saldo": 46.61,
+      "diferenca_base_mapa": -0.0,
+      "saldo": 45.49,
       "linhas_base": 4,
       "linhas_mapa": 14
     },
@@ -639,6 +599,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
+      "planejado": 55.0,
+      "executado_base": 37.58,
+      "executado_mapa": 37.58,
+      "diferenca_base_mapa": 0.0,
+      "saldo": 17.42,
+      "linhas_base": 2,
+      "linhas_mapa": 1
+    },
+    {
       "obra": "RCE RUA MARIA DAS GRAÇAS SILVA",
       "planejado": 17.0,
       "executado_base": 0.0,
@@ -647,16 +617,6 @@
       "saldo": 17.0,
       "linhas_base": 2,
       "linhas_mapa": 0
-    },
-    {
-      "obra": "RCE RUA AMÉRICO MACHADO - ELIS R",
-      "planejado": 55.0,
-      "executado_base": 38.3,
-      "executado_mapa": 37.58,
-      "diferenca_base_mapa": 0.72,
-      "saldo": 16.7,
-      "linhas_base": 2,
-      "linhas_mapa": 1
     },
     {
       "obra": "RCE Rua São João",
@@ -689,6 +649,16 @@
       "linhas_mapa": 0
     },
     {
+      "obra": "INTERL. RUA AYRTON SENNA",
+      "planejado": 59.5,
+      "executado_base": 61.69,
+      "executado_mapa": 62.05,
+      "diferenca_base_mapa": -0.36,
+      "saldo": -2.19,
+      "linhas_base": 2,
+      "linhas_mapa": 2
+    },
+    {
       "obra": "RCE - RUA MARIA DOS SANTOS MACHADO",
       "planejado": 205.0,
       "executado_base": 211.95,
@@ -697,16 +667,6 @@
       "saldo": -6.95,
       "linhas_base": 2,
       "linhas_mapa": 4
-    },
-    {
-      "obra": "INTERL. RUA AYRTON SENNA",
-      "planejado": 59.5,
-      "executado_base": 68.2,
-      "executado_mapa": 62.05,
-      "diferenca_base_mapa": 6.15,
-      "saldo": -8.7,
-      "linhas_base": 2,
-      "linhas_mapa": 2
     },
     {
       "obra": "RCE AV. Fernando Pacheco Jordão",
@@ -731,10 +691,10 @@
     {
       "obra": "CTS João Canzi",
       "planejado": 858.5,
-      "executado_base": 880.94,
+      "executado_base": 879.94,
       "executado_mapa": 879.94,
-      "diferenca_base_mapa": 1.0,
-      "saldo": -22.44,
+      "diferenca_base_mapa": 0.0,
+      "saldo": -21.44,
       "linhas_base": 2,
       "linhas_mapa": 13
     },
@@ -774,7 +734,7 @@
       "arquivo": "BASE_DASH_EXTENSAO_POWERBI.xlsx",
       "existe": true,
       "tamanho_kb": 36.5,
-      "modificado": "2026-07-22 07:00:52"
+      "modificado": "2026-07-23 11:15:34"
     },
     {
       "arquivo": "planilha_base_mapa.xlsx",

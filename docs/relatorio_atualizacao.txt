@@ -1,5 +1,5 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-23 07:03:24
+Atualizado em: 2026-07-23 11:18:30
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,213.67 m
@@ -13,7 +13,7 @@ PDS hoje: 21 registros
 
 Alertas:
 - Diferença total entre EAP Produzido e mapa: 837.95 m
-- 11 obra(s) com divergência entre executado da Base Dash e mapa.
+- 7 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
 - RCE COMUNIDADE RAUZITO: Base 561.00 m | Mapa 0.00 m | Dif. 561.00 m
@@ -21,8 +21,5 @@ Maiores divergências por obra:
 - RCE TERRA PROMETIDA: Base 126.00 m | Mapa 0.00 m | Dif. 126.00 m
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
 - CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
-- INTERL. RUA AYRTON SENNA: Base 68.20 m | Mapa 62.05 m | Dif. 6.15 m
 - CTS Lourdes Complementar: Base 320.31 m | Mapa 323.92 m | Dif. -3.61 m
-- CTS Conceição: Base 765.89 m | Mapa 767.01 m | Dif. -1.12 m
-- CTS João Canzi: Base 880.94 m | Mapa 879.94 m | Dif. 1.00 m
-- RCE RUA AMÉRICO MACHADO - ELIS R: Base 38.30 m | Mapa 37.58 m | Dif. 0.72 m
+- INTERL. RUA AYRTON SENNA: Base 61.69 m | Mapa 62.05 m | Dif. -0.36 m
