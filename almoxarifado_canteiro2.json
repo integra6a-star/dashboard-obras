@@ -1,46 +1,46 @@
 {
-  "atualizado_em": "17/07/2026 09:38",
+  "atualizado_em": "24/07/2026 08:04",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / Bandeirantes",
   "titulo": "Bandeirantes (Canteiro 2)",
   "produtos": [
     {
       "codigo": "P001",
       "descricao": "ADUELA DE PV 1000 x 1000 MM",
-      "estoque_atual": "79",
+      "estoque_atual": "75",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 79,
+      "quantidade": 75,
       "situacao_planilha": ""
     },
     {
       "codigo": "P002",
       "descricao": "ADOELA DE 600",
-      "estoque_atual": "125",
+      "estoque_atual": "103",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 125,
+      "quantidade": 103,
       "situacao_planilha": ""
     },
     {
       "codigo": "P003",
       "descricao": "LAJE INFERIOR DE 1000",
-      "estoque_atual": "19",
+      "estoque_atual": "17",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 19,
+      "quantidade": 17,
       "situacao_planilha": ""
     },
     {
       "codigo": "P004",
       "descricao": "LAJE INFERIOR DE 600",
-      "estoque_atual": "122",
+      "estoque_atual": "120",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 122,
+      "quantidade": 120,
       "situacao_planilha": ""
     },
     {
@@ -56,11 +56,11 @@
     {
       "codigo": "P006",
       "descricao": "TUBO PEAD ESGOTO D 355",
-      "estoque_atual": "191",
+      "estoque_atual": "177",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 191,
+      "quantidade": 177,
       "situacao_planilha": ""
     },
     {
@@ -116,11 +116,11 @@
     {
       "codigo": "P012",
       "descricao": "TUBO ESGOTO PVC DN 200",
-      "estoque_atual": "496",
+      "estoque_atual": "486",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 496,
+      "quantidade": 486,
       "situacao_planilha": ""
     },
     {
@@ -136,11 +136,11 @@
     {
       "codigo": "P014",
       "descricao": "TUBO ESGOTO PVC DN 100",
-      "estoque_atual": "308",
+      "estoque_atual": "299",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 308,
+      "quantidade": 299,
       "situacao_planilha": ""
     },
     {
@@ -166,11 +166,11 @@
     {
       "codigo": "P017",
       "descricao": "ADUELA DE PV 1000 x 500 MM",
-      "estoque_atual": "30",
+      "estoque_atual": "25",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 30,
+      "quantidade": 25,
       "situacao_planilha": ""
     },
     {
@@ -206,31 +206,41 @@
     {
       "codigo": "P021",
       "descricao": "LAJE PRE MONTADA SURPERIOR /COM TAMPÃO DN 600",
-      "estoque_atual": "36",
+      "estoque_atual": "13",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 36,
+      "quantidade": 13,
       "situacao_planilha": ""
     },
     {
       "codigo": "P022",
       "descricao": "TAMPÃO FF DN 600",
-      "estoque_atual": "116",
+      "estoque_atual": "103",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 116,
+      "quantidade": 103,
       "situacao_planilha": ""
     },
     {
       "codigo": "P023",
       "descricao": "BLOCO DE CONCRETO CURVO PI",
-      "estoque_atual": "140",
+      "estoque_atual": "85",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 140,
+      "quantidade": 85,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P024",
+      "descricao": "TAMPÃO FF TL DN 200",
+      "estoque_atual": "50",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 50,
       "situacao_planilha": ""
     }
   ],

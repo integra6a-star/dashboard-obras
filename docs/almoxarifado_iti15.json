@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/07/2026 09:38",
+  "atualizado_em": "24/07/2026 08:04",
   "origem": "PLANILHA_ALMOXARIFADO.xlsx / D'avó",
   "titulo": "D'avó (ITI-15)",
   "produtos": [
@@ -65,16 +65,26 @@
     },
     {
       "codigo": "P007",
-      "descricao": "CHAPA ARMICO",
-      "estoque_atual": "460",
+      "descricao": "CHAPA ARMICO 2,4 m",
+      "estoque_atual": "238",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 460,
+      "quantidade": 238,
       "situacao_planilha": ""
     },
     {
       "codigo": "P008",
+      "descricao": "CHAPA ARMICO 1,8 m",
+      "estoque_atual": "600",
+      "estoque_minimo": 0,
+      "entradas": 0,
+      "saidas": 0,
+      "quantidade": 600,
+      "situacao_planilha": ""
+    },
+    {
+      "codigo": "P009",
       "descricao": "TAMPÃO DN 600",
       "estoque_atual": "7",
       "estoque_minimo": 0,
@@ -84,7 +94,7 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P009",
+      "codigo": "P010",
       "descricao": "ADUELA DE 1500",
       "estoque_atual": "1",
       "estoque_minimo": 0,
@@ -94,17 +104,17 @@
       "situacao_planilha": ""
     },
     {
-      "codigo": "P010",
+      "codigo": "P011",
       "descricao": "TELA SOLDADA Q283",
-      "estoque_atual": "180",
+      "estoque_atual": "152",
       "estoque_minimo": 0,
       "entradas": 0,
       "saidas": 0,
-      "quantidade": 180,
+      "quantidade": 152,
       "situacao_planilha": ""
     },
     {
-      "codigo": "P011",
+      "codigo": "P012",
       "descricao": "TUBO CRAVADO 1500 mm",
       "estoque_atual": "83",
       "estoque_minimo": 0,
