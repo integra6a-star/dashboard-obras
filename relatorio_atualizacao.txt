@@ -1,24 +1,25 @@
 RELATÓRIO DE ATUALIZAÇÃO DO DASHBOARD
-Atualizado em: 2026-07-23 14:36:15
+Atualizado em: 2026-07-24 07:47:48
 
 Planejado Base Dash: 39,688.39 m
 Executado EAP Produzido: 20,213.67 m
-Executado Mapa: 19,375.72 m
-Diferença em obras mapeadas: -66.16 m
-Produção Base Dash sem trecho no mapa: 910.39 m
+Executado Mapa: 19,649.47 m
+Diferença em obras mapeadas: -116.52 m
+Produção Base Dash sem trecho no mapa: 687.00 m
 Trechos no mapa sem produção na Base Dash: 0.00 m
 Saldo total: 20,213.67 m
 
-PDS total: 3287 registros
-PDS hoje: 21 registros
-Última data PDS: 2026-07-23
+PDS total: 3305 registros
+PDS hoje: 18 registros
+Última data PDS: 2026-07-24
 
 Alertas:
-- Diferença em obras mapeadas: -66.16 m
-- 4 obra(s) com divergência entre executado da Base Dash e mapa.
+- Diferença em obras mapeadas: -116.52 m
+- 5 obra(s) com divergência entre executado da Base Dash e mapa.
 
 Maiores divergências por obra:
 - RCE Barão Luis de Arariba: Base 548.90 m | Mapa 617.76 m | Dif. -68.86 m
+- RCE COMUNIDADE JD. UNIÃO: Base 223.39 m | Mapa 273.75 m | Dif. -50.36 m
 - CTS Luis Botelho Mourão: Base 468.09 m | Mapa 461.43 m | Dif. 6.66 m
 - CTS Lourdes Complementar: Base 320.31 m | Mapa 323.92 m | Dif. -3.61 m
 - INTERL. RUA AYRTON SENNA: Base 61.69 m | Mapa 62.05 m | Dif. -0.36 m
